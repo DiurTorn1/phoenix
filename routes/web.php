@@ -26,7 +26,7 @@ Route::get('/bascet', function () {
     return view('bascet_phenix');
 });
 
-Auth::routes();
+#Auth::routes();
 
 #Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
