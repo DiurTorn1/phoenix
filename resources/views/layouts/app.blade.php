@@ -3,6 +3,11 @@
 <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+		<script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script type="text/javascript" src = "{{ asset('js/scrypt.js') }}"></script> 
+
+		
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, shrink-to-fit=no">
 	    <meta name="mobile-web-app-capable" content="yes">
@@ -25,8 +30,7 @@
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/player.css') }}" rel="stylesheet">
         <!--<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>  <link rel="stylesheet" href="{{ asset('css.css') }}">-->
-        <script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
-        <script type="text/javascript" src = "{{ asset('js/scrypt.js') }}"></script> 
+
 </head>
 <body>
 
