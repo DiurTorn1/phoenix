@@ -61,7 +61,7 @@
 
 <!------------------ Окно Входа -------------------------->
 <div class="popup-back" id="popup-back">
-	    <form action="{{ route('login') }}" class="popup-container">
+	    <form action="" class="popup-container">
 			<div class="popup-content">
 				<div class="popup-title-wrap">
 					<button class="popup-close close-btn" id="popup-close" title="Закрыть"><img src="{{ asset('img/close.png') }}" alt="Закрыть"></button>
