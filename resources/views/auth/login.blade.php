@@ -6,7 +6,7 @@
 	    <form action="" class="popup-container">
 			<div class="popup-content">
 				<div class="popup-title-wrap">
-					<button class="popup-close close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть"></button>
+					<button class="popup-close close-btn" id="popup-close" title="Закрыть"><img src="img/close.png" alt="Закрыть"></button>
 					<h2 class="popup-title">Вход</h2>
 				</div>
 				<div class="popup-content-wrap">
