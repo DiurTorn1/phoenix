@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(function() {
     //$("#publishBtn").click(function(){
     //});
 
@@ -14,4 +14,4 @@ $(document).ready(function() {
         alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         
     });
-});
+})
