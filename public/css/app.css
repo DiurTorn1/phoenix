@@ -969,6 +969,7 @@ content: '\2713';
     background-color: #00000087;
 }
 .popup-back {
+    display: none;
     position: absolute;
     width: 100%;
     height: 100%;

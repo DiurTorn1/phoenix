@@ -2,7 +2,7 @@
 @section('title-block') Кто ты, воин! @endsection
 @section('content')
 <!------------------ Окно Входа -------------------------->
-	<div class="popup-back">
+	<div class="popup-back" id="popup-back">
 	    <form action="" class="popup-container">
 			<div class="popup-content">
 				<div class="popup-title-wrap">
