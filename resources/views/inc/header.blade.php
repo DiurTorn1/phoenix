@@ -61,7 +61,7 @@
 
 <!------------------ Окно Входа -------------------------->
 <div class="popup-back" id="popup-back">
-        <form method="POST" action="{{ route('login') }}" class="popup-container">
+        <form method="POST" action="" class="popup-container">
 			<div class="popup-content">
             	@csrf
 				<div class="popup-title-wrap">
@@ -88,7 +88,7 @@
 				</div>
 				<input class="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                 <label class="" for="remember">
-                        {{ __('Remember Me') }}
+                        {{ __('Запомни меня') }}
         		</label>
 			</div>
 			
