@@ -36,9 +36,9 @@
 			<button class="entrance" id="enterranse">Вход</button>
 
 		@else
-			<li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
+			<!--<li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
             <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
-            <li class="nav-item dropdown">
+            <li class="nav-item dropdown">-->
 			<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }} <span class="caret"></span>
             </a>
@@ -52,7 +52,7 @@
                     @csrf
                 </form>
             </div>
-            </li>
+            <!--</li>-->
 		@endguest
         
 
@@ -63,14 +63,12 @@
 <div class="popup-back" id="popup-back">
         <form method="POST" action="{{ route('login') }}" class="popup-container">
             @csrf
-			<div class="col-md-6">
-                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                <input id="user-input" type="email" placeholder="Телефон или email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
 				@error('email')
                     <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                     </span>
                 @enderror
-            </div>
 
                         <div class="row mb-3">
                             <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Password') }}</label>
