@@ -21,11 +21,16 @@
 		<meta data-rh="true" name="twitter:description" content="Официальный видеосервис Центра развития спортивных проектов &quot;ФЕНИКС">
 		
         <title>@yield('title-block')</title>
+
+
+		<script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
+        <script type="text/javascript" src = "{{ asset('/js/scrypt.js') }}"></script> 
+
+
+		
         <link rel="icon" href="{{ asset('img/logo_main.png') }}" class="top_img">
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/player.css') }}" rel="stylesheet">
-        <script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
-        <script type="text/javascript" src = "{{ asset('/js/scrypt.js') }}"></script> 
 </head>
 <body>
 
