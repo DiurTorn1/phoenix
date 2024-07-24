@@ -63,26 +63,33 @@
 <div class="popup-back" id="popup-back">
         <form method="POST" action="{{ route('login') }}" class="popup-container">
 			<div class="popup-content">
-            @csrf
-                <input id="user-input" type="email" placeholder="Телефон или email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
-				@error('email')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                <input id="password" type="password" placeholder="Телефон или email" class="user-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-				@error('password')
-                    <span class="invalid-feedback" role="alert">
-                    <strong>{{ $message }}</strong>
-                    </span>
-                @enderror
-                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    <label class="form-check-label" for="remember">
+            	@csrf
+				<div class="popup-title-wrap">
+					<button class="popup-close close-btn" id="popup-close" title="Закрыть"><img src="{{ asset('img/close.png') }}" alt="Закрыть"></button>
+					<h2 class="popup-title">Вход</h2>
+				</div>
+				<div class="popup-title-wrap">
+                	<input id="user-input" type="email" placeholder="Телефон или email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
+					@error('email')
+                    	<span class="invalid-feedback" role="alert">
+                    	<strong>{{ $message }}</strong>
+                    	</span>
+                	@enderror
+				
+                	<input id="password" type="password" placeholder="Телефон или email" class="user-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+					@error('password')
+                    	<span class="invalid-feedback" role="alert">
+                    	<strong>{{ $message }}</strong>
+                    	</span>
+                	@enderror
+					<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    	<label class="form-check-label" for="remember">
                         {{ __('Remember Me') }}
                     </label>
                     <button type="submit" class="top-menu-btn" id="top-menu-btn">
 						Войти
                     </button>
+				</div>
 			</div>
         </form>
 </div>
