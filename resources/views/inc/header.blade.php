@@ -44,8 +44,8 @@
 			<a class="entrance entrance-admin">{{ Auth::user()->name }}</a>
 			<div class="profile-popup">
 				<div class="profile-popup-top">
-					<span>login</span>
-					<p>your@email.ru</p>
+					<span>{{ Auth::user()->name }}</span>
+					<p>{{ Auth::user()->email }}</p>
 				</div>
 				<div class="profile-popup-bottom">
 					<a href="#" class="exit-button"><img src="img/user1.png" alt="Профиль">Профиль</a>
