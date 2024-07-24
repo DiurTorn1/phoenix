@@ -39,21 +39,9 @@
 			<!--<li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
             <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
             <li class="nav-item dropdown">-->
-			<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                {{ Auth::user()->name }} <span class="caret"></span>
-            </a>
-			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="{{ route('logout') }}"
-                    onclick="event.preventDefault();
-                    document.getElementById('logout-form').submit();">
-                    {{ __('Logout') }}
-                </a>
-				<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-                    @csrf
-                </form>
-            </div>
+
 			<div class="right-heder dropdown">
-			<a class="entrance entrance-admin">Ф.И. администратора</a>
+			<a class="entrance entrance-admin">{{ Auth::user()->name }}</a>
 			<div class="profile-popup">
 				<div class="profile-popup-top">
 					<span>login</span>
@@ -61,7 +49,13 @@
 				</div>
 				<div class="profile-popup-bottom">
 					<a href="#" class="exit-button"><img src="img/user1.png" alt="Профиль">Профиль</a>
-					<a href="index.html" class="exit-button"><img src="img/shutdown.png" alt="Выход из панели">Выход</a>
+					<div>
+					<a href="{{ route('logout') }}" class="exit-button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="img/shutdown.png" alt="Выход из панели">Выход</a>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    		@csrf
+                		</form>
+            		</div>
+					
 				</div>
 			</div>
 		</div>
