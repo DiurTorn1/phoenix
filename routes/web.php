@@ -26,6 +26,10 @@ Route::get('/bascet', function () {
     return view('bascet_phenix');
 });
 
+Route::get('/require_win', function () {
+    return view('require_win');
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
