@@ -55,7 +55,7 @@
                     @csrf
                 </form>
             </div>
-            </li> @endgues-->
+            </li> -->
         
 
 	</div>
