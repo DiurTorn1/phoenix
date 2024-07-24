@@ -82,15 +82,16 @@
                     	<strong>{{ $message }}</strong>
                     	</span>
                 	@enderror
-					<input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                    	<label class="form-check-label" for="remember">
-                        {{ __('Remember Me') }}
-                    </label>
                     <button type="submit" class="top-menu-btn" id="top-menu-btn">
 						Войти
                     </button>
 				</div>
 			</div>
+			
+			<input class="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                <label class="form-check-label" for="remember">
+                        {{ __('Remember Me') }}
+        	</label>
         </form>
 </div>
 	    <!--<form action="" class="popup-container">
