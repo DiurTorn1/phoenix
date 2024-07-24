@@ -24,7 +24,10 @@
 		<script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
         <script type="text/javascript" src = "{{ asset('js/scrypt.js') }}"></script> 
 		
-        <link rel="icon" href="{{ asset('img/logo_main.png') }}" class="top_img">
+        <!--<link rel="icon" href="{{ asset('img/logo_main.png') }}" class="top_img">-->
+		<link type="image/x-icon" href="{{ asset('img/favicon.png') }}" rel="shortcut icon">
+		<link type="Image/x-icon" href="{{ asset('img/favicon.png') }}" rel="icon">
+		<link rel="icon" href="{{ asset('img/favicon.png') }}" />
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <link href="{{ asset('css/player.css') }}" rel="stylesheet">
         <!--<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>  <link rel="stylesheet" href="{{ asset('css.css') }}">-->
