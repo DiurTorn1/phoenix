@@ -62,6 +62,7 @@
 <!------------------ Окно Входа -------------------------->
 <div class="popup-back" id="popup-back">
         <form method="POST" action="{{ route('login') }}" class="popup-container">
+			<div class="popup-content">
             @csrf
                 <input id="user-input" type="email" placeholder="Телефон или email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
 				@error('email')
@@ -109,6 +110,7 @@
                                 @endif
                             </div>
                         </div>
+			</div>
         </form>
 </div>
 	    <!--<form action="" class="popup-container">
