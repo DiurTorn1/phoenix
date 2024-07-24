@@ -54,7 +54,7 @@
 				<div class="popup-content-wrap">
 					<input type="text" placeholder="Телефон или email" required class="user-input" ><!--pattern="	\+[0-9]{1,4}[0-9]{1,10}|(.*)@(.*)\.[a-z]{2,5}" title="" oninvalid="setCustomValidity('Пожалуйста, введите 	номер телефона или email')"-->
 					<input type="text" placeholder="Введите код" required class="user-input">
-					<button type="submit" class="top-menu-btn">Войти</button>
+					<button type="submit" class="top-menu-btn" id="top-menu-btn">Войти</button>
 				</div>
 			</div>
 		</form>
