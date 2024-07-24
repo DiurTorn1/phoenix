@@ -428,6 +428,7 @@ footer {
     display: none;
     position: absolute;
     top: 36px;
+    right: 0;
     width: 100%;
     border-radius: 4px;
     border-top: 8px solid transparent;
@@ -440,6 +441,7 @@ footer {
 .dropdown:hover .profile-popup {
     display: flex;
     flex-direction: column;
+    min-width: 165px;
  }
 .profile-popup-top,
 .profile-popup-bottom {
@@ -471,6 +473,9 @@ footer {
     border-bottom-left-radius: 4px;
     border-bottom-right-radius: 4px; 
 }
+.profile-popup-user .profile-popup-bottom {
+    border-radius: 4px;
+}
 .profile-popup-bottom a {
     display: flex;
     width: 100%;
@@ -487,6 +492,9 @@ footer {
 }
 .profile-popup-bottom a:first-child img {
     width: 22px;
+}
+.profile-popup-user .profile-popup-bottom a:first-child img {
+  /*width: 30px;*/
 }
 .profile-popup-bottom a {
     margin-top: 0.7rem;
@@ -959,4 +967,85 @@ content: '\2713';
     height: 100%;
     background: center url(img/no_stream1.png) no-repeat;
     background-color: #00000087;
+}
+.popup-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000d6;
+    z-index: 10;
+}
+.popup-container {
+    background-color: #180919;
+    border-radius: 4px;
+    max-width: 30%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
+.popup-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 1rem;
+}
+.popup-title-wrap {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #1F1120;
+    border-top-right-radius: 4px;
+    border-top-left-radius: 4px;
+    -webkit-box-shadow: 0px 6px 8px -1px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0px 6px 8px -1px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 6px 8px -1px rgba(0, 0, 0, 0.2);
+}
+.popup-content-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 95px;
+}
+.popup-content button {
+    max-width: 110px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+}
+.user-input {
+    margin: 0px;
+    margin-bottom: 1rem;
+    width: 96;
+    outline: none;
+    min-height: 20px;
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    color: rgb(255, 255, 255);
+    background-color: transparent;
+    padding: 1rem 0px 1rem 1rem;
+    border-radius: 4px;
+    border: 1px solid rgb(89, 89, 89);
+}
+.user-input:focus,
+.user-input:active {
+    border-color: #f58505;
+    box-shadow: 0 0 1px 1px #f58505;
+}
+.popup-title {
+    text-align: center;
+    line-height: 1.5;
+    font-weight: 600;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+.popup-close {
+    position: absolute;
+    left: 1rem;
+    top: 1.5rem;
+}
+.popup-close img {
+    max-width: 22px;
 }
