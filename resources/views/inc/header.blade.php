@@ -95,7 +95,7 @@
 				</div>
 				<input class="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                 <label class="" for="remember">
-                        {{ __('Запомни меня') }}
+                        {{ __('Запомни меня, тварь!!!') }}
         		</label>
 			</div>
 			
