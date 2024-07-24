@@ -26,7 +26,24 @@
         <link href="{{ asset('css/player.css') }}" rel="stylesheet">
         <!--<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>  <link rel="stylesheet" href="{{ asset('css.css') }}">-->
         <script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
-        <script type="text/javascript" src = "{{ asset('/js/scrypt.js') }}"></script> 
+        <script >$(document).ready(function() {
+    //$("#publishBtn").click(function(){
+    //});
+
+    $("#publishBtn").on('click', function(){
+        //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
+        $.post('/php/verif.php', function(data) {
+                
+            $('#res_reg').text(data);
+        });
+    });
+
+    $("#enterranse").on('click', function(){
+        alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
+        
+    });
+    
+});</script> 
 </head>
 <body>
 
