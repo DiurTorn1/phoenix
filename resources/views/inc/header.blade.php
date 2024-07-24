@@ -52,6 +52,19 @@
                     @csrf
                 </form>
             </div>
+			<div class="right-heder dropdown">
+			<a class="entrance entrance-admin">Ф.И. администратора</a>
+			<div class="profile-popup">
+				<div class="profile-popup-top">
+					<span>login</span>
+					<p>your@email.ru</p>
+				</div>
+				<div class="profile-popup-bottom">
+					<a href="#" class="exit-button"><img src="img/user1.png" alt="Профиль">Профиль</a>
+					<a href="index.html" class="exit-button"><img src="img/shutdown.png" alt="Выход из панели">Выход</a>
+				</div>
+			</div>
+		</div>
             <!--</li>-->
 		@endguest
         
@@ -94,19 +107,5 @@
 			
 
         </form>
-</div>
-	    <!--<form action="" class="popup-container">
-			<div class="popup-content">
-				<div class="popup-title-wrap">
-					<button class="popup-close close-btn" id="popup-close" title="Закрыть"><img src="{{ asset('img/close.png') }}" alt="Закрыть"></button>
-					<h2 class="popup-title">Вход</h2>
-				</div>
-				<div class="popup-content-wrap">
-					<input type="text" placeholder="Телефон или email" required class="user-input" >--><!--pattern="	\+[0-9]{1,4}[0-9]{1,10}|(.*)@(.*)\.[a-z]{2,5}" title="" oninvalid="setCustomValidity('Пожалуйста, введите 	номер телефона или email')"-->
-					<!--<input type="text" placeholder="Введите код" required class="user-input">
-					<button type="submit" class="top-menu-btn" id="top-menu-btn">Войти</button>
-				</div>
-			</div>
-		</form>-->
 </div>
 <!---->
