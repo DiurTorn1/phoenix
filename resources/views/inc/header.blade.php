@@ -36,10 +36,10 @@
 			<button class="entrance" id="enterranse">Вход</button>
 
 		@else
-		<li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
+			<li><a class="nav-link" href="{{ route('users.index') }}">Manage Users</a></li>
             <li><a class="nav-link" href="{{ route('roles.index') }}">Manage Role</a></li>
             <li class="nav-item dropdown">
-	<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
+			<a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                 {{ Auth::user()->name }} <span class="caret"></span>
             </a>
 			<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -61,14 +61,13 @@
 
 <!------------------ Окно Входа -------------------------->
 <div class="popup-back" id="popup-back">
-<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('login') }}">
+                    <form method="POST" action="{{ route('login') }}" class="popup-container">
                         @csrf
 
                         <div class="row mb-3">
@@ -128,7 +127,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </div>
 	    <!--<form action="" class="popup-container">
 			<div class="popup-content">
