@@ -70,17 +70,16 @@
                     <strong>{{ $message }}</strong>
                     </span>
                 @enderror
-                    <input id="password" type="password" placeholder="Телефон или email" class="user-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-					@error('password')
-                        <span class="invalid-feedback" role="alert">
-                        <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
-                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                        <label class="form-check-label" for="remember">
-                                        {{ __('Remember Me') }}
-                        </label>
+                <input id="password" type="password" placeholder="Телефон или email" class="user-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+				@error('password')
+                    <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
+                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                    <label class="form-check-label" for="remember">
+                        {{ __('Remember Me') }}
+                    </label>
                     <button type="submit" class="top-menu-btn" id="top-menu-btn">
 						Войти
                     </button>
