@@ -32,6 +32,6 @@ Route::group(['middleware' => ['auth']], function() {
     Route::resource('products', ProductController::class);
 });
 
-//Auth::routes();
+Auth::routes();
 
-//Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('main');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('main');
