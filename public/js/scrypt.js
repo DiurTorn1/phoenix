@@ -10,8 +10,10 @@ $(document).ready(function() {
         });
     });
 
-    $("#enterranse").click(function(){
+    $(function(){
+        $("#enterranse").click(function(){
         alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         
-    });
+        });
+    })
 })
