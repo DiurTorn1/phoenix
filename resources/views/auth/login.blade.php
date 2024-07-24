@@ -1,22 +1,7 @@
 @extends('layouts.app')
 @section('title-block') Кто ты, воин! @endsection
 @section('content')
-<!------------------ Окно Входа -------------------------->
-	<div class="popup-back" id="popup-back">
-	    <form action="" class="popup-container">
-			<div class="popup-content">
-				<div class="popup-title-wrap">
-					<button class="popup-close close-btn" id="popup-close" title="Закрыть"><img src="{{ asset('img/close.png') }}" alt="Закрыть"></button>
-					<h2 class="popup-title">Вход</h2>
-				</div>
-				<div class="popup-content-wrap">
-					<input type="text" placeholder="Телефон или email" required class="user-input" ><!--pattern="	\+[0-9]{1,4}[0-9]{1,10}|(.*)@(.*)\.[a-z]{2,5}" title="" oninvalid="setCustomValidity('Пожалуйста, введите 	номер телефона или email')"-->
-					<input type="text" placeholder="Введите код" required class="user-input">
-					<button type="submit" class="top-menu-btn">Войти</button>
-				</div>
-			</div>
-		</form>
-	</div>
+
 <!--<div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
