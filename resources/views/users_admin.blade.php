@@ -52,7 +52,4 @@
  @endforeach
 </table>
 
-
-{!! $data->render() !!}
-
 @endsection
