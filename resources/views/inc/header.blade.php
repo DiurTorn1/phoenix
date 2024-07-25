@@ -49,9 +49,9 @@
 				</div>
 				<div class="profile-popup-bottom">
 					<a href="#" class="exit-button"><img src="img/user1.png" alt="Профиль">Профиль</a>
-					@if(!empty({{ Auth::user()->getRoleNames() }}))
-                		@foreach( Auth::user()->getRoleNames() as $v)
-                    		<label class="">{{ $v }}</label>
+					@if(!empty($rolePermissions))
+                		@foreach($rolePermissions as $v)
+                    		<label class="label label-success">{{ $v->name }},</label>
                 		@endforeach
             		@endif
 					<div>
