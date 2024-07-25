@@ -49,14 +49,16 @@
 				</div>
 				<div class="profile-popup-bottom">
 					<a href="#" class="exit-button"><img src="img/user1.png" alt="Профиль">Профиль</a>
-					@foreach ($data as $key => $user)
-
- 					@endforeach
 					@if(!empty($rolePermissions))
                 		@foreach($rolePermissions as $v)
                     		<a href="#" class="exit-button">{{ $v->name }},</a>
                 		@endforeach
             		@endif
+					@if(!empty(getRoleNames()))
+                	@foreach(getRoleNames() as $v)
+                    	<label class="badge badge-success">{{ $v }}</label>
+                	@endforeach
+           	 		@endif
 					<div>
 					<a href="{{ route('logout') }}" class="exit-button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="img/shutdown.png" alt="Выход из панели">Выход</a>
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
