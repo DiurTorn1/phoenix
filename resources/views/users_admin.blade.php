@@ -29,14 +29,14 @@
    <th>Roles</th>
    <th width="280px">Action</th>
  </tr>
- @foreach ($data as $key => $user)
+ @foreach ($data as $key => Auth::user())
   <tr>
     <td>{{ ++$i }}</td>
-    <td>{{ $user->name }}</td>
-    <td>{{ $user->email }}</td>
+    <td>{{ Auth::user()->name }}</td>
+    <td>{{ Auth::user()->email }}</td>
     <td>
-      @if(!empty($user->getRoleNames()))
-        @foreach($user->getRoleNames() as $v)
+      @if(!empty(Auth::user()->getRoleNames()))
+        @foreach(Auth::user()->getRoleNames() as $v)
            <label class="badge badge-success">{{ $v }}</label>
         @endforeach
       @endif
@@ -44,7 +44,7 @@
     <td>
        <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
        <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
-        {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
+        {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', Auth::user()->id],'style'=>'display:inline']) !!}
             {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
         {!! Form::close() !!}
     </td>
