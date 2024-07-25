@@ -22,10 +22,7 @@
 	<!-----------------------Меню админа------------------------------>
 	<div class="admin-menu">
 		<div class="admin-menu-header admin-back">
-			<!--<div class="admin-tour-logo">
-				<img src="{{ asset('img/phoenix1.png') }}" alt="логотип кубка (турнира)">
-			</div>
-			<span>Открытый турнир "Кубок Феникса"</span>-->
+
 		</div>
 		<nav class="admin-navigation">
 			<ul class="admin-navigation-list admin-back">
