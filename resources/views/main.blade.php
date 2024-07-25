@@ -1,16 +1,6 @@
 @extends('layouts.app')
 @section('title-block') ГЛАВНАЯ - Феникс ТВ @endsection
-<main class="index-main">
-	    <!-- Главный баннер -->
-	    <div class="banner">
-		    <picture class="banner-img">
-			    <img src="{{ asset('img/banner.png') }}" alt="Феникс ТВ">
-		    </picture>
-		    <div class="banner-text">
-			    <span>Феникс ТВ</span>
-			    <h1>Пространство детского спорта</h1>
-		    </div>
-	    </div>
+@include('inc.banner')
 @include('inc.header')
 
        
@@ -47,5 +37,3 @@
 
 
 </main>
-
-@include('inc.footer')

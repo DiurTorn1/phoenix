@@ -11,5 +11,3 @@
 
 
 </main>
-
-@include('inc.footer')

@@ -10,4 +10,3 @@
 @endsection
 
 </main>
-@include('inc.footer')
