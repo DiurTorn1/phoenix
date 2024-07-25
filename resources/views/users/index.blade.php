@@ -1,29 +1,29 @@
 @extends('admin_panel')
 @section('title-block') Пользователи @endsection
 @section('admin_res')
-<div class="row">
-    <div class="col-lg-12 margin-tb">
-        <div class="pull-left">
+<div class="">
+    <div class="">
+        <div class="">
             <h2>Список пользователей</h2>
         </div>
-        <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('users.create') }}"> Добавить нового пользователя</a>
+        <div class="">
+            <a class="" href="{{ route('users.create') }}"> Добавить нового пользователя</a>
         </div>
-        <div class="pull-right">
-            <a class="btn btn-success" href=""> Загрузить пользователей из EXEL</a>
+        <div class="">
+            <a class="" href=""> Загрузить пользователей из EXEL</a>
         </div>
     </div>
 </div>
 
 
 @if ($message = Session::get('success'))
-<div class="alert alert-success">
+<div class="">
   <p>{{ $message }}</p>
 </div>
 @endif
 
 
-<table class="table table-bordered">
+<table class="">
  <tr>
    <th>ID</th>
    <th>Имя</th>
@@ -39,15 +39,15 @@
     <td>
       @if(!empty($user->getRoleNames()))
         @foreach($user->getRoleNames() as $v)
-           <label class="badge badge-success">{{ $v }}</label>
+           <label class="">{{ $v }}</label>
         @endforeach
       @endif
     </td>
     <td>
-       <a class="btn btn-info" href="{{ route('users.show',$user->id) }}">Show</a>
-       <a class="btn btn-primary" href="{{ route('users.edit',$user->id) }}">Edit</a>
+       <a class="" href="{{ route('users.show',$user->id) }}">Показать карточку</a>
+       <a class="" href="{{ route('users.edit',$user->id) }}">Редактировать</a>
         {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Delete', ['class' => 'btn btn-danger']) !!}
+            {!! Form::submit('Удалить', ['class' => '']) !!}
         {!! Form::close() !!}
     </td>
   </tr>
