@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('title-block') ГЛАВНАЯ - Феникс ТВ @endsection
+@include('inc.banner')
+@include('inc.header')
+
+       
+
 @section('content')
 
 	<!-- Прямая трансляция -->
@@ -29,3 +34,6 @@
 	<div id="res_reg"></div>-->
   
 @endsection
+
+@include('inc.footer')
+</main>
