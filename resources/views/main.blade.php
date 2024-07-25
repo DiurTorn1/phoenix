@@ -35,5 +35,7 @@
   
 @endsection
 
-@include('inc.footer')
+
 </main>
+
+@include('inc.footer')

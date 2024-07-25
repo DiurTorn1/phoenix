@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('title-block') Кто ты, воин? @endsection
+@include('inc.banner')
+@include('inc.header')
+
+       
+
 @section('content')
 <!--<div class="container">
     <div class="row justify-content-center">
@@ -75,3 +80,6 @@
     </div>
 </div>-->
 @endsection
+
+</main>
+@include('inc.footer')
