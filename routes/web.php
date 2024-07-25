@@ -30,6 +30,10 @@ Route::get('/admin_panel', function () {
     return view('admin_panel');
 });
 
+Route::get('/users_admin', function () {
+    return view('users_admin');
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
