@@ -51,7 +51,7 @@
 					<a href="#" class="exit-button"><img src="img/user1.png" alt="Профиль">Профиль</a>
 					@if(!empty($rolePermissions))
                 		@foreach($rolePermissions as $v)
-                    		<label class="label label-success">{{ $v->name }},</label>
+                    		<a href="#" class="exit-button">{{ $v->name }},</a>
                 		@endforeach
             		@endif
 					<div>
