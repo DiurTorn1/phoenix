@@ -12,7 +12,7 @@
 		@if($v == "admin")
     <header class="header admin-header">
 		<div class="left-header">
-			<a href="#" class="close-btn" title="Закрыть" ><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
+			<a href="/stream" class="close-btn" title="Закрыть" ><img src="{{ asset('img/close.png') }}" alt="Закрыть" width="24" height="24"></a>
 			<h2 class="top-menu-title">Карточка стрима</h2>
 		</div>
 		<div class="right-heder">
@@ -26,12 +26,12 @@
 
 		<nav class="admin-navigation">
 			<ul class="stream-navigation admin-navigation-list admin-back">
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/edit.png" alt="Редактировать">Редактировать</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/broadcast.png" alt="Трансляция">Трансляция</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/monitor.png" alt="Мониторинг">Мониторинг</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/analitik.png" alt="Аналитика">Аналитика</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/restream.png" alt="Рестрим">Рестрим</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/studio.png" alt="Студия">Студия</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/edit.png') }}" alt="Редактировать">Редактировать</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/broadcast.png') }}" alt="Трансляция">Трансляция</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/monitor.png') }}" alt="Мониторинг">Мониторинг</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Аналитика">Аналитика</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/restream.png') }}" alt="Рестрим">Рестрим</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/studio.png') }}" alt="Студия">Студия</a></li>
 			</ul>
 		</nav>
 	</div>
@@ -65,9 +65,9 @@
 						</div>
 					</div>
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
-						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="img/ivs4.png" alt="Обложка турнира"></a>
+						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка турнира"></a>
 						<div class="edit-preview-tournir">
-							<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>
+							<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
 						</div>
 					</div>	
 				</div>
@@ -126,7 +126,7 @@
 
 		<div class="block-admin-right">
 			<div class="preview-tournir-vis">
-				<img src="img/ivs4.png" alt="Заставка трансляции" title="Нет трансляции">
+				<img src="{{ asset('img/ivs4.png') }}" alt="Заставка трансляции" title="Нет трансляции">
 			</div>
 		</div>
 		

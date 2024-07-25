@@ -22,16 +22,16 @@
 					<p>{{ Auth::user()->email }}</p>
 				</div>
 				<div class="profile-popup-bottom">
-					<a href="#" class="exit-button"><img src="img/user1.png" alt="Профиль">Профиль</a>
+					<a href="#" class="exit-button"><img src="{{ asset('img/user1.png') }}" alt="Профиль">Профиль</a>
 					@if(!empty(Auth::user()->getRoleNames()))
                 	@foreach( Auth::user()->getRoleNames() as $v)
 						@if($v == "admin")
-                    		<a href="/admin_panel" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Admin-Panel</a>
+                    		<a href="/admin_panel" class="exit-button"><img src="{{ asset('img/logo_main.png') }}" alt="Профиль">Admin-Panel</a>
 						@endif
                 	@endforeach
            	 		@endif
 					<div>
-					<a href="{{ route('logout') }}" class="exit-button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="img/shutdown.png" alt="Выход из панели">Выход</a>
+					<a href="{{ route('logout') }}" class="exit-button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="{{ asset('img/shutdown.png') }}" alt="Выход из панели">Выход</a>
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                     		@csrf
                 		</form>
