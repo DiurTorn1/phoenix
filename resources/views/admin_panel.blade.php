@@ -2,14 +2,22 @@
 @section('title-block') Панель админа-господина @endsection
 
 @section('content')
-<header class="header admin-header">
+
+@guest
+
+
+@else
+	@if(!empty(Auth::user()->getRoleNames()))
+    @foreach( Auth::user()->getRoleNames() as $v)
+		@if($v == "admin")
+        <header class="header admin-header">
 		<div class="left-header">
 			<a href="/" class="close-btn" title="Закрыть" ><img src="{{ asset('img/close.png') }}" alt="Закрыть" width="24" height="24"></a>
 			<h2 class="top-menu-title">Панель админа-господина</h2>
 		</div>
 		<div class="right-heder">
 		</div>
-</header>
+        </header>
 <main class="admin-container">
 	<!-----------------------Меню админа------------------------------>
 	<div class="admin-menu">
@@ -45,6 +53,11 @@
 	</div>	
 	</main>
 	<!----------------->
+        @endif
+    @endforeach
+    @endif
+@endguest
+
 @endsection
 
 
