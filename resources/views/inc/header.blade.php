@@ -41,14 +41,17 @@
             <li class="nav-item dropdown">-->
 
 			<div class="right-heder dropdown">
-			<a class="entrance entrance-admin">{{ $user->name }}</a>
+			<a class="entrance entrance-admin">{{ Auth::user()->name }}</a>
 			<div class="profile-popup">
 				<div class="profile-popup-top">
-					<span>{{ $user->name }}</span>
-					<p>{{ $user->email }}</p>
+					<span>{{ Auth::user()->name }}</span>
+					<p>{{ Auth::user()->email }}</p>
 				</div>
 				<div class="profile-popup-bottom">
 					<a href="#" class="exit-button"><img src="img/user1.png" alt="Профиль">Профиль</a>
+					@foreach ($data as $key => $user)
+
+ 					@endforeach
 					@if(!empty($rolePermissions))
                 		@foreach($rolePermissions as $v)
                     		<a href="#" class="exit-button">{{ $v->name }},</a>
