@@ -52,7 +52,7 @@
 					@if(!empty(Auth::user()->getRoleNames()))
                 	@foreach( Auth::user()->getRoleNames() as $v)
 						@if($v == "admin")
-                    		<a href="#" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Admin-Panel</a>
+                    		<a href="/admin_panel" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Admin-Panel</a>
 						@endif
                 	@endforeach
            	 		@endif

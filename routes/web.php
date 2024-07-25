@@ -26,8 +26,8 @@ Route::get('/bascet', function () {
     return view('bascet_phenix');
 });
 
-Route::get('/require_win', function () {
-    return view('require_win');
+Route::get('/admin_panel', function () {
+    return view('admin_panel');
 });
 
 Route::group(['middleware' => ['auth']], function() {
