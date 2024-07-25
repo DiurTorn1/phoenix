@@ -7,7 +7,7 @@
             <h2>Добавить нового пользователя</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-primary" href="{{ route('users.index') }}"> Back</a>
+            <a class="btn btn-primary" href="{{ route('users.index') }}"> Назад</a>
         </div>
     </div>
 </div>
@@ -15,7 +15,7 @@
 
 @if (count($errors) > 0)
   <div class="alert alert-danger">
-    <strong>ООпс!</strong> Слкчилос страшное на выходе.<br><br>
+    <strong>ООпс!</strong> Случилось страшное на выходе.<br><br>
     <ul>
        @foreach ($errors->all() as $error)
          <li>{{ $error }}</li>

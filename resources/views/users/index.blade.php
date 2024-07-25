@@ -9,6 +9,9 @@
         <div class="pull-right">
             <a class="btn btn-success" href="{{ route('users.create') }}"> Добавить нового пользователя</a>
         </div>
+        <div class="pull-right">
+            <a class="btn btn-success" href=""> Загрузить пользователей из EXEL</a>
+        </div>
     </div>
 </div>
 
@@ -22,10 +25,10 @@
 
 <table class="table table-bordered">
  <tr>
-   <th>No</th>
-   <th>Name</th>
-   <th>Email</th>
-   <th>Roles</th>
+   <th>ID</th>
+   <th>Имя</th>
+   <th>Почта</th>
+   <th>Роль</th>
    <th width="280px">Action</th>
  </tr>
  @foreach ($data as $key => $user)
