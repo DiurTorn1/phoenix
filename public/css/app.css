@@ -415,7 +415,7 @@ footer {
 }
 /*-------------Страница администратора-------------*/
 .body-admin {
-    /* background-color: #131313; */
+    background-color: #131313;
 }
 .admin-header {
     position: relative;
