@@ -34,6 +34,10 @@ Route::get('/users_admin', function () {
     return view('users_admin');
 });
 
+Route::get('/stream', function () {
+    return view('stream');
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
