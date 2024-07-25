@@ -29,7 +29,7 @@
    <th>Roles</th>
    <th width="280px">Action</th>
  </tr>
- @foreach ($data as $key => Auth::user())
+ @foreach ($data as $key => Auth::user()->id)
   <tr>
     <td>{{ ++$i }}</td>
     <td>{{ Auth::user()->name }}</td>
