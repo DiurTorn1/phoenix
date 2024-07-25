@@ -7,7 +7,7 @@
             <h2>Список пользователей</h2>
         </div>
         <div class="pull-right">
-            <a class="btn btn-success" href="{{ route('users.create') }}"> Create New User</a>
+            <a class="btn btn-success" href="{{ route('users.create') }}"> Добавить нового пользователя</a>
         </div>
     </div>
 </div>
