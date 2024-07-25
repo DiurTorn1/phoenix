@@ -10,126 +10,183 @@
 	@if(!empty(Auth::user()->getRoleNames()))
     @foreach( Auth::user()->getRoleNames() as $v)
 		@if($v == "admin")
-    <header class="header admin-header">
+        <header class="header admin-header">
 		<div class="left-header">
-			<a href="/admin_panel" class="close-btn" title="Закрыть" ><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
-			<h2 class="top-menu-title">Карточка стрима</h2>
+			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
 		</div>
-		<div class="right-heder">
-			<button class="top-menu-btn save-st">Сохранить</button>
-			<button class="top-menu-btn">Отменить публикацию</button>
+		<div class="right-heder dropdown">
+			<a class="entrance entrance-admin">{{ Auth::user()->name }}</a>
+			<div class="profile-popup">
+                <div class="profile-popup-top">
+					<span>{{ Auth::user()->name }}</span>
+					<p>{{ Auth::user()->email }}</p>
+				</div>
+				<div class="profile-popup-bottom">
+					<a href="#" class="exit-button"><img src="img/user1.png" alt="Профиль">Профиль</a>
+					@if(!empty(Auth::user()->getRoleNames()))
+                	@foreach( Auth::user()->getRoleNames() as $v)
+						@if($v == "admin")
+                    		<a href="/admin_panel" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Admin-Panel</a>
+						@endif
+                	@endforeach
+           	 		@endif
+					<div>
+					<a href="{{ route('logout') }}" class="exit-button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="img/shutdown.png" alt="Выход из панели">Выход</a>
+						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                    		@csrf
+                		</form>
+            		</div>
+					
+				</div>
+			</div>
 		</div>
-	</header>
-	<main class="admin-container">
-	<!-----------------------Меню стрима------------------------------>
+	    </header>
+<main class="admin-container">
+	<!-----------------------Меню админа------------------------------>
 	<div class="admin-menu">
-
+		<div class="admin-menu-header admin-back">
+			<!--<div class="admin-tour-logo">
+				<img src="{{ asset('img/phoenix1.png') }}" alt="логотип кубка (турнира)">
+			</div>
+			<span>Открытый турнир "Кубок Феникса"</span>-->
+		</div>
 		<nav class="admin-navigation">
-			<ul class="stream-navigation admin-navigation-list admin-back">
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/edit.png" alt="Редактировать">Редактировать</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/broadcast.png" alt="Трансляция">Трансляция</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/monitor.png" alt="Мониторинг">Мониторинг</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/analitik.png" alt="Аналитика">Аналитика</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/restream.png" alt="Рестрим">Рестрим</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/studio.png" alt="Студия">Студия</a></li>
+			<ul class="admin-navigation-list admin-back">
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/monitor.png') }}" alt="Монитор">Монитор</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Аналитика">Аналитика</a></li>
+			</ul>
+			<ul class="admin-navigation-list admin-back"> 
+				<li class="admin-navigation-item"><a href="/video" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/play.png') }}" alt="Видео">Видео</a></li>
+				<li class="admin-navigation-item"><a href="/stream" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/stream.png') }}" alt="Стримы">Стримы</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Коллекции">Коллекции</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Продукты">Продукты</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Баланс">Баланс</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Промокоды">Промокоды</a></li>
+			</ul>
+			<ul class="admin-navigation-list admin-back">
+				<li class="admin-navigation-item"><a href="{{ route('users.index') }}" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Пользователи">Пользователи</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Виджеты">Виджеты</a></li>
 			</ul>
 		</nav>
 	</div>
-	<!----------------------------Стрим-контент---------------------------------->
-	<div class="admin-content admin-content-raw">
-		<div class="block-admin-left">
-			<div class="block-admin-container admin-back">
-				<div class="admin-input-box admin-input-wrap">
-					<label>Заголовок *</label>
-					<input type="text" required name="Заголовок" class="block-admin-input admin-input">
-				</div>
-				<div class="admin-input-box admin-input-wrap">
-					<label>Описание</label>
-					<textarea name="Описание" class="block-admin-input respons-input admin-input"></textarea>
-				</div>
-				<div class="admin-input-box admin-input-wrap">
-					<textarea name="Описание для премиум клиентов" class="block-admin-prem-input block-admin-input admin-input">Описание для премиум клиентов</textarea>
-				</div>
-			</div>
+	<!----------------------------Админ-контент---------------------------------->
+	<div class="admin-content">
 
-			<div class="block-admin-container admin-back">
-				<div class="block-admin-section">
-					<div class="block-admin-sector block-admin-container block-admin-section-item">
-						<div class="admin-input-box admin-input-wrap">
-							<label>Начало трансляции</label>
-							<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="09 Мая в 08:45">
-						</div>
-						<div class="admin-input-box admin-input-wrap">
-							<label>Дата публикации плеера</label>
-							<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="04 Мая в 18:50">
-						</div>
-					</div>
-					<div class="block-admin-sector block-admin-container block-admin-section-item">
-						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="img/ivs4.png" alt="Обложка турнира"></a>
-						<div class="edit-preview-tournir">
-							<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>
-						</div>
-					</div>	
-				</div>
+		<div class="top-menu-admin admin-back">
+			<div class="top-menu-head">
+				<h2 class="top-menu-title">Стримы</h2>
+				<button class="top-menu-btn">Создать стрим</button>
 			</div>
-
-			<div class="block-admin-container admin-back">
-				<div class="admin-input-box admin-input-wrap">
-					<label>Шаблон для доступа региона</label>
-					<select class="admin-input admin-input-select block-admin-input">
-						<option value="Шаблон 1">Шаблон 1</option>
-						<option value="Шаблон 2">Шаблон 2</option>
+			<div class="top-menu-sort">
+				<div class="admin-input-box">
+					<label>Вид спорта</label>
+					<select class="admin-input admin-input-select">
+						<option value="Баскетбол">Баскетбол</option>
+						<option value="Волейбол">Волейбол</option>
 					</select>
 				</div>
-				<div class="admin-input-box admin-input-wrap">
-					<label>Сезон</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+				<div class="admin-input-box">
+					<label>Дата начала</label>
+					<input class="admin-input" type="Date" value="Дата начала">
 				</div>
-				<div class="admin-input-box admin-input-wrap">
-					<label>Турнир</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+				<div class="admin-input-box">
+					<label>Дата окончания</label>
+					<input class="admin-input" type="Date" value="Дата окончания">
 				</div>
-				<div class="admin-input-box admin-input-wrap">
-					<label>Возраст</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+				<div class="admin-input-box">
+					<label>Тэг</label>
+					<select class="admin-input admin-input-select">
+						<option value="">Тэг 1</option>
+						<option value="">Тэг 2</option>
+					</select>
 				</div>
-				<div class="admin-input-box admin-input-wrap">
-					<label>Добавить к продукту</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
-				</div>
-			</div>
-
-			<div class="block-admin-container admin-back">
-				<div class="block-admin-section">
-					<div class="block-admin-sector block-admin-container block-admin-section-item">
-						<div class="admin-input-box admin-input-wrap">
-							<label>Вид спорта</label>
-							<select class="admin-input admin-input-select block-admin-input">
-								<option value="Баскетбол">Баскетбол</option>
-								<option value="Волейбол">Волейбол</option>
-							</select>
-						</div>
-					</div>
-					<div class="block-admin-sector block-admin-container block-admin-section-item">
-						<div class="admin-input-box admin-input-wrap">
-							<label>Задержка сигнала</label>
-							<select class="admin-input admin-input-select block-admin-input">
-								<option value="">Минимальная (10-15 секунд)</option>
-								<option value="">Стандартная (20-25 секунд)</option>
-							</select>
-						</div>
-					</div>
-				</div>
-			</div>
-
-		</div>
-
-		<div class="block-admin-right">
-			<div class="preview-tournir-vis">
-				<img src="img/ivs4.png" alt="Заставка трансляции" title="Нет трансляции">
 			</div>
 		</div>
 		
+		<div class="admin-video-sort admin-back">
+			<div class="admin-video-sort-wrap">
+				<input class="admin-video-sort-check" id="admin-video-sort-check" type="checkbox">
+				<label class="admin-video-check-label" for="admin-video-sort-check">Выбрано 0 стримов</label>
+			</div>
+			<ul class="admin-video-sort-list">
+				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Публиковать</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn">Снять с публикации</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn">Удалить</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn">Добавить к продукту</button></li>
+			</ul>
+		</div>
+
+		<ul class="admin-video-list admin-video-sort">
+			<li class="admin-video-item admin-back">
+				<div class="admin-video-sort-wrap">
+					<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">
+					<label class="admin-video-check-label" for="admin-vl1"></label>
+				</div>
+				<div class="admin-video-prev">
+					<img src="img/rub2.png" alt="" class="admin-video-prev-stik">
+					<p>Нет потока</p>
+				</div>
+				<div class="admin-video-item-header">
+					<div class="admin-video-item-h-list">
+						<span class="admin-video-item-h-date">09.05.2024 Волейбол Кубок Феникса Ю11 Финал г. Псков</span>
+					</div>
+					<div class="admin-video-item-h-hashtag">
+						<span class="admin-video-hashtag-date">2023-2024</span>
+						<span class="admin-video-hashtag-kubok">Кубок Феникса</span>
+						<span class="admin-video-hashtag-group">Ю11</span>
+						<span class="admin-video-hashtag-sport">Волейбол</span>
+						<span class="admin-video-hashtag-city">Псков</span>
+						<span class="admin-video-hashtag-org">ЦРСП "ФЕНИКС"</span>
+					</div>
+				</div>
+				<div class="admin-video-item-view">
+					<p class="admin-video-item-v-count"><span>1342</span>просмотра</p>
+					<p class="admin-video-item-v-region">Все регионы</p>
+				</div>
+				<div class="admin-video-item-info admin-video-item-view">
+					<p class="admin-video-item-i-time">Закончилась в<span>15:19</span></p>
+					<p class="admin-video-item-i-date">09 мая 2024</p>
+					<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>
+				</div>
+			</li>
+			<li class="admin-video-item admin-back">
+				<div class="admin-video-sort-wrap">
+					<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">
+					<label class="admin-video-check-label" for="admin-vl1"></label>
+				</div>
+				<div class="admin-video-prev">
+					<img src="img/rub2.png" alt="" class="admin-video-prev-stik">
+					<p>Нет потока</p>
+				</div>
+				<div class="admin-video-item-header">
+					<div class="admin-video-item-h-list">
+						<span class="admin-video-item-h-date">10.05.2024</span>
+						<span class="admin-video-item-h-sport">Баскетбол</span>
+						<span class="admin-video-item-h-kubok_name">Кубок Феникса</span>
+						<span class="admin-video-item-h-group">Ю11</span>
+						<span class="admin-video-item-h-step">Финал</span>
+						<span class="admin-video-item-h-city">г. Вологда</span>
+					</div>
+					<div class="admin-video-item-h-hashtag">
+						<span class="admin-video-hashtag-date">2023-2024</span>
+						<span class="admin-video-hashtag-kubok">Кубок Феникса</span>
+						<span class="admin-video-hashtag-group">Ю11</span>
+						<span class="admin-video-hashtag-sport">ВБаскетбол</span>
+						<span class="admin-video-hashtag-city">Вологда</span>
+						<span class="admin-video-hashtag-org">ЦРСП "ФЕНИКС"</span>
+					</div>
+				</div>
+				<div class="admin-video-item-view">
+					<p class="admin-video-item-v-count"><span>1342</span>просмотра</p>
+					<p class="admin-video-item-v-region">Все регионы</p>
+				</div>
+				<div class="admin-video-item-info admin-video-item-view">
+					<p class="admin-video-item-i-time">Закончилась в<span>15:19</span></p>
+					<p class="admin-video-item-i-date">09 мая 2024</p>
+					<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>
+				</div>
+			</li>
+		</ul>
 	</div>	
 	</main>
 	<!----------------->
