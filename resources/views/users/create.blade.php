@@ -1,7 +1,6 @@
-@extends('layouts.app')
-
-
-@section('content')
+@extends('admin_panel')
+@section('title-block') Пользователи @endsection
+@section('admin_res')
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">

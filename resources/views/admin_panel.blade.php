@@ -33,7 +33,7 @@
 				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/analitik.png" alt="Промокоды">Промокоды</a></li>
 			</ul>
 			<ul class="admin-navigation-list admin-back">
-				<li class="admin-navigation-item"><a href="/users_admin" class="admin-navigation-link"><img class="admin-menu-icon" src="img/analitik.png" alt="Пользователи">Пользователи</a></li>
+				<li class="admin-navigation-item"><a href="{{ route('users.index') }}" class="admin-navigation-link"><img class="admin-menu-icon" src="img/analitik.png" alt="Пользователи">Пользователи</a></li>
 				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/analitik.png" alt="Виджеты">Виджеты</a></li>
 			</ul>
 		</nav>
