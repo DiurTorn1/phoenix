@@ -54,11 +54,7 @@
                     		<a href="#" class="exit-button">{{ $v->name }},</a>
                 		@endforeach
             		@endif
-					@if(!empty(getRoleNames()))
-                	@foreach(getRoleNames() as $v)
-                    	<label class="badge badge-success">{{ $v }}</label>
-                	@endforeach
-           	 		@endif
+					{{ Auth::user()->getRoleNames() }}
 					<div>
 					<a href="{{ route('logout') }}" class="exit-button" onclick="event.preventDefault(); document.getElementById('logout-form').submit();"><img src="img/shutdown.png" alt="Выход из панели">Выход</a>
 						<form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
