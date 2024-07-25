@@ -1,7 +1,7 @@
 @extends('admin_panel')
 @section('title-block') Пользователи @endsection
 @section('admin_res')
-
+$i = 0;
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
@@ -29,6 +29,7 @@
    <th>Roles</th>
    <th width="280px">Action</th>
  </tr>
+
  @foreach ( Auth::user() as $key )
   <tr>
     <td>{{ ++$i }}</td>
