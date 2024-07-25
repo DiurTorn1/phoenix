@@ -1,10 +1,6 @@
 @extends('layouts.app')
 @section('title-block') Кто ты, воин? @endsection
-@include('inc.banner')
-@include('inc.header')
 
-       
-@section('content')
 <!------------------ Окно Входа -------------------------->
 <div class="popup-back" id="popup-back">
         <form method="POST" action="" class="popup-container">
@@ -41,6 +37,12 @@
 
         </form>
 </div>
+@include('inc.banner')
+@include('inc.header')
+
+       
+@section('content')
+
 
 @endsection
 
