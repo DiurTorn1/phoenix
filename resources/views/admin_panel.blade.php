@@ -2,6 +2,14 @@
 @section('title-block') Панель админа-господина @endsection
 
 @section('content')
+<header class="header admin-header">
+		<div class="left-header">
+			<a href="/" class="close-btn" title="Закрыть" ><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
+			<h2 class="top-menu-title">Карточка стрима</h2>
+		</div>
+		<div class="right-heder">
+		</div>
+</header>
 <main class="admin-container">
 	<!-----------------------Меню админа------------------------------>
 	<div class="admin-menu">
@@ -33,7 +41,7 @@
 	<!----------------------------Админ-контент---------------------------------->
 	<div class="admin-content">
 
-		
+        @yield('admin_res')
 	</div>	
 	</main>
 	<!----------------->
