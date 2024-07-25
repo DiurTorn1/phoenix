@@ -28,11 +28,10 @@
    <th>Email</th>
    <th>Roles</th>
    <th width="280px">Action</th>
- </tr>
- $i = 1; 
+ </tr> 
  @foreach ( Auth::user() as $key )
   <tr>
-    <td>{{ ++$i }}</td>
+    <td>{{ Auth::user()->id }}</td>
     <td>{{ Auth::user()->name }}</td>
     <td>{{ Auth::user()->email }}</td>
     <td>
