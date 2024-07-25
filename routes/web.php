@@ -44,6 +44,7 @@ Route::get('/video', function () {
 
 Route::get('/create_stream', function () {
     return view('create_stream');
+});
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
