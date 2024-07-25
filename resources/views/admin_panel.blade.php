@@ -5,7 +5,7 @@
 <header class="header admin-header">
 		<div class="left-header">
 			<a href="/" class="close-btn" title="Закрыть" ><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
-			<h2 class="top-menu-title">Карточка стрима</h2>
+			<h2 class="top-menu-title">Панель админа-господина</h2>
 		</div>
 		<div class="right-heder">
 		</div>
