@@ -75,7 +75,7 @@
 		<div class="top-menu-admin admin-back">
 			<div class="top-menu-head">
 				<h2 class="top-menu-title">Стримы</h2>
-				<button class="top-menu-btn" onclick="event.preventDefault(); document.getElementById('create_stream').submit();">Создать стрим</button>
+				<button class="top-menu-btn" onclick="window.location.href = '/create_stream';">Создать стрим</button>
 			</div>
 			<div class="top-menu-sort">
 				<div class="admin-input-box">
