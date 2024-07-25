@@ -51,7 +51,9 @@
 					<a href="#" class="exit-button"><img src="img/user1.png" alt="Профиль">Профиль</a>
 					@if(!empty(Auth::user()->getRoleNames()))
                 	@foreach( Auth::user()->getRoleNames() as $v)
-                    	<a href="#" class="exit-button">{{ $v }}</a>
+						@if($v == "admin")
+                    		<a href="#" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Admin-Panel</a>
+						@endif
                 	@endforeach
            	 		@endif
 					<div>
