@@ -38,6 +38,10 @@ Route::get('/stream', function () {
     return view('stream');
 });
 
+Route::get('/video', function () {
+    return view('video');
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
