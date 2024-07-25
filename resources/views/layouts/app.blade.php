@@ -33,7 +33,7 @@
         <!--<script src="https://code.jquery.com/jquery-1.9.1.min.js"></script>  <link rel="stylesheet" href="{{ asset('css.css') }}">-->
 
 </head>
-<body>
+<body class="body-admin">
 
 @yield('content')
 
