@@ -3,8 +3,8 @@ $(document).ready(function() {
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
 
-        $.post('/php/kines.php', function(data)  {
+        //$.post('/php/kines.php', function(data)  {
             $('#res-video-text').text("HELLO!");
-        });
+        //});
     });
 });
