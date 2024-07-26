@@ -20,8 +20,10 @@ $data = curl_exec($ch);
 // get info about the request
 $info = curl_getinfo($ch);
 // close curl resource to free up system resources
+
+$result = json_decode(curl_exec($ch));
 curl_close($ch);
 
-echo $data;
+echo $result;
 
 ?>
