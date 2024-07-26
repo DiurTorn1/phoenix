@@ -18,11 +18,11 @@ $(document).ready(function() {
     $("#popup-close").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         $('#popup-back').toggle();
-    });top-menu-btn
+    });
 
-    //$("#top-menu-btn").on('click', function(){
-        //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
+    $("#view-video-btn").on('click', function(){
+        alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
         //alert("Button clicked!");
-    //});
+    });
 });

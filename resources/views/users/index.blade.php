@@ -1,16 +1,14 @@
 @extends('admin_panel')
 @section('title-block') Пользователи @endsection
 @section('admin_res')
-<div class="">
-    <div class="">
-        <div class="">
+<div class="admin-content">
+    <div class="top-menu-head admin-back">
+        <div class="top-menu-title">
             <h2>Список пользователей</h2>
         </div>
-        <div class="">
-            <a class="" href="{{ route('users.create') }}"> Добавить нового пользователя</a>
-        </div>
-        <div class="">
-            <a class="" href=""> Загрузить пользователей из EXEL</a>
+        <div class="right-heder">
+            <a class="top-menu-btn save-st" href="{{ route('users.create') }}"> Добавить нового пользователя</a>
+            <a class="top-menu-btn" href="#"> Загрузить пользователей из EXEL</a>
         </div>
     </div>
 </div>
@@ -23,8 +21,9 @@
 @endif
 
 
-<table class="">
- <tr>
+<table>
+<tbody class="tbody-wrapper">
+ <tr class="tr-wrapper admin-video-item admin-back">
    <th>ID</th>
    <th>Имя</th>
    <th>Почта</th>
@@ -32,7 +31,7 @@
    <th width="280px">Action</th>
  </tr>
  @foreach ($data as $key => $user)
-  <tr>
+  <tr class="tr-wrapper admin-video-item admin-back">
     <td>{{ ++$i }}</td>
     <td>{{ $user->name }}</td>
     <td>{{ $user->email }}</td>
@@ -43,15 +42,16 @@
         @endforeach
       @endif
     </td>
-    <td>
+    <td class="td-item-action">
        <a class="" href="{{ route('users.show',$user->id) }}">Показать карточку</a>
        <a class="" href="{{ route('users.edit',$user->id) }}">Редактировать</a>
         {!! Form::open(['method' => 'DELETE','route' => ['users.destroy', $user->id],'style'=>'display:inline']) !!}
-            {!! Form::submit('Удалить', ['class' => '']) !!}
+            {!! Form::submit('Удалить', ['class' => 'del-button']) !!}
         {!! Form::close() !!}
     </td>
   </tr>
  @endforeach
+</tbody>
 </table>
 
 

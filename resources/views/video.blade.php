@@ -71,8 +71,7 @@
 	</div>
 	<!----------------------------Админ-контент---------------------------------->
 	<div class="admin-content">
-
-        @yield('admin_res')
+		<button class="view-video-btn" id="view-video-btn">Показать видео</button>
 	</div>	
 	</main>
 	<!----------------->
