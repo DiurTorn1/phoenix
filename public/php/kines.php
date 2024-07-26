@@ -1,5 +1,5 @@
 <?php
-
+$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
 $token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 //setup the request, you can also use CURLOPT_URL
 $ch = curl_init('https://api.kinescope.io/v1/videos?page=1&per_page=100&order=created_at.desc,title.asc');
@@ -21,7 +21,7 @@ $data = curl_exec($ch);
 $info = curl_getinfo($ch);
 // close curl resource to free up system resources
 
-$result = json_decode(curl_exec($ch));
+$result = json_decode($json);
 curl_close($ch);
 
 echo $result;
