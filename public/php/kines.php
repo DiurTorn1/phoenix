@@ -24,7 +24,7 @@ curl_close($ch);
 
 $decoded_json = json_decode($data, true);
 
-echo $data;
-//echo $decoded_json->id;
+//echo $data;
+echo $decoded_json['data'];
 
 ?>
