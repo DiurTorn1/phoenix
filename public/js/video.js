@@ -1,6 +1,10 @@
 $(document).ready(function() {
     $("#view-video-btn").on('click', function(){
-        alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
+        //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
+
+        $.post('/php/kines.php', function(data)  {
+            $('#res-video-text').text("HELLO!");
+        });
     });
 });
