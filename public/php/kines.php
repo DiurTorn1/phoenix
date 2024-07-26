@@ -21,9 +21,9 @@ $data = curl_exec($ch);
 $info = curl_getinfo($ch);
 // close curl resource to free up system resources
 
-$result = json_decode($json);
+//$result = json_decode($json);
 curl_close($ch);
 
-echo $result;
+echo $data;
 
 ?>
