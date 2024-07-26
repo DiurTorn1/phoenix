@@ -24,7 +24,10 @@ curl_close($ch);
 
 $decoded_json = json_decode($data, true);
 
+$id = $decoded_json['data'];
 //echo $data;
-echo $decoded_json['data'];
+foreach($id as $ids) {
+    echo $id.' vid '.$id['id']'.';
+}
 
 ?>
