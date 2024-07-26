@@ -3,11 +3,11 @@
 $token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 //setup the request, you can also use CURLOPT_URL
 $ch = curl_init('https://api.kinescope.io/v1/videos');
-
+curl_setopt($ch, CURLOPT_POST, 1);
+curl_setopt($ch, CURLOPT_POSTFIELDS, "page=1&per_page=100&order=created_at.desc,title.asc&status[]=&folder_id=&project_id=&video_ids[]=&q=&without_folder=true");
 // Returns the data/output as a string instead of raw data
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 //curl_setopt($ch, CURLOPT_POSTFIELDS, "page=1&per_page=100&order=created_at.desc,title.asc&status[]=&folder_id=&project_id=&video_ids[]=&q=&without_folder=true");
-
 //Set your auth headers
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
    'Content-Type: application/json',
