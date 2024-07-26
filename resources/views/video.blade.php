@@ -73,7 +73,7 @@
 	<!----------------------------Админ-контент---------------------------------->
 	<div class="admin-content">
 		<button class="view-video-btn" id="view-video-btn">Показать видео</button>
-		<a class="res-video-text" id="res-video-text"></a>
+		<div class="res-video-text" id="res-video-text"></div>
 	</div>	
 	</main>
 	<!----------------->
