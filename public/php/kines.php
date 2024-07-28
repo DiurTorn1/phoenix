@@ -22,10 +22,12 @@ $info = curl_getinfo($ch);
 // close curl resource to free up system resources
 curl_close($ch);
 
-$decoded_json = json_decode($json, true);
+//$decoded_json = json_decode($json, true);
+var_dump(json_decode($json));           // Object
+var_dump(json_decode($json, true));     // Associative array
 
-$id = $decoded_json['data'];
-echo $decoded_json;
+//$id = $decoded_json['data'];
+echo $data;
 //foreach($id as $ids) {
     //echo $id.' vid '.$id['id']'.';
 //}
