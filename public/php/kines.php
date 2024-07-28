@@ -21,13 +21,13 @@ $data = curl_exec($ch);
 $info = curl_getinfo($ch);
 // close curl resource to free up system resources
 curl_close($ch);
-
-//$decoded_json = json_decode($json, true);
-var_dump(json_decode($data));           // Object
-var_dump(json_decode($data, true));     // Associative array
+json_decode($data)
+$decoded_json = json_decode($data, true);
+//var_dump(json_decode($data));           // Object
+//var_dump(json_decode($data, true));     // Associative array
 
 //$id = $decoded_json['data'];
-//echo $data;
+echo $decoded_json;
 //foreach($id as $ids) {
     //echo $id.' vid '.$id['id']'.';
 //}
