@@ -21,8 +21,8 @@ $data = curl_exec($ch);
 $info = curl_getinfo($ch);
 // close curl resource to free up system resources
 curl_close($ch);
-
-var_dump(json_decode($data, true));     // Associative array
+$decode = json_decode($data, true)
+var_dump($data['id']);     // Associative array
 
 //$id = $decoded_json['data'];
 //echo $data;
