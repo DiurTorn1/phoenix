@@ -22,9 +22,7 @@ $info = curl_getinfo($ch);
 // close curl resource to free up system resources
 curl_close($ch);
 
-//$decoded_json = json_decode($json, true);
-var_dump(json_decode($data)['id']);           // Object
-var_dump(json_decode($data, true)['id']);     // Associative array
+var_dump(json_decode($data, true));     // Associative array
 
 //$id = $decoded_json['data'];
 //echo $data;
