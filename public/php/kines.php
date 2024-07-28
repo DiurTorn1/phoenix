@@ -12,7 +12,7 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
    'Content-Type: application/json',
    'Authorization: Bearer ' . $token
-   ));
+));
 
 // get stringified data/output. See CURLOPT_RETURNTRANSFER
 $data = curl_exec($ch);
@@ -22,10 +22,10 @@ $info = curl_getinfo($ch);
 // close curl resource to free up system resources
 curl_close($ch);
 
-$decoded_json = json_decode($data, true);
+$decoded_json = json_decode($json, true);
 
 $id = $decoded_json['data'];
-echo $data;
+echo $decoded_json;
 //foreach($id as $ids) {
     //echo $id.' vid '.$id['id']'.';
 //}
