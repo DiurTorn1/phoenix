@@ -21,16 +21,16 @@ $data = curl_exec($ch);
 $info = curl_getinfo($ch);
 // close curl resource to free up system resources
 curl_close($ch);
+var_dump(json_decode($data, true));     // Associative array
+//$jsonIterator = new RecursiveIteratorIterator(
+//    new RecursiveArrayIterator(json_decode($data, TRUE)),
+//    RecursiveIteratorIterator::SELF_FIRST);
 
-$jsonIterator = new RecursiveIteratorIterator(
-    new RecursiveArrayIterator(json_decode($data, TRUE)),
-    RecursiveIteratorIterator::SELF_FIRST);
-
-foreach ($jsonIterator as $key => $val) {
-    if(!is_array($val)) {
-    echo $val;
-    }
-}
+//foreach ($jsonIterator as $key => $val) {
+//    if(!is_array($val)) {
+//    echo $val;
+//    }
+//}
 //$decode = json_decode($data, true)
 //var_dump($data['id']);     // Associative array
 
