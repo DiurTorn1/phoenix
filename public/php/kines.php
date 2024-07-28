@@ -23,9 +23,8 @@ $info = curl_getinfo($ch);
 curl_close($ch);
 
 //$decoded_json = json_decode($json, true);
-//var_dump(json_decode($data));           // Object
-//var_dump(json_decode($data, true));     // Associative array
-return response()->json(json_decode($result));
+var_dump(json_decode($data)['id']);           // Object
+var_dump(json_decode($data, true)['id']);     // Associative array
 
 //$id = $decoded_json['data'];
 //echo $data;
