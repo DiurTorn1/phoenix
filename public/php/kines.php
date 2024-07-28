@@ -28,10 +28,7 @@ $jsonIterator = new RecursiveIteratorIterator(
 
 foreach ($jsonIterator as $key => $val) {
     if(!is_array($val)) {
-        if($key == "id") {
-            print "<br/>";
-        }
-    echo $key."    : ".$val . "<br/>";
+    echo $val;
     }
 }
 //$decode = json_decode($data, true)
