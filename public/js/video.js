@@ -4,7 +4,7 @@ $(document).ready(function() {
         //$('#popup-back').toggle();
 
         $.post('/php/kines.php', function(data)  {
-            console.log(data);
+            //console.log(data);
             $('#res-video-text').text(data);
         });
     });
