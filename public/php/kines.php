@@ -28,33 +28,31 @@ $jsonIterator = new RecursiveIteratorIterator(
 
 foreach ($jsonIterator as $key => $val) {
     if(!is_array($val)) {
-        if($key=="id"){
-            $id[$u] = $val;
-        }else if($key =="title"){
-            $title[$u] = $val;
-        } else if("file_size"){
-            $fie_size[$u] = $val;
-        } else if("create_at"){
-            $create_at[$u] = $val;
-        } else if("url"){
-            $url[$u] = $val;
-        } else if("download_link"){
-            $download_link[$u] = $val;
-        } 
+        //if($key=="id"){
+            //$id[$u] = $val;
+        //}else if($key =="title"){
+            //$title[$u] = $val;
+        //} else if("file_size"){
+            //$fie_size[$u] = $val;
+        //} else if("create_at"){
+            //$create_at[$u] = $val;
+        //} else if("url"){
+            //$url[$u] = $val;
+        //} else if("download_link"){
+            //$download_link[$u] = $val;
+        //} 
+        $id[$u] = $key;
+        $dura[$u] = $val;
     //echo "ID:" .$id . "   ,Title: " .$title ."  ,File size: " .$file_size . "   ,Create AT: " .$create_at . "   , URL: " .$url . "    ,Downloa Link: " .$download_link . "................";
     ++$u;
 
-    echo $key."    : ".$val . "</br>";
+    //echo $key.": ".$val . "    ";
     }
 }
 
 //$decode = json_decode($data, true)
 var_dump($id);     // Associative array
-var_dump($title);     // Associative array
-var_dump($file_size);     // Associative array
-var_dump($create_at);     // Associative array
-var_dump($url);     // Associative array
-var_dump($download_link);     // Associative array
+var_dump($dura);     // Associative array
 
 //for($i = 1; $i < $u; $i++){
   //echo "ID:" .$id[$i] . "   ,Title: " .$title[$i] ."  ,File size: " .$file_size[$i] . "   ,Create AT: " .$create_at[$i] . "   , URL: " .$url[$i] . "    ,Downloa Link: " .$download_link[$i] . "................";
