@@ -42,7 +42,7 @@ foreach ($jsonIterator as $key => $val) {
         //    $download_link = $val;
        // } 
     //echo "ID:" .$id . "   ,Title: " .$title ."  ,File size: " .$file_size . "   ,Create AT: " .$create_at . "   , URL: " .$url . "    ,Downloa Link: " .$download_link . "................";
-    print $key."    : ".$val . "............";
+    echo $key."    : ".$val . "............";
     }
 }
 
