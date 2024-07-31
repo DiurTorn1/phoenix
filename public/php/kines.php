@@ -33,11 +33,11 @@ foreach ($jsonIterator as $key => $val) {
         //}else if($key =="title"){
           //  $title = $val;
         //} else if("file_size"){
-            $fie_size = $val;
+            //$fie_size = $val;
         //} else if("create_at"){
           //  $create_at = $val;
         //} else if("url"){
-            $url = $val;
+            //$url = $val;
         //} else if("download_link"){
         //    $download_link = $val;
        // } 
