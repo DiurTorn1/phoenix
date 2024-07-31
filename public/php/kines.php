@@ -43,6 +43,9 @@ foreach ($jsonIterator as $key => $val) {
         } 
     //echo "ID:" .$id . "   ,Title: " .$title ."  ,File size: " .$file_size . "   ,Create AT: " .$create_at . "   , URL: " .$url . "    ,Downloa Link: " .$download_link . "................";
     ++$u;
+    for($i = 1; $i < $u; $i++){
+      echo "ID:" .$id[$i] . "   ,Title: " .$title[$i] ."  ,File size: " .$file_size[$i] . "   ,Create AT: " .$create_at[$i] . "   , URL: " .$url[$i] . "    ,Downloa Link: " .$download_link[$i] . "................";
+    }
     //echo $key."    : ".$val . "</br>";
     }
 }
