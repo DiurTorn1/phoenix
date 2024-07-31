@@ -43,12 +43,12 @@ foreach ($jsonIterator as $key => $val) {
         } 
     //echo "ID:" .$id . "   ,Title: " .$title ."  ,File size: " .$file_size . "   ,Create AT: " .$create_at . "   , URL: " .$url . "    ,Downloa Link: " .$download_link . "................";
     ++$u;
-    echo $key."    : ".$val . "</br>";
+    //echo $key."    : ".$val . "</br>";
     }
 }
 
 //$decode = json_decode($data, true)
-//var_dump($data['id']);     // Associative array
+var_dump($id);     // Associative array
 
 //$id = $decoded_json['data'];
 //echo $data;
