@@ -28,23 +28,22 @@ $jsonIterator = new RecursiveIteratorIterator(
 
 foreach ($jsonIterator as $key => $val) {
     if(!is_array($val)) {
-        if($key=="id"){
-            $id = $val;
-        }else if($key =="title"){
-            $title = $val;
-        } else if("file_size"){
-            $fie_size = $val;
-        } else if("create_at"){
-            $create_at = $val;
-        } else if("url"){
-            $url = $val;
-        } else if("download_link"){
-            $download_link = $val;
-        } 
+        //if($key=="id"){
+          //  $id = $val;
+        //}else if($key =="title"){
+          //  $title = $val;
+        //} else if("file_size"){
+            //$fie_size = $val;
+        //} else if("create_at"){
+          //  $create_at = $val;
+        //} else if("url"){
+            //$url = $val;
+        //} else if("download_link"){
+        //    $download_link = $val;
+       // } 
     //echo "ID:" .$id . "   ,Title: " .$title ."  ,File size: " .$file_size . "   ,Create AT: " .$create_at . "   , URL: " .$url . "    ,Downloa Link: " .$download_link . "................";
-    //echo $key."    : ".$val . "............";
+    echo $key."    : ".$val . "</br>";
     }
-    echo "ID:" .$id . "   ,Title: " .$title ."  ,File size: " .$file_size . "   ,Create AT: " .$create_at . "   , URL: " .$url . "    ,Downloa Link: " .$download_link . "................";
 }
 
 //$decode = json_decode($data, true)
