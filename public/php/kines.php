@@ -51,8 +51,11 @@ foreach ($jsonIterator as $key => $val) {
 }
 
 //$decode = json_decode($data, true)
-var_dump($id);     // Associative array
-var_dump($dura);     // Associative array
+for($i = 0; $i < $u; $i++){
+    echo $id[$i]. ": ".$dura;
+}
+//var_dump($id);     // Associative array
+//var_dump($dura);     // Associative array
 
 //for($i = 1; $i < $u; $i++){
   //echo "ID:" .$id[$i] . "   ,Title: " .$title[$i] ."  ,File size: " .$file_size[$i] . "   ,Create AT: " .$create_at[$i] . "   , URL: " .$url[$i] . "    ,Downloa Link: " .$download_link[$i] . "................";
