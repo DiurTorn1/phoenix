@@ -53,23 +53,33 @@ foreach ($jsonIterator as $key => $val) {
 //$decode = json_decode($data, true)
 for($i = 0; $i < $u; $i++){
         if($id[$i]=="id"){
-            //$id[$u] = $val;
-            echo "    ID: ".$dura[$i];
+            $id_a[$a_i] = $dura[$i];
+            //echo "    ID: ".$dura[$i];
+            ++$a_i;
         }else if($id[$i] =="title"){
-            //$title[$u] = $val;
-            echo "    title: ".$dura[$i];
+            $title[$t_i] = $dura[$i];
+            //echo "    title: ".$dura[$i];
+            ++$t_i;
         } else if($id[$i] =="file_size"){
+            $size[$s_i] = $dura[$i];
             //$fie_size[$u] = $val;
-            echo "    file_size: ".$dura[$i];
+            //echo "    file_size: ".$dura[$i];
+            ++$s_i;
         } else if($id[$i] =="create_at"){
+            $create[$c_i] = $dura[$i];
+            ++$c_i;
             //$create_at[$u] = $val;
-            echo "    create_at: ".$dura[$i];
+            //echo "    create_at: ".$dura[$i];
         } else if($id[$i] =="url"){
+            $url[$u_i] = $dura[$i];
             //$url[$u] = $val;
-            echo "    url: ".$dura[$i];
+            //echo "    url: ".$dura[$i];
+            ++$u_i;
         } else if($id[$i] =="download_link"){
+            $down[$d_i] = $dura[$i];
+            ++$d_i;
             //$download_link[$u] = $val;
-            echo "    download_link: ".$dura[$i];
+            //echo "    download_link: ".$dura[$i];
         } 
     //echo $id[$i]. ": ".$dura[$i];
 }
@@ -84,5 +94,7 @@ for($i = 0; $i < $u; $i++){
 //foreach($id as $ids) {
     //echo $id.' vid '.$id['id']'.';
 //}
+
+echo "ID: " .$a_i.  ", Title: " .$t_i. ", Size file: " .$s_i. ", Create at: " .$c_i. " ,URL: " .$u_i. " ,Download link:" .$d_i. ".";
 
 ?>
