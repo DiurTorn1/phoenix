@@ -7,13 +7,13 @@ $(document).ready(function() {
             //console.log(data);
             //$('#res-video-text').text(data);
             //var jsondata = data;
-            //$.each(jsondata.data, function(k, lic) {
+            $.each(jsondata.data, function(k, lic) {
                 //var components = lic.component.length ? lic.component : [lic.component];
                 //$.each(components, function(i, comp) {
                     //comp.name + comp.url + comp.url + lic.licensetext;
                 //});
-                //$('#res-video-text').text(lic.id);
-            //});
+                $('#res-video-text').text(lic.id);
+            });
         });
     });
 });
