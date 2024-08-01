@@ -52,7 +52,7 @@ foreach ($jsonIterator as $key => $val) {
 
 //$decode = json_decode($data, true)
 for($i = 0; $i < $u; $i++){
-    echo $id[$i]. ": ".$dura;
+    echo $id[$i]. ": ".$dura[$i];
 }
 //var_dump($id);     // Associative array
 //var_dump($dura);     // Associative array
