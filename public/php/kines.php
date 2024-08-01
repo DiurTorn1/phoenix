@@ -94,12 +94,12 @@ for($i = 0; $i < $u; $i++){
 //foreach($id as $ids) {
     //echo $id.' vid '.$id['id']'.';
 //}
-echo $id_a; 
-echo $title; 
-echo $size; 
-echo $create; 
-echo $url; 
-echo $down;
+echo var_dump($id_a); 
+echo var_dump($title); 
+echo var_dump($size); 
+echo var_dump($create); 
+echo var_dump($url); 
+echo var_dump($down);
 //echo "ID: " .$a_i.  ", Title: " .$t_i. ", Size file: " .$s_i. ", Create at: " .$c_i. " ,URL: " .$u_i. " ,Download link:" .$d_i. ".";
 
 ?>
