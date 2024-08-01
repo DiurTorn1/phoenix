@@ -52,7 +52,21 @@ foreach ($jsonIterator as $key => $val) {
 
 //$decode = json_decode($data, true)
 for($i = 0; $i < $u; $i++){
-    echo $id[$i]. ": ".$dura[$i];
+        if($id[$i]=="id"){
+            //$id[$u] = $val;
+            echo "    ID: ".$dura[$i];
+        }else if($id[$i] =="title"){
+            //$title[$u] = $val;
+        }/* else if($id[$i] =="file_size"){
+            //$fie_size[$u] = $val;
+        } else if($id[$i] =="create_at"){
+            //$create_at[$u] = $val;
+        } else if($id[$i] =="url"){
+            //$url[$u] = $val;
+        } else if($id[$i] =="download_link"){
+            //$download_link[$u] = $val;
+        } */
+    //echo $id[$i]. ": ".$dura[$i];
 }
 //var_dump($id);     // Associative array
 //var_dump($dura);     // Associative array
