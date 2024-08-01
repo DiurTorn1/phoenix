@@ -6,14 +6,20 @@ $(document).ready(function() {
         $.post('/php/kines.php', function(data)  {
             console.log(data);
             //$('#res-video-text').text(data);
-            $.each(data, function(k, lic) {
+            for (i=0;i<data.length;i++){
+                $('#res-video-text').text(data.data);
+                // prints
+                // "Failure (error): Unsuccessful. Please try again"
+                // "Information Message (info): A basic informational message - Please be aware"
+            }
+           // $.each(data.meta, function(k, lic) {
                 //var components = lic.component.length ? lic.component : [lic.component];
                 //$.each(components, function(i, comp) {
                     //comp.name + comp.url + comp.url + lic.licensetext;
                 //});
-                $('#res-video-text').text(lic.data);
+                //$('#res-video-text').text(lic[k]);
                 //console.log(lic);
-            });
+            //});
         });
     });
 });
