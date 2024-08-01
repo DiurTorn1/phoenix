@@ -21,8 +21,10 @@ $data = curl_exec($ch);
 $info = curl_getinfo($ch);
 // close curl resource to free up system resources
 curl_close($ch);
+
+echo var_dump($data);
 //var_dump(json_decode($data, true));     // Associative array
-$jsonIterator = new RecursiveIteratorIterator(
+/*$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($data, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
 
@@ -82,7 +84,7 @@ for($i = 0; $i < $u; $i++){
             //echo "    download_link: ".$dura[$i];
         } 
     //echo $id[$i]. ": ".$dura[$i];
-}
+}*/
 //var_dump($id);     // Associative array
 //var_dump($dura);     // Associative array
 
@@ -94,7 +96,7 @@ for($i = 0; $i < $u; $i++){
 //foreach($id as $ids) {
     //echo $id.' vid '.$id['id']'.';
 //}
-echo var_dump($id_a). var_dump($title).var_dump($size) . var_dump($create) . var_dump($url) . var_dump($down);
+//echo $id_a . $title . $size . $create . $url . $down;
 //echo "ID: " .$a_i.  ", Title: " .$t_i. ", Size file: " .$s_i. ", Create at: " .$c_i. " ,URL: " .$u_i. " ,Download link:" .$d_i. ".";
 
 ?>
