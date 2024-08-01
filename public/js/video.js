@@ -12,7 +12,7 @@ $(document).ready(function() {
                 //$.each(components, function(i, comp) {
                     //comp.name + comp.url + comp.url + lic.licensetext;
                 //});
-                $('#res-video-text').text(lic.id);
+                //$('#res-video-text').text(lic.id);
             });
         });
     });
