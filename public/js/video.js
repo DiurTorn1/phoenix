@@ -5,13 +5,7 @@ $(document).ready(function() {
 
         $.post('/php/kines.php', function(data)  {
             //console.log(data);
-            var id = data.id;
-            var dura = data.dura;
-        
-            $.each(id, function(k,v){
-                $('#res-video-text').text(v.id+' '+dura[k].dura); // 1 2
-            });
-            //$('#res-video-text').text(data);
+            $('#res-video-text').text(data);
         });
     });
 });

@@ -50,9 +50,8 @@ foreach ($jsonIterator as $key => $val) {
     }
 }
 
-echo $id . $dura;
 //$decode = json_decode($data, true)
-/*($i = 0; $i < $u; $i++){
+for($i = 0; $i < $u; $i++){
         if($id[$i]=="id"){
             $id_a[$a_i] = $dura[$i];
             //echo "    ID: ".$dura[$i];
@@ -95,12 +94,7 @@ echo $id . $dura;
 //foreach($id as $ids) {
     //echo $id.' vid '.$id['id']'.';
 //}
-echo var_dump($id_a); 
-echo var_dump($title); 
-echo var_dump($size); 
-echo var_dump($create); 
-echo var_dump($url); 
-echo var_dump($down);
+echo var_dump($id_a). var_dump($title).var_dump($size) . var_dump($create) . var_dump($url) . var_dump($down);
 //echo "ID: " .$a_i.  ", Title: " .$t_i. ", Size file: " .$s_i. ", Create at: " .$c_i. " ,URL: " .$u_i. " ,Download link:" .$d_i. ".";
 
-?>*/
+?>
