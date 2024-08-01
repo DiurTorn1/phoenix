@@ -5,7 +5,7 @@ $(document).ready(function() {
 
         $.post('/php/kines.php', function(data)  {
             console.log(data);
-            var k = eval( data );
+            //var k = eval( data );
             //var result = [];k[0].details[0].v
             //$('#res-video-text').text(k[0].data[0].id);
 
