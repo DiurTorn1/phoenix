@@ -11,7 +11,8 @@ $(document).ready(function() {
                 //$.each(components, function(i, comp) {
                     //comp.name + comp.url + comp.url + lic.licensetext;
                 //});
-                $('#res-video-text').text(lic);
+                $('#res-video-text').text(lic[k]);
+                console.log(lic);
             });
         });
     });
