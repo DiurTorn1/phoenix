@@ -6,7 +6,7 @@ $(document).ready(function() {
         $.post('/php/kines.php', function(data)  {
             //console.log(data);
             //$('#res-video-text').text(data);
-            //var jsondata = data;
+            var jsondata = data;
             $.each(jsondata.data, function(k, lic) {
                 //var components = lic.component.length ? lic.component : [lic.component];
                 //$.each(components, function(i, comp) {
