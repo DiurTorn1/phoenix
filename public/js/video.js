@@ -5,21 +5,18 @@ $(document).ready(function() {
 
         $.post('/php/kines.php', function(data)  {
             console.log(data);
-            //$('#res-video-text').text(data);
-            for (i=0;i<data.length;i++){
-                $('#res-video-text').text(data.data);
-                // prints
-                // "Failure (error): Unsuccessful. Please try again"
-                // "Information Message (info): A basic informational message - Please be aware"
-            }
-           // $.each(data.meta, function(k, lic) {
-                //var components = lic.component.length ? lic.component : [lic.component];
-                //$.each(components, function(i, comp) {
-                    //comp.name + comp.url + comp.url + lic.licensetext;
-                //});
-                //$('#res-video-text').text(lic[k]);
-                //console.log(lic);
-            //});
+            var result = [];
+
+            $(data).each(function (i, element) {
+                //result.push(element.attr.id);
+                $('#res-video-text').text(element.data.id);
+        
+                //if (element.children && element.children.length > 0) {
+                    //var ids = get_all_ids(element.children);
+        
+                    //result = result.concat(ids); // or $.merge(result, ids);
+               // }
+            });
         });
     });
 });
