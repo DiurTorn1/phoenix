@@ -94,7 +94,7 @@ for($i = 0; $i < $u; $i++){
 //foreach($id as $ids) {
     //echo $id.' vid '.$id['id']'.';
 //}
-
-echo "ID: " .$a_i.  ", Title: " .$t_i. ", Size file: " .$s_i. ", Create at: " .$c_i. " ,URL: " .$u_i. " ,Download link:" .$d_i. ".";
+echo $id_a. .$title. .$size. .$create. .$url. .$down ;
+//echo "ID: " .$a_i.  ", Title: " .$t_i. ", Size file: " .$s_i. ", Create at: " .$c_i. " ,URL: " .$u_i. " ,Download link:" .$d_i. ".";
 
 ?>
