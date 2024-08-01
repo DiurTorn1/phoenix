@@ -6,12 +6,12 @@ $(document).ready(function() {
         $.post('/php/kines.php', function(data)  {
             console.log(data);
             //$('#res-video-text').text(data);
-            $.each(data.meta, function(k, lic) {
+            $.each(data, function(msg) {
                 //var components = lic.component.length ? lic.component : [lic.component];
                 //$.each(components, function(i, comp) {
                     //comp.name + comp.url + comp.url + lic.licensetext;
                 //});
-                $('#res-video-text').text(lic[k]);
+                $('#res-video-text').text(msg.data);
                 //console.log(lic);
             });
         });
