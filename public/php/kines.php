@@ -57,15 +57,20 @@ for($i = 0; $i < $u; $i++){
             echo "    ID: ".$dura[$i];
         }else if($id[$i] =="title"){
             //$title[$u] = $val;
-        }/* else if($id[$i] =="file_size"){
+            echo "    title: ".$dura[$i];
+        } else if($id[$i] =="file_size"){
             //$fie_size[$u] = $val;
+            echo "    file_size: ".$dura[$i];
         } else if($id[$i] =="create_at"){
             //$create_at[$u] = $val;
+            echo "    create_at: ".$dura[$i];
         } else if($id[$i] =="url"){
             //$url[$u] = $val;
+            echo "    url: ".$dura[$i];
         } else if($id[$i] =="download_link"){
             //$download_link[$u] = $val;
-        } */
+            echo "    download_link: ".$dura[$i];
+        } 
     //echo $id[$i]. ": ".$dura[$i];
 }
 //var_dump($id);     // Associative array
