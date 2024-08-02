@@ -22,7 +22,11 @@ $info = curl_getinfo($ch);
 // close curl resource to free up system resources
 curl_close($ch);
 
-echo $data;
+//echo $data;
+
+$json_post = json_decode(utf8_decode($data), true);
+$id = $json_post['data'];
+echo $id;
 //var_dump(json_decode($data, true));     // Associative array
 /*$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($data, TRUE)),
