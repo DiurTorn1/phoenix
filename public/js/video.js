@@ -14,7 +14,7 @@ $(document).ready(function() {
                     + "\r\nStatus: " + item.status + "\r\nProgress:" +item.progress + "\r\nDuration:" + item.duration + "\r\nAssets:\r\n"); 
                     $.each(item.assets,function(k,ass){
                         console.log("ID:"+ ass.id);
-                    }
+                    });
                     /*"assets": [ { "id": "c1f45937-bf14-46d6-9ef3-9691ca380a6d", 
 			"video_id": "94c87ffb-ce3c-4685-8016-fbbd284b05d5", 
 			"original_name": "original", 
