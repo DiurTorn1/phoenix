@@ -4,8 +4,14 @@ $(document).ready(function() {
         //$('#popup-back').toggle();
 
         $.post('/php/kines.php', function(data)  {
-            console.log(data);
-            $('#res-video-text').text(data);
+            var output = $.parseJSON(data);
+            var list = output.data;
+
+            $.each(list,function(i,item){
+                console.log(item.id);
+            });
+            //console.log(data);
+            //$('#res-video-text').text(data);
             //var k = eval( data );
             //var result = [];k[0].details[0].v
             //$('#res-video-text').text(k[0].data[0].id);
