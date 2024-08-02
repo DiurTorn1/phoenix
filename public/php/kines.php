@@ -15,7 +15,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 ));
 
 // get stringified data/output. See CURLOPT_RETURNTRANSFER
-$data = curl_exec($ch);
+$data_m = curl_exec($ch);
 
 // get info about the request
 $info = curl_getinfo($ch);
@@ -24,9 +24,9 @@ curl_close($ch);
 
 //echo $data;
 
-$json_post = json_decode(utf8_decode($data), true);
-$id = $json_post['data']['id'];
-echo $id;
+$json_post = json_decode($data, true);
+$idd = $json_post->$data->$id;
+echo $idd;
 //var_dump(json_decode($data, true));     // Associative array
 /*$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($data, TRUE)),
