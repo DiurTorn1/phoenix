@@ -8,15 +8,10 @@ $(document).ready(function() {
             var list = output.data;
 
             $.each(list,function(i,item){
-                console.log("ID:" + item.id + "\r\n ,Project_ID:" + item.project_id + "\r\n , Folder_ID: " 
-                    + item.folder_id + "\r\n, Player_ID:" + item.player_id);  
-                //conole.log(item.version);  
-                //console.log(item.title); 
-                //console.log(item.subtitle); 
-                //console.log(item.description); 
-                //console.log(item.status);
-                //console.log(item.progress);  
-                //console.log(item.duration); 
+                console.log("ID:" + item.id + "\r\nProject_ID:" + item.project_id + "\r\nFolder_ID: " 
+                    + item.folder_id + "\r\nPlayer_ID:" + item.player_id + "\r\nVersion:" + item.version
+                    + "\r\nTitle: " + item.title + "\r\nSubtitle" + item.subtitle + "\r\nDescriptor: " + item.description
+                    + "\r\nStatus: " + item.status + "\r\nProgress:" +item.progress + "\r\nDuration:" + item.duration); 
             });
             //console.log(data);
             //$('#res-video-text').text(data);
