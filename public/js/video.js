@@ -8,9 +8,8 @@ $(document).ready(function() {
             var list = output.data;
 
             $.each(list,function(i,item){
-                console.log(item.id + item.project_id); 
-                //console.log(item.folder_id);  
-                //console.log(item.player_id);  
+                console.log("ID:" + item.id + "\r\n ,Project_ID:" + item.project_id + "\r\n , Folder_ID: " 
+                    + item.folder_id + "\r\n, Player_ID:" + item.player_id);  
                 //conole.log(item.version);  
                 //console.log(item.title); 
                 //console.log(item.subtitle); 
