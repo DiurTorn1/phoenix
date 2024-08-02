@@ -8,17 +8,16 @@ $(document).ready(function() {
             var list = output.data;
 
             $.each(list,function(i,item){
-                console.log(item.id);
-                console.log(item.project_id); 
-                console.log(item.folder_id);  
-                console.log(item.player_id);  
-                conole.log(item.version);  
-                console.log(item.title); 
-                console.log(item.subtitle); 
-                console.log(item.description); 
-                console.log(item.status);
-                console.log(item.progress);  
-                console.log(item.duration); 
+                console.log(item.id + item.project_id); 
+                //console.log(item.folder_id);  
+                //console.log(item.player_id);  
+                //conole.log(item.version);  
+                //console.log(item.title); 
+                //console.log(item.subtitle); 
+                //console.log(item.description); 
+                //console.log(item.status);
+                //console.log(item.progress);  
+                //console.log(item.duration); 
             });
             //console.log(data);
             //$('#res-video-text').text(data);
