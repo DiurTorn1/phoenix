@@ -25,7 +25,7 @@ curl_close($ch);
 //echo $data;
 
 $json_post = json_decode(utf8_decode($data), true);
-$id = $json_post['data'];
+$id = $json_post['data']['id'];
 echo $id;
 //var_dump(json_decode($data, true));     // Associative array
 /*$jsonIterator = new RecursiveIteratorIterator(
