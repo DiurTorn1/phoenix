@@ -24,19 +24,16 @@ curl_close($ch);
 
 //echo $data;
 
-$json_post = json_decode($data, true);
-$idd = $json_post->$data->$id;
-echo $idd;
 //var_dump(json_decode($data, true));     // Associative array
-/*$jsonIterator = new RecursiveIteratorIterator(
+$jsonIterator = new RecursiveIteratorIterator(
     new RecursiveArrayIterator(json_decode($data, TRUE)),
     RecursiveIteratorIterator::SELF_FIRST);
 
 foreach ($jsonIterator as $key => $val) {
     if(!is_array($val)) {
-        //if($key=="id"){
-            //$id[$u] = $val;
-        //}else if($key =="title"){
+        if($key=="data"){
+            echo $val;
+        }//else if($key =="title"){
             //$title[$u] = $val;
         //} else if("file_size"){
             //$fie_size[$u] = $val;
@@ -47,17 +44,17 @@ foreach ($jsonIterator as $key => $val) {
         //} else if("download_link"){
             //$download_link[$u] = $val;
         //} 
-        $id[$u] = $key;
-        $dura[$u] = $val;
+        //$id[$u] = $key;
+        //$dura[$u] = $val;
     //echo "ID:" .$id . "   ,Title: " .$title ."  ,File size: " .$file_size . "   ,Create AT: " .$create_at . "   , URL: " .$url . "    ,Downloa Link: " .$download_link . "................";
-    ++$u;
+    //++$u;
 
     //echo $key.": ".$val . "    ";
     }
 }
 
 //$decode = json_decode($data, true)
-for($i = 0; $i < $u; $i++){
+/*for($i = 0; $i < $u; $i++){
         if($id[$i]=="id"){
             $id_a[$a_i] = $dura[$i];
             //echo "    ID: ".$dura[$i];
