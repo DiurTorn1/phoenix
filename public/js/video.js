@@ -24,7 +24,7 @@ $(document).ready(function() {
                             + "\r\nresolution:" + ass.resolution + "\r\ncreated_at:" + ass.created_at + "\r\nurl:" + ass.url + "\r\ndownload_link:" + ass.download_link
                         );
                     });
-                    /*$.each(item.chapters,function(c,chap){
+                    $.each(item.chapters,function(c,chap){
                         console.log("\r\nchapters:\r\n" + "\r\nitems:" + chap.items + "\r\nenabled:" + chap.enabled
                             + "\r\nprivacy_type:" + chap.privacy_type + "\r\nprivacy_domains:" + chap.privacy_domains
                             + "\r\nprivacy_share:" + chap.privacy_share + "\r\ntags:" + chap.tags
@@ -35,7 +35,7 @@ $(document).ready(function() {
                                 + "\r\nmd:" + post.md + "\r\nsm:" + post.sm + "\r\nxs:" + post.xs + "\r\nfrom_time:" + post.from_time + "\r\nto_time:" + post.to_time
                             );
                         });
-                    });*/
+                    });
 
                     /*console.log("\r\n----------------------------\r\n");
                     console.log("\r\nadditional_materials:" + chap.additional_materials + "\r\nadditional_materials_enabled:" + chap.additional_materials_enabled + "\r\nplay_link:" + chap.play_link
