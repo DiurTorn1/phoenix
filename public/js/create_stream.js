@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#save-st").on('click', function(){
-        var main = $('#admin-input-main');
+        var main = $('#admin-input-main').val();
         //var month = label.val('month');
         //var year = label.val('year');
         //var text = label.text();
