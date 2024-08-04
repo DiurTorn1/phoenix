@@ -26,6 +26,10 @@ $(document).ready(function() {
                     });
                     $.each(item.chapters,function(c,chap){
                         console.log("\r\nchapters:\r\n" + "\r\nitems:" + chap.items + "\r\nenabled:" + chap.enabled);/*
+                        
+                            + "\r\nprivacy_type:" + chap.privacy_type + "\r\nprivacy_domains:" + chap.privacy_domains
+                            + "\r\nprivacy_share:" + chap.privacy_share + "\r\ntags:" + chap.tags
+                         
                          $each(chap.poster, function(p, post){
                             console.log("\r\nPoster:\r\nid:" + post.id + "\r\ntype:" + post.type + "\r\nmedia_id:" + post.media_id
                                 + "\r\nstatus:" + post.status + "\r\nactive:" + post.active + " \r\noriginal:" + post.original
