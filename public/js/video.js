@@ -38,12 +38,15 @@ $(document).ready(function() {
                             + "\r\nstatus:" + item.poster.status + "\r\nactive:" + item.poster.active + " \r\noriginal:" + item.poster.original
                             + "\r\nmd:" + item.poster.md + "\r\nsm:" + item.poster.sm + "\r\nxs:" + item.poster.xs + "\r\nfrom_time:" + item.poster.from_time + "\r\nto_time:" + item.poster.to_time
                     );
-                    //});
-                    /*console.log("\r\n----------------------------\r\n");
-                    console.log("\r\nadditional_materials:" + chap.additional_materials + "\r\nadditional_materials_enabled:" + chap.additional_materials_enabled + "\r\nplay_link:" + chap.play_link
-                        + "\r\nembed_link:" + chap.embed_link + "\r\ncreated_at:" + chap.created_at + "\r\nupdated_at:" + chap.updated_at + "\r\nsubtitles:" + chap.subtitles + "\r\nsubtitles_enabled:" + chap.subtitles_enabled + "\r\n"
-                    );
-                console.log("\n\rhls_link:" + item.hls_link);*/
+
+                    console.log("\r\nadditional_materials_enabled:" + item.additional_materials_enabled);
+                    console.log("\r\nplay_link:" + item.play_link);
+                    console.log("\r\nembed_link:" + item.embed_link);
+                    console.log("\r\ncreated_at:" + item.created_at);
+                    console.log("\r\nupdated_at:" + item.updated_at);
+                    console.log("\r\nsubtitles:" + item.subtitles);
+                    console.log("\r\nsubtitles_enabled:" + item.subtitles_enabled);
+                    console.log("\r\nshls_link:" + item.hls_link);
             });
             
         });
