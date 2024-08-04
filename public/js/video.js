@@ -4,7 +4,7 @@ $(document).ready(function() {
         //$('#popup-back').toggle();
 
         $.post('/php/kines.php', function(data)  {
-
+            $('#res-video-text').text(data);
             var output = $.parseJSON(data);
             var list = output.data;
 
