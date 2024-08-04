@@ -25,18 +25,18 @@ $(document).ready(function() {
                         );
                     });
                     $.each(item.chapters,function(c,chap){
-                        console.log("\r\nchapters:\r\n" + "\r\nitems:" + chap.items + "\r\nenabled:" + chap.enabled);/*
-                        
-                            + "\r\nprivacy_type:" + chap.privacy_type + "\r\nprivacy_domains:" + chap.privacy_domains
-                            + "\r\nprivacy_share:" + chap.privacy_share + "\r\ntags:" + chap.tags
-                         
-                         $each(chap.poster, function(p, post){
-                            console.log("\r\nPoster:\r\nid:" + post.id + "\r\ntype:" + post.type + "\r\nmedia_id:" + post.media_id
-                                + "\r\nstatus:" + post.status + "\r\nactive:" + post.active + " \r\noriginal:" + post.original
-                                + "\r\nmd:" + post.md + "\r\nsm:" + post.sm + "\r\nxs:" + post.xs + "\r\nfrom_time:" + post.from_time + "\r\nto_time:" + post.to_time
-                            );
-                        });*/
+                        console.log("\r\nchapters:\r\n" + "\r\nitems:" + chap.items + "\r\nenabled:" + chap.enabled);
                     });
+                    console.log("\r\nprivacy_type:" + item.privacy_type);
+                    console.log( "\r\nprivacy_domains:" + item.privacy_domains);
+                    console.log("\r\nprivacy_share:" + item.privacy_share);
+                    console.log("\r\ntags:" + item.tags);
+                    /*$each(chap.poster, function(p, post){
+                        console.log("\r\nPoster:\r\nid:" + post.id + "\r\ntype:" + post.type + "\r\nmedia_id:" + post.media_id
+                            + "\r\nstatus:" + post.status + "\r\nactive:" + post.active + " \r\noriginal:" + post.original
+                            + "\r\nmd:" + post.md + "\r\nsm:" + post.sm + "\r\nxs:" + post.xs + "\r\nfrom_time:" + post.from_time + "\r\nto_time:" + post.to_time
+                        );
+                    });*/
 
                     /*console.log("\r\n----------------------------\r\n");
                     console.log("\r\nadditional_materials:" + chap.additional_materials + "\r\nadditional_materials_enabled:" + chap.additional_materials_enabled + "\r\nplay_link:" + chap.play_link
