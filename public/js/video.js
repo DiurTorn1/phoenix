@@ -25,7 +25,7 @@ $(document).ready(function() {
                         );
                     });
                     $.each(item.chapters,function(c,chap){
-                        console.log("\r\nchapters:\r\n" + "\r\nitems:" + chap.items + "\r\nenabled:" + chap.enabled
+                        /*console.log("\r\nchapters:\r\n" + "\r\nitems:" + chap.items + "\r\nenabled:" + chap.enabled
                             + "\r\nprivacy_type:" + chap.privacy_type + "\r\nprivacy_domains:" + chap.privacy_domains
                             + "\r\nprivacy_share:" + chap.privacy_share + "\r\ntags:" + chap.tags
                          );
@@ -34,7 +34,7 @@ $(document).ready(function() {
                                 + "\r\nstatus:" + post.status + "\r\nactive:" + post.active + " \r\noriginal:" + post.original
                                 + "\r\nmd:" + post.md + "\r\nsm:" + post.sm + "\r\nxs:" + post.xs + "\r\nfrom_time:" + post.from_time + "\r\nto_time:" + post.to_time
                             );
-                        });
+                        });*/
                     });
 
                     /*console.log("\r\n----------------------------\r\n");
