@@ -26,12 +26,7 @@ $(document).ready(function() {
                     });
                     $.each(item.chapters,function(c,chap){
                         console.log("\r\nchapters:\r\n" + "\r\nitems:" + chap.items + "\r\nenabled:" + chap.enabled);
-                        $each(chap.poster, function(p, post){
-                            /*console.log("\r\nPoster:\r\nid:" + post.id + "\r\ntype:" + post.type + "\r\nmedia_id:" + post.media_id
-                                + "\r\nstatus:" + post.status + "\r\nactive:" + post.active + " \r\noriginal:" + post.original
-                                + "\r\nmd:" + post.md + "\r\nsm:" + post.sm + "\r\nxs:" + post.xs + "\r\nfrom_time:" + post.from_time + "\r\nto_time:" + post.to_time
-                            );*/
-                        });
+                        
                     });
                     console.log("\r\nprivacy_type:" + item.privacy_type);
                     console.log( "\r\nprivacy_domains:" + item.privacy_domains);
@@ -48,6 +43,13 @@ $(document).ready(function() {
                         + "\r\nembed_link:" + chap.embed_link + "\r\ncreated_at:" + chap.created_at + "\r\nupdated_at:" + chap.updated_at + "\r\nsubtitles:" + chap.subtitles + "\r\nsubtitles_enabled:" + chap.subtitles_enabled + "\r\n"
                     );
                 console.log("\n\rhls_link:" + item.hls_link);*/
+            });
+            var posttt = output.poster;
+            $each(posttt, function(p, post){
+                        /*console.log("\r\nPoster:\r\nid:" + post.id + "\r\ntype:" + post.type + "\r\nmedia_id:" + post.media_id
+                            + "\r\nstatus:" + post.status + "\r\nactive:" + post.active + " \r\noriginal:" + post.original
+                            + "\r\nmd:" + post.md + "\r\nsm:" + post.sm + "\r\nxs:" + post.xs + "\r\nfrom_time:" + post.from_time + "\r\nto_time:" + post.to_time
+                        );*/
             });
             
         });
