@@ -4,6 +4,7 @@ $(document).ready(function() {
         //$('#popup-back').toggle();
 
         $.post('/php/kines.php', function(data)  {
+
             var output = $.parseJSON(data);
             var list = output.data;
 
@@ -34,11 +35,11 @@ $(document).ready(function() {
                             + "\r\nmd:" + post.md + "\r\nsm:" + post.sm + "\r\nxs:" + post.xs + "\r\nfrom_time:" + post.from_time + "\r\nto_time:" + post.to_time
                         );
                     });
-                    console.log("\r\n----------------------------\r\n");
+                    /*console.log("\r\n----------------------------\r\n");
                     console.log("\r\nadditional_materials:" + chap.additional_materials + "\r\nadditional_materials_enabled:" + chap.additional_materials_enabled + "\r\nplay_link:" + chap.play_link
                         + "\r\nembed_link:" + chap.embed_link + "\r\ncreated_at:" + chap.created_at + "\r\nupdated_at:" + chap.updated_at + "\r\nsubtitles:" + chap.subtitles + "\r\nsubtitles_enabled:" + chap.subtitles_enabled + "\r\n"
                     );
-                console.log("\n\rhls_link:" + item.hls_link);
+                console.log("\n\rhls_link:" + item.hls_link);*/
             });
             
         });
