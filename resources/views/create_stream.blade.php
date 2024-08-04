@@ -11,12 +11,13 @@
     @foreach( Auth::user()->getRoleNames() as $v)
 		@if($v == "admin")
     <header class="header admin-header">
+	<script type="text/javascript" src = "{{ asset('js/create_stream.js') }}"></script> 
 		<div class="left-header">
 			<a href="/stream" class="close-btn" title="Закрыть" ><img src="{{ asset('img/close.png') }}" alt="Закрыть" width="24" height="24"></a>
 			<h2 class="top-menu-title">Карточка стрима</h2>
 		</div>
 		<div class="right-heder">
-			<button class="top-menu-btn save-st">Сохранить</button>
+			<button class="top-menu-btn save-st" id="save-st">Сохранить</button>
 			<button class="top-menu-btn">Отменить публикацию</button>
 		</div>
 	</header>

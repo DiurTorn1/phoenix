@@ -9,6 +9,7 @@ $(document).ready(function() {
             var list = output.data;
 
             $.each(list,function(i,item){
+                console.log("Video inform:\r\n");
                 console.log("ID:" + item.id + "\r\nProject_ID:" + item.project_id + "\r\nFolder_ID: " 
                     + item.folder_id + "\r\nPlayer_ID:" + item.player_id + "\r\nVersion:" + item.version
                     + "\r\nTitle: " + item.title + "\r\nSubtitle" + item.subtitle + "\r\nDescriptor: " + item.description
