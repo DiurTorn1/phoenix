@@ -34,10 +34,10 @@ $(document).ready(function() {
                     console.log("\r\ntags:" + item.tags);
                     //console.log("\r\post:" + item.poster);
                     //$each(item.poster, function(p, post){
-                    console.log("\r\nPoster:\r\nid:" + item.poster.id /*+ "\r\ntype:" + post.type + "\r\nmedia_id:" + post.media_id
-                            + "\r\nstatus:" + post.status + "\r\nactive:" + post.active + " \r\noriginal:" + post.original
-                            + "\r\nmd:" + post.md + "\r\nsm:" + post.sm + "\r\nxs:" + post.xs + "\r\nfrom_time:" + post.from_time + "\r\nto_time:" + post.to_time
-                    */);
+                    console.log("\r\nPoster:\r\nid:" + item.poster.id + "\r\ntype:" + item.poster.type + "\r\nmedia_id:" + item.poster.media_id
+                            + "\r\nstatus:" + item.poster.status + "\r\nactive:" + item.poster.active + " \r\noriginal:" + item.poster.original
+                            + "\r\nmd:" + item.poster.md + "\r\nsm:" + item.poster.sm + "\r\nxs:" + item.poster.xs + "\r\nfrom_time:" + item.poster.from_time + "\r\nto_time:" + item.poster.to_time
+                    );
                     //});
                     /*console.log("\r\n----------------------------\r\n");
                     console.log("\r\nadditional_materials:" + chap.additional_materials + "\r\nadditional_materials_enabled:" + chap.additional_materials_enabled + "\r\nplay_link:" + chap.play_link
