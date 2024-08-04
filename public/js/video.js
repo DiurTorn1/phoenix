@@ -22,7 +22,26 @@ $(document).ready(function() {
                             + "\r\ncreated_at:" + ass.created_at + "\r\nurl:" + ass.url + "\r\ndownload_link:" + ass.download_link
                         );
                     });
+                    $.each(item.chapters,function(c,chap){
+                        console.log("\r\nchapters:\r\n" + "\r\nitems:" + chap.items + "\r\nenabled:" + chap.enabled
+                            + "\r\nprivacy_type:" + chap.privacy_type + "\r\nprivacy_domains:" + chap.privacy_domains
+                            + "\r\nprivacy_share:" + chap.privacy_share + "\r\ntags:" + chap.tags
+                         );
+                    });
+                    $each(chap.poster, function(p, post){
+                        console.log("\r\nPoster:\r\nid:" + post.id + "\r\ntype:" + post.type + "\r\nmedia_id:" + post.media_id
+                            + "\r\nstatus:" + post.status + "\r\nactive:" + post.active + " \r\noriginal:" + post.original
+                            + "\r\nmd:" + post.md + "\r\nsm:" + post.sm + "\r\nxs:" + post.xs + "\r\nfrom_time:" + post.from_time + "\r\nto_time:" + post.to_time
+                        );
+                    });
+                    console.log("\r\n----------------------------\r\n");
+                    console.log("\r\nadditional_materials:" + chap.additional_materials + "\r\nadditional_materials_enabled:" + chap.additional_materials_enabled + "\r\nplay_link:" + chap.play_link
+                        + "\r\nembed_link:" + chap.embed_link + "\r\ncreated_at:" + chap.created_at + "\r\nupdated_at:" + chap.updated_at + "\r\nsubtitles:" + chap.subtitles + "\r\nsubtitles_enabled:" + chap.subtitles_enabled + "\r\n"
+                    );
+                console.log("\n\rhls_link:" + item.hls_link);
             });
+            
         });
     });
 });
+/**/ 
