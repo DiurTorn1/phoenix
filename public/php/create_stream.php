@@ -10,7 +10,7 @@ $data = array( "id" => "a5659f1e-bb40-442f-a74b-c1eac915442c", "workspace_id" =>
             "poster" => array( "id" => "ad6f2b26-5135-4360-ac2b-c5adb52ec79e", "type" => "image", "status" => "done", "active" => true, "original" => "https://static.kinescopecdn.net/assets/event_default_poster.png",
             "md" => "https://static.kinescopecdn.net/assets/event_default_poster.png", "sm" => "https://static.kinescopecdn.net/assets/event_default_poster.png", "xs" => "https://static.kinescopecdn.net/assets/event_default_poster.png",
             "from_time" => 0, "to_time" => 0));
-$postdata = json_encode($data);
+$postdata = json_encode(array("data"=>$data));
 $token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 //setup the request, you can also use CURLOPT_URL
 $ch = curl_init('https://api.kinescope.io/v2/live/events');
