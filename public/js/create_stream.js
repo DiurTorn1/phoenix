@@ -2,7 +2,8 @@ $(document).ready(function() {
     $("#save-st").on('click', function(){
         var main = $('#admin-input-main').val();
         $.post('/php/create_stream.php', function(data)  {
-            alert("Text:"+data);
+            //alert("Text:"+data);
+            console.log(data);
             
         });
         //var month = label.val('month');
