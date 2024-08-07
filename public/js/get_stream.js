@@ -11,9 +11,7 @@ $(document).ready(function() {
                 console.log("Video inform:\r\n");
                 console.log("id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                             "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
-                $.each(item.record,function(k,rec){
-                    console.log("\r\nRecorn: \r\n parent_id: " + rec.parent_id);
-                });
+                console.log("\r\nRecorn: \r\n parent_id: " + item.record.parent_id);
             });
             
         });
