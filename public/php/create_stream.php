@@ -1,8 +1,8 @@
 <?php
 //$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
 $data = array("name" => "Muuuu","subtitle" => "Muuu_title", "type" => "recurring", "auto_start" => true, "protected" => false, "time_shift" => false,
-         "parent_id" => "c73909aa-2ebf-4676-bdab-8010ab503075", "reconnect_window" => 1800, "scheduled" => array("time" => "2024-08-06T13:05:41.634922Z"),
-         "record" => array("parent_id" => "c21d86ac-7e90-43e7-b825-cbf300951355"),
+         "parent_id" => "c73909aa-2ebf-4676-bdab-8010ab503076", "reconnect_window" => 1800, "scheduled" => array("time" => "2024-08-07T13:05:41.634922Z"),
+         "record" => array("parent_id" => "c21d86ac-7e90-43e7-b825-cbf300951356"),
          "restreams" => array("name" => "Restream muuu", "url" => "rtmp://rtmp.kinescope.dev/live", "key" => "c73909aa-2ebf-4676-bdab-8010ab503076", "description" => "Description", "enabled" => false),
          "latency_mode" => "standard");
 $postdata = json_encode($data);
