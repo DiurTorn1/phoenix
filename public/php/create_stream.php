@@ -23,7 +23,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
    'Authorization: Bearer ' . $token
 ));
 curl_setopt($ch, CURLOPT_POST,1); 
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
