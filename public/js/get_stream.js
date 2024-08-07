@@ -11,7 +11,13 @@ $(document).ready(function() {
                 console.log("Video inform:\r\n");
                 console.log("id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                             "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
-                console.log("\r\nRecorn: \r\n parent_id: " + item.record.parent_id);
+                console.log("\r\nRecord: \r\n parent_id: " + item.record.parent_id);
+                console.log("\r\nvideo: \r\n presets: " + item.video.presets);
+                console.log("\r\naudio: \r\n channel_mapping: " + item.audio.channel_mapping);
+                console.log("\r\nreconnect_window:" + item.reconnect_window);
+                console.log("\r\nplay_link: " + item.play_link);
+                console.log("\r\nrtmp_link: " + item.rtmp_link);
+                console.log("\r\nscheduled: \r\n time: " + item.scheduled.time);
             });
             
         });
