@@ -20,6 +20,9 @@ $(document).ready(function() {
                 console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                 var vid_sport = "pipez";
+                if(item.parent_id == "76be9caa-5ca7-4ac7-947e-4e7042b40632"){
+                    vid_sport = "Баскетбол";
+                }
                     $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back">' + 
                         '<div class="admin-video-sort-wrap">' + 
