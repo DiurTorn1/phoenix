@@ -17,16 +17,8 @@ $(document).ready(function() {
                 console.log("\r\nchat_after_stream: " + item.chat_after_stream + "\r\nchat_active: " + item.chat_active + "\r\nchat_preview: " + item.chat_preview + "\r\nshow_members: " + item.show_members +
                             "\r\ncreated_at" + item.created_at + "\r\nupdated_at: " + item.updated_at + "\r\nlatency_mode: " + item.latency_mode + "\r\nallow_chat_links: " + item.allow_chat_links +
                             "\r\nmoderators: " + item.moderators);
-                console.log("\r\nposter \r\nid:" + item.poster.id
-                /*"type": "image",
-                 "status": "done",
-                 "active": true,
-                 "original": "https://static.kinescopecdn.net/assets/event_default_poster.png",
-                 "md": "https://static.kinescopecdn.net/assets/event_default_poster.png",
-                 "sm": "https://static.kinescopecdn.net/assets/event_default_poster.png",
-                 "xs": "https://static.kinescopecdn.net/assets/event_default_poster.png",
-                 "from_time": 0,
-                 "to_time": 0*/);
+                console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
+                            "\r\nmd: " + item.poster.md + "\r\nsm: " + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
             });
             
         });
