@@ -11,14 +11,22 @@ $(document).ready(function() {
                 console.log("Video inform:\r\n");
                 console.log("id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                             "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
-                console.log("\r\nRecord: \r\n parent_id: " + item.record.parent_id);
-                console.log("\r\nvideo: \r\n presets: " + item.video.presets);
-                console.log("\r\naudio: \r\n channel_mapping: " + item.audio.channel_mapping);
-                console.log("\r\nreconnect_window:" + item.reconnect_window);
-                console.log("\r\nplay_link: " + item.play_link);
-                console.log("\r\nrtmp_link: " + item.rtmp_link);
-                console.log("\r\nscheduled: \r\n time: " + item.scheduled.time);
+                console.log("\r\nRecord: \r\n parent_id: " + item.record.parent_id + "\r\nvideo: \r\n presets: " + item.video.presets + "\r\naudio: \r\n channel_mapping: " + item.audio.channel_mapping + 
+                            "\r\nreconnect_window:" + item.reconnect_window + "\r\nplay_link: " + item.play_link + "\r\nrtmp_link: " + item.rtmp_link + "\r\nscheduled: \r\n time: " + item.scheduled.time);
                 console.log("\r\nstream: \r\n id: " + item.stream.id + "\r\nevent_id: " + item.stream.event_id + "\r\nstatus: " + item.stream.status + "\r\nstarted_at: " + item.stream.started_at +  "\r\nfinished_at: " + item.stream.finished_at);
+                console.log("\r\nchat_after_stream: " + item.chat_after_stream + "\r\nchat_active: " + item.chat_active + "\r\nchat_preview: " + item.chat_preview + "\r\nshow_members: " + item.show_members +
+                            "\r\ncreated_at" + item.created_at + "\r\nupdated_at: " + item.updated_at + "\r\nlatency_mode: " + item.latency_mode + "\r\nallow_chat_links: " + item.allow_chat_links +
+                            "\r\nmoderators: " + item.moderators);
+                console.log("\r\nposter \r\nid:" + item.poster.id
+                /*"type": "image",
+                 "status": "done",
+                 "active": true,
+                 "original": "https://static.kinescopecdn.net/assets/event_default_poster.png",
+                 "md": "https://static.kinescopecdn.net/assets/event_default_poster.png",
+                 "sm": "https://static.kinescopecdn.net/assets/event_default_poster.png",
+                 "xs": "https://static.kinescopecdn.net/assets/event_default_poster.png",
+                 "from_time": 0,
+                 "to_time": 0*/);
             });
             
         });
