@@ -19,7 +19,8 @@ $(document).ready(function() {
                     "\r\nmoderators: " + item.moderators);
                 console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                $("#admin-video-list").append(
+                var vid_sport = "pipez";
+                    $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back">' + 
                         '<div class="admin-video-sort-wrap">' + 
                             '<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">' +
@@ -38,7 +39,7 @@ $(document).ready(function() {
                             '<span class="admin-video-hashtag-date">2023-2024</span>' + 
                             '<span class="admin-video-hashtag-kubok">Кубок Феникса</span>' +
 					        '<span class="admin-video-hashtag-group">Ю11</span>' +
-						    '<span class="admin-video-hashtag-sport">Волейбол</span>' +
+						    '<span class="admin-video-hashtag-sport">'+ vid_sport +'</span>' +
 						    '<span class="admin-video-hashtag-city">Псков</span>' +
 						    '<span class="admin-video-hashtag-org">ЦРСП "ФЕНИКС"</span>' +
 					    '</div>' +
