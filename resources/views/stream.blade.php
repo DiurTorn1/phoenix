@@ -115,7 +115,8 @@
 				<li class="admin-video-sort-item"><button class="admin-video-btn">Добавить к продукту</button></li>
 			</ul>
 		</div>
-
+		<button class="admin-video-list-btn" id="admin-video-list-btn">Показать видео</button>
+		<div class="res-admin-video-list-text" id="res-admin-video-list-text"></div>
 		<ul class="admin-video-list admin-video-sort">
 			<li class="admin-video-item admin-back">
 				<div class="admin-video-sort-wrap">
