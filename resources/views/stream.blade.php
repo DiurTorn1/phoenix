@@ -117,8 +117,7 @@
 			</ul>
 		</div>
 		<button class="admin-video-list-btn" id="admin-video-list-btn">Показать видео</button>
-		<div class="res-admin-video-list-text" id="res-admin-video-list-text"></div>
-		<ul class="admin-video-list admin-video-sort">
+		<ul class="admin-video-list admin-video-sort" id="admin-video-list">
 			<!--<li class="admin-video-item admin-back">
 				<div class="admin-video-sort-wrap">
 					<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">

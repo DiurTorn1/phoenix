@@ -9,6 +9,9 @@ $(document).ready(function() {
 
             $.each(list,function(i,item){
                 console.log("Video inform:\r\n");
+                $("#admin-video-list").append(
+                    '<li class="admin-video-item admin-back">' + '<div class="admin-video-sort-wrap">' + '<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">' +
+					'<label class="admin-video-check-label" for="admin-vl1"></label>' + '</div>' + '</li>');
                 console.log("id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                             "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
                 console.log("\r\nRecord: \r\n parent_id: " + item.record.parent_id + "\r\nvideo: \r\n presets: " + item.video.presets + "\r\naudio: \r\n channel_mapping: " + item.audio.channel_mapping + 
