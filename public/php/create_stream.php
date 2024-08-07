@@ -21,8 +21,7 @@ curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
 curl_setopt($ch, CURLOPT_HTTPHEADER, array(
    'Content-Type: application/json',
-   'Authorization: Bearer ' . $token,
-   'Content-Length: ' . strlen($postdata)
+   'Authorization: Bearer ' . $token
 ));
 
 $result = curl_exec($ch);
