@@ -18,7 +18,7 @@ $(document).ready(function() {
                 console.log("\r\nplay_link: " + item.play_link);
                 console.log("\r\nrtmp_link: " + item.rtmp_link);
                 console.log("\r\nscheduled: \r\n time: " + item.scheduled.time);
-                console.log("\r\nstream: \r\n id: " + list.stream.event_id);
+                console.log("\r\nstream: \r\n id: " + item.stream.id);
             });
             
         });
