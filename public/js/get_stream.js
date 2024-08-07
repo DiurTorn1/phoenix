@@ -32,7 +32,7 @@ $(document).ready(function() {
                         '</div>' + 
                         '<div class="admin-video-item-header">' + 
                             '<div class="admin-video-item-h-list">' + 
-                            '<span class="admin-video-item-h-date">09.05.2024 Волейбол Кубок Феникса Ю11 Финал г. Псков</span>' +
+                            '<span class="admin-video-item-h-date">' + item.name + '</span>' +
 					    '</div>' + 
                         '<div class="admin-video-item-h-hashtag">' + 
                             '<span class="admin-video-hashtag-date">2023-2024</span>' + 
