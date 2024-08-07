@@ -17,14 +17,11 @@ $token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
    //'Authorization: Bearer ' . $token
 //));
 
-$query_str = http_build_query($postdata);
-
-
 $ch = curl_init('https://api.kinescope.io/v2/live/events');
 curl_setopt($ch, CURLOPT_HTTPHEADER, array('Authorization: Bearer ' . $token, 'Content-Type: multipart/form-data'));
 
 curl_setopt($ch, CURLOPT_POST,1); 
-curl_setopt($ch, CURLOPT_POSTFIELDS, $query_str);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
 
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, true);
