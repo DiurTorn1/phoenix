@@ -26,7 +26,7 @@ $(document).ready(function() {
 					        '<label class="admin-video-check-label" for="admin-vl1"></label>' + 
                         '</div>' + 	
                         '<div class="admin-video-prev">' + 
-                            '<img src="' + item.poster.xs + '" alt="" class="">' +
+                            '<img src="' + item.poster.sm + '" alt="" class="">' +
                             '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
 					        //'<p>Нет потока</p>' + 
                         '</div>' + 
