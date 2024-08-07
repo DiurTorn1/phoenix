@@ -10,8 +10,38 @@ $(document).ready(function() {
             $.each(list,function(i,item){
                 console.log("Video inform:\r\n");
                 $("#admin-video-list").append(
-                    '<li class="admin-video-item admin-back">' + '<div class="admin-video-sort-wrap">' + '<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">' +
-					'<label class="admin-video-check-label" for="admin-vl1"></label>' + '</div>' + '</li>');
+                    '<li class="admin-video-item admin-back">' + 
+                        '<div class="admin-video-sort-wrap">' + 
+                            '<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">' +
+					        '<label class="admin-video-check-label" for="admin-vl1"></label>' + 
+                        '</div>' + 	
+                        '<div class="admin-video-prev">' + 
+                            '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
+					        '<p>Нет потока</p>' + 
+                        '</div>' + 
+                        '<div class="admin-video-item-header">' + 
+                            '<div class="admin-video-item-h-list">' + 
+                            '<span class="admin-video-item-h-date">09.05.2024 Волейбол Кубок Феникса Ю11 Финал г. Псков</span>' +
+					    '</div>' + 
+                        '<div class="admin-video-item-h-hashtag">' + 
+                            '<span class="admin-video-hashtag-date">2023-2024</span>' + 
+                            '<span class="admin-video-hashtag-kubok">Кубок Феникса</span>' +
+					        '<span class="admin-video-hashtag-group">Ю11</span>' +
+						    '<span class="admin-video-hashtag-sport">Волейбол</span>' +
+						    '<span class="admin-video-hashtag-city">Псков</span>' +
+						    '<span class="admin-video-hashtag-org">ЦРСП "ФЕНИКС"</span>' +
+					    '</div>' +
+				    '</div>' +
+				    '<div class="admin-video-item-view">' +
+					    '<p class="admin-video-item-v-count"><span>1342</span>просмотра</p>' +
+					    '<p class="admin-video-item-v-region">Все регионы</p>' +
+				    '</div>' +
+				    '<div class="admin-video-item-info admin-video-item-view">' +
+					    '<p class="admin-video-item-i-time">Закончилась в<span>15:19</span></p>' +
+					    '<p class="admin-video-item-i-date">09 мая 2024</p>' +
+					    '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
+				    '</div>' + 
+                '</li>');
                 console.log("id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                             "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
                 console.log("\r\nRecord: \r\n parent_id: " + item.record.parent_id + "\r\nvideo: \r\n presets: " + item.video.presets + "\r\naudio: \r\n channel_mapping: " + item.audio.channel_mapping + 
