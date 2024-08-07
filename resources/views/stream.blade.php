@@ -11,6 +11,7 @@
     @foreach( Auth::user()->getRoleNames() as $v)
 		@if($v == "admin")
         <header class="header admin-header">
+		<script type="text/javascript" src = "{{ asset('js/get_stream.js') }}"></script> 
 		<div class="left-header">
 			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
 		</div>
@@ -118,7 +119,7 @@
 		<button class="admin-video-list-btn" id="admin-video-list-btn">Показать видео</button>
 		<div class="res-admin-video-list-text" id="res-admin-video-list-text"></div>
 		<ul class="admin-video-list admin-video-sort">
-			<li class="admin-video-item admin-back">
+			<!--<li class="admin-video-item admin-back">
 				<div class="admin-video-sort-wrap">
 					<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">
 					<label class="admin-video-check-label" for="admin-vl1"></label>
@@ -186,7 +187,7 @@
 					<p class="admin-video-item-i-date">09 мая 2024</p>
 					<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>
 				</div>
-			</li>
+			</li>-->
 		</ul>
 	</div>	
 	</main>
