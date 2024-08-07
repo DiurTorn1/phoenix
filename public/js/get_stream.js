@@ -18,7 +18,7 @@ $(document).ready(function() {
                 console.log("\r\nplay_link: " + item.play_link);
                 console.log("\r\nrtmp_link: " + item.rtmp_link);
                 console.log("\r\nscheduled: \r\n time: " + item.scheduled.time);
-                console.log("\r\nstream: \r\n id: " + item.stream.id);
+                console.log("\r\nstream: \r\n id: " + item.stream.id + "\r\nevent_id: " + item.stream.event_id + "\r\nstatus: " + item.stream.status + "\r\nstarted_at: " + item.stream.started_at +  "\r\nfinished_at: " + item.stream.finished_at);
             });
             
         });
