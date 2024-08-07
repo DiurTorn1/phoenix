@@ -18,6 +18,9 @@ $(document).ready(function() {
                 console.log("\r\nplay_link: " + item.play_link);
                 console.log("\r\nrtmp_link: " + item.rtmp_link);
                 console.log("\r\nscheduled: \r\n time: " + item.scheduled.time);
+                $.each(list.stream,function(i,str){
+                    console.log("\r\stream: \r\n id: " + str.id);
+                });
             });
             
         });
