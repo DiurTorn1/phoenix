@@ -26,6 +26,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 
 $result = curl_exec($ch);
 curl_close($ch);
+echo $result;
 //curl_setopt($ch, CURLOPT_POST, 1);
 //curl_setopt($ch, CURLOPT_POSTFIELDS, "");
 // Returns the data/output as a string instead of raw data
@@ -44,7 +45,7 @@ curl_close($ch);
 //$info = curl_getinfo($ch);
 // close curl resource to free up system resources
 //curl_close($ch);
-//echo $result;
+
 /*
   "data": {
       "id": "a5659f1e-bb40-442f-a74b-c1eac915442c",
