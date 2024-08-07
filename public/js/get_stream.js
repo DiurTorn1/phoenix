@@ -20,8 +20,14 @@ $(document).ready(function() {
                 console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                 var vid_sport = "pipez";
-                if(item.parent_id == "76be9caa-5ca7-4ac7-947e-4e7042b40632"){
+                if(item.parent_id == "a3baa3cf-2c8b-4f14-9081-1b84d5930f23"){
                     vid_sport = "Баскетбол";
+                } else if(item.parent_id == "f124464a-70eb-4c94-9b14-21d06af7aaf0"){
+                    vid_sport = "Волейбол";
+                }else if(item.parent_id == "76be9caa-5ca7-4ac7-947e-4e7042b40632"){
+                    vid_sport = "Тест";
+                } else {
+                    vid_sport = "Нет такой группы:" + item.parent_id;
                 }
                     $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back">' + 
