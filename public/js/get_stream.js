@@ -29,8 +29,6 @@ $(document).ready(function() {
                 } else {
                     vid_sport = "Нет такой группы:" + item.parent_id;
                 }
-                var d = jQuery.datepicker.parseDate("yy-mm-ddT00:00:00.000Z", item.stream.finished_at);
-                console.log(d);
                     $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
