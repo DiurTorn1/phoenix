@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    alert(window.location.pathname);
+    alert(document.referrer);
 });
