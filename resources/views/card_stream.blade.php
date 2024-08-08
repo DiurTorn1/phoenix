@@ -37,6 +37,7 @@
 		</nav>
 	</div>
 	<!----------------------------Стрим-контент---------------------------------->
+    <button id="jjj">jjj</button>
 	<div class="admin-content admin-content-raw">
 		<div class="block-admin-left">
 			<div class="block-admin-container admin-back">

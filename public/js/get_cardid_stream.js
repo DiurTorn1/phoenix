@@ -1,3 +1,6 @@
 $(document).ready(function() {
-    alert(document.referrer);
+    $("#jjj").on('click', function(){
+        alert(window.location.pathname);
+    });
+    
 });
