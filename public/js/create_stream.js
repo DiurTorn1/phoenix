@@ -1,11 +1,11 @@
 $(document).ready(function() {
     $("#save-st").on('click', function(){
         var main = $('#admin-input-main').val();
-        $.post('/php/create_stream.php', function(data)  {
+        //$.post('/php/create_stream.php', function(data)  {
             //alert("Text:"+data);
             console.log(main);
             
-        });
+        //});
         //var month = label.val('month');
         //var year = label.val('year');
         //var text = label.text();
