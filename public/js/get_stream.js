@@ -72,7 +72,7 @@ $(document).ready(function() {
         //alert(text);
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
-    $("li").on('click', '.admin-video-item', function(){    
+    $("li").click(function(){    
         alert("Double penetration");
     });
 });
