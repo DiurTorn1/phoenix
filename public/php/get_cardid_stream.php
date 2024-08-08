@@ -14,7 +14,7 @@
     curl_setopt($ch, CURLOPT_HTTPHEADER, array(
         'Content-Type: application/json',
         'Authorization: Bearer ' . $token,
-        //'Content-Length: ' . strlen($postdata)
+        'Content-Length: ' . strlen($postdata)
     ));
 
     $result = curl_exec($ch);
