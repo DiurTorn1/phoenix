@@ -6,6 +6,7 @@ $(document).ready(function() {
             //console.log(main);
             
         });
+        window.location.href='/stream';
         //var month = label.val('month');
         //var year = label.val('year');
         //var text = label.text();
