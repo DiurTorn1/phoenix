@@ -59,7 +59,7 @@ $(document).ready(function() {
 				    '</div>' +
 				    '<div class="admin-video-item-info admin-video-item-view">' +
 					    '<p class="admin-video-item-i-time">Закончилась в<span>15:19</span></p>' +
-					    '<p class="admin-video-item-i-date">09 мая 2024</p>' +
+					    '<p class="admin-video-item-i-date">' + item.stream.finished_at + '</p>' +
 					    '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
 				    '</div>' + 
                 '</li>');
@@ -72,7 +72,7 @@ $(document).ready(function() {
         //alert(text);
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
-    $("#admin-video-item").on('dblclick', function(){    
+    $("#admin-video-item").on('click', function(){    
         alert("Double penetration");
     });
 });
