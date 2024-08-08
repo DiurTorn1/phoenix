@@ -76,7 +76,7 @@ $(document).ready(function() {
         //alert("Double penetration");
     //});
     $(document).on('dblclick', '.admin-video-item', function() {
-        alert("Double penetration");
+        alert("Text: " + this.id);
     });
 });
 
