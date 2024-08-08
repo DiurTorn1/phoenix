@@ -77,7 +77,8 @@ $(document).ready(function() {
         //alert("Double penetration");
     //});
     $(document).on('dblclick', '.admin-video-item', function() {
-        $("#admin-input-main").val(this.id);
+        var id = this.id;
+        top.location = 'https://phoenix.tehnodir.ru/card_stream?admin-input-main='+id;
         window.location.href='/card_stream';
         //alert("Text: " + this.id);
     });
