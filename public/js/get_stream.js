@@ -77,6 +77,7 @@ $(document).ready(function() {
         //alert("Double penetration");
     //});
     $(document).on('dblclick', '.admin-video-item', function() {
+        $("#admin-input-main").val(this.id);
         window.location.href='/card_stream';
         //alert("Text: " + this.id);
     });
