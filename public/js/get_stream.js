@@ -66,8 +66,9 @@ $(document).ready(function() {
             });
             
         });
-        var d = moment(item.stream.finished_at).toDate();
-        console.log(d);
+        var myDate = item.stream.finished_at;
+        var n=myDate.split("T");
+        console.log(n);
         //var month = label.val('month');
         //var year = label.val('year');
         //var text = label.text();
