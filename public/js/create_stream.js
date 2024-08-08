@@ -1,9 +1,9 @@
 $(document).ready(function() {
     $("#save-st").on('click', function(){
-        var main = $('#admin-input-main').attr('value');//$('#admin-input-main').val();
+        var main = $('#admin-input-main').val();
         //$.post('/php/create_stream.php', function(data)  {
-            //alert("Text:"+data);
-            console.log(main);
+            alert("Text:"+main);
+            //console.log(main);
             
         //});
         //var month = label.val('month');
