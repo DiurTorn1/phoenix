@@ -1,3 +1,3 @@
 $(document).ready(function() {
-    alert("Test");
+    alert(window.location.pathname);
 });
