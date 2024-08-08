@@ -84,6 +84,7 @@
 					<select class="admin-input admin-input-select">
 						<option value="Баскетбол">Баскетбол</option>
 						<option value="Волейбол">Волейбол</option>
+						<option value="Тест">Тест</option>
 					</select>
 				</div>
 				<div class="admin-input-box">

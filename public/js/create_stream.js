@@ -3,7 +3,7 @@ $(document).ready(function() {
         var main = $('#admin-input-main').val();
         $.post('/php/create_stream.php', function(data)  {
             //alert("Text:"+data);
-            console.log(data);
+            console.log(main);
             
         });
         //var month = label.val('month');
