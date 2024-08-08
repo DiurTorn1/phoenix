@@ -78,7 +78,7 @@ $(document).ready(function() {
     //});
     $(document).on('dblclick', '.admin-video-item', function() {
         var id = this.id;
-        top.location = 'https://phoenix.tehnodir.ru/card_stream?admin-input-main='+id;
+        top.location = '/card_stream?pem='+id;
         window.location.href='/card_stream';
         //alert("Text: " + this.id);
     });
