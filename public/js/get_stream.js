@@ -29,6 +29,9 @@ $(document).ready(function() {
                 } else {
                     vid_sport = "Нет такой группы:" + item.parent_id;
                 }
+                var myDate = item.stream.finished_at;
+                var n=myDate.split("T");
+                console.log(n);
                     $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
@@ -66,9 +69,7 @@ $(document).ready(function() {
             });
             
         });
-        var myDate = item.stream.finished_at;
-        var n=myDate.split("T");
-        console.log(n);
+
         //var month = label.val('month');
         //var year = label.val('year');
         //var text = label.text();
