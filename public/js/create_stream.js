@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $("#save-st").on('click', function(){
-        const main = $('#admin-input-main').val();
+        var main = $('#block-admin-inputct').val();
         //$.post('/php/create_stream.php', function(data)  {
             alert("Text:"+main);
             //console.log(main);

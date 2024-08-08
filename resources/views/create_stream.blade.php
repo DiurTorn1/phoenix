@@ -42,7 +42,7 @@
 			<div class="block-admin-container admin-back">
 				<div class="admin-input-box admin-input-wrap">
 					<label>Заголовок *</label>
-					<input type="text" required name="Заголовок" class="block-admin-input admin-input" id="block-admin-input">
+					<input type="text" required name="Заголовок" class="block-admin-input admin-input" id="block-admin-inputct">
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Описание</label>
