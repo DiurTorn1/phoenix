@@ -6,7 +6,7 @@ $(document).ready(function() {
             //console.log(main);
             
         });
-        window.location.href='/stream';
+        window.location.href='/stream';//?block-admin-input='+id;
         //var month = label.val('month');
         //var year = label.val('year');
         //var text = label.text();
