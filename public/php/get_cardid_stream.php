@@ -1,6 +1,6 @@
 <?php
     //$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
-    $data = array("id" => $_POST['param1']);//"name" => "Muuuu","subtitle" => "", "type" => "one-time", "auto_start" => false, "protected" => false, "time_shift" => true,
+    $data = array("id" => "d3b85b74-2ebb-490d-93b6-4c19fbd48c11");//"name" => "Muuuu","subtitle" => "", "type" => "one-time", "auto_start" => false, "protected" => false, "time_shift" => true,
          //"parent_id" => "76be9caa-5ca7-4ac7-947e-4e7042b40632", "reconnect_window" => 600, "scheduled" => array("time" => "2024-08-06T13:05:41.634922Z"),
         // "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"),
         // "restreams" => array(), "latency_mode" => "standard");
