@@ -30,7 +30,7 @@ $(document).ready(function() {
                     vid_sport = "Нет такой группы:" + item.parent_id;
                 }
                     $("#admin-video-list").append(
-                    '<li class="admin-video-item admin-back" id="admin-video-item">' + 
+                    '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
                             '<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">' +
 					        '<label class="admin-video-check-label" for="admin-vl1"></label>' + 
@@ -72,12 +72,15 @@ $(document).ready(function() {
         //alert(text);
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
-    $("#admin-video-item").on('click', '.searchterm', function(){    
+    $("li .admin-video-item").on('click', function(){    
         alert("Double penetration");
     });
 });
 
 /**
+ * $('.btn').click(function(){
+   $('#'+$(this).data('id')).toggle();
+});
  * {
  "data": [
   {
