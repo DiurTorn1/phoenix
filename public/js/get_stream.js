@@ -66,7 +66,7 @@ $(document).ready(function() {
             });
             
         });
-        var d = jQuery.datepicker.parseDate("yy-mm-ddT00:00:00.000Z", item.stream.finished_at);
+        var d = moment(item.stream.finished_at).toDate();
         console.log(d);
         //var month = label.val('month');
         //var year = label.val('year');
