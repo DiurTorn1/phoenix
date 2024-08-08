@@ -59,7 +59,7 @@ $(document).ready(function() {
 				    '</div>' +
 				    '<div class="admin-video-item-info admin-video-item-view">' +
 					    '<p class="admin-video-item-i-time">Закончилась в<span>15:19</span></p>' +
-					    '<p class="admin-video-item-i-date">' + item.stream.finished_at + '</p>' +
+					    '<p class="admin-video-item-i-date">' + jQuery.datepicker.parseDate("yy-mm-ddT00:00:00.000Z", item.stream.finished_at) + '</p>' +
 					    '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
 				    '</div>' + 
                 '</li>');
