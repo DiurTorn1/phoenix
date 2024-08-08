@@ -7,7 +7,7 @@
     $postdata = json_encode($data);
     $token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
     //setup the request, you can also use CURLOPT_URL
-    $ch = curl_init('https://api.kinescope.io/v2/live/events?id=67c6bd18-cd33-4287-963a-055d6ee6516c');
+    $ch = curl_init('https://api.kinescope.io/v2/live/events/:67c6bd18-cd33-4287-963a-055d6ee6516c');
     //curl_setopt($ch, CURLOPT_POST, 1);
     //curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
