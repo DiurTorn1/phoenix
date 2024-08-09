@@ -62,7 +62,7 @@
 				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Коллекции">Коллекции</a></li>
 				<li class="admin-navigation-item"><a href="/product_admin" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Продукты">Продукты</a></li>
 				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Баланс">Баланс</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Промокоды">Промокоды</a></li>
+				<li class="admin-navigation-item"><a href="/promocode" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Промокоды">Промокоды</a></li>
 			</ul>
 			<ul class="admin-navigation-list admin-back">
 				<li class="admin-navigation-item"><a href="{{ route('users.index') }}" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Пользователи">Пользователи</a></li>
