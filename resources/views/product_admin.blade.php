@@ -4,7 +4,7 @@
         <div class="top-menu-admin prod-mr admin-back">
 			<div class="top-menu-head">
 				<h2 class="top-menu-title">Продукты</h2>
-				<button class="top-menu-btn">Создать продукт</button>
+				<button class="top-menu-btn" onclick="window.location.href = '/product_add';">Создать продукт</button>
 			</div>
 
 			<div class="top-menu-sort block-admin-section">
