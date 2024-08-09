@@ -48,6 +48,36 @@ $(document).ready(function() {
                     console.log("\r\nsubtitles:" + item.subtitles);
                     console.log("\r\nsubtitles_enabled:" + item.subtitles_enabled);
                     console.log("\r\nshls_link:" + item.hls_link);
+                    $("#admin-video-list-ct").append(
+                        '<li class="admin-video-item admin-back">' +
+                            '<div class="admin-video-sort-wrap">' +
+                                '<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">' +
+                                '<label class="admin-video-check-label" for="admin-vl1"></label>' +
+                            '</div>' +
+                            '<div class="admin-video-prev">' +
+                                '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
+                            '</div>' +
+                            '<div class="admin-video-item-header">' +
+                                '<div class="admin-video-item-h-list">' +
+                                    '<span class="admin-video-item-h-date">' + item.title + '</span>' +
+                                '</div>' +
+                                '<div class="admin-video-item-h-hashtag">' +
+                                    '<span class="admin-video-hashtag-date">2023-2024</span>' +
+                                    '<span class="admin-video-hashtag-kubok">Кубок Феникса</span>' +
+                                    '<span class="admin-video-hashtag-group">Ю11</span>' +
+                                    '<span class="admin-video-hashtag-sport">Волейбол</span>' +
+                                    '<span class="admin-video-hashtag-city">Псков</span>' +
+                                    '<span class="admin-video-hashtag-org">ЦРСП "ФЕНИКС"</span>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="admin-video-item-view">' +
+                                '<p class="admin-video-item-v-count"><span>0</span>просмотров</p>' +
+                                '<p class="admin-video-item-v-region">Все регионы</p>' +
+                            '</div>' +
+                            '<div class="admin-video-item-info admin-video-item-view">' +
+                                '<p class="admin-video-item-i-time">Не опубликовано</p>' +
+                            '</div>' +
+                    '</li>');
             });
             
         });
