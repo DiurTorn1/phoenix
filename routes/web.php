@@ -70,6 +70,10 @@ Route::get('/card_restream', function () {
     return view('card_restream');
 });
 
+Route::get('/product_admin', function () {
+    return view('product_admin');
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
