@@ -11,8 +11,8 @@
     @foreach( Auth::user()->getRoleNames() as $v)
 		@if($v == "admin")
         <header class="header admin-header">
-		<script type="text/javascript" src = "{{ asset('js/get_stream.js') }}"></script> 
-		<script type="text/javascript" src = "{{ asset('js/video.js') }}"></script> 
+		
+		
 		<div class="left-header">
 			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
 		</div>
