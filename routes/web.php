@@ -62,6 +62,10 @@ Route::get('/card_monitor', function () {
     return view('card_monitor');
 });
 
+Route::get('/card_broadcast', function () {
+    return view('card_broadcast');
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
