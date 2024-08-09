@@ -10,9 +10,7 @@
 	@if(!empty(Auth::user()->getRoleNames()))
     @foreach( Auth::user()->getRoleNames() as $v)
 		@if($v == "admin")
-        <header class="header admin-header">
-		
-		
+        <header class="header admin-header">		
 		<div class="left-header">
 			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
 		</div>
