@@ -8,7 +8,7 @@
 @section('content')
 
 	<!-- Прямая трансляция -->
-	<div class="index-live">
+	<div class="index-live" id="ndex-live">
 	<script type="text/javascript" src = "{{ asset('js/get_video.js') }}"></script> 
 		<h2>Прямой эфир</h2>
 		<div class="index-live-list">
