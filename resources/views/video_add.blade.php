@@ -1,7 +1,17 @@
 @extends('admin_panel')
 @section('title-block') Стримы @endsection
 @section('admin_res')
+<header class="header admin-header">
+		<div class="left-header">
+			<a href="#" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
+			<h2 class="top-menu-title">Добавить видео</h2>
+		</div>
 
+		<div class="right-heder">
+			<button class="menu-btn-grey save-st">Публиковать</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<button class="menu-btn-grey">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+		</div>
+</header>
 <div class="admin-content block-admin-left-w1080">
 		<div class="top-menu-admin admin-video-sort admin-back">
 			<div class="admin-input-box admin-input-wrap">
