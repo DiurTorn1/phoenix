@@ -1,40 +1,34 @@
 @extends('admin_panel')
 @section('title-block') Пользователи @endsection
 @section('admin_res')
-<div class="">
+<div class="top-menu-head tr-wrapper-mb admin-back">
     <div class="">
-        <div class="">
-            <h2> Показать пользователя</h2>
+        <div class="top-menu-title">
+            <h2> Данные пользователя</h2>
         </div>
-        <div class="">
-            <a class="" href="{{ route('users.index') }}"> Назад</a>
+        <div class="right-heder">
+            <a class="top-menu-btn" href="{{ route('users.index') }}"> Назад</a>
         </div>
     </div>
 </div>
 
 
-<div class="">
+<div class="tbody-wrapper admin-video-item admin-back">
     <div class="">
-        <div class="">
-            <strong>Имя:</strong>
-            {{ $user->name }}
-        </div>
+        <strong class="admin-video-item-h-date">Имя:</strong>
+        {{ $user->name }}
     </div>
     <div class="">
-        <div class="">
-            <strong>Почта:</strong>
-            {{ $user->email }}
-        </div>
+        <strong class="admin-video-item-h-date">Почта:</strong>
+        {{ $user->email }}
     </div>
     <div class="">
-        <div class="">
-            <strong>Роль:</strong>
-            @if(!empty($user->getRoleNames()))
-                @foreach($user->getRoleNames() as $v)
-                    <label class="">{{ $v }}</label>
-                @endforeach
-            @endif
-        </div>
+        <strong class="admin-video-item-h-date">Роль:</strong>
+        @if(!empty($user->getRoleNames()))
+            @foreach($user->getRoleNames() as $v)
+                <label class="">{{ $v }}</label>
+            @endforeach
+        @endif
     </div>
 </div>
 @endsection
