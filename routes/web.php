@@ -74,6 +74,10 @@ Route::get('/product_admin', function () {
     return view('product_admin');
 });
 
+Route::get('/product_add', function () {
+    return view('product_add');
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
