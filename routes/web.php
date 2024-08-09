@@ -53,6 +53,11 @@ Route::get('/card_stream', function () {
 Route::get('/card_stream_main', function () {
     return view('card_stream_main');
 });
+
+Route::get('/analitik_card', function () {
+    return view('analitik_card');
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
