@@ -2,7 +2,6 @@
 @section('title-block') Стримы @endsection
 @section('admin_res')
 <header class="header admin-header">
-<script src="{{ asset('js/video_add.js') }}"></script>
 		<div class="left-header">
 			<a href="#" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
 			<h2 class="top-menu-title">Добавить видео</h2>
@@ -92,5 +91,5 @@
 		</div>
 
 	</div>
-
+    <script src="{{ asset('js/video_add.js') }}"></script>
 @endsection
