@@ -50,6 +50,9 @@ Route::get('/card_stream', function () {
     return view('card_stream');
 });
 
+Route::get('/card_stream_main', function () {
+    return view('card_stream_main');
+});
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
