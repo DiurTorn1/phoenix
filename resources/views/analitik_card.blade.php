@@ -1,5 +1,5 @@
 @extends('card_stream_main')
-@section('title-block') Редактировать @endsection
+@section('title-block') Аналитика @endsection
 @section('card_stream_res')
 	
 	<!----------------------------Стрим-контент АНАЛИТИКА ---------------------------------->

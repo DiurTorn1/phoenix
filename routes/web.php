@@ -58,6 +58,10 @@ Route::get('/analitik_card', function () {
     return view('analitik_card');
 });
 
+Route::get('/card_monitor', function () {
+    return view('card_monitor');
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
