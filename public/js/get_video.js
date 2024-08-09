@@ -19,24 +19,18 @@ $(document).ready(function() {
                     //"\r\nmoderators: " + item.moderators);
                 //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                    /*$("#index-live").append(
+                    $("#index-live").append(
                         '<h2>Прямой эфир</h2>' +
                         '<div class="index-live-list">' +
                             '<div class="index-live-item">' +
                                 '<div class="index-live-item-video">' +
-                                    '<iframe' +
-                                    'src="' + item.play_link + '"' +
-                                    'width="640"' +
-                                    'height="360"' +
-                                    'frameborder="0"' +
-                                    'allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"' +
-                                    '></iframe>' +
+                                    '<iframe src="' + item.play_link + '" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
                                 '</div>' +
                                 '<div class="index-live-item-text">' +
                                     '<a href="#">' + item.name + '</a>' +
                                 '</div>' +
                             '</div>' +
-                        '</div>');*/
+                        '</div>');
             });
             
         });
