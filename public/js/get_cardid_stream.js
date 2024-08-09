@@ -19,7 +19,25 @@ $(document).ready(function() {
                         //"\r\nmoderators: " + item.moderators);
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                    $('#admin-input-main').val(item.name);   
+                    $('#admin-input-main').val(item.name);
+                    $("#index-live").append(
+                        '<div class="block-admin-container admin-back">' + 
+                        '<div class="block-admin-section">' +
+                        '<label>Подключите трансляцию</label>' +
+                            '<div class="block-admin-sector block-admin-container block-admin-section-item">' +
+                                '<div class="admin-input-box admin-input-wrap">' +
+                                    '<label>RTMP сервер</label>' +
+                                    '<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " value="1111">' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="block-admin-sector block-admin-container block-admin-section-item">' +
+                                '<div class="admin-input-box admin-input-wrap">' +
+                                    '<label>Ключ потока</label>' +
+                                    '<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " value="1111">' +
+                                '</div>' +
+                            '</div>' +
+                        '</div>' +
+                    '</div>');   
                 }
                 
             });
