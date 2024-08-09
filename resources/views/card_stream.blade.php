@@ -125,10 +125,43 @@
 
 		</div>
 
-		<div class="block-admin-right">
+		<div class="block-admin-right"> <!--------------------------------------------Правая панель ------------------>
+
 			<div class="preview-tournir-vis">
-				<img src="{{ asset('img/ivs4.png') }}" alt="Заставка трансляции" title="Нет трансляции">
+				<img src="img/ivs4.png" alt="Заставка трансляции" title="Нет трансляции">
 			</div>
+
+			<div class="block-admin-container admin-back">
+				<div class="admin-input-wrap">
+					<div class="social-list">
+						<a href="#" class="social-list-item"><img src="img/telegram.png" alt="Телеграм"></a>
+						<a href="#" class="social-list-item"><img src="img/whatsapp.png" alt="Whatsapp"></a>
+						<a href="#" class="social-list-item"><img src="img/facebook.png" alt="Facebook"></a>
+						<a href="#" class="social-list-item"><img src="img/twitter.png" alt="Twitter"></a>
+					</div>
+				</div>
+				<div class="admin-input-box admin-input-wrap">
+					<label>Ссылка на трасляцию</label>
+					<input type="text" name="Ссылка на трасляцию" class="block-admin-input admin-input" placeholder=" ">
+					<a href="#" class="admin-video-link-stream" title="Перейти">
+						<img src="img/right-arrow.svg" alt="Перейти">
+					</a>
+					<a href="#" class="admin-video-link-copy" title="Скопировать ссылку">
+						<img src="img/copy.png" alt="Скопировать ссылку">
+					</a>
+				</div>
+				<div class="admin-input-box admin-input-wrap">
+					<label>Код для вставки на сайт</label>
+					<input type="text" name="Код для вставки на сайт" class="block-admin-input admin-input" placeholder=" ">
+					<a href="#" class="admin-video-link-stream" title="Перейти">
+						<img src="img/right-arrow.svg" alt="Перейти">
+					</a>
+					<a href="#" class="admin-video-link-copy" title="Скопировать ссылку">
+						<img src="img/copy.png" alt="Скопировать ссылку">
+					</a>
+				</div>
+			</div>
+
 		</div>
 		
 	</div>	
