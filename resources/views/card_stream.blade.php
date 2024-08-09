@@ -1,5 +1,5 @@
-@extends('admin_panel')
-@section('title-block') Пользователи @endsection
+@extends('card_stream_main')
+@section('title-block') Редактировать @endsection
 @section('card_stream_res')
 	<div class="admin-content admin-content-raw" id="admin-content">
 		<div class="block-admin-left" id="block-admin-left">
