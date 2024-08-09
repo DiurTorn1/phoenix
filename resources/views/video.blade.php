@@ -5,7 +5,7 @@
 <div class="top-menu-admin admin-back">
 			<div class="top-menu-head">
 				<h2 class="top-menu-title">Видео</h2>
-				<button class="top-menu-btn">Добавить видео</button>
+				<button class="top-menu-btn" onclick="window.location.href = '/video_add';">Добавить видео</button>
 			</div>
 			<div class="top-menu-sort">
 				<div class="admin-input-box">

@@ -82,6 +82,10 @@ Route::get('/promocode', function () {
     return view('promocode');
 });
 
+Route::get('/video_add', function () {
+    return view('video_add');
+});
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
