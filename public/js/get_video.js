@@ -25,7 +25,7 @@ $(document).ready(function() {
                             '<div class="index-live-item">' +
                                 '<div class="index-live-item-video">' +
                                     '<iframe' +
-                                    'src=" ' + item.play_link + '"' +
+                                    'src="https://kinescope.io/dmY1DEguQjTJFgKxCnTXCN"' +
                                     'width="640"' +
                                     'height="360"' +
                                     'frameborder="0"' +
