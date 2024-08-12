@@ -1,8 +1,9 @@
 $(document).ready(function() {
     //$("#jjj").on('click', function(){
         var params = new window.URLSearchParams(window.location.search);
-   
-        console.log("MSG:" + params.get('admin_input_id'));
+        if(params.get('admin_input_id') != null){
+            console.log("MSG:" + params.get('admin_input_id'));
+        }
         //console.log("MSG:" + params.get('block-admin-input'));
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
