@@ -1,4 +1,4 @@
-globalVar = "This is global!";
+var globalVar = "This is global!";
 $(document).ready(function() {
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
