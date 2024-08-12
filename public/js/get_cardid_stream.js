@@ -1,6 +1,7 @@
 $(document).ready(function() {
     //$("#jjj").on('click', function(){
         var params = new window.URLSearchParams(window.location.search);
+        //console.log(params.get('block-admin-input'));globalVar
         console.log(globalVar);
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
