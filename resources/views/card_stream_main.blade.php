@@ -24,7 +24,8 @@
 	<main class="admin-container">
 	<!-----------------------Меню стрима------------------------------>
 	<div class="admin-menu">
-		<input type="text" required name="ID" class="block_id_input" id="admin_input_id">
+		<?php "<script>var paramer = new window.URLSearchParams(window.location.search);
+        console.log(paramer.get('block-admin-input'));</script>"; ?>
 		<nav class="admin-navigation">
 			<ul class="stream-navigation admin-navigation-list admin-back">
 				<li class="admin-navigation-item"><a href="/card_stream" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/edit.png') }}" alt="Редактировать">Редактировать</a></li>
