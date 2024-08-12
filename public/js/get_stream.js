@@ -1,4 +1,3 @@
-window.globalVar = "This is global!";
 $(document).ready(function() {
     
     //$("#admin-video-list-btn").on('click', function(){
