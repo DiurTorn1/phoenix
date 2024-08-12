@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    //$("#jjj").on('click', function(){
+    //$("#jjj").on('click', function(){/card_stream
         var params = new window.URLSearchParams(window.location.search);
         if(params.get('admin_input_id')){
             var id = params.get('admin_input_id');
@@ -12,7 +12,7 @@ $(document).ready(function() {
             var list = output.data;
 
             $.each(list,function(i,item){
-                if(item.id == id){
+                if(item.id == params.get('admin_input_id')){
                     console.log("Video inform:\r\n");
                     console.log(/*"id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                         "\r\ntype: " + item.type + */"\r\nstreamkey: " + item.streamkey /*+ "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift*/); 
@@ -50,5 +50,8 @@ $(document).ready(function() {
         //alert();
         //$('#admin-input-main').appendVal();
     //});
+    $("#card_stream_link").on('click', function(){
+        window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
+    });
     
 });
