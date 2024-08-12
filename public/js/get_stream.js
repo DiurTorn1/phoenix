@@ -78,6 +78,7 @@ $(document).ready(function() {
     //});
     $(document).on('dblclick', '.admin-video-item', function() {
         var id = this.id;
+        $("#admin_input_id").val(id);
         window.location.href='/card_stream?block-admin-input='+id;
         //alert("Text: " + this.id);
     });
