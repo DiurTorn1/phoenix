@@ -2,14 +2,15 @@
 @section('title-block') Аналитика @endsection
 @section('card_stream_res')
 	<!----------------------------Стрим-контент ТРАНСЛЯЦИЯ---------------------------------->
+	<script type="text/javascript" src = "{{ asset('js/broadcast_stream.js') }}"></script>
 	<div class="admin-content admin-content-raw">
 		<div class="block-admin-left">
 			
 			<div class="block-admin-container admin-back">
 				<div class="preview-tournir-vis">
 					<!--<img src="img/ivs4.png" alt="Заставка трансляции" title="Нет трансляции">-->
-					<iframe src="https://kinescope.io/dmY1DEguQjTJFgKxCnTXCN" width="640" height="480" frameborder="0"
-    					allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" ></iframe>
+					<iframe src="" width="100%" height="100%" frameborder="0"
+    					allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" id="player_broadcast"></iframe>
 				</div>
 			</div>
 
