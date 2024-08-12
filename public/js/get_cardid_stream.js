@@ -1,13 +1,13 @@
 $(document).ready(function() {
     //$("#jjj").on('click', function(){
-    var mult = 0;
+    //var mult = 0;
         var params = new window.URLSearchParams(window.location.search);
     
-    if(mult == 0){
+    //if(mult == 0){
+        //console.log("MSG:" + params.get('block-admin-input'));
+       // mult++;
+    //}
         console.log("MSG:" + params.get('block-admin-input'));
-        mult++;
-    }
-        //console.log(params.get('block-admin-input'));globalVar
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
             var list = output.data;
