@@ -34,6 +34,7 @@
 
 </head>
 <body ><!--class="body-admin">-->
+<input type="text" required name="ID" class="block_admin_id" id="admin_input_id">	
 
 @yield('content')
 
