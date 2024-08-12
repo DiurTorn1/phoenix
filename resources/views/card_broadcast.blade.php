@@ -54,7 +54,7 @@
 
 				<div class="admin-input-box admin-input-wrap admin-input-mb">
 					<label>URL-адрес потока RTMP</label>
-					<input type="text" name="URL-адрес потока RTMP" class="block-admin-input admin-input" placeholder=" ">
+					<input type="text" name="URL-адрес потока RTMP" class="block-admin-input admin-input" placeholder=" " id="RTMP_url_input">
 					<a href="#" class="admin-video-link-copy" title="Скопировать URL">
 						<img src="img/copy.png" alt="Скопировать URL">
 					</a>
@@ -62,7 +62,7 @@
 
 				<div class="admin-input-box admin-input-wrap admin-input-mb">
 					<label>Ключ потока RTMP</label>
-					<input type="text" name="URL-адрес потока RTMP" class="block-admin-input admin-input block-admin-input-key" placeholder=" ">
+					<input type="text" name="URL-адрес потока RTMP" class="block-admin-input admin-input block-admin-input-key" placeholder=" " id="RTMP_key_input">
 					<a href="#" class="admin-video-link-renew" title="Обновить ключ">
 						<img src="img/renew.png" alt="Обновить ключ">
 					</a>

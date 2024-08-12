@@ -19,7 +19,10 @@ $(document).ready(function() {
                         //"\r\nmoderators: " + item.moderators);
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                    /*$('#admin-input-main').val(item.name);
+                    $('#player_broadcast').attr('src', item.play_link);
+                    $('#RTMP_url_input').val(item.rtmp_link);
+                    $('#RTMP_key_input').val(item.streamkey);
+                        /*$('#admin-input-main').val(item.name);id="RTMP_url_input"
                     $("#block-admin-left").append(
                         '<div class="block-admin-container admin-back">' + 
                         '<div class="block-admin-section">' +
