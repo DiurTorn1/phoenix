@@ -76,6 +76,7 @@ $(document).ready(function() {
     //$("li").on('dblclick', function(){    
         //alert("Double penetration");
     //});
+    window.globalVar = "This is global!";
     $(document).on('dblclick', '.admin-video-item', function() {
         var id = this.id;
         $("#admin_input_id").val(id);
