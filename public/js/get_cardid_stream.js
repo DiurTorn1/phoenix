@@ -3,6 +3,7 @@ $(document).ready(function() {
         var params = new window.URLSearchParams(window.location.search);
         if(params.get('admin_input_id') != null){
             var id = params.get('admin_input_id');
+            console.log("MSG:" + params.get('block-admin-input'));
         }
         //console.log("MSG:" + params.get('block-admin-input'));
         $.post('/php/get_stream.php', function(data)  {
