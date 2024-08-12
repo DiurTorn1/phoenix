@@ -7,11 +7,11 @@
 		<div class="block-admin-left">
 			
 			<div class="block-admin-container admin-back">
-				<div class="preview-tournir-vis">
+				<!--<div class="preview-tournir-vis">-->
 					<!--<img src="img/ivs4.png" alt="Заставка трансляции" title="Нет трансляции">-->
 					<iframe src="" width="100%" height="100%" frameborder="0"
     					allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" id="player_broadcast"></iframe>
-				</div>
+				<!--</div>-->
 			</div>
 
 			<div class="block-admin-container admin-back soc-container">
