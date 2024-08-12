@@ -7,7 +7,8 @@
 			
 			<div class="block-admin-container admin-back">
 				<div class="preview-tournir-vis">
-					<iframe src="https://kinescope.io/dmY1DEguQjTJFgKxCnTXCN" width="100%" height="100%" frameborder="0"
+					<!--<img src="img/ivs4.png" alt="Заставка трансляции" title="Нет трансляции">-->
+					<iframe src="https://kinescope.io/dmY1DEguQjTJFgKxCnTXCN" width="640" height="480" frameborder="0"
     					allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" ></iframe>
 				</div>
 			</div>
