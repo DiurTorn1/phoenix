@@ -1,4 +1,3 @@
-global.globalVar = "This is global!";
 $(document).ready(function() {
     //$("#publishBtn").click(function(){
     //});
@@ -28,3 +27,8 @@ $(document).ready(function() {
         //alert("Button clicked!");
     //});
 });
+
+window.glist = function(){ 
+    alert("Global func");
+    return 0;
+}

@@ -2,8 +2,9 @@ $(document).ready(function() {
     //$("#jjj").on('click', function(){
         var params = new window.URLSearchParams(window.location.search);
    
-        console.log("MSG:" + globalVar);
+        console.log("MSG:" + params.get('block-admin-input'));
         //console.log("MSG:" + params.get('block-admin-input'));
+        glist();
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
             var list = output.data;
