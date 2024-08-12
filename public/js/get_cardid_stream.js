@@ -1,7 +1,7 @@
 $(document).ready(function() {
     //$("#jjj").on('click', function(){
         var params = new window.URLSearchParams(window.location.search);
-        if(params.get('admin_input_id') != null){
+        if(params.get('admin_input_id')){
             var id = params.get('admin_input_id');
             $('#admin_input_id').val(params.get('admin_input_id'));
             //console.log("MSG:" + params.get('block-admin-input'));
