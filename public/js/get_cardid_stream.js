@@ -1,11 +1,6 @@
 $(document).ready(function() {
     //$("#jjj").on('click', function(){/card_stream
         var params = new window.URLSearchParams(window.location.search);
-        if(params.get('admin_input_id')){
-            var id = params.get('admin_input_id');
-            $('#admin_input_id').val(params.get('admin_input_id'));
-            //console.log("MSG:" + params.get('block-admin-input'));
-        }
         //console.log("MSG:" + params.get('block-admin-input'));
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
@@ -48,10 +43,22 @@ $(document).ready(function() {
             });
         });
         //alert();
-        //$('#admin-input-main').appendVal();
+        //$('#admin-input-main').appendVal();card_broadcast
     //});
     $("#card_stream_link").on('click', function(){
         window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
+    });
+    $("#card_broadcast_link").on('click', function(){
+        window.location.href='/card_broadcast?admin_input_id='+params.get('admin_input_id');
+    });
+    $("#card_monitor_link").on('click', function(){
+        window.location.href='/card_monitor?admin_input_id='+params.get('admin_input_id');
+    });
+    $("#analitik_card_link").on('click', function(){
+        window.location.href='/analitik_card?admin_input_id='+params.get('admin_input_id');
+    });
+    $("#card_restreamm_link").on('click', function(){
+        window.location.href='/card_restream?admin_input_id='+params.get('admin_input_id');
     });
     
 });
