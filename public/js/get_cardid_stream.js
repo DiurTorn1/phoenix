@@ -4,7 +4,6 @@ $(document).ready(function() {
    
         console.log("MSG:" + params.get('block-admin-input'));
         //console.log("MSG:" + params.get('block-admin-input'));
-        glist();
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
             var list = output.data;
