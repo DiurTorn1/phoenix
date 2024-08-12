@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    var globalVar = "This is global!";
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         $.post('/php/get_stream.php', function(data)  {
