@@ -57,7 +57,7 @@ $(document).ready(function() {
     $("#analitik_card_link").on('click', function(){
         window.location.href='/analitik_card?admin_input_id='+params.get('admin_input_id');
     });
-    $("#card_restreamm_link").on('click', function(){
+    $("#card_restream_link").on('click', function(){
         window.location.href='/card_restream?admin_input_id='+params.get('admin_input_id');
     });
     
