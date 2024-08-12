@@ -1,7 +1,7 @@
 $(document).ready(function() {
     //$("#jjj").on('click', function(){
         var params = new window.URLSearchParams(window.location.search);
-        console.log(window.globalVar);
+        console.log(globalVar);
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
             var list = output.data;
