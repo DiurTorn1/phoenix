@@ -2,14 +2,14 @@ $(document).ready(function() {
     //$("#jjj").on('click', function(){
         var params = new window.URLSearchParams(window.location.search);
    
-        console.log("MSG:" + params.get('block-admin-input'));
+        console.log("MSG:" + params.get('admin_input_id'));
         //console.log("MSG:" + params.get('block-admin-input'));
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
             var list = output.data;
 
             $.each(list,function(i,item){
-                if(item.id == params.get('block-admin-input')){
+                if(item.id == params.get('admin_input_id')){
                     console.log("Video inform:\r\n");
                     console.log(/*"id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                         "\r\ntype: " + item.type + */"\r\nstreamkey: " + item.streamkey /*+ "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift*/); 
