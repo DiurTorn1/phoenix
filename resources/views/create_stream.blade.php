@@ -78,8 +78,11 @@
 				<div class="admin-input-box admin-input-wrap">
 					<label>Шаблон для доступа региона</label>
 					<select class="admin-input admin-input-select block-admin-input">
-						<option value="Шаблон 1">Шаблон 1</option>
-						<option value="Шаблон 2">Шаблон 2</option>
+						<option value="Все регионы">Все регионы</option>
+						<option value="Волгоград">Волгоград</option>
+						<option value="Псков">Псков</option>
+						<option value="Деревня дедушки">Деревня дедушки</option>
+						<option value="Урюпинск">Урюпинск</option>
 					</select>
 				</div>
 				<div class="admin-input-box admin-input-wrap">

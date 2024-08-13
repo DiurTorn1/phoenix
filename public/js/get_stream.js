@@ -9,7 +9,7 @@ $(document).ready(function() {
             var list = output.data;
 
             $.each(list,function(i,item){
-                console.log("Video inform:\r\n");
+                /*console.log("Video inform:\r\n");
                 console.log("id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                     "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
                 console.log("\r\nRecord: \r\n parent_id: " + item.record.parent_id + "\r\nvideo: \r\n presets: " + item.video.presets + "\r\naudio: \r\n channel_mapping: " + item.audio.channel_mapping + 
@@ -20,9 +20,9 @@ $(document).ready(function() {
                     "\r\nmoderators: " + item.moderators);
                 console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                var vid_sport = "Vid sporta";
+                */var vid_sport = "Vid sporta";
                 var gorod = "";
-                if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
+                /*if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
                     gorod = "Все регионы";
                 } else if(item.parent_id == "e17efa12-a615-4be4-9aa4-95db02f7530f"){
                     gorod = "Волгоград";
@@ -34,7 +34,7 @@ $(document).ready(function() {
                     gorod = "Урюпинск";
                 } else {
                     gorod = "Нет такго города:" + item.parent_id;
-                }
+                }*/
                     $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
@@ -51,7 +51,7 @@ $(document).ready(function() {
                             '<span class="admin-video-item-h-date">' + item.name + '</span>' +
 					    '</div>' + 
                         '<div class="admin-video-item-h-hashtag">' + 
-                            '<span class="admin-video-hashtag-date">2023-2024</span>' + 
+                            '<span class="admin-video-hashtag-date">2024-2025</span>' + 
                             '<span class="admin-video-hashtag-kubok">Кубок Феникса</span>' +
 					        '<span class="admin-video-hashtag-group">Ю11</span>' +
 						    '<span class="admin-video-hashtag-sport">'+ vid_sport +'</span>' +
