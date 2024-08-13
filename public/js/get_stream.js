@@ -22,13 +22,19 @@ $(document).ready(function() {
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                 var vid_sport = "";
                 var gorod = "";
+                var kubok = "";
                 var weigth = "";
                 var sezon = "";
                 var boss = "";
                 var tegs = item.subtitle;
                 var pars = tegs.split("&");
-                console.log("Res parse: " + pars[0]);
-                if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
+                sezon = pars[0];
+                kubok = pars[1];
+                weigth = pars[2];
+                vid_sport = pars[3];
+                gorod = pars[4];
+                boss = pars[5];
+                /*if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
                     gorod = "Все регионы";
                 } else if(item.parent_id == "e17efa12-a615-4be4-9aa4-95db02f7530f"){
                     gorod = "Волгоград";
@@ -40,7 +46,7 @@ $(document).ready(function() {
                     gorod = "Урюпинск";
                 } else {
                     gorod = "Нет такго города:" + item.parent_id;
-                }
+                }*/
                     $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
@@ -57,12 +63,12 @@ $(document).ready(function() {
                             '<span class="admin-video-item-h-date">' + item.name + '</span>' +
 					    '</div>' + 
                         '<div class="admin-video-item-h-hashtag">' + 
-                            '<span class="admin-video-hashtag-date">2024-2025</span>' + 
-                            '<span class="admin-video-hashtag-kubok">Кубок Феникса</span>' +
-					        '<span class="admin-video-hashtag-group">Ю11</span>' +
+                            '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
+                            '<span class="admin-video-hashtag-kubok">' + kubok + '</span>' +
+					        '<span class="admin-video-hashtag-group">' + weigth + '</span>' +
 						    '<span class="admin-video-hashtag-sport">'+ vid_sport +'</span>' +
 						    '<span class="admin-video-hashtag-city">' + gorod + '</span>' +
-						    '<span class="admin-video-hashtag-org">ЦРСП "ФЕНИКС"</span>' +
+						    '<span class="admin-video-hashtag-org">' + boss + '</span>' +
 					    '</div>' +
 				    '</div>' +
 				    '<div class="admin-video-item-view">' +
