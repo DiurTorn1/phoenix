@@ -22,6 +22,9 @@ $(document).ready(function() {
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                 var vid_sport = "";
                 var gorod = "";
+                var tegs = "teg1&teg2&teg3&teg4&teg5&teg6";
+                var pars = tegs.split("&");
+                console.log("Res parse: " + pars[parseFloat.length-1]);
                 if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
                     gorod = "Все регионы";
                 } else if(item.parent_id == "e17efa12-a615-4be4-9aa4-95db02f7530f"){
