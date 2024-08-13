@@ -712,9 +712,10 @@ footer {
 .respons-input {
     font-weight: normal;
     font-size: 1rem;
-    min-height: 60px;
+    min-height: 200px;
 }
 .block-admin-prem-input {
+    min-height: 20px;
     color: #868686;
 }
 .admin-video-sort {
