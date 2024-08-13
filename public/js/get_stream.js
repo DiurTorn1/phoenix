@@ -20,9 +20,9 @@ $(document).ready(function() {
                     "\r\nmoderators: " + item.moderators);
                 console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                */var vid_sport = "Vid sporta";
+                */var vid_sport = "";
                 var gorod = "";
-                /*if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
+                if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
                     gorod = "Все регионы";
                 } else if(item.parent_id == "e17efa12-a615-4be4-9aa4-95db02f7530f"){
                     gorod = "Волгоград";
@@ -34,7 +34,7 @@ $(document).ready(function() {
                     gorod = "Урюпинск";
                 } else {
                     gorod = "Нет такго города:" + item.parent_id;
-                }*/
+                }
                     $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
