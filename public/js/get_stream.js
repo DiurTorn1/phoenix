@@ -25,7 +25,7 @@ $(document).ready(function() {
                 var weigth = "";
                 var sezon = "";
                 var boss = "";
-                var tegs = "teg1&teg2&teg3&teg4&teg5&teg6";
+                var tegs = item.subtitle;
                 var pars = tegs.split("&");
                 console.log("Res parse: " + pars[0]);
                 if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
