@@ -9,7 +9,7 @@ $(document).ready(function() {
             var list = output.data;
 
             $.each(list,function(i,item){
-                /*console.log("Video inform:\r\n");
+                console.log("Video inform:\r\n");
                 console.log("id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                     "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
                 console.log("\r\nRecord: \r\n parent_id: " + item.record.parent_id + "\r\nvideo: \r\n presets: " + item.video.presets + "\r\naudio: \r\n channel_mapping: " + item.audio.channel_mapping + 
@@ -20,7 +20,7 @@ $(document).ready(function() {
                     "\r\nmoderators: " + item.moderators);
                 console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                */var vid_sport = "";
+                var vid_sport = "";
                 var gorod = "";
                 if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
                     gorod = "Все регионы";
