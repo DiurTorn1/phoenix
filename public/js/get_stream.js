@@ -21,14 +21,19 @@ $(document).ready(function() {
                 console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                 var vid_sport = "Vid sporta";
-                if(item.parent_id == "a3baa3cf-2c8b-4f14-9081-1b84d5930f23"){
-                    vid_sport = "Баскетбол";
-                } else if(item.parent_id == "f124464a-70eb-4c94-9b14-21d06af7aaf0"){
-                    vid_sport = "Волейбол";
-                }else if(item.parent_id == "76be9caa-5ca7-4ac7-947e-4e7042b40632"){
-                    vid_sport = "Тест";
+                var gorod = "";
+                if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
+                    gorod = "Все регионы";
+                } else if(item.parent_id == "e17efa12-a615-4be4-9aa4-95db02f7530f"){
+                    gorod = "Волгоград";
+                }else if(item.parent_id == "dcd0f04b-a2d3-4159-8eec-cb2c5ef52688"){
+                    gorod = "Псков";
+                } else if(item.parent_id == "509b0459-c739-4a37-ba4d-e7fb2d5011d0"){
+                    gorod = "Деревня дедушки";
+                } else if(item.parent_id == "64fd885d-0244-4f9c-acd4-5d7dba6cd3f3"){
+                    gorod = "Урюпинск";
                 } else {
-                    vid_sport = "Нет такой группы:" + item.parent_id;
+                    gorod = "Нет такго города:" + item.parent_id;
                 }
                     $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
@@ -50,7 +55,7 @@ $(document).ready(function() {
                             '<span class="admin-video-hashtag-kubok">Кубок Феникса</span>' +
 					        '<span class="admin-video-hashtag-group">Ю11</span>' +
 						    '<span class="admin-video-hashtag-sport">'+ vid_sport +'</span>' +
-						    '<span class="admin-video-hashtag-city">Псков</span>' +
+						    '<span class="admin-video-hashtag-city">' + gorod + '</span>' +
 						    '<span class="admin-video-hashtag-org">ЦРСП "ФЕНИКС"</span>' +
 					    '</div>' +
 				    '</div>' +
