@@ -27,7 +27,7 @@ $(document).ready(function() {
                 var boss = "";
                 var tegs = item.subtitle;
                 var pars = tegs.split("&");
-                console.log("Res parse: " + item.subtitle);
+                console.log("Res parse: " + pars[0]);
                 if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
                     gorod = "Все регионы";
                 } else if(item.parent_id == "e17efa12-a615-4be4-9aa4-95db02f7530f"){
