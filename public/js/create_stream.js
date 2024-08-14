@@ -1,12 +1,13 @@
 $(document).ready(function() {
     $("#save-st").on('click', function(){
         var main = $('#block-admin-inputct').val();
-        $.post('/php/create_stream.php',{name: main}, function(data)  {
-            alert("Text:"+data);
+        console.log("Index:" + $("#admin_input_select option:selected").index());
+        //$.post('/php/create_stream.php',{name: main}, function(data)  {  //admin_input_select
+            //alert("Text:"+data);
             //console.log(main);
             
-        });
-        window.location.href='/stream';//?block-admin-input='+id;
+        //});
+        //window.location.href='/stream';//?block-admin-input='+id;
         //var month = label.val('month');
         //var year = label.val('year');
         //var text = label.text();

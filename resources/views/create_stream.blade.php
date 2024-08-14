@@ -77,12 +77,8 @@
 			<div class="block-admin-container admin-back">
 				<div class="admin-input-box admin-input-wrap">
 					<label>Шаблон для доступа региона</label>
-					<select class="admin-input admin-input-select block-admin-input">
+					<select class="admin-input admin-input-select block-admin-input" id="admin_input_select">
 						<option value="Все регионы">Все регионы</option>
-						<option value="Волгоград">Волгоград</option>
-						<option value="Псков">Псков</option>
-						<option value="Деревня дедушки">Деревня дедушки</option>
-						<option value="Урюпинск">Урюпинск</option>
 					</select>
 				</div>
 				<div class="admin-input-box admin-input-wrap">
