@@ -685,6 +685,12 @@ footer {
     border-radius: 4px;
     border: 1px solid #595959;
 }
+.admin-input-min {
+    min-height: auto;
+    line-height: 1.2;
+    padding: 0.9rem 0 0.9rem 0.9rem;
+
+}
 .block-admin-input {
     width: -moz-available;
     width: -webkit-fill-available;
@@ -809,6 +815,9 @@ content: '\2713';
 }
 .block-admin-left {
     max-width: 65%;
+    width: -moz-available;
+    width: -webkit-fill-available;
+
 }
 .block-admin-right {
     max-width: 40%;

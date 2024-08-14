@@ -49,7 +49,7 @@
 					<textarea name="Описание" class="block-admin-input respons-input admin-input"></textarea>
 				</div>
 				<div class="admin-input-box admin-input-wrap">
-					<textarea name="Описание для премиум клиентов" class="block-admin-prem-input block-admin-input admin-input">Описание для премиум клиентов</textarea>
+				<textarea name="Описание для премиум клиентов" class="block-admin-prem-input block-admin-input admin-input admin-input-min">Описание для премиум клиентов</textarea>
 				</div>
 			</div>
 
@@ -58,11 +58,11 @@
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
 						<div class="admin-input-box admin-input-wrap">
 							<label>Начало трансляции</label>
-							<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="09 Мая в 08:45">
+							<input type="datetime-local" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="01 Января 2000 в 00:00">
 						</div>
 						<div class="admin-input-box admin-input-wrap">
 							<label>Дата публикации плеера</label>
-							<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="04 Мая в 18:50">
+							<input type="datetime-local" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="01 Января 2000 в 00:00">
 						</div>
 					</div>
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
