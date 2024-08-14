@@ -14,13 +14,14 @@ $(document).ready(function() {
             //alert("Text:"+data);admin_input_seasonct   ditetime_start_at
             console.log(data);
             var output = $.parseJSON(data);
-            //var list = output.data;
-            $.each(output,function(i,item){
+            var list = output.data;
+            $('#admin_link_playct').val(output.play_link);
+            $.each(list,function(i,item){
                 console.log("Video inform:\r\n");
-                console.log("data:\r\n" + "id: " + item.data.id + "\r\nworkspace_id: " + item.data.workspace_id + "\r\nparent_id: " + item.data.parent_id + "\r\nname: " + item.data.name +
-                    "\r\nsubtitle: " + item.data.subtitle + "\r\ntype: " + item.data.type + "\r\nstreamkey: " + item.data.streamkey + "\r\nauto_start: " + item.data.auto_start + "\r\nprotected: " + item.data.protected +
-                    "\r\ntime_shift: " + item.data.time_shift); 
-                $('#admin_link_playct').val(item.play_link);
+                console.log("data:\r\n" + "id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name +
+                    "\r\nsubtitle: " + item.subtitle + "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected +
+                    "\r\ntime_shift: " + item.time_shift); 
+                
             });
             
         });
