@@ -77,13 +77,13 @@
 			<div class="block-admin-container admin-back">
 				<div class="admin-input-box admin-input-wrap">
 					<label>Шаблон для доступа региона</label>
-					<select class="admin-input admin-input-select block-admin-input" id="admin_input_select">
+					<select class="admin-input admin-input-select block-admin-input" id="admin_input_selectct">
 						<option value="Все регионы">Все регионы</option>
 					</select>
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Сезон</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_input_seasonct">
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Турнир</label>

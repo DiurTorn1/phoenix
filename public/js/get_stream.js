@@ -26,6 +26,7 @@ $(document).ready(function() {
                 var weigth = "";
                 var sezon = "";
                 var boss = "";
+                var region = "";
                 var tegs = item.subtitle;
                 var pars = tegs.split("&");
                 sezon = pars[0];
@@ -34,6 +35,7 @@ $(document).ready(function() {
                 vid_sport = pars[3];
                 gorod = pars[4];
                 boss = pars[5];
+                region = pars[6];
                 /*if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
                     gorod = "Все регионы";
                 } else if(item.parent_id == "e17efa12-a615-4be4-9aa4-95db02f7530f"){
@@ -73,7 +75,7 @@ $(document).ready(function() {
 				    '</div>' +
 				    '<div class="admin-video-item-view">' +
 					    '<p class="admin-video-item-v-count"><span>1342</span>просмотра</p>' +
-					    '<p class="admin-video-item-v-region">Все регионы</p>' +
+					    '<p class="admin-video-item-v-region">' + region + '</p>' +
 				    '</div>' +
 				    '<div class="admin-video-item-info admin-video-item-view">' +
 					    '<p class="admin-video-item-i-time">Закончилась в<span>15:19</span></p>' +
