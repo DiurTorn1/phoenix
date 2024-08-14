@@ -12,7 +12,7 @@ $(document).ready(function() {
         var start_at = $("#ditetime_start_at").val();
         $.post('/php/create_stream.php',{name: main, region: region, season: season, turnir: turnir, weigth: weigth, product: product, vid_sporta: vid_sporta, minframe: minframe, start_at: start_at}, function(data)  {  //admin_input_select
             //alert("Text:"+data);admin_input_seasonct   ditetime_start_at
-            console.log(data);
+            //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
             $('#admin_link_playct').val(output.play_link);
