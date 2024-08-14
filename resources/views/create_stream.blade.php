@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
-						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="https://nextcloud.tehnodir.ru/index.php/s/3M57JCrBwTz7tq8" alt="Обложка турнира"></a>
+						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b" alt="Обложка турнира"></a>
 						<div class="edit-preview-tournir">
 							<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
 						</div>
@@ -127,7 +127,7 @@
 		<div class="block-admin-right"> <!--------------------------------------------Правая панель ------------------>
 
 			<div class="preview-tournir-vis">
-				<img src="https://nextcloud.tehnodir.ru/index.php/s/3M57JCrBwTz7tq8" alt="Заставка трансляции" title="Нет трансляции">
+				<img src="https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b" alt="Заставка трансляции" title="Нет трансляции">
 			</div>
 
 			<div class="block-admin-container admin-back">

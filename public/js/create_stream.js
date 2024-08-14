@@ -7,7 +7,7 @@ $(document).ready(function() {
         console.log("Weigth:" + $("#admin_weigth_seasonct").val());
         console.log("Product:" + $("#admin_product_seasonct").val());
         console.log("Vid sporta:" + $("#admin_vidsporta_seasonct option:selected").text());
-        console.log("Minframe:" + $("#admin_minframe_seasonct option:selected").text());
+        console.log("Minframe:" + $("#admin_minframe_seasonct option:selected").index());
         //$.post('/php/create_stream.php',{name: main}, function(data)  {  //admin_input_select
             //alert("Text:"+data);admin_input_seasonct
             //console.log(main);
