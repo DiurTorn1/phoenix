@@ -20,7 +20,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 $result = curl_exec($ch);
 curl_close($ch);
 echo $result;*/
-$tegs = $_POST['season'] + '&' + $_POST['turnir'] + '&' + $_POST['weigth'] + '&' + $_POST['vid_sporta'] + '&' + ' ' + '&' + ' ' + '&' + $_POST['region'];
+$tegs = $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
 echo $tegs;//"Name: " . $_POST['name'] . ",region: " . $_POST['region'] . ",season: " . $_POST['season'] . ",turnir: " . $_POST['turnir'] . ", weigth: " . $_POST['weigth'] . ",product: " . $_POST['product'] . ",vid_sporta: " . $_POST['vid_sporta'] . ",minframe: " . $_POST['minframe'];
 //$token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 //setup the request, you can also use CURLOPT_URL
