@@ -1,7 +1,8 @@
 <?php
 //$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
-/*$data = array("name" => $_POST['name'],"subtitle" => "teg1&teg2&teg3&teg4&teg5&teg6", "type" => "one-time", "auto_start" => false, "protected" => false, "time_shift" => true,
-         "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", "reconnect_window" => 600, "scheduled" => array("time" => "2024-08-06T13:05:41.634922Z"),
+$tegs = $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
+$data = array("name" => $_POST['name'],"subtitle" => $tegs, "type" => "one-time", "auto_start" => false, "protected" => false, "time_shift" => true,
+         "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", "reconnect_window" => 1800, "scheduled" => array("time" => $_POST['start_at']),
          "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"),
          "restreams" => array(), "latency_mode" => "standard");
 $postdata = json_encode($data);
@@ -19,9 +20,9 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 
 $result = curl_exec($ch);
 curl_close($ch);
-echo $result;*/
-$tegs = $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
-echo $tegs;//"Name: " . $_POST['name'] . ",region: " . $_POST['region'] . ",season: " . $_POST['season'] . ",turnir: " . $_POST['turnir'] . ", weigth: " . $_POST['weigth'] . ",product: " . $_POST['product'] . ",vid_sporta: " . $_POST['vid_sporta'] . ",minframe: " . $_POST['minframe'];
+echo $result;
+
+//echo $tegs;//"Name: " . $_POST['name'] . ",region: " . $_POST['region'] . ",season: " . $_POST['season'] . ",turnir: " . $_POST['turnir'] . ", weigth: " . $_POST['weigth'] . ",product: " . $_POST['product'] . ",vid_sporta: " . $_POST['vid_sporta'] . ",minframe: " . $_POST['minframe'];
 //$token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 //setup the request, you can also use CURLOPT_URL
 //$ch = curl_init('https://api.kinescope.io/v2/live/events?page=1&per_page=100&order=created_at.desc,name.asc');//https://api.kinescope.io/v1/videos?page=1&per_page=100&order=created_at.desc,title.asc');
