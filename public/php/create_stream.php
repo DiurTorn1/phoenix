@@ -2,7 +2,7 @@
 //$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
 $tegs = $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
 $data = array("name" => $_POST['name'],"subtitle" => $tegs, "type" => "one-time", "auto_start" => false, "protected" => false, "time_shift" => true,
-         "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", "reconnect_window" => 1800, "scheduled" => array("time" => $_POST['start_at']),
+         "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", "reconnect_window" => 1800, "scheduled" => array("time" => $_POST['start_at'] . ':00.000000Z'),
          "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"),
          "restreams" => array(), "latency_mode" => "standard");
 $postdata = json_encode($data);
