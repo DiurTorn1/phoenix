@@ -58,11 +58,11 @@
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
 						<div class="admin-input-box admin-input-wrap">
 							<label>Начало трансляции</label>
-							<input type="datetime-local" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="01 Января 2000 в 00:00">
+							<input type="datetime-local" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="01 Января 2000 в 00:00" id="ditetime_start_at">
 						</div>
 						<div class="admin-input-box admin-input-wrap">
 							<label>Дата публикации плеера</label>
-							<input type="datetime-local" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="01 Января 2000 в 00:00">
+							<input type="datetime-local" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="01 Января 2000 в 00:00" id="ditetime_public_at">
 						</div>
 					</div>
 					<div class="block-admin-sector block-admin-container block-admin-section-item">

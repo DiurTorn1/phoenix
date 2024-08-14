@@ -8,8 +8,9 @@ $(document).ready(function() {
         var product = $("#admin_product_seasonct").val();
         var vid_sporta = $("#admin_vidsporta_seasonct option:selected").text();
         var minframe = $("#admin_minframe_seasonct option:selected").index();
+        console.log("Start:" + $("#ditetime_start_at").val() + ", Public:" + $("#ditetime_public_at").val());
         $.post('/php/create_stream.php',{name: main, region: region, season: season, turnir: turnir, weigth: weigth, product: product, vid_sporta: vid_sporta, minframe: minframe}, function(data)  {  //admin_input_select
-            //alert("Text:"+data);admin_input_seasonct
+            //alert("Text:"+data);admin_input_seasonct   ditetime_start_at
             console.log(data);
             
         });
