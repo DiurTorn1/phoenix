@@ -141,7 +141,7 @@
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Ссылка на трасляцию</label>
-					<input type="text" name="Ссылка на трасляцию" class="block-admin-input admin-input" placeholder=" ">
+					<input type="text" name="Ссылка на трасляцию" class="block-admin-input admin-input" placeholder=" " id="admin_link_playct">
 					<a href="#" class="admin-video-link-stream" title="Перейти">
 						<img src="img/right-arrow.svg" alt="Перейти">
 					</a>
