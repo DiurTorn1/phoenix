@@ -2,7 +2,7 @@
 //$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
 $tegs = $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
 $data = array("name" => $_POST['name'],"subtitle" => $tegs, "type" => "one-time", "auto_start" => false, "protected" => false, "time_shift" => true,
-         "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", "reconnect_window" => 600, "scheduled" => array("time" => "2024-08-15T13:05:41.634922Z"),
+         "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", "reconnect_window" => 600, "scheduled" => array("time" => $_POST['start_at']. ':00.000000Z'),
          "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"),
          "restreams" => array(), "latency_mode" => "standard");
 $postdata = json_encode($data);
@@ -20,7 +20,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 
 $result = curl_exec($ch);
 curl_close($ch);
-echo $result . '\r\n' . $_POST['start_at'];
+echo $result;
 
 //echo $tegs;//"Name: " . $_POST['name'] . ",region: " . $_POST['region'] . ",season: " . $_POST['season'] . ",turnir: " . $_POST['turnir'] . ", weigth: " . $_POST['weigth'] . ",product: " . $_POST['product'] . ",vid_sporta: " . $_POST['vid_sporta'] . ",minframe: " . $_POST['minframe'];
 //$token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
