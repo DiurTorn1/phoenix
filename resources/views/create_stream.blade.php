@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
-						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка турнира"></a>
+						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="https://nextcloud.tehnodir.ru/index.php/s/3M57JCrBwTz7tq8" alt="Обложка турнира"></a>
 						<div class="edit-preview-tournir">
 							<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
 						</div>
@@ -77,25 +77,25 @@
 			<div class="block-admin-container admin-back">
 				<div class="admin-input-box admin-input-wrap">
 					<label>Шаблон для доступа региона</label>
-					<select class="admin-input admin-input-select block-admin-input" id="admin_input_selectct">
+					<select class="admin-input admin-input-select block-admin-input" id="admin_region_selectct">
 						<option value="Все регионы">Все регионы</option>
 					</select>
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Сезон</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_input_seasonct">
+					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_season_seasonct">
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Турнир</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_turnir_seasonct">
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Возраст</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_weigth_seasonct">
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Добавить к продукту</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_product_seasonct">
 				</div>
 			</div>
 
@@ -104,7 +104,7 @@
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
 						<div class="admin-input-box admin-input-wrap">
 							<label>Вид спорта</label>
-							<select class="admin-input admin-input-select block-admin-input">
+							<select class="admin-input admin-input-select block-admin-input" id="admin_vidsporta_seasonct">
 								<option value="Баскетбол">Баскетбол</option>
 								<option value="Волейбол">Волейбол</option>
 							</select>
@@ -113,7 +113,7 @@
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
 						<div class="admin-input-box admin-input-wrap">
 							<label>Задержка сигнала</label>
-							<select class="admin-input admin-input-select block-admin-input">
+							<select class="admin-input admin-input-select block-admin-input" id="admin_minframe_seasonct">
 								<option value="">Минимальная (10-15 секунд)</option>
 								<option value="">Стандартная (20-25 секунд)</option>
 							</select>
@@ -127,7 +127,7 @@
 		<div class="block-admin-right"> <!--------------------------------------------Правая панель ------------------>
 
 			<div class="preview-tournir-vis">
-				<img src="img/ivs4.png" alt="Заставка трансляции" title="Нет трансляции">
+				<img src="https://nextcloud.tehnodir.ru/index.php/s/3M57JCrBwTz7tq8" alt="Заставка трансляции" title="Нет трансляции">
 			</div>
 
 			<div class="block-admin-container admin-back">
