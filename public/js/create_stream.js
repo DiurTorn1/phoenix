@@ -14,9 +14,9 @@ $(document).ready(function() {
             //alert("Text:"+data);admin_input_seasonct   ditetime_start_at
             //console.log(data);
             var output = $.parseJSON(data);
-            console.log(output);
-            //var list = output.data;
-            // $('#admin_link_playct').val(output.play_link);
+            //console.log(output);
+            var list = output.data;
+             $('#admin_link_playct').val(list.play_link);
             //$.each(list,function(i,item){
                 //console.log("Video inform:\r\n");
                 //console.log("data:\r\n" + "id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name +
