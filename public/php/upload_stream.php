@@ -23,4 +23,4 @@ $info = curl_getinfo($ch);
 // close curl resource to free up system resources   763cf3d3-f251-4e89-8a5b-306fe9b83da8   https://api.kinescope.io/v2/live/events/:event_id
 curl_close($ch);
 
-echo $data;
+echo $data ." ID = ".$_POST['id'];
