@@ -5,9 +5,9 @@ $token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 
 
 $data = array( "name" => "Update Game", "subtitle" => "2024-2025&МячNach&Ю11&Баскетбол& & &Все регионы", "auto_start" => false, "protected" => false, "time_shift" => false,
-                "reconnect_window" => 1800, "chat_after_stream"=> false, "chat_active" => false, "scheduled" => array("time" => '2024-08-19T00:05:00.000000Z'),
-                "record" => array("parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e"), "latency_mode" => "standard", "moderators" => [""], "show_members" => true,
-                "chat_preview" => true);
+                "reconnect_window" => 1800, "chat_after_stream"=> false, "chat_active" => false, "scheduled" => array("time" => "2024-08-19T00:05:00.000000Z"),
+                "record" => array("parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e"), "latency_mode" => "standard", "moderators" => array(), "show_members" => true,
+                "chat_preview" => false);
 $postdata = json_encode($data);
 
 
@@ -17,7 +17,7 @@ $ch = curl_init('https://api.kinescope.io/v2/live/events/' . $_POST['id']);//htt
 //curl_setopt($ch, CURLOPT_POSTFIELDS, "");
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
 curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
 // Returns the data/output as a string instead of raw data
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 //curl_setopt($ch, CURLOPT_POSTFIELDS, "page=1&per_page=100&order=created_at.desc,name.asc");
