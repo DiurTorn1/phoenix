@@ -1,7 +1,7 @@
 @extends('admin_panel')
 @section('title-block') Продукты @endsection
 @section('admin_res')
-
+<script type="text/javascript" src = "{{ asset('js/product_add.js') }}"></script> 
 	<!----------------------------Админ-контент---------------------------------->
 	<div class="admin-content block-admin-left-w1080">
 

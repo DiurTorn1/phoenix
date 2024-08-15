@@ -41,9 +41,9 @@
 			</div>
 			<ul class="admin-video-sort-list">
 				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Публиковать</button></li>
-				<li class="admin-video-sort-item"><button class="admin-video-btn">Снять с публикации</button></li>
-				<li class="admin-video-sort-item"><button class="admin-video-btn">Удалить</button></li>
-				<li class="admin-video-sort-item"><button class="admin-video-btn">Добавить к продукту</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Снять с публикации</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active" id="delete_stream_checkbox">Удалить</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Добавить к продукту</button></li>
 			</ul>
 		</div>
 		<ul class="admin-video-list admin-video-sort" id="admin-video-list">
