@@ -78,7 +78,7 @@ $(document).ready(function() {
         //$('#admin-input-main').appendVal();card_broadcast
     //});upload_stream
     $("#upload_stream").on('click', function(){
-        alert("Что-то произошло!");
+        alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_stream_link").on('click', function(){
