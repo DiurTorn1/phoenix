@@ -55,7 +55,7 @@ $(document).ready(function() {
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
                             '<input id="admin-vl' + idch +'" class="admin-video-sort-check" type="checkbox">' +
-					        '<label class="admin-video-check-label" for="admin-vl1"></label>' + 
+					        '<label class="admin-video-check-label" for="admin-vl' + idch + '"></label>' + 
                         '</div>' + 	
                         '<div class="admin-video-prev">' + 
                             '<img src="' + item.poster.sm + '" alt="" class="" style="heigth: 100%; width: 100%">' +
