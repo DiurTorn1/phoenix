@@ -8,9 +8,7 @@ $(document).ready(function() {
     var boss = "";
     var region = "";
     var name_card = "";
-    var id_card;
-    var workspace_id_card;
-    var parent_id_card;
+    var id_card, workspace_id_card, parent_id_card, play_link_card, rtmp_link_card;
         var params = new window.URLSearchParams(window.location.search);
         //console.log("MSG:" + params.get('block-admin-input'));
         $.post('/php/get_stream.php', function(data)  {
@@ -35,6 +33,8 @@ $(document).ready(function() {
                     id_card = item.id;
                     workspace_id_card = item.workspace_id;
                     parent_id_card = item.parent_id; 
+                    play_link_card = item.play_link;
+                    rtmp_link_card = item.rtmp_link;
                     $('#card_link_play').val(item.play_link);
                     $('#img_poster_card').attr("src", item.poster.sm);
                     var tegs = item.subtitle;
@@ -98,9 +98,10 @@ $(document).ready(function() {
         //region = pars[6];
         //$("#admin_card_product").val('100%');
         vid_sport = $("#admin_card_vidsporta option:selected").text();
+        var post_time = $("#ditetime_card_start_at").val();
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
         $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
-            ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region }, function(data){
+            ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time }, function(data){
             console.log(data);
         });
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
