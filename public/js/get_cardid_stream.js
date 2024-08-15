@@ -102,9 +102,9 @@ $(document).ready(function() {
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
         $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
             ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time }, function(data){
-            var output2 = $.parseJSON(data);
-            var list2 = output2.data;
-            $.each(list2,function(i,item){
+            var output = $.parseJSON(data);
+            var list = output.data;
+            $.each(list,function(i,item){
                 console.log("Video inform:\r\n");
                 console.log("id: " + item.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                     //"\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
