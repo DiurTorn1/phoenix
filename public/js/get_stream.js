@@ -91,7 +91,7 @@ $(document).ready(function() {
         });
         $("#delete_stream_checkbox").on('click', function() {
             var ch1 = $("#admin-vl1").is(':checked');
-            var id = $("#admin-vl1").parent().attr('id');
+            var id = $("#admin-vl1").parent().parent().attr('id');
             alert("Delete stream: " + ch1 + ",id:" + id);
         });
         //var month = label.val('month');
