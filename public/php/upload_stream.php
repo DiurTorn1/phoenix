@@ -9,7 +9,7 @@ $data = array( "id" => $_POST['id'], "workspace_id" => $_POST['workspace_id'], "
                 "name" => $_POST['name'], "subtitle" => $tegs, "type" => "one-time",
                 "streamkey" => "34e411524f98436b9aed3f074d99a2a7", "auto_start" => false, "protected"=> false, "time_shift" => true,
                 "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"), "video" => array("presets" => null), "audio" => array("channel_mapping" => null),
-                "restreams" => array(), "reconnect_window" => 600, "play_link"=> "https://kinescope.io/jhRH4DBNS2SaXzj1D6Bwsq", "rtmp_link" => "rtmp://rtmp.kinescope.io/live",
+                "restreams" => array(), "reconnect_window" => 1800, "play_link"=> "https://kinescope.io/jhRH4DBNS2SaXzj1D6Bwsq", "rtmp_link" => "rtmp://rtmp.kinescope.io/live",
                 "scheduled" => array("time" => "2024-08-14T13:44:00Z"), "stream" => array( "id" => "9b58495e-f2e3-43f9-8c15-75fb92737257", "event_id" => $_POST['id'],
                 "status" => "pending", "started_at" => "2024-08-14T13:44:00Z", "finished_at" => null), "chat_after_stream" => true, "chat_active" => false, "chat_preview" => true,
                 "show_members" => true, "created_at" => "2024-08-14T10:44:42.746261Z", "updated_at" => null, "latency_mode" => "standard", "allow_chat_links" => false, "moderators" => null,
