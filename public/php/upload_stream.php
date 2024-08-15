@@ -4,12 +4,12 @@
 $token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 
 
-$data = array( "id" => "763cf3d3-f251-4e89-8a5b-306fe9b83da8", "workspace_id" => "eb7874ed-0833-4b89-b2f1-65d26ea6643f", "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", 
-                "name" => "Update_Game", "subtitle" => "2024-2025&МячNach&Ю11&Баскетбол& & &Все регионы", "type" => "one-time",
+$data = array( "id" => $_POST['id'], "workspace_id" => "eb7874ed-0833-4b89-b2f1-65d26ea6643f", "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", 
+                "name" => "Update Game 2", "subtitle" => "2024-2025&МячNach&Ю11&Баскетбол& & &Все регионы", "type" => "one-time",
                 "streamkey" => "34e411524f98436b9aed3f074d99a2a7", "auto_start" => false, "protected"=> false, "time_shift" => true,
                 "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"), "video" => array("presets" => null), "audio" => array("channel_mapping" => null),
                 "restreams" => array(), "reconnect_window" => 600, "play_link"=> "https://kinescope.io/jhRH4DBNS2SaXzj1D6Bwsq", "rtmp_link" => "rtmp://rtmp.kinescope.io/live",
-                "scheduled" => array("time" => "2024-08-14T13:44:00Z"), "stream" => array( "id" => "9b58495e-f2e3-43f9-8c15-75fb92737257", "event_id" => "763cf3d3-f251-4e89-8a5b-306fe9b83da8",
+                "scheduled" => array("time" => "2024-08-14T13:44:00Z"), "stream" => array( "id" => "9b58495e-f2e3-43f9-8c15-75fb92737257", "event_id" => $_POST['id'],
                 "status" => "pending", "started_at" => "2024-08-14T13:44:00Z", "finished_at" => null), "chat_after_stream" => true, "chat_active" => false, "chat_preview" => true,
                 "show_members" => true, "created_at" => "2024-08-14T10:44:42.746261Z", "updated_at" => null, "latency_mode" => "standard", "allow_chat_links" => false, "moderators" => null,
                 "poster" => array("id" => "2da5947f-9131-4b22-aa64-f15d4ee70b0c", "type" => "image", "status" => "done", "active" => true, "original" => "https://static.kinescopecdn.net/assets/event_default_poster.png",
