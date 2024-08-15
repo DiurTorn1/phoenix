@@ -90,7 +90,8 @@ $(document).ready(function() {
             console.log("idch: "+idch);
         });
         $("#delete_stream_checkbox").on('click', function() {
-            alert("Delete stream");
+            var ch1 = $("#admin-vl1").is(':checked');
+            alert("Delete stream: " + ch1);
         });
         //var month = label.val('month');
         //var year = label.val('year');
