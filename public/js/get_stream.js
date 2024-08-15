@@ -90,9 +90,14 @@ $(document).ready(function() {
             console.log("idch: "+idch);
         });
         $("#delete_stream_checkbox").on('click', function() {
-            var ch1 = $("#admin-vl1").is(':checked');
-            var id = $("#admin-vl1").parent().parent().attr('id');
-            console.log("Delete stream: " + ch1 + ",id:" + id);
+            for(var i = 0; i < idch; i++){
+                var ch1 = $("#admin-vl" + i).is(':checked');
+                if(ch1 == "true"){
+                    var id = $("#admin-vl" + i).parent().parent().attr('id');
+                    console.log("Delete stream: " + ch1 + ",id:" + id);
+                }
+            }
+            
         });
         //var month = label.val('month');
         //var year = label.val('year');
