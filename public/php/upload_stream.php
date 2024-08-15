@@ -5,7 +5,7 @@ $token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 
 
 $data = array( "id" => $_POST['id'], "workspace_id" => "eb7874ed-0833-4b89-b2f1-65d26ea6643f", "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", 
-                "name" => "Update Game 2", "subtitle" => "2024-2025&МячNach&Ю11&Баскетбол& & &Все регионы", "type" => "one-time",
+                "name" => $_POST['name'], "subtitle" => "2024-2025&МячNach&Ю11&Баскетбол& & &Все регионы", "type" => "one-time",
                 "streamkey" => "34e411524f98436b9aed3f074d99a2a7", "auto_start" => false, "protected"=> false, "time_shift" => true,
                 "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"), "video" => array("presets" => null), "audio" => array("channel_mapping" => null),
                 "restreams" => array(), "reconnect_window" => 600, "play_link"=> "https://kinescope.io/jhRH4DBNS2SaXzj1D6Bwsq", "rtmp_link" => "rtmp://rtmp.kinescope.io/live",

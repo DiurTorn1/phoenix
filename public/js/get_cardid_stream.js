@@ -9,6 +9,8 @@ $(document).ready(function() {
     var region = "";
     var name_card = "";
     var id_card;
+    var workspace_id_card;
+    var parent_id_card;
         var params = new window.URLSearchParams(window.location.search);
         //console.log("MSG:" + params.get('block-admin-input'));
         $.post('/php/get_stream.php', function(data)  {
@@ -31,6 +33,8 @@ $(document).ready(function() {
                     $('#admin-input-main').val(item.name);
                     name_card = item.card;
                     id_card = item.id;
+                    workspace_id_card = item.workspace_id;
+                    parent_id_card = item.parent_id; 
                     $('#card_link_play').val(item.play_link);
                     $('#img_poster_card').attr("src", item.poster.sm);
                     var tegs = item.subtitle;
@@ -80,8 +84,9 @@ $(document).ready(function() {
         //$('#admin-input-main').appendVal();card_broadcast
     //});upload_stream
     $("#upload_stream").on('click', function(){
+        name_card = $('#admin-input-main').val();
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
-        $.post('/php/upload_stream.php', { id: id_card }, function(data){
+        $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card }, function(data){
             console.log(data);
         });
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
