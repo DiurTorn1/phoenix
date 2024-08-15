@@ -47,7 +47,7 @@ $(document).ready(function() {
                     $("#admin_card_minframe option:selected").index(0);
                     console.log(item.stream.started_at);
                     var time_get = item.stream.started_at;
-                    var pars_time = tegs.split("T");
+                    var pars_time = time_get.split("T");
                     var hour_min = pars_time[1];
                     console.log("pars_time[1]: " + hour_min);
                     //$("#ditetime_card_start_at").val(item.stream.started_at);
