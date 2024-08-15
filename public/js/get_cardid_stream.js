@@ -104,9 +104,9 @@ $(document).ready(function() {
             ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time }, function(data){
             var output = $.parseJSON(data);
             var list = output.data;
-            $.each(list,function(i,item){
+            //$.each(list,function(i,item){
                 console.log("Video inform:\r\n");
-                console.log("id: " + item.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
+                console.log(list);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                     //"\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
                 //console.log("\r\nRecord: \r\n parent_id: " + item.record.parent_id + "\r\nvideo: \r\n presets: " + item.video.presets + "\r\naudio: \r\n channel_mapping: " + item.audio.channel_mapping + 
                     //"\r\nreconnect_window:" + item.reconnect_window + "\r\nplay_link: " + item.play_link + "\r\nrtmp_link: " + item.rtmp_link + "\r\nscheduled: \r\n time: " + item.scheduled.time);
@@ -123,7 +123,7 @@ $(document).ready(function() {
                    // alert("Ошибка редактирования!");
                     //console.log(data);
                 //}
-            });
+            //});
             
         });
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
