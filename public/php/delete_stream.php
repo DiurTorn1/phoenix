@@ -13,10 +13,10 @@ curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "DELETE");
 //curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 //curl_setopt($ch, CURLOPT_POSTFIELDS, "page=1&per_page=100&order=created_at.desc,name.asc");
 //Set your auth headers
-//curl_setopt($ch, CURLOPT_HTTPHEADER, array(
+curl_setopt($ch, CURLOPT_HTTPHEADER, array(
   // 'Content-Type: application/json',
-  // 'Authorization: Bearer ' . $token
-//));
+   'Authorization: Bearer ' . $token
+));
 
 // get stringified data/output. See CURLOPT_RETURNTRANSFER
 $data = curl_exec($ch);
