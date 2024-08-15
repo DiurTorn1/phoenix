@@ -1,5 +1,13 @@
 $(document).ready(function() {
     //$("#jjj").on('click', function(){/card_stream
+    var vid_sport = "";
+    var gorod = "";
+    var kubok = "";
+    var weigth = "";
+    var sezon = "";
+    var boss = "";
+    var region = "";
+    var name_card = "";
         var params = new window.URLSearchParams(window.location.search);
         //console.log("MSG:" + params.get('block-admin-input'));
         $.post('/php/get_stream.php', function(data)  {
@@ -20,15 +28,9 @@ $(document).ready(function() {
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $('#admin-input-main').val(item.name);
+                    name_card = item.card;
                     $('#card_link_play').val(item.play_link);
                     $('#img_poster_card').attr("src", item.poster.sm);
-                    var vid_sport = "";
-                    var gorod = "";
-                    var kubok = "";
-                    var weigth = "";
-                    var sezon = "";
-                    var boss = "";
-                    var region = "";
                     var tegs = item.subtitle;
                     var pars = tegs.split("&");
                     sezon = pars[0];
@@ -45,12 +47,10 @@ $(document).ready(function() {
                     $("#admin_card_product").val('100%');
                     $("#admin_card_vidsporta option:selected").text(vid_sport);
                     $("#admin_card_minframe option:selected").index(0);
-                    console.log(item.stream.started_at);
                     var time_get = item.stream.started_at;
                     var pars_time = time_get.split("T");
                     var hour_min_sec = pars_time[1];
                     var hour_min = hour_min_sec.split(":");
-                    console.log("hour_min: " + hour_min[0] + ":" + hour_min[1]);
                     $("#ditetime_card_start_at").val(pars_time[0] + "T" + hour_min[0] + ":" + hour_min[1]);
                     /*$("#block-admin-left").append(
                         '<div class="block-admin-container admin-back">' + 
@@ -76,7 +76,11 @@ $(document).ready(function() {
         });
         //alert();
         //$('#admin-input-main').appendVal();card_broadcast
-    //});
+    //});upload_stream
+    $("#upload_stream").on('click', function(){
+        alert("Что-то произошло!");
+        //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
+    });
     $("#card_stream_link").on('click', function(){
         window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });

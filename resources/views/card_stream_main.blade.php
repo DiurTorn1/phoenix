@@ -17,7 +17,7 @@
 			<h2 class="top-menu-title">Карточка стрима</h2>
 		</div>
 		<div class="right-heder">
-			<button class="top-menu-btn save-st" id="save-st">Сохранить</button>
+			<button class="top-menu-btn save-st" id="upload_stream">Сохранить</button>
 			<button class="top-menu-btn">Отменить публикацию</button>
 		</div>
 	</header>
