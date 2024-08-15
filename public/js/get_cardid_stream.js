@@ -108,7 +108,7 @@ $(document).ready(function() {
             //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                 if(list.id == params.get('admin_input_id')){
                     alert("Редактирование успешно!");
-                    //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
+                    window.location.href='/stream';
                 } else {
                     alert("Ошибка редактирования!");
                     console.log(data);
