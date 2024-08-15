@@ -22,15 +22,15 @@
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
 						<div class="admin-input-box admin-input-wrap">
 							<label>Начало трансляции</label>
-							<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="09 Мая в 08:45">
+							<input type="datetime-local" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="01 Января 2000 в 00:00" id="ditetime_card_start_at">
 						</div>
 						<div class="admin-input-box admin-input-wrap">
 							<label>Дата публикации плеера</label>
-							<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="04 Мая в 18:50">
+							<input type="datetime-local" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder="01 Января 2000 в 00:00" id="ditetime_card_public_at">
 						</div>
 					</div>
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
-						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка турнира"></a>
+						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка турнира" id="img_poster_card"></a>
 						<div class="edit-preview-tournir">
 							<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
 						</div>
@@ -41,26 +41,25 @@
 			<div class="block-admin-container admin-back">
 				<div class="admin-input-box admin-input-wrap">
 					<label>Шаблон для доступа региона</label>
-					<select class="admin-input admin-input-select block-admin-input">
-						<option value="Шаблон 1">Шаблон 1</option>
-						<option value="Шаблон 2">Шаблон 2</option>
+					<select class="admin-input admin-input-select block-admin-input" id="admin_region_selectct">
+						<option value="Все регионы">Все регионы</option>
 					</select>
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Сезон</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_season">
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Турнир</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_turnir">
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Возраст</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_weigth">
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Добавить к продукту</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" ">
+					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_product">
 				</div>
 			</div>
 
@@ -69,7 +68,7 @@
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
 						<div class="admin-input-box admin-input-wrap">
 							<label>Вид спорта</label>
-							<select class="admin-input admin-input-select block-admin-input">
+							<select class="admin-input admin-input-select block-admin-input" id="admin_card_vidsporta">
 								<option value="Баскетбол">Баскетбол</option>
 								<option value="Волейбол">Волейбол</option>
 							</select>
@@ -78,7 +77,7 @@
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
 						<div class="admin-input-box admin-input-wrap">
 							<label>Задержка сигнала</label>
-							<select class="admin-input admin-input-select block-admin-input">
+							<select class="admin-input admin-input-select block-admin-input" id="admin_card_minframe">
 								<option value="">Минимальная (10-15 секунд)</option>
 								<option value="">Стандартная (20-25 секунд)</option>
 							</select>
@@ -92,7 +91,7 @@
 		<div class="block-admin-right"> <!--------------------------------------------Правая панель ------------------>
 
 			<div class="preview-tournir-vis">
-				<img src="img/ivs4.png" alt="Заставка трансляции" title="Нет трансляции">
+				<img src="https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b" alt="Заставка трансляции" title="Нет трансляции">
 			</div>
 
 			<div class="block-admin-container admin-back">
@@ -106,7 +105,7 @@
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Ссылка на трасляцию</label>
-					<input type="text" name="Ссылка на трасляцию" class="block-admin-input admin-input" placeholder=" ">
+					<input type="text" name="Ссылка на трасляцию" class="block-admin-input admin-input" placeholder=" " id="card_link_play">
 					<a href="#" class="admin-video-link-stream" title="Перейти">
 						<img src="img/right-arrow.svg" alt="Перейти">
 					</a>

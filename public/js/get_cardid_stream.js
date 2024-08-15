@@ -20,6 +20,8 @@ $(document).ready(function() {
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $('#admin-input-main').val(item.name);
+                    $('#card_link_play').val(item.play_link);
+                    $('#img_poster_card').attr('src', item.poster.sm);
                     /*$("#block-admin-left").append(
                         '<div class="block-admin-container admin-back">' + 
                         '<div class="block-admin-section">' +
