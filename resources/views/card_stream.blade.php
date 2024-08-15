@@ -41,7 +41,7 @@
 			<div class="block-admin-container admin-back">
 				<div class="admin-input-box admin-input-wrap">
 					<label>Шаблон для доступа региона</label>
-					<select class="admin-input admin-input-select block-admin-input" id="admin_region_selectct">
+					<select class="admin-input admin-input-select block-admin-input" id="card_region_select">
 						<option value="Все регионы">Все регионы</option>
 					</select>
 				</div>

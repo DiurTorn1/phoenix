@@ -21,7 +21,30 @@ $(document).ready(function() {
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $('#admin-input-main').val(item.name);
                     $('#card_link_play').val(item.play_link);
-                    $('#img_poster_card').attr('src', item.poster.sm);
+                    $('#img_poster_card').attr("src", item.poster.sm);
+                    var vid_sport = "";
+                    var gorod = "";
+                    var kubok = "";
+                    var weigth = "";
+                    var sezon = "";
+                    var boss = "";
+                    var region = "";
+                    var tegs = item.subtitle;
+                    var pars = tegs.split("&");
+                    sezon = pars[0];
+                    kubok = pars[1];
+                    weigth = pars[2];
+                    vid_sport = pars[3];
+                    gorod = pars[4];
+                    boss = pars[5];
+                    region = pars[6];
+                    $("#card_region_select option:selected").text(region);
+                    $("#admin_card_season").val(sezon);
+                    $("#admin_card_turnir").val(kubok);
+                    $("#admin_card_weigth").val(weigth);
+                    $("#admin_card_product").val('100%');
+                    //$("#admin_vidsporta_seasonct option:selected").text();
+                    //$("#admin_minframe_seasonct option:selected").index();
                     /*$("#block-admin-left").append(
                         '<div class="block-admin-container admin-back">' + 
                         '<div class="block-admin-section">' +
