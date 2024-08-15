@@ -45,6 +45,7 @@ $(document).ready(function() {
                     $("#admin_card_product").val('100%');
                     $("#admin_card_vidsporta option:selected").text(vid_sport);
                     $("#admin_card_minframe option:selected").index(0);
+                    console.log(item.stream.started_at);
                     var time_get = item.stream.started_at;
                     var pars_time = tegs.split("T");
                     var hour_min = pars_time[1];
