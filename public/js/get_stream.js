@@ -89,7 +89,9 @@ $(document).ready(function() {
             });
             console.log("idch: "+idch);
         });
-
+        $("#delete_stream_checkbox").on('click', function() {
+            alert("Delete stream");
+        });
         //var month = label.val('month');
         //var year = label.val('year');
         //var text = label.text();
