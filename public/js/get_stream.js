@@ -2,6 +2,7 @@ $(document).ready(function() {
     
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
+        var idch = 0;
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
             //console.log(data);
@@ -9,6 +10,7 @@ $(document).ready(function() {
             var list = output.data;
 
             $.each(list,function(i,item){
+                
                 console.log("Video inform:\r\n");
                 console.log("id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                     "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
@@ -52,7 +54,7 @@ $(document).ready(function() {
                     $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
-                            '<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">' +
+                            '<input id="admin-vl' + idch +'" class="admin-video-sort-check" type="checkbox">' +
 					        '<label class="admin-video-check-label" for="admin-vl1"></label>' + 
                         '</div>' + 	
                         '<div class="admin-video-prev">' + 
@@ -83,8 +85,9 @@ $(document).ready(function() {
 					    '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
 				    '</div>' + 
                 '</li>');
+                idch++;
             });
-            
+            console.log("idch: "+idch);
         });
 
         //var month = label.val('month');
