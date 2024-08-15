@@ -4,7 +4,7 @@
 $token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 
 
-$data = array( "id" => $_POST['id'], "workspace_id" => "eb7874ed-0833-4b89-b2f1-65d26ea6643f", "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", 
+$data = array( "id" => $_POST['id'], "workspace_id" => $_POST['workspace_id'], "parent_id" => $_POST['parent_id'], 
                 "name" => $_POST['name'], "subtitle" => "2024-2025&МячNach&Ю11&Баскетбол& & &Все регионы", "type" => "one-time",
                 "streamkey" => "34e411524f98436b9aed3f074d99a2a7", "auto_start" => false, "protected"=> false, "time_shift" => true,
                 "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"), "video" => array("presets" => null), "audio" => array("channel_mapping" => null),
