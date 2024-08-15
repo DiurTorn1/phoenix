@@ -17,7 +17,7 @@ $ch = curl_init('https://api.kinescope.io/v2/live/events/' . $_POST['id']);//htt
 //curl_setopt($ch, CURLOPT_POSTFIELDS, "");
 curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "PUT");
 curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS, $postdata);
+curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 // Returns the data/output as a string instead of raw data
 curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 //curl_setopt($ch, CURLOPT_POSTFIELDS, "page=1&per_page=100&order=created_at.desc,name.asc");
