@@ -51,7 +51,7 @@ $(document).ready(function() {
                     var hour_min_sec = pars_time[1];
                     var hour_min = hour_min_sec.split(":");
                     console.log("hour_min: " + hour_min[0] + ":" + hour_min[1]);
-                    //$("#ditetime_card_start_at").val(item.stream.started_at);
+                    $("#ditetime_card_start_at").val(pars_time[0] + "T" + hour_min[0] + ":" + hour_min[1]);
                     /*$("#block-admin-left").append(
                         '<div class="block-admin-container admin-back">' + 
                         '<div class="block-admin-section">' +
