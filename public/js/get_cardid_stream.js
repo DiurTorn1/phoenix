@@ -85,8 +85,22 @@ $(document).ready(function() {
     //});upload_stream
     $("#upload_stream").on('click', function(){
         name_card = $('#admin-input-main').val();
+        region = $("#card_region_select option:selected").text();
+        sezon = $("#admin_card_season").val();
+        kubok = $("#admin_card_turnir").val();
+        weigth = $("#admin_card_weigth").val();
+        //sezon = pars[0];
+        //kubok = pars[1];
+        //weigth = pars[2];
+        //vid_sport = pars[3];
+        gorod = " ";//pars[4];
+        boss = " ";//pars[5];
+        //region = pars[6];
+        //$("#admin_card_product").val('100%');
+        vid_sport = $("#admin_card_vidsporta option:selected").text();
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
-        $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card }, function(data){
+        $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
+            ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region }, function(data){
             console.log(data);
         });
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');

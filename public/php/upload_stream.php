@@ -3,18 +3,19 @@
 
 $token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 
+$tegs = $_POST['season'] . '&' . $_POST['kubok'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
 
 $data = array( "id" => $_POST['id'], "workspace_id" => $_POST['workspace_id'], "parent_id" => $_POST['parent_id'], 
-                "name" => $_POST['name'], "subtitle" => "2024-2025&МячNach&Ю11&Баскетбол& & &Все регионы", "type" => "one-time",
+                "name" => $_POST['name'], "subtitle" => $tegs, "type" => "one-time",
                 "streamkey" => "34e411524f98436b9aed3f074d99a2a7", "auto_start" => false, "protected"=> false, "time_shift" => true,
                 "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"), "video" => array("presets" => null), "audio" => array("channel_mapping" => null),
                 "restreams" => array(), "reconnect_window" => 600, "play_link"=> "https://kinescope.io/jhRH4DBNS2SaXzj1D6Bwsq", "rtmp_link" => "rtmp://rtmp.kinescope.io/live",
                 "scheduled" => array("time" => "2024-08-14T13:44:00Z"), "stream" => array( "id" => "9b58495e-f2e3-43f9-8c15-75fb92737257", "event_id" => $_POST['id'],
                 "status" => "pending", "started_at" => "2024-08-14T13:44:00Z", "finished_at" => null), "chat_after_stream" => true, "chat_active" => false, "chat_preview" => true,
                 "show_members" => true, "created_at" => "2024-08-14T10:44:42.746261Z", "updated_at" => null, "latency_mode" => "standard", "allow_chat_links" => false, "moderators" => null,
-                "poster" => array("id" => "2da5947f-9131-4b22-aa64-f15d4ee70b0c", "type" => "image", "status" => "done", "active" => true, "original" => "https://static.kinescopecdn.net/assets/event_default_poster.png",
-                 "md" => "https://static.kinescopecdn.net/assets/event_default_poster.png", "sm" => "https://static.kinescopecdn.net/assets/event_default_poster.png",
-                 "xs" => "https://static.kinescopecdn.net/assets/event_default_poster.png", "from_time" => 0, "to_time" => 0) );
+                "poster" => array("id" => "2da5947f-9131-4b22-aa64-f15d4ee70b0c", "type" => "image", "status" => "done", "active" => true, "original" => "https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b",
+                 "md" => "https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b", "sm" => "https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b",
+                 "xs" => "https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b", "from_time" => 0, "to_time" => 0) );
                               
 $postdata = json_encode($data);
 
