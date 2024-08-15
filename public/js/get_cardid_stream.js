@@ -102,7 +102,18 @@ $(document).ready(function() {
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
         $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
             ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time }, function(data){
-            console.log(data);
+            var output2 = $.parseJSON(data);
+            var list2 = output2.data;
+            $.each(list2,function(i,item){
+                if(item.id == params.get('admin_input_id')){
+                    alert("Редактирование успешно!");
+                    window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
+                } else {
+                    alert("Ошибка редактирования!");
+                    console.log(data);
+                }
+            });
+            
         });
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });
