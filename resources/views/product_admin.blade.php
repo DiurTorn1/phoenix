@@ -96,8 +96,8 @@
 
 			<li class="admin-video-item admin-back">
 				<div class="admin-video-sort-wrap">
-					<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">
-					<label class="admin-video-check-label" for="admin-vl1"></label>
+					<input id="admin-vl2" class="admin-video-sort-check" type="checkbox">
+					<label class="admin-video-check-label" for="admin-vl2"></label>
 				</div>
 				<div class="admin-video-prev">
 				</div>
