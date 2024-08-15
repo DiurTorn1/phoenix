@@ -92,7 +92,7 @@ $(document).ready(function() {
         $("#delete_stream_checkbox").on('click', function() {
             var ch1 = $("#admin-vl1").is(':checked');
             var id;
-            $(document).on('.admin-video-item', function(){
+            $(this).on('.admin-video-item', function(){
                  id = this.id;
             });
             alert("Delete stream: " + ch1 + ",id:" + id);
