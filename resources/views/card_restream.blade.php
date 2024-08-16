@@ -3,6 +3,9 @@
 @section('card_stream_res')
 	
 <!----------------------------Стрим-контент РЕСТРИМ ---------------------------------->
+<style type="text/css">
+      button.save-st {display: none;}
+</style>
 <div class="admin-content">
 			
             <div class="block-admin-container admin-back">
