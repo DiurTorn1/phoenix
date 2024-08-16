@@ -3,6 +3,9 @@
 @section('card_stream_res')
 	<!----------------------------Стрим-контент ТРАНСЛЯЦИЯ---------------------------------->
 	<script type="text/javascript" src = "{{ asset('js/broadcast_stream.js') }}"></script>
+	<style type="text/css">
+      button.save-st {display: none;}
+    </style>
 	<div class="admin-content admin-content-raw">
 		<div class="block-admin-left">
 			
