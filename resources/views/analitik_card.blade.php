@@ -3,6 +3,9 @@
 @section('card_stream_res')
 	
 	<!----------------------------Стрим-контент АНАЛИТИКА ---------------------------------->
+	<style type="text/css">
+      button.save-st {display: none;}
+	</style>
 	<div class="admin-content"> <!------------------------- Левая панель ------------------->
 			
 		<div class="block-admin-section block-analitic-row">
