@@ -1,7 +1,7 @@
 <?php
 
 
-$token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
+$token = "179c96f0-a67a-4324-b235-f0b3960baf95";
 //setup the request, you can also use CURLOPT_URL
 $ch = curl_init('https://api.kinescope.io/v2/live/events?page=1&per_page=100&order=created_at.desc,name.asc');//https://api.kinescope.io/v1/videos?page=1&per_page=100&order=created_at.desc,title.asc');
 //curl_setopt($ch, CURLOPT_POST, 1);

@@ -1,7 +1,7 @@
 <?php
 
 
-$token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
+$token = "179c96f0-a67a-4324-b235-f0b3960baf95";
 
 $tegs = $_POST['sezon'] . '&' . $_POST['kubok'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sport'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
 
