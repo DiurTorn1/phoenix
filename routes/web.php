@@ -86,10 +86,12 @@ Route::get('/video_add', function () {
     return view('video_add');
 });
 
+Route::resource('products', ProductPhoenix::class);
+
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-    Route::resource('products', ProductController::class);
+    
 });
 
 Auth::routes();
