@@ -74,9 +74,9 @@ Route::get('/product_admin', function () {
     return view('product_admin');
 });
 
-Route::get('/product_add', function () {
-    return view('product_add');
-});
+Route::get('/product_add', 'ProductPhoenix@index')->name('Product');//function () {
+    //return view('product_add');
+//});
 
 Route::get('/promocode', function () {
     return view('promocode');
@@ -86,7 +86,7 @@ Route::get('/video_add', function () {
     return view('video_add');
 });
 
-Route::resource('products', 'ProductPhoenix');//ProductPhoenix::class);
+//Route::resource('products', 'ProductPhoenix');//ProductPhoenix::class);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
