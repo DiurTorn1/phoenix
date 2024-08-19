@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
 
 class ProductPhoenix extends Controller
@@ -34,7 +35,7 @@ class ProductPhoenix extends Controller
      */
     public function create()
     {
-        //
+        //return view('products.create');
     }
 
     /**
@@ -77,7 +78,7 @@ class ProductPhoenix extends Controller
      */
     public function show(string $id)
     {
-        //
+        //return view('products.show',compact('product'));
     }
 
     /**
@@ -85,7 +86,7 @@ class ProductPhoenix extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //return view('products.edit',compact('product'));
     }
 
     /**
@@ -94,6 +95,33 @@ class ProductPhoenix extends Controller
     public function update(Request $request, string $id)
     {
         //
+        request()->validate([
+            'name' => 'required',
+            'detail' => 'required',
+            'datetime_start' => 'required',
+            'datetime_stop' => 'required',
+            'type' => 'required',
+            'country' => 'required',
+            'valute' => 'required',
+            'period_job' => 'required',
+            'prob_period' => 'required',
+            'prob_price' => 'required',
+            'datetime_start_sell' => 'required',
+            'price' => 'required',
+            'old_price' => 'required',
+            'datetime_start_access' => 'required',
+            'datetime_stop_access' => 'required',
+            'datetime_stop_sell' => 'required',
+            'img_main' => 'required',
+            'img_banner' => 'required',
+            'img_video_promo' => 'required',
+            'video_promo' => 'required',
+        ]);
+    
+        $product->update($request->all());
+    
+        return redirect()->route('products.index')
+                        ->with('success','Product updated successfully');
     }
 
     /**
@@ -102,5 +130,9 @@ class ProductPhoenix extends Controller
     public function destroy(string $id)
     {
         //
+        $product->delete();
+    
+        return redirect()->route('products.index')
+                        ->with('success','Product deleted successfully');
     }
 }
