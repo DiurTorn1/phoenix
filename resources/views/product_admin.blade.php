@@ -68,8 +68,10 @@
 		</div>
 
 		<ul class="admin-video-list admin-video-sort prod-mr">
+			@foreach($products as $product)
 
-			<li class="admin-video-item admin-back">
+			@endforeach
+			<!--<li class="admin-video-item admin-back">
 				<div class="admin-video-sort-wrap">
 					<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">
 					<label class="admin-video-check-label" for="admin-vl1"></label>
@@ -117,7 +119,7 @@
 				<div class="admin-video-item-info admin-video-item-view">
 					<p class="admin-prod-hashtag">Не опубликован</p>
 				</div>
-			</li>
+			</li>-->
 
 		</ul>
 

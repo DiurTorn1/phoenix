@@ -27,7 +27,7 @@ class ProductPhoenix extends Controller
     public function index()
     {
         $products = Product::latest()->paginate(5);
-        return view('products.index',compact('products'))
+        return view('product_admin',compact('products'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
     
@@ -52,6 +52,24 @@ class ProductPhoenix extends Controller
         request()->validate([
             'name' => 'required',
             'detail' => 'required',
+            'datetime_start' => 'required',
+            'datetime_stop' => 'required',
+            'type' => 'required',
+            'country' => 'required',
+            'valute' => 'required',
+            'period_job' => 'required',
+            'prob_period' => 'required',
+            'prob_price' => 'required',
+            'datetime_start_sell' => 'required',
+            'price' => 'required',
+            'old_price' => 'required',
+            'datetime_start_access' => 'required',
+            'datetime_stop_access' => 'required',
+            'datetime_stop_sell' => 'required',
+            'img_main' => 'required',
+            'img_banner' => 'required',
+            'img_video_promo' => 'required',
+            'video_promo' => 'required',
         ]);
     
         Product::create($request->all());
@@ -94,6 +112,24 @@ class ProductPhoenix extends Controller
          request()->validate([
             'name' => 'required',
             'detail' => 'required',
+            'datetime_start' => 'required',
+            'datetime_stop' => 'required',
+            'type' => 'required',
+            'country' => 'required',
+            'valute' => 'required',
+            'period_job' => 'required',
+            'prob_period' => 'required',
+            'prob_price' => 'required',
+            'datetime_start_sell' => 'required',
+            'price' => 'required',
+            'old_price' => 'required',
+            'datetime_start_access' => 'required',
+            'datetime_stop_access' => 'required',
+            'datetime_stop_sell' => 'required',
+            'img_main' => 'required',
+            'img_banner' => 'required',
+            'img_video_promo' => 'required',
+            'video_promo' => 'required',
         ]);
     
         $product->update($request->all());
