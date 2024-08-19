@@ -68,9 +68,11 @@
 		</div>
 
 		<ul class="admin-video-list admin-video-sort prod-mr">
+		@if($products and is_array($products))
 			@foreach($products as $product)
 
 			@endforeach
+		@endif
 			<!--<li class="admin-video-item admin-back">
 				<div class="admin-video-sort-wrap">
 					<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">
