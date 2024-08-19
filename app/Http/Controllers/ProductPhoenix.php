@@ -25,9 +25,9 @@ class ProductPhoenix extends Controller
     public function index()
     {
         //
-        $products = Product::latest()->paginate(5);
-        return view('product_admin',compact('products'))
-            ->with('i', (request()->input('page', 1) - 1) * 5);
+        $products = Product::all();
+        return view('product_admin',compact('products'));
+            //->with('i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
