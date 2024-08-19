@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Product;
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
 class ProductPhoenix extends Controller
@@ -78,7 +79,8 @@ class ProductPhoenix extends Controller
      */
     public function show(string $id)
     {
-        //return view('products.show',compact('product'));
+        //
+        return view('product_admin',compact('product'));
     }
 
     /**
