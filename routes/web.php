@@ -70,7 +70,7 @@ Route::get('/card_restream', function () {
     return view('card_restream');
 });
 
-Route::get('/product_admin', 'ProductPhoenix@index');//function () {
+Route::get('/product_admin', ProductPhoenix::class);//function () {
     //return view('product_admin');
 //});
 
