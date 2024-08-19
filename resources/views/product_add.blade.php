@@ -1,7 +1,18 @@
 @extends('admin_panel')
 @section('title-block') Продукты @endsection
 @section('admin_res')
-<script type="text/javascript" src = "{{ asset('js/product_add.js') }}"></script> 
+<script type="text/javascript" src = "{{ asset('js/product_add.js') }}"></script>
+	<header class="header admin-header">
+		<div class="left-header">
+			<a href="#" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
+			<h2 class="top-menu-title">Создать продукт</h2>
+		</div>
+
+		<div class="right-heder">
+			<button class="menu-btn-grey save-st">Публиковать</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<button class="menu-btn-grey">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+		</div>
+	</header> 
 	<!----------------------------Админ-контент---------------------------------->
 	<div class="admin-content block-admin-left-w1080">
 
