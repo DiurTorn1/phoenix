@@ -74,7 +74,7 @@ Route::get('/product_admin', function () {
     return view('product_admin');
 });
 
-Route::get('/product_add', 'ProductPhoenix@index')->name('Product');//function () {
+Route::get('/product_add', 'ProductPhoenix@index');//->name('Product');//function () {
     //return view('product_add');
 //});
 
