@@ -130,8 +130,8 @@
 			<div class="admin-input-width50">
 				<iframe
     				src="https://rutube.ru/video/c944ee3e6df832465dce729a332bb29c/?r=wd"
-    				width="640"
-    				height="360"
+    				width="100%"
+    				height="100%"
     				frameborder="0"
     				allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
     				></iframe>
