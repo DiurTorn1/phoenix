@@ -128,14 +128,15 @@
 				</a>
 			</div>
 			<div class="admin-input-width50">
-				<iframe
+				<video src="https://rutube.ru/video/c944ee3e6df832465dce729a332bb29c/?r=wd" width="100%" height="100%" poster="poster.gif" controls />
+				<!--<iframe
     				src="https://rutube.ru/video/c944ee3e6df832465dce729a332bb29c/?r=wd"
     				width="100%"
     				height="100%"
     				frameborder="0"
     				allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
     				></iframe>
-				<!--<a href="#" class="preview-product-vis-upload">
+				<a href="#" class="preview-product-vis-upload">
 					<p>Промо видео</p>
 					<a href="#" tabindex="0">
 						<span class="label">LIVE</span>
