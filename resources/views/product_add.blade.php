@@ -128,9 +128,20 @@
 				</a>
 			</div>
 			<div class="admin-input-width50">
-				<a href="#" class="preview-product-vis-upload">
+				<iframe
+    				src="https://rutube.ru/video/c944ee3e6df832465dce729a332bb29c/?r=wd"
+    				width="640"
+    				height="360"
+    				frameborder="0"
+    				allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
+    				></iframe>
+				<!--<a href="#" class="preview-product-vis-upload">
 					<p>Промо видео</p>
-				</a>
+					<a href="#" tabindex="0">
+						<span class="label">LIVE</span>
+					</a>
+
+				</a>-->
 			</div>		
 		</div>
 
