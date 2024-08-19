@@ -27,8 +27,8 @@ class ProductPhoenix extends Controller
     {
         //
         $products = Product::all();
-        return view('product_admin',compact('products'));
-            //->with('i', (request()->input('page', 1) - 1) * 5);
+        return view('product_admin',compact('products'))
+            ->with('products', $products);//'i', (request()->input('page', 1) - 1) * 5);
     }
 
     /**
