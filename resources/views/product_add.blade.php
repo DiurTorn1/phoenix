@@ -128,7 +128,7 @@
 				</a>
 			</div>
 			<div class="admin-input-width50">
-				<video src="https://rutube.ru/video/c944ee3e6df832465dce729a332bb29c/?r=wd" width="100%" height="100%" poster="poster.gif" controls />
+				<video src="https://rutube.ru/play/embed/32968f222f6eb30829babc4e61d1d6c3" width="100%" height="100%" poster="poster.gif" controls />
 				<!--<iframe
     				src="https://rutube.ru/video/c944ee3e6df832465dce729a332bb29c/?r=wd"
     				width="100%"
