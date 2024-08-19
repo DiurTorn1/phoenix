@@ -70,9 +70,9 @@ Route::get('/card_restream', function () {
     return view('card_restream');
 });
 
-Route::get('/product_admin', ProductPhoenix::class);//function () {
-    //return view('product_admin');
-//});
+Route::get('/product_admin', function () {
+    return view('product_admin');
+});
 
 Route::get('/product_add', function () {
     return view('product_add');
@@ -86,7 +86,7 @@ Route::get('/video_add', function () {
     return view('video_add');
 });
 
-//Route::resource('products', ProductPhoenix::class);
+Route::resource('products', 'PhotoController');//ProductPhoenix::class);
 
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
