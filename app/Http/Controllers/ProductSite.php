@@ -13,6 +13,12 @@ class ProductSite extends Controller
     public function index()
     {
         //
+        try {
+            $products = Todo::all();
+            return view('product_admin', compact('products'));
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+        }
     }
 
     /**
@@ -29,6 +35,33 @@ class ProductSite extends Controller
     public function store(Request $request)
     {
         //
+        request()->validate([
+            'name' => 'required',
+            'detail' => 'required',
+            'datetime_start' => 'required',
+            'datetime_stop' => 'required',
+            'type' => 'required',
+            'country' => 'required',
+            'valute' => 'required',
+            'period_job' => 'required',
+            'prob_period' => 'required',
+            'prob_price' => 'required',
+            'datetime_start_sell' => 'required',
+            'price' => 'required',
+            'old_price' => 'required',
+            'datetime_start_access' => 'required',
+            'datetime_stop_access' => 'required',
+            'datetime_stop_sell' => 'required',
+            'img_main' => 'required',
+            'img_banner' => 'required',
+            'img_video_promo' => 'required',
+            'video_promo' => 'required',
+        ]);
+    
+        Product::create($request->all());
+    
+        return redirect()->route('products.index')
+                        ->with('success','Product created successfully.');
     }
 
     /**
