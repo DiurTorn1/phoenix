@@ -52,11 +52,29 @@ class ProductController extends Controller
         request()->validate([
             'name' => 'required',
             'detail' => 'required',
+            'datetime_start' => 'required',
+            'datetime_stop' => 'required',
+            'type' => 'required',
+            'country' => 'required',
+            'valute' => 'required',
+            'period_job' => 'required',
+            'prob_period' => 'required',
+            'prob_price' => 'required',
+            'datetime_start_sell' => 'required',
+            'price' => 'required',
+            'old_price' => 'required',
+            'datetime_start_access' => 'required',
+            'datetime_stop_access' => 'required',
+            'datetime_stop_sell' => 'required',
+            'img_main' => 'required',
+            'img_banner' => 'required',
+            'img_video_promo' => 'required',
+            'video_promo' => 'required',
         ]);
     
         Product::create($request->all());
     
-        return redirect()->route('products.index')
+        return redirect()->route('product_admin')
                         ->with('success','Product created successfully.');
     }
     
@@ -94,6 +112,24 @@ class ProductController extends Controller
          request()->validate([
             'name' => 'required',
             'detail' => 'required',
+            'datetime_start' => 'required',
+            'datetime_stop' => 'required',
+            'type' => 'required',
+            'country' => 'required',
+            'valute' => 'required',
+            'period_job' => 'required',
+            'prob_period' => 'required',
+            'prob_price' => 'required',
+            'datetime_start_sell' => 'required',
+            'price' => 'required',
+            'old_price' => 'required',
+            'datetime_start_access' => 'required',
+            'datetime_stop_access' => 'required',
+            'datetime_stop_sell' => 'required',
+            'img_main' => 'required',
+            'img_banner' => 'required',
+            'img_video_promo' => 'required',
+            'video_promo' => 'required',
         ]);
     
         $product->update($request->all());
