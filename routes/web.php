@@ -70,9 +70,9 @@ Route::get('/card_restream', function () {
     return view('card_restream');
 });
 
-Route::get('/product_admin', function () {//ProductController::class .'@index')->name('products');//
-    return view('product_admin');
-});
+Route::get('/product_admin', 'ProductPhoenix@index')->name('products');// ProductController::class .'@index')->name('products');//function () {
+    //return view('product_admin');
+//});
 
 Route::get('/product_add',function () {// ProductPhoenix::class .'@index')->name('products');//'ProductPhoenix@index');//->name('Product');//// 
     return view('product_add');
