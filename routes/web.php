@@ -74,9 +74,11 @@ Route::get('/product_admin', function () {
     return view('product_admin');
 });
 
-Route::get('/product_add', [App\Http\Controllers\ProductPhoenix::class, 'index']);//ProductPhoenix::class .'@index');//->name('Product');//'ProductPhoenix@index');//->name('Product');//function () {// 
+Route::get('/product_add',function () {// ProductPhoenix::class .'@index')->name('products');//'ProductPhoenix@index');//->name('Product');//// 
     //return view('product_add');
-//});
+    $products = Product::all;//latest()->paginate(5);
+    return view('product_admin')->with(compact('products'))
+});
 
 Route::get('/promocode', function () {
     return view('promocode');
