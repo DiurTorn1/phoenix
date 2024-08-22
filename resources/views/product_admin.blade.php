@@ -66,11 +66,15 @@
 				<li class="admin-video-sort-item"><button class="admin-video-btn">Удалить продукт</button></li><!-- При активации чекбокса кнопка становится активной (добавляется класс "video-btn-active")-->
 			</ul>
 		</div>
-
+		@if ($message = Session::get('success'))
+    		<div class="alert alert-success">
+        		<p>{{ $message }}</p>
+    		</div>
+		@endif
 		<ul class="admin-video-list admin-video-sort prod-mr">
-			@foreach($products as $product)
+			<!--@foreach($products as $product)
 				<li></li>
-			@endforeach
+			@endforeach-->
 			<!--<li class="admin-video-item admin-back">
 				<div class="admin-video-sort-wrap">
 					<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">
