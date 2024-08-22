@@ -74,7 +74,7 @@ Route::get('/product_admin', function () {
     return view('product_admin');
 });
 
-Route::get('/product_add', [ProductPhoenix::class, 'index']);//'ProductPhoenix@index');//->name('Product');//function () {
+Route::get('/product_add', ProductPhoenix::class .'@index')->name('product_admin.index');//'ProductPhoenix@index');//->name('Product');//function () {
     //return view('product_add');
 //});
 
@@ -96,4 +96,4 @@ Route::group(['middleware' => ['auth']], function() {
 
 Auth::routes();
 
-Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('main');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('main');//
