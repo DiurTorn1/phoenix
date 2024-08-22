@@ -72,7 +72,7 @@
     		</div>
 		@endif
 		<ul class="admin-video-list admin-video-sort prod-mr">
-			@foreach(Product as $product)
+			@foreach($products as $product)
 				<li></li>
 			@endforeach
 			<!--<li class="admin-video-item admin-back">
