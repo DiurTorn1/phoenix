@@ -75,7 +75,7 @@ class ProductPhoenix extends Controller
     
         Product::create($request->all());
     
-        return redirect()->route('product_admin')
+        return redirect()->route('products.index')
                         ->with('success','Product created successfully.');
     }
 
