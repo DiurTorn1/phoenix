@@ -25,9 +25,15 @@ class ProductPhoenix extends Controller
      */
     public function index()
     {
-        $products = Product::all;//latest()->paginate(5);
-        return view('product_admin')->with(compact('products'));
+        //$products = Product::all;//latest()->paginate(5);
+        //return view('product_admin')->with(compact('products'));
             //->with('i', (request()->input('page', 1) - 1) * 5);
+        try {
+            $products = Todo::all();
+            return view('product_admin', compact('products'));
+        } catch (Exception $e) {
+            Log::error($e->getMessage());
+        }
     }
 
     /**
