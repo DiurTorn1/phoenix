@@ -96,7 +96,7 @@ Route::get('/video_add', function () {
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-    Route::resource('products', ProductPhoenix::class);
+    Route::resource('products', ProductController::class);
 });
 
 Auth::routes();
