@@ -88,7 +88,7 @@ Route::get('/video_add', function () {
     return view('video_add');
 });
 
-Route::resource('products', ProductPhoenix::class);
+//Route::resource('products', ProductPhoenix::class);
 //Route::group(['middleware' => ['web']], function() {
     //Route::resource('products', ProductPhoenix::class);
     
@@ -96,7 +96,7 @@ Route::resource('products', ProductPhoenix::class);
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-    //Route::resource('products', ProductPhoenix::class);
+    /Route::resource('products', ProductPhoenix::class);
 });
 
 Auth::routes();
