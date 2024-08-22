@@ -72,9 +72,6 @@
     		</div>
 		@endif
 		<ul class="admin-video-list admin-video-sort prod-mr">
-			<!--@foreach($products as $product)
-				<li></li>
-			@endforeach-->
 			<!--<li class="admin-video-item admin-back">
 				<div class="admin-video-sort-wrap">
 					<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">
