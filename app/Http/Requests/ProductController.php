@@ -11,7 +11,7 @@ class ProductController extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -23,6 +23,8 @@ class ProductController extends FormRequest
     {
         return [
             //
+            'name' => 'required|string|max:255',
+            'email' => 'required|email|unique:users,email,' . auth()->id(),
         ];
     }
 }
