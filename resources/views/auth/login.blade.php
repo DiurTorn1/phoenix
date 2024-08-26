@@ -6,7 +6,7 @@
 
 <!------------------ Окно Входа -------------------------->
 <div class="popup-back" id="popup-back">
-        <form method="POST" action="" class="popup-container">
+        <form method="POST" action="" class="popup-container" style="dysplay:none;">
 			<div class="popup-content">
             	@csrf
 				<div class="popup-title-wrap">
