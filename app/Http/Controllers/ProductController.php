@@ -52,6 +52,8 @@ class ProductController extends Controller
         request()->validate([
             'name' => 'required',
             'detail' => 'required',
+            'state' => 'required',
+            'sell_all' => 'required',
             'datetime_start' => 'required',
             'datetime_stop' => 'required',
             'type' => 'required',

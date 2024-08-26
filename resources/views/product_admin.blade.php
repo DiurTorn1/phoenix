@@ -68,7 +68,30 @@
 		</div>
 		<ul class="admin-video-list admin-video-sort prod-mr">
 			@foreach($products as $product)
-				<li></li>
+			<li class="admin-video-item admin-back">
+				<div class="admin-video-sort-wrap">
+					<input id="admin-vl" + {{ ++$i }} class="admin-video-sort-check" type="checkbox">
+					<label class="admin-video-check-label" for="admin-vl" + {{ ++$i }}></label>
+				</div>
+				<div class="admin-video-prev">
+				</div>
+				<div class="admin-video-item-header">
+					<div class="admin-video-item-h-list">
+						<span class="admin-video-item-h-date">{{ $product->name }}</span>
+					</div>
+					<div class="admin-video-item-h-hashtag">
+						<span class="admin-prod-hashtag">{{ $product->detail }}</span>
+					</div>
+				</div>
+				<div class="admin-video-item-view admin-prod-item-view">
+					<p class="admin-video-item-v-count"><span>33</span>{{ $product->sel_all }}</p>
+					<p class="admin-video-item-v-count"><span>0</span>возвратов</p>
+					<p class="admin-video-item-v-count"><span>396</span>стримов</p>
+				</div>
+				<div class="admin-video-item-info admin-video-item-view">
+					<p class="admin-prod-hashtag">{{ $product->state }}</p>
+				</div>
+			</li>
 			@endforeach
 			<!--<li class="admin-video-item admin-back">
 				<div class="admin-video-sort-wrap">

@@ -14,7 +14,7 @@ class Product extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'detail', 'datetime_start', 'datetime_stop', 'type', 'country', 'valute', 'period_job', 'prob_period', 'prob_price', 'datetime_start_sell', 'price', 
+        'name', 'detail', 'state', 'sell_all', 'datetime_start', 'datetime_stop', 'type', 'country', 'valute', 'period_job', 'prob_period', 'prob_price', 'datetime_start_sell', 'price', 
         'old_price', 'datetime_start_access', 'datetime_stop_access', 'datetime_stop_sell', 'img_main', 'img_banner', 'img_video_promo', 'video_promo'
     ];
 }
