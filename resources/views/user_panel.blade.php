@@ -9,7 +9,6 @@
 @else
 	@if(!empty(Auth::user()->getRoleNames()))
     @foreach( Auth::user()->getRoleNames() as $v)
-		@if($v == "nullbody")
         <!-------------------------------Окно НАСТРОЕК Пользователя------------------------------->
   	<div class="popup-back"> 
 		<div class="popup-container">
@@ -176,8 +175,6 @@
 
 	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="user_menu.js"></script>-->
-
-        @endif
     @endforeach
     @endif
 @endguest
