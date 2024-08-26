@@ -54,7 +54,7 @@
 						@if($v == "admin")
                     		<a href="/stream" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Admin-Panel</a>
 						@elseif($v == "nullbody")
-							<a href="" class="exit-button"><img src="img/logo_main.png" alt="Профиль">User-Panel</a>
+							<a href="/user_panel" class="exit-button"><img src="img/logo_main.png" alt="Профиль">User-Panel</a>
 						@endif
                 	@endforeach
            	 		@endif
