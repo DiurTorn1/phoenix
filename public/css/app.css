@@ -1086,6 +1086,24 @@ td a:focus {
     background-color: #000000d6;
     z-index: 10;
 }
+
+.popup-back-user{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000d6;
+    z-index: 10;
+
+}
+
+.popup-back-user {
+    display:none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #000000d6;
+    z-index: 10;
+}
 .popup-container {
     background-color: #180919;
     border-radius: 4px;
