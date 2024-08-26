@@ -12,7 +12,7 @@
 		@if($v == "nullbody")
         <!-------------------------------Окно НАСТРОЕК Пользователя------------------------------->
   	<div class="popup-back"> 
-		<div class="popup-container">
+		<div class="popup-container-user">
 			<div class="popup-content">
 				<div class="popup-title-wrap">
 					<button class="popup-close close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть"></button>
