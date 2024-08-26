@@ -15,7 +15,7 @@
 		<div class="popup-container">
 			<div class="popup-content">
 				<div class="popup-title-wrap">
-					<button class="popup-close close-btn" title="Закрыть" nclick="window.location.href = '/main';"><img src="img/close.png" alt="Закрыть" ></button>
+					<button class="popup-close close-btn" title="Закрыть" nclick="window.location.href = '/';"><img src="img/close.png" alt="Закрыть" ></button>
 
 					<div class="popup-title-wrap-row popup-title-none is-active" data-content="user-profile">
 						<h2 class="popup-title">Профиль</h2>
