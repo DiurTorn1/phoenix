@@ -38,7 +38,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        return view('products.create');
+        return view('product_add');
     }
     
     /**
@@ -136,7 +136,7 @@ class ProductController extends Controller
     
         $product->update($request->all());
     
-        return redirect()->route('products.index')
+        return redirect()->route('roduct_admin')
                         ->with('success','Product updated successfully');
     }
     
@@ -150,7 +150,7 @@ class ProductController extends Controller
     {
         $product->delete();
     
-        return redirect()->route('products.index')
+        return redirect()->route('roduct_admin')
                         ->with('success','Product deleted successfully');
     }
 }
