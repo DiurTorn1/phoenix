@@ -33,7 +33,7 @@
 			<div class="admin-input-box admin-input-wrap admin-input-mb">
 				<label>Заголовок *</label>
 				<!--<input type="text" required name="Заголовок" class="block-admin-input admin-input">-->
-				{!! Form::input('name', null, array('placeholder' => 'Заголовок','class' => 'block-admin-input admin-input')) !!}
+				{!! Form::input('text','name', null, array('placeholder' => 'Заголовок','class' => 'block-admin-input admin-input')) !!}
 			</div>
 
 			<div class="block-admin-section admin-input-mb">
