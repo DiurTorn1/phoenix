@@ -13,7 +13,7 @@
  		 </div>
 	@endif
 
-	{!! Form::model($product_add,['id'=>'form_add', 'method'=>'Post', 'action' => ['ProductController@create']]) !!}
+	{!! Form::model($product_add,['id'=>'form_add', 'method'=>'POST', 'action' => ['ProductController@create']]) !!}
 	<header class="header admin-header">
 		<div class="left-header">
 			<!--<a href="#" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>-->
