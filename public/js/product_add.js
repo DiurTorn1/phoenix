@@ -108,3 +108,11 @@ $('.switch-btn').click(function(){ //Переключатель НОВАЯ Пр�
     $(this).trigger('off.switch');
   }
 });
+
+$(document).ready(function() {
+    $("#save_product_db").on('click', function(){
+        $.post('/php/product_add.php', function(data){
+            console.log(data);
+        });
+    });
+});
