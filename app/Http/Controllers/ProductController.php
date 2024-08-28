@@ -76,7 +76,7 @@ class ProductController extends Controller
     
         Product::create($request->all());
     
-        return redirect()->route('product_admin')
+        return redirect()->route('product.index')
                         ->with('success','Product created successfully.');
     }
     

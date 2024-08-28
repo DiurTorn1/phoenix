@@ -74,7 +74,7 @@ Route::get('/user_panel', function () {
     return view('user_panel');
 });
 
-Route::get('/product_admin', [ProductController::class, 'index'])->name('products');//function () {
+//Route::get('/product_admin', [ProductController::class, 'index'])->name('products');//function () {
     //return view('product_admin');
 //});
 
