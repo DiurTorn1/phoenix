@@ -79,8 +79,8 @@
 
 			<div class="admin-input-box admin-input-wrap">
 				<div class="left-header" id="price_toggle">
-					<input class="type-price type-price-left type-price-active" id="add_ticket">Билет</input>
-					<binput class="type-price type-price-right" id="add_subscrip">Подписка</input><!-- при переключении кнопок добавляется/удаляется класс "type-price-active"-->
+					<input type="submit" class="type-price type-price-left type-price-active" id="add_ticket">Билет</input>
+					<input type="submit" class="type-price type-price-right" id="add_subscrip">Подписка</input><!-- при переключении кнопок добавляется/удаляется класс "type-price-active"-->
 				</div>
 				<p></p>
 			</div>
