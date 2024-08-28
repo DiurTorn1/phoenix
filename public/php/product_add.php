@@ -19,11 +19,11 @@ if ($conn->connect_error) {
 //        '2024-08-28 15:37:32', '120', '100', '2024-08-28 15:37:32', '2024-08-28 15:37:32', '2024-08-28 15:37:32', 'img_main', 'img_banner',
 //                            'img_video_promo', 'video_promo')";
 
-if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
+//if ($conn->query($sql) === TRUE) {
+ // echo "New record created successfully";
+//} else {
+ // echo "Error: " . $sql . "<br>" . $conn->error;
+//}
 
 $conn->close();
 echo "test";
