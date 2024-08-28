@@ -13,7 +13,7 @@
  		 </div>
 	@endif
 
-	{!! Form::open(array('route' => 'products','method'=>'POST','class' => '')) !!}
+	
 	<header class="header admin-header">
 		<div class="left-header">
 			<!--<a href="#" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>-->
@@ -21,9 +21,8 @@
 		</div>
 
 		<div class="right-heder">
-			<!--<button class="menu-btn-grey save-st">Публиковать</button> Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
-			<!--<button class="menu-btn-grey">Сохранить</button> Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
-			{!! Form::button('Сохранить', ['class'=>'menu-btn-grey', 'id'=>'menu-btn-grey']) !!}
+			<button class="menu-btn-grey save-st">Публиковать</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<button class="menu-btn-grey">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 		</div>
 	</header> 
 	<!----------------------------Админ-контент---------------------------------->
@@ -33,8 +32,7 @@
 
 			<div class="admin-input-box admin-input-wrap admin-input-mb">
 				<label>Заголовок *</label>
-				<!--<input type="text" required name="Заголовок" class="block-admin-input admin-input">-->
-				{!! Form::input('text','name', null, array('placeholder' => 'Заголовок','class' => 'block-admin-input admin-input')) !!}
+				<input type="text" required name="Заголовок" class="block-admin-input admin-input">
 			</div>
 
 			<div class="block-admin-section admin-input-mb">
@@ -71,7 +69,7 @@
 					<option value="">Доступ к видеозаписи</option>
 				</select>
 			</div>
-			{!! Form::close() !!}
+
 			<button type="submit" class="add-position-btn">+&#x20;Добавить товарную позицию</button><!-- При нажатии на кнопку в список выше добавляется товарная позиция -->
 
 		</div>
@@ -161,7 +159,7 @@
 		</div>
 
 	</div>
-	
+
 <!--------------------- Создать ЦЕНУ НА БИЛЕТ ------------------------------->
 <div class="product-content-popup" id="add-ticket-price"> <!--------- PopUP --------->
 	<div class="admin-content block-admin-left-w1080 fix-position">
@@ -314,7 +312,6 @@
 	</div>
 
 </div>
-
 <!--------------------------------------------->
 
 @endsection
