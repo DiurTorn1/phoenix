@@ -21,7 +21,7 @@
 		</div>
 
 		<div class="right-heder">
-			<button class="menu-btn-grey save-st">Публиковать</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<!--<button class="menu-btn-grey save-st">Публиковать</button> Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 			<button class="menu-btn-grey">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 		</div>
 	</header> 
@@ -32,7 +32,8 @@
 
 			<div class="admin-input-box admin-input-wrap admin-input-mb">
 				<label>Заголовок *</label>
-				<input type="text" required name="Заголовок" class="block-admin-input admin-input">
+				<!--<input type="text" required name="Заголовок" class="block-admin-input admin-input">-->
+				{!! Form::text('name', null, array('placeholder' => 'Заголовок','class' => 'block-admin-input admin-input')) !!}
 			</div>
 
 			<div class="block-admin-section admin-input-mb">
@@ -70,7 +71,7 @@
 				</select>
 			</div>
 
-			<button type="submit" class="add-position-btn">+&#x20;Добавить товарную позицию</button><!-- При нажатии на кнопку в список выше добавляется товарная позиция -->
+			<input type="submit" class="add-position-btn">+&#x20;Добавить товарную позицию</input><!-- При нажатии на кнопку в список выше добавляется товарная позиция -->
 
 		</div>
 
@@ -78,8 +79,8 @@
 
 			<div class="admin-input-box admin-input-wrap">
 				<div class="left-header" id="price_toggle">
-					<button class="type-price type-price-left type-price-active" id="add_ticket">Билет</button>
-					<button class="type-price type-price-right" id="add_subscrip">Подписка</button><!-- при переключении кнопок добавляется/удаляется класс "type-price-active"-->
+					<input class="type-price type-price-left type-price-active" id="add_ticket">Билет</input>
+					<binput class="type-price type-price-right" id="add_subscrip">Подписка</input><!-- при переключении кнопок добавляется/удаляется класс "type-price-active"-->
 				</div>
 				<p></p>
 			</div>
@@ -96,8 +97,8 @@
 				</li>
 			</ul>
 
-			<button type="submit" class="add-position-btn" id="add-position-btn-ticket">+&#x20;Добавить цену билета</button>
-			<button type="submit" class="add-position-btn" id="add-position-btn-subscrip">+&#x20;Добавить цену на подписку</button>
+			<input type="submit" class="add-position-btn" id="add-position-btn-ticket">+&#x20;Добавить цену билета</input>
+			<input type="submit" class="add-position-btn" id="add-position-btn-subscrip">+&#x20;Добавить цену на подписку</input>
 
 		</div>
 
@@ -159,7 +160,7 @@
 		</div>
 
 	</div>
-
+	{!! Form::close() !!}
 <!--------------------- Создать ЦЕНУ НА БИЛЕТ ------------------------------->
 <div class="product-content-popup" id="add-ticket-price"> <!--------- PopUP --------->
 	<div class="admin-content block-admin-left-w1080 fix-position">
@@ -312,7 +313,7 @@
 	</div>
 
 </div>
-{!! Form::close() !!}
+
 <!--------------------------------------------->
 
 @endsection
