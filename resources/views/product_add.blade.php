@@ -13,7 +13,7 @@
  		 </div>
 	@endif
 
-	{!! Form::model($product_add,['id'=>'form_add', 'method'=>'POST', 'action' => ['ProductController@create']]) !!}
+	{!! Form::open(array('route' => 'products','method'=>'POST','class' => '')) !!}
 	<header class="header admin-header">
 		<div class="left-header">
 			<!--<a href="#" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>-->
@@ -71,7 +71,7 @@
 					<option value="">Доступ к видеозаписи</option>
 				</select>
 			</div>
-
+			{!! Form::close() !!}
 			<button type="submit" class="add-position-btn">+&#x20;Добавить товарную позицию</button><!-- При нажатии на кнопку в список выше добавляется товарная позиция -->
 
 		</div>
@@ -161,7 +161,7 @@
 		</div>
 
 	</div>
-	{!! Form::close() !!}
+	
 <!--------------------- Создать ЦЕНУ НА БИЛЕТ ------------------------------->
 <div class="product-content-popup" id="add-ticket-price"> <!--------- PopUP --------->
 	<div class="admin-content block-admin-left-w1080 fix-position">
