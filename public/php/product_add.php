@@ -27,11 +27,11 @@ $query = "INSERT INTO products(name, detail, datetime_start, datetime_stop, type
 $result = mysqli_query($conn, $query);
 
 // Check for success or error
-if ($result) {
-    echo "Data inserted successfully!";
-} else {
-    echo "Error: " . mysqli_error($conn);
-}
+//if ($result) {
+    //echo "Data inserted successfully!";
+//} else {
+    //echo "Error: " . mysqli_error($conn);
+//}
 
 // Create connection
 //$conn = new mysqli($servername, $username, $password, $dbname);
