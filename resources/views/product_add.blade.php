@@ -42,12 +42,12 @@
 				</div>
 				<div class="admin-input-box admin-input-width50">
 					<label>Дата окончания события</label>
-					<input class="admin-input admin-input-width-date" type="Date" value="Дата окончания">
+					<input class="admin-input admin-input-width-date" type="Date" value="Дата окончания" id="stop_access_time">
 				</div>
 			</div>
 
 			<div class="admin-input-box admin-input-wrap admin-input-mb">
-				<input type="text" required name="Заголовок" placeholder="Введите описание продукта *" class="block-admin-input admin-input">
+				<input type="text" required name="Заголовок" placeholder="Введите описание продукта *" class="block-admin-input admin-input" id="detail_save">
 			</div>
 
 		</div>

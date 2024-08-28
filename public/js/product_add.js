@@ -113,8 +113,10 @@ $(document).ready(function() {
     $("#save_product_db").on('click', function(){
         var head_name = $("#head_name_save").val();
         var start_access_time = $("#start_access_time").val();
+        var stop_access_time = $("#stop_access_time").val();
+        var detail_save = $("#detail_save").val();
         //console.log(start_access_tame);
-        $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time }, function(data){
+        $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, detail_save:detail_save }, function(data){
             console.log(data);
         });
     });
