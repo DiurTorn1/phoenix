@@ -32,7 +32,7 @@
 
 			<div class="admin-input-box admin-input-wrap admin-input-mb">
 				<label>Заголовок *</label>
-				<input type="text" required name="Заголовок" class="block-admin-input admin-input">
+				<input type="text" required name="Заголовок" class="block-admin-input admin-input" id="head_name_save">
 			</div>
 
 			<div class="block-admin-section admin-input-mb">
