@@ -63,7 +63,7 @@
 
 			<div class="admin-input-box admin-input-wrap admin-input-mb">
 				<label>Выберите товарную позицию</label>
-				<select class="admin-input admin-input-select block-admin-input">
+				<select class="admin-input admin-input-select block-admin-input" id="type_save">
 					<option value="" disabled="">Выберите товарную позицию</option>
 					<option value="">Доступ к прямой трансляции</option>
 					<option value="">Доступ к видеозаписи</option>
