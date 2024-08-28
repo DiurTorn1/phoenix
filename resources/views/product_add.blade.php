@@ -33,7 +33,7 @@
 			<div class="admin-input-box admin-input-wrap admin-input-mb">
 				<label>Заголовок *</label>
 				<!--<input type="text" required name="Заголовок" class="block-admin-input admin-input">-->
-				{!! Form::text('name', null, array('placeholder' => 'Заголовок','class' => 'block-admin-input admin-input')) !!}
+				{!! Form::input('name', null, array('placeholder' => 'Заголовок','class' => 'block-admin-input admin-input')) !!}
 			</div>
 
 			<div class="block-admin-section admin-input-mb">
@@ -71,7 +71,7 @@
 				</select>
 			</div>
 
-			<input type="submit" class="add-position-btn">+&#x20;Добавить товарную позицию</input><!-- При нажатии на кнопку в список выше добавляется товарная позиция -->
+			<button type="submit" class="add-position-btn">+&#x20;Добавить товарную позицию</button><!-- При нажатии на кнопку в список выше добавляется товарная позиция -->
 
 		</div>
 
@@ -79,8 +79,8 @@
 
 			<div class="admin-input-box admin-input-wrap">
 				<div class="left-header" id="price_toggle">
-					<input type="submit" class="type-price type-price-left type-price-active" id="add_ticket">Билет</input>
-					<input type="submit" class="type-price type-price-right" id="add_subscrip">Подписка</input><!-- при переключении кнопок добавляется/удаляется класс "type-price-active"-->
+					<button class="type-price type-price-left type-price-active" id="add_ticket">Билет</button>
+					<button class="type-price type-price-right" id="add_subscrip">Подписка</button><!-- при переключении кнопок добавляется/удаляется класс "type-price-active"-->
 				</div>
 				<p></p>
 			</div>
@@ -97,8 +97,8 @@
 				</li>
 			</ul>
 
-			<input type="submit" class="add-position-btn" id="add-position-btn-ticket">+&#x20;Добавить цену билета</input>
-			<input type="submit" class="add-position-btn" id="add-position-btn-subscrip">+&#x20;Добавить цену на подписку</input>
+			<button type="submit" class="add-position-btn" id="add-position-btn-ticket">+&#x20;Добавить цену билета</button>
+			<button type="submit" class="add-position-btn" id="add-position-btn-subscrip">+&#x20;Добавить цену на подписку</button>
 
 		</div>
 
