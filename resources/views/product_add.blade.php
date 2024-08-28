@@ -2,6 +2,18 @@
 @section('title-block') Продукты @endsection
 @section('admin_res')
 <script type="text/javascript" src = "{{ asset('js/product_add.js') }}"></script>
+	@if (count($errors) > 0)
+  		<div class="">
+    		<strong>ООпс!</strong> Случилось страшное на выходе.<br><br>
+    		<ul>
+       			@foreach ($errors->all() as $error)
+         		<li>{{ $error }}</li>
+       			@endforeach
+    		</ul>
+ 		 </div>
+	@endif
+
+	{!! Form::open(array('route' => '','method'=>'POST','class' => '')) !!}
 	<header class="header admin-header">
 		<div class="left-header">
 			<!--<a href="#" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>-->
@@ -300,6 +312,7 @@
 	</div>
 
 </div>
+{!! Form::close() !!}
 <!--------------------------------------------->
 
 @endsection
