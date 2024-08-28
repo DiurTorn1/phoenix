@@ -22,7 +22,8 @@
 
 		<div class="right-heder">
 			<!--<button class="menu-btn-grey save-st">Публиковать</button> Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
-			<button class="menu-btn-grey">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<!--<button class="menu-btn-grey">Сохранить</button> Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			{!! Form::button('Сохранить', ['class'=>'menu-btn-grey', 'id'=>'menu-btn-grey']) !!}
 		</div>
 	</header> 
 	<!----------------------------Админ-контент---------------------------------->
