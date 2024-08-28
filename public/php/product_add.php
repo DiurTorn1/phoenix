@@ -24,4 +24,4 @@ if ($conn->query($sql) === TRUE) {
 }
 
 $conn->close();
-echo "test";
+//echo "test";
