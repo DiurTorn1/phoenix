@@ -5,9 +5,8 @@ $username = "diur_admin";
 $password = "%v~kfAt5W#d82sNCWZiF";
 $dbname = "phoenix_fun";
 
-echo $_POST['start_access_time'] ." 00:00:00";
 // Create connection
-/*$conn = new mysqli($servername, $username, $password, $dbname);
+$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
@@ -40,5 +39,5 @@ if ($conn->query($sql) === TRUE) {
 //} else {
     //echo "0 results";
 //}
-$conn->close();*/
+$conn->close();
 //echo "test";
