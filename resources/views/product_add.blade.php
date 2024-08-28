@@ -13,7 +13,7 @@
  		 </div>
 	@endif
 
-	{!! Form::open(array('route' => 'products','method'=>'POST','class' => '')) !!}
+	{!! Form::model($products,['id'=>'form1', 'method'=>'Post', 'action' => ['ProductController@create']]) !!}
 	<header class="header admin-header">
 		<div class="left-header">
 			<!--<a href="#" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>-->
