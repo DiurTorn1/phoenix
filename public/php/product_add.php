@@ -19,9 +19,9 @@ INSERT INTO `products`(`id`, `name`, `detail`, `datetime_start`, `datetime_stop`
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
-} else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
-}
+} //else {
+  //echo "Error: " . $sql . "<br>" . $conn->error;
+//}
 
 $conn->close();
 //echo "test";
