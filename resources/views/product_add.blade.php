@@ -38,7 +38,7 @@
 			<div class="block-admin-section admin-input-mb">
 				<div class="admin-input-box admin-input-width50">
 					<label>Дата начала события</label>
-					<input class="admin-input admin-input-width-date" type="Date" value="Дата окончания">
+					<input class="admin-input admin-input-width-date" type="Date" value="Дата окончания" id="start_access_data">
 				</div>
 				<div class="admin-input-box admin-input-width50">
 					<label>Дата окончания события</label>

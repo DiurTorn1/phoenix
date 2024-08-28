@@ -112,7 +112,8 @@ $('.switch-btn').click(function(){ //Переключатель НОВАЯ Пр�
 $(document).ready(function() {
     $("#save_product_db").on('click', function(){
         var head_name = $("#head_name_save").val();
-        $.post('/php/product_add.php', { head_name: head_name }, function(data){
+        var start_access_tame = $("#start_access_data").val();
+        $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time }, function(data){
             console.log(data);
         });
     });
