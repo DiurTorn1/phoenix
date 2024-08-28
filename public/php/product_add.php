@@ -12,7 +12,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO `products`(`name`, `detail`, `datetime_start`, `datetime_stop`, `type`, `country`, `valute`, `period_job`, `prob_period`, `prob_price`, `datetime_start_sell`, `price`, `old_price`, `datetime_start_access`, `datetime_stop_access`, `datetime_stop_sell`, `img_main`, `img_banner`, `img_video_promo`, `video_promo`) VALUES ('[value-2]','[value-3]','2024-08-28 15:37:32','2024-08-28 15:37:32','[value-6]','[value-7]','[value-8]','1','1','1','2024-08-28 15:37:32','1','1','2024-08-28 15:37:32','2024-08-28 15:37:32','2024-08-28 15:37:32','[value-18]','[value-19]','[value-20]','[value-21]');";
+$sql = "INSERT INTO `products`(`name`, `detail`, `datetime_start`, `datetime_stop`, `type`, `country`, `valute`, `period_job`, `prob_period`, `prob_price`, `datetime_start_sell`, `price`, `old_price`, `datetime_start_access`, `datetime_stop_access`, `datetime_stop_sell`, `img_main`, `img_banner`, `img_video_promo`, `video_promo`, `created_at`) VALUES ('[value-2]','[value-3]','2024-08-28 15:37:32','2024-08-28 15:37:32','[value-6]','[value-7]','[value-8]','1','1','1','2024-08-28 15:37:32','1','1','2024-08-28 15:37:32','2024-08-28 15:37:32','2024-08-28 15:37:32','[value-18]','[value-19]','[value-20]','[value-21]', '2024-08-28 15:37:32');";
 //        VALUES ('name', 'detail', 'state', 'sell_all', '2024-08-28 15:37:32', '2024-08-28 15:37:32', 'type', 'country', 'valute', 'period_job', 'prob_period', 'prob_price',
 //        '2024-08-28 15:37:32', '120', '100', '2024-08-28 15:37:32', '2024-08-28 15:37:32', '2024-08-28 15:37:32', 'img_main', 'img_banner',
 //                            'img_video_promo', 'video_promo')";
