@@ -135,11 +135,11 @@ $(document).ready(function() {
         }
         var res_date_start_sell = "";
         var pars_datae_start = date_start_sell_bilet.split("T");
-
+        res_date_start_sell = pars_datae_start[0] + " " + pars_datae_start[1] + ":00";
         //console.log(start_access_tame);
         $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, 
                                         detail_save:detail_save, type_save:type_save, region_select_bilet:region_select_bilet, valute_db:valute_db, days_job_bilet:days_job_bilet,
-                                        date_start_sell_bilet:date_start_sell_bilet}, function(data){
+                                        res_date_start_sell:res_date_start_sell }, function(data){
             if(data == "OK"){
                 alert("Продукт создан");
             }
