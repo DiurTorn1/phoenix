@@ -123,9 +123,23 @@ $(document).ready(function() {
         var stop_access_time = $("#stop_access_time").val();
         var detail_save = $("#detail_save").val();
         var type_save = $("#type_save option:selected").text();
+        var valute_db = "";
+        if(valute_bilet == "Российский рубль (RUB)"){
+            valute_db ="RUB";
+        } else if(valute_bilet == "Казахский тенге (KZT)"){
+            valute_db ="KZT";
+        } else if(valute_bilet == "Белорусский рубль (BYN)"){
+            valute_db ="BYN";
+        } else if(valute_bilet == "Американский доллар (USD)"){
+            valute_db ="USD";
+        }
+        var res_date_start_sell = "";
+        var pars_datae_start = date_start_sell_bilet.split("T");
+
         //console.log(start_access_tame);
         $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, 
-                                        detail_save:detail_save, type_save:type_save }, function(data){
+                                        detail_save:detail_save, type_save:type_save, region_select_bilet:region_select_bilet, valute_db:valute_db, days_job_bilet:days_job_bilet,
+                                        date_start_sell_bilet:date_start_sell_bilet}, function(data){
             if(data == "OK"){
                 alert("Продукт создан");
             }
@@ -143,7 +157,9 @@ $(document).ready(function() {
         price_bilet = $("#prace_bilet").val();
         var region_out = "";
         var bilet_out = "";
-
+        var res_date_start_sell = "";
+        var pars_datae_start = date_start_sell_bilet.split("T");
+        res_date_start_sell = pars_datae_start[0] + " " + pars_datae_start + ":00";
         if(region_select_bilet == "Только Россия (RUB)"){
             region_out ="Только Россия";
         } else if(region_select_bilet == "Только Казахстан (KZT)"){
@@ -164,7 +180,7 @@ $(document).ready(function() {
 
         $("#input_buff_product").append(
             '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
-			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
+			'<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         $('#add-ticket-price').toggle();
