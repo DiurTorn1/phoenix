@@ -21,7 +21,7 @@
 		</div>
 
 		<div class="right-heder">
-			<button class="menu-btn-grey save-st">Публиковать</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<!--<button class="menu-btn-grey save-st">Публиковать</button> Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 			<button class="menu-btn-grey-active" id="save_product_db">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 		</div>
 	</header> 
@@ -103,17 +103,17 @@
 			<div class="block-admin-section block-w100">
 				<div class="admin-input-box admin-input-width25">
 					<label>Дата начала доступа</label>
-					<input class="admin-input admin-input-width-date" type="datetime-local" value="Дата начала действи билета">
+					<input class="admin-input admin-input-width-date" type="datetime-local" value="Дата начала действи билета" id="date_start_access_bilet">
 				</div>
 
 				<div class="admin-input-box admin-input-width25">
 					<label>Дата окончания доступа</label>
-					<input class="admin-input admin-input-width-date" type="datetime-local" value="Дата начала действи билета">
+					<input class="admin-input admin-input-width-date" type="datetime-local" value="Дата начала действи билета" id="date_stop_access_bilet">
 				</div>
 
 				<div class="admin-input-box admin-input-width25">
 					<label>Дата окончания продаж</label>
-					<input class="admin-input admin-input-width-date" type="datetime-local" value="Дата начала действи билета">
+					<input class="admin-input admin-input-width-date" type="datetime-local" value="Дата начала действи билета" id="date_stop_sell_bilet">
 				</div>
 			</div>
 		</div>

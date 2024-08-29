@@ -123,6 +123,9 @@ $(document).ready(function() {
         var stop_access_time = $("#stop_access_time").val();
         var detail_save = $("#detail_save").val();
         var type_save = $("#type_save option:selected").text();
+        var date_start_access_bilet = $("#date_start_access_bilet").val();
+        var date_stop_access_bilet = $("#date_stop_access_bilet").val();
+        var date_stop_sell_bilet = $("#date_stop_sell_bilet").val();
         var valute_db = "";
         if(valute_bilet == "Российский рубль (RUB)"){
             valute_db ="RUB";
@@ -136,11 +139,19 @@ $(document).ready(function() {
         var res_date_start_sell = "";
         var pars_datae_start = date_start_sell_bilet.split("T");
         res_date_start_sell = pars_datae_start[0] + " " + pars_datae_start[1] + ":00";
+        var parse_start_access = date_start_access_bilet.split("T");
+        var res_parse_start_access = parse_start_access[0] + " " + parse_start_access[1] + ":00";
+        var parse_stop_access = date_stop_access_bilet.split("T");
+        var res_parse_stop_access = parse_stop_access[0] + " " + parse_stop_access[1] + ":00";
+        var parse_stop_sell_bilet = date_stop_sell_bilet.split("T");
+        var res_parse_stop_sell_bilet = parse_stop_sell_bilet[0] + " " + parse_stop_sell_bilet[1] + ":00";
         var int_price_bilet = parseInt(input_prace_bilet);
+        var int_old_price_bilet = parseInt(input_old_prace_bilet);
         //console.log(start_access_tame);
         $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, 
                                         detail_save:detail_save, type_save:type_save, region_select_bilet:region_select_bilet, valute_db:valute_db, days_job_bilet:days_job_bilet,
-                                        res_date_start_sell:res_date_start_sell, int_price_bilet:int_price_bilet }, function(data){
+                                        res_date_start_sell:res_date_start_sell, int_price_bilet:int_price_bilet, int_old_price_bilet:int_old_price_bilet, res_parse_start_access:res_parse_start_access,
+                                        res_parse_stop_access:res_parse_stop_access, res_parse_stop_sell_bilet:res_parse_stop_sell_bilet}, function(data){
             if(data == "OK"){
                 alert("Продукт создан");
             }
