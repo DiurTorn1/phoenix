@@ -1,6 +1,7 @@
 @extends('admin_panel')
 @section('title-block') Пользователи @endsection
 @section('admin_res')
+<script type="text/javascript" src = "{{ asset('js/exel_user_load.js') }}"></script>
 <div class="admin-content">
     <div class="top-menu-head admin-back">
         <div class="top-menu-title">
@@ -8,7 +9,7 @@
         </div>
         <div class="right-heder">
             <a class="top-menu-btn save-st" href="{{ route('users.create') }}"> Добавить нового пользователя</a>
-            <a class="top-menu-btn" href="#"> Загрузить пользователей из EXEL</a>
+            <a class="top-menu-btn" href="#" id="exel_users_load"> Загрузить пользователей из EXEL</a>
         </div>
     </div>
 </div>

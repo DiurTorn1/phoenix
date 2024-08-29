@@ -1,6 +1,7 @@
 @extends('admin_panel')
 @section('title-block') Продукты @endsection
 @section('admin_res')
+		<script type="text/javascript" src = "{{ asset('js/product_admin.js') }}"></script> 
         <div class="top-menu-admin prod-mr admin-back">
 			<div class="top-menu-head">
 				<h2 class="top-menu-title">Продукты</h2>
@@ -63,7 +64,7 @@
 				<label class="admin-video-check-label" for="admin-prod-sort-check">Выбрано 0 продуктов</label>
 			</div>
 			<ul class="admin-video-sort-list">
-				<li class="admin-video-sort-item"><button class="admin-video-btn">Удалить продукт</button></li><!-- При активации чекбокса кнопка становится активной (добавляется класс "video-btn-active")-->
+				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Удалить продукт</button></li><!-- При активации чекбокса кнопка становится активной (добавляется класс "video-btn-active")-->
 			</ul>
 		</div>
 		<ul class="admin-video-list admin-video-sort prod-mr">
