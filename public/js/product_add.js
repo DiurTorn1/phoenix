@@ -110,6 +110,13 @@ $('.switch-btn').click(function(){ //Переключатель НОВАЯ Пр�
 });
 
 $(document).ready(function() {
+    var region_select_bilet = "";
+    var days_job_bilet = "";
+    var valute_bilet = "";
+    var date_start_sell_bilet = "";
+    var input_prace_bilet = "";
+    var input_old_prace_bilet = "";
+    var price_bilet = $("#prace_bilet").val();
     $("#save_product_db").on('click', function(){
         var head_name = $("#head_name_save").val();
         var start_access_time = $("#start_access_time").val();
@@ -127,12 +134,13 @@ $(document).ready(function() {
     });
 
     $("#save_price_bilet").on('click', function(){
-        var region_select_bilet = $("#sive_bilet_region option:selected").text();
-        var days_job_bilet = $("#save_days_job_bilet").val();
-        var valute_bilet = $("#valute_bilet option:selected").text();
-        var date_start_sell_bilet = $("#date_start_sell_bilet").val();
-        var input_prace_bilet = $("#input_prace_bilet").val();
-        var price_bilet = $("#prace_bilet").val();
+        region_select_bilet = $("#sive_bilet_region option:selected").text();
+        days_job_bilet = $("#save_days_job_bilet").val();
+        valute_bilet = $("#valute_bilet option:selected").text();
+        date_start_sell_bilet = $("#date_start_sell_bilet").val();
+        input_prace_bilet = $("#input_prace_bilet").val();
+        input_old_prace_bilet = $("#input_old_prace_bilet").val();
+        price_bilet = $("#prace_bilet").val();
         var region_out = "";
         var bilet_out = "";
 
@@ -156,9 +164,9 @@ $(document).ready(function() {
 
         $("#input_buff_product").append(
             '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
-			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + price_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
-			'<p id="region_sell">' + region_out + '</p>' +
-            '<p id="old_price_bilet" style="display:none;">' + input_prace_bilet + '</p>');
+			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + price_bilet + '</span>&#x20;<span>' + input_prace_bilet + '</span></p>' +
+			'<p >' + region_out + '</p>' +
+            '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         $('#add-ticket-price').toggle();
     });
 
