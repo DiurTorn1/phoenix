@@ -22,7 +22,7 @@ $sql = "INSERT INTO `products`(`name`, `detail`, `datetime_start`, `datetime_sto
 //                            'img_video_promo', 'video_promo')";
 
 if ($conn->query($sql) === TRUE) {
-  echo "New record created successfully";
+  echo "OK";
 } else {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
