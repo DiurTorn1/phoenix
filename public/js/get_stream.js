@@ -121,7 +121,9 @@ $(document).ready(function() {
 
 
     $("#test_sell").on('click', function(){
-        $.post('/php/sell_robokassa.php', function(data)  {});
+        $.post('/php/sell_robokassa.php', function(data)  {
+            console.log(data);
+        });
     });
 });
 
