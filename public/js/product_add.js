@@ -128,16 +128,16 @@ $(document).ready(function() {
     $("#save_price_bilet").on('click', function(){
         var region_select = $("#sive_bilet_region option:selected").text();
         if(region_select == "Только Россия (RUB)"){
-            $("#region_sell").val("");
-            $("#region_sell").append("Только Россия");
+           // $("#region_sell").val("");
+            $("#region_sell").text("Только Россия");
             //console.log("Только Россия");
         } else if(region_select == "Только Казахстан (KZT)"){
-            $("#region_sell").val("");
-            $("#region_sell").append("Только Казахстан");
+            //$("#region_sell").val("");
+            $("#region_sell").text("Только Казахстан");
             //console.log("Только Казахстан");
         } else if(region_select == "Только Беларусь (BYN)"){
-            $("#region_sell").val("");
-            $("#region_sell").append("Только Беларусь");
+           // $("#region_sell").val("");
+            $("#region_sell").text("Только Беларусь");
             //console.log("Только Беларусь");
         }
         //$('#add-ticket-price').toggle();
