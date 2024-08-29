@@ -89,7 +89,7 @@
 					<div class="admin-video-item-header price-item-wrapper">
 						<p class="price-item-bold">30 дней</p> <!-- Срок действия (ДНЕЙ) -->
 						<p>С <span>1 января 2025</span>: <span>300</span>&#x20;<span>RUB</span></p> <!-- Дата и время начала продажи, Цена, Валюта -->
-						<p>Только Россия</p> <!-- Доступен в странах -->
+						<p id="region_sell"></p> <!-- Доступен в странах -->
 					</div>
 					<a href="#" class="edit-price-item" title="Редактировать позицию цены"><img src="img/editw.png" alt="Редактировать позицию цены"></a>
 					<a href="#" class="remove-price-item" title="Удалить позицию цены"><img src="img/trash.png" alt="Удалить позицию цены"></a>
