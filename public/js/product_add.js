@@ -127,20 +127,19 @@ $(document).ready(function() {
 
     $("#save_price_bilet").on('click', function(){
         var region_select = $("#sive_bilet_region option:selected").text();
+        var region_out = "";
         if(region_select == "Только Россия (RUB)"){
-           // $("#region_sell").val("");
-            $("#region_sell").text("Только Россия");
-            //console.log("Только Россия");
+            region_out ="Только Россия";
         } else if(region_select == "Только Казахстан (KZT)"){
-            //$("#region_sell").val("");
-            $("#region_sell").text("Только Казахстан");
-            //console.log("Только Казахстан");
+            region_out ="Только Казахстан";
         } else if(region_select == "Только Беларусь (BYN)"){
-           // $("#region_sell").val("");
-            $("#region_sell").text("Только Беларусь");
-            //console.log("Только Беларусь");
+            region_out ="Только Беларусь";
         }
         //$('#add-ticket-price').toggle();
+        $("#input_buff_product").append(
+            '<p class="price-item-bold">30 дней</p>' +
+			'<p>С <span>1 января 2025</span>: <span>300</span>&#x20;<span>RUB</span></p>' +
+			'<p id="region_sell">' + region_out + '</p>');
     });
 
 });
