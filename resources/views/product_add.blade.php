@@ -185,12 +185,12 @@
 
 				<div class="admin-input-box admin-input-width50">
 					<label>Срок действия (ДНЕЙ) *</label>
-					<input type="text" required pattern="[0-9]*" title="Допускаются только числа" placeholder="Введите число" class="admin-input block-admin-input" id="save_days_job">
+					<input type="text" required pattern="[0-9]*" title="Допускаются только числа" placeholder="Введите число" class="admin-input block-admin-input" id="save_days_job_bilet">
 				</div>
 
 				<div class="admin-input-box admin-input-width50">
 					<label>Валюта *</label>
-					<select required class="admin-input admin-input-select block-admin-input">
+					<select required class="admin-input admin-input-select block-admin-input" id="valute_bilet">
 						<option value="">Российский рубль (RUB)</option>
 						<option value="">Казахский тенге (KZT)</option>
 						<option value="">Белорусский рубль (BYN)</option>
@@ -203,7 +203,7 @@
 			<div class="top-menu-sort block-admin-section">
 				<div class="admin-input-box admin-input-width25">
 					<label>Дата и время начала продажи *</label>
-					<input class="admin-input admin-input-width-date" required type="datetime-local" value="Дата начала действи билета">
+					<input class="admin-input admin-input-width-date" required type="datetime-local" value="Дата начала действи билета" id="date_start_sell_bilet">
 				</div>
 
 				<div class="admin-input-box admin-input-width25">

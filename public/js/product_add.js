@@ -127,8 +127,12 @@ $(document).ready(function() {
 
     $("#save_price_bilet").on('click', function(){
         var region_select_bilet = $("#sive_bilet_region option:selected").text();
-        var start_access_time = $("#save_days_job").val();
+        var days_job_bilet = $("#save_days_job_bilet").val();
+        var valute_bilet = $("#valute_bilet option:selected").text();
+        var date_start_sell_bilet = $("#date_start_sell_bilet").val();
         var region_out = "";
+        var bilet_out = "";
+
         if(region_select_bilet == "Только Россия (RUB)"){
             region_out ="Только Россия";
         } else if(region_select_bilet == "Только Казахстан (KZT)"){
@@ -136,10 +140,20 @@ $(document).ready(function() {
         } else if(region_select_bilet == "Только Беларусь (BYN)"){
             region_out ="Только Беларусь";
         }
+        
+        if(valute_bilet == "Российский рубль (RUB)"){
+            bilet_out ="RUB";
+        } else if(valute_bilet == "Казахский тенге (KZT)"){
+            bilet_out ="KZT";
+        } else if(valute_bilet == "Белорусский рубль (BYN)"){
+            bilet_out ="BYN";
+        } else if(valute_bilet == "Американский доллар (USD)"){
+            bilet_out ="USD";
+        }
 
         $("#input_buff_product").append(
-            '<p class="price-item-bold">' + start_access_time + ' дней</p>' +
-			'<p>С <span>1 января 2025</span>: <span>300</span>&#x20;<span>RUB</span></p>' +
+            '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
+			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>300</span>&#x20;<span>' + bilet_out + '</span></p>' +
 			'<p id="region_sell">' + region_out + '</p>');
         $('#add-ticket-price').toggle();
     });
