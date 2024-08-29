@@ -118,11 +118,16 @@ $(document).ready(function() {
         window.location.href='/card_broadcast?admin_input_id='+id;
         //alert("Text: " + this.id);
     });
+
+
+    $("#test_sell").on('click', function(){
+        $.post('/php/sell_robokassa.php', function(data)  {});
+    });
 });
 
 /**
  * $('.btn').click(function(){
-   $('#'+$(this).data('id')).toggle();
+   $('#'+$(this).data('id')).toggle();test_sell
 });
  * {
  "data": [
