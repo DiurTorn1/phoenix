@@ -121,7 +121,19 @@ $(document).ready(function() {
             if(data == "OK"){
                 alert("Продукт создан");
             }
-            console.log(data);
+            //console.log(data);
         });
     });
+
+    $("#save_price_bilet").on('click', function(){
+        var region_select = $("#sive_bilet_region option:selected").text();
+        if(region_select == "Только Россия (RUB)"){
+            console.log("RUB");
+        } else if(region_select == "Только Казахстан (KZT)"){
+            console.log("KZT");
+        } else if(region_select == "Только Беларусь (BYN)"){
+            console.log("BYN");
+        }
+    });
+
 });
