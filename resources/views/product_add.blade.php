@@ -185,7 +185,7 @@
 
 				<div class="admin-input-box admin-input-width50">
 					<label>Срок действия (ДНЕЙ) *</label>
-					<input type="text" required pattern="[0-9]*" title="Допускаются только числа" placeholder="Введите число" class="admin-input block-admin-input">
+					<input type="text" required pattern="[0-9]*" title="Допускаются только числа" placeholder="Введите число" class="admin-input block-admin-input" id="save_days_job">
 				</div>
 
 				<div class="admin-input-box admin-input-width50">
