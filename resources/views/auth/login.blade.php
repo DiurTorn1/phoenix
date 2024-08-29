@@ -27,14 +27,20 @@
                     	<strong>{{ $message }}</strong>
                     	</span>
                 	@enderror
+					<div class="popup-content-wrap-row remember-wrapper">
+						<input class="admin-video-sort-check" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
+                		<label class="admin-video-check-label" for="remember">
+                        	{{ __('Запомнить меня') }}
+        				</label>
+					</div>
                     <button type="submit" class="top-menu-btn" id="top-menu-btn">
 						Войти
                     </button>
+					<div class="popup-content-wrap-row register-wrapper">
+						<a href="#" class="register-link">Регистрация</a>
+						<a href="#" class="mem-password">Забыли пароль?</a>
+					</div>
 				</div>
-				<input class="admin-video-sort-check" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                <label class="admin-video-check-label" for="remember">
-                        {{ __('Запомнить меня') }}
-        		</label>
 			</div>
 			
 
