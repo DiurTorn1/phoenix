@@ -208,12 +208,12 @@
 
 				<div class="admin-input-box admin-input-width25">
 					<label>ЦЕНА *</label>
-					<input type="text" pattern="[0-9]*" required title="Допускаются только числа" class="admin-input block-admin-input">
+					<input type="text" pattern="[0-9]*" required title="Допускаются только числа" class="admin-input block-admin-input" id="prace_bilet">
 				</div>
 
 				<div class="admin-input-box admin-input-width25">
 					<label>Старая цена</label>
-					<input type="text" pattern="[0-9]*" title="Допускаются только числа" class="admin-input block-admin-input">
+					<input type="text" pattern="[0-9]*" title="Допускаются только числа" class="admin-input block-admin-input" id="input_prace_bilet">
 				</div>
 			</div>
 		</div>

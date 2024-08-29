@@ -117,7 +117,8 @@ $(document).ready(function() {
         var detail_save = $("#detail_save").val();
         var type_save = $("#type_save option:selected").text();
         //console.log(start_access_tame);
-        $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, detail_save:detail_save, type_save:type_save }, function(data){
+        $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, 
+                                        detail_save:detail_save, type_save:type_save }, function(data){
             if(data == "OK"){
                 alert("Продукт создан");
             }
@@ -130,6 +131,8 @@ $(document).ready(function() {
         var days_job_bilet = $("#save_days_job_bilet").val();
         var valute_bilet = $("#valute_bilet option:selected").text();
         var date_start_sell_bilet = $("#date_start_sell_bilet").val();
+        var input_prace_bilet = $("#input_prace_bilet").val();
+        var price_bilet = $("#prace_bilet").val();
         var region_out = "";
         var bilet_out = "";
 
@@ -153,8 +156,9 @@ $(document).ready(function() {
 
         $("#input_buff_product").append(
             '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
-			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>300</span>&#x20;<span>' + bilet_out + '</span></p>' +
-			'<p id="region_sell">' + region_out + '</p>');
+			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + price_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
+			'<p id="region_sell">' + region_out + '</p>' +
+            '<p id="old_price_bilet" style="display:none;">' + input_prace_bilet + '</p>');
         $('#add-ticket-price').toggle();
     });
 
