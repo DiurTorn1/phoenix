@@ -159,7 +159,7 @@ $(document).ready(function() {
         var bilet_out = "";
         var res_date_start_sell = "";
         var pars_datae_start = date_start_sell_bilet.split("T");
-        res_date_start_sell = pars_datae_start[0] + " " + pars_datae_start + ":00";
+        res_date_start_sell = pars_datae_start[0] + " " + pars_datae_start[1] + ":00";
         if(region_select_bilet == "Только Россия (RUB)"){
             region_out ="Только Россия";
         } else if(region_select_bilet == "Только Казахстан (KZT)"){
