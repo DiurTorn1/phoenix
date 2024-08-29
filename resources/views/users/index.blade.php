@@ -56,4 +56,5 @@
 </table>
 
 
+{!! $data->render() !!}
 @endsection
