@@ -4,6 +4,14 @@ $(document).ready(function() {
         xmlDoc = $.parseXML( xml ),
         $xml = $( xmlDoc ),
         $title = $xml.find( 'title' );  
-        console.log($title);
+        // вставим "RSS Title" в #someElement
+        console.log( $title.text() );    
+ 
+        // поменяем его значение на "XML Title"
+        $title.text( 'XML Title' );
+ 
+        // вставим "XML Title" уже в #anotherElement
+        console.log( $title.text() );
+        
     });
 });
