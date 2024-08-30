@@ -4,7 +4,7 @@
 <div class="">
     <div class="top-menu-head admin-back">
         <div class="left-header">
-            <h2 class="top-menu-title">Добавить нового пользователя</h2>
+            <h2 class="top-menu-title">Редактировать пользователя</h2>
         </div>
         <div class="right-heder">
             <a class="top-menu-btn" href="{{ route('users.index') }}"> Назад</a>
