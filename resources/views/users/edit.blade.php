@@ -25,39 +25,39 @@
 @endif
 
 
-{!! Form::model($user, ['method' => 'PATCH','route' => ['users.update', $user->id]]) !!}
+{!! Form::model($user, ['method' => 'PATCH', 'class' => 'admin-content top-menu-sort block-admin-left-w650 marg-l-0 admin-back', 'route' => ['users.update', $user->id]]) !!}
 <div class="">
     <div class="">
-        <div class="">
+        <div class="admin-input-box block-admin-input">
             <strong>Имя:</strong>
-            {!! Form::text('name', null, array('placeholder' => 'Имя','class' => '')) !!}
+            {!! Form::text('name', null, array('placeholder' => 'Имя','class' => 'block-admin-input admin-input')) !!}
         </div>
     </div>
     <div class="">
-        <div class="">
+        <div class="admin-input-box block-admin-input">
             <strong>Почта:</strong>
-            {!! Form::text('email', null, array('placeholder' => 'Почта','class' => '')) !!}
+            {!! Form::text('email', null, array('placeholder' => 'Почта','class' => 'block-admin-input admin-input')) !!}
         </div>
     </div>
     <div class="">
-        <div class="">
+        <div class="admin-input-box block-admin-input">
             <strong>Пароль:</strong>
-            {!! Form::password('password', array('placeholder' => 'Пароль','class' => '')) !!}
+            {!! Form::password('password', array('placeholder' => 'Пароль','class' => 'block-admin-input admin-input')) !!}
         </div>
     </div>
     <div class="">
-        <div class="">
+        <div class="admin-input-box block-admin-input">
             <strong>Повторить пароль:</strong>
-            {!! Form::password('confirm-password', array('placeholder' => 'Повторить пароль','class' => '')) !!}
+            {!! Form::password('confirm-password', array('placeholder' => 'Повторить пароль','class' => 'block-admin-input admin-input')) !!}
         </div>
     </div>
     <div class="">
-        <div class="">
+        <div class="admin-input-box block-admin-input">
             <strong>Роль:</strong>
-            {!! Form::select('roles[]', $roles,$userRole, array('class' => '','multiple')) !!}
+            {!! Form::select('roles[]', $roles,$userRole, array('class' => 'block-admin-input admin-input','multiple')) !!}
         </div>
     </div>
-    <div class="">
+    <div class="admin-input-box block-admin-input">
         <button type="submit" class="">Принять</button>
     </div>
 </div>
