@@ -1,7 +1,6 @@
 @extends('admin_panel')
 @section('title-block') Пользователи @endsection
 @section('admin_res')
-<script type="text/javascript" src = "{{ asset('js/Backbone.js') }}"></script>
 <script type="text/javascript" src = "{{ asset('js/exel_user_load.js') }}"></script>
 <div class="admin-content">
     <div class="top-menu-head admin-back">
