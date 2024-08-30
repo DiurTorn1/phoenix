@@ -2,12 +2,12 @@
 @section('title-block') Пользователи @endsection
 @section('admin_res')
 <div class="">
-    <div class="">
-        <div class="">
-            <h2>Добавить нового пользователя</h2>
+    <div class="top-menu-head admin-back">
+        <div class="left-header">
+            <h2 class="top-menu-title">Добавить нового пользователя</h2>
         </div>
-        <div class="">
-            <a class="" href="{{ route('users.index') }}"> Назад</a>
+        <div class="right-heder">
+            <a class="top-menu-btn" href="{{ route('users.index') }}"> Назад</a>
         </div>
     </div>
 </div>
