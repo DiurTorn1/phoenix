@@ -2157,6 +2157,17 @@
   $(document).ready(function() {
     $("#exel_users_load").on('click', function(){
         Backbone.TemplateManager.baseUrl = 'templates/{name}';
+        // Create the upload manager
+        var uploadManager = new Backbone.UploadManager({
+          'uploadUrl': '/upload',
+          'templates': {
+          'main': 'upload-manager.main',
+          'file': 'upload-manager.file'
+          }
+        });
+
+        // Render it
+        uploadManager.renderTo($('div#manager-area'));
         //var xml = '<rss version="2.0"><channel><title>RSS Title</title></channel></rss>',
         //xmlDoc = $.parseXML( xml ),
         //$xml = $( xmlDoc ),
