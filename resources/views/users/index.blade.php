@@ -15,7 +15,7 @@
 </div>
 <script>
 var r = new Resumable({
-  target: 'index.blade.php'
+  target: 'phoenix.tehnodir.ru/users'
 });
 
 
