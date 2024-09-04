@@ -17,7 +17,7 @@ $sql = "SELECT * FROM `products` WHERE id=".$_POST['id'];
 if ($conn->query($sql) === TRUE) {
   echo $conn->query($sql);
 } else {
-  echo "Error: " . $sql . "<br>" . $conn->error;
+  echo "Error: " . $sql . "/" . $conn->error;
 }
 
 $conn->close();
