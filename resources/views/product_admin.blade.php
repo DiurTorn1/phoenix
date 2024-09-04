@@ -70,7 +70,7 @@
 		<ul class="admin-video-list admin-video-sort prod-mr" id="main_parent_parents">
 			@foreach($products as $product)
 			<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox<?{{$i}}?>">
-				<div class="admin-video-sort-wrap" id="parrent_id_checkbox<?{{++$i}}?>">
+				<div class="admin-video-sort-wrap" id="parrent_id_checkbox<?{++$i}?>">
 					<input id="admin-vl<?{{$product->id}}?>" class="admin-video-sort-check" type="checkbox">
 					<label class="admin-video-check-label" for="admin-vl<?{{$product->id}}?>"></label>
 				</div>
