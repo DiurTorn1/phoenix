@@ -24,11 +24,11 @@ $(document).ready(function() {
     });
 
     $(document).on('dblclick', '.admin-video-item', function() {
-        alert("Button dblclick");
+        //alert("Button dblclick");
         //var id = this.id;
         ///$("#admin_input_id").val(id);
         //window.location.href='/card_broadcast?admin_input_id='+id;
-        //alert("Text: " + this.id);
+        alert("Text: " + this.id);
     });
 
 });
