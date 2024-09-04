@@ -5,9 +5,17 @@ $(document).ready(function() {
             var idparr = $('#' + idarr[i]).find("div.admin-video-sort-wrap").map(function() { return this.id; }).get(); //ToArray
             var idsarr = $('#' + idparr).find("input").map(function() { return this.id; }).get();
 
-            console.log(idsarr);
+            //console.log(idsarr);
             var ch = $("#" + idsarr).is(':checked');
-            console.log(ch);
+            //console.log(ch);
+            var pars = idsarr[0].split("vl");
+            var id = pars[1];
+            if(ch){
+                $.post('/php/delete_product.php', {id:id}, function(data){
+                    console.log("Delete product: " + data);
+                });
+                
+            }
             //var pars = idsarr[0].split("vl");
             //console.log(pars[1]);
         }
