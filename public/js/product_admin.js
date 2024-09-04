@@ -30,13 +30,14 @@ $(document).ready(function() {
         //window.location.href='/card_broadcast?admin_input_id='+id;
         
         var idsarr = $('#' + this.id).find("div").map(function() { return this.id; }).get();
+        var idparr = $('#' + idsarr[0]).find("input").map(function() { return this.id; }).get();
 
         //console.log(idsarr);
         //var ch = $("#" + idsarr).is(':checked');
         //console.log(ch);
         //var pars = idsarr[0].split("vl");
         //var id = pars[1];
-        alert("Text: " + idsarr);
+        alert("Text: " + idparr);
         //if(ch){
            // $.post('/php/delete_product.php', {id:id}, function(data){
                 //console.log(data);
