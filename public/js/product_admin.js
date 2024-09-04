@@ -4,7 +4,7 @@ $(document).ready(function() {
         .find("li") //Find the spans
         .map(function() { return this.id; }) //Project Ids
         .get(); //ToArray
-        for(var i = 0; i < sizeof(idarr); i++){
+        for(var i = 0; i < idarr.length; i++){
             console.log(idarr[i]);
         }
             
