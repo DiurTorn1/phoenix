@@ -5,8 +5,11 @@ $(document).ready(function() {
             var idparr = $('#' + idarr[i]).find("div.admin-video-sort-wrap").map(function() { return this.id; }).get(); //ToArray
             var idsarr = $('#' + idparr).find("input").map(function() { return this.id; }).get();
 
-            var pars = idsarr[0].split("vl");
-            console.log(pars[1]);
+            console.log(idsarr);
+            var ch = $("#" + idsarr).is(':checked');
+            console.log(ch);
+            //var pars = idsarr[0].split("vl");
+            //console.log(pars[1]);
         }
             
         
