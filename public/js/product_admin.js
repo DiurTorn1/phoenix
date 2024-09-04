@@ -12,7 +12,7 @@ $(document).ready(function() {
             var id = pars[1];
             if(ch){
                 $.post('/php/delete_product.php', {id:id}, function(data){
-                    console.log("Delete product: " + data);
+                    console.log(data);
                 });
                 
             }
