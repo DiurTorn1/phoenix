@@ -13,12 +13,12 @@ if ($conn->connect_error) {
 
 $sql = "SELECT * FROM `products` WHERE id=".$_POST['id'];
 
-
-if ($conn->query($sql) === TRUE) {
-  echo $conn->query($sql);
-} else {
-  echo "Error: " . $sql . "/" . $conn->error;
-}
+echo $conn->query($sql);
+//if ($conn->query($sql) === TRUE) {
+  //echo $conn->query($sql);
+//} else {
+  //echo "Error: " . $sql . "/" . $conn->error;
+//}
 
 $conn->close();
     //echo "I get param1 = ".$_POST['id'];
