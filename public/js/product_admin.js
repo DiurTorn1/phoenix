@@ -37,7 +37,8 @@ $(document).ready(function() {
         //console.log(ch);
         var pars = idparr[0].split("vl");
         var id = pars[1];
-        alert("Text: " + id);
+        window.location.href='/card_product?product_id='+id;
+        //alert("Text: " + id);
         //if(ch){
            // $.post('/php/delete_product.php', {id:id}, function(data){
                 //console.log(data);
