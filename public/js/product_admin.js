@@ -4,6 +4,10 @@ $(document).ready(function() {
         .find("li") //Find the spans
         .map(function() { return this.id; }) //Project Ids
         .get(); //ToArray
-        console.log(idarr);
+        for(var i = 0; i < sizeof(idarr); i++){
+            console.log(idarr[i]);
+        }
+            
+        
     });
 });
