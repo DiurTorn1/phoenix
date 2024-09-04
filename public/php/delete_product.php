@@ -12,7 +12,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);//res_parse_stop_access
 }
 
-$sql = "DELETE FROM `products` WHERE " . $_POST['id'];
+$sql = "DELETE FROM `products` WHERE id=" . $_POST['id'];
 
 
 if ($conn->query($sql) === TRUE) {
