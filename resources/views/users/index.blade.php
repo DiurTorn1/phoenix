@@ -15,7 +15,7 @@
 </div>
 <script>
 var r = new Resumable({
-  target: 'phoenix.tehnodir.ru/users'
+  target: ''
 });
 
 

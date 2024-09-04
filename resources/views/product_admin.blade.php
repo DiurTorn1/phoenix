@@ -64,13 +64,14 @@
 				<label class="admin-video-check-label" for="admin-prod-sort-check">Выбрано 0 продуктов</label>
 			</div>
 			<ul class="admin-video-sort-list">
-				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Удалить продукт</button></li><!-- При активации чекбокса кнопка становится активной (добавляется класс "video-btn-active")-->
+				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active" id="delete_product">Удалить продукт</button></li><!-- При активации чекбокса кнопка становится активной (добавляется класс "video-btn-active")-->
 			</ul>
 		</div>
 		<ul class="admin-video-list admin-video-sort prod-mr">
 			@foreach($products as $product)
 			<li class="admin-video-item admin-back">
 				<div class="admin-video-sort-wrap">
+					{{ ++i }}
 					<input id="admin-vl<? {{ $product->id }} ?>" class="admin-video-sort-check" type="checkbox">
 					<label class="admin-video-check-label" for="admin-vl<? {{ $product->id }} ?>"></label>
 				</div>
