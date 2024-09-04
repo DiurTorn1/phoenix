@@ -5,8 +5,10 @@ $(document).ready(function() {
             var idparr = $('#' + idarr[i]).find("div.admin-video-sort-wrap").map(function() { return this.id; }).get(); //ToArray
             var idsarr = $('#' + idparr).find("input").map(function() { return this.id; }).get();
 
-            var pars = idsarr.split("vl");
-            console.log(pars[1]);
+            //var pars = idsarr.split("vl");
+            var str = new RegExp("\\d+(?:\\.\\d+)");
+            var num = str.exec(idsarr);
+            console.log(num);
         }
             
         
