@@ -35,9 +35,9 @@ $(document).ready(function() {
         //console.log(idsarr);
         //var ch = $("#" + idsarr).is(':checked');
         //console.log(ch);
-        //var pars = idsarr[0].split("vl");
-        //var id = pars[1];
-        alert("Text: " + idparr);
+        var pars = idparr[0].split("vl");
+        var id = pars[1];
+        alert("Text: " + id);
         //if(ch){
            // $.post('/php/delete_product.php', {id:id}, function(data){
                 //console.log(data);
