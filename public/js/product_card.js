@@ -149,12 +149,14 @@ $(document).ready(function() {
             valute_bilet ="Американский доллар (USD)";
         }
         $("#valute_bilet option:selected").text(valute_bilet);
-        console.log(pars[11]);
+        //console.log(pars[11]);
         var parse_date1 = pars[11].split(" ");
         var parse_date2 = parse_date1[1].split(":"); 
         var date_start_sell_bilet = $("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);
-        //input_prace_bilet = $("#input_prace_bilet").val();
-        //input_old_prace_bilet = $("#input_old_prace_bilet").val();
+        console.log(pars[12]);
+        console.log(pars[13]);
+        var input_prace_bilet = $("#input_prace_bilet").val(pars[12]);
+        var input_old_prace_bilet = $("#input_old_prace_bilet").val(pars[13]);
         //price_bilet = $("#prace_bilet").val();
         /*var region_out = "";
         //var bilet_out = "";
@@ -178,9 +180,6 @@ $(document).ready(function() {
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         $('#add-ticket-price').toggle();*/
         
-        
-        console.log(pars[12]);
-        console.log(pars[13]);
         console.log(pars[14]);
         console.log(pars[15]);
         console.log(pars[16]);
