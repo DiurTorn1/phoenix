@@ -5,7 +5,7 @@ $password = "%v~kfAt5W#d82sNCWZiF";
 $dbname = "phoenix_fun";
 
 // Create connection
-$conn = new mysqli($servername, $username, $password, $dbname);
+/*$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);//res_parse_stop_access
@@ -29,7 +29,26 @@ $result=$conn->query($sql);
  
     echo "$id - $name - $detail - $datetime_start - $population";
 }
-$conn->close();
+$conn->close();*/
+
+$link = mysql_connect($servername, $username, $password);
+if (!$link) {
+    die('Ошибка соединения: ' . mysql_error());
+}
+echo 'Успешно соединились';
+
+ 
+//$result=mysql_query("SELECT * FROM `world`.`city` WHERE id=670");
+  //while($row = mysql_fetch_array($result)){
+    //$id=$row['ID'];
+    //$name=$row['Name'];
+    //$country_code=$row['CountryCode'];
+   //$district=$row['District'];
+    //$population=$row['Population'];
+ 
+    //echo "<p>$id - $name - $country_code - $district - $population</p>";
+    //}
+mysql_close($link);
 
 //`id`, `name`, `detail`, `datetime_start`, `datetime_stop`, `type`, `country`, `valute`, `period_job`, `prob_period`, `prob_price`, `datetime_start_sell`, `price`, `old_price`, `datetime_start_access`, `datetime_stop_access`, `datetime_stop_sell`, `img_main`, `img_banner`, `img_video_promo`, `video_promo`, `created_at`
 ?>
