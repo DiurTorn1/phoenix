@@ -25,11 +25,11 @@ if (!isset($_GET['id'])) {
   die(http_response_code(404));
 }
 
-$id = $_GET['id']; 
+//$id = $_GET['id']; 
 // проверка на число
-if (!ctype_digit($id)) {
-  die(http_response_code(400));
-}
+//if (!ctype_digit($id)) {
+  //die(http_response_code(400));
+//}
 
 echo $_GET['id'];
 
