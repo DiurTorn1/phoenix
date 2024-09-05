@@ -6,8 +6,8 @@ $(document).ready(function() {
     $.post('/php/get_product_card.php', {id:id}, function(data)  {
         //console.log(data);
         var pars = data.split("&");
-        console.log(pars[0]);
         console.log(pars[1]);
+        $("#head_name_save").val(pars[1]);
         console.log(pars[2]);
         console.log(pars[3]);
         console.log(pars[4]);
