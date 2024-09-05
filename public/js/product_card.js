@@ -130,8 +130,8 @@ $(document).ready(function() {
         //console.log(pars[5]);
         $("#type_save option:selected").text(pars[5]);
         //console.log(pars[6]);
-        console.log(pars[7]);
-        console.log(pars[8]);
+        //console.log(pars[7]);
+        //console.log(pars[8]);
         console.log(pars[9]);
         var region_select_bilet = $("#sive_bilet_region option:selected").text(pars[6]);
         var days_job_bilet = $("#save_days_job_bilet").val(pars[8]);
