@@ -139,6 +139,7 @@ $(document).ready(function() {
         var region_select_bilet = $("#sive_bilet_region option:selected").text(pars[6]);
         var days_job_bilet = $("#save_days_job_bilet").val(pars[8]);
         var valute_bilet = "";
+        var bilet_out = pars[7];
         if(pars[7] == "RUB"){
             valute_bilet ="Российский рубль (RUB)";
         } else if(pars[7] == "KZT"){
@@ -175,7 +176,7 @@ $(document).ready(function() {
 
         $("#input_buff_product").append(
             '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
-			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + pars[7] + '</span></p>' +
+			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         $('#add-ticket-price').toggle();
