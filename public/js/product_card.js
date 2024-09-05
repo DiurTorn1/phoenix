@@ -175,7 +175,7 @@ $(document).ready(function() {
 
         $("#input_buff_product").append(
             '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
-			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
+			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + pars[7] + '</span></p>' +
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         $('#add-ticket-price').toggle();
