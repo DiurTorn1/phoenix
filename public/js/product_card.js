@@ -158,11 +158,11 @@ $(document).ready(function() {
         var input_prace_bilet = $("#input_prace_bilet").val(pars[12]);
         var input_old_prace_bilet = $("#input_old_prace_bilet").val(pars[13]);
         //price_bilet = $("#prace_bilet").val();
-        /*var region_out = "";
+        var region_out = "";
         //var bilet_out = "";
-        var res_date_start_sell = "";
-        var pars_datae_start = date_start_sell_bilet.split("T");
-        res_date_start_sell = pars_datae_start[0] + " " + pars_datae_start[1] + ":00";
+        //var res_date_start_sell = "";
+        //var pars_datae_start = date_start_sell_bilet.split("T");
+        //res_date_start_sell = pars_datae_start[0] + " " + pars_datae_start[1] + ":00";
         if(region_select_bilet == "Только Россия (RUB)"){
             region_out ="Только Россия";
         } else if(region_select_bilet == "Только Казахстан (KZT)"){
@@ -175,10 +175,10 @@ $(document).ready(function() {
 
         $("#input_buff_product").append(
             '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
-			'<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
+			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
-        $('#add-ticket-price').toggle();*/
+        $('#add-ticket-price').toggle();
         
         console.log(pars[14]);
         console.log(pars[15]);
