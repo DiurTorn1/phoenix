@@ -6,7 +6,7 @@ $sql = "SELECT `id`, `name`, `detail`, `datetime_start`, `datetime_stop`, `type`
 $result = $conn->query($sql);
 //$row = $result->fetch_row();
 //echo $row;
-while($row = mysql_fetch_array($result)){
+while($row = $result->fetch_row()){
     $id=$row['id'];
     $name=$row['name'];
     $detail=$row['detail'];
