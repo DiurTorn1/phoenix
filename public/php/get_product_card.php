@@ -5,7 +5,9 @@ $sql = "SELECT `id`, `name`, `detail`, `datetime_start`, `datetime_stop`, `type`
 
 $result = $conn->query($sql);
 $row = $result->fetch_row();
-echo $row[0] . "&" . $row[1] . "&" . $row[2] . "&" . $row[3] . "&" . $row[4] . "&" . $row[5];
+echo $row[0] . "&" . $row[1] . "&" . $row[2] . "&" . $row[3] . "&" . $row[4] . "&" . $row[5] . "&" . $row[6] . "&" . $row[7] . "&" . $row[8] . "&" . $row[9] . "&" 
+    . $row[10] . "&" . $row[11] . "&" . $row[12] . "&" . $row[13] . "&" . $row[14] . "&" . $row[15] . "&" . $row[16] . "&" . $row[17] . "&" . $row[18] . "&" . $row[19] . "&" 
+    . $row[20] . "&" . $row[21];
 //if ($conn->query($sql) === TRUE) {
   //echo $conn->query($sql);
 //} else {
