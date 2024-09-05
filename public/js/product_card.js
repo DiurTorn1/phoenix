@@ -137,7 +137,7 @@ $(document).ready(function() {
         var prob_period = pars[9];
         var price_prob_period = pars[10];
         var region_select_bilet = $("#sive_bilet_region option:selected").text(pars[6]);
-        var days_job_bilet = $("#save_days_job_bilet").val(pars[8]);
+        $("#save_days_job_bilet").val(pars[8]);
         var valute_bilet = "";
         var bilet_out = pars[7];
         if(pars[7] == "RUB"){
@@ -153,7 +153,7 @@ $(document).ready(function() {
         //console.log(pars[11]);
         var parse_date1 = pars[11].split(" ");
         var parse_date2 = parse_date1[1].split(":"); 
-        var date_start_sell_bilet = $("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);
+        $("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);
         console.log(pars[12]);
         console.log(pars[13]);
         var input_prace_bilet = $("#input_prace_bilet").val(pars[12]);
@@ -175,8 +175,8 @@ $(document).ready(function() {
 
 
         $("#input_buff_product").append(
-            '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
-			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
+            '<p class="price-item-bold">' + pars[8] + ' дней</p>' +
+			'<p>С <span>'+ parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1] +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         //$('#add-ticket-price').toggle();
