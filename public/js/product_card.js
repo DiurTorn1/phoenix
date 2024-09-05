@@ -183,10 +183,17 @@ $(document).ready(function() {
         console.log(pars[14]);
         var parse_date3 = pars[14].split(" ");
         var parse_date4 = parse_date3[1].split(":"); 
-        $("#date_start_access_bilet").val(parse_date4[0]+" "+parse_date4[0]+":"+parse_date4[1]);
+        $("#date_start_access_bilet").val(parse_date3[0]+" "+parse_date4[0]+":"+parse_date4[1]);
         
         //console.log(pars[15]);
+        var parse_date5 = pars[15].split(" ");
+        var parse_date6 = parse_date5[1].split(":"); 
+        $("#date_stop_access_bilet").val(parse_date5[0]+" "+parse_date6[0]+":"+parse_date6[1]);
         //console.log(pars[16]);
+        var parse_date7 = pars[15].split(" ");
+        var parse_date8 = parse_date7[1].split(":"); 
+        $("#date_stop_sell_bilet").val(parse_date7[0]+" "+parse_date8[0]+":"+parse_date8[1]);
+        
         //console.log(pars[17]);
         //console.log(pars[18]);
         //console.log(pars[19]);
