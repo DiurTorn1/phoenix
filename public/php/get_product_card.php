@@ -31,7 +31,7 @@ $result=$conn->query($sql);
 }
 $conn->close();*/
 
-$link = mysql_connect($servername, $username, $password);
+$link = mysql_connect($servername, $username, $password, $dbname);
 if (!$link) {
     die('Ошибка соединения: ' . mysql_error());
 }
