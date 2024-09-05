@@ -132,7 +132,10 @@ $(document).ready(function() {
         //console.log(pars[6]);
         //console.log(pars[7]);
         //console.log(pars[8]);
-        console.log(pars[9]);
+        //console.log(pars[9]);
+        //console.log(pars[10]);
+        var prob_period = pars[9];
+        var price_prob_period = pars[10];
         var region_select_bilet = $("#sive_bilet_region option:selected").text(pars[6]);
         var days_job_bilet = $("#save_days_job_bilet").val(pars[8]);
         var valute_bilet = "";
@@ -146,7 +149,10 @@ $(document).ready(function() {
             valute_bilet ="Американский доллар (USD)";
         }
         $("#valute_bilet option:selected").text(valute_bilet);
-        //date_start_sell_bilet = $("#date_start_sell_bilet").val();
+        console.log(pars[11]);
+        var parse_date1 = pars[11].split(" ");
+        var parse_date2 = parse_date1.split(":"); 
+        var date_start_sell_bilet = $("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);
         //input_prace_bilet = $("#input_prace_bilet").val();
         //input_old_prace_bilet = $("#input_old_prace_bilet").val();
         //price_bilet = $("#prace_bilet").val();
@@ -171,8 +177,8 @@ $(document).ready(function() {
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         $('#add-ticket-price').toggle();*/
-        console.log(pars[10]);
-        console.log(pars[11]);
+        
+        
         console.log(pars[12]);
         console.log(pars[13]);
         console.log(pars[14]);
