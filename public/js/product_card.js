@@ -202,5 +202,8 @@ $(document).ready(function() {
 
     });
     //alert(params);
+    $("#product_public_user").on('click', function(){
+        alert("Какого публикуя?!!");
+    });
     
 });
