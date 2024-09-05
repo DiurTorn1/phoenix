@@ -179,7 +179,7 @@ $(document).ready(function() {
 			'<p>С <span>'+ date_start_sell_bilet +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
-        $('#add-ticket-price').toggle();
+        //$('#add-ticket-price').toggle();
         
         console.log(pars[14]);
         console.log(pars[15]);
