@@ -150,7 +150,7 @@ class ProductController extends Controller
     {
         $product->delete();
     
-        return redirect()->route('product_admin')
+        return redirect()->route('product')
                         ->with('success','Product deleted successfully');
     }
 }
