@@ -4,8 +4,7 @@ $(document).ready(function() {
     var id = params.get('product_id');
     //console.log(id);
     $.post('/php/get_product_card.php', {id:id}, function(data)  {
-        var output = $.parseJSON(data);
-        console.log(output);
+        console.log(data);
     });
     //alert(params);
     
