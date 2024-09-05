@@ -9,7 +9,7 @@ $(document).ready(function() {
         console.log(pars[1]);
         $("#head_name_save").val(pars[1]);
         console.log(pars[2]);
-        ("#detail_save").val(pars[2]);
+        $("#detail_save").val(pars[2]);
         console.log(pars[3]);
         var date = pars[3].split(" ");
         $("#start_access_time").val(date[0]);
