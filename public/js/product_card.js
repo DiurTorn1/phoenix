@@ -6,14 +6,16 @@ $(document).ready(function() {
     $.post('/php/get_product_card.php', {id:id}, function(data)  {
         //console.log(data);
         var pars = data.split("&");
-        console.log(pars[1]);
+        //console.log(pars[1]);
         $("#head_name_save").val(pars[1]);
-        console.log(pars[2]);
+        //console.log(pars[2]);
         $("#detail_save").val(pars[2]);
-        console.log(pars[3]);
+        //console.log(pars[3]);
         var date = pars[3].split(" ");
         $("#start_access_time").val(date[0]);
         console.log(pars[4]);
+        date = pars[4].split(" ");
+        $("#stop_access_time").val(date[0]);
         console.log(pars[5]);
         console.log(pars[6]);
         console.log(pars[7]);
