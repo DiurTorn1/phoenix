@@ -16,8 +16,6 @@
 		</div>
 	</header> 
 	<!----------------------------Админ-контент---------------------------------->
-	@foreach($products as $product)
-	@endforeach
 	<div class="admin-content block-admin-left-w1080">
 
 		<div class="top-menu-admin admin-video-sort admin-back">
