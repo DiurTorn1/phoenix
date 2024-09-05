@@ -129,13 +129,23 @@ $(document).ready(function() {
         $("#stop_access_time").val(date[0]);
         //console.log(pars[5]);
         $("#type_save option:selected").text(pars[5]);
-        console.log(pars[6]);
+        //console.log(pars[6]);
         console.log(pars[7]);
         console.log(pars[8]);
         console.log(pars[9]);
         var region_select_bilet = $("#sive_bilet_region option:selected").text(pars[6]);
-        //days_job_bilet = $("#save_days_job_bilet").val();
-        //valute_bilet = $("#valute_bilet option:selected").text();
+        var days_job_bilet = $("#save_days_job_bilet").val(pars[8]);
+        var valute_bilet = "";
+        if(pars[7] == "RUB"){
+            valute_bilet ="Российский рубль (RUB)";
+        } else if(pars[7] == "KZT"){
+            valute_bilet ="Казахский тенге (KZT)";
+        } else if(pars[7] == "BYN"){
+            valute_bilet ="Белорусский рубль (BYN)";
+        } else if(pars[7] == "USD"){
+            valute_bilet ="Американский доллар (USD)";
+        }
+        $("#valute_bilet option:selected").text(valute_bilet);
         //date_start_sell_bilet = $("#date_start_sell_bilet").val();
         //input_prace_bilet = $("#input_prace_bilet").val();
         //input_old_prace_bilet = $("#input_old_prace_bilet").val();
@@ -153,15 +163,7 @@ $(document).ready(function() {
             region_out ="Только Беларусь";
         }
         
-        if(valute_bilet == "Российский рубль (RUB)"){
-            bilet_out ="RUB";
-        } else if(valute_bilet == "Казахский тенге (KZT)"){
-            bilet_out ="KZT";
-        } else if(valute_bilet == "Белорусский рубль (BYN)"){
-            bilet_out ="BYN";
-        } else if(valute_bilet == "Американский доллар (USD)"){
-            bilet_out ="USD";
-        }
+
 
         $("#input_buff_product").append(
             '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
