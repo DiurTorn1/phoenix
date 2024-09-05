@@ -151,7 +151,7 @@ $(document).ready(function() {
         $("#valute_bilet option:selected").text(valute_bilet);
         console.log(pars[11]);
         var parse_date1 = pars[11].split(" ");
-        var parse_date2 = parse_date1.split(":"); 
+        var parse_date2 = parse_date1[1].split(":"); 
         var date_start_sell_bilet = $("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);
         //input_prace_bilet = $("#input_prace_bilet").val();
         //input_old_prace_bilet = $("#input_old_prace_bilet").val();
