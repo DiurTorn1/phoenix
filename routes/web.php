@@ -74,7 +74,7 @@ Route::get('/user_panel', function () {
     return view('user_panel');
 });
 
-Route::get('/card_product', [ProductController::class, 'index'])->name('products');//function () {
+Route::get('/card_product', [ProductController::class, 'update'])->name('products');//function () {
     //return view('card_product');
 //});
 

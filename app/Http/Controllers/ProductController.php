@@ -136,7 +136,7 @@ class ProductController extends Controller
     
         $product->update($request->all());
     
-        return redirect()->route('product_admin')
+        return redirect()->route('card_product')
                         ->with('success','Product updated successfully');
     }
     
