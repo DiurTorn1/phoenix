@@ -31,13 +31,11 @@ if (!ctype_digit($id)) {
   die(http_response_code(400));
 }
 
-//$id = $_GET['id']; 
-// проверка на число
-//if (!ctype_digit($id)) {
-  //die(http_response_code(400));
-//}
+$sql = "SELECT * FROM `products` WHERE id=?"; 
+$result = $db->execute_query($sql, [$id]); 
+$row = $result->fetch_assoc();
 
-echo $_POST['id'];
+echo $row;
 
 $conn->close();
     //echo "I get param1 = ".$_POST['id'];
