@@ -180,18 +180,18 @@ $(document).ready(function() {
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         //$('#add-ticket-price').toggle();
-        //console.log(pars[14]);
+        console.log(pars[14]);
         var parse_date3 = pars[14].split(" ");
         var parse_date4 = parse_date3[1].split(":"); 
         $("#date_start_access_bilet").val(parse_date4[0]+" "+parse_date4[0]+":"+parse_date4[1]);
         
-        console.log(pars[15]);
-        console.log(pars[16]);
-        console.log(pars[17]);
-        console.log(pars[18]);
-        console.log(pars[19]);
-        console.log(pars[20]);
-        console.log(pars[21]);
+        //console.log(pars[15]);
+        //console.log(pars[16]);
+        //console.log(pars[17]);
+        //console.log(pars[18]);
+        //console.log(pars[19]);
+        //console.log(pars[20]);
+        //console.log(pars[21]);
 
     });
     //alert(params);
