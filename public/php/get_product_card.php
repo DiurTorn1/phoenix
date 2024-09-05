@@ -21,7 +21,7 @@ if ($conn->connect_error) {
 //}
 
 // проверка и получение id из строки запроса
-if (!isset($_GET['id'])) {
+if (!isset($_POST['id'])) {
   die(http_response_code(404));
 }
 
@@ -31,7 +31,7 @@ if (!isset($_GET['id'])) {
   //die(http_response_code(400));
 //}
 
-echo $_GET['id'];
+echo $_POST['id'];
 
 $conn->close();
     //echo "I get param1 = ".$_POST['id'];
