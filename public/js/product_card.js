@@ -13,10 +13,11 @@ $(document).ready(function() {
         //console.log(pars[3]);
         var date = pars[3].split(" ");
         $("#start_access_time").val(date[0]);
-        console.log(pars[4]);
+        //console.log(pars[4]);
         date = pars[4].split(" ");
         $("#stop_access_time").val(date[0]);
         console.log(pars[5]);
+        $("#type_save option:selected").text(pars[5]);
         console.log(pars[6]);
         console.log(pars[7]);
         console.log(pars[8]);
