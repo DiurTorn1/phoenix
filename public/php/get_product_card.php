@@ -32,7 +32,7 @@ if (!ctype_digit($id)) {
 }
 
 $sql = "SELECT * FROM `products` WHERE id=?"; 
-$result = $db->execute_query($sql, [$id]); 
+$result = $conn->execute_query($sql, [$id]); 
 $row = $result->fetch_assoc();
 
 echo $row;
