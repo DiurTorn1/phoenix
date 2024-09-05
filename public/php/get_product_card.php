@@ -11,32 +11,14 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);//res_parse_stop_access
 }
 
-//$sql = "SELECT * FROM `products` WHERE id=28";//.$_POST['id'];
+$sql = "SELECT `id`, `name`, `detail`, `datetime_start`, `datetime_stop`, `type`, `country`, `valute`, `period_job`, `prob_period`, `prob_price`, `datetime_start_sell`, `price`, `old_price`, `datetime_start_access`, `datetime_stop_access`, `datetime_stop_sell`, `img_main`, `img_banner`, `img_video_promo`, `video_promo`, `created_at` FROM `products` WHERE id=" . $_POST['id'];
 
-//echo $conn->query($sql);
-//if ($conn->query($sql) === TRUE) {
-  //echo $conn->query($sql);
-//} else {
-  //echo "Error: " . $sql . "/" . $conn->error;
-//}
 
-// проверка и получение id из строки запроса
-if (!isset($_POST['id'])) {
-  die(http_response_code(404));
+if ($conn->query($sql) === TRUE) {
+  echo "Insert product: " . $_POST['id'];
+} else {
+  echo "Error: " . $sql . "/" . $conn->error;
 }
-
-$id = $_POST['id']; 
-// проверка на число
-if (!ctype_digit($id)) {
-  die(http_response_code(400));
-}
-
-$sql = "SELECT * FROM `products` WHERE id=?"; 
-$result = $conn->execute_query($sql, [$id]); 
-$row = $result->fetch_assoc();
-
-echo $row;
 
 $conn->close();
-    //echo "I get param1 = ".$_POST['id'];
 ?>
