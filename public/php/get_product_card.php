@@ -25,6 +25,12 @@ if (!isset($_POST['id'])) {
   die(http_response_code(404));
 }
 
+$id = $_POST['id']; 
+// проверка на число
+if (!ctype_digit($id)) {
+  die(http_response_code(400));
+}
+
 //$id = $_GET['id']; 
 // проверка на число
 //if (!ctype_digit($id)) {
