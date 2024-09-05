@@ -74,9 +74,9 @@ Route::get('/user_panel', function () {
     return view('user_panel');
 });
 
-Route::get('/card_product', [ProductController::class, 'update'])->name('products');//function () {
-    //return view('card_product');
-//});
+Route::get('/card_product', function () {
+    return view('card_product');
+});
 
 Route::get('/product_admin', [ProductController::class, 'index'])->name('products');//function () {
     //return view('product_admin');
