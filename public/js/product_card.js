@@ -154,9 +154,9 @@ $(document).ready(function() {
         var parse_date1 = pars[11].split(" ");
         var parse_date2 = parse_date1[1].split(":"); 
         $("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);
-        console.log(pars[12]);
-        console.log(pars[13]);
-        var input_prace_bilet = $("#input_prace_bilet").val(pars[12]);
+        //console.log(pars[12]);
+        //console.log(pars[13]);
+        $("#input_prace_bilet").val(pars[12]);
         var input_old_prace_bilet = $("#input_old_prace_bilet").val(pars[13]);
         //price_bilet = $("#prace_bilet").val();
         var region_out = "";
@@ -176,12 +176,15 @@ $(document).ready(function() {
 
         $("#input_buff_product").append(
             '<p class="price-item-bold">' + pars[8] + ' дней</p>' +
-			'<p>С <span>'+ parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1] +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
+			'<p>С <span>'+ parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1] +'</span>: <span>' + pars[12] + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         //$('#add-ticket-price').toggle();
+        //console.log(pars[14]);
+        var parse_date3 = pars[14].split(" ");
+        var parse_date4 = parse_date3[1].split(":"); 
+        $("#date_start_access_bilet").val(parse_date4[0]+" "+parse_date4[0]+":"+parse_date4[1]);
         
-        console.log(pars[14]);
         console.log(pars[15]);
         console.log(pars[16]);
         console.log(pars[17]);
