@@ -58,9 +58,9 @@ $(document).ready(function() {
                     $("#admin_card_weigth").val(weigth);
                     //$("#admin_card_product").val('100%');
                     $.post('/php/get_product_all.php', function(data)  {
-                        for(var i=0; i<data.length;i++){
-                            console.log(data[i]);
-                        }
+                        //for(var i=0; i<data.length;i++){
+                            console.log(data);
+                        //}
                         
                     });
                     $('#admin_card_product').append($('<option>', {
