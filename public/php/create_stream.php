@@ -1,9 +1,9 @@
 <?php
 //$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
-/*$tegs = $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
+$tegs = $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
 $data = array("name" => $_POST['name'],"subtitle" => $tegs, "type" => "one-time", "auto_start" => false, "protected" => false, "time_shift" => true,
-         "parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", "reconnect_window" => 600, "scheduled" => array("time" => $_POST['start_at']. ':00.000000Z'),
-         "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"),
+         "parent_id" => "a66bd253-adaf-4540-9ff3-d90b8d5c6682", "reconnect_window" => 600, "scheduled" => array("time" => $_POST['start_at']. ':00.000000Z'),
+         "record" => array("parent_id" => "59a63e5e-61f6-4618-8d83-104a427aff0b"),
          "restreams" => array(), "latency_mode" => "standard");
 $postdata = json_encode($data);
 $token = "179c96f0-a67a-4324-b235-f0b3960baf95";
@@ -20,10 +20,9 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 
 $result = curl_exec($ch);
 curl_close($ch);
-echo $result;*/
+echo $result;
 
-echo  $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . $_POST['region'] . '&' 
-      . $_POST['name'] . '&' . $_POST['start_at'];//"Name: " . $_POST['name'] . ",region: " . $_POST['region'] . ",season: " . $_POST['season'] . ",turnir: " . $_POST['turnir'] . ", weigth: " . $_POST['weigth'] . ",product: " . $_POST['product'] . ",vid_sporta: " . $_POST['vid_sporta'] . ",minframe: " . $_POST['minframe'];
+//echo $tegs;//"Name: " . $_POST['name'] . ",region: " . $_POST['region'] . ",season: " . $_POST['season'] . ",turnir: " . $_POST['turnir'] . ", weigth: " . $_POST['weigth'] . ",product: " . $_POST['product'] . ",vid_sporta: " . $_POST['vid_sporta'] . ",minframe: " . $_POST['minframe'];
 //$token = "f49fffe4-42ff-45bb-a03c-3a2eb050226c";
 //setup the request, you can also use CURLOPT_URL
 //$ch = curl_init('https://api.kinescope.io/v2/live/events?page=1&per_page=100&order=created_at.desc,name.asc');//https://api.kinescope.io/v1/videos?page=1&per_page=100&order=created_at.desc,title.asc');
@@ -40,6 +39,10 @@ echo  $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' .
 
 // get stringified data/output. See CURLOPT_RETURNTRANSFER
 //$data = curl_exec($ch);
+//$data = array("name" => $_POST['name'],"subtitle" => $tegs, "type" => "one-time", "auto_start" => false, "protected" => false, "time_shift" => true,
+         //"parent_id" => "a08220b1-2640-4d65-b51b-cd4d2837741e", "reconnect_window" => 600, "scheduled" => array("time" => $_POST['start_at']. ':00.000000Z'),
+        // "record" => array("parent_id" => "f5d0756d-2ee5-4531-bde4-7baef6ea5baf"),
+        // "restreams" => array(), "latency_mode" => "standard");
 
 // get info about the request
 //$info = curl_getinfo($ch);
