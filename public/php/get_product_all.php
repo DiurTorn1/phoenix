@@ -7,9 +7,9 @@ $result = $conn->query($sql);
 //$row = $result->fetch_row();
 while ($row = $result->fetch_array(MYSQLI_BOTH)) {
     // Look inside $row here, do what you want with it.
-    array_push($arr,$row);
+    array_push($row,$row);
 }
-echo var_dump($arr);//[0] . "&" . $row[1] . "&" . $row[2] . "&" . $row[3];
+echo var_dump($row);//[0] . "&" . $row[1] . "&" . $row[2] . "&" . $row[3];
 //if ($conn->query($sql) === TRUE) {
   //echo $conn->query($sql);
 //} else {
