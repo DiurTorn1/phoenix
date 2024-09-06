@@ -3,9 +3,6 @@ $(document).ready(function() {
         var main = $('#admin-input-main').val();
         var user_email = $('#name_user_get').text();
         console.log(user_email);
-        $("#bay_ticket").on('click', function(){
-            console.log("Покупай!!! Покупай!!!");
-        });
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
             //console.log(data);
@@ -71,6 +68,9 @@ $(document).ready(function() {
                         }
                         //console.log(pars[2]);
                         //console.log(pars[3]);
+                        $("#bay_ticket").on('click', function(){
+                            console.log("Покупай!!! Покупай!!!");
+                        });
                     });    
             });
             
