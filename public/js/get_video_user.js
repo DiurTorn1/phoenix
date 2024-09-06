@@ -1,9 +1,12 @@
 $(document).ready(function() {
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
+        var user_email = $('#name_user_get').val();
+
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
             //console.log(data);
+            console.log(user_email);
             var output = $.parseJSON(data);
             var list = output.data;
             var name_stream = "";
@@ -20,6 +23,8 @@ $(document).ready(function() {
                 //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     name_stream = item.name;
+                    
+
                     $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
                         var pars = data.split("&");
                         //console.log("get_stream_public_ID:"+pars[0]);
