@@ -120,9 +120,9 @@ $(document).ready(function() {
         var pars = data.split("&");
         //console.log(pars[1]);
         $("#head_name_save").val(pars[1]);
-        //console.log(pars[2]);
-        var detail_pars = pars[2].split("&");
-        $("#detail_save").val(detail_pars[1]);
+        console.log(pars[2]);
+       // var detail_pars = pars[2].split("&");
+        $("#detail_save").val(pars[2]);
         //console.log(pars[3]);
         var date = pars[3].split(" ");
         $("#start_access_time").val(date[0]);
@@ -182,7 +182,7 @@ $(document).ready(function() {
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         //$('#add-ticket-price').toggle();
-        console.log(pars[14]);
+        //console.log(pars[14]);
         var parse_date3 = pars[14].split(" ");
         var parse_date4 = parse_date3[1].split(":"); 
         $("#date_start_access_bilet").val(parse_date3[0]+" "+parse_date4[0]+":"+parse_date4[1]);
