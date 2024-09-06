@@ -16,12 +16,12 @@ $(document).ready(function() {
         var params = new window.URLSearchParams(window.location.search);
         //console.log("MSG:" + params.get('block-admin-input'));
 
-        $.post('/php/get_stream.php', function(data)  {
-            var output = $.parseJSON(data);
-            var list = output.data;
+    $.post('/php/get_stream.php', function(data)  {
+        var output = $.parseJSON(data);
+        var list = output.data;
 
-            $.each(list,function(i,item){
-                if(item.id == params.get('admin_input_id')){
+        $.each(list,function(i,item){
+            if(item.id == params.get('admin_input_id')){
                     console.log("Video inform:\r\n");
                     console.log(/*"id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                         "\r\ntype: " + item.type + */"\r\nstreamkey: " + item.streamkey /*+ "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift*/); 
@@ -82,10 +82,24 @@ $(document).ready(function() {
                             '</div>' +
                         '</div>' +
                     '</div>');  */ 
-                }
+            }
                 
-            });
         });
+    });
+
+    $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
+        var pars = data.split("&");
+        console.log("get_stream_public_ID:"+pars[0]);
+        console.log("get_stream_public_name:"+pars[1]);
+        if(pars[1]==name_stream){
+            $('#public_stream').hide();
+            $('#unpublic_stream').show();
+        }
+        //console.log(pars[2]);
+        //console.log(pars[3]);
+    });
+
+
         //alert();
         //$('#admin-input-main').appendVal();card_broadcast
     //});upload_stream
@@ -122,17 +136,6 @@ $(document).ready(function() {
             
         });
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
-    });
-    $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
-        var pars = data.split("&");
-        console.log("get_stream_public_ID:"+pars[0]);
-        console.log("get_stream_public_name:"+pars[1]);
-        if(pars[1]==name_stream){
-            $('#public_stream').hide();
-            $('#unpublic_stream').show();
-        }
-        //console.log(pars[2]);
-        //console.log(pars[3]);
     });
     $("#public_stream").on('click', function(){
         $.post('/php/public_stream.php', { name_stream: name_stream, type_stream:type_stream }, function(data){
