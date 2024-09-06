@@ -1,5 +1,5 @@
 $(document).ready(function() {
-
+    var type_product = "ticket";
     /**script tihii */
     $(document).on('click', '.admin-navigation-link', function(){ // Подсветка активного пункта меню админа
         $('.admin-navigation-link').removeClass('active-navigation-link');
@@ -25,11 +25,13 @@ $(document).ready(function() {
     $("#add-position-btn-ticket").show();
     $("#add_ticket").click(function(){
         $("#add-position-btn-subscrip").hide();
-        $("#add-position-btn-ticket").show();  
+        $("#add-position-btn-ticket").show();
+        type_product = "ticket";  
     });
     $("#add_subscrip").click(function(){
         $("#add-position-btn-ticket").hide();
         $("#add-position-btn-subscrip").show();
+        type_product = "subscript";
     });
 
     // смена контента ДОБАВИТЬ СКИДКУ/ТРИАЛ
@@ -108,7 +110,7 @@ $(document).ready(function() {
           $(this).trigger('off.switch');
         }
     });
-
+    /**script tihii */
 
 
 
@@ -124,7 +126,7 @@ $(document).ready(function() {
         var head_name = $("#head_name_save").val();
         var start_access_time = $("#start_access_time").val();
         var stop_access_time = $("#stop_access_time").val();
-        var detail_save = $("#detail_save").val();
+        var detail_save = $("#detail_save").val(type_product + "&");
         var type_save = $("#type_save option:selected").text();
         var date_start_access_bilet = $("#date_start_access_bilet").val();
         var date_stop_access_bilet = $("#date_stop_access_bilet").val();
