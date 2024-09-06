@@ -17,7 +17,7 @@
 					<script type="text/javascript" src = "{{ asset('js/get_video.js') }}"></script> 
 				@elseif($v == "nullbody")
 					<script type="text/javascript" src = "{{ asset('js/get_video_user.js') }}"></script>
-					<span id="name_user_get">{{ Auth::user()->email }}</span>
+					<a id="name_user_get">{{ Auth::user()->email }}</a>
 				@endif
             @endforeach
         @endif
