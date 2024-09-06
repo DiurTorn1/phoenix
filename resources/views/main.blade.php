@@ -7,8 +7,21 @@
 
 @section('content')
 
+
+@guest
+
+	@else
+		@if(!empty(Auth::user()->getRoleNames()))
+            @foreach( Auth::user()->getRoleNames() as $v)
+				@if($v == "admin")
+					<script type="text/javascript" src = "{{ asset('js/get_video.js') }}"></script> 
+				@elseif($v == "nullbody")
+					<script type="text/javascript" src = "{{ asset('js/get_video_user.js') }}"></script> 
+				@endif
+            @endforeach
+        @endif
+@endguest
 	<!-- Прямая трансляция -->
-	<script type="text/javascript" src = "{{ asset('js/get_video.js') }}"></script> 
 	<div class="index-live" id="index-live">
 	
 		<!--<h2>Прямой эфир</h2>
