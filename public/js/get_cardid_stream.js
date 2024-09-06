@@ -61,10 +61,13 @@ $(document).ready(function() {
                         //for(var i=0; i<data.length;i++){
                             var output = $.parseJSON(data);
                             $.each(output,function(i,item){
-                                $('#admin_card_product').append($('<option>', {
-                                    value: 1,
-                                    text: item.id_product + '-' +  item.type
-                                }));
+                                if(!item.initial){
+                                    $('#admin_card_product').append($('<option>', {
+                                        value: 1,
+                                        text: item.id_product + '-' +  item.type
+                                    }));
+                                }
+
                                 //console.log(item.id_product);
                             });
                             
