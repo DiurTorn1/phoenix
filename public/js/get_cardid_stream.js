@@ -56,7 +56,11 @@ $(document).ready(function() {
                     $("#admin_card_season").val(sezon);
                     $("#admin_card_turnir").val(kubok);
                     $("#admin_card_weigth").val(weigth);
-                    $("#admin_card_product").val('100%');
+                    //$("#admin_card_product").val('100%');
+                    $('#admin_card_product').append($('<option>', {
+                        value: 1,
+                        text: '100%%%'
+                    }));
                     $("#admin_card_vidsporta option:selected").text(vid_sport);
                     $("#admin_card_minframe option:selected").index(0);
                     var time_get = item.stream.started_at;

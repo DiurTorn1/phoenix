@@ -59,7 +59,10 @@
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Добавить к продукту</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_product">
+					<!--<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_product">-->
+						<select class="admin-input admin-input-select block-admin-input" id="admin_card_product">
+
+						</select>
 				</div>
 			</div>
 
