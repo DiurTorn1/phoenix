@@ -95,8 +95,8 @@ $(document).ready(function() {
             $('#public_stream').hide();
             $('#unpublic_stream').show();
         }
-        //console.log(pars[2]);
-        //console.log(pars[3]);
+        console.log(pars[2]);
+        console.log(pars[3]);
     });
 
 
