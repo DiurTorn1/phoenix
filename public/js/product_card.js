@@ -210,10 +210,10 @@ $(document).ready(function() {
     //alert(params);detail_pars  id_product
     $("#product_public_user").on('click', function(){
         $.post('/php/public_product.php', { id_product: id_product, type_product:type_product }, function(data){
-            //if(data == "OK"){
-                //alert("Продукт создан");
-            //}
-            console.log(data);
+            if(data == "OK"){
+                alert("Продукт опубликован");
+            }
+            //console.log(data);
         });
     });
     
