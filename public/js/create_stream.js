@@ -16,7 +16,7 @@ $(document).ready(function() {
             var output = $.parseJSON(data);
             //console.log(output);
             var list = output.data;
-             $('#admin_link_playct').val(list.play_link);
+             //$('#admin_link_playct').val(list.play_link);
             $.each(list,function(i,item){
                 console.log("Video inform:\r\n");
                 console.log("data:\r\n" + "id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name +
