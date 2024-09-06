@@ -34,23 +34,37 @@ $(document).ready(function() {
                             $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                 var pars = data.split("&");
                                 if(!pars[2]){
-                                    console.log("Оплата не найдена");
+                                    //console.log("Оплата не найдена");
+                                    $("#index-live").append(
+                                        '<div class="index-live-list">' +
+                                            '<div class="index-live-item">' +
+                                                    '<div class="index-live-item-video">' +
+                                                        '<a href="#" tabindex="0">' +
+                                                            '<span class="label">LIVE</span>' +
+                                                            '<button id="bay_ticket">Купить билет</button>' +
+                                                        '</a>' +
+                                                    '</div>' +
+                                                '<div class="index-live-item-text">' +
+                                                    '<a href="#">' + item.name + '</a>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</div>');
                                 } else {
-                                    console.log("Оплата найдена");
+                                   // console.log("Оплата найдена");
+                                   $("#index-live").append(
+                                    '<h2>Прямой эфир</h2>' +
+                                    '<div class="index-live-list">' +
+                                        '<div class="index-live-item">' +
+                                            '<div class="index-live-item-video">' +
+                                                '<iframe src="' + item.play_link + '" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
+                                            '</div>' +
+                                            '<div class="index-live-item-text">' +
+                                                '<a href="#">' + item.name + '</a>' +
+                                            '</div>' +
+                                        '</div>' +
+                                    '</div>');
                                 }
                             });
-                            $("#index-live").append(
-                                '<h2>Прямой эфир</h2>' +
-                                '<div class="index-live-list">' +
-                                    '<div class="index-live-item">' +
-                                        '<div class="index-live-item-video">' +
-                                            '<iframe src="' + item.play_link + '" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
-                                        '</div>' +
-                                        '<div class="index-live-item-text">' +
-                                            '<a href="#">' + item.name + '</a>' +
-                                        '</div>' +
-                                    '</div>' +
-                                '</div>');
                         }
                         //console.log(pars[2]);
                         //console.log(pars[3]);
