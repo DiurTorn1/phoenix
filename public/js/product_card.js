@@ -115,18 +115,18 @@ $(document).ready(function() {
     //var pars = params[0].split("=");
     var id = params.get('product_id');
     var id_product = "";
-    
-    var pars;
+    var type_product = "";
     //console.log(id);
     $.post('/php/get_product_card.php', {id:id}, function(data)  {
         //console.log(data);
-        pars = data.split("&");
+        var pars = data.split("&");
         id_product = pars[0];
         //console.log(pars[1]);
         $("#head_name_save").val(pars[1]);
         //console.log(pars[2]);
         var detail_pars = pars[2].split("+");
         $("#detail_save").val(detail_pars[1]);
+        type_product = detail_pars[0];
         //console.log(pars[3]);
         var date = pars[3].split(" ");
         $("#start_access_time").val(date[0]);
@@ -209,7 +209,7 @@ $(document).ready(function() {
     });
     //alert(params);detail_pars  id_product
     $("#product_public_user").on('click', function(){
-        $.post('/php/public_product.php', { id_product: id_product, detail_pars:pars[2] }, function(data){
+        $.post('/php/public_product.php', { id_product: id_product, detail_pars:detail_pars[0] }, function(data){
             //if(data == "OK"){
                 //alert("Продукт создан");
             //}
