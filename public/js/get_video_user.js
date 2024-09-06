@@ -5,7 +5,7 @@ $(document).ready(function() {
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         var user_email = $('#name_user_get').text();
-
+        user_global = user_email;
         console.log(user_email);
 
         $.post('/php/get_stream.php', function(data)  {
@@ -83,5 +83,5 @@ $(document).ready(function() {
 });
 
 $(document).on('click', '#bay_ticket', function(){
-    //console.log("Покупай!!! Покупай!!!");
+    console.log(user_global);
 });
