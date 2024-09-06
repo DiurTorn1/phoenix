@@ -1,7 +1,7 @@
 <?php
 require "config_bd.php";
 
-$sql = "SELECT `id`, `product_id`, `user_email`, `create_at` FROM `sell_users_permission` WHERE user_email=".$_POST['user_email'];
+$sql = "SELECT `id`, `product_id`, `user_email`, `create_at` FROM `sell_users_permission` WHERE user_email='".$_POST['user_email']."'";
 
 $result = $conn->query($sql);
 $row = $result->fetch_row();
