@@ -12,18 +12,18 @@ $(document).ready(function() {
         var start_at = $("#ditetime_start_at").val();
         $.post('/php/create_stream.php',{name: main, region: region, season: season, turnir: turnir, weigth: weigth, product: product, vid_sporta: vid_sporta, minframe: minframe, start_at: start_at}, function(data)  {  //admin_input_select
             //alert("Text:"+data);admin_input_seasonct   ditetime_start_at
-            console.log(data);
+            //console.log(data);
             var output = $.parseJSON(data);
             //console.log(output);
             var list = output.data;
-             //$('#admin_link_playct').val(list.play_link);
-            $.each(list,function(i,item){
-                console.log("Video inform:\r\n");
-                console.log("data:\r\n" + "id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name +
-                    "\r\nsubtitle: " + item.subtitle + "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected +
-                    "\r\ntime_shift: " + item.time_shift); 
+             $('#admin_link_playct').val(list.play_link);
+            //$.each(list,function(i,item){
+                //console.log("Video inform:\r\n");
+                //console.log("data:\r\n" + "id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name +
+                    //"\r\nsubtitle: " + item.subtitle + "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected +
+                    //"\r\ntime_shift: " + item.time_shift); 
                 
-            });
+            //});
             
         });
         //window.location.href='/stream';//?block-admin-input='+id;
