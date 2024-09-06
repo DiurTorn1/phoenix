@@ -16,7 +16,8 @@
 				@if($v == "admin")
 					<script type="text/javascript" src = "{{ asset('js/get_video.js') }}"></script> 
 				@elseif($v == "nullbody")
-					<script type="text/javascript" src = "{{ asset('js/get_video_user.js') }}"></script> 
+					<script type="text/javascript" src = "{{ asset('js/get_video_user.js') }}"></script>
+					<span id="name_user_get">{{ Auth::user()->name }}</span>
 				@endif
             @endforeach
         @endif
