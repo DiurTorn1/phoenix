@@ -119,10 +119,13 @@ $(document).ready(function() {
     //console.log(id);
     $.post('/php/get_product_public.php', {id:id}, function(data)  {
         var pars = data.split("&");
-        console.log(pars[0]);
-        console.log(pars[1]);
-        console.log(pars[2]);
-        console.log(pars[3]);
+        //console.log(pars[0]);
+        //console.log(pars[1]);
+        if(pars[1]==id){
+            $('#product_public_user').hide();
+        }
+        //console.log(pars[2]);
+        //console.log(pars[3]);
     });
     $.post('/php/get_product_card.php', {id:id}, function(data)  {
         //console.log(data);
