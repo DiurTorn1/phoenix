@@ -116,6 +116,7 @@ $(document).ready(function() {
     var id = params.get('product_id');
     var id_product = "";
     var type_product = "";
+    $('#product_unpublic_user').hide();
     //console.log(id);
     $.post('/php/get_product_public.php', {id:id}, function(data)  {
         var pars = data.split("&");
@@ -123,6 +124,7 @@ $(document).ready(function() {
         //console.log(pars[1]);
         if(pars[1]==id){
             $('#product_public_user').hide();
+            $('#product_unpublic_user').show();
         }
         //console.log(pars[2]);
         //console.log(pars[3]);
