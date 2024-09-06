@@ -42,9 +42,9 @@ $(document).ready(function() {
                                                         '<a href="#" tabindex="0">' +
                                                             '<span class="label">LIVE</span>' +
                                                         '</a>' +
-                                                        '<button id="bay_ticket">Купить билет</button>' +
-                                                        '<button id="bay_trainsport">Купить подписку</button>' +
                                                     '</div>' +
+                                                    '<button id="bay_ticket">Купить билет</button>' +
+                                                    '<button id="bay_trainsport">Купить подписку</button>' +
                                                 '<div class="index-live-item-text">' +
                                                     '<a href="#">' + item.name + '</a>' +
                                                 '</div>' +
