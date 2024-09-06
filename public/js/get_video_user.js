@@ -1,12 +1,13 @@
 $(document).ready(function() {
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
+        var user_email = $('#name_user_get').text();
+        console.log(user_email);
 
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
             //console.log(data);
-            var user_email = $('#name_user_get').val();
-            console.log(user_email);
+
             var output = $.parseJSON(data);
             var list = output.data;
             var name_stream = "";
