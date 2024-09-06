@@ -117,6 +117,13 @@ $(document).ready(function() {
     var id_product = "";
     var type_product = "";
     //console.log(id);
+    $.post('/php/get_product_public.php', {id:id}, function(data)  {
+        var pars = data.split("&");
+        console.log(pars[0]);
+        console.log(pars[1]);
+        console.log(pars[2]);
+        console.log(pars[3]);
+    });
     $.post('/php/get_product_card.php', {id:id}, function(data)  {
         //console.log(data);
         var pars = data.split("&");
@@ -186,7 +193,7 @@ $(document).ready(function() {
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         //$('#add-ticket-price').toggle();
-        console.log(pars[14]);
+        //console.log(pars[14]);
         var parse_date3 = pars[14].split(" ");
         var parse_date4 = parse_date3[1].split(":"); 
         $("#date_start_access_bilet").val(parse_date3[0]+" "+parse_date4[0]+":"+parse_date4[1]);
