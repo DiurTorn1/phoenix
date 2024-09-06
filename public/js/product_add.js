@@ -127,7 +127,7 @@ $(document).ready(function() {
         var start_access_time = $("#start_access_time").val();
         var stop_access_time = $("#stop_access_time").val();
         var detail_get = $("#detail_save").val();
-        var detail_save = type_product + "&" + detail_get;
+        var detail_save = type_product + "+" + detail_get;
         var type_save = $("#type_save option:selected").text();
         var date_start_access_bilet = $("#date_start_access_bilet").val();
         var date_stop_access_bilet = $("#date_stop_access_bilet").val();
