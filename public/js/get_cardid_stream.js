@@ -123,14 +123,25 @@ $(document).ready(function() {
         });
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });
+    $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
+        var pars = data.split("&");
+        //console.log(pars[0]);
+        //console.log(pars[1]);
+        if(pars[1]==name_stream){
+            $('#public_stream').hide();
+            $('#unpublic_stream').show();
+        }
+        //console.log(pars[2]);
+        //console.log(pars[3]);
+    });
     $("#public_stream").on('click', function(){
         $.post('/php/public_stream.php', { name_stream: name_stream, type_stream:type_stream }, function(data){
-            //if(data == "OK"){
-                //alert("Продукт опубликован");
-                //$('#public_stream').hide();
-                //$('#unpublic_stream').show();
-           // }
-            console.log(data);
+            if(data == "OK"){
+                alert("Продукт опубликован");
+                $('#public_stream').hide();
+                $('#unpublic_stream').show();
+            }
+            //console.log(data);
         });
     });
     $("#card_stream_link").on('click', function(){
