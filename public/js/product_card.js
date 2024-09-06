@@ -152,10 +152,10 @@ $(document).ready(function() {
             valute_bilet ="Американский доллар (USD)";
         }
         $("#valute_bilet option:selected").text(valute_bilet);
-        //console.log(pars[11]);
-        var parse_date1 = pars[11].split(" ");
-        var parse_date2 = parse_date1[1].split(":"); 
-        $("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);
+        console.log(pars[11]);
+        //var parse_date1 = pars[11].split(" ");
+        //var parse_date2 = parse_date1[1].split(":"); 
+        //$("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);
         //console.log(pars[12]);
         //console.log(pars[13]);
         $("#input_prace_bilet").val(pars[12]);
