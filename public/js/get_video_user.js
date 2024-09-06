@@ -41,9 +41,9 @@ $(document).ready(function() {
                                                     '<div class="index-live-item-video">' +
                                                         '<a href="#" tabindex="0">' +
                                                             '<span class="label">LIVE</span>' +
-                                                            '<button id="bay_ticket">Купить билет</button>' +
-                                                            '<button id="bay_trainsport">Купить подписку</button>' +
                                                         '</a>' +
+                                                        '<button id="bay_ticket">Купить билет</button>' +
+                                                        '<button id="bay_trainsport">Купить подписку</button>' +
                                                     '</div>' +
                                                 '<div class="index-live-item-text">' +
                                                     '<a href="#">' + item.name + '</a>' +
