@@ -42,6 +42,7 @@ $(document).ready(function() {
                                                         '<a href="#" tabindex="0">' +
                                                             '<span class="label">LIVE</span>' +
                                                             '<button id="bay_ticket">Купить билет</button>' +
+                                                            '<button id="bay_trainsport">Купить подписку</button>' +
                                                         '</a>' +
                                                     '</div>' +
                                                 '<div class="index-live-item-text">' +
@@ -71,5 +72,8 @@ $(document).ready(function() {
                     });    
             });
             
+        });
+        $("#bay_ticket").on('click', function(){
+            alert("Покупай!!! Покупай!!!");
         });
 });
