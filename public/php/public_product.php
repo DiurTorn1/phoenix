@@ -5,7 +5,7 @@ $username = "diur_admin";
 $password = "%v~kfAt5W#d82sNCWZiF";
 $dbname = "phoenix_fun";
 
-echo $_POST['id_product'] . "  //  " .$_POST['stop_access_time'];
+echo $_POST['id_product'] . "  //  " .$_POST['type_product'];
 // Create connection
 //$conn = new mysqli($servername, $username, $password, $dbname);
 // Check connection
