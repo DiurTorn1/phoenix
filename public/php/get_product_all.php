@@ -5,11 +5,12 @@ $sql = "SELECT `id`, `id_product`, `type`, `create_at`, `initial` FROM `product_
 
 $result = $conn->query($sql);
 //$row = $result->fetch_row();
-while ($row = $result->fetch_array(MYSQLI_BOTH)) {
+//while ($row = $result->fetch_array(MYSQLI_BOTH)) {
     // Look inside $row here, do what you want with it.
-    array_push($row,$row);
-}
-echo var_dump($row);//[0] . "&" . $row[1] . "&" . $row[2] . "&" . $row[3];
+    //array_push($row,$row);
+//}
+$news_events = $result->fetch_all(MYSQLI_ASSOC);
+echo var_dump($news_events);//[0] . "&" . $row[1] . "&" . $row[2] . "&" . $row[3];
 //if ($conn->query($sql) === TRUE) {
   //echo $conn->query($sql);
 //} else {
