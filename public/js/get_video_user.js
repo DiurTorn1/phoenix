@@ -31,9 +31,14 @@ $(document).ready(function() {
                         //console.log("get_stream_public_ID:"+pars[0]);
                         //console.log("get_stream_public_name:"+pars[1]);
                         if(pars[1]==name_stream){
-                            //$.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
-
-                            //});
+                            $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
+                                var pars = data.split("&");
+                                if(!pars[2]){
+                                    console.log("Оплата не найдена");
+                                } else {
+                                    console.log("Оплата найдена");
+                                }
+                            });
                             $("#index-live").append(
                                 '<h2>Прямой эфир</h2>' +
                                 '<div class="index-live-list">' +
