@@ -1,23 +1,26 @@
-$(document).on('click', '.admin-navigation-link', function(){ // Подсветка активного пункта меню админа
-	$('.admin-navigation-link').removeClass('active-navigation-link');
-	$(this).addClass('active-navigation-link');//Потом добавляем его на текущую кликнутую.
-});
+$(document).ready(function() {
 
-$("#price_toggle").on("click", "button", function() { // Переключатель состояния кнопки БИЛЕТ/ПОДПИСКА
-    $("#price_toggle button").removeClass('type-price-active');
-    $(this).addClass('type-price-active');
-});
+    /**script tihii */
+    $(document).on('click', '.admin-navigation-link', function(){ // Подсветка активного пункта меню админа
+        $('.admin-navigation-link').removeClass('active-navigation-link');
+        $(this).addClass('active-navigation-link');//Потом добавляем его на текущую кликнутую.
+    });
+    
+    $("#price_toggle").on("click", "button", function() { // Переключатель состояния кнопки БИЛЕТ/ПОДПИСКА
+        $("#price_toggle button").removeClass('type-price-active');
+        $(this).addClass('type-price-active');
+    });
+    
+    $("#promo_toggle").on("click", "button", function() { // Переключатель состояния кнопки СКИДКА/ТРИАЛ
+        $("#promo_toggle button").removeClass('type-price-active');
+        $(this).addClass('type-price-active');
+    });
+    $("#promo_toggle_multi").on("click", "button", function() { // Переключатель состояния кнопки СКИДКА/ТРИАЛ МУЛЬТИ
+        $("#promo_toggle_multi button").removeClass('type-price-active');
+        $(this).addClass('type-price-active');
+    });
 
-$("#promo_toggle").on("click", "button", function() { // Переключатель состояния кнопки СКИДКА/ТРИАЛ
-    $("#promo_toggle button").removeClass('type-price-active');
-    $(this).addClass('type-price-active');
-});
-$("#promo_toggle_multi").on("click", "button", function() { // Переключатель состояния кнопки СКИДКА/ТРИАЛ МУЛЬТИ
-    $("#promo_toggle_multi button").removeClass('type-price-active');
-    $(this).addClass('type-price-active');
-});
-
-$(document).ready(function(){ // смена кнопки ДОБАВИТЬ ЦЕНУ БИЛЕТА/ПОДПИСКИ
+    // смена кнопки ДОБАВИТЬ ЦЕНУ БИЛЕТА/ПОДПИСКИ
     // По умолчанию показываем первый блок
     $("#add-position-btn-ticket").show();
     $("#add_ticket").click(function(){
@@ -28,8 +31,8 @@ $(document).ready(function(){ // смена кнопки ДОБАВИТЬ ЦЕН
         $("#add-position-btn-ticket").hide();
         $("#add-position-btn-subscrip").show();
     });
-});
-$(document).ready(function(){ // смена контента ДОБАВИТЬ СКИДКУ/ТРИАЛ
+
+    // смена контента ДОБАВИТЬ СКИДКУ/ТРИАЛ
     // По умолчанию показываем первый блок
     $("#discount_subtext").show();
     $("#discount_container").show();
@@ -48,8 +51,8 @@ $(document).ready(function(){ // смена контента ДОБАВИТЬ С
         $("#trial_subtext").show();
         $("#trial_container").css('display', 'flex')
     });
-});
-$(document).ready(function(){ // смена контента ДОБАВИТЬ СКИДКУ/ТРИАЛ
+
+    // смена контента ДОБАВИТЬ СКИДКУ/ТРИАЛ
     // По умолчанию показываем первый блок
     $("#discount_subtext_multi").show();
     $("#discount_container_multi").show();
@@ -68,9 +71,8 @@ $(document).ready(function(){ // смена контента ДОБАВИТЬ С
         $("#trial_subtext_multi").show();
         $("#trial_container_multi").css('display', 'flex')
     });
-});
 
-$(document).ready(function(){ // Открыть/Закрыть ОКНО ДОБАВИТЬ ЦЕНУ
+    // Открыть/Закрыть ОКНО ДОБАВИТЬ ЦЕНУ
     $("#add-position-btn-ticket").click(function(){
         $("#add-ticket-price").addClass('add-price-show'); 
     });
@@ -82,10 +84,9 @@ $(document).ready(function(){ // Открыть/Закрыть ОКНО ДОБА
     });
     $("#close-add-subscrip-price").click(function(){
         $("#add-subscrip-price").removeClass('add-price-show'); 
-    });  
-});
-
-$(document).ready(function(){ // Открыть/Закрыть ОКНО СОЗДАТЬ ПРОМОКОДЫ
+    }); 
+    
+    // Открыть/Закрыть ОКНО СОЗДАТЬ ПРОМОКОДЫ
     $("#add-new-promocode").click(function(){
         $("#open-create-promocode").addClass('add-price-show'); 
     });
@@ -97,19 +98,21 @@ $(document).ready(function(){ // Открыть/Закрыть ОКНО СОЗД
     });
     $("#close-multi-promocode").click(function(){
         $("#open-create-multi-promocode").removeClass('add-price-show'); 
-    });  
-});
+    }); 
 
-$('.switch-btn').click(function(){ //Переключатель НОВАЯ Промо-кампания
-  $(this).toggleClass('switch-on');
-  if ($(this).hasClass('switch-on')) {
-    $(this).trigger('on.switch');
-  } else {
-    $(this).trigger('off.switch');
-  }
-});
+    $('.switch-btn').click(function(){ //Переключатель НОВАЯ Промо-кампания
+        $(this).toggleClass('switch-on');
+        if ($(this).hasClass('switch-on')) {
+          $(this).trigger('on.switch');
+        } else {
+          $(this).trigger('off.switch');
+        }
+    });
 
-$(document).ready(function() {
+
+
+
+
     var region_select_bilet = "";
     var days_job_bilet = "";
     var valute_bilet = "";
