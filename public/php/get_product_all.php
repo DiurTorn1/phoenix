@@ -1,7 +1,7 @@
 <?php
 require "config_bd.php";
 
-$sql = "SELECT `id`, `id_product`, `type`, `create_at`, `initial` FROM `product_public_permission` WHERE 1";
+$sql = "SELECT `id`, `id_product`, `type`, `create_at`, `initial` FROM `product_public_permission` WHERE 10000";
 
 $result = $conn->query($sql);
 $row = $result->fetch_array();
