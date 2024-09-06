@@ -9,9 +9,13 @@ $(document).ready(function() {
     var region = "";
     var name_card = "";
     var id_card, workspace_id_card, parent_id_card, play_link_card, rtmp_link_card;
+
+    var name_stream = "";
+    var type_stream = " ";
     $('#unpublic_stream').hide();
         var params = new window.URLSearchParams(window.location.search);
         //console.log("MSG:" + params.get('block-admin-input'));
+
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
             var list = output.data;
@@ -30,6 +34,7 @@ $(document).ready(function() {
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $('#admin-input-main').val(item.name);
+                    name_stream = item.name;
                     name_card = item.card;
                     id_card = item.id;
                     workspace_id_card = item.workspace_id;
@@ -117,6 +122,16 @@ $(document).ready(function() {
             
         });
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
+    });
+    $("#public_stream").on('click', function(){
+        $.post('/php/public_stream.php', { name_stream: name_stream, type_stream:type_stream }, function(data){
+            //if(data == "OK"){
+                //alert("Продукт опубликован");
+                //$('#public_stream').hide();
+                //$('#unpublic_stream').show();
+           // }
+            console.log(data);
+        });
     });
     $("#card_stream_link").on('click', function(){
         window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');

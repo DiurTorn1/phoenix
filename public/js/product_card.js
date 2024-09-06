@@ -224,6 +224,8 @@ $(document).ready(function() {
         $.post('/php/public_product.php', { id_product: id_product, type_product:type_product }, function(data){
             if(data == "OK"){
                 alert("Продукт опубликован");
+                $('#product_public_user').hide();
+                $('#product_unpublic_user').show();
             }
             //console.log(data);
         });
