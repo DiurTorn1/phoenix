@@ -17,6 +17,7 @@
 					<script type="text/javascript" src = "{{ asset('js/get_video.js') }}"></script> 
 				@elseif($v == "nullbody")
 					<script type="text/javascript" src = "{{ asset('js/get_video_user.js') }}"></script>
+					<button id="bay_ticket">Купить билет</button>
 					<a id="name_user_get" class="name_user_get">{{ Auth::user()->email }}</a>
 				@endif
             @endforeach
