@@ -9,6 +9,7 @@ $(document).ready(function() {
     var region = "";
     var name_card = "";
     var id_card, workspace_id_card, parent_id_card, play_link_card, rtmp_link_card;
+    $('#unpublic_stream').hide();
         var params = new window.URLSearchParams(window.location.search);
         //console.log("MSG:" + params.get('block-admin-input'));
         $.post('/php/get_stream.php', function(data)  {
