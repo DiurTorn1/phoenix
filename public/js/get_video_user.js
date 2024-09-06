@@ -39,18 +39,15 @@ $(document).ready(function() {
                                         '<div class="index-live-list">' +
                                             '<div class="index-live-item">' +
                                                     '<div class="index-live-item-video">' +
-                                                        '<a href="#" tabindex="0">' +
-                                                            '<span class="label">LIVE</span>' +
+                                                        '<a href="" tabindex="0" id="bay_ticket">' +
+                                                            '<span class="label">Купить билет или билет</span>' +
                                                         '</a>' +
                                                     '</div>' +
-
                                                 '<div class="index-live-item-text">' +
                                                     '<a href="#">' + item.name + '</a>' +
                                                 '</div>' +
                                             '</div>' +
-                                        '</div>' +
-                                        '<button id="bay_ticket">Купить билет</button>' +
-                                        '<button id="bay_trainsport">Купить подписку</button>');
+                                        '</div>');
                                 } else {
                                    // console.log("Оплата найдена");
                                    $("#index-live").append(
