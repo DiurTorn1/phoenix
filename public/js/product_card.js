@@ -209,7 +209,7 @@ $(document).ready(function() {
     });
     //alert(params);detail_pars  id_product
     $("#product_public_user").on('click', function(){
-        $.post('/php/public_product.php', { id_product: id_product, detail_pars:detail_pars[0] }, function(data){
+        $.post('/php/public_product.php', { id_product: id_product, detail_pars:type_product }, function(data){
             //if(data == "OK"){
                 //alert("Продукт создан");
             //}
