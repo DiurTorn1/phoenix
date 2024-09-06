@@ -115,16 +115,17 @@ $(document).ready(function() {
     //var pars = params[0].split("=");
     var id = params.get('product_id');
     var id_product = "";
-    var detail_pars;
+    
+    var pars;
     //console.log(id);
     $.post('/php/get_product_card.php', {id:id}, function(data)  {
         //console.log(data);
-        var pars = data.split("&");
+        pars = data.split("&");
         id_product = pars[0];
         //console.log(pars[1]);
         $("#head_name_save").val(pars[1]);
         //console.log(pars[2]);
-        detail_pars = pars[2].split("+");
+        var detail_pars = pars[2].split("+");
         $("#detail_save").val(detail_pars[1]);
         //console.log(pars[3]);
         var date = pars[3].split(" ");
