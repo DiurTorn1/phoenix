@@ -59,7 +59,8 @@ $(document).ready(function() {
                     //$("#admin_card_product").val('100%');
                     $.post('/php/get_product_all.php', function(data)  {
                         //for(var i=0; i<data.length;i++){
-                            console.log(data);
+                            var output = $.parseJSON(data);
+                            console.log(output);
                         //}
                         
                     });
