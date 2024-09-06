@@ -92,8 +92,8 @@ $(document).ready(function() {
         console.log(pars[0]);
         console.log(pars[1]);
         if(pars[1]==name_stream){
-            $('#public_stream').hide();
-            $('#unpublic_stream').show();
+           // $('#public_stream').hide();
+           // $('#unpublic_stream').show();
         }
         console.log(pars[2]);
         console.log(pars[3]);
