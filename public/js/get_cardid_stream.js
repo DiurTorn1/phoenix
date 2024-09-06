@@ -61,16 +61,17 @@ $(document).ready(function() {
                         //for(var i=0; i<data.length;i++){
                             var output = $.parseJSON(data);
                             $.each(output,function(i,item){
-                                console.log(item.id_product);
+                                $('#admin_card_product').append($('<option>', {
+                                    value: 1,
+                                    text: item.id_product + '-' +  item.type
+                                }));
+                                //console.log(item.id_product);
                             });
                             
                         //}
                         
                     });
-                    $('#admin_card_product').append($('<option>', {
-                        value: 1,
-                        text: '100%%%'
-                    }));
+
                     $("#admin_card_vidsporta option:selected").text(vid_sport);
                     $("#admin_card_minframe option:selected").index(0);
                     var time_get = item.stream.started_at;
