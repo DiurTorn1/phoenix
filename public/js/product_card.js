@@ -155,7 +155,7 @@ $(document).ready(function() {
         console.log(pars[11]);
         //var parse_date1 = pars[11].split(" ");
         //var parse_date2 = parse_date1[1].split(":"); 
-        //$("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);
+        //$("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);+ parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1] +
         //console.log(pars[12]);
         //console.log(pars[13]);
         $("#input_prace_bilet").val(pars[12]);
@@ -178,7 +178,7 @@ $(document).ready(function() {
 
         $("#input_buff_product").append(
             '<p class="price-item-bold">' + pars[8] + ' дней</p>' +
-			'<p>С <span>'+ parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1] +'</span>: <span>' + pars[12] + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
+			'<p>С <span>'+'</span>: <span>' + pars[12] + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
         //$('#add-ticket-price').toggle();
