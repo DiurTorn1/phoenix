@@ -10,7 +10,7 @@ $result = $conn->query($sql);
     //array_push($row,$row);
 //}
 $news_events = $result->fetch_all(MYSQLI_ASSOC);
-echo var_dump($news_events);//[0] . "&" . $row[1] . "&" . $row[2] . "&" . $row[3];
+echo json_encode($news_events);//[0] . "&" . $row[1] . "&" . $row[2] . "&" . $row[3];
 //if ($conn->query($sql) === TRUE) {
   //echo $conn->query($sql);
 //} else {
