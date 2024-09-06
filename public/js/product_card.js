@@ -134,8 +134,8 @@ $(document).ready(function() {
         //console.log(pars[6]);
         //console.log(pars[7]);
         //console.log(pars[8]);
-        //console.log(pars[9]);
-        //console.log(pars[10]);
+        console.log(pars[9]);
+        console.log(pars[10]);
         var prob_period = pars[9];
         var price_prob_period = pars[10];
         var region_select_bilet = $("#sive_bilet_region option:selected").text(pars[6]);
@@ -156,8 +156,8 @@ $(document).ready(function() {
         //var parse_date1 = pars[11].split(" ");
         //var parse_date2 = parse_date1[1].split(":"); 
         //$("#date_start_sell_bilet").val(parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1]);+ parse_date1[0]+" "+parse_date2[0]+":"+parse_date2[1] +
-        //console.log(pars[12]);
-        //console.log(pars[13]);
+        console.log(pars[12]);
+        console.log(pars[13]);
         $("#input_prace_bilet").val(pars[12]);
         var input_old_prace_bilet = $("#input_old_prace_bilet").val(pars[13]);
         //price_bilet = $("#prace_bilet").val();
