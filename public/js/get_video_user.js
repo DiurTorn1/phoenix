@@ -36,8 +36,6 @@ $(document).ready(function() {
                                 if(!pars[2]){
                                     //console.log("Оплата не найдена");
                                     $("#index-live").append(
-                                        '<button id="bay_ticket">Купить билет</button>' +
-                                        '<button id="bay_trainsport">Купить подписку</button>' +
                                         '<div class="index-live-list">' +
                                             '<div class="index-live-item">' +
                                                     '<div class="index-live-item-video">' +
@@ -50,7 +48,9 @@ $(document).ready(function() {
                                                     '<a href="#">' + item.name + '</a>' +
                                                 '</div>' +
                                             '</div>' +
-                                        '</div>');
+                                        '</div>' +
+                                        '<button id="bay_ticket">Купить билет</button>' +
+                                        '<button id="bay_trainsport">Купить подписку</button>');
                                 } else {
                                    // console.log("Оплата найдена");
                                    $("#index-live").append(
