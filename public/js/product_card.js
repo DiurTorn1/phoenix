@@ -114,14 +114,17 @@ $(document).ready(function() {
     var params = new window.URLSearchParams(window.location.search);
     //var pars = params[0].split("=");
     var id = params.get('product_id');
+    var id_product = "";
+    var detail_pars = [];
     //console.log(id);
     $.post('/php/get_product_card.php', {id:id}, function(data)  {
         //console.log(data);
         var pars = data.split("&");
+        id_product = pars[0];
         //console.log(pars[1]);
         $("#head_name_save").val(pars[1]);
         //console.log(pars[2]);
-        var detail_pars = pars[2].split("+");
+        detail_pars = pars[2].split("+");
         $("#detail_save").val(detail_pars[1]);
         //console.log(pars[3]);
         var date = pars[3].split(" ");
@@ -203,9 +206,14 @@ $(document).ready(function() {
         //console.log(pars[21]);
 
     });
-    //alert(params);
+    //alert(params);detail_pars  id_product
     $("#product_public_user").on('click', function(){
-        alert("Какого публикуя?!!");
+        $.post('/php/public_product.php', { id_product: id_product, detail_pars:detail_pars[0] }, function(data){
+            //if(data == "OK"){
+                //alert("Продукт создан");
+            //}
+            console.log(data);
+        });
     });
     
 });
