@@ -73,7 +73,11 @@ $(document).ready(function() {
             });
             
         });
-        $("#bay_ticket").on('click', function(){
-            console.log("Покупай!!! Покупай!!!");
-        });
+        //$("#").on('click', function(){
+            //console.log("Покупай!!! Покупай!!!");
+        //});
+});
+
+$(document).on('click', '#bay_ticket', function(){
+    console.log("Покупай!!! Покупай!!!");
 });
