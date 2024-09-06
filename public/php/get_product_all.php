@@ -4,7 +4,7 @@ require "config_bd.php";
 $sql = "SELECT `id`, `id_product`, `type`, `create_at`, `initial` FROM `product_public_permission` WHERE 1";
 
 $result = $conn->query($sql);
-$row = $result->fetch_row();
+//$row = $result->fetch_row();
 while ($row = $result->fetch_array(MYSQLI_BOTH)) {
     // Look inside $row here, do what you want with it.
     array_push($arr,$row);
