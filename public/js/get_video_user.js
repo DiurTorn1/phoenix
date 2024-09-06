@@ -74,6 +74,6 @@ $(document).ready(function() {
             
         });
         $("#bay_ticket").on('click', function(){
-            alert("Покупай!!! Покупай!!!");
+            console.log("Покупай!!! Покупай!!!");
         });
 });
