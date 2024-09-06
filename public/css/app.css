@@ -1778,3 +1778,7 @@ td a:focus {
 .hidden{
     display:none;
 } 
+
+.name_user_get{
+    display: none;
+}
