@@ -64,12 +64,13 @@ $(document).ready(function() {
                                 if(!item.initial){
                                     $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
                                         var pars = data.split("&");
-                                        console.log(pars[1]);
+                                        //console.log(pars[1]);
+                                        $('#admin_card_product').append($('<option>', {
+                                            value: 1,
+                                            text: pars[1]
+                                        }));
                                     });
-                                    $('#admin_card_product').append($('<option>', {
-                                        value: 1,
-                                        text: item.id_product + '-' +  item.type
-                                    }));
+
                                 }
 
                                 //console.log(item.id_product);
