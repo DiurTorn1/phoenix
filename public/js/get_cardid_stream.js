@@ -9,7 +9,7 @@ $(document).ready(function() {
     var region = "";
     var name_card = "";
     var id_card, workspace_id_card, parent_id_card, play_link_card, rtmp_link_card, 
-        streamkey_par;
+        streamkey_par, parent_id_par, stream_id_par;
 
     var name_stream = "";
     var type_stream = "";
@@ -35,6 +35,8 @@ $(document).ready(function() {
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $('#admin-input-main').val(item.name);
+                    stream_id_par = item.stream.id;
+                    parent_id_par = item.parent_id;
                     streamkey_par = item.streamkey;
                     name_stream = item.name;
                     name_card = item.card;
@@ -151,7 +153,8 @@ $(document).ready(function() {
         });
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
         $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
-            ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par }, function(data){
+            ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
+            parent_id_par:parent_id_par, stream_id_par:stream_id_par }, function(data){
             var output = $.parseJSON(data);
             console.log(output);
             var list = output.data;
