@@ -143,7 +143,7 @@ $(document).ready(function() {
         vid_sport = $("#admin_card_vidsporta option:selected").text();
         var post_time = $("#ditetime_card_start_at").val();
         var name_product = $("#admin_card_product option:selected").text();
-        $.post('/php/get_product_card.php', {name:item.name_product}, function(data)  {
+        $.post('/php/get_product_card_name.php', {name:name_product}, function(data)  {
             var pars = data.split("&");
             console.log(pars[0]);
         });
