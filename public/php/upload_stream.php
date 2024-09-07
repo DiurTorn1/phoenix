@@ -10,7 +10,7 @@ $data = array( "id" => $_POST['id'], "workspace_id" => $_POST['workspace_id'], "
                 "streamkey" => $_POST['streamkey_par'], "auto_start" => false, "protected"=> false, "time_shift" => true,
                 "record" => array("parent_id" => $_POST['parent_id_par']), "video" => array("presets" => null), "audio" => array("channel_mapping" => null),
                 "restreams" => array(), "reconnect_window" => 1800, "play_link"=> $_POST['play_link'], "rtmp_link" => $_POST['rtmp_link'],
-                "scheduled" => array("time" => $_POST['post_time']. ':00.000000Z'), "stream" => array( "id" => "a3aa8073-6204-4b7b-9a2d-275e557aa450", "event_id" => $_POST['id'],
+                "scheduled" => array("time" => $_POST['post_time']. ':00.000000Z'), "stream" => array( "id" => $_POST['stream_id_par'], "event_id" => $_POST['id'],
                 "status" => "pending", "started_at" => $_POST['post_time']. ':00.000000Z', "finished_at" => null), "chat_after_stream" => true, "chat_active" => false, "chat_preview" => true,
                 "show_members" => true, "created_at" => "2024-08-14T10:44:42.746261Z", "updated_at" => null, "latency_mode" => "standard", "allow_chat_links" => false, "moderators" => null,
                 "poster" => array("id" => "9fb44b89-a4f2-4b24-9bdc-ef34ae865552", "type" => "image", "status" => "done", "active" => true, "original" => "https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b",
