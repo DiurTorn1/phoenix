@@ -153,7 +153,7 @@ $(document).ready(function() {
             var output = $.parseJSON(data);
             var list = output.data;
                 //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
-            //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
+                console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                 if(list.id == params.get('admin_input_id')){
                     alert("Редактирование успешно!");
                     window.location.href='/stream';
