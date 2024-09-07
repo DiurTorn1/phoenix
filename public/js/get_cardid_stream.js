@@ -63,8 +63,8 @@ $(document).ready(function() {
                             $.each(output,function(i,item){
                                 if(!item.initial){
                                     $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
-                                        var pars = data.split("&");
-                                        console.log(pars[1]);
+                                        //var pars = data.split("&");
+                                        console.log(data);
                                     });
                                     $('#admin_card_product').append($('<option>', {
                                         value: 1,
