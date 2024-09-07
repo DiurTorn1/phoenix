@@ -36,7 +36,7 @@ $(document).ready(function() {
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $('#admin-input-main').val(item.name);
                     stream_id_par = item.stream.id;
-                    parent_id_par = item.parent_id;
+                    parent_id_par = item.record.parent_id;
                     streamkey_par = item.streamkey;
                     name_stream = item.name;
                     name_card = item.card;
