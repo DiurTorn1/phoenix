@@ -8,7 +8,7 @@ $tegs = $_POST['sezon'] . '&' . $_POST['kubok'] . '&' . $_POST['weigth'] . '&' .
 $data = array( "id" => $_POST['id'], "workspace_id" => $_POST['workspace_id'], "parent_id" => $_POST['parent_id'], 
                 "name" => $_POST['name'], "subtitle" => $tegs, "type" => "one-time",
                 "streamkey" => $_POST['streamkey_par'], "auto_start" => false, "protected"=> false, "time_shift" => true,
-                "record" => array("parent_id" => "59a63e5e-61f6-4618-8d83-104a427aff0b"), "video" => array("presets" => null), "audio" => array("channel_mapping" => null),
+                "record" => array("parent_id" => $_POST['parent_id_par']), "video" => array("presets" => null), "audio" => array("channel_mapping" => null),
                 "restreams" => array(), "reconnect_window" => 1800, "play_link"=> $_POST['play_link'], "rtmp_link" => $_POST['rtmp_link'],
                 "scheduled" => array("time" => $_POST['post_time']. ':00.000000Z'), "stream" => array( "id" => "a3aa8073-6204-4b7b-9a2d-275e557aa450", "event_id" => $_POST['id'],
                 "status" => "pending", "started_at" => $_POST['post_time']. ':00.000000Z', "finished_at" => null), "chat_after_stream" => true, "chat_active" => false, "chat_preview" => true,
