@@ -42,7 +42,7 @@ $(document).ready(function() {
                                         //var pars = data.split("&");
                                         //product_global = pars[1];
                                         var output = $.parseJSON(data);
-                                        console.log(output);
+                                        console.log(output[1]);
                                     });
                                     //console.log("Оплата не найдена");
                                     $("#index-live").append(
