@@ -39,10 +39,9 @@ $(document).ready(function() {
                                 var pars = data.split("&");
                                 if(!pars[2]){
                                     $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
-                                        //var pars = data.split("&");
-                                        //product_global = pars[1];
                                         var output = $.parseJSON(data);
-                                        console.log(output[1]);
+                                        //console.log(output[1]);
+                                        product_global = output[1];
                                     });
                                     //console.log("Оплата не найдена");
                                     $("#index-live").append(
