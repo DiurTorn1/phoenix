@@ -155,7 +155,7 @@ $(document).ready(function() {
             $.post('/php/get_product_public.php', {id:pars[0]}, function(data)  {
                 var pars = data.split("&");
                 console.log(pars[1]);
-                $.post('/php/upload_product_public.php', {id:pars[0], initial:initial_name}, function(data)  {
+                $.post('/php/upload_product_public.php', {id:pars[1], initial:initial_name}, function(data)  {
                     if(data == "OK"){
                         alert("Стрим добавлен к продукту: " + name_product);
                         $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
