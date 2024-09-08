@@ -53,10 +53,15 @@ $(document).ready(function() {
                                                     //console.log(data);
                                                     if(data=='OK'){
                                                         alert("Оплата прошла!");
-                                                        // window.location.href="/?";
+                                                        $.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {
+                                                            if(data == 'OK'){
+                                                                window.location.href="/";
+                                                            }
+                                                        });
+                                                        // 
                                                     } else {
                                                         alert("Оплата не прошла!");
-                                                        //window.location.href="/";
+                                                        window.location.href="/";
                                                     }
                                                 });
                                             }
@@ -126,5 +131,5 @@ $(document).on('click', '#bay_ticket', function(){
             });
         }
     });
-    //$.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {});
+    
 });
