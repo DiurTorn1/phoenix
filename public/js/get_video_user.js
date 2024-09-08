@@ -94,7 +94,7 @@ $(document).ready(function() {
         } else {
             //alert("Оплата прошла!");//console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
             $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
-
+                console.log(data);
             });
         }
 
