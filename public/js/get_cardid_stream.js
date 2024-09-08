@@ -158,28 +158,29 @@ $(document).ready(function() {
                 $.post('/php/upload_product_public.php', {id:pars[0], initial:initial_name}, function(data)  {
                     if(data == "OK"){
                         alert("Стрим добавлен к продукту: " + name_product);
+                        $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
+                            ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
+                            parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
+                            var output = $.parseJSON(data);
+                            //console.log(output);
+                            var list = output.data;
+                                //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
+                                //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
+                                if(list.id == params.get('admin_input_id')){
+                                    alert("Редактирование успешно!");
+                                    window.location.href='/stream';
+                                } else {
+                                    alert("Ошибка редактирования!");
+                                    console.log(data);
+                                }
+                            
+                        });
                     }
                 });
             });
         });
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
-        $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
-            ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
-            parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
-            var output = $.parseJSON(data);
-            //console.log(output);
-            var list = output.data;
-                //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
-                //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
-                if(list.id == params.get('admin_input_id')){
-                    alert("Редактирование успешно!");
-                    window.location.href='/stream';
-                } else {
-                    alert("Ошибка редактирования!");
-                    console.log(data);
-                }
-            
-        });
+
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });
     $("#public_stream").on('click', function(){
