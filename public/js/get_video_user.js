@@ -38,6 +38,11 @@ $(document).ready(function() {
                             $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                 var pars = data.split("&");
                                 if(!pars[2]){
+                                    $.post('/php/get_stream_public.php', {initial:name_stream}, function(data)  {
+                                        var pars = data.split("&");
+                                        //product_global = pars[1];
+                                        console.log(pars[1]);
+                                    });
                                     //console.log("Оплата не найдена");
                                     $("#index-live").append(
                                         '<div class="index-live-list">' +
