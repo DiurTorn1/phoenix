@@ -92,10 +92,10 @@ $(document).ready(function() {
                 //console.log("Покупай!!! Покупай!!!");
             //});
         } else {
-            alert("Оплата прошла!");
-            //$.post('/php/get_sell_payment.php', {id:product_global}, function(data){
+            //alert("Оплата прошла!");//console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
+            $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
 
-            //});
+            });
         }
 
 });
