@@ -150,7 +150,11 @@ $(document).ready(function() {
         var name_product = $("#admin_card_product option:selected").text();
         $.post('/php/get_product_card_name.php', {name:name_product}, function(data)  {
             var pars = data.split("&");
-            console.log(pars[0]);
+            //console.log(pars[0]);
+            $.post('/php/get_product_public.php', {id_pruduct:pars[0]}, function(data)  {
+                var pars = data.split("&");
+                console.log(pars[1]);
+            });
         });
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
         $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
