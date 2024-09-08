@@ -41,7 +41,8 @@ $(document).ready(function() {
                                     $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
                                         //var pars = data.split("&");
                                         //product_global = pars[1];
-                                        console.log(data);
+                                        var output = $.parseJSON(data);
+                                        console.log(output);
                                     });
                                     //console.log("Оплата не найдена");
                                     $("#index-live").append(
