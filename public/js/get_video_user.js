@@ -40,8 +40,8 @@ $(document).ready(function() {
                                 if(!pars[2]){
                                     $.post('/php/get_stream_public.php', {initial:name_stream}, function(data)  {
                                         var pars = data.split("&");
-                                        //product_global = pars[1];
-                                        console.log(pars[1]);
+                                        product_global = pars[1];
+                                        //console.log(pars[1]);
                                     });
                                     //console.log("Оплата не найдена");
                                     $("#index-live").append(
@@ -89,4 +89,5 @@ $(document).ready(function() {
 
 $(document).on('click', '#bay_ticket', function(){
     console.log(user_global);
+    console.log(product_global);
 });
