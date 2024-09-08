@@ -90,4 +90,11 @@ $(document).ready(function() {
 $(document).on('click', '#bay_ticket', function(){
     console.log(user_global);
     console.log(product_global);
+    $.post('/php/get_product_card.php', {id:product_global}, function(data)  {
+        var pars = data.split("&");
+        console.log("Name: "+pars[1]);
+        console.log("Price: "+pars[12]);
+    });
+    //$.post('/php/sell_user_payment.php', {user_global:user_global, product_global:product_global}, function(data)  {});
+    //$.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {});
 });
