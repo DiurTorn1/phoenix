@@ -98,7 +98,8 @@ $(document).on('click', '#bay_ticket', function(){
             price_product = pars[12];
             //console.log(name_product + " = " + price_product + " RUB");
             $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:price_product}, function(data)  {
-                console.log(data);
+                //console.log(data);
+                window.location.href=data;
             });
         }
     });
