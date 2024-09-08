@@ -13,7 +13,7 @@ $(document).ready(function() {
         var SignatureValue = params.get('SignatureValue');
         var Culture = params.get('Culture');
         //console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
-        if(!OutSum && !InvId && !SignatureValue && !Culture){
+        //if(!OutSum && !InvId && !SignatureValue && !Culture){
             $.post('/php/get_stream.php', function(data)  {
                 //alert("Text:"+data);
                 //console.log(data);
@@ -48,6 +48,18 @@ $(document).ready(function() {
                                             var output = $.parseJSON(data);
                                             //console.log(output[1]);
                                             product_global = output[1];
+                                            if(OutSum && InvId && SignatureValue && Culture){
+                                                $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
+                                                    //console.log(data);
+                                                    if(data=='OK'){
+                                                        alert("Оплата прошла!");
+                                                        // window.location.href="/?";
+                                                    } else {
+                                                        alert("Оплата не прошла!");
+                                                        //window.location.href="/";
+                                                    }
+                                                });
+                                            }
                                         });
                                         //console.log("Оплата не найдена");
                                         $("#index-live").append(
@@ -91,19 +103,10 @@ $(document).ready(function() {
             //$("#").on('click', function(){
                 //console.log("Покупай!!! Покупай!!!");
             //});
-        } else {
+        //} else {
             //alert("Оплата прошла!");//console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
-            $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
-                //console.log(data);
-                if(data=='OK'){
-                    alert("Оплата прошла!");
-                    window.location.href="/";
-                } else {
-                    alert("Оплата не прошла!");
-                    window.location.href="/";
-                }
-            });
-        }
+
+        //}
 
 });
 
