@@ -2,7 +2,7 @@ var user_global = "";
 var product_global;
 var type_sell_global;
 $(document).ready(function() {
-    //$("#admin-video-list-btn").on('click', function(){
+    //$("#admin-video-list-btn").on('click', function(){ var params = new window.URLSearchParams(window.location.search);
         var main = $('#admin-input-main').val();
         var user_email = $('#name_user_get').text();
         user_global = user_email;
@@ -38,6 +38,12 @@ $(document).ready(function() {
                             $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                 var pars = data.split("&");
                                 if(!pars[2]){
+                                    var params = new window.URLSearchParams(window.location.search);
+                                    var OutSum = params.get('OutSum');
+                                    var InvId = params.get('InvId');
+                                    var SignatureValue = params.get('SignatureValue');
+                                    var Culture = params.get('Culture');
+                                    console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
                                     $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
                                         var output = $.parseJSON(data);
                                         //console.log(output[1]);
