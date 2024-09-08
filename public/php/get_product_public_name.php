@@ -5,7 +5,7 @@ $sql = "SELECT `id`, `id_product`, `type`, `create_at`, `initial` FROM `product_
 
 $result = $conn->query($sql);
 $row = $result->fetch_row();
-echo $row[0] . "&" . $row[1] . "&" . $row[2] . "&" . $row[3];
+echo json_encode($row);//$row[0] . "&" . $row[1] . "&" . $row[2] . "&" . $row[3];
 //if ($conn->query($sql) === TRUE) {
   //echo $conn->query($sql);
 //} else {

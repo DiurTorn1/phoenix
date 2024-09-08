@@ -39,9 +39,9 @@ $(document).ready(function() {
                                 var pars = data.split("&");
                                 if(!pars[2]){
                                     $.post('/php/get_stream_public.php', {initial:name_stream}, function(data)  {
-                                        var pars = data.split("&");
-                                        product_global = pars[1];
-                                        //console.log(pars[1]);
+                                        //var pars = data.split("&");
+                                        //product_global = pars[1];
+                                        console.log(data);
                                     });
                                     //console.log("Оплата не найдена");
                                     $("#index-live").append(
