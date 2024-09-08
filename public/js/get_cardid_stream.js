@@ -151,7 +151,7 @@ $(document).ready(function() {
         $.post('/php/get_product_card_name.php', {name:name_product}, function(data)  {
             var pars = data.split("&");
             //console.log(pars[0]);
-            $.post('/php/get_product_public.php', {id_pruduct:pars[0]}, function(data)  {
+            $.post('/php/get_product_public.php', {id:pars[0]}, function(data)  {
                 var pars = data.split("&");
                 console.log(pars[1]);
             });
