@@ -21,10 +21,12 @@ $crc = strtoupper($_POST["SignatureValue"]);
 $my_crc = strtoupper(md5("$out_summ:$inv_id:$mrh_pass2"));
         
 if ($my_crc != $crc){
-    echo "bad sign\n";
+    echo "bad sign";
+} else {
+    echo "OK";
 }
         
 // print OK signature
-echo "OK$inv_id\n";
+
         
 // perform some action (change order state to paid)
