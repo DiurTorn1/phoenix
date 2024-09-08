@@ -9,7 +9,7 @@ $(document).ready(function() {
     var region = "";
     var name_card = "";
     var id_card, workspace_id_card, parent_id_card, play_link_card, rtmp_link_card, 
-        streamkey_par, parent_id_par, stream_id_par, poster_id_par;
+        streamkey_par, parent_id_par, stream_id_par, poster_id_par, initial_name;
 
     var name_stream = "";
     var type_stream = "";
@@ -35,6 +35,7 @@ $(document).ready(function() {
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $('#admin-input-main').val(item.name);
+                    initial_name = item.name;
                     poster_id_par = item.poster.id;
                     stream_id_par = item.stream.id;
                     parent_id_par = item.record.parent_id;
@@ -154,6 +155,11 @@ $(document).ready(function() {
             $.post('/php/get_product_public.php', {id:pars[0]}, function(data)  {
                 var pars = data.split("&");
                 console.log(pars[1]);
+                $.post('/php/upload_product_public.php', {id:pars[0], initial:initial_name}, function(data)  {
+                    if(data == "OK"){
+                        alert("Стрим добавлен к продукту: " + name_product);
+                    }
+                });
             });
         });
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
@@ -161,17 +167,17 @@ $(document).ready(function() {
             ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
             parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
             var output = $.parseJSON(data);
-            console.log(output);
+            //console.log(output);
             var list = output.data;
                 //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                 //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
-                //if(list.id == params.get('admin_input_id')){
-                    //alert("Редактирование успешно!");
-                   // window.location.href='/stream';
-                //} else {
-                    //alert("Ошибка редактирования!");
-                    //console.log(data);
-                //}
+                if(list.id == params.get('admin_input_id')){
+                    alert("Редактирование успешно!");
+                    window.location.href='/stream';
+                } else {
+                    alert("Ошибка редактирования!");
+                    console.log(data);
+                }
             
         });
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
