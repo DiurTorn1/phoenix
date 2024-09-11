@@ -38,8 +38,8 @@ $(document).ready(function() {
     
                         $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
                             var pars = data.split("&");
-                            //console.log("get_stream_public_ID:"+pars[0]);
-                            //console.log("get_stream_public_name:"+pars[1]);
+                            console.log("get_stream_public_ID:"+pars[0]);
+                            console.log("get_stream_public_name:"+pars[1]);
                             if(pars[1]==name_stream){
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var pars = data.split("&");
