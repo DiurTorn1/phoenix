@@ -1775,6 +1775,54 @@ td a:focus {
     font-size: 13.5px;
     color: #c4c4c4;
 }
+
+.user-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 910px;
+}
+.user-h2 {
+    font-size: 2rem !important;
+    text-transform: unset !important;
+    margin: 0 auto !important;
+    padding: 16px 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+}
+.user-h3 {
+    font-size: 1.9rem !important;
+    text-transform: unset !important;
+    margin: 0 auto !important;
+    padding: 15px 0 !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+}
+.user-text {
+    margin-bottom: .9rem;
+    font-size: 17px;
+    line-height: 1.75;
+    letter-spacing: 1px;
+    color: #fff;
+}
+.user-link {
+    text-decoration: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    cursor: pointer;
+    background-color: transparent;
+    padding: 0;
+    color: #6ecdf8;
+    font-size: 17px;
+    line-height: 1.75;
+}
+.user-link:hover {
+    outline: none;
+    box-shadow: none;
+    color: rgb(245, 133, 5);
+}
+
 .hidden{
     display:none;
 } 

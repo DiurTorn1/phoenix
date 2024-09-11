@@ -78,6 +78,10 @@ Route::get('/card_product', function () {
     return view('card_product');
 });
 
+Route::get('/terms_of_user', function () {
+    return view('terms_of_user');
+});
+
 Route::get('/product_admin', [ProductController::class, 'index'])->name('products');//function () {
     //return view('product_admin');
 //});
