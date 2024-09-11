@@ -1,8 +1,8 @@
 <footer>
 	<div class="footer-container">
 		<div class="footer-left-column">
-			<p>FUND «PHOENIX» ALL RIGHTS RESERVED. <script>document.write(new Date().getFullYear());</script></p>
-			<span>Официальный видеосервис Фонда «ФЕНИКС»</span>
+			<p>ANPSO «CDSP «PHOENIX» ALL RIGHTS RESERVED. <script>document.write(new Date().getFullYear());</script></p>
+			<span>Официальный видеосервис АНФСО «ЦРСП «ФЕНИКС»</span>
 		</div>
 		<div class="footer-center-column">
 			<a href="/privacy_policy" target="_blank">Политика конфиденциальности</a>
