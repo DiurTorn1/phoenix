@@ -5,6 +5,7 @@
        
 
 @section('content')
+<main class="index-main index-live"> 
 <div class="user-text-wrapper">
 		<!-- Пользовательское соглашение -->
 		<h2 class="user-h2">Пользовательское соглашение</h2>

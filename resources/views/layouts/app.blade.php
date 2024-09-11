@@ -34,7 +34,7 @@
 
 </head>
 <body ><!--class="body-admin">-->
-<main class="index-main">
+
 @yield('content')
 
 @include('inc.footer')

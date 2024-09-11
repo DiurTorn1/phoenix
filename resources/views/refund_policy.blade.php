@@ -5,6 +5,7 @@
        
 
 @section('content')
+<main class="index-main index-live"> 
 <div class="user-text-wrapper">
 		<!-------------------- Политика возвратов ---------------------->
 		<h1 class="user-h2">Политика возвратов</h1>
