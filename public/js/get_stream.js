@@ -76,11 +76,11 @@ $(document).ready(function() {
 					    '</div>' +
 				    '</div>' +
 				    '<div class="admin-video-item-view">' +
-					    '<p class="admin-video-item-v-count"><span>1342</span>просмотра</p>' +
+					    '<p class="admin-video-item-v-count"><span></span>просмотра</p>' +
 					    '<p class="admin-video-item-v-region">' + region + '</p>' +
 				    '</div>' +
 				    '<div class="admin-video-item-info admin-video-item-view">' +
-					    '<p class="admin-video-item-i-time">Закончилась в<span>15:19</span></p>' +
+					    '<p class="admin-video-item-i-time">Закончилась в<span></span></p>' +
 					    '<p class="admin-video-item-i-date">' + item.stream.finished_at + '</p>' +
 					    '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
 				    '</div>' + 
@@ -115,7 +115,7 @@ $(document).ready(function() {
     $(document).on('dblclick', '.admin-video-item', function() {
         var id = this.id;
         $("#admin_input_id").val(id);
-        window.location.href='/card_broadcast?admin_input_id='+id;
+        window.location.href='/card_stream?admin_input_id='+id;
         //alert("Text: " + this.id);
     });
 

@@ -1,5 +1,5 @@
 @extends('admin_panel')
-@section('title-block') Продукты @endsection
+@section('title-block') Промокоды @endsection
 @section('admin_res')
 
 <div class="top-menu-admin admin-back">

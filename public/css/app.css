@@ -1324,6 +1324,9 @@ td a:focus {
 .mr-none {
     margin-right: 0 !important;
 }
+.mt-1r {
+    margin-top: 1rem;
+}
 .user-box-no-data {
     display: flex;
     flex-direction: column;

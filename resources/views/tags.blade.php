@@ -1,5 +1,5 @@
 @extends('admin_panel')
-@section('title-block') Стримы @endsection
+@section('title-block')  Тэги @endsection
 @section('admin_res')
 <script type="text/javascript" src = "{{ asset('js/tags.js') }}"></script>
         <div class="top-menu-admin admin-back">
