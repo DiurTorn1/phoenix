@@ -90,6 +90,10 @@ Route::get('/privacy_policy', function () {
     return view('privacy_policy');
 });
 
+Route::get('/tags', function () {
+    return view('tags');
+});
+
 Route::get('/product_admin', [ProductController::class, 'index'])->name('products');//function () {
     //return view('product_admin');
 //});
