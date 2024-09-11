@@ -106,8 +106,12 @@ Route::get('/balance', function () {
     return view('balance');
 });
 
-Route::get('/access_in_countries', function () {
+Route::get('/access_in_countries', function () { 
     return view('access_in_countries');
+});
+
+Route::get('/entrypoint', function () {
+    return view('entrypoint');
 });
 
 Route::get('/product_admin', [ProductController::class, 'index'])->name('products');//function () {
