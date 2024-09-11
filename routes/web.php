@@ -102,6 +102,10 @@ Route::get('/purchases', function () {
     return view('purchases');
 });
 
+Route::get('/balance', function () {
+    return view('balance');
+});
+
 Route::get('/product_admin', [ProductController::class, 'index'])->name('products');//function () {
     //return view('product_admin');
 //});
