@@ -82,6 +82,14 @@ Route::get('/terms_of_user', function () {
     return view('terms_of_user');
 });
 
+Route::get('/refund_policy', function () {
+    return view('refund_policy');
+});
+
+Route::get('/privacy_policy', function () {
+    return view('privacy_policy');
+});
+
 Route::get('/product_admin', [ProductController::class, 'index'])->name('products');//function () {
     //return view('product_admin');
 //});

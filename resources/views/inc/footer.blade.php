@@ -5,9 +5,9 @@
 			<span>Официальный видеосервис Фонда «ФЕНИКС»</span>
 		</div>
 		<div class="footer-center-column">
-			<a href="#" target="_blank">Политика конфиденциальности</a>
+			<a href="/privacy_policy" target="_blank">Политика конфиденциальности</a>
 			<a href="/terms_of_user" target="_blank">Пользовательское соглашение</a>
-			<a href="#" target="_blank">Политика возвратов</a>
+			<a href="/refund_policy" target="_blank">Политика возвратов</a>
 		</div>
 		<div class="footer-right-column">
 			<a href="https://vk.com/public203252388" target="_blank">
