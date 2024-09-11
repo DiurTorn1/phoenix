@@ -1,6 +1,6 @@
 
 
-<main class="index-main">
+
 	    <!-- Главный баннер -->
 	    <div class="banner">
 		    <picture class="banner-img">
