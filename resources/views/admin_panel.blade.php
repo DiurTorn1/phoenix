@@ -69,7 +69,7 @@
 			<ul class="admin-navigation-list admin-back">
 				<li class="admin-navigation-item"><a href="{{ route('users.index') }}" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Пользователи">Пользователи</a></li>
 				<li class="admin-navigation-item"><a href="/tags" class="admin-navigation-link"><img class="admin-menu-icon" src="img/tag.png" alt="Теги">Теги</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/earch.png" alt="Доступ в странах">Доступ в странах</a></li>
+				<li class="admin-navigation-item"><a href="/access_in_countries" class="admin-navigation-link"><img class="admin-menu-icon" src="img/earch.png" alt="Доступ в странах">Доступ в странах</a></li>
 				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/entry.png" alt="Entrypoints">Entrypoints</a></li>
 				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="img/analitik.png" alt="Виджеты">Виджеты</a></li>
 			</ul>

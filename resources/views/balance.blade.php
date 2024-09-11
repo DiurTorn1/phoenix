@@ -127,4 +127,29 @@
 				<button class="restream-select-btn" title="Вперед">›</button>
 			</div>
 		</div>
+
+        <!--------- ОКНО СВЕДЕНИЯ О КОМПАНИИ --------->
+<div class="product-content-popup" id="open_company_details"> <!--------- PopUP --------->
+	<div class="admin-content block-admin-left-w650 fix-position">
+
+		<div class="header admin-header">
+			<div class="left-header">
+				<a href="#" class="close-btn" id="close_company_details" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
+				<h2 class="top-menu-title">Сведения</h2>
+			</div>
+		</div>
+
+		<div class="top-menu-sort block-admin-section tr-wrapper-mb admin-back">
+			<div class="admin-input-box block-admin-input">
+				<p> Здесь выводится в каком-то виде инфа!
+					Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum, cumque eos facere obcaecati! Qui excepturi labore modi voluptas doloribus odit itaque, impedit. Ullam illo, provident repellat saepe neque minima quis.
+				Voluptatem suscipit, nisi pariatur? Neque minima aliquid libero assumenda est facilis, iste explicabo minus modi, quae, tempore incidunt suscipit at quidem aspernatur recusandae nemo vero maxime, eos expedita delectus magnam?
+				Doloremque quos, quae vero ut error, qui consequuntur ullam aliquam quis odit facere ratione obcaecati veniam, odio omnis dicta voluptate ipsum, cum laborum dolor perspiciatis! Soluta voluptatem, quibusdam deleniti incidunt!
+				Dicta eaque saepe cumque corporis minus commodi voluptatibus porro architecto unde, rem sit. Fugiat, vero molestias veniam iste nulla iure dolores commodi, voluptate assumenda eos cum. Odit, quo consequatur facilis!
+				</p>
+			</div>
+		</div>
+
+	</div>
+</div>
 @endsection
