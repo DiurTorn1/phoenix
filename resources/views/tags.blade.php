@@ -94,5 +94,38 @@
 				<button class="restream-select-btn" title="Вперед">›</button>
 			</div>
 		</div>
+<!--------- СОЗДАТЬ ТЕГ --------->
+<div class="product-content-popup" id="open-create-tag"> <!--------- PopUP --------->
+	<div class="admin-content block-admin-left-w650 fix-position">
 
+		<div class="header admin-header">
+			<div class="left-header">
+				<a href="#" class="close-btn" id="close-add-tag" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
+				<h2 class="top-menu-title">Создать тег</h2>
+			</div>
+
+			<div class="right-heder">
+				<button class="top-menu-btn">Сохранить</button>
+			</div>
+		</div>
+
+		<div class="top-menu-sort block-admin-section tr-wrapper-mb admin-back">
+			<div class="admin-input-box block-admin-input">
+				<input type="text" required="yes" title="Название тега" placeholder="Название тега *" class="admin-input block-admin-input">
+			</div>
+
+			<div class="admin-input-box block-admin-input">
+				<label>Тип тега</label>
+				<select class="admin-input admin-input-select block-admin-input">
+					<option value=""> </option>
+					<option value="">Сезон</option>
+					<option value="">Турнир</option>
+					<option value="">Возраст</option>
+					<option value="">Этап</option>
+				</select>
+			</div>
+		</div>
+
+	</div>
+</div>
 @endsection
