@@ -44,7 +44,7 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
-                                    var id_product_sell = output? output[1]: '';
+                                    var id_product_sell = output? output[1]: '1';
                                     $.post('/php/get_product_public.php', {id:id_product_sell}, function(data)  {
                                         var pars = data.split("&");
                                         //console.log("get_product_public: "+pars[1]);
