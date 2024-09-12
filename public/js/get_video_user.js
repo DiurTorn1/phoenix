@@ -48,7 +48,7 @@ $(document).ready(function() {
                                     $.post('/php/get_product_public.php', {id:output[1]}, function(data)  {
                                         var pars = data.split("&");
                                         console.log("get_product_public: "+pars[1]);
-                                        if(pars[4]==name_stream){
+                                        if(pars[4]!=name_stream){
                                             $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
                                                 var output = $.parseJSON(data);
                                                 //console.log(output[1]);
