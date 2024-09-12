@@ -44,11 +44,12 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
+                                    var id_product_sell = output[1];
                                     //console.log(output);
                                     $.post('/php/get_product_public.php', {id:output[1]}, function(data)  {
                                         var pars = data.split("&");
                                         //console.log("get_product_public: "+pars[1]);
-                                        if(pars[4]!=name_stream){
+                                        if(pars[4]!=id_product_sell){
                                             $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
                                                 var output = $.parseJSON(data);
                                                 //console.log(output[1]);
@@ -118,7 +119,8 @@ $(document).ready(function() {
 });
 
 $(document).on('click', '#parent_sell_div', function(){
-    alert("Покупай!!! Покупай!!!");
+    //$(this).children("a").attr("id");
+    alert("Покупай!!! Покупай!!!" + $(this).children("a").attr("id"));
 });
 
 $(document).on('click', '#bay_ticket', function(){
