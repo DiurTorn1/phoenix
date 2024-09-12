@@ -119,10 +119,11 @@ $(document).ready(function() {
     $('#product_unpublic_user').hide();
     //console.log(id);
     $.post('/php/get_product_public.php', {id:id}, function(data)  {
-        var pars = data.split("&");
+        //var pars = data.split("&");
+        var output = $.parseJSON(data);
         //console.log(pars[0]);
         //console.log(pars[1]);
-        if(pars[1]==id){
+        if(output[1]==id){
             $('#product_public_user').hide();
             $('#product_unpublic_user').show();
         }

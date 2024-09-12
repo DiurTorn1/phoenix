@@ -48,12 +48,12 @@ $(document).ready(function() {
                                     var get_product_id1 = [], get_product_name1 = [];
                                     $.each(output,function(i,item1){
                                         $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
-                                            var pars = data.split("&");
-                                            if(pars[1] == item1.product_id && pars[4] == name_stream){
-                                                console.log("res prp :"+ pars[1] + " : " + pars[4]);
-                                                get_product_id = pars[1];
-                                                get_product_id1 = pars[1];
-                                                get_product_name = pars[4];
+                                            var output = $.parseJSON(data);
+                                            if(output[1] == item1.product_id && output[4] == name_stream){
+                                                console.log("res prp :"+ output[1] + " : " + output[4]);
+                                                get_product_id = output[1];
+                                                get_product_id1 = output[1];
+                                                get_product_name = output[4];
                                             }
                                             
                                         });
