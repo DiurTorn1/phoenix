@@ -150,38 +150,60 @@ $(document).ready(function() {
         vid_sport = $("#admin_card_vidsporta option:selected").text();
         var post_time = $("#ditetime_card_start_at").val();
         var name_product = $("#admin_card_product option:selected").text();
-        $.post('/php/get_product_card_name.php', {name:name_product}, function(data)  {
-            var pars = data.split("&");
-            //console.log(pars[0]);
-            $.post('/php/get_product_public.php', {id:pars[0]}, function(data)  {
+        if(name_product){
+            $.post('/php/get_product_card_name.php', {name:name_product}, function(data)  {
                 var pars = data.split("&");
-                console.log(pars[1]);
-                $.post('/php/upload_product_public.php', {id:pars[1], initial:initial_name}, function(data)  {
-                    if(data == "OK"){
-                        alert("Стрим добавлен к продукту: " + name_product);
-                        $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
-                            ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
-                            parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
-                            var output = $.parseJSON(data);
-                            //console.log(output);
-                            var list = output.data;
-                                //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
-                                //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
-                                if(list.id == params.get('admin_input_id')){
-                                    alert("Редактирование успешно!");
-                                    window.location.href='/stream';
-                                } else {
-                                    alert("Ошибка редактирования!");
-                                    console.log(data);
-                                }
-                            
-                        });
-                    } else {
-                        console.log(data);
-                    }
+                //console.log(pars[0]);
+                $.post('/php/get_product_public.php', {id:pars[0]}, function(data)  {
+                    var pars = data.split("&");
+                    console.log(pars[1]);
+                    $.post('/php/upload_product_public.php', {id:pars[1], initial:initial_name}, function(data)  {
+                        if(data == "OK"){
+                            alert("Стрим добавлен к продукту: " + name_product);
+                            $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
+                                ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
+                                parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
+                                var output = $.parseJSON(data);
+                                //console.log(output);
+                                var list = output.data;
+                                    //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
+                                    //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
+                                    if(list.id == params.get('admin_input_id')){
+                                        alert("Редактирование успешно!");
+                                        window.location.href='/stream';
+                                    } else {
+                                        alert("Ошибка редактирования!");
+                                        console.log(data);
+                                    }
+                                
+                            });
+                        } else {
+                            console.log(data);
+                        }
+                    });
                 });
             });
-        });
+        }else{
+            alert("Стрим не добавлен к продукту");
+            $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
+                ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
+                parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
+                var output = $.parseJSON(data);
+                //console.log(output);
+                var list = output.data;
+                    //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
+                    //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
+                    if(list.id == params.get('admin_input_id')){
+                        alert("Редактирование стрима успешно!");
+                        window.location.href='/stream';
+                    } else {
+                        alert("Ошибка редактирования!");
+                        console.log(data);
+                    }
+                
+            });
+        }
+
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
 
         //window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
