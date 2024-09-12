@@ -49,65 +49,65 @@ $(document).ready(function() {
                                         var pars = data.split("&");
                                         console.log("get_product_public: "+pars[1]);
                                         if(pars[4]==name_stream){
-                                            console.log("name_parse: "+pars[4]);
+                                            $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
+                                                var output = $.parseJSON(data);
+                                                //console.log(output[1]);
+                                                product_global = output[1];
+                                                if(OutSum && InvId && SignatureValue && Culture){
+                                                    $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
+                                                        //console.log(data);
+                                                        if(data=='OK'){
+                                                            alert("Оплата прошла!");
+                                                            $.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {
+                                                                if(data == 'OK'){
+                                                                    window.location.href="/";
+                                                                }
+                                                            });
+                                                            // 
+                                                        } else {
+                                                            alert("Оплата не прошла!");
+                                                            window.location.href="/";
+                                                        }
+                                                    });
+                                                }
+                                            });
+                                            //console.log("Оплата не найдена");
+                                            $("#index-live").append(
+                                                '<div class="index-live-list">' +
+                                                    '<div class="index-live-item">' +
+                                                            '<div class="index-live-item-video">' +
+                                                                '<a href="#" tabindex="0">' +
+                                                                    '<span class="label">LIVE</span>' +
+                                                                '</a>' +
+                                                            '</div>' +
+                                                            '<button id="bay_ticket">Купить билет</button>' +
+                                                            '<button id="bay_trainsport">Купить подписку</button>' +
+                                                        '<div class="index-live-item-text">' +
+                                                            '<a href="#">' + item.name + '</a>' +
+                                                        '</div>' +
+                                                    '</div>' +
+                                                '</div>');
                                         } else {
-                                            console.log("name_parse not found ");
+                                            // console.log("Оплата найдена");
+                                            $("#index-live").append(
+                                                '<h2>Прямой эфир</h2>' +
+                                                '<div class="index-live-list">' +
+                                                    '<div class="index-live-item">' +
+                                                        '<div class="index-live-item-video">' +
+                                                            '<iframe src="' + item.play_link + '" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
+                                                        '</div>' +
+                                                        '<div class="index-live-item-text">' +
+                                                        '<a href="#">' + item.name + '</a>' +
+                                                        '</div>' +
+                                                    '</div>' +
+                                                '</div>');
                                         }
 
                                     });
                                     if(!output[2] && !output[4]){
-                                        $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
-                                            var output = $.parseJSON(data);
-                                            //console.log(output[1]);
-                                            product_global = output[1];
-                                            if(OutSum && InvId && SignatureValue && Culture){
-                                                $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
-                                                    //console.log(data);
-                                                    if(data=='OK'){
-                                                        alert("Оплата прошла!");
-                                                        $.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {
-                                                            if(data == 'OK'){
-                                                                window.location.href="/";
-                                                            }
-                                                        });
-                                                        // 
-                                                    } else {
-                                                        alert("Оплата не прошла!");
-                                                        window.location.href="/";
-                                                    }
-                                                });
-                                            }
-                                        });
-                                        //console.log("Оплата не найдена");
-                                        $("#index-live").append(
-                                            '<div class="index-live-list">' +
-                                                '<div class="index-live-item">' +
-                                                        '<div class="index-live-item-video">' +
-                                                            '<a href="#" tabindex="0">' +
-                                                                '<span class="label">LIVE</span>' +
-                                                            '</a>' +
-                                                        '</div>' +
-                                                        '<button id="bay_ticket">Купить билет</button>' +
-                                                        '<button id="bay_trainsport">Купить подписку</button>' +
-                                                    '<div class="index-live-item-text">' +
-                                                        '<a href="#">' + item.name + '</a>' +
-                                                    '</div>' +
-                                                '</div>' +
-                                            '</div>');
+
                                     } else {
-                                       // console.log("Оплата найдена");
-                                       $("#index-live").append(
-                                        '<h2>Прямой эфир</h2>' +
-                                        '<div class="index-live-list">' +
-                                            '<div class="index-live-item">' +
-                                                '<div class="index-live-item-video">' +
-                                                    '<iframe src="' + item.play_link + '" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
-                                                '</div>' +
-                                                '<div class="index-live-item-text">' +
-                                                    '<a href="#">' + item.name + '</a>' +
-                                                '</div>' +
-                                            '</div>' +
-                                        '</div>');
+
                                     }
                                 });
                             }
