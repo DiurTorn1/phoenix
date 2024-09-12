@@ -44,60 +44,66 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
+                                    var get_product_id, get_product_name;
                                     $.each(output,function(i,item1){
                                         $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
                                             var pars = data.split("&");
                                             if(pars[1] == item1.product_id && pars[4] == name_stream){
-                                                // console.log("Оплата найдена");
-                                                $("#index-live").append(
-                                                    '<div class="index-live-item">'+
-                                                        '<div class="index-live-item-video">'+
-                                                            '<a href="#">'+
-                                                            '<span class="label">LIVE</span>'+
-                                                            '</a>' +
-                                                        '</div>'+
-                                                        '<div class="index-live-item-text">'+
-                                                            '<a href="#">' + item.name + '</a>'+
-                                                        '</div>'+
-                                                    '</div>');
-                                            } else {
-                                                $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
-                                                    var output = $.parseJSON(data);
-                                                    //console.log(output[1]);
-                                                    product_global = output? output[1]: '1';
-                                                    if(OutSum && InvId && SignatureValue && Culture){
-                                                        $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
-                                                            //console.log(data);
-                                                            if(data=='OK'){
-                                                                alert("Оплата прошла!");
-                                                                $.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {
-                                                                    if(data == 'OK'){
-                                                                        window.location.href="/";
-                                                                    }
-                                                                });
-                                                                // 
-                                                            } else {
-                                                                alert("Оплата не прошла!");
+                                                get_product_id = pars[1];
+                                                get_product_name = pars[4];
+                                            }
+                                            
+                                        });
+                                    });
+                                    if(get_product_id == item1.product_id && get_product_name == name_stream){
+                                        // console.log("Оплата найдена");
+                                        $("#index-live").append(
+                                            '<div class="index-live-item">'+
+                                                '<div class="index-live-item-video">'+
+                                                    '<a href="#">'+
+                                                    '<span class="label">LIVE</span>'+
+                                                    '</a>' +
+                                                '</div>'+
+                                                '<div class="index-live-item-text">'+
+                                                    '<a href="#">' + item.name + '</a>'+
+                                                '</div>'+
+                                            '</div>');
+                                    } else {
+                                        $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
+                                            var output = $.parseJSON(data);
+                                            //console.log(output[1]);
+                                            product_global = output? output[1]: '1';
+                                            if(OutSum && InvId && SignatureValue && Culture){
+                                                $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
+                                                    //console.log(data);
+                                                    if(data=='OK'){
+                                                        alert("Оплата прошла!");
+                                                        $.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {
+                                                            if(data == 'OK'){
                                                                 window.location.href="/";
                                                             }
                                                         });
+                                                        // 
+                                                    } else {
+                                                        alert("Оплата не прошла!");
+                                                        window.location.href="/";
                                                     }
                                                 });
-                                                //console.log("Оплата не найдена");
-                                                $("#index-live").append(
-                                                    '<div class="index-live-item" id="parent_index_sell_div' + name_stream + '">' +
-                                                        '<div class="index-live-item-video" id="parent_sell_div' + name_stream + '">' +
-                                                            '<a id = "sell-' + name_stream + '">' + 
-                                                                '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
-                                                            '</a>' +
-                                                        '</div>' +
-                                                        '<div class="index-live-item-text">' +
-                                                        '<a href="#">' +item.name+'</a>'+
-                                                        '</div>' +
-                                                    '</div>');
                                             }
                                         });
-                                    });
+                                        //console.log("Оплата не найдена");
+                                        $("#index-live").append(
+                                            '<div class="index-live-item" id="parent_index_sell_div' + name_stream + '">' +
+                                                '<div class="index-live-item-video" id="parent_sell_div' + name_stream + '">' +
+                                                    '<a id = "sell-' + name_stream + '">' + 
+                                                        '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
+                                                    '</a>' +
+                                                '</div>' +
+                                                '<div class="index-live-item-text">' +
+                                                '<a href="#">' +item.name+'</a>'+
+                                                '</div>' +
+                                            '</div>');
+                                    }
                                 });
                             }
                             //console.log(pars[2]);
