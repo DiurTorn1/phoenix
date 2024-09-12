@@ -49,19 +49,20 @@ $(document).ready(function() {
                                     $.each(output,function(i,item1){
                                         $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
                                             var output = $.parseJSON(data);
-                                            console.log("get_stream_public_name:"+output);
+                                            //console.log("get_stream_public_name:"+output);
                                             get_product_id1 = output? output[1]: '1';
                                             get_product_name1 = output? output[4]: '1';
                                             if(get_product_id1 == item1.product_id && get_product_name1 == name_stream){
-                                                console.log("res prp :"+ get_product_id1 + " : " + get_product_name1);
+                                                //console.log("res prp :"+ get_product_id1 + " : " + get_product_name1);
                                                 get_product_id = get_product_id1;
                                                 get_product_name = get_product_name1;
                                             }
                                             
                                         });
                                     });
-                                    console.log("res get: :"+ get_product_id1);
+                                    console.log("res get: "+ get_product_id + " : " + get_product_name);
                                     if(get_product_id && get_product_name == name_stream){
+                                        
                                         // console.log("Оплата найдена");
                                         $("#index-live").append(
                                             '<div class="index-live-item">'+
