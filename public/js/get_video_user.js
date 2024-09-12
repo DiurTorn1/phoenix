@@ -42,7 +42,7 @@ $(document).ready(function() {
                             //console.log(output);
                             $.post('/php/get_product_public_name.php', {name_stream:output[1]}, function(data)  {
                                 var output = $.parseJSON(data);
-                                console.log("get_product_public_name:"+output[4]);
+                                console.log("get_product_public_name:"+output);
                             });
                             if(output[1]){
                                 //console.log("get_stream_public_ID:"+output[0]);
