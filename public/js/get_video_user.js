@@ -48,6 +48,8 @@ $(document).ready(function() {
                                     if(item2.initial == name_stream){
                                         get_product_id1 = item2.id_product;
                                         
+                                    } else {
+                                        get_product_id1 = '0';
                                     }
                                 });
                             });
