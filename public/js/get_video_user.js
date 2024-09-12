@@ -107,14 +107,18 @@ $(document).ready(function() {
                 });
                 
             });
-            $("#parent_sell_div").on('click', function(){
-                alert("Покупай!!! Покупай!!!");
-            });
+            //$("#parent_sell_div").on('click', function(){
+                //alert("Покупай!!! Покупай!!!");
+            //});
         //} else {
             //alert("Оплата прошла!");//console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
 
         //}
 
+});
+
+$(document).on('click', '#parent_sell_div', function(){
+    alert("Покупай!!! Покупай!!!");
 });
 
 $(document).on('click', '#bay_ticket', function(){
