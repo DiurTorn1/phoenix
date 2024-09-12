@@ -12,6 +12,7 @@ $(document).ready(function() {
         var InvId = params.get('InvId');
         var SignatureValue = params.get('SignatureValue');
         var Culture = params.get('Culture');
+        var get_product_id, get_product_name;
         //console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
         //if(!OutSum && !InvId && !SignatureValue && !Culture){
             $.post('/php/get_stream.php', function(data)  {
@@ -44,7 +45,7 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
-                                    var get_product_id, get_product_name;
+                                    
                                     $.each(output,function(i,item1){
                                         $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
                                             var pars = data.split("&");
