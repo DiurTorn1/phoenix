@@ -39,7 +39,7 @@ $(document).ready(function() {
                         $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
                             var output = $.parseJSON(data);
                             console.log(output);
-                            if(output[1]==name_stream){
+                            if(output[1]){
                                 console.log("get_stream_public_ID:"+output[0]);
                                 console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
