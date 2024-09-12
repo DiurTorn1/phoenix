@@ -44,6 +44,8 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
+                                    //$.each(output,function(i,item1){});
+                                    console.log(output);
                                     var id_product_sell = output? output[1]: '1';
                                     $.post('/php/get_product_public.php', {id:id_product_sell}, function(data)  {
                                         var pars = data.split("&");
@@ -73,8 +75,8 @@ $(document).ready(function() {
                                             });
                                             //console.log("Оплата не найдена");
                                             $("#index-live").append(
-                                                '<div class="index-live-item">' +
-                                                    '<div class="index-live-item-video" id="parent_sell_div">' +
+                                                '<div class="index-live-item" id="parent_index_sell_div' + name_stream + '">' +
+                                                    '<div class="index-live-item-video" id="parent_sell_div' + name_stream + '">' +
                                                         '<a id = "sell-' + name_stream + '">' + 
                                                             '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
                                                         '</a>' +
@@ -119,7 +121,7 @@ $(document).ready(function() {
 
 $(document).on('click', '#parent_sell_div', function(){
     //$(this).children("a").attr("id");
-    alert("Покупай!!! Покупай!!!" + $(this).children("a").attr("id"));
+    alert($(this).children("a").attr("id"));
 });
 
 $(document).on('click', '#bay_ticket', function(){
