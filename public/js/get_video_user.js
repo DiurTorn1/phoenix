@@ -42,8 +42,8 @@ $(document).ready(function() {
                                 console.log("get_stream_public_ID:"+pars[0]);
                                 console.log("get_stream_public_name:"+pars[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
-                                    var pars = data.split("&");
-                                    if(!pars[2]){
+                                    console.log(data);
+                                    /*if(!pars[2]){
                                         $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
                                             var output = $.parseJSON(data);
                                             //console.log(output[1]);
@@ -96,7 +96,7 @@ $(document).ready(function() {
                                                 '</div>' +
                                             '</div>' +
                                         '</div>');
-                                    }
+                                    }*/
                                 });
                             }
                             //console.log(pars[2]);
