@@ -40,6 +40,10 @@ $(document).ready(function() {
                         $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
                             var output = $.parseJSON(data);
                             //console.log(output);
+                            $.post('/php/get_product_public_name.php', {name_stream:output[1]}, function(data)  {
+                                var output = $.parseJSON(data);
+                                console.log("get_product_public_name:"+output[1]);
+                            });
                             if(output[1]){
                                 //console.log("get_stream_public_ID:"+output[0]);
                                 //console.log("get_stream_public_name:"+output[1]);
