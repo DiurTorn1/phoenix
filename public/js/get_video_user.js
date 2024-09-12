@@ -1,7 +1,6 @@
 var user_global = "";
 var product_global;
 var type_sell_global;
-var name_stream = "";
 $(document).ready(function() {
     //$("#admin-video-list-btn").on('click', function(){ var params = new window.URLSearchParams(window.location.search);
         var main = $('#admin-input-main').val();
@@ -21,7 +20,7 @@ $(document).ready(function() {
     
                 var output = $.parseJSON(data);
                 var list = output.data;
-                
+                var name_stream = "";
                 $.each(list,function(i,item){
                     console.log("Video inform:\r\n");
                     console.log(/*"id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + */"\r\nname: " + item.name /*+ "\r\nsubtitle: " + item.subtitle +
@@ -39,14 +38,14 @@ $(document).ready(function() {
     
                         $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
                             var output = $.parseJSON(data);
-                            console.log(output);
-                            if(output[1] == name_stream){
+                            //console.log(output);
+                            if(output[1]){
                                 console.log("get_stream_public_ID:"+output[0]);
                                 console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
                                     console.log(output);
-                                    /*if(!pars[2]){
+                                    if(!output[2] && !output[4]){
                                         $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
                                             var output = $.parseJSON(data);
                                             //console.log(output[1]);
@@ -99,7 +98,7 @@ $(document).ready(function() {
                                                 '</div>' +
                                             '</div>' +
                                         '</div>');
-                                    }*/
+                                    }
                                 });
                             }
                             //console.log(pars[2]);
