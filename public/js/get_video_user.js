@@ -42,7 +42,12 @@ $(document).ready(function() {
                             //console.log(output);
                             $.post('/php/get_product_all.php', function(data)  {
                                 var output = $.parseJSON(data);
-                                console.log(output);
+                                //console.log(output);
+                                $.each(output,function(i,item2){
+                                    if(item2.initial == name_stream){
+                                        console.log("get_product_all:" + item2.id_product);
+                                    }
+                                });
                             });
                             if(output[1]){
                                 //console.log("get_stream_public_ID:"+output[0]);
