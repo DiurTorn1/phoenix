@@ -53,10 +53,9 @@ $(document).ready(function() {
                                             get_product_id1 = output? output[1]: '1';
                                             get_product_name1 = output? output[4]: '1';
                                             if(get_product_id1 == item1.product_id && get_product_name1 == name_stream){
-                                                console.log("res prp :"+ output[1] + " : " + output[4]);
-                                                get_product_id = output[1];
-                                                get_product_id1 = output[1];
-                                                get_product_name = output[4];
+                                                console.log("res prp :"+ get_product_id1 + " : " + get_product_name1);
+                                                get_product_id = get_product_id1;
+                                                get_product_name = get_product_name1;
                                             }
                                             
                                         });
