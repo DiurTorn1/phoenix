@@ -49,6 +49,9 @@ $(document).ready(function() {
                                     $.each(output,function(i,item1){
                                         $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
                                             var output = $.parseJSON(data);
+                                            console.log("get_stream_public_name:"+output);
+                                            output[1] = output? output[1]: '1';
+                                            output[4] = output? output[4]: '1';
                                             if(output[1] == item1.product_id && output[4] == name_stream){
                                                 console.log("res prp :"+ output[1] + " : " + output[4]);
                                                 get_product_id = output[1];
