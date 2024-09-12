@@ -118,15 +118,16 @@ $(document).ready(function() {
     });
 
     $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
-        var pars = data.split("&");
-        console.log(pars[0]);
-        console.log(pars[1]);
-        if(pars[1]==name_stream){
-           // $('#public_stream').hide();
-           // $('#unpublic_stream').show();
-        }
-        console.log(pars[2]);
-        console.log(pars[3]);
+        var output = $.parseJSON(data);
+        $.each(output,function(i,item){
+            if(item.name_stream==name_stream){
+                 $('#public_stream').hide();
+                 $('#unpublic_stream').show();
+             }
+            console.log("get_stream_public_ID:"+item.id);
+            console.log("get_stream_public_name:"+item.name_stream);
+        });
+
     });
 
 

@@ -41,6 +41,8 @@ $(document).ready(function() {
              $('#admin_link_playct').val(list.play_link);
              if(list.play_link){
                 alert("Стрим создан");
+             } else {
+                alert("Ошибка создания стрима");
              }
             //$.each(list,function(i,item){
                 //console.log("Video inform:\r\n");
