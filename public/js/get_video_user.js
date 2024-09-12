@@ -1,6 +1,7 @@
 var user_global = "";
 var product_global;
 var type_sell_global;
+var get_product_id, get_product_name;
 $(document).ready(function() {
     //$("#admin-video-list-btn").on('click', function(){ var params = new window.URLSearchParams(window.location.search);
         var main = $('#admin-input-main').val();
@@ -12,7 +13,6 @@ $(document).ready(function() {
         var InvId = params.get('InvId');
         var SignatureValue = params.get('SignatureValue');
         var Culture = params.get('Culture');
-        var get_product_id, get_product_name;
         //console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
         //if(!OutSum && !InvId && !SignatureValue && !Culture){
             $.post('/php/get_stream.php', function(data)  {
