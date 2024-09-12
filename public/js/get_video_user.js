@@ -40,7 +40,7 @@ $(document).ready(function() {
                         $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
                             var output = $.parseJSON(data);
                             //console.log(output);
-                            $.post('/php/get_product_public_name.php', {name_stream:output[1]}, function(data)  {
+                            $.post('/php/get_product_all.php', function(data)  {
                                 var output = $.parseJSON(data);
                                 console.log(output);
                             });
