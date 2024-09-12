@@ -27,7 +27,7 @@ $(document).ready(function() {
             //}
             
         });
-        //var product = $("#admin_product_seasonct").val();
+        var product = $("#admin_product_seasonct option:selected").text();//$("#admin_product_seasonct").val();
         var vid_sporta = $("#admin_vidsporta_seasonct option:selected").text();
         var minframe = $("#admin_minframe_seasonct option:selected").index();
         //console.log("Start:" + $("#ditetime_start_at").val() + ", Public:" + $("#ditetime_public_at").val());
