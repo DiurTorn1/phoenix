@@ -45,6 +45,16 @@ $(document).ready(function() {
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
                                     console.log(output);
+                                    $.post('/php/get_product_public.php', {id:output[1]}, function(data)  {
+                                        var pars = data.split("&");
+                                        console.log("get_product_public: "+pars[1]);
+                                        if(pars[4]==name_stream){
+                                            console.log("name_parse: "+pars[4]);
+                                        } else {
+                                            console.log("name_parse not found ");
+                                        }
+
+                                    });
                                     if(!output[2] && !output[4]){
                                         $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
                                             var output = $.parseJSON(data);
