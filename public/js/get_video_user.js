@@ -56,7 +56,7 @@ $(document).ready(function() {
                                             
                                         });
                                     });
-                                    if(get_product_id == item1.product_id && get_product_name == name_stream){
+                                    if(get_product_id && get_product_name == name_stream){
                                         // console.log("Оплата найдена");
                                         $("#index-live").append(
                                             '<div class="index-live-item">'+
