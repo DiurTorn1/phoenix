@@ -40,14 +40,14 @@ $(document).ready(function() {
                             var output = $.parseJSON(data);
                             //console.log(output);
                             if(output[1]){
-                                console.log("get_stream_public_ID:"+output[0]);
-                                console.log("get_stream_public_name:"+output[1]);
+                                //console.log("get_stream_public_ID:"+output[0]);
+                                //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
-                                    console.log(output);
+                                    //console.log(output);
                                     $.post('/php/get_product_public.php', {id:output[1]}, function(data)  {
                                         var pars = data.split("&");
-                                        console.log("get_product_public: "+pars[1]);
+                                        //console.log("get_product_public: "+pars[1]);
                                         if(pars[4]!=name_stream){
                                             $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
                                                 var output = $.parseJSON(data);
@@ -73,42 +73,33 @@ $(document).ready(function() {
                                             });
                                             //console.log("Оплата не найдена");
                                             $("#index-live").append(
-                                                '<div class="index-live-list">' +
-                                                    '<div class="index-live-item">' +
-                                                            '<div class="index-live-item-video">' +
-                                                                '<a href="#" tabindex="0">' +
-                                                                    '<span class="label">LIVE</span>' +
-                                                                '</a>' +
-                                                            '</div>' +
-                                                            '<button id="bay_ticket">Купить билет</button>' +
-                                                            '<button id="bay_trainsport">Купить подписку</button>' +
-                                                        '<div class="index-live-item-text">' +
-                                                            '<a href="#">' + item.name + '</a>' +
-                                                        '</div>' +
+                                                '<div class="index-live-item">' +
+                                                 '<div class="index-live-item-video">' +
+                                                        '<img src="'+ item.poster.md + '" alt="" style="width=100%;heigth:100%;"/>'+
+                                                        '<a href="#">' + 
+                                                            '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
+                                                        '</a>' +
+                                                    '</div>' +
+                                                    '<div class="index-live-item-text">' +
+                                                    '<a href="#">' +item.name+'</a>'+
                                                     '</div>' +
                                                 '</div>');
                                         } else {
                                             // console.log("Оплата найдена");
                                             $("#index-live").append(
-                                                '<h2>Прямой эфир</h2>' +
-                                                '<div class="index-live-list">' +
-                                                    '<div class="index-live-item">' +
-                                                        '<div class="index-live-item-video">' +
-                                                            '<iframe src="' + item.play_link + '" width="640" height="360" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
-                                                        '</div>' +
-                                                        '<div class="index-live-item-text">' +
-                                                        '<a href="#">' + item.name + '</a>' +
-                                                        '</div>' +
-                                                    '</div>' +
+                                                '<div class="index-live-item">'+
+                                                    '<div class="index-live-item-video">'+
+                                                        '<a href="#">'+
+                                                        '<span class="label">LIVE</span>'+
+                                                        '</a>' +
+                                                    '</div>'+
+                                                    '<div class="index-live-item-text">'+
+                                                    '<a href="#">' + item.name + '</a>'+
+                                                '</div>'+
                                                 '</div>');
                                         }
 
                                     });
-                                    if(!output[2] && !output[4]){
-
-                                    } else {
-
-                                    }
                                 });
                             }
                             //console.log(pars[2]);
