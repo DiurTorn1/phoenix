@@ -43,10 +43,12 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_ID:"+output[0]);
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
-                                    console.log("DDD: " + data);
-                                    var output = $.parseJSON(data);
                                     var id_product_sell;
-                                    if(!output[0]) id_product_sell = 1;
+                                    if(!data){
+                                        id_product_sell = 1;
+                                    } else {
+                                        var output = $.parseJSON(data);
+                                    }
                                     //console.log(output);
                                     $.post('/php/get_product_public.php', {id:id_product_sell}, function(data)  {
                                         var pars = data.split("&");
