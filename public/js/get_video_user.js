@@ -75,7 +75,7 @@ $(document).ready(function() {
                                             $("#index-live").append(
                                                 '<div class="index-live-item">' +
                                                     '<div class="index-live-item-video">' +
-                                                        '<a href="#">' + 
+                                                        '<a id = "sell-' + name_stream + '">' + 
                                                             '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
                                                         '</a>' +
                                                     '</div>' +
@@ -107,9 +107,9 @@ $(document).ready(function() {
                 });
                 
             });
-            //$("#").on('click', function(){
-                //console.log("Покупай!!! Покупай!!!");
-            //});
+            $("#sell-"+name_stream).on('click', function(){
+                alert("Покупай!!! Покупай!!!");
+            });
         //} else {
             //alert("Оплата прошла!");//console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
 
