@@ -37,7 +37,7 @@ $(document).ready(function() {
                         name_stream = item.name;
                         
     
-                        $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
+                        $.post('/php/get_stream_public.php', {name_stream:item.name}, function(data)  {
                             var output = $.parseJSON(data);
                             //console.log(output);
                             var get_product_id1, get_product_name1;
