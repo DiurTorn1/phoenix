@@ -4,8 +4,30 @@ $(document).ready(function() {
         var region = $("#admin_region_selectct option:selected").text();
         var season = $("#admin_season_seasonct").val();
         var turnir = $("#admin_turnir_seasonct").val();
-        var weigth = $("#admin_weigth_seasonct").val();
-        var product = $("#admin_product_seasonct").val();
+        var weigth = $("#admin_weigth_seasonct option:selected").text();//$("#admin_weigth_seasonct").val();
+        $.post('/php/get_product_all.php', function(data)  {
+            //for(var i=0; i<data.length;i++){
+                var output = $.parseJSON(data);
+                $.each(output,function(i,item){
+                    if(!item.initial){
+                        $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
+                            var pars = data.split("&");
+                            //console.log(pars[1]);
+                            $('#admin_card_product').append($('<option>', {
+                                value: 1,
+                                text: pars[1]
+                            }));
+                        });
+
+                    }
+
+                    //console.log(item.id_product);
+                });
+                
+            //}
+            
+        });
+        //var product = $("#admin_product_seasonct").val();
         var vid_sporta = $("#admin_vidsporta_seasonct option:selected").text();
         var minframe = $("#admin_minframe_seasonct option:selected").index();
         //console.log("Start:" + $("#ditetime_start_at").val() + ", Public:" + $("#ditetime_public_at").val());
@@ -17,6 +39,9 @@ $(document).ready(function() {
             //console.log(output);
             var list = output.data;
              $('#admin_link_playct').val(list.play_link);
+             if(list.play_link){
+                alert("Стрим создан");
+             }
             //$.each(list,function(i,item){
                 //console.log("Video inform:\r\n");
                 //console.log("data:\r\n" + "id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name +

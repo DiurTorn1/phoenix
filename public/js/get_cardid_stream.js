@@ -61,7 +61,8 @@ $(document).ready(function() {
                     $("#card_region_select option:selected").text(region);
                     $("#admin_card_season").val(sezon);
                     $("#admin_card_turnir").val(kubok);
-                    $("#admin_card_weigth").val(weigth);
+                    //$("#admin_card_weigth").val(weigth);
+                    $("#admin_card_weigth option:selected").text(weigth);
                     //$("#admin_card_product").val('100%');
                     $.post('/php/get_product_all.php', function(data)  {
                         //for(var i=0; i<data.length;i++){
@@ -137,7 +138,7 @@ $(document).ready(function() {
         region = $("#card_region_select option:selected").text();
         sezon = $("#admin_card_season").val();
         kubok = $("#admin_card_turnir").val();
-        weigth = $("#admin_card_weigth").val();
+        weigth = $("#admin_card_weigth option:selected").text();//$("#admin_card_weigth").val();
         //sezon = pars[0];
         //kubok = pars[1];
         //weigth = pars[2];

@@ -55,7 +55,19 @@
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Возраст</label>
-					<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_weigth">
+					<!--<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_weigth">-->
+					<select class="admin-input admin-input-select block-admin-input" id="admin_card_weigth">
+						<option value="Д10">Д10</option>
+						<option value="Ю10">Ю10</option>
+						<option value="Д11">Д11</option>
+						<option value="Ю11">Ю11</option>
+						<option value="Д12">Д12</option>
+						<option value="Ю12">Ю12</option>
+						<option value="Д13">Д13</option>
+						<option value="Ю13">Ю13</option>
+						<option value="Д14">Д14</option>
+						<option value="Ю14">Ю14</option>
+					</select>
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Добавить к продукту</label>
