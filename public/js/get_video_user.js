@@ -45,14 +45,14 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
-                                    var get_product_id1 = [], get_product_name1 = [];
+                                    var get_product_id1, get_product_name1;
                                     $.each(output,function(i,item1){
                                         $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
                                             var output = $.parseJSON(data);
                                             console.log("get_stream_public_name:"+output);
-                                            output[1] = output? output[1]: '1';
-                                            output[4] = output? output[4]: '1';
-                                            if(output[1] == item1.product_id && output[4] == name_stream){
+                                            get_product_id1 = output? output[1]: '1';
+                                            get_product_name1 = output? output[4]: '1';
+                                            if(get_product_id1 == item1.product_id && get_product_name1 == name_stream){
                                                 console.log("res prp :"+ output[1] + " : " + output[4]);
                                                 get_product_id = output[1];
                                                 get_product_id1 = output[1];
