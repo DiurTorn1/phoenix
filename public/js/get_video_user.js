@@ -1,7 +1,6 @@
 var user_global = "";
 var product_global;
 var type_sell_global;
-var get_product_id, get_product_name;
 $(document).ready(function() {
     //$("#admin-video-list-btn").on('click', function(){ var params = new window.URLSearchParams(window.location.search);
         var main = $('#admin-input-main').val();
@@ -13,6 +12,7 @@ $(document).ready(function() {
         var InvId = params.get('InvId');
         var SignatureValue = params.get('SignatureValue');
         var Culture = params.get('Culture');
+        var get_product_id, get_product_name;
         //console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
         //if(!OutSum && !InvId && !SignatureValue && !Culture){
             $.post('/php/get_stream.php', function(data)  {
@@ -45,19 +45,20 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
-                                    
+                                    var get_product_id1 = [], get_product_name1 = [];
                                     $.each(output,function(i,item1){
                                         $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
                                             var pars = data.split("&");
                                             if(pars[1] == item1.product_id && pars[4] == name_stream){
                                                 console.log("res prp :"+ pars[1] + " : " + pars[4]);
                                                 get_product_id = pars[1];
+                                                get_product_id1 = pars[1];
                                                 get_product_name = pars[4];
                                             }
                                             
                                         });
                                     });
-                                    console.log("res get: :"+ get_product_id + " : " + get_product_name);
+                                    console.log("res get: :"+ get_product_id1);
                                     if(get_product_id && get_product_name == name_stream){
                                         // console.log("Оплата найдена");
                                         $("#index-live").append(
