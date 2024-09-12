@@ -94,6 +94,18 @@ $(document).ready(function() {
                     var hour_min_sec = pars_time[1];
                     var hour_min = hour_min_sec.split(":");
                     $("#ditetime_card_start_at").val(pars_time[0] + "T" + hour_min[0] + ":" + hour_min[1]);
+                    $.post('/php/get_stream_public.php', {name_stream:item.name}, function(data)  {
+                        var output = $.parseJSON(data);
+                        //$.each(output,function(i,item){
+                            if(output[1]==item.name){
+                                 $('#public_stream').hide();
+                                 $('#unpublic_stream').show();
+                             }
+                             console.log(output[2]);
+                             console.log(output[3]);
+                       //});
+                
+                    });
                     /*$("#block-admin-left").append(
                         '<div class="block-admin-container admin-back">' + 
                         '<div class="block-admin-section">' +
@@ -117,18 +129,7 @@ $(document).ready(function() {
         });
     });
 
-    $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
-        var output = $.parseJSON(data);
-        //$.each(output,function(i,item){
-            if(output[1]==name_stream){
-                // $('#public_stream').hide();
-                // $('#unpublic_stream').show();
-             }
-             console.log(output[2]);
-             console.log(output[3]);
-       //});
 
-    });
 
 
         //alert();
