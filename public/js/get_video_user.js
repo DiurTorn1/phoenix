@@ -57,7 +57,7 @@ $(document).ready(function() {
                                                 console.log("res prp"+ ins + ": " + get_product_id1 + " : " + get_product_name1);
                                                 get_product_id = get_product_id1;
                                                 get_product_name = get_product_name1;
-                                                ins++;
+                                                ins = ins + 1;
                                             }
                                             
                                         });
