@@ -74,7 +74,7 @@ $(document).ready(function() {
                                             //console.log("Оплата не найдена");
                                             $("#index-live").append(
                                                 '<div class="index-live-item">' +
-                                                    '<div class="index-live-item-video">' +
+                                                    '<div class="index-live-item-video" id="parent_sell_div">' +
                                                         '<a id = "sell-' + name_stream + '">' + 
                                                             '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
                                                         '</a>' +
@@ -107,7 +107,7 @@ $(document).ready(function() {
                 });
                 
             });
-            $("#sell-"+name_stream).on('click', function(){
+            $("#parent_sell_div").on('click', function(){
                 alert("Покупай!!! Покупай!!!");
             });
         //} else {
