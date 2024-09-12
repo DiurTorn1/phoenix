@@ -40,12 +40,14 @@ $(document).ready(function() {
                         $.post('/php/get_stream_public.php', {name_stream:name_stream}, function(data)  {
                             var output = $.parseJSON(data);
                             //console.log(output);
+                            var get_product_id1, get_product_name1;
                             $.post('/php/get_product_all.php', function(data)  {
                                 var output = $.parseJSON(data);
                                 //console.log(output);
                                 $.each(output,function(i,item2){
                                     if(item2.initial == name_stream){
-                                        console.log("get_product_all:" + item2.id_product);
+                                        get_product_id1 = item2.id_product;
+                                        
                                     }
                                 });
                             });
@@ -54,22 +56,21 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
-                                    var get_product_id1, get_product_name1;
-                                    var ins = 0;
+                                    console.log("get_product_all:" + get_product_id1);
                                     $.each(output,function(i,item1){
-                                        $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
-                                            var output = $.parseJSON(data);
+                                       // $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
+                                           // var output = $.parseJSON(data);
                                             //console.log("get_stream_public_name:"+output);
-                                            get_product_id1 = output? output[1]: '1';
-                                            get_product_name1 = output? output[4]: '1';
-                                            if(get_product_id1 == item1.product_id && get_product_name1 == name_stream){
-                                                console.log("res prp"+ ins + ": " + get_product_id1 + " : " + get_product_name1);
-                                                get_product_id = get_product_id1;
-                                                get_product_name = get_product_name1;
-                                                ins = ins + 1;
-                                            }
+                                            //get_product_id1 = output? output[1]: '1';
+                                            //get_product_name1 = output? output[4]: '1';
+                                            //if(get_product_id1 == item1.product_id && get_product_name1 == name_stream){
+                                               // console.log("res prp"+ ins + ": " + get_product_id1 + " : " + get_product_name1);
+                                               // get_product_id = get_product_id1;
+                                               // get_product_name = get_product_name1;
+                                                //ins = ins + 1;
+                                            //}
                                             
-                                        });
+                                        //});
                                     });
                                     //console.log("res get: "+ get_product_id + " : " + get_product_name);
                                     if(get_product_id && get_product_name == name_stream){
