@@ -46,11 +46,10 @@ $(document).ready(function() {
                                     var output = $.parseJSON(data);
                                     var get_product_id, get_product_name;
                                     $.each(output,function(i,item1){
-                                        console.log(item1.product_id);
                                         $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
                                             var pars = data.split("&");
                                             if(pars[1] == item1.product_id && pars[4] == name_stream){
-                                                
+                                                console.log(item1.product_id);
                                                 get_product_id = pars[1];
                                                 get_product_name = pars[4];
                                             }
