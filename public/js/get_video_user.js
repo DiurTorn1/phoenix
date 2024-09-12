@@ -46,6 +46,7 @@ $(document).ready(function() {
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
                                     var get_product_id1, get_product_name1;
+                                    var ins = 0;
                                     $.each(output,function(i,item1){
                                         $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
                                             var output = $.parseJSON(data);
@@ -53,9 +54,10 @@ $(document).ready(function() {
                                             get_product_id1 = output? output[1]: '1';
                                             get_product_name1 = output? output[4]: '1';
                                             if(get_product_id1 == item1.product_id && get_product_name1 == name_stream){
-                                                console.log("res prp :"+ get_product_id1 + " : " + get_product_name1);
+                                                console.log("res prp"+ ins + ": " + get_product_id1 + " : " + get_product_name1);
                                                 get_product_id = get_product_id1;
                                                 get_product_name = get_product_name1;
+                                                ins += 1;
                                             }
                                             
                                         });
