@@ -52,7 +52,7 @@ $(document).ready(function() {
                                             $.post('/php/get_product_public_name.php', {initial:name_stream}, function(data)  {
                                                 var output = $.parseJSON(data);
                                                 //console.log(output[1]);
-                                                product_global = output[1];
+                                                product_global = output? output[1]: '1';
                                                 if(OutSum && InvId && SignatureValue && Culture){
                                                     $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
                                                         //console.log(data);
