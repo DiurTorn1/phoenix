@@ -46,7 +46,10 @@ $(document).ready(function() {
                                     var output = $.parseJSON(data);
                                     //$.each(output,function(i,item1){});
                                     console.log(output);
-                                    var id_product_sell = output? output[1]: '1';
+                                    var id_product_sell = '1';
+                                    if(output.lungth=0){
+
+                                    }
                                     $.post('/php/get_product_public.php', {id:id_product_sell}, function(data)  {
                                         var pars = data.split("&");
                                         //console.log("get_product_public: "+pars[1]);
