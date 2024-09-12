@@ -43,9 +43,14 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_ID:"+output[0]);
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
-                                    var output = $.parseJSON(data);
-                                    var id_product_sell = output[1];
-                                    console.log("FFF: " + id_product_sell);
+                                    var id_product_sell;
+                                    if(data==null){
+                                        id_product_sell = 1;
+                                    } else {
+                                        var output = $.parseJSON(data);
+                                        id_product_sell = output[1];
+                                    }
+
                                     $.post('/php/get_product_public.php', {id:id_product_sell}, function(data)  {
                                         var pars = data.split("&");
                                         //console.log("get_product_public: "+pars[1]);
