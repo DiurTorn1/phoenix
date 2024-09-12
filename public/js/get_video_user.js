@@ -74,11 +74,11 @@ $(document).ready(function() {
                                             //console.log("Оплата не найдена");
                                             $("#index-live").append(
                                                 '<div class="index-live-item">' +
-                                                 '<div class="index-live-item-video">' +
-                                                        '<img src="'+ item.poster.md + '" alt="" style="width=100%;heigth:100%;"/>'+
+                                                    '<div class="index-live-item-video">' +
                                                         '<a href="#">' + 
                                                             '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
                                                         '</a>' +
+                                                        '<img src="'+ item.poster.md + '" alt="" style="width=100%;heigth:100%; display: block; margin: 0 auto;"/>'+
                                                     '</div>' +
                                                     '<div class="index-live-item-text">' +
                                                     '<a href="#">' +item.name+'</a>'+
