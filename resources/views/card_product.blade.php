@@ -12,7 +12,7 @@
 
 		<div class="right-heder">
 			<button class="menu-btn-grey-active" id="product_unpublic_user">Отменить публикацию</button> <!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
-			<button class="menu-btn-grey-active" id="product_public_user">Публиковать</button> <!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<button class="menu-btn-grey-active" id="product_public_user">Опубликовать</button> <!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 			<button class="menu-btn-grey-active" id="save_product_db">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 		</div>
 	</header> 

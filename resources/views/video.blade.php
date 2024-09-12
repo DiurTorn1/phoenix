@@ -39,7 +39,7 @@
 				<label class="admin-video-check-label" for="admin-video-sort-check">Выбрано 0 видео</label>
 			</div>
 			<ul class="admin-video-sort-list">
-				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Публиковать</button></li> <!-- когда активен чекбокс -->
+				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Опубликовать</button></li> <!-- когда активен чекбокс -->
 				<li class="admin-video-sort-item"><button class="admin-video-btn">Снять с публикации</button></li>
 				<li class="admin-video-sort-item"><button class="admin-video-btn">Удалить</button></li>
 				<li class="admin-video-sort-item"><button class="admin-video-btn">Добавить к продукту</button></li>

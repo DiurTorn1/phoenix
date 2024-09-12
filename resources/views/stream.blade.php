@@ -40,7 +40,7 @@
 				<label class="admin-video-check-label" for="admin-video-sort-check">Выбрано 0 стримов</label>
 			</div>
 			<ul class="admin-video-sort-list">
-				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Публиковать</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Опубликовать</button></li>
 				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Снять с публикации</button></li>
 				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active" id="delete_stream_checkbox">Удалить</button></li>
 				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Добавить к продукту</button></li>
