@@ -50,7 +50,7 @@ $(document).ready(function() {
                                         $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
                                             var pars = data.split("&");
                                             if(pars[1] == item1.product_id && pars[4] == name_stream){
-                                                console.log(item1.product_id);
+                                                console.log("res prp :"+ pars[1] + " : " + pars[4]);
                                                 get_product_id = pars[1];
                                                 get_product_name = pars[4];
                                             }
