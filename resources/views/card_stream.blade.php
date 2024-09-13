@@ -76,6 +76,13 @@
 
 						</select>
 				</div>
+				<div class="admin-input-box admin-input-wrap">
+					<label>Добавить к entrypoint</label>
+					<!--<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_product">-->
+						<select class="admin-input admin-input-select block-admin-input" id="admin_card_entrypoint">
+
+						</select>
+				</div>
 			</div>
 
 			<div class="block-admin-container admin-back">
