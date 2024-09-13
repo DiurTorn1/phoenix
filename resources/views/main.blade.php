@@ -48,7 +48,7 @@
 			<div class="content">
 				<div class="gallery full">
 					<div class="swiper-container">
-						<div class="public_item_stream" id="public_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+						<div class="swiper-wrapper" id="public_item_stream" >
 					</div>					
 				</div>
 				

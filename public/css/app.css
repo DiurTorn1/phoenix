@@ -1860,7 +1860,7 @@ td a:focus {
 .gallery-wrapper{
 	position: relative;
 	z-index: 1;
-    
+
     .content{
         position: relative;
         overflow: hidden;
@@ -1878,6 +1878,13 @@ td a:focus {
 				position: relative;
 				display: flex;
 				align-items: center;
+                .swiper-container{
+					.swiper-wrapper{
+						display: flex;
+						height: 80vh;
+						align-items: center;
+                    }
+                }
             }
         }
     }
