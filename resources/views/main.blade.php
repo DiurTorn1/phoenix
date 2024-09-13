@@ -25,6 +25,13 @@
 	<!-- Прямая трансляция -->
 	<div class="index-live" id="index-live">
 	
+		<div class="top-menu-head">
+			<h2 class="top-menu-title">Прямой эфир</h2>
+		</div>
+
+		<div class="top-menu-head">
+			<h2 class="top-menu-title">Опубликованное</h2>
+		</div>
 		<!--<h2>Прямой эфир</h2>
 		<div class="index-live-list">
 			<div class="index-live-item">
