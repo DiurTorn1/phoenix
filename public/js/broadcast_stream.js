@@ -62,7 +62,12 @@ $(document).ready(function() {
             });
         });
     $("#etrypoints_vibor").change( function() {
-        alert($("#etrypoints_vibor option:selected").text() + " / " + stream_key);
+        if($("#etrypoints_vibor option:selected").text() == 'Entrypoint по умолчанию'){
+            $('#RTMP_key_input').val(item.streamkey);
+        } else {
+            $('#RTMP_key_input').val('1234');
+        }
+        //alert($("#etrypoints_vibor option:selected").text() + " / " + stream_key);
     });
 });
 
