@@ -10,7 +10,17 @@ $(document).ready(function(){
     $("#save_entrypoints").click(function(){
         
         var dNow = new Date();
-        var localdate= (dNow.getMonth()+1) + '/' + dNow.getDate() + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes();
-        alert("Datetime: " + localdate);
+        var localdate= (dNow.getMonth()+1) + '-' + dNow.getDate() + '-' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+        var sity_entrypoints = $("#sity_entrypoints").val();
+        var zal_entrypoints = $("#zal_entrypoints").val();
+        var key_entrypoints = $("#key_entrypoints").val();
+        $.post('/php/entrypoints_add.php', {sity_entrypoints:sity_entrypoints, zal_entrypoints:zal_entrypoints, key_entrypoints:key_entrypoints, create_at:localdate}, function(data)  {
+            if(data == 'OK'){
+                alert('Entrypoint добавлен');
+            } else {
+                alert('Ошибка добавления');
+            }
+        });
+        //alert("Datetime: " + localdate);
     });
 });

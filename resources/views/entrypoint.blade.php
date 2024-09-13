@@ -92,16 +92,16 @@
 
 		<div class="top-menu-sort block-admin-section tr-wrapper-mb admin-back">
 			<div class="admin-input-box block-admin-input">
-				<input type="text" required="yes" title="Город" placeholder="Город *" class="admin-input block-admin-input">
+				<input type="text" required="yes" title="Город" placeholder="Город *" class="admin-input block-admin-input" id="sity_entrypoints">
 			</div>
 
             <div class="admin-input-box block-admin-input">
-				<input type="text" required="yes" title="Зал" placeholder="Зал *" class="admin-input block-admin-input">
+				<input type="text" required="yes" title="Зал" placeholder="Зал *" class="admin-input block-admin-input" id="zal_entrypoints">
 			</div>
 
 			<div class="admin-input-box block-admin-input">
 				<label>Ключ потока *</label>
-				<input type="text" required="yes" title="Ключ потока" placeholder="название_кубка_придумать_идентификатор" class="admin-input block-admin-input">
+				<input type="text" required="yes" title="Ключ потока" placeholder="название_кубка_придумать_идентификатор" class="admin-input block-admin-input" id="key_entrypoints">
 			</div>
 		</div>
 
