@@ -1,3 +1,5 @@
+
+var stream_key;
 $(document).ready(function() {
     //$("#jjj").on('click', function(){/card_stream
         var params = new window.URLSearchParams(window.location.search);
@@ -33,8 +35,9 @@ $(document).ready(function() {
                             }));
                         }
                     });
-                    //$('#RTMP_url_input').val(item.rtmp_link);
-                    //$('#RTMP_key_input').val(item.streamkey);
+                    $('#RTMP_url_input').val(item.rtmp_link);
+                    stream_key = item.streamkey;
+                    $('#RTMP_key_input').val(item.streamkey);
                         /*$('#admin-input-main').val(item.name);id="RTMP_url_input"
                     $("#block-admin-left").append(
                         '<div class="block-admin-container admin-back">' + 
@@ -59,4 +62,8 @@ $(document).ready(function() {
             });
         });
     
+});
+
+$("#etrypoints_vibor").change( function() {
+    alert($("#etrypoints_vibor option:selected").text() + " / " + stream_key);
 });
