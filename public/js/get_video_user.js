@@ -47,10 +47,8 @@ $(document).ready(function() {
                                 $.each(output,function(i,item2){
                                     if(item2.initial == name_stream){
                                         get_product_id1 = item2.id_product;
-                                        
-                                    } else {
-                                        get_product_id1 = '0';
-                                    }
+                                        get_product_name1 = item2.initial;
+                                    } 
                                 });
                             });
                             if(output[1]){
@@ -58,8 +56,12 @@ $(document).ready(function() {
                                 //console.log("get_stream_public_name:"+output[1]);
                                 $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
                                     var output = $.parseJSON(data);
-                                    console.log("get_product_all:" + get_product_id1);
+                                    //console.log("get_product_all:" + get_product_id1);
                                     $.each(output,function(i,item1){
+                                        if(item1.product_id == get_product_id1){
+                                            get_product_id = get_product_id1;
+                                            get_product_name = get_product_name1;
+                                        }
                                        // $.post('/php/get_product_public.php', {id:item1.product_id}, function(data)  {
                                            // var output = $.parseJSON(data);
                                             //console.log("get_stream_public_name:"+output);
