@@ -27,6 +27,16 @@
 	
 		<div class="top-menu-head">
 			<h2 class="top-menu-title">Прямой эфир</h2>
+			<div class="index-live-item">
+					<div class="index-live-item-video">
+						<a href="#">
+							<span class="label">LIVE</span>
+						</a>
+					</div>
+					<div class="index-live-item-text">
+						<a href="#"></a>
+					</div>
+			</div>
 		</div>
 
 		<div class="top-menu-head">
