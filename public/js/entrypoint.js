@@ -6,4 +6,8 @@ $(document).ready(function(){
     $("#close-add-entrypoint").click(function(){
         $("#open-create-entrypoint").removeClass('add-price-show'); 
     });
+
+    $("#save_entrypoints").click(function(){
+        alert("Save entrypoints!");
+    });
 });

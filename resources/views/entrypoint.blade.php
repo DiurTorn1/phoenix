@@ -86,13 +86,17 @@
 			</div>
 
 			<div class="right-heder">
-				<button class="top-menu-btn">Сохранить</button>
+				<button class="top-menu-btn" id="save_entrypoints">Сохранить</button>
 			</div>
 		</div>
 
 		<div class="top-menu-sort block-admin-section tr-wrapper-mb admin-back">
 			<div class="admin-input-box block-admin-input">
-				<input type="text" required="yes" title="Название" placeholder="Название *" class="admin-input block-admin-input">
+				<input type="text" required="yes" title="Город" placeholder="Город *" class="admin-input block-admin-input">
+			</div>
+
+            <div class="admin-input-box block-admin-input">
+				<input type="text" required="yes" title="Зал" placeholder="Зал *" class="admin-input block-admin-input">
 			</div>
 
 			<div class="admin-input-box block-admin-input">
