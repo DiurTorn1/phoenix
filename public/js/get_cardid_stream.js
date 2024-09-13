@@ -184,7 +184,38 @@ $(document).ready(function() {
         var post_time = $("#ditetime_card_start_at").val();
         var name_product = $("#admin_card_product option:selected").text();
         var name_entrypoints = $("#admin_card_entrypoint option:selected").text();
-        //$.post('/php/get_product_card_name.php', {name:name_product}, function(data)  {});
+        $.post('/php/entrypoints_stream_get_name.php', {name_entrypoints:name_entrypoints}, function(data)  {
+            var output = $.parseJSON(data);
+            var entrypoints_get = output? output[2]: '1';
+            console.log("Entrypoints: "+entrypoints_get);
+            /*if(srteam_get == name_stream){
+                console.log("Entrypoints: "+output[2]);
+                $('#admin_card_entrypoint').append($('<option>', {
+                    value: 1,
+                    text: output[2]
+                }));
+            } else {
+                $.post('/php/entrypoints_get.php', function(data)  {
+                    //for(var i=0; i<data.length;i++){
+                        var output = $.parseJSON(data);
+                        //console.log(item.sity);
+                        //console.log(item.zal);
+                        //console.log(item.key_stream);
+                        //console.log(item.create_at);
+                        $.each(output,function(i,item){
+                            $('#admin_card_entrypoint').append($('<option>', {
+                                value: 1,
+                                text: item.sity + '(' + item.zal + ')'
+                            }));
+
+                            //console.log(item.id_product);
+                        });
+                        
+                    //}
+                    
+                });
+            }*/
+        });
         //if(!name_entrypoints){
             //alert("Entrypoint не выбран!");
         //} else {
