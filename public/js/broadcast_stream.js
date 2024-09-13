@@ -66,7 +66,10 @@ $(document).ready(function() {
         if($("#etrypoints_vibor option:selected").text() == 'Entrypoint по умолчанию'){
             $('#RTMP_key_input').val(stream_key);
         } else {
-            $('#RTMP_key_input').val('1234');
+            var prepars = $("#etrypoints_vibor option:selected").text();
+            var pars = prepars.split('(');
+            //$.post('/php/entrypoints_get_name.php', {name_entrypoints:name_entrypoints}, function(data)  {});
+            $('#RTMP_key_input').val(pars[0]);
         }
         //alert($("#etrypoints_vibor option:selected").text() + " / " + stream_key);
     });
