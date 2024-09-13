@@ -1856,3 +1856,18 @@ td a:focus {
 .name_user_get{
     display: none;
 }
+
+.index-live-item_dinam {
+	webkit-flex-basis: 23.7%;
+    -ms-flex-preferred-size: 23.7%;
+    flex-basis: 23.7%;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    max-width: 23.7%;
+    min-height: 23.7%;
+	padding-left: 1.3%;
+	padding-top: 24px;
+    display: inline;
+}

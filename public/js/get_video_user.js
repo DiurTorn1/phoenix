@@ -80,8 +80,8 @@ $(document).ready(function() {
                                     if(get_product_id && get_product_name == name_stream){
                                         
                                         // console.log("Оплата найдена");
-                                        $("#index-live").append(
-                                            '<div class="index-live-item">'+
+                                        $("#public_item_stream").append(
+                                            '<div class="index-live-item_dinam">'+
                                                 '<div class="index-live-item-video">'+
                                                     '<a href="#">'+
                                                     '<span class="label">LIVE</span>'+
@@ -115,8 +115,8 @@ $(document).ready(function() {
                                             }
                                         });
                                         //console.log("Оплата не найдена");
-                                        $("#index-live").append(
-                                            '<div class="index-live-item" id="parent_index_sell_div' + name_stream + '">' +
+                                        $("#public_item_stream").append(
+                                            '<div class="index-live-item_dinam" id="parent_index_sell_div' + name_stream + '">' +
                                                 '<div class="index-live-item-video" id="parent_sell_div' + name_stream + '">' +
                                                     '<a id = "sell-' + name_stream + '">' + 
                                                         '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
