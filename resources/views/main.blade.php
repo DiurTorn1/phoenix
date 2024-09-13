@@ -46,7 +46,10 @@
 		</div>
 		<div class="gallery-wrapper">
 			<div class="content">
-				<div class="public_item_stream" id="public_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+				<div class="gallery full">
+					<div class="public_item_stream" id="public_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+				</div>
+				
 			</div>	
 		</div>
 

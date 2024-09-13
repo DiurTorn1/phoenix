@@ -1860,6 +1860,7 @@ td a:focus {
 .gallery-wrapper{
 	position: relative;
 	z-index: 1;
+    
     .content{
         position: relative;
         overflow: hidden;
@@ -1871,5 +1872,13 @@ td a:focus {
         padding: 3vh 0;
         background: darken($secondary-color, 12%);
         background: linear-gradient(to left, darken($secondary-color, 8%), darken($secondary-color, 12%));
+
+        .gallery{
+			&.full{
+				position: relative;
+				display: flex;
+				align-items: center;
+            }
+        }
     }
 }
