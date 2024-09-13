@@ -12,7 +12,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);//res_parse_stop_access
 }
 
-$sql = "INSERT INTO `entrypoints`(`sity`, `zal`, `key_stream`, `create_at`) VALUES ('". $_POST['sity_entrypoints'] ."','". $_POST['head_name'] ."','". $_POST['head_name'] ."','". $_POST['head_name'] ."')";
+$sql = "INSERT INTO `entrypoints`(`sity`, `zal`, `key_stream`, `create_at`) VALUES ('". $_POST['sity_entrypoints'] ."','". $_POST['zal_entrypoints'] ."','". $_POST['key_entrypoints'] ."','". $_POST['create_at'] ."')";
 
 if ($conn->query($sql) === TRUE) {
   echo "OK";
