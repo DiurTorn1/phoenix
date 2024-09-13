@@ -68,8 +68,16 @@ $(document).ready(function() {
         } else {
             var prepars = $("#etrypoints_vibor option:selected").text();
             var pars = prepars.split('(');
-            //$.post('/php/entrypoints_get_name.php', {name_entrypoints:name_entrypoints}, function(data)  {});
-            $('#RTMP_key_input').val(pars[0]);
+            var sity_het = pars[0];
+            $.post('/php/entrypoints_get_name.php', {sity:pars[0]}, function(data)  {
+                var output = $.parseJSON(data);
+                var sity_get = output? output[1]: '1';
+                if(sity_get == sity_het){
+                    $('#RTMP_key_input').val(output[3]);
+                }
+
+            });
+            
         }
         //alert($("#etrypoints_vibor option:selected").text() + " / " + stream_key);
     });
