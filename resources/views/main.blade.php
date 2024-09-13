@@ -28,7 +28,7 @@
 		<div class="top-menu-head">
 			<h2 class="top-menu-title">Прямой эфир</h2>
 		</div>
-		<div class="live_item_stream" id ="live_item_stream">
+		<div class="live_item_stream" id ="live_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
 			<div class="index-live-item">
 				<div class="index-live-item-video">
 					<a href="#">
@@ -44,7 +44,7 @@
 		<div class="top-menu-head">
 			<h2 class="top-menu-title">Опубликованное</h2>
 		</div>
-		<div class="public_item_stream" id="public_item_stream">
+		<div class="public_item_stream" id="public_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
 
 		</div>
 		<!--<h2>Прямой эфир</h2>
