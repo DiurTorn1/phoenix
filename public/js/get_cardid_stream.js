@@ -91,26 +91,31 @@ $(document).ready(function() {
                         var srteam_get = output? output[1]: '1';
                         if(srteam_get == name_stream){
                             console.log("Entrypoints: "+output[2]);
-                        }
-                    });
-                    $.post('/php/entrypoints_get.php', function(data)  {
-                        //for(var i=0; i<data.length;i++){
-                            var output = $.parseJSON(data);
-                            //console.log(item.sity);
-                            //console.log(item.zal);
-                            //console.log(item.key_stream);
-                            //console.log(item.create_at);
-                            $.each(output,function(i,item){
-                                $('#admin_card_entrypoint').append($('<option>', {
-                                    value: 1,
-                                    text: item.sity + '(' + item.zal + ')'
-                                }));
-
-                                //console.log(item.id_product);
+                            $('#admin_card_entrypoint').append($('<option>', {
+                                value: 1,
+                                text: output[2]
+                            }));
+                        } else {
+                            $.post('/php/entrypoints_get.php', function(data)  {
+                                //for(var i=0; i<data.length;i++){
+                                    var output = $.parseJSON(data);
+                                    //console.log(item.sity);
+                                    //console.log(item.zal);
+                                    //console.log(item.key_stream);
+                                    //console.log(item.create_at);
+                                    $.each(output,function(i,item){
+                                        $('#admin_card_entrypoint').append($('<option>', {
+                                            value: 1,
+                                            text: item.sity + '(' + item.zal + ')'
+                                        }));
+        
+                                        //console.log(item.id_product);
+                                    });
+                                    
+                                //}
+                                
                             });
-                            
-                        //}
-                        
+                        }
                     });
 
                     $("#admin_card_vidsporta option:selected").text(vid_sport);
