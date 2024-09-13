@@ -61,9 +61,8 @@ $(document).ready(function() {
                 
             });
         });
-    
+    $("#etrypoints_vibor").change( function() {
+        alert($("#etrypoints_vibor option:selected").text() + " / " + stream_key);
+    });
 });
 
-$("#etrypoints_vibor").change( function() {
-    alert($("#etrypoints_vibor option:selected").text() + " / " + stream_key);
-});
