@@ -14,13 +14,14 @@ $(document).ready(function(){
         var sity_entrypoints = $("#sity_entrypoints").val();
         var zal_entrypoints = $("#zal_entrypoints").val();
         var key_entrypoints = $("#key_entrypoints").val();
-        $.post('/php/entrypoints_add.php', {sity_entrypoints:sity_entrypoints, zal_entrypoints:zal_entrypoints, key_entrypoints:key_entrypoints, create_at:localdate}, function(data)  {
-            if(data == 'OK'){
-                alert('Entrypoint добавлен');
-            } else {
-                alert('Ошибка добавления');
-            }
-        });
+        console.log(sity_entrypoints + " = " + zal_entrypoints + " = " + key_entrypoints + " = " + localdate);
+        //$.post('/php/entrypoints_add.php', {sity_entrypoints:sity_entrypoints, zal_entrypoints:zal_entrypoints, key_entrypoints:key_entrypoints, create_at:localdate}, function(data)  {
+            //if(data == 'OK'){
+               // alert('Entrypoint добавлен');
+            //} else {
+               // alert('Ошибка добавления');
+            //}
+        //});
         //alert("Datetime: " + localdate);
     });
 });
