@@ -86,6 +86,12 @@ $(document).ready(function() {
                         //}
                         
                     });
+                    $.post('/php/entrypoints_stream_get.php', {stream:name_stream}, function(data)  {
+                        var output = $.parseJSON(data);
+                        if(output[1] == name_stream){
+                            console.log("Entrypoints: "+output[2]);
+                        }
+                    });
                     $.post('/php/entrypoints_get.php', function(data)  {
                         //for(var i=0; i<data.length;i++){
                             var output = $.parseJSON(data);
@@ -171,6 +177,13 @@ $(document).ready(function() {
         vid_sport = $("#admin_card_vidsporta option:selected").text();
         var post_time = $("#ditetime_card_start_at").val();
         var name_product = $("#admin_card_product option:selected").text();
+        var name_entrypoints = $("#admin_card_entrypoint option:selected").text();
+        //$.post('/php/get_product_card_name.php', {name:name_product}, function(data)  {});
+        //if(!name_entrypoints){
+            //alert("Entrypoint не выбран!");
+        //} else {
+
+        //}
         if(name_product){
             $.post('/php/get_product_card_name.php', {name:name_product}, function(data)  {
                 var pars = data.split("&");
