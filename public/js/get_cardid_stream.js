@@ -167,6 +167,8 @@ $(document).ready(function() {
         //$('#admin-input-main').appendVal();card_broadcast
     //});upload_stream
     $("#upload_stream").on('click', function(){
+        var dNow = new Date();
+        var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
         name_card = $('#admin-input-main').val();
         region = $("#card_region_select option:selected").text();
         sezon = $("#admin_card_season").val();
@@ -188,33 +190,17 @@ $(document).ready(function() {
             var output = $.parseJSON(data);
             var entrypoints_get = output? output[2]: '1';
             console.log("Entrypoints: "+entrypoints_get);
-            /*if(srteam_get == name_stream){
-                console.log("Entrypoints: "+output[2]);
-                $('#admin_card_entrypoint').append($('<option>', {
-                    value: 1,
-                    text: output[2]
-                }));
+            if(entrypoints_get == name_entrypoints){
+                alert("Стрим ранее был добавлен к etrypoint");
             } else {
-                $.post('/php/entrypoints_get.php', function(data)  {
-                    //for(var i=0; i<data.length;i++){
-                        var output = $.parseJSON(data);
-                        //console.log(item.sity);
-                        //console.log(item.zal);
-                        //console.log(item.key_stream);
-                        //console.log(item.create_at);
-                        $.each(output,function(i,item){
-                            $('#admin_card_entrypoint').append($('<option>', {
-                                value: 1,
-                                text: item.sity + '(' + item.zal + ')'
-                            }));
-
-                            //console.log(item.id_product);
-                        });
-                        
-                    //}
-                    
+                $.post('/php/entrypoints_stream_add.php', {name_stream:name_stream, name_entrypoints:name_entrypoints, create_at:localdate}, function(data)  {
+                    if(data=='OK'){
+                        alert("Стрим: " + name_stream + " Добавлен к entrypoint:" + name_entrypoints);
+                    } else {
+                        alert("Ошибка добавления entrypoint к стриму!");
+                    }
                 });
-            }*/
+            }
         });
         //if(!name_entrypoints){
             //alert("Entrypoint не выбран!");
