@@ -1856,3 +1856,20 @@ td a:focus {
 .name_user_get{
     display: none;
 }
+
+.gallery-wrapper{
+	position: relative;
+	z-index: 1;
+}
+.content{
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 3vh 0;
+    background: darken($secondary-color, 12%);
+    background: linear-gradient(to left, darken($secondary-color, 8%), darken($secondary-color, 12%));
+}
