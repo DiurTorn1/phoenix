@@ -1,8 +1,9 @@
 
-var stream_key;
+
 $(document).ready(function() {
     //$("#jjj").on('click', function(){/card_stream
         var params = new window.URLSearchParams(window.location.search);
+        var stream_key;
         //console.log("MSG:" + params.get('block-admin-input'));
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
