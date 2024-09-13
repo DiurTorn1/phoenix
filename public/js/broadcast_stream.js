@@ -5,6 +5,7 @@ $(document).ready(function() {
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
             var list = output.data;
+            var name_stream;
 
             $.each(list,function(i,item){
                 if(item.id == params.get('admin_input_id')){
@@ -20,8 +21,20 @@ $(document).ready(function() {
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $('#player_broadcast').attr('src', item.play_link);
-                    $('#RTMP_url_input').val(item.rtmp_link);
-                    $('#RTMP_key_input').val(item.streamkey);
+                    name_stream = item.name;
+                    $.post('/php/entrypoints_stream_get.php', {stream:name_stream}, function(data)  {
+                        var output = $.parseJSON(data);
+                        var srteam_get = output? output[1]: '1';
+                        if(srteam_get == name_stream){
+                            console.log("Entrypoints: "+output[2]);
+                            $('#admin_card_entrypoint').append($('<option>', {
+                                value: 1,
+                                text: output[2]
+                            }));
+                        }
+                    });
+                    //$('#RTMP_url_input').val(item.rtmp_link);
+                    //$('#RTMP_key_input').val(item.streamkey);
                         /*$('#admin-input-main').val(item.name);id="RTMP_url_input"
                     $("#block-admin-left").append(
                         '<div class="block-admin-container admin-back">' + 

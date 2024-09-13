@@ -47,11 +47,8 @@
 
 				<div class="admin-input-box admin-input-wrap admin-input-mb">
 					<label>Entrypoint потока</label>
-					<select class="admin-input admin-input-select block-admin-input">
+					<select class="admin-input admin-input-select block-admin-input" id="etrypoints_vibor">
 						<option value="">Entrypoint по умолчанию</option>
-						<option value="">Вологда</option>
-						<option value="">Псков</option>
-						<option value="">Иваново</option>
 					</select>
 				</div>
 
