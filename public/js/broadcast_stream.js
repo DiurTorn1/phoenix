@@ -27,7 +27,7 @@ $(document).ready(function() {
                         var srteam_get = output? output[1]: '1';
                         if(srteam_get == name_stream){
                             console.log("Entrypoints: "+output[2]);
-                            $('#admin_card_entrypoint').append($('<option>', {
+                            $('#etrypoints_vibor').append($('<option>', {
                                 value: 1,
                                 text: output[2]
                             }));
