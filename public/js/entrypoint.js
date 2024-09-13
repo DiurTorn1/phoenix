@@ -8,6 +8,9 @@ $(document).ready(function(){
     });
 
     $("#save_entrypoints").click(function(){
-        alert("Save entrypoints!");
+        
+        var dNow = new Date();
+        var localdate= (dNow.getMonth()+1) + '/' + dNow.getDate() + '/' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes();
+        alert("Datetime: " + localdate);
     });
 });
