@@ -88,6 +88,7 @@ $(document).ready(function() {
                     });
                     $.post('/php/entrypoints_stream_get.php', {stream:name_stream}, function(data)  {
                         var output = $.parseJSON(data);
+                        output[1] = output? output[1]: '1';
                         if(output[1] == name_stream){
                             console.log("Entrypoints: "+output[2]);
                         }
