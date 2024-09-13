@@ -21,7 +21,7 @@
 </div>
 
 <table>
-<tbody class="tbody-wrapper">
+<tbody class="tbody-wrapper" id="entrypoints_view">
      <tr class="tr-wrapper admin-video-item admin-back">
 
          <td class="table-one-column-check">
@@ -34,7 +34,7 @@
            <td>Статус</td>
            <td>Создан</td>
     </tr>
-    <tr class="tr-wrapper admin-video-item admin-back">
+    <!--<tr class="tr-wrapper admin-video-item admin-back">
         <td class="table-one-column-check">
              <div class="admin-video-sort-wrap">
                 <input id="check-promo-1" class="admin-video-sort-check" type="checkbox">
@@ -55,7 +55,7 @@
         <th class="table-one-column-70">НеВаська(неСПб)</th>
         <td><p class="promo-prew-admin">Оffline</p></td>
         <td>13.09.2024</td>
-    </tr>
+    </tr>-->
 
 </tbody>
 </table>
