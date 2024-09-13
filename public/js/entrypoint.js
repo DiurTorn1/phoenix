@@ -10,7 +10,7 @@ $(document).ready(function(){
     $("#save_entrypoints").click(function(){
         
         var dNow = new Date();
-        var localdate= (dNow.getMonth()+1) + '-' + dNow.getDate() + '-' + dNow.getFullYear() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+        var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
         var sity_entrypoints = $("#sity_entrypoints").val();
         var zal_entrypoints = $("#zal_entrypoints").val();
         var key_entrypoints = $("#key_entrypoints").val();
