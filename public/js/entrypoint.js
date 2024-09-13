@@ -2,9 +2,13 @@ $(document).ready(function(){
     
     $.post('/php/entrypoints_get.php', function(data)  {
         var output = $.parseJSON(data);
-        console.log(output);
-        //$.each(output,function(i,item){
-        //});
+        //console.log(output);
+        $.each(output,function(i,item){
+            console.log(item.sity);
+            console.log(item.zal);
+            console.log(item.key_stream);
+            console.log(item.create_at);
+        });
     });
     /*$("#admin-video-list").append(
         '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
