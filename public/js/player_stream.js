@@ -1,7 +1,5 @@
 $(document).ready(function() {
-
     var params = new window.URLSearchParams(window.location.search);
-
 
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
