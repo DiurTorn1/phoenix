@@ -23,11 +23,13 @@
 					<p>{{ Auth::user()->email }}</p>
 				</div>
 				<div class="profile-popup-bottom">
-					<a href="#" class="exit-button"><img src="{{ asset('img/user1.png') }}" alt="Профиль">Профиль</a>
 					@if(!empty(Auth::user()->getRoleNames()))
                 	@foreach( Auth::user()->getRoleNames() as $v)
-						@if($v == "admin")
-                    		<a href="/admin_panel" class="exit-button"><img src="{{ asset('img/logo_main.png') }}" alt="Профиль">Admin-Panel</a>
+                        @if($v == "admin")
+                    		<a href="/stream" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Admin-Panel</a>
+						@elseif($v == "nullbody")
+							<a href="/user_panel" class="exit-button"><img src="img/setting.png" alt="Настройки" title="Настройки пользователя">Настройки</a>
+							<a href="#" class="exit-button"><img src="img/cart-min.png" alt="Ваши покупки">Покупки</a>
 						@endif
                 	@endforeach
            	 		@endif
