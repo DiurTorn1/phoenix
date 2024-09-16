@@ -19,7 +19,7 @@ $(document).ready(function() {
                     //"\r\nmoderators: " + item.moderators);
                 //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                    $("#public_item_stream").append(
+                    $("#slider").append(
                         '<div class="index-live-item">'+
                             '<div class="index-live-item-video">'+
                                 '<a href="#">'+

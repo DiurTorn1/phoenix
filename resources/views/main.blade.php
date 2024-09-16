@@ -27,7 +27,13 @@
 		<div class="top-menu-head">
 			<h2 class="top-menu-title">Скоро</h2>
 		</div>
-		<div class="gallery-wrapper">
+		<div id="slider-wrap">
+         <div id="active-slide">
+           <div id="slider">
+           </div>
+         </div>
+      </div>
+		<!--<div class="gallery-wrapper">
 			<div class="content">
 				<div class="gallery full">
 					<div class="swiper-container">
@@ -38,7 +44,7 @@
 				</div>
 				
 			</div>	
-		</div>
+		</div>-->
 
 	
 		<div class="top-menu-head">
@@ -59,27 +65,6 @@
 		</div>
 
 		<div class = "slide_main">
-      <div id="slider-wrap">
-         <div id="active-slide">
-           <div id="slider">
-             <div class="slide"><img src="{{ asset('img/Slide_11.png') }}" >
-                <div class = "div_slide_text">
-                  <!--<div class = "tip_pen"><img src="{{ asset('img/tip_pen.png') }}"></div>-->
-                </div>
-              </div>
-             <div class="slide"><img src="{{ asset('img/Slide_2_1.png') }}" >
-              <div class = "div_slide_text">
-                <!--<div class = "tip_pencil"><img src="{{ asset('img/.png') }}"></div>-->
-              </div>
-            </div>
-             <div class="slide"><img src="{{ asset('img/Slide_3_1.png') }}">
-              <div class = "div_slide_text">
-                <!--<div class = "tip_feat"><img src="{{ asset('img/.png') }}"></div>-->
-              </div>
-            </div>
-           </div>
-         </div>
-      </div>
     </div>
 		<!--<h2>Прямой эфир</h2>
 		<div class="index-live-list">

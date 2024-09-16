@@ -1858,75 +1858,24 @@ td a:focus {
 }
 
 
-.gallery-wrapper{
-	position: relative;
-	z-index: 1;
-
-    .content{
-        position: relative;
-        overflow: hidden;
-        width: 100%;
-        height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        padding: 3vh 0;
-        background: darken($secondary-color, 12%);
-        background: linear-gradient(to left, darken($secondary-color, 8%), darken($secondary-color, 12%));
-
-        .gallery{
-			&.full{
-				position: relative;
-				display: flex;
-				align-items: center;
-                .swiper-container{
-					.swiper-wrapper{
-						display: flex;
-						height: 80vh;
-						align-items: center;
-
-                        .swiper-slide{
-							position: relative;
-							height: 50vh;
-							transition: all .4s ease-out;
-							box-sizing: border-box;
-							width: auto;
-							opacity: .25;
-                            webkit-flex-basis: 23.7%;
-                            -ms-flex-preferred-size: 23.7%;
-                            flex-basis: 23.7%;
-                            -webkit-box-flex: 0;
-                            -webkit-flex-grow: 0;
-                            -ms-flex-positive: 0;
-                            flex-grow: 0;
-                            max-width: 23.7%;
-                            min-height: 23.7%;
-                            padding-left: 1.3%;
-                            padding-top: 24px;
-
-                            &.swiper-slide-prev,
-							&.swiper-slide-next{width: 20%!important}
-
-							&.swiper-slide-active{
-								height: 80vh;
-								width: 60%!important;
-								opacity: 1;
-
-								&:hover{
-									.zoom{
-										opacity: 1;
-										pointer-events: auto;
-										visibility: visible
-									}
-								}
-							}
-                        }
-                    }
-                }
-                
-            }
-        }
-    }
+.swiper-slide{
+    position: relative;
+    height: 50vh;
+    transition: all .4s ease-out;
+    box-sizing: border-box;
+    width: auto;
+    opacity: .25;
+    webkit-flex-basis: 23.7%;
+    -ms-flex-preferred-size: 23.7%;
+    flex-basis: 23.7%;
+    -webkit-box-flex: 0;
+    -webkit-flex-grow: 0;
+    -ms-flex-positive: 0;
+    flex-grow: 0;
+    max-width: 23.7%;
+    min-height: 23.7%;
+    padding-left: 1.3%;
+    padding-top: 24px;
 }
 /*Slider*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
@@ -1975,25 +1924,6 @@ td a:focus {
    float: left;
 }
 
-.slide img{
-    float: right;
-    width: 60%;
-    height: 100%;
-}
-
-.slide_text{
-   float:left;
-   text-align: center;
-   width: 100%;
-}
-
-.div_slide_text{
-    width: 39%;
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 #slider{
     position: relative;
     width: calc(100% * 4);
@@ -2027,7 +1957,7 @@ td a:focus {
     display:inline-block;
     overflow:hidden;
     text-indent:-9999px;
-    background-color: #6E18C0;
+    background-color: #e8e5eb;
     margin-right: 20px;
     width:16px;
     height:10px;
@@ -2037,12 +1967,12 @@ td a:focus {
 .Radio-But .ctrl-select:hover {
     cursor:pointer;
     background-position:center center;
-    background-color: #181bc0;
+    background-color: #a3ad47;
 }
 
 .Radio-But .ctrl-select.active {
     background-position:center top;
-    background-color: #adccbe;
+    background-color: #d9e2de;
 }
 
 #prewbutton, #nextbutton {
