@@ -36,9 +36,9 @@ $(document).ready(function() {
 
         $(document).on('click', '.slide', function() {
             var id = this.id;
-            console.log(id);
+            //console.log(id);
             //$("#admin_input_id").val(id);
-            //window.location.href='/card_stream?admin_input_id='+id;
+            window.location.href='/player_stream?player_stream_id='+id;
             //alert("Text: " + this.id);
         });
         var timeList = 600;
