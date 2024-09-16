@@ -64,29 +64,16 @@
            <div id="slider">
              <div class="slide"><img src="{{ asset('img/Slide_11.png') }}" >
                 <div class = "div_slide_text">
-                  <h2 class="slide_text1_head">Публикации</h2>
-                  <a class="slide_text1">Статьи научные и не очень!<br>
-                                        Цель публикаций - это демнстрация творчества<br>
-                                        и популяризация научной среды!</a>
-                  <div class="slide1_but"><a href="">LOOK HERE</a></div>
                   <!--<div class = "tip_pen"><img src="{{ asset('img/tip_pen.png') }}"></div>-->
                 </div>
               </div>
              <div class="slide"><img src="{{ asset('img/Slide_2_1.png') }}" >
               <div class = "div_slide_text">
-                <h2 class="slide_text2_head">Магазин</h2>
-                <a class="slide_text2">Вашему вниманию представленн<br>
-                                      ассортимент собственного производства.</a>
-                <div class="slide2_but"><a href="">TAKE MY MONEY</a></div>
                 <!--<div class = "tip_pencil"><img src="{{ asset('img/.png') }}"></div>-->
               </div>
             </div>
              <div class="slide"><img src="{{ asset('img/Slide_3_1.png') }}">
               <div class = "div_slide_text">
-                <h2 class="slide_text3_head">Мастерская</h2>
-                <a class="slide_text3">Ремонт оборудования!<br>
-                                      Работа с внутренним функционалом сайта!</a>
-                <div class="slide3_but"><a href="">ИЗОЛЕНТА DO</a></div>
                 <!--<div class = "tip_feat"><img src="{{ asset('img/.png') }}"></div>-->
               </div>
             </div>
