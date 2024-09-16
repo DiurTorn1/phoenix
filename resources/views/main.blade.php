@@ -32,7 +32,13 @@
 	</svg>
 </div>
 	<div class="index-live" id="index-live">
-	<div class="top-menu-head">
+		<div class="swiper-next-button">
+			<em class="material-icons">arrow_right_alt</em>
+		</div>
+		<div class="swiper-prev-button">
+			<em class="material-icons">arrow_right_alt</em>
+		</div>
+		<div class="top-menu-head">
 			<h2 class="top-menu-title">Скоро</h2>
 		</div>
 		<div class="gallery-wrapper">
@@ -47,12 +53,7 @@
 				
 			</div>	
 		</div>
-		<div class="swiper-next-button">
-			<em class="material-icons">arrow_right_alt</em>
-		</div>
-		<div class="swiper-prev-button">
-			<em class="material-icons">arrow_right_alt</em>
-		</div>
+
 	
 		<div class="top-menu-head">
 			<h2 class="top-menu-title">В эфире</h2>
