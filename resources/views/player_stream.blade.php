@@ -11,6 +11,7 @@
 	    </header>
 
 @else
+        <script type="text/javascript" src = "{{ asset('js/player_sream.js') }}"></script>
         <header class="header admin-header">		
 		<div class="left-header">
 			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
@@ -57,19 +58,7 @@
 	<!----------------------------Админ-контент---------------------------------->
 	<div class="admin-content">
 		    <div class="index-live-list">
-			    <div class="index-live-item">
-				    <div class="index-live-item-video">
-					    <iframe
-    				    src=""
-    				    width="1024"
-    				    height="640"
-    				    frameborder="0"
-    				    allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"
-    				    ></iframe>
-				    </div>
-				    <div class="index-live-item-text">
-					    <a></a>
-				    </div>
+			    <div class="index-live-item" id="player_stream_get">
 			    </div>
 		</div>
 	</div>	
