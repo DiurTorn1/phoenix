@@ -11,7 +11,7 @@
 	    </header>
 
 @else
-        <script type="text/javascript" src = "{{ asset('js/player_sream.js') }}"></script>
+        <script type="text/javascript" src = "{{ asset('js/player_stream.js') }}"></script>
         <header class="header admin-header">		
 		<div class="left-header">
 			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
