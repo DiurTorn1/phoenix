@@ -1922,6 +1922,36 @@ td a:focus {
                         }
                     }
                 }
+                .swiper-next-button,
+				.swiper-prev-button{
+					position: absolute;
+					z-index: 99;
+					outline: none;
+					transition: all .2s linear;
+					width: 20%;
+					height: 50vh;
+					display: flex;
+					justify-content: flex-end;
+					align-items: center;
+					cursor: pointer;
+
+					&.swiper-button-disabled{opacity: .2}
+
+					em{
+						font-size: 68px
+					}
+				}
+
+				.swiper-next-button{
+					right: 0;
+					padding-left: 5vw;
+					justify-content: flex-start
+				}
+
+				.swiper-prev-button{
+					left: 0; 
+					padding-right: 5vw
+				}
             }
         }
     }
