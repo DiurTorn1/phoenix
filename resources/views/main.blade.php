@@ -48,7 +48,9 @@
 			<div class="content">
 				<div class="gallery full">
 					<div class="swiper-container">
-						<div class="swiper-wrapper" id="public_item_stream" >
+						<div class="swiper-wrapper" id="public_item_stream">
+							
+						</div>
 					</div>					
 				</div>
 				
