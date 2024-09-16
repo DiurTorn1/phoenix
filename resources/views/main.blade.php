@@ -32,25 +32,8 @@
 	</svg>
 </div>
 	<div class="index-live" id="index-live">
-	
-		<div class="top-menu-head">
-			<h2 class="top-menu-title">Прямой эфир</h2>
-		</div>
-		<div class="live_item_stream" id ="live_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
-			<div class="index-live-item">
-				<div class="index-live-item-video">
-					<a href="#">
-						<span class="label">LIVE</span>
-					</a>
-				</div>
-				<div class="index-live-item-text">
-					<a href="#"></a>
-				</div>
-			</div>
-		</div>
-
-		<div class="top-menu-head">
-			<h2 class="top-menu-title">Опубликованное</h2>
+	<div class="top-menu-head">
+			<h2 class="top-menu-title">Скоро</h2>
 		</div>
 		<div class="gallery-wrapper">
 			<div class="content">
@@ -64,7 +47,28 @@
 				
 			</div>	
 		</div>
-
+		<div class="swiper-next-button">
+			<em class="material-icons">arrow_right_alt</em>
+		</div>
+		<div class="swiper-prev-button">
+			<em class="material-icons">arrow_right_alt</em>
+		</div>
+	
+		<div class="top-menu-head">
+			<h2 class="top-menu-title">В эфире</h2>
+		</div>
+		<div class="live_item_stream" id ="live_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
+			<div class="index-live-item">
+				<div class="index-live-item-video">
+					<a href="#">
+						<span class="label">LIVE</span>
+					</a>
+				</div>
+				<div class="index-live-item-text">
+					<a href="#"></a>
+				</div>
+			</div>
+		</div>
 		</div>
 		<!--<h2>Прямой эфир</h2>
 		<div class="index-live-list">
