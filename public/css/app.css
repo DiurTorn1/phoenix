@@ -1967,7 +1967,8 @@ td a:focus {
 }
 
 #prewbutton {
-    left:13%;
+    /*left:13%;*/
+    float:left;
     width: 0;
     height: 0;
     border-top: 20px solid transparent;
@@ -1976,7 +1977,8 @@ td a:focus {
 }
 
 #nextbutton {
-    right:75%;
+    /*right:75%;*/
+    float:right;
     width: 0;
     height: 0;
     border-top: 20px solid transparent;

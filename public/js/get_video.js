@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 
         var timeList = 600;
-        var TimeView = 10000;
+        var TimeView = 1000000;
         var RadioBut = true;
       
         var slideNum = 1;
@@ -92,13 +92,13 @@ $(document).ready(function() {
                 animSlide(goToNum + 1);
                 });
                 var pause = false;
-                var rotator = function(){
+                /*var rotator = function(){
                        if(!pause){slideTime = setTimeout(function(){animSlide('next')}, TimeView);}
                        }
                 $('#slider-wrap').hover(
                    function(){clearTimeout(slideTime); pause = true;},
                    function(){pause = false; rotator();
-                   });
+                   });*/
       
             var clicking = false;
             var prevX;
@@ -124,5 +124,5 @@ $(document).ready(function() {
                 }
             });
             $('.slide').hover().css('cursor', 'pointer');
-            rotator();
+            //rotator();
 });
