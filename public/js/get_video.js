@@ -36,7 +36,7 @@ $(document).ready(function() {
 
 
         var timeList = 600;
-        var TimeView = 3000;
+        var TimeView = 10000;
         var RadioBut = true;
       
         var slideNum = 1;
@@ -91,14 +91,14 @@ $(document).ready(function() {
                 var goToNum = parseFloat($(this).text());
                 animSlide(goToNum + 1);
                 });
-                /*var pause = false;
+                var pause = false;
                 var rotator = function(){
                        if(!pause){slideTime = setTimeout(function(){animSlide('next')}, TimeView);}
                        }
                 $('#slider-wrap').hover(
                    function(){clearTimeout(slideTime); pause = true;},
                    function(){pause = false; rotator();
-                   });*/
+                   });
       
             var clicking = false;
             var prevX;
