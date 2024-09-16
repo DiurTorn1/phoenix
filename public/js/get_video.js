@@ -22,6 +22,7 @@ $(document).ready(function() {
                     $("#slider").append(
                         '<div class="slide index-live-item" id="' + item.id + '">'+
                             '<div class="index-live-item-video">'+
+                                '<a >'+ '<span class="label"></span>'+ '</a>' +
                             '</div>'+
                             '<div class="index-live-item-text">'+
                                 '<a >' + item.name + '</a>'+
