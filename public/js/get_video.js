@@ -20,7 +20,7 @@ $(document).ready(function() {
                 //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $("#slider").append(
-                        '<div class="slide index-live-item">'+
+                        '<div class="slide index-live-item" id="' + item.id + '">'+
                             '<div class="index-live-item-video">'+
                                 '<a href="#">'+
                                 '<span class="label">LIVE</span>'+
@@ -34,7 +34,13 @@ $(document).ready(function() {
             
         });
 
-
+        $(document).on('click', '.slide', function() {
+            var id = this.id;
+            console.log(id);
+            //$("#admin_input_id").val(id);
+            //window.location.href='/card_stream?admin_input_id='+id;
+            //alert("Text: " + this.id);
+        });
         var timeList = 600;
         var TimeView = 1000000;
         var RadioBut = true;

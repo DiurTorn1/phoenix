@@ -1,7 +1,7 @@
 <?php
 //$json = '{"a":1,"b":2,"c":3,"d":4,"e":5}';
 $tegs = $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
-$data = array("name" => $_POST['name'],"subtitle" => $tegs, "type" => "one-time", "auto_start" => false, "protected" => false, "time_shift" => true,
+$data = array("name" => $_POST['name'],"subtitle" => $tegs, "type" => "one-time", "auto_start" => true, "protected" => false, "time_shift" => true,
          "parent_id" => "a66bd253-adaf-4540-9ff3-d90b8d5c6682", "reconnect_window" => 600, "scheduled" => array("time" => $_POST['start_at']. ':00.000000Z'),
          "record" => array("parent_id" => "59a63e5e-61f6-4618-8d83-104a427aff0b"),
          "restreams" => array(), "latency_mode" => "standard");
