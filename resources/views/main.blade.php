@@ -23,21 +23,7 @@
         @endif
 @endguest
 	<!-- Прямая трансляция -->
-	 <!--loader thx:https://codepen.io/aurer/pen/jEGbA-->
-<div class="loader">
-	<svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="40px" height="40px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
-		<path fill="#000" d="M25.251,6.461c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,14.615-14.615V6.461z">
-			<animateTransform attributeType="xml" attributeName="transform" type="rotate" from="0 25 25" to="360 25 25" dur="0.6s" repeatCount="indefinite"/>
-		</path>
-	</svg>
-</div>
 	<div class="index-live" id="index-live">
-		<div class="swiper-next-button">
-			<em class="material-icons">arrow_right_alt</em>
-		</div>
-		<div class="swiper-prev-button">
-			<em class="material-icons">arrow_right_alt</em>
-		</div>
 		<div class="top-menu-head">
 			<h2 class="top-menu-title">Скоро</h2>
 		</div>
@@ -71,6 +57,43 @@
 			</div>
 		</div>
 		</div>
+
+		<div class = "slide_main">
+      <div id="slider-wrap">
+         <div id="active-slide">
+           <div id="slider">
+             <div class="slide"><img src="{{ asset('img/Slide_11.png') }}" >
+                <div class = "div_slide_text">
+                  <h2 class="slide_text1_head">Публикации</h2>
+                  <a class="slide_text1">Статьи научные и не очень!<br>
+                                        Цель публикаций - это демнстрация творчества<br>
+                                        и популяризация научной среды!</a>
+                  <div class="slide1_but"><a href="">LOOK HERE</a></div>
+                  <!--<div class = "tip_pen"><img src="{{ asset('img/tip_pen.png') }}"></div>-->
+                </div>
+              </div>
+             <div class="slide"><img src="{{ asset('img/Slide_2_1.png') }}" >
+              <div class = "div_slide_text">
+                <h2 class="slide_text2_head">Магазин</h2>
+                <a class="slide_text2">Вашему вниманию представленн<br>
+                                      ассортимент собственного производства.</a>
+                <div class="slide2_but"><a href="">TAKE MY MONEY</a></div>
+                <!--<div class = "tip_pencil"><img src="{{ asset('img/.png') }}"></div>-->
+              </div>
+            </div>
+             <div class="slide"><img src="{{ asset('img/Slide_3_1.png') }}">
+              <div class = "div_slide_text">
+                <h2 class="slide_text3_head">Мастерская</h2>
+                <a class="slide_text3">Ремонт оборудования!<br>
+                                      Работа с внутренним функционалом сайта!</a>
+                <div class="slide3_but"><a href="">ИЗОЛЕНТА DO</a></div>
+                <!--<div class = "tip_feat"><img src="{{ asset('img/.png') }}"></div>-->
+              </div>
+            </div>
+           </div>
+         </div>
+      </div>
+    </div>
 		<!--<h2>Прямой эфир</h2>
 		<div class="index-live-list">
 			<div class="index-live-item">
