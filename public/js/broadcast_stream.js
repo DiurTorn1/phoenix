@@ -4,6 +4,7 @@ $(document).ready(function() {
     //$("#jjj").on('click', function(){/card_stream
         var params = new window.URLSearchParams(window.location.search);
         var stream_key;
+        var id_stream;
         //console.log("MSG:" + params.get('block-admin-input'));
         $.post('/php/get_stream.php', function(data)  {
             var output = $.parseJSON(data);
@@ -25,6 +26,7 @@ $(document).ready(function() {
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $('#player_broadcast').attr('src', item.play_link);
                     name_stream = item.name;
+                    id_stream = item.id;
                     $.post('/php/entrypoints_stream_get.php', {stream:name_stream}, function(data)  {
                         var output = $.parseJSON(data);
                         var srteam_get = output? output[1]: '1';
@@ -79,7 +81,13 @@ $(document).ready(function() {
             });
             
         }
-        //alert($("#etrypoints_vibor option:selected").text() + " / " + stream_key);
+        //alert($("#etrypoints_vibor option:selected").text() + " / " + stream_key);  stop_stream_btn
+    });
+
+    $("#stop_stream_btn").on('click', function(){
+        $.post('/php/stop_stream.php', {id:id_stream}, function(data)  {
+            console.log(data);
+        });
     });
 });
 
