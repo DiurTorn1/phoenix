@@ -1907,7 +1907,6 @@ td a:focus {
 
 #slider{
     position: relative;
-    width: calc(100% * 4);
     top: 0;
     left: 0;
     margin: 0;
@@ -1973,7 +1972,7 @@ td a:focus {
     height: 0;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-    border-right: 20px solid #6E18C0;
+    border-right: 20px solid #e5e2e7;
 }
 
 #nextbutton {
@@ -1982,7 +1981,7 @@ td a:focus {
     height: 0;
     border-top: 20px solid transparent;
     border-bottom: 20px solid transparent;
-    border-left: 20px solid #6E18C0;
+    border-left: 20px solid #dbd9dd;
 }
 
 #prewbutton:hover, #nextbutton:hover {
