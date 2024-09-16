@@ -43,7 +43,7 @@
 
 		</div>
 
-		<div class="top-menu-admin admin-video-sort admin-back">
+		<div class="top-menu-admin admin-video-sort admin-back" style="display:none;">
 
 			<ul class="admin-video-list admin-input-box admin-input-wrap"><!-- СПИСОК товарных позиций (сюда добавляются позиции)---------->
 				<li class="list-item-wrp">

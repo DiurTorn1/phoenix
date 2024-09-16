@@ -105,6 +105,14 @@
 							</select>
 						</div>
 					</div>
+					<div class="admin-input-box admin-input-wrap">
+						<label>Авто воспроизведение видео</label>
+						<input type="checkbox" name="Начало трансляции" class="block-admin-input 		admin-input" id="autoplay_video_ch">
+					</div>
+					<div class="admin-input-box admin-input-wrap">
+						<label>Чат в видео</label>
+						<input type="checkbox" name="Начало трансляции" class="block-admin-input 		admin-input" id="chat_video_ch">
+					</div>
 				</div>
 			</div>
 

@@ -34,6 +34,7 @@ $(document).ready(function() {
                         //"\r\nmoderators: " + item.moderators);
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
+                    console.log("autoplay_video_ch:" + item.auto_start + " , chat_video_ch:" + item.chat_active); // autoplay_video_ch  chat_video_ch
                     $('#admin-input-main').val(item.name);
                     initial_name = item.name;
                     poster_id_par = item.poster.id;
@@ -167,6 +168,7 @@ $(document).ready(function() {
         //$('#admin-input-main').appendVal();card_broadcast
     //});upload_stream
     $("#upload_stream").on('click', function(){
+        console.log("autoplay_video_ch: " + $('#autoplay_video_ch').is(":checked") + " , chat_video_ch: " + $('#chat_video_ch').is(":checked"));
         var dNow = new Date();
         var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
         name_card = $('#admin-input-main').val();
@@ -176,7 +178,7 @@ $(document).ready(function() {
         weigth = $("#admin_card_weigth option:selected").text();//$("#admin_card_weigth").val();
         //sezon = pars[0];
         //kubok = pars[1];
-        //weigth = pars[2];
+        //weigth = pars[2];$('#check_id').is(":checked")
         //vid_sport = pars[3];
         gorod = " ";//pars[4];
         boss = " ";//pars[5];
