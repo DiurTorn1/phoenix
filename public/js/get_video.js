@@ -20,15 +20,15 @@ $(document).ready(function() {
                 //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     $("#slider").append(
-                        '<div class="index-live-item">'+
+                        '<div class="slide index-live-item">'+
                             '<div class="index-live-item-video">'+
                                 '<a href="#">'+
                                 '<span class="label">LIVE</span>'+
                                 '</a>' +
                             '</div>'+
                             '<div class="index-live-item-text">'+
-                            '<a href="#">' + item.name + '</a>'+
-                        '</div>'+
+                                '<a href="#">' + item.name + '</a>'+
+                            '</div>'+
                         '</div>');
             });
             
