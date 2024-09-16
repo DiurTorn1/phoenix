@@ -5,6 +5,8 @@
 <!----------------------------Стрим-контент РЕСТРИМ ---------------------------------->
 <style type="text/css">
       button.save-st {display: none;}
+      button.non-publish {display: none;}
+	  button.yes-publish {display: none;}
 </style>
 <div class="admin-content">
 			

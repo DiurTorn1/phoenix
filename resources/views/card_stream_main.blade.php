@@ -18,8 +18,8 @@
 		</div>
 		<div class="right-heder">
 			<button class="top-menu-btn save-st" id="upload_stream">Сохранить</button>
-			<button class="top-menu-btn" id="unpublic_stream">Отменить публикацию</button>
-			<button class="top-menu-btn" id="public_stream">Опубликовать</button>
+			<button class="top-menu-btn non-publish" id="unpublic_stream">Отменить публикацию</button>
+			<button class="top-menu-btn yes-publish" id="public_stream">Опубликовать</button>
 		</div>
 	</header>
 	<main class="admin-container">

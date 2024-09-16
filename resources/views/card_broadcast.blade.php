@@ -5,6 +5,8 @@
 	<script type="text/javascript" src = "{{ asset('js/broadcast_stream.js') }}"></script>
 	<style type="text/css">
       button.save-st {display: none;}
+	  button.non-publish {display: none;}
+	  button.yes-publish {display: none;}
     </style>
 	<div class="admin-content admin-content-raw">
 		<div class="block-admin-left">
@@ -73,7 +75,7 @@
 
 				<div class="admin-input-box admin-input-wrap admin-input-mb">
 					<label>СТОП Трансляция</label>
-					<input type="button" name="STOP STREAM" class="" text="STOP" id="stop_stream_btn">
+					<button class="top-menu-btn" id="stop_stream_btn">STOP Stream</button>
 				</div>
 
 				<p class="admin-text-item">3. Начаните отправку потока с энкодера</p>

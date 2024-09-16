@@ -5,6 +5,8 @@
 	<!----------------------------Стрим-контент МОНИТОРИНГ---------------------------------->
 	<style type="text/css">
       button.save-st {display: none;}
+	  button.non-publish {display: none;}
+	  button.yes-publish {display: none;}
     </style>
 	<div class="admin-content admin-content-raw"> <!------------------------- Левая панель ------------------->
 		<div class="block-admin-left block-admin-left-monitor">
