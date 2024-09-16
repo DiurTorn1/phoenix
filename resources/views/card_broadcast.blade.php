@@ -73,7 +73,7 @@
 
 				<div class="admin-input-box admin-input-wrap admin-input-mb">
 					<label>СТОП Трансляция</label>
-					<input type="bottom" name="STOP STREAM" class="block-admin-input admin-input" placeholder=" " id="stop_stream_btn">
+					<input type="button" name="STOP STREAM" class="block-admin-input admin-input" placeholder=" " id="stop_stream_btn">
 				</div>
 
 				<p class="admin-text-item">3. Начаните отправку потока с энкодера</p>
