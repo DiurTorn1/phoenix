@@ -73,9 +73,6 @@
 	</div>	
 	</main>
 	<!----------------->
-        @endif
-    @endforeach
-    @endif
 @endguest
 
 @endsection
