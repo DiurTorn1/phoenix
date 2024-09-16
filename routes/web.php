@@ -114,6 +114,10 @@ Route::get('/entrypoint', function () {
     return view('entrypoint');
 });
 
+Route::get('/player_stream', function () {
+    return view('player_stream');
+});
+
 Route::get('/product_admin', [ProductController::class, 'index'])->name('products');//function () {
     //return view('product_admin');
 //});
