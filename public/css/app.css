@@ -1858,25 +1858,6 @@ td a:focus {
 }
 
 
-.swiper-slide{
-    position: relative;
-    height: 50vh;
-    transition: all .4s ease-out;
-    box-sizing: border-box;
-    width: auto;
-    opacity: .25;
-    webkit-flex-basis: 23.7%;
-    -ms-flex-preferred-size: 23.7%;
-    flex-basis: 23.7%;
-    -webkit-box-flex: 0;
-    -webkit-flex-grow: 0;
-    -ms-flex-positive: 0;
-    flex-grow: 0;
-    max-width: 23.7%;
-    min-height: 23.7%;
-    padding-left: 1.3%;
-    padding-top: 24px;
-}
 /*Slider*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 
@@ -1940,8 +1921,6 @@ td a:focus {
 }
 
 .slide{
-    width: calc(100%/4);
-    height: 500px;
     list-style: none;
     display: inline;
 }
