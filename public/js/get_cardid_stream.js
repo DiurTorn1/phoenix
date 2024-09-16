@@ -34,7 +34,7 @@ $(document).ready(function() {
                         //"\r\nmoderators: " + item.moderators);
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                    console.log("autoplay_video_ch:" + item.auto_start + " , chat_video_ch:" + item.chat_active); // autoplay_video_ch  chat_video_ch
+                    //console.log("autoplay_video_ch:" + item.auto_start + " , chat_video_ch:" + item.chat_active); // autoplay_video_ch  chat_video_ch
                     $('#admin-input-main').val(item.name);
                     initial_name = item.name;
                     poster_id_par = item.poster.id;
@@ -50,6 +50,8 @@ $(document).ready(function() {
                     rtmp_link_card = item.rtmp_link;
                     $('#card_link_play').val(item.play_link);
                     $('#img_poster_card').attr("src", item.poster.sm);
+                    $('#autoplay_video_ch').attr('checked', item.auto_start);
+                    $('#chat_video_ch').attr('checked', item.chat_active);
                     var tegs = item.subtitle;
                     var pars = tegs.split("&");
                     sezon = pars[0];
@@ -168,7 +170,7 @@ $(document).ready(function() {
         //$('#admin-input-main').appendVal();card_broadcast
     //});upload_stream
     $("#upload_stream").on('click', function(){
-        console.log("autoplay_video_ch: " + $('#autoplay_video_ch').is(":checked") + " , chat_video_ch: " + $('#chat_video_ch').is(":checked"));
+        
         var dNow = new Date();
         var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
         name_card = $('#admin-input-main').val();
@@ -176,6 +178,9 @@ $(document).ready(function() {
         sezon = $("#admin_card_season").val();
         kubok = $("#admin_card_turnir").val();
         weigth = $("#admin_card_weigth option:selected").text();//$("#admin_card_weigth").val();
+        var check_autoplay = $('#autoplay_video_ch').is(":checked");
+        var check_chat = $('#chat_video_ch').is(":checked");
+        //console.log("autoplay_video_ch: " + $('#autoplay_video_ch').is(":checked") + " , chat_video_ch: " + $('#chat_video_ch').is(":checked"));
         //sezon = pars[0];
         //kubok = pars[1];
         //weigth = pars[2];$('#check_id').is(":checked")
@@ -222,7 +227,7 @@ $(document).ready(function() {
                             alert("Стрим добавлен к продукту: " + name_product);
                             $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
                                 ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
-                                parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
+                                parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par, ch_autoplay:check_autoplay, ch_chat:check_chat }, function(data){
                                 var output = $.parseJSON(data);
                                 //console.log(output);
                                 var list = output.data;
