@@ -308,6 +308,7 @@ $(document).ready(function() {
       
       r.on('fileSuccess', function(file){
           console.log('fileSuccess',file);
+          $('#img_poster_card').attr("src", file);
         });
       r.on('fileProgress', function(file){
           console.log('fileProgress', file);
