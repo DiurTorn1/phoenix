@@ -307,42 +307,42 @@ $(document).ready(function() {
       r.assignBrowse(document.getElementById('img_poster_card'));
       
       r.on('fileSuccess', function(file){
-          console.debug('fileSuccess',file);
+          console.log('fileSuccess',file);
         });
       r.on('fileProgress', function(file){
-          console.debug('fileProgress', file);
+          console.log('fileProgress', file);
         });
       r.on('fileAdded', function(file, event){
           r.upload();
-          console.debug('fileAdded', event);
+          console.log('fileAdded', event);
         });
       r.on('filesAdded', function(array){
           r.upload();
-          console.debug('filesAdded', array);
+          console.log('filesAdded', array);
         });
       r.on('fileRetry', function(file){
-          console.debug('fileRetry', file);
+          console.log('fileRetry', file);
         });
       r.on('fileError', function(file, message){
-          console.debug('fileError', file, message);
+          console.log('fileError', file, message);
         });
       r.on('uploadStart', function(){
-          console.debug('uploadStart');
+          console.timeLog('uploadStart');
         });
       r.on('complete', function(){
-          console.debug('complete');
+          console.log('complete');
         });
       r.on('progress', function(){
-          console.debug('progress');
+          console.log('progress');
         });
       r.on('error', function(message, file){
-          console.debug('error', message, file);
+          console.log('error', message, file);
         });
       r.on('pause', function(){
-          console.debug('pause');
+          console.log('pause');
         });
       r.on('cancel', function(){
-          console.debug('cancel');
+          console.log('cancel');
         });
     
 });
