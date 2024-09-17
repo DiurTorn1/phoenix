@@ -59,7 +59,7 @@ $(document).ready(function() {
                         '</div>' + 	
                         '<div class="admin-video-prev">' + 
                             '<img src="' + item.poster.sm + '" alt="" class="" style="heigth: 100%; width: 100%">' +
-                            '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
+                            //'<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
 					        //'<p>Нет потока</p>' + 
                         '</div>' + 
                         '<div class="admin-video-item-header">' + 
@@ -80,7 +80,7 @@ $(document).ready(function() {
 					    '<p class="admin-video-item-v-region">' + region + '</p>' +
 				    '</div>' +
 				    '<div class="admin-video-item-info admin-video-item-view">' +
-					    '<p class="admin-video-item-i-time">Закончилась в<span></span></p>' +
+					    '<p class="admin-video-item-i-time"><span></span></p>' +
 					    '<p class="admin-video-item-i-date">' + item.stream.finished_at + '</p>' +
 					    '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
 				    '</div>' + 

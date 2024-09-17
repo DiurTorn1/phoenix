@@ -1,6 +1,7 @@
 @extends('card_stream_main')
 @section('title-block') Редактировать @endsection
 @section('card_stream_res')
+<script type="text/javascript" src = "{{ asset('js/Backbone.js') }}"></script>
 	<div class="admin-content admin-content-raw" id="admin-content">
 		<div class="block-admin-left" id="block-admin-left">
 			<div class="block-admin-container admin-back">
@@ -32,7 +33,7 @@
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
 						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка турнира" id="img_poster_card"></a>
 						<div class="edit-preview-tournir">
-							<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
+							<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
 						</div>
 					</div>	
 				</div>
