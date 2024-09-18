@@ -307,8 +307,10 @@ $(document).ready(function() {
       r.assignBrowse(document.getElementById('img_poster_card'));
       
       r.on('fileSuccess', function(file){
-          console.log('fileSuccess',file);
-          $('#img_poster_card').attr("src", file);
+          //console.log('fileSuccess',file);
+          //$('#img_poster_card').attr("src", file);
+          var output = $.parseJSON(file);
+          consolr.log(output);
         });
       r.on('fileProgress', function(file){
           console.log('fileProgress', file);
