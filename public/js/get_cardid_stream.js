@@ -320,6 +320,7 @@ $(document).ready(function() {
             $('#img_poster_card').attr("src", e.target.result);
             //console.log(e.target.result);
             var image_res = e.target.result;
+            console.log(image_res.split(',')[1]);
             image = image_res.split(',')[1];
         };
         //if( image == 'undefined' ){
