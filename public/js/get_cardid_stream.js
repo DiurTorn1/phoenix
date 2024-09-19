@@ -309,7 +309,7 @@ $(document).ready(function() {
       r.on('fileSuccess', function(file){
           console.log('fileSuccess',file);
           console.log(file.file);
-          $('#img_poster_card').attr("src", file.file);
+          //$('#img_poster_card').attr("src", file.file);
           var reader = new FileReader();
           reader.readAsDataURL(file.file);
           //var output = $.parseJSON(file);
