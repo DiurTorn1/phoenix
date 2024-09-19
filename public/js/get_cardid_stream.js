@@ -311,12 +311,19 @@ $(document).ready(function() {
           console.log(file.file);
           //$('#img_poster_card').attr("src", file.file);
           var reader = new FileReader();
+          var image;
           reader.readAsDataURL(file.file);
           //var output = $.parseJSON(file);
           reader.onloadend = function(e) { 
             //console.log(e.target.result);
             $('#img_poster_card').attr("src", e.target.result);
+            image = e.target.result;
         };
+        if( typeof image == 'undefined' ){
+            alert("Image not load");
+        } else {
+            console.log(image);
+        }
           
         });
       r.on('fileProgress', function(file){
