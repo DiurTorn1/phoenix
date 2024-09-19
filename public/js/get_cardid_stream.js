@@ -328,7 +328,7 @@ $(document).ready(function() {
                     url:'/php/upload_banners.php',
                     method:'POST',
                     data:form_data,
-                    contentType:false,
+                    contentType:'multipart/form-data',
                     cache:false,
                     processData:false,
                     beforeSend:function(){
