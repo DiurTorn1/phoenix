@@ -307,30 +307,47 @@ $(document).ready(function() {
       r.assignBrowse(document.getElementById('img_poster_card'));
       
       r.on('fileSuccess', function(file){
-          console.log('fileSuccess',file);
-          console.log(file.file);
-          //$('#img_poster_card').attr("src", file.file);
-          var reader = new FileReader();
-          var image, image_name = '';
-          image_name = file.file.name;
-          reader.readAsDataURL(file.file);
-          //var output = $.parseJSON(file);
-          reader.onloadend = function(e) { 
-            //console.log(e.target.result);
-            $('#img_poster_card').attr("src", e.target.result);
-            //console.log(e.target.result);
-            var image_res = e.target.result;
-            //console.log(image_res.split(',')[1]);
-            image = image_res.split(',')[1];
-        };
-        $.post('/php/upload_banners.php', { image_name: image_name, image:image }, function(data){
+            console.log('fileSuccess',file);
+            console.log(file.file);
+            //$('#img_poster_card').attr("src", file.file);
+            var reader = new FileReader();
+            var image, image_name = '';
+            image_name = file.file.name;
+            reader.readAsDataURL(file.file);
+            //var output = $.parseJSON(file);
+            var form_data = new FormData();
+            reader.onloadend = function(e) { 
+                //console.log(e.target.result);
+                $('#img_poster_card').attr("src", e.target.result);
+                //console.log(e.target.result);
+                //var image_res = e.target.result;
+                //console.log(image_res.split(',')[1]);
+                //image = image_res.split(',')[1];
+                form_data.append("file",e.target.result);
+            };
+            $.ajax({
+                url:'/php/upload_banners.php',
+                method:'POST',
+                data:form_data,
+                contentType:false,
+                cache:false,
+                processData:false,
+                beforeSend:function(){
+                  //$('#msg').html('Loading......');
+                },
+                success:function(data){
+                  console.log(data);
+                  //$('#msg').html(data);
+                }
+
+        //$.post('/php/upload_banners.php', { image_name: image_name, image:image }, function(data){
             //if(data == "OK"){
                 //alert("Продукт опубликован");
                 //$('#public_stream').hide();
                 //$('#unpublic_stream').show();
             //}
-            console.log(data);
-        });
+            //console.log(data);
+        //});
         //if( image == 'undefined' ){
             //alert("Image not load");
         //} else {

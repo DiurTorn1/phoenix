@@ -22,19 +22,34 @@ if( is_dir($target_dir) === false )
 //$name = $target_dir . $_FILES[$_POST['image']][$_POST['image_name']];
 //move_uploaded_file($_FILES[$_POST['image']]["tmp_name.jpg"], $name);
 //echo "Файл загружен";
-$uploadfile = $target_dir . basename($_FILES[$_POST['image']][$_POST['image_name']]);
+//$uploadfile = $target_dir . basename($_FILES[$_POST['image']][$_POST['image_name']]);
 
     //echo "<p>";
 
-    if (move_uploaded_file($_FILES[$_POST['image']]['tmp_name'], $uploadfile)) {
-        echo "File is valid, and was successfully uploaded.\n";
-    } else {
-        echo "Upload failed    ";
-    }
+    //if (move_uploaded_file($_FILES[$_POST['image']]['tmp_name'], $uploadfile)) {
+        //echo "File is valid, and was successfully uploaded.\n";
+    //} else {
+        //echo "Upload failed    ";
+    //}
 
     //echo "</p>";
     //echo '<pre>';
-    echo 'Here is some more debugging info:';
-    print_r($_FILES);
+    //echo 'Here is some more debugging info:';
+    //print_r($_FILES);
     //print "</pre>";
+
+    if($_FILES['file']['name'] != ''){
+        $test = explode('.', $_FILES['file']['name']);
+        $extension = end($test);    
+        $name = rand(100,999).'.'.$extension;
+    
+        $location = $target_dir . $name;
+        if(move_uploaded_file($_FILES['file']['tmp_name'], $location)){
+            echo "File is valid, and was successfully uploaded.\n";
+        } else {
+            echo "Upload failed    ";
+        }
+    
+        //echo '<img src="'.$location.'" height="100" width="100" />';
+    }
 ?>
