@@ -315,20 +315,20 @@ $(document).ready(function() {
             image_name = file.file.name;
             reader.readAsDataURL(file.file);
             //var output = $.parseJSON(file);
-            //var form_data = new FormData();
+            
             reader.onloadend = function(e) { 
                 //console.log(e.target.result);
                 $('#img_poster_card').attr("src", e.target.result);
+                var form_data = new FormData('file',e.target.result);
                 //console.log(e.target.result);
                 //var image_res = e.target.result;
                 //console.log(image_res.split(',')[1]);
                 //image = image_res.split(',')[1];
-                //form_data.append('file',e.target.result);
                 $.ajax({
                     url:'/php/upload_banners.php',
                     method:'POST',
-                    data:e.target.result,
-                    contentType:'multipart/form-data',
+                    data:form_data,
+                    contentType:false,
                     cache:false,
                     processData:false,
                     beforeSend:function(){
