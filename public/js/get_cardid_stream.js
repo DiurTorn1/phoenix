@@ -329,7 +329,6 @@ $(document).ready(function() {
                     method:'POST',
                     data:form_data,
                     contentType:false,
-                    cache:false,
                     processData:false,
                     beforeSend:function(){
                       //$('#msg').html('Loading......');
