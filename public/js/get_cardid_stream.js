@@ -339,6 +339,7 @@ $(document).ready(function() {
                   console.log(data);
                   //$('#msg').html(data);
                 }
+            });
 
         //$.post('/php/upload_banners.php', { image_name: image_name, image:image }, function(data){
             //if(data == "OK"){
