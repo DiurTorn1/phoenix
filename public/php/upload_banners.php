@@ -52,7 +52,7 @@ if( is_dir($target_dir) === false )
     
         //echo '<img src="'.$location.'" height="100" width="100" />';
     }*/
-
+    $location = $target_dir . $name;
     $data = array();
     //check with your logic
     if (isset($_FILES)) {
@@ -61,7 +61,7 @@ if( is_dir($target_dir) === false )
 
         $uploaddir = $target_dir;
         foreach ($_FILES as $file) {
-            if (move_uploaded_file($file['tmp_name'], $uploaddir . basename( $file['name']))) {
+            if (move_uploaded_file($file['file']['tmp_name'], $location)) {
                 $files[] = $uploaddir . $file['name'];
             } else {
                 $error = true;
