@@ -1,5 +1,5 @@
 <?php
-$target_dir = "/img/banners";
+$target_dir = "/banners";
 //$target_file = $target_dir . basename($_FILES[$_POST['image']][$_POST['image_name']]);
 //$uploadOk = 1;
 //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
