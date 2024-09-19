@@ -326,8 +326,32 @@ $(document).ready(function() {
         //if( image == 'undefined' ){
             //alert("Image not load");
         //} else {
-            alert(image);
+            //alert(image);
         //}
+        var msg = {
+            shareFileName: image_name,
+            fileStream: image,
+        };
+
+        var blob = new Blob([JSON.toStringfy(msg)], {type: 'application/json'});
+            var formdata = new FormData();
+            formdata.append("message", blob);
+            //console.log(formdata)
+            $.ajax({
+            url: "/img/banners",
+            type: "POST",
+            data: formdata,
+            success: function (data) {
+                var res = JSON.parse(data);
+                if (res.flag) { 
+                        // Successful upload
+                        alert("Successful upload");
+                    } else {
+                        //upload failed
+                        alert("upload failed");
+                    }
+                }
+            });
           
         });
       r.on('fileProgress', function(file){
