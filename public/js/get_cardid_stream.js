@@ -314,7 +314,8 @@ $(document).ready(function() {
           reader.readAsDataURL(file.file);
           //var output = $.parseJSON(file);
           reader.onloadend = function(e) { 
-            console.log(e.target.result);
+            //console.log(e.target.result);
+            $('#img_poster_card').attr("src", e.target.result);
         };
           
         });
