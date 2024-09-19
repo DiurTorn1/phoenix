@@ -318,6 +318,7 @@ $(document).ready(function() {
       r.on('fileAdded', function(file, event){
           r.upload();
           console.log('fileAdded...', event);
+          console.log(file);
         });
       r.on('filesAdded', function(array){
           r.upload();
