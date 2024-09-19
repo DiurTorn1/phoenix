@@ -1,5 +1,5 @@
 <?php
-$target_dir = "./../img/banners";
+$target_dir = $_SERVER['DOCUMENT_ROOT']."img/banners";
 //$target_file = $target_dir . basename($_FILES[$_POST['image']][$_POST['image_name']]);
 //$uploadOk = 1;
 //$imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
@@ -16,7 +16,7 @@ $target_dir = "./../img/banners";
 //}
 if( is_dir($target_dir) === false )
 {
-    mkdir($target_dir, 0777, true);
+    mkdir($target_dir, 0, true);
     echo 'Create folder     ';
 }
 //$name = $target_dir . $_FILES[$_POST['image']][$_POST['image_name']];
