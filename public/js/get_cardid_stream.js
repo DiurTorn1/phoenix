@@ -313,7 +313,10 @@ $(document).ready(function() {
           var reader = new FileReader();
           reader.readAsDataURL(file.file);
           //var output = $.parseJSON(file);
-          console.log(reader);
+          reader.onloadend = function(e) { 
+            console.log(readere.target.result);
+        };
+          
         });
       r.on('fileProgress', function(file){
           console.log('fileProgress', file);
