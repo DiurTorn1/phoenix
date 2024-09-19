@@ -29,7 +29,7 @@ $uploadfile = $target_dir . basename($_FILES[$_POST['image']][$_POST['image_name
     if (move_uploaded_file($_FILES[$_POST['image']]['tmp_name'], $uploadfile)) {
         echo "File is valid, and was successfully uploaded.\n";
     } else {
-        echo "Upload failed";
+        echo "Upload failed    ";
     }
 
     //echo "</p>";
