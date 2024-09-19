@@ -333,7 +333,7 @@ $(document).ready(function() {
             fileStream: image,
         };
 
-        var blob = new Blob([JSON.toStringfy(msg)], {type: 'application/json'});
+        var blob = new Blob([JSON.tostringfy(msg)], {type: 'application/json'});
             var formdata = new FormData();
             formdata.append("message", blob);
             //console.log(formdata)
