@@ -336,7 +336,8 @@ $(document).ready(function() {
                       console.log('Loading......');
                     },
                     success:function(data){
-                      console.log(data);
+                        var output = $.parseJSON(data);
+                        console.log(output);
                       //$('#msg').html(data);
                     },
                     error: function(xhr, ajaxOptions, thrownError) {
