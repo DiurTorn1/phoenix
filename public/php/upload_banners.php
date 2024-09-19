@@ -52,6 +52,7 @@ if( is_dir($target_dir) === false )
     
         //echo '<img src="'.$location.'" height="100" width="100" />';
     }*/
+    echo $_FILES['file']['tmp_name'];
     $location = $target_dir . $name;
     $data = array();
     //check with your logic
@@ -72,5 +73,5 @@ if( is_dir($target_dir) === false )
         $data = array('success' => 'NO FILES ARE SENT','formData' => $_REQUEST);
     }
 
-    echo json_encode($data);
+    //echo json_encode($data);
 ?>
