@@ -338,6 +338,9 @@ $(document).ready(function() {
                 success:function(data){
                   console.log(data);
                   //$('#msg').html(data);
+                },
+                error: function(xhr, ajaxOptions, thrownError) {
+                   console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                 }
             });
 
