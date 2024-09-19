@@ -327,7 +327,7 @@ $(document).ready(function() {
                 $.ajax({
                     url:'/php/upload_banners.php',
                     method:'POST',
-                    data:new FormData(this.target.result),
+                    data:new FormData(e.target.result),
                     contentType:false,
                     cache:false,
                     processData:false,
