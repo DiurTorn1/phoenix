@@ -310,7 +310,7 @@ $(document).ready(function() {
           //console.log('fileSuccess',file);
           //$('#img_poster_card').attr("src", file);
           var output = $.parseJSON(file);
-          consolr.log(output);
+          console.log(output);
         });
       r.on('fileProgress', function(file){
           console.log('fileProgress', file);
@@ -319,7 +319,7 @@ $(document).ready(function() {
           r.upload();
           console.log('fileAdded...', event);
           var output = $.parseJSON(file);
-          consolr.log(output);
+          console.log(output);
           //console.log(file);
         });
       r.on('filesAdded', function(array){
