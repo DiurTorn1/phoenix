@@ -311,7 +311,8 @@ $(document).ready(function() {
           console.log(file.file);
           //$('#img_poster_card').attr("src", file.file);
           var reader = new FileReader();
-          var image;
+          var image, image_name = '';
+          image_name = file.file.name;
           reader.readAsDataURL(file.file);
           //var output = $.parseJSON(file);
           reader.onloadend = function(e) { 
@@ -319,7 +320,7 @@ $(document).ready(function() {
             $('#img_poster_card').attr("src", e.target.result);
             //console.log(e.target.result);
             var image_res = e.target.result;
-            image = image_res;
+            image = image_res.split(',')[1];
         };
         //if( image == 'undefined' ){
             //alert("Image not load");
