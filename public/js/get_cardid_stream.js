@@ -334,6 +334,7 @@ $(document).ready(function() {
                 processData:false,
                 beforeSend:function(){
                   //$('#msg').html('Loading......');
+                  console.log('Loading......');
                 },
                 success:function(data){
                   console.log(data);
