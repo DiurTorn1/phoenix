@@ -307,10 +307,10 @@ $(document).ready(function() {
       r.assignBrowse(document.getElementById('img_poster_card'));
       
       r.on('fileSuccess', function(file){
-          //console.log('fileSuccess',file);
+          console.log('fileSuccess',file);
           //$('#img_poster_card').attr("src", file);
-          var output = $.parseJSON(file);
-          console.log(output);
+          //var output = $.parseJSON(file);
+          //console.log(output);
         });
       r.on('fileProgress', function(file){
           console.log('fileProgress', file);
@@ -318,8 +318,8 @@ $(document).ready(function() {
       r.on('fileAdded', function(file, event){
           r.upload();
           console.log('fileAdded...', event);
-          var output = $.parseJSON(file);
-          console.log(output);
+          //var output = $.parseJSON(file);
+          //console.log(output);
           //console.log(file);
         });
       r.on('filesAdded', function(array){
