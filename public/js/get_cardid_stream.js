@@ -308,6 +308,7 @@ $(document).ready(function() {
       
       r.on('fileSuccess', function(file){
           console.log('fileSuccess',file);
+          console.log(file.file);
           //$('#img_poster_card').attr("src", file);
           //var output = $.parseJSON(file);
           //console.log(output);
