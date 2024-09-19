@@ -300,7 +300,7 @@ $(document).ready(function() {
     });
 
     var r = new Resumable({
-        target: '/'
+        target: '/img/banners'
       });
       
       
