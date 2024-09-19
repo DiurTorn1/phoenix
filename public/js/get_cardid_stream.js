@@ -323,7 +323,7 @@ $(document).ready(function() {
                 //var image_res = e.target.result;
                 //console.log(image_res.split(',')[1]);
                 //image = image_res.split(',')[1];
-                form_data.append('file',e.target.result);
+                form_data.append('file[]',e.target.result);
                 $.ajax({
                     url:'/php/upload_banners.php',
                     method:'POST',
