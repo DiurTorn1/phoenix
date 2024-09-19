@@ -318,13 +318,14 @@ $(document).ready(function() {
             //console.log(e.target.result);
             $('#img_poster_card').attr("src", e.target.result);
             //console.log(e.target.result);
-            image = e.target.result;
+            console.log(e.target.files[0]);
+            //image = e.target.result;
         };
-        if( image == 'undefined' ){
-            alert("Image not load");
-        } else {
-            alert(image);
-        }
+        //if( image == 'undefined' ){
+            //alert("Image not load");
+        //} else {
+            //alert(image);
+        //}
           
         });
       r.on('fileProgress', function(file){
