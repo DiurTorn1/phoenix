@@ -61,7 +61,7 @@ if( is_dir($target_dir) === false )
 
         $uploaddir = $target_dir;
         foreach ($_FILES as $file) {
-            if (move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $_FILES['file']['name']);) {
+            if (move_uploaded_file($_FILES['file']['tmp_name'], $target_dir . $_FILES['file']['name'])) {
                 $files[] = $uploaddir . $file['name'];
             } else {
                 $error = true;
