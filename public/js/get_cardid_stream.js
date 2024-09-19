@@ -323,7 +323,7 @@ $(document).ready(function() {
         if( image == 'undefined' ){
             alert("Image not load");
         } else {
-            console.log(image);
+            alert(image);
         }
           
         });
