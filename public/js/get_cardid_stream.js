@@ -323,17 +323,25 @@ $(document).ready(function() {
             console.log(image_res.split(',')[1]);
             image = image_res.split(',')[1];
         };
+        $.post('/php/upload_banners.php', { image_name: image_name, image:image }, function(data){
+            //if(data == "OK"){
+                //alert("Продукт опубликован");
+                //$('#public_stream').hide();
+                //$('#unpublic_stream').show();
+            //}
+            console.log(data);
+        });
         //if( image == 'undefined' ){
             //alert("Image not load");
         //} else {
             //alert(image);
         //}
-        var msg = {
+        /*var msg = {
             shareFileName: image_name,
             fileStream: image,
         };
 
-        var blob = new Blob([JSON.tostringfy(msg)], {type: 'application/json'});
+        var blob = new Blob([JSON.tostringTag(msg)], {type: 'application/json'});
             var formdata = new FormData();
             formdata.append("message", blob);
             //console.log(formdata)
@@ -351,7 +359,7 @@ $(document).ready(function() {
                         alert("upload failed");
                     }
                 }
-            });
+            });*/
           
         });
       r.on('fileProgress', function(file){
