@@ -16,7 +16,7 @@ $target_dir = "./../img/banners";
 //}
 if( is_dir($target_dir) === false )
 {
-    mkdir($target_dir, 0777, true);
+    mkdir($target_dir, 0, true);
     echo 'Create folder     ';
 }
 //$name = $target_dir . $_FILES[$_POST['image']][$_POST['image_name']];
