@@ -344,44 +344,6 @@ $(document).ready(function() {
                    console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                 }
             });
-
-        //$.post('/php/upload_banners.php', { image_name: image_name, image:image }, function(data){
-            //if(data == "OK"){
-                //alert("Продукт опубликован");
-                //$('#public_stream').hide();
-                //$('#unpublic_stream').show();
-            //}
-            //console.log(data);
-        //});
-        //if( image == 'undefined' ){
-            //alert("Image not load");
-        //} else {
-            //alert(image);
-        //}
-        /*var msg = {
-            shareFileName: image_name,
-            fileStream: image,
-        };
-
-        var blob = new Blob([JSON.tostringTag(msg)], {type: 'application/json'});
-            var formdata = new FormData();
-            formdata.append("message", blob);
-            //console.log(formdata)
-            $.ajax({
-            url: "/img/banners",
-            type: "POST",
-            data: formdata,
-            success: function (data) {
-                var res = JSON.parse(data);
-                if (res.flag) { 
-                        // Successful upload
-                        alert("Successful upload");
-                    } else {
-                        //upload failed
-                        alert("upload failed");
-                    }
-                }
-            });*/
           
         });
       r.on('fileProgress', function(file){
@@ -389,14 +351,15 @@ $(document).ready(function() {
         });
       r.on('fileAdded', function(file, event){
           r.upload();
-          console.log('fileAdded...', event);
+          console.log('fileAdded...');
+          //console.log('fileAdded...', event);
           //var output = $.parseJSON(file);
           //console.log(output);
           //console.log(file);
         });
       r.on('filesAdded', function(array){
           r.upload();
-          console.log('filesAdded', array);
+          //console.log('filesAdded', array);
         });
       r.on('fileRetry', function(file){
           console.log('fileRetry', file);
