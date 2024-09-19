@@ -52,7 +52,7 @@ if( is_dir($target_dir) === false )
     
         //echo '<img src="'.$location.'" height="100" width="100" />';
     }*/
-    echo $_FILES['file']['tmp_name'];
+    echo $_FILES['file']['name'];
     $location = $target_dir . $name;
     $data = array();
     //check with your logic
