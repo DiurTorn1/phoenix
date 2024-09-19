@@ -19,7 +19,22 @@ if( is_dir($target_dir) === false )
     mkdir($target_dir, 0777, true);
     echo 'Create folder     ';
 }
-$name = $target_dir . $_FILES[$_POST['image']][$_POST['image_name']];
-move_uploaded_file($_FILES[$_POST['image']]["tmp_name.jpg"], $name);
-echo "Файл загружен";
+//$name = $target_dir . $_FILES[$_POST['image']][$_POST['image_name']];
+//move_uploaded_file($_FILES[$_POST['image']]["tmp_name.jpg"], $name);
+//echo "Файл загружен";
+$uploadfile = $target_dir . basename($_FILES[$_POST['image']][$_POST['image_name']]);
+
+    //echo "<p>";
+
+    if (move_uploaded_file($_FILES[$_POST['image']]['tmp_name'], $uploadfile)) {
+        echo "File is valid, and was successfully uploaded.\n";
+    } else {
+        echo "Upload failed";
+    }
+
+    //echo "</p>";
+    //echo '<pre>';
+    echo 'Here is some more debugging info:';
+    print_r($_FILES);
+    //print "</pre>";
 ?>
