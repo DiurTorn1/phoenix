@@ -317,7 +317,7 @@ $(document).ready(function() {
           reader.onloadend = function(e) { 
             //console.log(e.target.result);
             $('#img_poster_card').attr("src", e.target.result);
-            console.log(typeof(e.target.result));
+            console.log(e.target.result);
             image = e.target.result;
         };
         if( image == 'undefined' ){
