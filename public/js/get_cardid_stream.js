@@ -317,9 +317,10 @@ $(document).ready(function() {
           reader.onloadend = function(e) { 
             //console.log(e.target.result);
             $('#img_poster_card').attr("src", e.target.result);
+            console.log(typeof(e.target.result));
             image = e.target.result;
         };
-        if( typeof image == 'undefined' ){
+        if( image == 'undefined' ){
             alert("Image not load");
         } else {
             console.log(image);
