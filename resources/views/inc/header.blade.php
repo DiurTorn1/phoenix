@@ -25,7 +25,7 @@
 				<li><a href="#">Архив</a></li>
 			</ul>
 			<ul>
-				<li><a href="#">О нас</a></li>
+				<li><a href="/about">О нас</a></li>
 			</ul>
 		</navigation>
 	</div>
