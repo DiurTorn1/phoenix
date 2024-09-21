@@ -74,7 +74,19 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                                            //console.log(get_product);
+                var get_product_gl = '';
+                $.post('/php/get_product_public_name.php', {initial:item.name}, function(data)  {
+                    var output = $.parseJSON(data);
+                    var get_product = output? output[4]: '1';
+                    //console.log(output[1]);
+                    //product_global = output? output[1]: '1';
+                    if(get_product === item.name){
+                        get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                    } else {
+                        get_product_gl = '';
+                    }
+                });   
+                console.log(get_product_gl);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
@@ -110,17 +122,7 @@ $(document).ready(function() {
                                 '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
                             '</div>' + 
                         '</li>');
-                $.post('/php/get_product_public_name.php', {initial:item.name}, function(data)  {
-                        var output = $.parseJSON(data);
-                        var get_product = output? output[4]: '1';
-                        //console.log(output[1]);
-                        //product_global = output? output[1]: '1';
-                        if(get_product === item.name){
-                            $("#poster_rub").append('<img src="img/rub2.png" alt="" class="admin-video-prev-stik">');
-                        } else {
-                            console.log("product not");
-                        }
-                });    
+ 
                         
 
                     
