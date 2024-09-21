@@ -13,7 +13,7 @@ $ch = curl_init('https://uploader.kinescope.io/v2/poster');//https://api.kinesco
 //curl_setopt($ch, CURLOPT_POSTFIELDS, "page=1&per_page=100&order=created_at.desc,name.asc");
 //Set your auth headers
 //$tegs = $_POST['season'] . '&' . $_POST['turnir'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sporta'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
-$data = $_POST['data'];
+$data = 'https://phoenix.tehnodir.ru/img/banners/1vQAJMhfBUE.jpg';
 //$postdata = json_encode($data);
 //setup the request, you can also use CURLOPT_URL
 //$ch = curl_init('https://api.kinescope.io/v2/live/events');
