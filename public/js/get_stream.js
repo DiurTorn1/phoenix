@@ -93,9 +93,9 @@ $(document).ready(function() {
                     //} else {
                         //get_product_gl = '';
                     //}
-                    console.log("get_product_gl: " + get_product_gl);
+                    
                 });   
-                
+                console.log("get_product_gl: " + get_product_gl);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
