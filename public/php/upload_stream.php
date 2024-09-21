@@ -13,9 +13,9 @@ $data = array( "id" => $_POST['id'], "workspace_id" => $_POST['workspace_id'], "
                 "scheduled" => array("time" => $_POST['post_time']. ':00.000000Z'), "stream" => array( "id" => $_POST['stream_id_par'], "event_id" => $_POST['id'],
                 "status" => "pending", "started_at" => $_POST['post_time']. ':00.000000Z', "finished_at" => null), "chat_after_stream" => true, "chat_active" => $_POST['ch_chat'], "chat_preview" => true,
                 "show_members" => true, "created_at" => "2024-08-14T10:44:42.746261Z", "updated_at" => null, "latency_mode" => "standard", "allow_chat_links" => false, "moderators" => null,
-                "poster" => array("id" => $_POST['poster_id_par'], "type" => "image", "status" => "done", "active" => true, "original" => "https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b",
-                 "md" => "https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b", "sm" => "https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b",
-                 "xs" => "https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b", "from_time" => 0, "to_time" => 0) );
+                "poster" => array("id" => $_POST['poster_id_par'], "type" => "image", "status" => "done", "active" => true, "original" => "https://phoenix.tehnodir.ru/img/banners/1vQAJMhfBUE.jpg",
+                 "md" => "https://phoenix.tehnodir.ru/img/banners/1vQAJMhfBUE.jpg", "sm" => "https://phoenix.tehnodir.ru/img/banners/1vQAJMhfBUE.jpg",
+                 "xs" => "https://phoenix.tehnodir.ru/img/banners/1vQAJMhfBUE.jpg", "from_time" => 0, "to_time" => 0) );
                               
 $postdata = json_encode($data);
 

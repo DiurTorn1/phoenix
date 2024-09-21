@@ -58,7 +58,7 @@ $(document).ready(function() {
                         //console.log(output[1]);
                         //product_global = output? output[1]: '1';
                         if(get_product === item.name){
-                            console.log(get_product);
+                            //console.log(get_product);
                             //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                             $("#admin-video-list").append(
                                 '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
@@ -95,7 +95,7 @@ $(document).ready(function() {
                                 '</div>' + 
                             '</li>');
                         } else {
-                            console.log("No product in stream");
+                            //console.log("No product in stream");
                             $("#admin-video-list").append(
                                 '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
                                     '<div class="admin-video-sort-wrap">' + 
