@@ -81,7 +81,7 @@ $(document).ready(function() {
                     $.each(output1,function(i,item1){
                         //console.log(item1.initial);
                         if(item1.initial === initial_gl){
-                            console.log("Product find");
+                            get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                         }
                     });
                     //console.log(output1);
@@ -105,6 +105,7 @@ $(document).ready(function() {
                         '<div class="admin-video-prev" id="poster_rub">' + 
                             '<img src="' + item.poster.sm + '" alt="" class="" style="heigth: 100%; width: 100%">' +
                             //'<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
+
                             //'<p>Нет потока</p>' + 
                         '</div>' + 
                             '<div class="admin-video-item-header">' + 
