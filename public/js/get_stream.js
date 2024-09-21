@@ -76,8 +76,11 @@ $(document).ready(function() {
                 }
                 var get_product_gl = '';
                 $.post('/php/get_product_all.php', function(data)  {
-                    var output = $.parseJSON(data);
-                    console.log(output.initial);
+                    var output1 = $.parseJSON(data);
+                    $.each(output1,function(i,item1){
+                        console.log(item.initial);
+                    }
+                    //console.log(output.initial);
                     //var get_product = output? output[4]: '1';
                     //console.log(output[1]);
                     //product_global = output? output[1]: '1';
