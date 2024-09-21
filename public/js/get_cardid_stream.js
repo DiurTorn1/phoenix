@@ -344,9 +344,10 @@ $(document).ready(function() {
                 var output = $.parseJSON(data);
                 console.log(output);
                 if(output.error){
-                    alert('it is forbidden to edit the broadcast');
-                }
-                var list = output.data;
+                    alert('Стрим закончен! Редактирование не возможно!');
+                    window.location.href='/stream';
+                } else {
+                    var list = output.data;
                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                     if(list.id == params.get('admin_input_id')){
@@ -356,6 +357,8 @@ $(document).ready(function() {
                         alert("Ошибка редактирования!");
                         console.log(data);
                     }
+                }
+
                 
             });
             //$.post('/php/upload_poster.php', function(data){
