@@ -53,6 +53,7 @@ $(document).ready(function() {
                     gorod = "Нет такго города:" + item.parent_id;
                 }*/
                 var time_put, data_put;
+                var count_idch = 0;
                 if(item.stream.finished_at === null){
                     //console.log("Трансляцич не закончена.");
                     var parse_start = item.stream.started_at;
@@ -74,12 +75,13 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                    $.post('/php/get_product_public_name.php', {initial:item.name}, function(data)  {
+                $.post('/php/get_product_public_name.php', {initial:item.name}, function(data)  {
                         var output = $.parseJSON(data);
                         var get_product = output? output[4]: '1';
                         //console.log(output[1]);
                         //product_global = output? output[1]: '1';
-                        console.log("IDCH:  " + idch);
+                        count_idch = idch;
+                        console.log("IDCH:  " + count_idch);
                         if(get_product === item.name){
                             //console.log(get_product);
                             //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
@@ -154,7 +156,7 @@ $(document).ready(function() {
                                 '</div>' + 
                             '</li>');
                         }
-                    });
+                });
                     
                 idch++;
             });
