@@ -267,6 +267,9 @@ $(document).ready(function() {
                     }
                 
             });
+            $.post('/php/upload_poster.php', function(data){
+                console.log(data);
+            });
         }
 
         //alert("Сделайте загадочное лицо! Произошло что-то подозрительное!");
