@@ -343,9 +343,9 @@ $(document).ready(function() {
                 parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
                 var output = $.parseJSON(data);
                 console.log(output);
-                //if(output.error){
-
-                //}
+                if(output.error){
+                    alert('it is forbidden to edit the broadcast');
+                }
                 var list = output.data;
                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
