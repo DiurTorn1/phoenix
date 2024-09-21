@@ -349,7 +349,7 @@ $(document).ready(function() {
                 });
                 if(output.error){
                     alert('Стрим закончен! Редактирование не возможно!');
-                    window.location.href='/stream';
+                    //window.location.href='/stream';
                 } else {
                     var list = output.data;
                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
