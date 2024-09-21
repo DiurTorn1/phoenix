@@ -38,6 +38,7 @@ $(document).ready(function() {
                 gorod = pars[4];
                 boss = pars[5];
                 region = pars[6];
+                var product_global = '';
                 /*if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
                     gorod = "Все регионы";
                 } else if(item.parent_id == "e17efa12-a615-4be4-9aa4-95db02f7530f"){
@@ -51,6 +52,17 @@ $(document).ready(function() {
                 } else {
                     gorod = "Нет такго города:" + item.parent_id;
                 }*/
+                    $.post('/php/get_product_public_name.php', {initial:item.name}, function(data)  {
+                        var output = $.parseJSON(data);
+                        var get_product = output? output[4]: '1';
+                        //console.log(output[1]);
+                        //product_global = output? output[1]: '1';
+                        if(get_product === item.name){
+                            console.log(get_product);
+                        } else {
+                            console.log("No product in stream");
+                        }
+                    });
                     $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
