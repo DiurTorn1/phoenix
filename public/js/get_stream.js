@@ -38,7 +38,7 @@ $(document).ready(function() {
                 gorod = pars[4];
                 boss = pars[5];
                 region = pars[6];
-                var product_global = '';
+                //var product_global = '';
                 /*if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
                     gorod = "Все регионы";
                 } else if(item.parent_id == "e17efa12-a615-4be4-9aa4-95db02f7530f"){
@@ -59,47 +59,80 @@ $(document).ready(function() {
                         //product_global = output? output[1]: '1';
                         if(get_product === item.name){
                             console.log(get_product);
-                            product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                            //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                            $("#admin-video-list").append(
+                                '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
+                                    '<div class="admin-video-sort-wrap">' + 
+                                        '<input id="admin-vl' + idch +'" class="admin-video-sort-check" type="checkbox">' +
+                                        '<label class="admin-video-check-label" for="admin-vl' + idch + '"></label>' + 
+                                    '</div>' + 	
+                                    '<div class="admin-video-prev">' + 
+                                        '<img src="' + item.poster.sm + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                                        '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
+                                        //'<p>Нет потока</p>' + 
+                                    '</div>' + 
+                                    '<div class="admin-video-item-header">' + 
+                                        '<div class="admin-video-item-h-list">' + 
+                                        '<span class="admin-video-item-h-date">' + item.name + '</span>' +
+                                    '</div>' + 
+                                    '<div class="admin-video-item-h-hashtag">' + 
+                                        '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
+                                        '<span class="admin-video-hashtag-kubok">' + kubok + '</span>' +
+                                        '<span class="admin-video-hashtag-group">' + weigth + '</span>' +
+                                        '<span class="admin-video-hashtag-sport">'+ vid_sport +'</span>' +
+                                        '<span class="admin-video-hashtag-city">' + gorod + '</span>' +
+                                        '<span class="admin-video-hashtag-org">' + boss + '</span>' +
+                                    '</div>' +
+                                '</div>' +
+                                '<div class="admin-video-item-view">' +
+                                    '<p class="admin-video-item-v-count"><span></span>просмотра</p>' +
+                                    '<p class="admin-video-item-v-region">' + region + '</p>' +
+                                '</div>' +
+                                '<div class="admin-video-item-info admin-video-item-view">' +
+                                    '<p class="admin-video-item-i-time"><span></span></p>' +
+                                    '<p class="admin-video-item-i-date">' + item.stream.finished_at + '</p>' +
+                                    '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
+                                '</div>' + 
+                            '</li>');
                         } else {
                             console.log("No product in stream");
-                            product_global = '';
+                            $("#admin-video-list").append(
+                                '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
+                                    '<div class="admin-video-sort-wrap">' + 
+                                        '<input id="admin-vl' + idch +'" class="admin-video-sort-check" type="checkbox">' +
+                                        '<label class="admin-video-check-label" for="admin-vl' + idch + '"></label>' + 
+                                    '</div>' + 	
+                                    '<div class="admin-video-prev">' + 
+                                        '<img src="' + item.poster.sm + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                                        //'<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
+                                        //'<p>Нет потока</p>' + 
+                                    '</div>' + 
+                                    '<div class="admin-video-item-header">' + 
+                                        '<div class="admin-video-item-h-list">' + 
+                                        '<span class="admin-video-item-h-date">' + item.name + '</span>' +
+                                    '</div>' + 
+                                    '<div class="admin-video-item-h-hashtag">' + 
+                                        '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
+                                        '<span class="admin-video-hashtag-kubok">' + kubok + '</span>' +
+                                        '<span class="admin-video-hashtag-group">' + weigth + '</span>' +
+                                        '<span class="admin-video-hashtag-sport">'+ vid_sport +'</span>' +
+                                        '<span class="admin-video-hashtag-city">' + gorod + '</span>' +
+                                        '<span class="admin-video-hashtag-org">' + boss + '</span>' +
+                                    '</div>' +
+                                '</div>' +
+                                '<div class="admin-video-item-view">' +
+                                    '<p class="admin-video-item-v-count"><span></span>просмотра</p>' +
+                                    '<p class="admin-video-item-v-region">' + region + '</p>' +
+                                '</div>' +
+                                '<div class="admin-video-item-info admin-video-item-view">' +
+                                    '<p class="admin-video-item-i-time"><span></span></p>' +
+                                    '<p class="admin-video-item-i-date">' + item.stream.finished_at + '</p>' +
+                                    '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
+                                '</div>' + 
+                            '</li>');
                         }
                     });
-                    $("#admin-video-list").append(
-                    '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
-                        '<div class="admin-video-sort-wrap">' + 
-                            '<input id="admin-vl' + idch +'" class="admin-video-sort-check" type="checkbox">' +
-					        '<label class="admin-video-check-label" for="admin-vl' + idch + '"></label>' + 
-                        '</div>' + 	
-                        '<div class="admin-video-prev">' + 
-                            '<img src="' + item.poster.sm + '" alt="" class="" style="heigth: 100%; width: 100%">' +
-                            //'<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
-                            product_global +
-					        //'<p>Нет потока</p>' + 
-                        '</div>' + 
-                        '<div class="admin-video-item-header">' + 
-                            '<div class="admin-video-item-h-list">' + 
-                            '<span class="admin-video-item-h-date">' + item.name + '</span>' +
-					    '</div>' + 
-                        '<div class="admin-video-item-h-hashtag">' + 
-                            '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
-                            '<span class="admin-video-hashtag-kubok">' + kubok + '</span>' +
-					        '<span class="admin-video-hashtag-group">' + weigth + '</span>' +
-						    '<span class="admin-video-hashtag-sport">'+ vid_sport +'</span>' +
-						    '<span class="admin-video-hashtag-city">' + gorod + '</span>' +
-						    '<span class="admin-video-hashtag-org">' + boss + '</span>' +
-					    '</div>' +
-				    '</div>' +
-				    '<div class="admin-video-item-view">' +
-					    '<p class="admin-video-item-v-count"><span></span>просмотра</p>' +
-					    '<p class="admin-video-item-v-region">' + region + '</p>' +
-				    '</div>' +
-				    '<div class="admin-video-item-info admin-video-item-view">' +
-					    '<p class="admin-video-item-i-time"><span></span></p>' +
-					    '<p class="admin-video-item-i-date">' + item.stream.finished_at + '</p>' +
-					    '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
-				    '</div>' + 
-                '</li>');
+                    
                 idch++;
             });
             console.log("idch: "+idch);
