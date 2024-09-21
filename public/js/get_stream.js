@@ -65,7 +65,7 @@ $(document).ready(function() {
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 } else {
                     //console.log("Трансляция закончена: " + item.stream.finished_at)
-                    var parse_start = item.stream.item.stream.finished_at;
+                    var parse_start = item.stream.finished_at;
                     var res_parstart = parse_start.split("T");
                     var res_parstart1 = res_parstart[0].split("-");
                     var res_parstart2 = res_parstart[1].split(":");
