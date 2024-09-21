@@ -166,6 +166,7 @@ $(document).ready(function() {
                     var id = $("#admin-vl" + i).parent().parent().attr('id');
                     $.post('/php/delete_stream.php', {id:id}, function(data){
                         console.log("Delete stream: " + data);
+                        alert("Стрим удалён!");
                     });
                     
                 }
