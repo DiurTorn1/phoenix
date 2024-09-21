@@ -53,7 +53,13 @@ $(document).ready(function() {
                     gorod = "Нет такго города:" + item.parent_id;
                 }*/
                 if(item.stream.finished_at === null){
-                    console.log("Трансляцич не закончена.");
+                    //console.log("Трансляцич не закончена.");
+                    var parse_start = item.stream.started_at;
+                    var res_parstart = parse_start.split("T");
+                    var res_parstart1 = res_parstart[0].split("-");
+                    var res_parstart2 = res_parstart[1].split(":");
+                    console.log("Начало в: " + res_parstart2[0] + " " + res_parstart2[1]);
+                    console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                 } else {
                     console.log("Трансляция закончена: " + item.stream.finished_at)
                 }
