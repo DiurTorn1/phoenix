@@ -52,6 +52,11 @@ $(document).ready(function() {
                 } else {
                     gorod = "Нет такго города:" + item.parent_id;
                 }*/
+                if(item.stream.finished_at === null){
+                    console.log("Трансляцич не закончена.");
+                } else {
+                    console.log("Трансляция закончена: " + item.stream.finished_at)
+                }
                     $.post('/php/get_product_public_name.php', {initial:item.name}, function(data)  {
                         var output = $.parseJSON(data);
                         var get_product = output? output[4]: '1';

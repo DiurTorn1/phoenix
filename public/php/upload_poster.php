@@ -27,7 +27,7 @@ curl_setopt($ch, CURLOPT_HTTPHEADER, array(
     'Content-Type: text/plain',
     'Authorization: Bearer ' . $token,
     'X-Video-ID: 957651f6-3bec-4f14-8d3d-eceade5d48df',
-    'X-Poster-URL: https://phoenix.tehnodir.ru/'
+    'X-Poster-URL: https://phoenix.tehnodir.ru/img/banners/1vQAJMhfBUE.jpg'
 ));
 
 // get stringified data/output. See CURLOPT_RETURNTRANSFER
