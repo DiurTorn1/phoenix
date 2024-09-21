@@ -106,7 +106,7 @@ $(document).ready(function() {
                         '<div class="admin-video-prev" id="poster_rub">' + 
                             '<img src="' + item.poster.sm + '" alt="" class="" style="heigth: 100%; width: 100%">' +
                             //'<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
-
+                            get_product_gl +
                             //'<p>Нет потока</p>' + 
                         '</div>' + 
                             '<div class="admin-video-item-header">' + 
