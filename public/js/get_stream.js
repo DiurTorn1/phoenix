@@ -74,11 +74,15 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                var get_product_gl = '';
+                var get_product_gl = '', initial_gl;
+                initial_gl = item.name;
                 $.post('/php/get_product_all.php', function(data)  {
                     var output1 = $.parseJSON(data);
                     $.each(output1,function(i,item1){
-                        console.log(item1.initial);
+                        //console.log(item1.initial);
+                        if(item1.initial === initial_gl){
+                            console.log("Product find");
+                        }
                     });
                     //console.log(output1);
                     //var get_product = output? output[4]: '1';
