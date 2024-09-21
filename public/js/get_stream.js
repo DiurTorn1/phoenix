@@ -79,8 +79,8 @@ $(document).ready(function() {
                     var output1 = $.parseJSON(data);
                     $.each(output1,function(i,item1){
                         console.log(item1.initial);
-                    }
-                    //console.log(output.initial);
+                    });
+                    //console.log(output1);
                     //var get_product = output? output[4]: '1';
                     //console.log(output[1]);
                     //product_global = output? output[1]: '1';
