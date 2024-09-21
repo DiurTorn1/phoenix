@@ -344,6 +344,9 @@ $(document).ready(function() {
                 var output = $.parseJSON(data);
                 //console.log(output);
                 console.log("Image:" + main_image);
+                $.post('/php/upload_poster.php',{ data:main_image }, function(data){
+                    console.log(data);
+                });
                 if(output.error){
                     alert('Стрим закончен! Редактирование не возможно!');
                     window.location.href='/stream';
@@ -362,9 +365,7 @@ $(document).ready(function() {
 
                 
             });
-            //$.post('/php/upload_poster.php', function(data){
-                //console.log(data);
-            //});
+
             
         }
 
