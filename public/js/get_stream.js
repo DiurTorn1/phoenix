@@ -75,16 +75,17 @@ $(document).ready(function() {
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
                 var get_product_gl = '';
-                $.post('/php/get_product_public_name.php', {initial:item.name}, function(data)  {
+                $.post('/php/get_product_all.php', function(data)  {
                     var output = $.parseJSON(data);
-                    var get_product = output? output[4]: '1';
+                    console.log(output);
+                    //var get_product = output? output[4]: '1';
                     //console.log(output[1]);
                     //product_global = output? output[1]: '1';
-                    if(get_product == item.name){
-                        get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
-                    } else {
-                        get_product_gl = '';
-                    }
+                    //if(get_product == item.name){
+                        //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                    //} else {
+                        //get_product_gl = '';
+                    //}
                 });   
                 console.log("get_product_gl: " + get_product_gl);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
