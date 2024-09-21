@@ -6,6 +6,9 @@
        
 
 @section('content')
+<style type="text/css">
+      div.banner {display: none;}
+</style>
 <div class="user-text-wrapper">
 			<h3 class="user-h3">Служба технической поддержки </h3>	
 			<p class="user-text"><a class="user-link" href="mailto:hellp@ivs-arena.ru">hellp@ivs-arena.ru</a> - Все вопросы с оплатой и работой с личным кабинетом пользователя, доступом к просмотру игр на портале ФЕНИКС-ТВ.</p>
