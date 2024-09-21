@@ -131,7 +131,8 @@ $(document).ready(function() {
                     $.post('/php/get_stream_public.php', {name_stream:item.name}, function(data)  {
                         var output = $.parseJSON(data);
                         //$.each(output,function(i,item){
-                            if(output[1]==item.name){
+                        var pub_name = output? output[1]: '1';
+                            if(pub_name==item.name){
                                  $('#public_stream').hide();
                                  $('#unpublic_stream').show();
                              }
