@@ -117,7 +117,9 @@ $(document).ready(function() {
                         //product_global = output? output[1]: '1';
                         if(get_product === item.name){
                             $("#poster_rub").append('<img src="img/rub2.png" alt="" class="admin-video-prev-stik">');
-                        } 
+                        } else {
+                            console.log("product not");
+                        }
                 });    
                         
 
