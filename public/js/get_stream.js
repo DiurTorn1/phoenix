@@ -80,8 +80,9 @@ $(document).ready(function() {
                         var get_product = output? output[4]: '1';
                         //console.log(output[1]);
                         //product_global = output? output[1]: '1';
+                        var counttt;
                         count_idch = idch;
-                        console.log("IDCH:  " + count_idch);
+                        console.log("IDCH:  " + counttt);
                         if(get_product === item.name){
                             //console.log(get_product);
                             //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
@@ -156,6 +157,7 @@ $(document).ready(function() {
                                 '</div>' + 
                             '</li>');
                         }
+                        counttt++;
                 });
                     
                 idch++;
