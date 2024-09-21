@@ -136,8 +136,8 @@ $(document).ready(function() {
                                  $('#public_stream').hide();
                                  $('#unpublic_stream').show();
                              }
-                             console.log(output[2]);
-                             console.log(output[3]);
+                             //console.log(output[2]);
+                             //console.log(output[3]);
                        //});
                 
                     });
