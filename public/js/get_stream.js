@@ -78,14 +78,15 @@ $(document).ready(function() {
                 initial_gl = item.name;
                 $.post('/php/get_product_all.php', function(data)  {
                     var output1 = $.parseJSON(data);
+                    var key_post1 = 0;
                     $.each(output1,function(i,item1){
                         //console.log(item1.initial);
                         if(item1.initial === initial_gl){
                             //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
-                            key_post = 1;
+                            key_post1 = 1;
                         }
                     });
-                    
+                    key_post = key_post1;
                 });   
                 console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
