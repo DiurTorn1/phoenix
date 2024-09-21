@@ -78,7 +78,7 @@ $(document).ready(function() {
                 $.post('/php/get_product_all.php', function(data)  {
                     var output1 = $.parseJSON(data);
                     $.each(output1,function(i,item1){
-                        console.log(item.initial);
+                        console.log(item1.initial);
                     }
                     //console.log(output.initial);
                     //var get_product = output? output[4]: '1';
