@@ -155,7 +155,6 @@ $(document).ready(function() {
                                 '</div>' + 
                             '</li>');
                         }
-                        counttt++;
                 });
                     
                 idch++;
