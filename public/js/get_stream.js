@@ -74,21 +74,7 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                var get_product_gl = '', initial_gl, key_post = 0;
-                initial_gl = item.name;
-                $.post('/php/get_product_all.php', function(data)  {
-                    var output1 = $.parseJSON(data);
-                    var key_post1 = 0;
-                    $.each(output1,function(i,item1){
-                        //console.log(item1.initial);
-                        if(item1.initial === initial_gl){
-                            //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
-                            key_post1 = 1;
-                        }
-                    });
-                    key_post = key_post1;
-                    console.log("get_product_gl: " + key_post);
-                });   
+
                 
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
@@ -126,8 +112,17 @@ $(document).ready(function() {
                                 '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
                             '</div>' + 
                         '</li>');
- 
-                        
+                        initial_gl = item.name;
+                            $.post('/php/get_product_all.php', function(data)  {
+                                var output1 = $.parseJSON(data);
+                                $.each(output1,function(i,item1){
+                                //console.log(item1.initial);
+                                    if(item1.initial === initial_gl){
+                                        //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                                        $("#poster_rub").append('<img src="img/rub2.png" alt="" class="admin-video-prev-stik">');
+                                    }
+                                });
+                            });   
 
                     
                 idch++;
