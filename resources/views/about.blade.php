@@ -1,5 +1,10 @@
 @extends('layouts.app')
 @section('title-block') ГЛАВНАЯ - Феникс ТВ @endsection
+@include('inc.header')
+
+       
+
+@section('content')
 <main class="index-main">
 
 <!------------------ Окно Входа -------------------------->
@@ -44,11 +49,6 @@
 
         </form>
 </div>
-@include('inc.header')
-
-       
-
-@section('content')
 <div class="user-text-wrapper">
 			<h3 class="user-h3">Служба технической поддержки </h3>	
 			<p class="user-text"><a class="user-link" href="mailto:hellp@ivs-arena.ru">hellp@ivs-arena.ru</a> - Все вопросы с оплатой и работой с личным кабинетом пользователя, доступом к просмотру игр на портале ФЕНИКС-ТВ.</p>
