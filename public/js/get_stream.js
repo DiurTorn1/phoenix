@@ -52,16 +52,27 @@ $(document).ready(function() {
                 } else {
                     gorod = "Нет такго города:" + item.parent_id;
                 }*/
+                var time_put, data_put;
                 if(item.stream.finished_at === null){
                     //console.log("Трансляцич не закончена.");
                     var parse_start = item.stream.started_at;
                     var res_parstart = parse_start.split("T");
                     var res_parstart1 = res_parstart[0].split("-");
                     var res_parstart2 = res_parstart[1].split(":");
-                    console.log("Начало в: " + res_parstart2[0] + " " + res_parstart2[1]);
+                    console.log("Начало в: " + res_parstart2[0] + ":" + res_parstart2[1]);
+                    time_put = "Начало в: " + res_parstart2[0] + ":" + res_parstart2[1];
                     console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
+                    data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 } else {
-                    console.log("Трансляция закончена: " + item.stream.finished_at)
+                    //console.log("Трансляция закончена: " + item.stream.finished_at)
+                    var parse_start = item.stream.item.stream.finished_at;
+                    var res_parstart = parse_start.split("T");
+                    var res_parstart1 = res_parstart[0].split("-");
+                    var res_parstart2 = res_parstart[1].split(":");
+                    console.log("Закончено в: " + res_parstart2[0] + ":" + res_parstart2[1]);
+                    time_put = "Закончено в: " + res_parstart2[0] + ":" + res_parstart2[1];
+                    console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
+                    data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
                     $.post('/php/get_product_public_name.php', {initial:item.name}, function(data)  {
                         var output = $.parseJSON(data);
@@ -100,8 +111,8 @@ $(document).ready(function() {
                                     '<p class="admin-video-item-v-region">' + region + '</p>' +
                                 '</div>' +
                                 '<div class="admin-video-item-info admin-video-item-view">' +
-                                    '<p class="admin-video-item-i-time"><span></span></p>' +
-                                    '<p class="admin-video-item-i-date">' + item.stream.finished_at + '</p>' +
+                                    '<p class="admin-video-item-i-time"><span>' + time_put + '</span></p>' +
+                                    '<p class="admin-video-item-i-date">' + data_put + '</p>' +
                                     '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
                                 '</div>' + 
                             '</li>');
@@ -136,8 +147,8 @@ $(document).ready(function() {
                                     '<p class="admin-video-item-v-region">' + region + '</p>' +
                                 '</div>' +
                                 '<div class="admin-video-item-info admin-video-item-view">' +
-                                    '<p class="admin-video-item-i-time"><span></span></p>' +
-                                    '<p class="admin-video-item-i-date">' + item.stream.finished_at + '</p>' +
+                                    '<p class="admin-video-item-i-time"><span>' + time_put + '</span></p>' +
+                                    '<p class="admin-video-item-i-date">' + data_put + '</p>' +
                                     '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
                                 '</div>' + 
                             '</li>');
