@@ -59,9 +59,9 @@ $(document).ready(function() {
                     var res_parstart = parse_start.split("T");
                     var res_parstart1 = res_parstart[0].split("-");
                     var res_parstart2 = res_parstart[1].split(":");
-                    console.log("Начало в: " + res_parstart2[0] + ":" + res_parstart2[1]);
+                    //console.log("Начало в: " + res_parstart2[0] + ":" + res_parstart2[1]);
                     time_put = "Начало в: " + res_parstart2[0] + ":" + res_parstart2[1];
-                    console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
+                    //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 } else {
                     //console.log("Трансляция закончена: " + item.stream.finished_at)
@@ -69,9 +69,9 @@ $(document).ready(function() {
                     var res_parstart = parse_start.split("T");
                     var res_parstart1 = res_parstart[0].split("-");
                     var res_parstart2 = res_parstart[1].split(":");
-                    console.log("Закончено в: " + res_parstart2[0] + ":" + res_parstart2[1]);
+                    //console.log("Закончено в: " + res_parstart2[0] + ":" + res_parstart2[1]);
                     time_put = "Закончено в: " + res_parstart2[0] + ":" + res_parstart2[1];
-                    console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
+                    //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
                     $.post('/php/get_product_public_name.php', {initial:item.name}, function(data)  {
@@ -79,6 +79,7 @@ $(document).ready(function() {
                         var get_product = output? output[4]: '1';
                         //console.log(output[1]);
                         //product_global = output? output[1]: '1';
+                        console.log("IDCH:  " + idch);
                         if(get_product === item.name){
                             //console.log(get_product);
                             //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
