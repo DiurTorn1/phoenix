@@ -344,7 +344,8 @@ $(document).ready(function() {
                 var output = $.parseJSON(data);
                 //console.log(output);
                 console.log("Image:" + main_image);
-                $.post('/php/upload_poster.php',{ data:main_image }, function(data){
+                var parse_img = main_image.split(",");
+                $.post('/php/upload_poster.php',{ data:parse_img[1] }, function(data){
                     console.log(data);
                 });
                 if(output.error){
