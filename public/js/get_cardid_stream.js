@@ -180,17 +180,20 @@ $(document).ready(function() {
             image_name = file.file.name;
             reader.readAsDataURL(file.file);
             //var output = $.parseJSON(file);
-            var form_data = new FormData();
+            // var form_data = new FormData();
             reader.onloadend = function(e) { 
                 //console.log(e.target.result);
                 $('#img_poster_card').attr("src", e.target.result);
                 //console.log(e.target.result);
                 main_image = e.target.result;
-                var image_res = e.target.result;
+                $.post('/php/upload_banners.php', { image: e.target.result, image_name:image_name }, function(data)  {
+                    console.log(data);
+                });
+                //var image_res = e.target.result;
                 //console.log(image_res.split(',')[1]);
-                image = image_res.split(',')[1];
-                form_data.append('file',image);
-                $.ajax({
+                //image = image_res.split(',')[1];
+                //form_data.append('file',image);
+                /*$.ajax({
                     url:'/php/upload_banners.php',
                     method:'POST',
                     data:form_data,
@@ -208,7 +211,7 @@ $(document).ready(function() {
                     error: function(xhr, ajaxOptions, thrownError) {
                        console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
                     }
-                });
+                });*/
             };
 
           

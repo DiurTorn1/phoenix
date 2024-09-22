@@ -19,6 +19,8 @@ if( is_dir($target_dir) === false )
     mkdir($target_dir, 0755, true);
     echo 'Create folder     ';
 }
+
+echo $_POST['image_name'] . '   ---   ' . $_POST['image'];
 //$name = $target_dir . $_FILES[$_POST['image']][$_POST['image_name']];
 //move_uploaded_file($_FILES[$_POST['image']]["tmp_name.jpg"], $name);
 //echo "Файл загружен";
@@ -52,7 +54,7 @@ if( is_dir($target_dir) === false )
     
         //echo '<img src="'.$location.'" height="100" width="100" />';
     }*/
-    echo $_FILES['file']['name'];
+    /*echo $_FILES['file']['name'];
     $location = $target_dir . $name;
     $data = array();
     //check with your logic
@@ -71,7 +73,7 @@ if( is_dir($target_dir) === false )
         $data = ($error) ? array('error' => 'There was an error uploading your files') : array('files' => $files);
     } else {
         $data = array('success' => 'NO FILES ARE SENT','formData' => $_REQUEST);
-    }
+    }*/
 
     //echo json_encode($data);
 ?>
