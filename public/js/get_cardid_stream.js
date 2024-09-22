@@ -14,6 +14,7 @@ $(document).ready(function() {
     var name_stream = "";
     var type_stream = "";
     $('#unpublic_stream').hide();
+    $('#img_banner_trash').hide();
         var params = new window.URLSearchParams(window.location.search);
         //console.log("MSG:" + params.get('block-admin-input'));
 
