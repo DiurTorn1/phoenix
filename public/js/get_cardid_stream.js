@@ -164,6 +164,7 @@ $(document).ready(function() {
         });
     });
     var main_image;
+    var image, image_name = '';
     var r = new Resumable({
         target: '/'
       });
@@ -176,7 +177,7 @@ $(document).ready(function() {
             console.log(file.file);
             //$('#img_poster_card').attr("src", file.file);
             var reader = new FileReader();
-            var image, image_name = '';
+            
             image_name = file.file.name;
             reader.readAsDataURL(file.file);
             //var output = $.parseJSON(file);
@@ -190,7 +191,12 @@ $(document).ready(function() {
                 //console.log(image_res.split(',')[1]);
                 image = image_res.split(',')[1];
                 $.post('/php/upload_banners.php', { image: image, image_name:image_name }, function(data)  {
-                    console.log(data);
+                    //console.log(data);
+                    if(data === 'Successfully Uploaded'){ 
+                        //<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
+                        //$("#banners_turnir").append('<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>');
+                        $('#img_banner_trash').show();
+                    }
                 });
 
                 //form_data.append('file',image);
@@ -257,7 +263,11 @@ $(document).ready(function() {
           console.log('cancel');
         });
 
+    $("#img_banner_trash").on('click', function(){
+        $.post('/php/delete_banners.php', { image_name:image_name }, function(data)  {
 
+        });
+    });
         //alert();
         //$('#admin-input-main').appendVal();card_broadcast
     //});upload_stream
@@ -323,6 +333,9 @@ $(document).ready(function() {
                                 var output = $.parseJSON(data);
                                 //console.log(output);
                                 var list = output.data;
+                                $.post('/php/upload_poster.php',{ image_name:image_name, id:params.get('admin_input_id') }, function(data){
+                                    console.log(data);
+                                });
                                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                                     if(list.id == params.get('admin_input_id')){
@@ -349,7 +362,7 @@ $(document).ready(function() {
                 //console.log(output);
                 console.log("Image:" + main_image);
                 var parse_img = main_image.split(",");
-                $.post('/php/upload_poster.php',{ data:parse_img[1] }, function(data){
+                $.post('/php/upload_poster.php',{ image_name:image_name, id:params.get('admin_input_id') }, function(data){
                     console.log(data);
                 });
                 if(output.error){

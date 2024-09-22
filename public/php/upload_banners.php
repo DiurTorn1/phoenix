@@ -26,7 +26,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     
     $status = file_put_contents($path,base64_decode($image));
     if($status){
-     echo "Successfully Uploaded:" . $path;
+     echo "Successfully Uploaded";
     }else{
      echo "Upload failed";
     }

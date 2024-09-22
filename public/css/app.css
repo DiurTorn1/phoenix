@@ -2115,7 +2115,9 @@ td a:focus {
     }
 }
 
-
+#img_banner_trash{
+    display: none;
+}
 /*Slider*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 

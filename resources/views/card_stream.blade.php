@@ -32,8 +32,8 @@
 					</div>
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
 						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка турнира" id="img_poster_card"></a>
-						<div class="edit-preview-tournir">
-							<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
+						<div class="edit-preview-tournir" id="banners_turnir">
+							<a class="remove-preview-tournir" title="Удалить обложку" id="img_banner_trash"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
 						</div>
 					</div>	
 				</div>
