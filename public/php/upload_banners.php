@@ -24,7 +24,7 @@ if($_SERVER['REQUEST_METHOD']=='POST'){
     $image = $_POST['image'];
     $path = $target_dir . '/' . $_POST['image_name'];
     
-    $status = file_put_contents($path, $image);
+    $status = file_put_contents($path,base64_decode($image));
     if($status){
      echo "Successfully Uploaded";
     }else{
