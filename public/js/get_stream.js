@@ -2,7 +2,7 @@ $(document).ready(function() {
     
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
-        var idch = 0;
+        var idch = 0, key_post = 0;
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
             //console.log(data);
@@ -74,7 +74,7 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                var get_product_gl = '', initial_gl, key_post = 0;
+                var get_product_gl = '', initial_gl;
                 initial_gl = item.name;
                     $.post('/php/get_product_all.php', function(data)  {
                         var output1 = $.parseJSON(data);
@@ -87,7 +87,7 @@ $(document).ready(function() {
                             }
                         });
                         key_post = key_post1;
-                        console.log("get_product_gl: " + key_post);
+                        
                     });   
                 
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
@@ -126,7 +126,7 @@ $(document).ready(function() {
                             '</div>' + 
                         '</li>');
  
-                        
+                        console.log("get_product_gl: " + key_post);
 
                     
                 idch++;
