@@ -20,7 +20,19 @@ if( is_dir($target_dir) === false )
     echo 'Create folder     ';
 }
 
-echo $_POST['image_name'] . '   ---   ' . $_POST['image'];
+if($_SERVER['REQUEST_METHOD']=='POST'){
+    $image = $_POST['image'];
+    $path = $target_dir . '/' . $_POST['image_name'];
+    
+    $status = file_put_contents($path, $image);
+    if($status){
+     echo "Successfully Uploaded";
+    }else{
+     echo "Upload failed";
+    }
+}
+
+//echo $_POST['image_name'] . '   ---   ' . $_POST['image'];
 //$name = $target_dir . $_FILES[$_POST['image']][$_POST['image_name']];
 //move_uploaded_file($_FILES[$_POST['image']]["tmp_name.jpg"], $name);
 //echo "Файл загружен";
