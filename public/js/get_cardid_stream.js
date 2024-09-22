@@ -266,7 +266,10 @@ $(document).ready(function() {
 
     $("#img_banner_trash").on('click', function(){
         $.post('/php/delete_banners.php', { image_name:image_name }, function(data)  {
-
+            if(data === 'Successfully delete'){
+                alert('Баннер удалён');
+                $('#img_banner_trash').hide();
+            }
         });
     });
         //alert();
@@ -361,10 +364,18 @@ $(document).ready(function() {
                 parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
                 var output = $.parseJSON(data);
                 //console.log(output);
-                console.log("Image:" + main_image);
+                //console.log("Image:" + main_image);
                 var parse_img = main_image.split(",");
                 $.post('/php/upload_poster.php',{ image_name:image_name, id:params.get('admin_input_id') }, function(data){
-                    console.log(data);
+                    //console.log(data);
+                    var output = $.parseJSON(data);
+                    var list2 = output.data;
+                    $.each(list2,function(i,item2){
+                        if(item2.id == params.get('admin_input_id')){
+                            alert("Постер добавлен к стриму");
+                        }
+                    });
+
                 });
                 if(output.error){
                     alert('Стрим закончен! Редактирование не возможно!');
