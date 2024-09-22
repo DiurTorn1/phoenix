@@ -186,12 +186,13 @@ $(document).ready(function() {
                 $('#img_poster_card').attr("src", e.target.result);
                 //console.log(e.target.result);
                 main_image = e.target.result;
-                $.post('/php/upload_banners.php', { image: e.target.result, image_name:image_name }, function(data)  {
+                var image_res = e.target.result;
+                //console.log(image_res.split(',')[1]);
+                image = image_res.split(',')[1];
+                $.post('/php/upload_banners.php', { image: image, image_name:image_name }, function(data)  {
                     console.log(data);
                 });
-                //var image_res = e.target.result;
-                //console.log(image_res.split(',')[1]);
-                //image = image_res.split(',')[1];
+
                 //form_data.append('file',image);
                 /*$.ajax({
                     url:'/php/upload_banners.php',
