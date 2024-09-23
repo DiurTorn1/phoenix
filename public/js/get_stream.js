@@ -80,7 +80,7 @@ $(document).ready(function() {
                 $.post('/php/get_product_all.php', function(data)  {
                     
                     $.each(data,function(i,item1){
-                        console.log(item1.initial);
+                        console.log(item1);
                         //if(item1.initial === initial_gl){
                             //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                            // key_post = 1;
