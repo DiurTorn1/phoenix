@@ -99,7 +99,12 @@ $(document).ready(function() {
                 });
                 //console.log(json_product);
                 //console.log(pre_name);//array_product);
-                console.log("get_product_gl: " + key_post);
+                if(key_post){
+                    pre_name = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                }else{
+                    pre_name = '';
+                }
+                //console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
@@ -109,6 +114,7 @@ $(document).ready(function() {
                         '</div>' + 	
                         '<div class="admin-video-prev" id="poster_rub">' + 
                             '<img src="' + item.poster.md + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                            pre_name +
                             //'<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
                             //'<p>Нет потока</p>' + 
                         '</div>' + 
