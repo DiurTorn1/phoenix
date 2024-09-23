@@ -1,3 +1,5 @@
+var key_post;
+
 $(document).ready(function() {
     
     //$("#admin-video-list-btn").on('click', function(){
@@ -75,7 +77,7 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                var key_post = 0;
+                
                 initial_gl = item.name;
                 $.post('/php/get_product_all.php', function(data)  {
                     var output1 = $.parseJSON(data);
