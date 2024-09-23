@@ -8,8 +8,10 @@ $(document).ready(function() {
         var idch = 0;
 
         $.post('/php/get_product_all.php', function(data){
-            array_product.push(data);
-            console.log("Start:  " + array_product);
+            var output1 = $.parseJSON(data);
+            array_product.push(output1);
+            console.log("Pre: ");
+            console.log(array_product);
             //$.each(output1,function(i,item1){
                 //console.log(item1.initial);
                 //if(item1.initial === initial_gl){
@@ -19,6 +21,7 @@ $(document).ready(function() {
             //});
                 
         });
+        console.log("Post: ");
         console.log(array_product);
  
         $.post('/php/get_stream.php', function(data)  {
