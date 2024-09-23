@@ -2,7 +2,7 @@ var array_product = new Array();
 $(document).ready(function() {
     $.post('/php/get_product_all.php', function(data){
         array_product = $.parseJSON(data);
-        console.log(array_product);
+        console.log("Start:  " + array_product);
         //$.each(output1,function(i,item1){
             //console.log(item1.initial);
             //if(item1.initial === initial_gl){
