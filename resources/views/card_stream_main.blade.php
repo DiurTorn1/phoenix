@@ -38,11 +38,11 @@
 	</div>
 	<!----------------------------Стрим-контент---------------------------------->
         @yield('card_stream_res')
-	</main>
+
 	<!----------------->
         @endif
     @endforeach
     @endif
 @endguest
-
+</main>
 @endsection

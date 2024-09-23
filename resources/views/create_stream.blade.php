@@ -179,11 +179,11 @@
 		</div>
 		
 	</div>	
-	</main>
+	
 	<!----------------->
         @endif
     @endforeach
     @endif
 @endguest
-
+</main>
 @endsection

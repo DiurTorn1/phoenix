@@ -182,7 +182,7 @@
 		<p class="user-text">197375, Россия, Санкт-Петербург, ул. 2-я Алексеевская, д. 7, лит. А, пом. 27-Н, каб. 1.</p>
 		<p class="user-text"><a class="user-link" href="mailto:juniorbasket@inbox.ru">juniorbasket@inbox.ru</a></p>
 	</div>
+</main>
 @endsection
 
 
-</main>
