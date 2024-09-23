@@ -16,6 +16,7 @@ $(document).ready(function() {
             //});
                 
         }); 
+        console.log(array_product);
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
             //console.log(data);
@@ -135,7 +136,7 @@ $(document).ready(function() {
             console.log("idch: "+idch);
         });
 
-        console.log(array_product);
+        
         $("#delete_stream_checkbox").on('click', function() {
             for(var i = 0; i < idch; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
