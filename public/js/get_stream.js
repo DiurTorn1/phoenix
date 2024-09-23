@@ -83,6 +83,7 @@ $(document).ready(function() {
                     if(arra != null){
                         key_post = 1;
                     }
+                    console.log("key_post ::  " + key_post);
                     //console.log(array_product);
                     //$.each(output1,function(i,item1){
                         //console.log(item1.initial);
@@ -93,7 +94,7 @@ $(document).ready(function() {
                     //});
                         
                 }); 
-                console.log(key_post);
+                console.log("key_post1234 ::  " + key_post);
                 //console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
