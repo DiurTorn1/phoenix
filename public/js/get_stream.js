@@ -87,9 +87,10 @@ $(document).ready(function() {
                             put_key = 1;
                         }
                     });
-                    console.log("get_product_gl: " + put_key);  
+                    key_post = put_key;
                     put_key = 0;
                 });   
+                console.log("get_product_gl: " + key_post);  
                 
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
