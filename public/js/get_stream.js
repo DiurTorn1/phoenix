@@ -1,5 +1,18 @@
 var array_product = new Array();
-
+$(document).ready(function() {
+    $.post('/php/get_product_all.php', function(data){
+        array_product.push(data);
+        console.log("Start:  " + array_product);
+        //$.each(output1,function(i,item1){
+            //console.log(item1.initial);
+            //if(item1.initial === initial_gl){
+                //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                //key_post = 1;
+            //}
+        //});
+            
+    });
+});
 
 $(document).ready(function() {
     
@@ -166,20 +179,6 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-    $.post('/php/get_product_all.php', function(data){
-        array_product = $.parseJSON(data);
-        console.log("Start:  " + array_product);
-        //$.each(output1,function(i,item1){
-            //console.log(item1.initial);
-            //if(item1.initial === initial_gl){
-                //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
-                //key_post = 1;
-            //}
-        //});
-            
-    });
-});
 /**
  * $('.btn').click(function(){
    $('#'+$(this).data('id')).toggle();test_sell
