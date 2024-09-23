@@ -76,11 +76,14 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                //var key_post = 0;
+                var key_post = 0;
                 //initial_gl = item.name;
                 $.post('/php/get_product_public_name.php',{ initial:item.name }, function(data){
-                    array_product = $.parseJSON(data);
-                    console.log(array_product);
+                    var arra = $.parseJSON(data);
+                    if(arra != null){
+                        key_post = 1;
+                    }
+                    //console.log(array_product);
                     //$.each(output1,function(i,item1){
                         //console.log(item1.initial);
                         //if(item1.initial === initial_gl){
@@ -90,7 +93,7 @@ $(document).ready(function() {
                     //});
                         
                 }); 
-                console.log(array_product);
+                console.log(key_post);
                 //console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
