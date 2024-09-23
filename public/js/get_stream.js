@@ -4,9 +4,19 @@ $(document).ready(function() {
         var main = $('#admin-input-main').val();
         var idch = 0;
         var array_product = new Array();
-        $.post('/php/get_product_all.php', function(data){
-            array_product = $.parseJSON(data);
-            console.log(array_product);
+        $.ajax({
+            url: '/php/get_product_all.php',
+            method: 'post',
+            dataType: 'html',
+            data: {},
+            success: function(data){
+                array_product = $.parseJSON(data);
+                console.log(array_product);
+            }
+        });
+        //$.post('/php/get_product_all.php', function(data){
+            //array_product = $.parseJSON(data);
+            //console.log(array_product);
             //$.each(output1,function(i,item1){
                 //console.log(item1.initial);
                 //if(item1.initial === initial_gl){
@@ -15,7 +25,7 @@ $(document).ready(function() {
                 //}
             //});
                 
-        }); 
+        //}); 
         console.log(array_product);
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
