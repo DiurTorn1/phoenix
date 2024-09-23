@@ -88,7 +88,7 @@ $(document).ready(function() {
                 var key_post = 0;
                 var initial_gl = item.name, pre_name;
                 //$.each(array_product,function(i,item1){
-                    console.log(item1.initial);
+                    //console.log(item1.initial);
                     //if(item1.initial === initial_gl){
                     //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                     //key_post = 1;
