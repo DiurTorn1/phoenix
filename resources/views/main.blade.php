@@ -92,7 +92,11 @@
 			<div class="index-live-list">
 				<div class="index-live-item">
 					<div class="index-live-item-video">
-						<a href="#"></a>
+						<a href="#">
+							<div class="index-live-banner"><!-- БАННЕР ВИДЕО!! -->
+								<img src="img/phoenix.png">
+							</div>
+						</a>
 					</div>
 					<div class="index-item-text-wrap">
 						<a href="#">27.04.2024 Баскетбол ДБЛ "Аврора" Д 2013 Ф г. Окуневка</a>
