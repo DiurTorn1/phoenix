@@ -24,9 +24,7 @@
 @endguest
 	<!-- Прямая трансляция -->
 	<div class="index-live" id="index-live">
-		<div class="top-menu-head">
-			<h2 class="top-menu-title">Скоро</h2>
-		</div>
+		<h2>Скоро</h2>
 		<div id="slider-wrap">
          <div id="active-slide">
            <div id="slider">
@@ -47,9 +45,7 @@
 		</div>-->
 
 	
-		<div class="top-menu-head">
-			<h2 class="top-menu-title">В эфире</h2>
-		</div>
+		<h2>В эфире</h2>
 		<div class="live_item_stream" id ="live_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
 			<div class="index-live-item">
 				<div class="index-live-item-video">
