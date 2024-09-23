@@ -9,17 +9,7 @@ $(document).ready(function() {
 
         $.post('/php/get_product_all.php', function(data){
             var output1 = $.parseJSON(data);
-            array_product.push(output1);
-            //console.log("Pre: ");
-            //console.log(array_product);
-            //$.each(output1,function(i,item1){
-                //console.log(item1.initial);
-                //if(item1.initial === initial_gl){
-                    //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
-                    //key_post = 1;
-                //}
-            //});
-                
+            array_product.push(output1);   
         });
         //console.log("Post: ");
         //console.log(array_product);
@@ -95,9 +85,17 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                //var key_post = 0;
-                //initial_gl = item.name;
-                console.log(array_product);
+                var key_post = 0;
+                var initial_gl = item.name, pre_name;
+                $.each(array_product,function(i,item1){
+                //console.log(item1.initial);
+                    if(item1.initial === initial_gl){
+                    //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                    //key_post = 1;
+                        pre_name = item1.initial;
+                    }
+                });
+                console.log(pre_name);//array_product);
                 //console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
