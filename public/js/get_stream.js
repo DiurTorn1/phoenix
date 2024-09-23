@@ -23,7 +23,7 @@ $(document).ready(function() {
                     "\r\nmoderators: " + item.moderators);
                 console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                var vid_sport = "", key_post = 0;
+                var vid_sport = "";
                 var gorod = "";
                 var kubok = "";
                 var weigth = "";
@@ -75,7 +75,7 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                
+                var key_post = 0;
                 initial_gl = item.name;
                     $.post('/php/get_product_all.php', function(data)  {
                         var output1 = $.parseJSON(data);
@@ -84,10 +84,9 @@ $(document).ready(function() {
                             if(item1.initial === initial_gl){
                                 //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                                 key_post = 1;
-                                console.log("get_product_gl: " + key_post);
-                                key_post = 0;
                             }
                         });
+                        console.log("get_product_gl: " + key_post);
                         
                     });   
                 
