@@ -10,8 +10,8 @@ $(document).ready(function() {
         $.post('/php/get_product_all.php', function(data){
             var output1 = $.parseJSON(data);
             array_product.push(output1);
-            console.log("Pre: ");
-            console.log(array_product);
+            //console.log("Pre: ");
+            //console.log(array_product);
             //$.each(output1,function(i,item1){
                 //console.log(item1.initial);
                 //if(item1.initial === initial_gl){
@@ -21,8 +21,8 @@ $(document).ready(function() {
             //});
                 
         });
-        console.log("Post: ");
-        console.log(array_product);
+        //console.log("Post: ");
+        //console.log(array_product);
  
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
@@ -97,7 +97,7 @@ $(document).ready(function() {
                 }
                 //var key_post = 0;
                 //initial_gl = item.name;
-  
+                console.log(array_product);
                 //console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
