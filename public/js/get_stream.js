@@ -93,6 +93,7 @@ $(document).ready(function() {
                     //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                     //key_post = 1;
                         pre_name = item1.initial;
+                        console.log(pre_name);
                     }
                 });
                 console.log(pre_name);//array_product);
