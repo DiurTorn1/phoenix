@@ -148,7 +148,7 @@ p {
 	display: flex;
 	margin-top: -64px;
 	margin-bottom: -100px;
-	height: 100vh;
+	height: 70vh;
     overflow: hidden;
     position: relative;
 }
@@ -220,7 +220,7 @@ p {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    padding: 48px 0px 16px;
+    padding: 25px 0px 16px;
     margin-right: 4px;
     text-transform: uppercase;
 }
@@ -268,6 +268,7 @@ p {
     min-height: 23.7%;
 	padding-left: 1.3%;
 	padding-top: 24px;
+    z-index: 1;
 }
 .index-live-item-video a {
     border-radius: 4px;	
@@ -409,6 +410,13 @@ footer {
 .footer-center-column a:last-child {
 	margin-right: 0;
 }
+.footer-center-column a:hover,
+.footer-center-column a:active {
+    outline: none;
+    box-shadow: none;
+    color: rgb(245, 133, 5);
+}
+
 .footer-right-column {
 	display: flex;
 	justify-content: center;
