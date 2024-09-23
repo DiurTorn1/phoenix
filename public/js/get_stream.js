@@ -1,10 +1,26 @@
+var array_product = new Array();
+$(document).ready(function() {
+    $.post('/php/get_product_all.php', function(data){
+        array_product = $.parseJSON(data);
+        console.log(array_product);
+        //$.each(output1,function(i,item1){
+            //console.log(item1.initial);
+            //if(item1.initial === initial_gl){
+                //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                //key_post = 1;
+            //}
+        //});
+            
+    });
+});
+
 $(document).ready(function() {
     
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         var idch = 0;
-        var array_product = new Array();
-
+        console.log(array_product);
+ 
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
             //console.log(data);
@@ -76,26 +92,9 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                var key_post = 0;
+                //var key_post = 0;
                 //initial_gl = item.name;
-                $.post('/php/get_product_public_name_1.php',{ initial:item.name }, function(data){
-                    console.log(data);
-                    //var arra = $.parseJSON(data);
-                    //if(arra != null){
-                        key_post = 1;
-                    //}
-                    console.log("key_post ::  " + key_post);
-                    //console.log(array_product);
-                    //$.each(output1,function(i,item1){
-                        //console.log(item1.initial);
-                        //if(item1.initial === initial_gl){
-                            //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
-                            //key_post = 1;
-                        //}
-                    //});
-                        
-                }); 
-                console.log("key_post1234 ::  " + key_post);
+  
                 //console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
@@ -141,7 +140,7 @@ $(document).ready(function() {
             console.log("idch: "+idch);
         });
 
-        
+        console.log(array_product);
         $("#delete_stream_checkbox").on('click', function() {
             for(var i = 0; i < idch; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
