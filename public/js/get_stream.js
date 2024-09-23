@@ -2,7 +2,7 @@ $(document).ready(function() {
     
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
-        var idch = 0, key_post = 0;
+        var idch = 0;
         var get_product_gl = '', initial_gl;
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
@@ -23,7 +23,7 @@ $(document).ready(function() {
                     "\r\nmoderators: " + item.moderators);
                 console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                var vid_sport = "";
+                var vid_sport = "", key_post = 0;
                 var gorod = "";
                 var kubok = "";
                 var weigth = "";
