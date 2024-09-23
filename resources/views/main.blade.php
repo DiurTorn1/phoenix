@@ -53,11 +53,30 @@
 					<a href="#">
 						<span class="label">LIVE</span>
 					</a>
+					
+					<div class="index-live-banner"><!-- БАННЕР ВИДЕО!! -->
+						<img src="img/phoenix.png">
+					</div>
 				</div>
 				<div class="index-live-item-text">
-					<a href="#"></a>
+					<a href="#">27.04.2024 Баскетбол ДБЛ "Аврора" Д 2012 Ф г. Окуловка</a>
 				</div>
 			</div>
+			<div class="index-live-item">
+			<div class="index-live-item-video">
+				<a href="#">
+					<span class="label">LIVE</span>
+
+					<div class="index-live-banner"><!-- БАННЕР ВИДЕО!! -->
+						<img src="img/phoenix.png">
+					</div>
+
+				</a>
+			</div>
+			<div class="index-live-item-text">
+				<a href="#">27.04.2024 Баскетбол ДБЛ "Аврора" Д 2012 Ф г. Окуловка</a>
+			</div>
+		</div>
 		</div>
 
 		<div class = "slide_main">
