@@ -24,9 +24,7 @@
 @endguest
 	<!-- Прямая трансляция -->
 	<div class="index-live" id="index-live">
-		<div class="top-menu-head">
-			<h2 class="top-menu-title">Скоро</h2>
-		</div>
+		<h2 class="top-menu-title">Скоро</h2>
 		<div id="slider-wrap">
          	<div id="active-slide">
            		<div id="slider">
@@ -46,10 +44,9 @@
 			</div>	
 		</div>-->
 
-	
-		<div class="top-menu-head">
-			<h2 class="top-menu-title">В эфире</h2>
-		</div>
+	</div>
+	<div class="index-live">
+		<h2 class="top-menu-title">В эфире</h2>
 		<div class="live_item_stream" id ="live_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
 			<div class="index-live-item">
 				<div class="index-live-item-video">
@@ -65,37 +62,9 @@
 
 		<div class = "slide_main">
     	</div>
-		<div class="index-live">
-			<h2>Прямой эфир</h2>
-			<div class="index-live-list">
-				<div class="index-live-item">
-					<div class="index-live-item-video">
-						<a href="#">
-							<span class="label">LIVE</span>
-
-							<div class="index-live-banner"><!-- БАННЕР ВИДЕО!! -->
-								<img src="img/phoenix.png">
-							</div>
-
-						</a>
-					</div>
-					<div class="index-live-item-text">
-						<a href="#">27.04.2024 Баскетбол ДБЛ "Аврора" Д 2012 Ф г. Окуловка</a>
-					</div>
-				</div>
-				<div class="index-live-item">
-					<div class="index-live-item-video">
-						<a href="#">
-							<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>
-						</a>
-					</div>
-					<div class="index-live-item-text"> 
-						<a href="#">27.04.2024 Баскетбол ДБЛ "Аврора" Д 2013 Ф г. Окуневка</a>
-					</div>
-				</div>
-			</div>
-		</div>
-		<h2>Подписка</h2>
+	</div>
+	<div class="index-live">
+			<h2>Подписка</h2>
 			<div class="index-live-list">
 				<div class="index-live-item">
 					<div class="index-live-item-video">
@@ -159,6 +128,8 @@
 				</div>
 
 			</div>
+		</div>
+	
 		<!--<h2>Прямой эфир</h2>
 		<div class="index-live-list">
 			<div class="index-live-item">
@@ -179,7 +150,7 @@
 				</div>
 			</div>
 		</div>-->
-	</div>
+	
 	<!--<button class="publishBtn" id="publishBtn" value="">{{ __('Auth') }}</button>
 	<div id="res_reg"></div>-->
   
