@@ -3,7 +3,20 @@ $(document).ready(function() {
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         var idch = 0;
-        var get_product_gl = '', initial_gl;
+        var array_product = [];
+        $.post('/php/get_product_all.php', function(data){
+            array_product = data;
+            //var output1 = $.parseJSON(data);
+            //console.log(output1);
+            //$.each(output1,function(i,item1){
+                //console.log(item1.initial);
+                //if(item1.initial === initial_gl){
+                    //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                    //key_post = 1;
+                //}
+            //});
+                
+        }); 
         $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
             //console.log(data);
@@ -75,21 +88,10 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                var key_post = 0;
-                initial_gl = item.name;
-                $.post('/php/get_product_all.php', function(data)  {
-                    var output1 = $.parseJSON(data);
-                    console.log(output1);
-                    //$.each(output1,function(i,item1){
-                        //console.log(item1.initial);
-                        //if(item1.initial === initial_gl){
-                            //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
-                            key_post = 1;
-                        //}
-                    //});
-                        
-                });   
-                console.log("get_product_gl: " + key_post);
+                //var key_post = 0;
+                //initial_gl = item.name;
+  
+                //console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
@@ -133,6 +135,9 @@ $(document).ready(function() {
             });
             console.log("idch: "+idch);
         });
+
+        var output1 = $.parseJSON(array_product);
+        console.log(output1);
         $("#delete_stream_checkbox").on('click', function() {
             for(var i = 0; i < idch; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
