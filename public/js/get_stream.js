@@ -78,11 +78,12 @@ $(document).ready(function() {
                 }
                 var key_post = 0;
                 //initial_gl = item.name;
-                $.post('/php/get_product_public_name.php',{ initial:item.name }, function(data){
-                    var arra = $.parseJSON(data);
-                    if(arra != null){
+                $.post('/php/get_product_public_name_1.php',{ initial:item.name }, function(data){
+                    console.log(data);
+                    //var arra = $.parseJSON(data);
+                    //if(arra != null){
                         key_post = 1;
-                    }
+                    //}
                     console.log("key_post ::  " + key_post);
                     //console.log(array_product);
                     //$.each(output1,function(i,item1){
