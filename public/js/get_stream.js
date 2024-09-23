@@ -1,5 +1,3 @@
-var key_post;
-
 $(document).ready(function() {
     
     //$("#admin-video-list-btn").on('click', function(){
@@ -77,21 +75,21 @@ $(document).ready(function() {
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
-                
+                var key_post = 0;
                 initial_gl = item.name;
                 $.post('/php/get_product_all.php', function(data)  {
                     var output1 = $.parseJSON(data);
-                    key_post = 1;
+                    var put_key = 0;
                     $.each(output1,function(i,item1){
                         //console.log(item1.initial);
                         if(item1.initial === initial_gl){
                             //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
-                            key_post = 1;
+                            put_key = 1;
                         }
                     });
-                        
+                    console.log("get_product_gl: " + put_key);  
                 });   
-                console.log("get_product_gl: " + key_post);
+                
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
