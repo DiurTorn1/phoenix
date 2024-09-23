@@ -23,7 +23,6 @@ $(document).ready(function() {
                         '<div class="slide index-live-item" id="' + item.id + '">'+
                             '<div class="index-live-item-video">'+
                                 '<a >'+ 
-                                    '<span class="label"></span>'+ 
                                     '<div class="index-live-banner">' +
                                         '<img src="img/phoenix.png">' +
                                     '</div>' +
