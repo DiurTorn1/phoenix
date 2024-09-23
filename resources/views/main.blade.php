@@ -55,6 +55,10 @@
 				<div class="index-live-item-video">
 					<a href="#">
 						<span class="label">LIVE</span>
+
+						<div class="index-live-banner"><!-- БАННЕР ВИДЕО!! -->
+								<img src="img/phoenix.png">
+						</div>
 					</a>
 				</div>
 				<div class="index-live-item-text">
