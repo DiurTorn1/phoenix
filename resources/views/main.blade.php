@@ -159,8 +159,8 @@
 		</div>
 	<!--<button class="publishBtn" id="publishBtn" value="">{{ __('Auth') }}</button>
 	<div id="res_reg"></div>-->
-  
+</main>  
 @endsection
 
 
-</main>
+
