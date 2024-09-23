@@ -92,14 +92,14 @@ $(document).ready(function() {
                     //console.log(item1.initial);
                     if(item1.initial === initial_gl){
                     //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
-                    //key_post = 1;
-                        pre_name = item1.initial;
-                        console.log(pre_name);
+                        key_post = 1;
+                        //pre_name = item1.initial;
+                        //console.log(pre_name);
                     }
                 });
                 //console.log(json_product);
-                console.log(pre_name);//array_product);
-                //console.log("get_product_gl: " + key_post);
+                //console.log(pre_name);//array_product);
+                console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
