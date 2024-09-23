@@ -96,7 +96,8 @@ $(document).ready(function() {
                        // console.log(pre_name);
                     //}
                 //});
-                console.log(array_product);
+                var json_product = $.parseJSON(array_product);
+                console.log(json_product);
                 //console.log(pre_name);//array_product);
                 //console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
