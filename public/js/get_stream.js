@@ -5,8 +5,8 @@ $(document).ready(function() {
         var idch = 0;
         var array_product = new Array();
         $.post('/php/get_product_all.php', function(data){
-            array_product = data;
-            //console.log(output1);
+            array_product = $.parseJSON(data);
+            console.log(array_product);
             //$.each(output1,function(i,item1){
                 //console.log(item1.initial);
                 //if(item1.initial === initial_gl){
