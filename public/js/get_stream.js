@@ -3,10 +3,9 @@ $(document).ready(function() {
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         var idch = 0;
-        var array_product = [];
+        var array_product = new Array();
         $.post('/php/get_product_all.php', function(data){
-            var output1 = $.parseJSON(data);
-            array_product = output1;
+            array_product = $.parseJSON(data);
             //console.log(output1);
             //$.each(output1,function(i,item1){
                 //console.log(item1.initial);
