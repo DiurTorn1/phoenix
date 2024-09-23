@@ -78,7 +78,7 @@ $(document).ready(function() {
                 }
                 //var key_post = 0;
                 //initial_gl = item.name;
-                $.post('/php/get_product_public_name.php', function(data){
+                $.post('/php/get_product_public_name.php',{ initial:item.name }, function(data){
                     array_product = $.parseJSON(data);
                     console.log(array_product);
                     //$.each(output1,function(i,item1){
