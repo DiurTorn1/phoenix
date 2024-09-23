@@ -5,7 +5,7 @@ $(document).ready(function() {
         var idch = 0;
         var array_product = new Array();
         $.post('/php/get_product_all.php', function(data){
-            array_product = $.parseJSON(data);
+            array_product = data;
             //console.log(output1);
             //$.each(output1,function(i,item1){
                 //console.log(item1.initial);
