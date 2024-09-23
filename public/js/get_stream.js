@@ -5,8 +5,8 @@ $(document).ready(function() {
         var idch = 0;
         var array_product = [];
         $.post('/php/get_product_all.php', function(data){
-            array_product = data;
-            //var output1 = $.parseJSON(data);
+            var output1 = $.parseJSON(data);
+            array_product = output1;
             //console.log(output1);
             //$.each(output1,function(i,item1){
                 //console.log(item1.initial);
@@ -136,8 +136,7 @@ $(document).ready(function() {
             console.log("idch: "+idch);
         });
 
-        var output1 = $.parseJSON(array_product);
-        console.log(output1);
+        console.log(array_product);
         $("#delete_stream_checkbox").on('click', function() {
             for(var i = 0; i < idch; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
