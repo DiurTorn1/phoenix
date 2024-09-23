@@ -79,6 +79,7 @@ $(document).ready(function() {
                 initial_gl = item.name;
                     $.post('/php/get_product_all.php', function(data)  {
                         var output1 = $.parseJSON(data);
+                        key_post = 1;
                         $.each(output1,function(i,item1){
                         //console.log(item1.initial);
                             if(item1.initial === initial_gl){
