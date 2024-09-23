@@ -89,16 +89,16 @@ $(document).ready(function() {
                 var initial_gl = item.name, pre_name;
                 var json_product = $.parseJSON(array_product);
                 $.each(json_product,function(i,item1){
-                    console.log(item1.initial);
-                    //if(item1.initial === initial_gl){
+                    //console.log(item1.initial);
+                    if(item1.initial === initial_gl){
                     //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                     //key_post = 1;
-                       // pre_name = item1.initial;
-                       // console.log(pre_name);
-                    //}
+                        pre_name = item1.initial;
+                        console.log(pre_name);
+                    }
                 });
                 //console.log(json_product);
-                //console.log(pre_name);//array_product);
+                console.log(pre_name);//array_product);
                 //console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
