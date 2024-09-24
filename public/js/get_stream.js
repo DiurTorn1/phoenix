@@ -2,11 +2,16 @@ var array_product = new Array();
 var idch = 0;
 function dynamic_checkbox(){
     //video-btn-active
-    //Выбрано 0 стримов
-    var ch1 = $("#admin-vl" + i).is(':checked');
-    if(ch1){
-        
+    //
+    var int_ch =0;
+    for(var i = 0; i < idch; i++){
+        var ch1 = $("#admin-vl" + i).is(':checked');
+        if(ch1){
+            int_ch++;
+        }
     }
+
+    $('#inter_stream').val('Выбрано ' + int_ch + ' стримов');
 }
 
 $(document).ready(function() {
@@ -157,6 +162,9 @@ $(document).ready(function() {
             });
             console.log("idch: "+idch);
         });
+
+        dynamic_checkbox();
+        setInterval('dynamic_checkbox()',1000);
         $("#delete_stream_checkbox").on('click', function() {
             for(var i = 0; i < idch; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
