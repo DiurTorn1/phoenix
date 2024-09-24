@@ -37,7 +37,7 @@
 		<div class="admin-video-sort admin-back">
 			<div class="admin-video-sort-wrap">
 				<input class="admin-video-sort-check" id="admin-video-sort-check" type="checkbox">
-				<label class="admin-video-check-label" for="admin-video-sort-check"><!--Выбрано 0 стримов--></label>
+				<label class="admin-video-check-label" for="admin-video-sort-check" id="inter_stream"><!--Выбрано 0 стримов--></label>
 			</div>
 			<ul class="admin-video-sort-list">
 				<li class="admin-video-sort-item"><button class="admin-video-btn ">Опубликовать</button></li>
