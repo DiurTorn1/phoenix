@@ -337,9 +337,12 @@ $(document).ready(function() {
                                 var output = $.parseJSON(data);
                                 //console.log(output);
                                 var list = output.data;
-                                $.post('/php/upload_poster.php',{ image_name:image_name, id:params.get('admin_input_id') }, function(data){
-                                    console.log(data);
-                                });
+                                if(image_name){
+                                    $.post('/php/upload_poster.php',{ image_name:image_name, id:params.get('admin_input_id') }, function(data){
+                                        console.log(data);
+                                    });
+                                }
+                                
                                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                                     if(list.id == params.get('admin_input_id')){
@@ -366,17 +369,20 @@ $(document).ready(function() {
                 //console.log(output);
                 //console.log("Image:" + main_image);
                 //var parse_img = main_image.split(",");
-                $.post('/php/upload_poster.php',{ image_name:image_name, id:params.get('admin_input_id') }, function(data){
-                    //console.log(data);
-                    var output = $.parseJSON(data);
-                    var list2 = output.data;
-                    $.each(list2,function(i,item2){
-                        if(item2.id == params.get('admin_input_id')){
-                            alert("Постер добавлен к стриму");
-                        }
+                if(image_name){
+                    $.post('/php/upload_poster.php',{ image_name:image_name, id:params.get('admin_input_id') }, function(data){
+                        //console.log(data);
+                        var output = $.parseJSON(data);
+                        var list2 = output.data;
+                        $.each(list2,function(i,item2){
+                            if(item2.id == params.get('admin_input_id')){
+                                alert("Постер добавлен к стриму");
+                            }
+                        });
+    
                     });
+                }
 
-                });
                 if(output.error){
                     alert('Стрим закончен! Редактирование не возможно!');
                     //window.location.href='/stream';
