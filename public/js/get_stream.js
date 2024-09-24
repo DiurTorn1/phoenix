@@ -181,10 +181,16 @@ $(document).ready(function() {
                         //console.log(list.name);
                         $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data){
                             var output = $.parseJSON(data);
-                            console.log(output);
+                            //console.log(output);
                             var initial_get = output? output[1]: ''
                             if(initial_get){
                                 console.log(initial_get);
+                                $.post('/php/unpublic_stream.php', { name_stream: initial_get }, function(data){
+                                    if(data == "OK"){
+                                        alert("Продукт снят с публикации");
+                                    }
+                                    //console.log(data);
+                                });
                             }
                             
                         });
