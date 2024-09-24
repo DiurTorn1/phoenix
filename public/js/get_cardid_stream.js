@@ -413,6 +413,16 @@ $(document).ready(function() {
             //console.log(data);
         });
     });
+    $("#unpublic_stream").on('click', function(){
+        $.post('/php/unpublic_stream.php', { name_stream: name_stream }, function(data){
+            if(data == "OK"){
+                alert("Продукт снят с публикации");
+                $('#public_stream').show();
+                $('#unpublic_stream').hide();
+            }
+            //console.log(data);
+        });
+    });
     $("#card_stream_link").on('click', function(){
         window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });
