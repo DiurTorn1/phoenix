@@ -176,7 +176,9 @@ $(document).ready(function() {
                 if(ch1){
                     var id = $("#admin-vl" + i).parent().parent().attr('id');
                     $.post('/php/get_stream_id.php', {id:id}, function(data){
-                        console.log(data);
+                        var output = $.parseJSON(data);
+                        var list = output.data;
+                        console.log(list.name);
                     });
                     
                     //$.post('/php/delete_stream.php', {id:id}, function(data){
