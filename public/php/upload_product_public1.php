@@ -1,7 +1,7 @@
 <?php
 require "config_bd.php";
 
-$sql = "UPDATE `product_public_permission` SET `initial`='".$_POST['initial_set']."' WHERE initial=".$_POST['initial'];
+$sql = "UPDATE `product_public_permission` SET `initial`='".$_POST['initial_set']."' WHERE initial='".$_POST['initial']."'";
 
 //$result = $conn->query($sql);
 //$row = $result->fetch_row();
