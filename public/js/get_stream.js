@@ -174,10 +174,11 @@ $(document).ready(function() {
             for(var i = 0; i < idch; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
                 if(ch1){
+                    var id = $("#admin-vl" + i).parent().parent().attr('id');
                     $.post('/php/get_stream_id.php', {id:id}, function(data){
                         console.log(data);
                     });
-                    //var id = $("#admin-vl" + i).parent().parent().attr('id');
+                    
                     //$.post('/php/delete_stream.php', {id:id}, function(data){
                         //console.log("Delete stream: " + data);
                         //alert("Стрим удалён!");
