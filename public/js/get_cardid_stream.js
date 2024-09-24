@@ -365,7 +365,7 @@ $(document).ready(function() {
                 var output = $.parseJSON(data);
                 //console.log(output);
                 //console.log("Image:" + main_image);
-                var parse_img = main_image.split(",");
+                //var parse_img = main_image.split(",");
                 $.post('/php/upload_poster.php',{ image_name:image_name, id:params.get('admin_input_id') }, function(data){
                     //console.log(data);
                     var output = $.parseJSON(data);
