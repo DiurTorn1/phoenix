@@ -181,7 +181,7 @@ $(document).ready(function() {
                         //console.log(list.name);
                         $.post('/php/get_stream_public.php', {stream_name:list.name}, function(data){
                             var output = $.parseJSON(data);
-                            //console.log(output);
+                            console.log(output);
                             var initial_get = output? output[1]: ''
                             if(initial_get){
                                 console.log(output.initial);
