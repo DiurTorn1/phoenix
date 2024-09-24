@@ -197,7 +197,7 @@ $(document).ready(function() {
                         $.post('/php/get_product_public_name.php', { initial: list.name }, function(data){
                             var output = $.parseJSON(data);
                             //console.log(output);
-                            var initial_get = output? output[1]: ''
+                            var initial_get = output? output[4]: ''
                             if(initial_get){
                                 console.log(initial_get);
                                 $.post('/php/delete_product_public_name.php', { initial: initial_get }, function(data){
