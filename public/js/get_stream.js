@@ -179,7 +179,7 @@ $(document).ready(function() {
                         var output = $.parseJSON(data);
                         var list = output.data;
                         //console.log(list.name);
-                        $.post('/php/get_stream_public.php', {stream_name:list.name}, function(data){
+                        $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data){
                             var output = $.parseJSON(data);
                             console.log(output);
                             var initial_get = output? output[1]: ''
