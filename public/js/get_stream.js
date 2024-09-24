@@ -12,6 +12,9 @@ function dynamic_checkbox(){
     }
 
     $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
+    if(int_ch != 0){
+        $('.admin-video-btn').addClass('video-btn-active');
+    }
 }
 
 $(document).ready(function() {
