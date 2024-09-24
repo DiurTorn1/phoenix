@@ -164,7 +164,7 @@ $(document).ready(function() {
             });
             console.log("idch: "+idch);
         });
-        $('#inter_stream').val('Выбрано 0 стримов');
+        $('#inter_stream').text('Выбрано 0 стримов');
         $("#delete_stream_checkbox").on('click', function() {
             for(var i = 0; i < idch; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
