@@ -210,10 +210,10 @@ $(document).ready(function() {
                         });
                     });
                     
-                    //$.post('/php/delete_stream.php', {id:id}, function(data){
+                    $.post('/php/delete_stream.php', {id:id}, function(data){
                         //console.log("Delete stream: " + data);
-                        //alert("Стрим удалён!");
-                    //});
+                        alert("Стрим удалён!");
+                    });
                     
                 }
             }
