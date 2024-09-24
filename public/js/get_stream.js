@@ -181,10 +181,11 @@ $(document).ready(function() {
                         //console.log(list.name);
                         $.post('/php/get_product_public_name.php', {initial:list.name}, function(data){
                             var output = $.parseJSON(data);
-                            var initial_get = output? output[4]: ''
-                            if(initial_get){
-                                console.log(output.initial);
-                            }
+                            console.log(output);
+                            //var initial_get = output? output[4]: ''
+                            //if(initial_get){
+                                //console.log(output.initial);
+                            //}
                             
                         });
                     });
