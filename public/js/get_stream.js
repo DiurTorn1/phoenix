@@ -16,8 +16,8 @@ function dynamic_checkbox(){
 
 $(document).ready(function() {
     $('#inter_stream').val('Выбрано ' + 0 + ' стримов');
-    dynamic_checkbox();
-    setInterval('dynamic_checkbox()',200);
+    //dynamic_checkbox();
+    //setInterval('dynamic_checkbox()',200);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
