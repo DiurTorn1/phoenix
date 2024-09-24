@@ -196,7 +196,17 @@ $(document).ready(function() {
                         });
                         $.post('/php/get_product_public_name.php', { initial: list.name }, function(data){
                             var output = $.parseJSON(data);
-                            console.log(output);
+                            //console.log(output);
+                            var initial_get = output? output[1]: ''
+                            if(initial_get){
+                                console.log(initial_get);
+                                $.post('/php/delete_product_public_name.php', { initial: initial_get }, function(data){
+                                    if(data == "OK"){
+                                        alert("удалена зависимость стрима и продукта");
+                                    }
+                                    //console.log(data);
+                                });
+                            }
                         });
                     });
                     
