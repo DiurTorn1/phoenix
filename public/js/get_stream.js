@@ -194,6 +194,10 @@ $(document).ready(function() {
                             }
                             
                         });
+                        $.post('/php/get_product_public_name.php', { initial: list.name }, function(data){
+                            var output = $.parseJSON(data);
+                            console.log(output);
+                        });
                     });
                     
                     //$.post('/php/delete_stream.php', {id:id}, function(data){
