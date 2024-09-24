@@ -164,7 +164,7 @@ $(document).ready(function() {
         });
 
         dynamic_checkbox();
-        setInterval('dynamic_checkbox()',1000);
+        setInterval('dynamic_checkbox()',200);
         $("#delete_stream_checkbox").on('click', function() {
             for(var i = 0; i < idch; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
