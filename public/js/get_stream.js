@@ -13,9 +13,15 @@ function dynamic_checkbox(){
 
     $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
     if(int_ch != 0){
-        $('.admin-video-btn').addClass('video-btn-active');
+        $('.admin-video-btn1').addClass('video-btn-active');
+        $('.admin-video-btn2').addClass('video-btn-active');
+        $('.admin-video-btn3').addClass('video-btn-active');
+        $('.admin-video-btn4').addClass('video-btn-active');
     } else {
-        $('.admin-video-btn').removeClass('video-btn-active');
+        $('.admin-video-btn1').removeClass('video-btn-active');
+        $('.admin-video-btn2').removeClass('video-btn-active');
+        $('.admin-video-btn3').removeClass('video-btn-active');
+        $('.admin-video-btn4').removeClass('video-btn-active');
     }
 }
 
