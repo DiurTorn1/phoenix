@@ -15,7 +15,7 @@ function dynamic_checkbox(){
 }
 
 $(document).ready(function() {
-    $('#admin-video-sort-check').val('Выбрано ' + 0 + ' стримов');
+    $('.admin-video-check-label').val('Выбрано ' + 0 + ' стримов');
     //dynamic_checkbox();
     //setInterval('dynamic_checkbox()',200);
     //$("#admin-video-list-btn").on('click', function(){
