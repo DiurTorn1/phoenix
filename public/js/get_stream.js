@@ -1,11 +1,19 @@
 var array_product = new Array();
-
+var idch = 0;
+function dynamic_checkbox(){
+    //video-btn-active
+    //Выбрано 0 стримов
+    var ch1 = $("#admin-vl" + i).is(':checked');
+    if(ch1){
+        
+    }
+}
 
 $(document).ready(function() {
     
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
-        var idch = 0;
+        
 
         $.post('/php/get_product_all.php', function(data){
             //var output1 = $.parseJSON(data);

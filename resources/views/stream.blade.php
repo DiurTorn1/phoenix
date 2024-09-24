@@ -37,13 +37,13 @@
 		<div class="admin-video-sort admin-back">
 			<div class="admin-video-sort-wrap">
 				<input class="admin-video-sort-check" id="admin-video-sort-check" type="checkbox">
-				<label class="admin-video-check-label" for="admin-video-sort-check">Выбрано 0 стримов</label>
+				<label class="admin-video-check-label" for="admin-video-sort-check" id="inter_stream"><!--Выбрано 0 стримов--></label>
 			</div>
 			<ul class="admin-video-sort-list">
-				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Опубликовать</button></li>
-				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Снять с публикации</button></li>
-				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active" id="delete_stream_checkbox">Удалить</button></li>
-				<li class="admin-video-sort-item"><button class="admin-video-btn video-btn-active">Добавить к продукту</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn ">Опубликовать</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn ">Снять с публикации</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn " id="delete_stream_checkbox">Удалить</button></li>
+				<li class="admin-video-sort-item"><button class="admin-video-btn ">Добавить к продукту</button></li>
 			</ul>
 		</div>
 		<ul class="admin-video-list admin-video-sort" id="admin-video-list">
