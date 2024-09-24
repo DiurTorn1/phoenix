@@ -178,7 +178,14 @@ $(document).ready(function() {
                     $.post('/php/get_stream_id.php', {id:id}, function(data){
                         var output = $.parseJSON(data);
                         var list = output.data;
-                        console.log(list.name);
+                        //console.log(list.name);
+                        $.post('/php/get_product_public_name.php', {initial:list.name}, function(data){
+                            var output = $.parseJSON(data);
+                            if(output.initial){
+                                console.log(output.initial);
+                            }
+                            
+                        });
                     });
                     
                     //$.post('/php/delete_stream.php', {id:id}, function(data){
