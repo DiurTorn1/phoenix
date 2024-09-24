@@ -942,7 +942,7 @@ content: '\2713';
 .block-admin-right .block-admin-container {
     margin-right: 0;
 }
-..social-list-item {
+.social-list-item {
     text-decoration: none;
     outline: none;
     box-shadow: none;
@@ -2183,6 +2183,26 @@ td a:focus {
     font-weight: 500;
     color: #c4c4c494;
     letter-spacing: 1px;
+}
+
+.video-btn-active1 {
+    color: #fff;
+    cursor: pointer;
+}
+
+.video-btn-active2 {
+    color: #fff;
+    cursor: pointer;
+}
+
+.video-btn-active3 {
+    color: #fff;
+    cursor: pointer;
+}
+
+.video-btn-active4 {
+    color: #fff;
+    cursor: pointer;
 }
 /*Slider*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
