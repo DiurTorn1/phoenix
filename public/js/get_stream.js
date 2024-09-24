@@ -200,7 +200,7 @@ $(document).ready(function() {
                             var initial_get = output? output[4]: ''
                             if(initial_get){
                                 console.log(initial_get);
-                                $.post('/php/delete_product_public_name.php', { initial: initial_get }, function(data){
+                                $.post('/php/upload_product_public1.php', { initial: initial_get, initial_set: ''  }, function(data){
                                     if(data == "OK"){
                                         alert("удалена зависимость стрима и продукта");
                                     }
