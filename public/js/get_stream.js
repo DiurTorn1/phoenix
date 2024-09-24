@@ -15,7 +15,9 @@ function dynamic_checkbox(){
 }
 
 $(document).ready(function() {
-    
+    $('#inter_stream').val('Выбрано ' + 0 + ' стримов');
+    dynamic_checkbox();
+    setInterval('dynamic_checkbox()',200);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
@@ -163,8 +165,6 @@ $(document).ready(function() {
             console.log("idch: "+idch);
         });
 
-        dynamic_checkbox();
-        setInterval('dynamic_checkbox()',200);
         $("#delete_stream_checkbox").on('click', function() {
             for(var i = 0; i < idch; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
