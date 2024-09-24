@@ -184,7 +184,7 @@ $(document).ready(function() {
                             console.log(output);
                             var initial_get = output? output[1]: ''
                             if(initial_get){
-                                console.log(output.initial);
+                                console.log(initial_get);
                             }
                             
                         });
