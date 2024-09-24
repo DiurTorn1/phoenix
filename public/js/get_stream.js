@@ -11,13 +11,13 @@ function dynamic_checkbox(){
         }
     }
 
-    $('#inter_stream').val('Выбрано ' + int_ch + ' стримов');
+    $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
 }
 
 $(document).ready(function() {
     
-    //dynamic_checkbox();
-    //setInterval('dynamic_checkbox()',200);
+    dynamic_checkbox();
+    setInterval('dynamic_checkbox()',200);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
@@ -164,7 +164,7 @@ $(document).ready(function() {
             });
             console.log("idch: "+idch);
         });
-        $('#inter_stream').text('Выбрано 0 стримов');
+        
         $("#delete_stream_checkbox").on('click', function() {
             for(var i = 0; i < idch; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
