@@ -39,6 +39,7 @@ function get_stream_array(){
         
     });
     //console.log(pre_arr);
+
     //console.log(array_stream);
     //var list = json_product.data;
     return array_stream;
