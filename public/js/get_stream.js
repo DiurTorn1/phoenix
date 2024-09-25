@@ -18,8 +18,10 @@ function dynamic_checkbox(){
         $('.admin-video-btn3').removeClass('video-btn-active3');
     }
 }
-var array_stream = new Array();
+
 function get_stream_array(){
+
+    var array_stream = new Array();
     //for(var i = 0; i < 20; i++){
         //arr = ['push arr'];
         //array_stream.push(arr);
