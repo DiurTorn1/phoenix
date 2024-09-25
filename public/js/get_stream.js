@@ -27,7 +27,7 @@ function get_stream_array(){
         var arr = [];
         var count_loc = 0;
         $.each(output.data,function(i,item){
-            arr = [count, item.id]
+            arr = [count_loc, item.id]
             pre_arr.push(arr);
             count_loc++;
         });
