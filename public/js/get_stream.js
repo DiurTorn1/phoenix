@@ -36,7 +36,8 @@ function get_stream_array(){
             pre_arr.push(item.id);
         });
         //pre_arr.push(output.data);
-        console.log(pre_arr);
+        //console.log(pre_arr);
+        array_stream.push(pre_arr);
     });
     //console.log(pre_arr);
     //console.log(item.id);
