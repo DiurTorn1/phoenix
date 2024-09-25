@@ -39,7 +39,7 @@ function get_stream_array(){
         array_stream.push(pre_arr);
     });
     //console.log(pre_arr);
-    //console.log(item.id);
+    console.log(array_stream);
     //var list = json_product.data;
     //return array_stream;
 }
@@ -49,7 +49,7 @@ $(document).ready(function() {
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
     get_stream_array();
-    console.log(array_stream.length + " :: "+ array_stream);
+    //console.log(array_stream.length + " :: "+ array_stream);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
