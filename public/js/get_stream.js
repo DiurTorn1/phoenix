@@ -23,7 +23,7 @@ function get_stream_array(){
     var array_stream = new Array();
     var arr = [];
     for(var i = 0; i < 20; i++){
-        arr = [i, 'push arr'];
+        arr = ['num:'+i, 'id:'+'push arr'];
         array_stream.push(arr);
     }
     return array_stream;
@@ -34,7 +34,7 @@ $(document).ready(function() {
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
     var arr_stream = get_stream_array();
-    console.log(arr_stream);
+    console.log($.parseJSON(arr_stream));
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
