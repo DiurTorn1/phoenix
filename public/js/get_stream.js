@@ -21,7 +21,7 @@ function dynamic_checkbox(){
 
 function get_stream_array(){
 
-    var array_stream = new Array();
+    var array_stream = [];
     var count = 0;
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
