@@ -18,9 +18,8 @@ function dynamic_checkbox(){
         $('.admin-video-btn3').removeClass('video-btn-active3');
     }
 }
-
+var array_stream = new Array();
 function get_stream_array(){
-    var array_stream = new Array();
     //for(var i = 0; i < 20; i++){
         //arr = ['push arr'];
         //array_stream.push(arr);
@@ -42,15 +41,15 @@ function get_stream_array(){
     //console.log(pre_arr);
     //console.log(item.id);
     //var list = json_product.data;
-    return array_stream;
+    //return array_stream;
 }
 
 $(document).ready(function() {
     
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
-    var arr_stream = get_stream_array();
-    console.log(arr_stream.length + " :: "+arr_stream);
+    get_stream_array();
+    console.log(array_stream.length + " :: "+ array_stream);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
