@@ -123,9 +123,9 @@
 				<select class="admin-input admin-input-select restream-select">
 					<option value="">5</option>
 				</select>
-				<span>1-2</span>
+				<span id="span_select_list">1-2</span>
 				<p>из</p>
-				<span>2</span>
+				<span id="span_select_list_all"></span>
 				<button class="restream-select-btn" title="Назад">‹</button>
 				<button class="restream-select-btn" title="Вперед">›</button>
 			</div>

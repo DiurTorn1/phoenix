@@ -40,6 +40,11 @@ function get_stream_array(){
     });
     if(count_stream > 5){
         $('#block_select_stream_list').show();
+        var all_sel = 1;
+        for(var i=0; i < count_stream; i=i+5){
+            all_sel++;
+        }
+        $('#span_select_list_all').text(all_sel);
     }
     //console.log(count_stream);
     //console.log(array_stream);
