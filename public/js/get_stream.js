@@ -28,19 +28,15 @@ function get_stream_array(){
         var pre_arr = new Array();
         $.each(output.data,function(i,item){
             pre_arr.push(item.id);
+            count++;
         });
         //pre_arr.push(output.data);
-        //console.log(pre_arr.length);
+        console.log(count);
         for(var i = 0; i < pre_arr.length; i++){
             array_stream.push(pre_arr[i]);
             
         }
     });
-
-    for(var i = 0; i < 11; i++){
-        console.log(array_stream[i]);
-        
-    }
     //console.log(array_stream);
     //var list = json_product.data;
     return array_stream;
