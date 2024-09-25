@@ -33,11 +33,11 @@ function get_stream_array(){
         //console.log(pre_arr);
         count = count_loc;
         array_stream.push(pre_arr);
-        console.log(count);
     });
     //console.log(pre_arr);
     //console.log(array_stream);
     //var list = json_product.data;
+    console.log(count);
     return array_stream;
 }
 
