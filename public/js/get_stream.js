@@ -30,9 +30,10 @@ function get_stream_array(){
         var output = $.parseJSON(data);
         var list = output.data;
 
-        console.log(list);
+        //console.log(list);
         $.each(list,function(i,item){
-            array_stream.push(item.id);
+            arr = [item.id];
+            array_stream.push(arr);
         });
     });
     return array_stream;
