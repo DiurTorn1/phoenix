@@ -30,12 +30,10 @@ function get_stream_array(){
         });
         //pre_arr.push(output.data);
         //console.log(pre_arr.length);
-        var count_loc = 0;
         for(var i = 0; i < pre_arr.length; i++){
             array_stream.push(pre_arr[i]);
-            count_loc++;
+            count_stream = i;
         }
-        count_stream = count_loc;
         
     });
     //console.log(pre_arr);
