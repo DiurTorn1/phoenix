@@ -1,4 +1,5 @@
 var array_product = new Array();
+var array_stream = new Array();
 var idch = 0;
 function dynamic_checkbox(){
     //video-btn-active
@@ -20,18 +21,16 @@ function dynamic_checkbox(){
 }
 
 function get_stream_array(){
-    var array_stream = new Array();
     //for(var i = 0; i < 20; i++){
         //arr = ['push arr'];
         //array_stream.push(arr);
     //}
-    var pre_arr = new Array();
     $.post('/php/get_stream.php', function(data)  {
         //var output = $.parseJSON(data);
         //var list = output.data;
-        pre_arr.push(data);
+        array_stream.push(data);
     });
-    console.log(pre_arr);
+    console.log(array_stream);
     //var json_product = $.parseJSON(pre_arr);
     //var list = json_product.data;
     //$.each(list,function(i,item){
@@ -39,13 +38,15 @@ function get_stream_array(){
         //array_stream.push(arr);
         //console.log(item.id);
     //});
-    return array_stream;
+    //return array_stream;
 }
 
 $(document).ready(function() {
     
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
+    var arr_stream = get_stream_array();
+    //console.log(arr_stream.length+ " : "+arr_stream);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
@@ -251,9 +252,6 @@ $(document).ready(function() {
     //$("li").on('dblclick', function(){    
         //alert("Double penetration");
     //});
-    
-    var arr_stream = get_stream_array();
-    console.log(arr_stream.length+ " : "+arr_stream);
     
     $(document).on('dblclick', '.admin-video-item', function() {
         var id = this.id;
