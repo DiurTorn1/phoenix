@@ -1,5 +1,4 @@
 var array_product = new Array();
-var array_stream = new Array();
 var idch = 0;
 function dynamic_checkbox(){
     //video-btn-active
@@ -21,24 +20,27 @@ function dynamic_checkbox(){
 }
 
 function get_stream_array(){
+    var array_stream = new Array();
     //for(var i = 0; i < 20; i++){
         //arr = ['push arr'];
         //array_stream.push(arr);
     //}
+    var pre_arr = new Array();
     $.post('/php/get_stream.php', function(data)  {
         //var output = $.parseJSON(data);
         //var list = output.data;
-        array_stream.push(data);
+        pre_arr.push(data);
     });
-    console.log(array_stream);
-    //var json_product = $.parseJSON(pre_arr);
+    
+    var json_product = $.parseJSON(pre_arr);
+    console.log(json_product);
     //var list = json_product.data;
     //$.each(list,function(i,item){
         //arr = [item.id];
         //array_stream.push(arr);
         //console.log(item.id);
     //});
-    //return array_stream;
+    return array_stream;
 }
 
 $(document).ready(function() {
@@ -46,7 +48,7 @@ $(document).ready(function() {
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
     var arr_stream = get_stream_array();
-    //console.log(arr_stream.length+ " : "+arr_stream);
+    console.log(arr_stream.length+ " : "+arr_stream);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
