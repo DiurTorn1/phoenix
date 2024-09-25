@@ -19,9 +19,9 @@ function dynamic_checkbox(){
     }
 }
 var count_stream = 0;
+var array_stream = new Array();
 function get_stream_array(){
 
-    var array_stream = new Array();
     var count = 0;
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
@@ -41,7 +41,6 @@ function get_stream_array(){
     //console.log(count_stream);
     //console.log(array_stream);
     //var list = json_product.data;
-    return array_stream;
 }
 
 $(document).ready(function() {
@@ -50,7 +49,7 @@ $(document).ready(function() {
     setInterval('dynamic_checkbox()',200);
     get_stream_array();
     setInterval('get_stream_array()',200);
-    //console.log(get_arr_stream);
+    console.log(array_stream[0]);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
