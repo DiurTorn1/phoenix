@@ -27,8 +27,7 @@ function get_stream_array(){
         var output = $.parseJSON(data);
         var pre_arr = new Array();
         $.each(output.data,function(i,item){
-            pre_arr.push(count + ':' + item.id);
-            count++;
+            pre_arr.push(item.id);
         });
         //pre_arr.push(output.data);
         //console.log(pre_arr);
