@@ -21,7 +21,7 @@ function dynamic_checkbox(){
 
 function get_stream_array(){
 
-    var array_stream = [];
+    var array_stream = new Array();
     var count = 0;
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
@@ -36,8 +36,8 @@ function get_stream_array(){
             
         }
     });
-    var furia = $.parseJSON(array_stream);
-    console.log(furia);
+
+    //console.log(count);
     //console.log(array_stream);
     //var list = json_product.data;
     return array_stream;
