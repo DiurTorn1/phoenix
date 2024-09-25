@@ -31,14 +31,14 @@ function get_stream_array(){
         //var list = output.data;
         pre_arr.push(output);
     });
-    console.log(pre_arr);
+    //console.log(pre_arr);
     //console.log(item.id);
     //var list = json_product.data;
-    //$.each(pre_arr,function(i,item){
+    $.each(pre_arr,function(i,item){
         //arr = [item.id];
         //array_stream.push(arr);
-        //console.log(item);
-    //});
+        console.log(item);
+    });
     return array_stream;
 }
 
