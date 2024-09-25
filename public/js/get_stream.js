@@ -34,6 +34,11 @@ function get_stream_array(){
             array_stream.push(pre_arr[i]);
         }
     });
+    var count = 0;
+    $.each(array_stream,function(i,item){
+        count++;
+    });
+    console.log(count);
     //console.log(pre_arr);
     //console.log(array_stream);
     //var list = json_product.data;
@@ -46,11 +51,6 @@ $(document).ready(function() {
     setInterval('dynamic_checkbox()',200);
     var get_arr_stream = get_stream_array();
     console.log(get_arr_stream);
-    var count = 0;
-    $.each(get_arr_stream,function(i,item){
-        count++;
-    });
-    console.log(count);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
