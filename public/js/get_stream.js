@@ -25,14 +25,15 @@ function get_stream_array(){
         //arr = ['push arr'];
         //array_stream.push(arr);
     //}
-    var pre_arr = new Array();
+    //var pre_arr = new Array();
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         //var list = output.data;
         $.each(output.data,function(i,item){
         //arr = [item.id];
         //array_stream.push(arr);
-            console.log('ID_Stream: ' + item.id);
+            //console.log('ID_Stream: ' + item.id);
+            array_stream.push(item.id);
         });
         //pre_arr.push(output.data);
     });
