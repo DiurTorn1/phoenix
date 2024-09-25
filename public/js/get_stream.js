@@ -22,10 +22,18 @@ function dynamic_checkbox(){
 function get_stream_array(){
     var array_stream = new Array();
     var arr = [];
-    for(var i = 0; i < 20; i++){
-        arr = ['push arr'];
-        array_stream.push(arr);
-    }
+    //for(var i = 0; i < 20; i++){
+        //arr = ['push arr'];
+        //array_stream.push(arr);
+    //}
+    $.post('/php/get_stream.php', function(data)  {
+        var output = $.parseJSON(data);
+        var list = output.data;
+
+        $.each(list,function(i,item){
+            array_stream.push(item.id);
+        });
+    });
     return array_stream;
 }
 
