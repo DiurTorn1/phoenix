@@ -20,22 +20,21 @@ function dynamic_checkbox(){
 }
 
 function get_stream_array(){
-    var count = 0;
     var array_stream = new Array();
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         var pre_arr = new Array();
+        var arr = [];
         var count_loc = 0;
         $.each(output.data,function(i,item){
-            pre_arr.push(item.id);
+            arr = [count, item.id]
+            pre_arr.push(arr);
             count_loc++;
         });
         //pre_arr.push(output.data);
         //console.log(pre_arr);
-        count = count_loc;
         array_stream.push(pre_arr);        
     });
-    console.log(count);
     //console.log(pre_arr);
     //console.log(array_stream);
     //var list = json_product.data;
