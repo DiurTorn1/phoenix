@@ -2204,6 +2204,30 @@ td a:focus {
     color: #fff;
     cursor: pointer;
 }
+.video-btn-active1:hover {
+    outline: none;
+    box-shadow: none;
+    color: rgb(245, 133, 5);
+}
+
+.video-btn-active2:hover {
+    outline: none;
+    box-shadow: none;
+    color: rgb(245, 133, 5);
+}
+
+.video-btn-active3:hover {
+    outline: none;
+    box-shadow: none;
+    color: rgb(245, 133, 5);
+}
+
+.video-btn-active4:hover {
+    outline: none;
+    box-shadow: none;
+    color: rgb(245, 133, 5);
+}
+
 /*Slider*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 
