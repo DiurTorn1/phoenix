@@ -43,7 +43,7 @@ $(document).ready(function() {
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
     var get_arr_stream = get_stream_array();
-    console.log(get_arr_stream.length + " :: "+ get_arr_stream);
+    console.log(get_arr_stream);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
