@@ -29,7 +29,7 @@ function get_stream_array(){
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         //var list = output.data;
-        pre_arr.push(output);
+        pre_arr.push(output.data);
     });
     //console.log(pre_arr);
     //console.log(item.id);
@@ -37,7 +37,7 @@ function get_stream_array(){
     //$.each(pre_arr.data,function(i,item){
         //arr = [item.id];
         //array_stream.push(arr);
-        console.log(pre_arr.data);
+        console.log(pre_arr);
     //});
     return array_stream;
 }
