@@ -37,7 +37,7 @@ function get_stream_array(){
         }
     });
 
-    //console.log(count);
+    console.log(array_stream[1]);
     //console.log(array_stream);
     //var list = json_product.data;
     return array_stream;
