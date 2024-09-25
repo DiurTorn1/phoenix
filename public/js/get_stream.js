@@ -18,16 +18,16 @@ function dynamic_checkbox(){
         $('.admin-video-btn3').removeClass('video-btn-active3');
     }
 }
-
+var count = 0;
 function get_stream_array(){
 
     var array_stream = new Array();
-    var count = 0;
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         var pre_arr = new Array();
         $.each(output.data,function(i,item){
             pre_arr.push(item.id);
+            count++;
         });
         //pre_arr.push(output.data);
         //console.log(pre_arr);
@@ -44,6 +44,7 @@ $(document).ready(function() {
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
     var get_arr_stream = get_stream_array();
+    console.log(count);
     console.log(get_arr_stream);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
