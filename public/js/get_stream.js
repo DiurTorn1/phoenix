@@ -38,6 +38,9 @@ function get_stream_array(){
         }
         count_stream = count;
     });
+    if(count_stream > 5){
+        $('#block_select_stream_list').show();
+    }
     //console.log(count_stream);
     //console.log(array_stream);
     //var list = json_product.data;
@@ -51,10 +54,10 @@ $(document).ready(function() {
     setInterval('get_stream_array()',200);
         
 
-        $.post('/php/get_product_all.php', function(data){
-            //var output1 = $.parseJSON(data);
-            array_product.push(data);   
-        });
+    $.post('/php/get_product_all.php', function(data){
+        //var output1 = $.parseJSON(data);
+        array_product.push(data);   
+    });
         //console.log("Post: ");
         //console.log(array_product);
  
@@ -243,15 +246,6 @@ $(document).ready(function() {
             }
             
         });
-        //var month = label.val('month');
-        //var year = label.val('year');
-        //var text = label.text();
-        //alert(text);
-        //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
-        //$('#popup-back').toggle();
-    //$("li").on('dblclick', function(){    
-        //alert("Double penetration");
-    //});
     
     $(document).on('dblclick', '.admin-video-item', function() {
         var id = this.id;
@@ -260,13 +254,6 @@ $(document).ready(function() {
         //alert("Text: " + this.id);
     });
 
-
-    $("#test_sell").on('click', function(){
-        $.post('/php/sell_robokassa.php', function(data)  {
-            //console.log(data);
-            window.location.href=data;
-        });
-    });
 });
 
 /**
