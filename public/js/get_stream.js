@@ -30,15 +30,13 @@ function get_stream_array(){
         });
         //pre_arr.push(output.data);
         //console.log(pre_arr.length);
+        var count_loc = 0;
         for(var i = 0; i < pre_arr.length; i++){
             array_stream.push(pre_arr[i]);
+            count_loc++;
         }
+        console.log(count_loc);
     });
-    var count = 0;
-    $.each(array_stream,function(i,item){
-        count++;
-    });
-    console.log(count);
     //console.log(pre_arr);
     //console.log(array_stream);
     //var list = json_product.data;
