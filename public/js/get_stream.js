@@ -25,12 +25,13 @@ function get_stream_array(){
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         var pre_arr = new Array();
+        var count_loc = 0;
         $.each(output.data,function(i,item){
             pre_arr.push(item.id);
-            count++;
+            count_loc++;
         });
         //pre_arr.push(output.data);
-        //console.log(pre_arr);
+        console.log(count_loc);
         array_stream.push(pre_arr);
     });
     //console.log(pre_arr);
