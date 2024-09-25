@@ -36,9 +36,10 @@ function get_stream_array(){
             
         }
     });
-    for(var get in array_stream){
+    $.each(array_stream,function(i,item){
+        console.log(item);
         count++;
-    }
+    });
     console.log(count);
     //console.log(array_stream);
     //var list = json_product.data;
