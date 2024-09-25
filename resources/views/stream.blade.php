@@ -117,5 +117,18 @@
 				</div>
 			</li>-->
 		</ul>
+		<div class="block-admin-container soc-container admin-back">
+			<div class="restrem-manage-wrapper">
+				<p>Строк на странице:</p>
+				<select class="admin-input admin-input-select restream-select">
+					<option value="">5</option>
+				</select>
+				<span>1-2</span>
+				<p>из</p>
+				<span>2</span>
+				<button class="restream-select-btn" title="Назад">‹</button>
+				<button class="restream-select-btn" title="Вперед">›</button>
+			</div>
+		</div>
 		<!--<button id="test_sell">Sell</button>-->
 @endsection
