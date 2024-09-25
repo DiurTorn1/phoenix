@@ -47,7 +47,7 @@ $(document).ready(function() {
     setInterval('dynamic_checkbox()',200);
     get_stream_array();
     console.log(array_stream);
-    console.log(array_stream.length);
+    console.log(array_stream.size());
     
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
