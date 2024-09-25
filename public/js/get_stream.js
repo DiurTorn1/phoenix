@@ -34,20 +34,21 @@ function get_stream_array(){
         //console.log(pre_arr);
         count = count_loc;
         array_stream.push(pre_arr);
-        console.log(count);
+        //console.log(count);
     });
     //console.log(pre_arr);
     //console.log(array_stream);
     //var list = json_product.data;
-    return array_stream;
+    return count, array_stream;
 }
 
 $(document).ready(function() {
     
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
-    var get_arr_stream = get_stream_array();
+    var count, get_arr_stream = get_stream_array();
     console.log(get_arr_stream);
+    console.log(count);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
