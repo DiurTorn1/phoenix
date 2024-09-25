@@ -51,6 +51,10 @@ function get_stream_array(){
     //var list = json_product.data;
 }
 
+function paint_element_stream(){
+    
+}
+
 $(document).ready(function() {
     $('#block_select_stream_list').hide();
     dynamic_checkbox();
@@ -66,7 +70,7 @@ $(document).ready(function() {
         //console.log("Post: ");
         //console.log(array_product);
  
-        $.post('/php/get_stream.php', function(data)  {
+       /* $.post('/php/get_stream.php', function(data)  {
             //alert("Text:"+data);
             //console.log(data);
             var output = $.parseJSON(data);
@@ -102,19 +106,6 @@ $(document).ready(function() {
                 boss = pars[5];
                 region = pars[6];
                 //var product_global = '';
-                /*if(item.parent_id == "17a0ca02-6f6b-4b06-a75c-66ffb94916b7"){
-                    gorod = "Все регионы";
-                } else if(item.parent_id == "e17efa12-a615-4be4-9aa4-95db02f7530f"){
-                    gorod = "Волгоград";
-                }else if(item.parent_id == "dcd0f04b-a2d3-4159-8eec-cb2c5ef52688"){
-                    gorod = "Псков";
-                } else if(item.parent_id == "509b0459-c739-4a37-ba4d-e7fb2d5011d0"){
-                    gorod = "Деревня дедушки";
-                } else if(item.parent_id == "64fd885d-0244-4f9c-acd4-5d7dba6cd3f3"){
-                    gorod = "Урюпинск";
-                } else {
-                    gorod = "Нет такго города:" + item.parent_id;
-                }*/
                 var time_put, data_put;
                 if(item.stream.finished_at === null){
                     //console.log("Трансляцич не закончена.");
@@ -200,7 +191,7 @@ $(document).ready(function() {
                 idch++;
             });
             console.log("idch: "+idch);
-        });
+        });*/
         
         $("#delete_stream_checkbox").on('click', function() {
             for(var i = 0; i < idch; i++){
