@@ -34,7 +34,7 @@ function get_stream_array(){
             array_stream.push(pre_arr[i]);
         }
     });
-    //console.log(pre_arr);
+    console.log(array_stream.length);
     //console.log(array_stream);
     //var list = json_product.data;
     return array_stream;
@@ -46,7 +46,6 @@ $(document).ready(function() {
     setInterval('dynamic_checkbox()',200);
     var get_arr_stream = get_stream_array();
     console.log(get_arr_stream);
-    console.log(get_arr_stream.length);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
