@@ -18,7 +18,7 @@ function dynamic_checkbox(){
         $('.admin-video-btn3').removeClass('video-btn-active3');
     }
 }
-
+var count_stream = 0;
 function get_stream_array(){
 
     var array_stream = new Array();
@@ -35,7 +35,8 @@ function get_stream_array(){
             array_stream.push(pre_arr[i]);
             count_loc++;
         }
-        console.log(count_loc);
+        count_stream = count_loc;
+        
     });
     //console.log(pre_arr);
     //console.log(array_stream);
@@ -49,6 +50,7 @@ $(document).ready(function() {
     setInterval('dynamic_checkbox()',200);
     var get_arr_stream = get_stream_array();
     console.log(get_arr_stream);
+    console.log(count_stream);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
