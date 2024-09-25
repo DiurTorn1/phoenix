@@ -21,7 +21,7 @@ function dynamic_checkbox(){
 var count_stream = 0;
 var array_stream = new Array();
 function get_stream_array(){
-
+    
     var count = 0;
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
@@ -44,7 +44,7 @@ function get_stream_array(){
 }
 
 $(document).ready(function() {
-    
+    $('#block_select_stream_list').hide();
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
     get_stream_array();

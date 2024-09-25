@@ -117,7 +117,7 @@
 				</div>
 			</li>-->
 		</ul>
-		<div class="block-admin-container soc-container admin-back">
+		<div class="block-admin-container soc-container admin-back" id="block_select_stream_list">
 			<div class="restrem-manage-wrapper">
 				<p>Строк на странице:</p>
 				<select class="admin-input admin-input-select restream-select">
