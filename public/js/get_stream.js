@@ -50,7 +50,7 @@ $(document).ready(function() {
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
     var arr_stream = get_stream_array();
-    console.log(arr_stream.length+ " : "+arr_stream);
+    console.log(arr_stream.length + " :: "+arr_stream);
     //$("#admin-video-list-btn").on('click', function(){
         var main = $('#admin-input-main').val();
         
