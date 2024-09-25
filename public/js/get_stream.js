@@ -31,7 +31,8 @@ function get_stream_array(){
             count_loc++;
         });
         //pre_arr.push(output.data);
-        console.log(count_loc);
+        //console.log(count_loc);
+        count = count_loc;
         array_stream.push(pre_arr);
     });
     //console.log(pre_arr);
