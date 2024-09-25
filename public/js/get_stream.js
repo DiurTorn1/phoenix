@@ -34,7 +34,7 @@ function get_stream_array(){
     //console.log(pre_arr);
     //console.log(item.id);
     //var list = json_product.data;
-    $.each(pre_arr,function(i,item){
+    $.each(pre_arr.data,function(i,item){
         //arr = [item.id];
         //array_stream.push(arr);
         console.log(item);
