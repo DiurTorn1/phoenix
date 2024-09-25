@@ -33,10 +33,12 @@ function get_stream_array(){
         //console.log(pre_arr.length);
         for(var i = 0; i < pre_arr.length; i++){
             array_stream.push(pre_arr[i]);
-            count++;
+            
         }
     });
-
+    for(var get in array_stream){
+        count++;
+    }
     console.log(count);
     //console.log(array_stream);
     //var list = json_product.data;
