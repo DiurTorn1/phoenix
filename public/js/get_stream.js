@@ -185,7 +185,7 @@ function get_stream_array(){
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
         }
-        if(array_stream1[0]){
+        if(array_stream1[0] != undefined){
             paint_element_stream();
             key_paint = 1;
         }
