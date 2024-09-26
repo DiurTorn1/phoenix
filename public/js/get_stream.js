@@ -33,9 +33,9 @@ function paint_element_stream(){
         $.post('/php/get_stream_id.php',{ id:id_stream }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
-            console.log(output);
+            //console.log(output);
             var list = output.data;
-            /*$.each(list,function(i,item){
+            $.each(list,function(i,item){
                 
                 console.log("Video inform:\r\n");
                 console.log("id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
@@ -48,7 +48,7 @@ function paint_element_stream(){
                     "\r\nmoderators: " + item.moderators);
                 console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                     "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
-                var vid_sport = "";
+                /*var vid_sport = "";
                 var gorod = "";
                 var kubok = "";
                 var weigth = "";
@@ -142,13 +142,13 @@ function paint_element_stream(){
                                 '<p class="admin-video-item-i-date">' + data_put + '</p>' +
                                 '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
                             '</div>' + 
-                        '</li>');
+                        '</li>');*/
  
                         
 
                     
                 idch++;
-            });*/
+            });
         });
     }
 
