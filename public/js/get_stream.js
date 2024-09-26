@@ -28,11 +28,129 @@ function paint_element_stream(){
         //var output1 = $.parseJSON(data);
         array_product.push(data);   
     });
-    var id_stream = array_stream[0];
-    $.post('/php/get_stream_id.php',{ id:id_stream }, function(data)  {
-        console.log(data);
-        $("#admin-video-list").append('<p class="admin-video-item-v-region">test</p>');
-    });
+    for(var i = 0; i < 5; i ++){
+        var id_stream = array_stream[i];
+        $.post('/php/get_stream_id.php',{ id:id_stream }, function(data)  {
+            //console.log(data);
+            var output = $.parseJSON(data);
+            var list = output.data;
+            $.each(list,function(i,item){
+                
+                console.log("Video inform:\r\n");
+                console.log("id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
+                    "\r\ntype: " + item.type + "\r\nstreamkey: " + item.streamkey + "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift); 
+                console.log("\r\nRecord: \r\n parent_id: " + item.record.parent_id + "\r\nvideo: \r\n presets: " + item.video.presets + "\r\naudio: \r\n channel_mapping: " + item.audio.channel_mapping + 
+                    "\r\nreconnect_window:" + item.reconnect_window + "\r\nplay_link: " + item.play_link + "\r\nrtmp_link: " + item.rtmp_link + "\r\nscheduled: \r\n time: " + item.scheduled.time);
+                console.log("\r\nstream: \r\n id: " + item.stream.id + "\r\nevent_id: " + item.stream.event_id + "\r\nstatus: " + item.stream.status + "\r\nstarted_at: " + item.stream.started_at +  "\r\nfinished_at: " + item.stream.finished_at);
+                console.log("\r\nchat_after_stream: " + item.chat_after_stream + "\r\nchat_active: " + item.chat_active + "\r\nchat_preview: " + item.chat_preview + "\r\nshow_members: " + item.show_members +
+                    "\r\ncreated_at" + item.created_at + "\r\nupdated_at: " + item.updated_at + "\r\nlatency_mode: " + item.latency_mode + "\r\nallow_chat_links: " + item.allow_chat_links +
+                    "\r\nmoderators: " + item.moderators);
+                console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
+                    "\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
+                var vid_sport = "";
+                var gorod = "";
+                var kubok = "";
+                var weigth = "";
+                var sezon = "";
+                var boss = "";
+                var region = "";
+                var tegs = item.subtitle;
+                var pars = tegs.split("&");
+                sezon = pars[0];
+                kubok = pars[1];
+                weigth = pars[2];
+                vid_sport = pars[3];
+                gorod = pars[4];
+                boss = pars[5];
+                region = pars[6];
+                //var product_global = '';
+                var time_put, data_put;
+                if(item.stream.finished_at === null){
+                    //console.log("Трансляцич не закончена.");
+                    var parse_start = item.stream.started_at;
+                    var res_parstart = parse_start.split("T");
+                    var res_parstart1 = res_parstart[0].split("-");
+                    var res_parstart2 = res_parstart[1].split(":");
+                    //console.log("Начало в: " + res_parstart2[0] + ":" + res_parstart2[1]);
+                    time_put = "Начало в: " + res_parstart2[0] + ":" + res_parstart2[1];
+                    //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
+                    data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
+                } else {
+                    //console.log("Трансляция закончена: " + item.stream.finished_at)
+                    var parse_start = item.stream.finished_at;
+                    var res_parstart = parse_start.split("T");
+                    var res_parstart1 = res_parstart[0].split("-");
+                    var res_parstart2 = res_parstart[1].split(":");
+                    //console.log("Закончено в: " + res_parstart2[0] + ":" + res_parstart2[1]);
+                    time_put = "Закончено в: " + res_parstart2[0] + ":" + res_parstart2[1];
+                    //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
+                    data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
+                }
+                var key_post = 0;
+                var initial_gl = item.name, pre_name;
+                var json_product = $.parseJSON(array_product);
+                $.each(json_product,function(i,item1){
+                    //console.log(item1.initial);
+                    if(item1.initial === initial_gl){
+                    //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                        key_post = 1;
+                        //pre_name = item1.initial;
+                        //console.log(pre_name);
+                    }
+                });
+                //console.log(json_product);
+                //console.log(pre_name);//array_product);
+                if(key_post){
+                    pre_name = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                }else{
+                    pre_name = '';
+                }
+                //console.log("get_product_gl: " + key_post);
+                //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                $("#admin-video-list").append(
+                    '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
+                        '<div class="admin-video-sort-wrap">' + 
+                            '<input id="admin-vl' + idch +'" class="admin-video-sort-check" type="checkbox">' +
+                            '<label class="admin-video-check-label" for="admin-vl' + idch + '"></label>' + 
+                        '</div>' + 	
+                        '<div class="admin-video-prev" id="poster_rub">' + 
+                            '<img src="' + item.poster.md + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                            pre_name +
+                            //'<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
+                            //'<p>Нет потока</p>' + 
+                        '</div>' + 
+                            '<div class="admin-video-item-header">' + 
+                                '<div class="admin-video-item-h-list">' + 
+                                    '<span class="admin-video-item-h-date">' + item.name + '</span>' +
+                                '</div>' + 
+                                '<div class="admin-video-item-h-hashtag">' + 
+                                    '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
+                                    '<span class="admin-video-hashtag-kubok">' + kubok + '</span>' +
+                                    '<span class="admin-video-hashtag-group">' + weigth + '</span>' +
+                                    '<span class="admin-video-hashtag-sport">'+ vid_sport +'</span>' +
+                                    '<span class="admin-video-hashtag-city">' + gorod + '</span>' +
+                                    '<span class="admin-video-hashtag-org">' + boss + '</span>' +
+                                '</div>' +
+                            '</div>' +
+                            '<div class="admin-video-item-view">' +
+                                '<p class="admin-video-item-v-count"><span></span>просмотра</p>' +
+                                '<p class="admin-video-item-v-region">' + region + '</p>' +
+                            '</div>' +
+                            '<div class="admin-video-item-info admin-video-item-view">' +
+                                '<p class="admin-video-item-i-time"><span>' + time_put + '</span></p>' +
+                                '<p class="admin-video-item-i-date">' + data_put + '</p>' +
+                                '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
+                            '</div>' + 
+                        '</li>');
+ 
+                        
+
+                    
+                idch++;
+            });
+        });
+    }
+
 }
 
 
@@ -221,7 +339,7 @@ $(document).ready(function() {
         });*/
         
         $("#delete_stream_checkbox").on('click', function() {
-            for(var i = 0; i < idch; i++){
+            for(var i = 0; i < 5; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
                 if(ch1){
                     var id = $("#admin-vl" + i).parent().parent().attr('id');
