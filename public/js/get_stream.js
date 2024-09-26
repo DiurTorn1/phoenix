@@ -185,19 +185,19 @@ function get_stream_array(){
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
         }
-        if(array_stream1[0]){
+        if(array_stream1[0]!=undefined){
             paint_element_stream();
             key_paint = 1;
         }
 
     }
-    for(var i = 0; i < count_stream; i++){
-        if(array_stream[0]!=array_stream1[0]){
+    //for(var i = 0; i < count_stream; i++){
+    if(array_stream[0]!=array_stream1[0]){
             //setInterval('paint_element_stream()',100);
-            $("#admin-video-list").empty();
-            key_paint = 0;
-        }
+        $("#admin-video-list").empty();
+        key_paint = 0;
     }
+    //}
     //console.log(count_stream);
     //console.log(array_stream);
     //var list = json_product.data;
