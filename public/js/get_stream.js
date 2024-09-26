@@ -270,6 +270,8 @@ $(document).ready(function() {
             num_list1 = num_list1-5;
             $("#admin-video-list").empty();
             key_paint = 0;
+            console.log(num_list);
+            console.log(num_list1);
         }
     });
 
@@ -287,6 +289,8 @@ $(document).ready(function() {
            // var num_list2 = num_list1 - count_stream;
            // num_list1 = num_list1 - num_list2;
         //}
+        console.log(num_list);
+        console.log(num_list1);
         $("#admin-video-list").empty();
         key_paint = 0;
     });
