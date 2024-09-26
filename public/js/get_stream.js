@@ -20,6 +20,8 @@ function dynamic_checkbox(){
 }
 var count_stream = 0;
 var array_stream = new Array();
+var array_stream1 = new Array();
+var key_paint = 0;
 function get_stream_array(){
     
     var count = 0;
@@ -46,6 +48,16 @@ function get_stream_array(){
         }
         $('#span_select_list_all').text(all_sel);
     }
+    if(!key_paint){
+        for(var i = 0; i < count_stream; i++){
+            array_stream1.push(array_stream[i]);           
+        }
+        key_paint = 1;
+    }
+    if(array_stream[0]!=array_stream1[0]){
+        setInterval('paint_element_stream()',100);
+        key_paint = 0;
+    }
     //console.log(count_stream);
     //console.log(array_stream);
     //var list = json_product.data;
@@ -58,8 +70,8 @@ function paint_element_stream(){
     });
     var id_stream = array_stream[0];
     $.post('/php/get_stream_id.php',{ id:id_stream }, function(data)  {
-        //console.log(data);
-        //$("#admin-video-list").append('<p class="admin-video-item-v-region">test</p>');
+        console.log(data);
+        $("#admin-video-list").append('<p class="admin-video-item-v-region">test</p>');
     });
 }
 
@@ -70,7 +82,7 @@ $(document).ready(function() {
     get_stream_array();
     setInterval('get_stream_array()',200);
     paint_element_stream();
-    setInterval('paint_element_stream()',200);
+    //
         
 
 
