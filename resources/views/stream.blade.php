@@ -126,8 +126,8 @@
 				<span id="span_select_list">1-2</span>
 				<p>из</p>
 				<span id="span_select_list_all"></span>
-				<button class="restream-select-btn" title="Назад">‹</button>
-				<button class="restream-select-btn" title="Вперед">›</button>
+				<button class="restream-select-btn" title="Назад" id="bottom_list_stream">‹</button>
+				<button class="restream-select-btn" title="Вперед" id="next_list_stream">›</button>
 			</div>
 		</div>
 		<!--<button id="test_sell">Sell</button>-->
