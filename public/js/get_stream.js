@@ -26,6 +26,14 @@ var num_list = 0;
 var num_list1 = 5;
 
 function paint_element_stream(){
+    if(count_stream > 5){
+        $('#block_select_stream_list').show();
+        var all_sel = 0;
+        for(var i=0; i < count_stream; i=i+5){
+            all_sel++;
+        }
+        $('#span_select_list_all').text(all_sel);
+    }
     $.post('/php/get_product_all.php', function(data){
         //var output1 = $.parseJSON(data);
         array_product.push(data);   
@@ -176,19 +184,11 @@ function get_stream_array(){
         }
         count_stream = count;
     });
-    if(count_stream > 5){
-        $('#block_select_stream_list').show();
-        var all_sel = 0;
-        for(var i=0; i < count_stream; i=i+5){
-            all_sel++;
-        }
-        $('#span_select_list_all').text(all_sel);
-    }
     if(!key_paint){
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
         }
-        if(array_stream1[0] != undefined){
+        if(array_stream1[0]){
             paint_element_stream();
             key_paint = 1;
         }
