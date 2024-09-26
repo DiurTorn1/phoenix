@@ -22,6 +22,20 @@ var count_stream = 0;
 var array_stream = new Array();
 var array_stream1 = new Array();
 var key_paint = 0;
+
+function paint_element_stream(){
+    $.post('/php/get_product_all.php', function(data){
+        //var output1 = $.parseJSON(data);
+        array_product.push(data);   
+    });
+    var id_stream = array_stream[0];
+    $.post('/php/get_stream_id.php',{ id:id_stream }, function(data)  {
+        console.log(data);
+        $("#admin-video-list").append('<p class="admin-video-item-v-region">test</p>');
+    });
+}
+
+
 function get_stream_array(){
     
     var count = 0;
@@ -61,18 +75,6 @@ function get_stream_array(){
     //console.log(count_stream);
     //console.log(array_stream);
     //var list = json_product.data;
-}
-
-function paint_element_stream(){
-    $.post('/php/get_product_all.php', function(data){
-        //var output1 = $.parseJSON(data);
-        array_product.push(data);   
-    });
-    var id_stream = array_stream[0];
-    $.post('/php/get_stream_id.php',{ id:id_stream }, function(data)  {
-        console.log(data);
-        $("#admin-video-list").append('<p class="admin-video-item-v-region">test</p>');
-    });
 }
 
 $(document).ready(function() {
