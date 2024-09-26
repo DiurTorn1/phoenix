@@ -52,7 +52,15 @@ function get_stream_array(){
 }
 
 function paint_element_stream(){
-    
+    $.post('/php/get_product_all.php', function(data){
+        //var output1 = $.parseJSON(data);
+        array_product.push(data);   
+    });
+    var id_stream = array_stream[0];
+    $.post('/php/get_stream_id.php',{ id:id_stream }, function(data)  {
+        console.log(data);
+        $("#admin-video-list").append('<p class="admin-video-item-v-region">test</p>');
+    });
 }
 
 $(document).ready(function() {
@@ -61,12 +69,11 @@ $(document).ready(function() {
     setInterval('dynamic_checkbox()',200);
     get_stream_array();
     setInterval('get_stream_array()',200);
+    paint_element_stream();
+    setInterval('paint_element_stream()',200);
         
 
-    $.post('/php/get_product_all.php', function(data){
-        //var output1 = $.parseJSON(data);
-        array_product.push(data);   
-    });
+
         //console.log("Post: ");
         //console.log(array_product);
  
