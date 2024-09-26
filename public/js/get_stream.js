@@ -34,7 +34,7 @@ function paint_element_stream(){
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
-            console.log(list);
+            console.log(list.id);
             //$.each(list,function(i,item){
                 //console.log(item);
                 //console.log("Video inform:\r\n");
