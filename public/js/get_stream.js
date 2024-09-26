@@ -181,11 +181,11 @@ function get_stream_array(){
         }
         $('#span_select_list_all').text(all_sel);
     }
-    if(!key_paint){
+    if(!key_paint && array_stream[0] != undefined){
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
         }
-        if(array_stream1[0]!=undefined){
+        if(array_stream1[0]){
             paint_element_stream();
             key_paint = 1;
         }
