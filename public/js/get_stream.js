@@ -66,8 +66,11 @@ function get_stream_array(){
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
         }
-        paint_element_stream();
-        key_paint = 1;
+        if(array_stream1[0]){
+            paint_element_stream();
+            key_paint = 1;
+        }
+
     }
     if(array_stream[0]!=array_stream1[0]){
         //setInterval('paint_element_stream()',100);
