@@ -114,7 +114,7 @@ function paint_element_stream(){
                             '<label class="admin-video-check-label" for="admin-vl' + idch + '"></label>' + 
                         '</div>' + 	
                         '<div class="admin-video-prev" id="poster_rub">' + 
-                            '<img src="' + list.poster.md + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                            '<img src="' + list.poster.original + '" alt="" class="" style="heigth: 100%; width: 100%">' +
                             pre_name +
                             //'<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
                             //'<p>Нет потока</p>' + 
