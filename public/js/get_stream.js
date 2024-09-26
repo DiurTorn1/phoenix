@@ -22,13 +22,15 @@ var count_stream = 0;
 var array_stream = new Array();
 var array_stream1 = new Array();
 var key_paint = 0;
+var num_list = 0;
+var num_list1 = 5;
 
 function paint_element_stream(){
     $.post('/php/get_product_all.php', function(data){
         //var output1 = $.parseJSON(data);
         array_product.push(data);   
     });
-    for(var i = 0; i < 5; i ++){
+    for(var i = num_list; i < num_list1; i ++){
         var id_stream = array_stream[i];
         $.post('/php/get_stream_id.php',{ id:id_stream }, function(data)  {
             //console.log(data);
