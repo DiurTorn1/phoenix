@@ -66,10 +66,11 @@ function get_stream_array(){
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
         }
+        paint_element_stream();
         key_paint = 1;
     }
     if(array_stream[0]!=array_stream1[0]){
-        setInterval('paint_element_stream()',100);
+        //setInterval('paint_element_stream()',100);
         key_paint = 0;
     }
     //console.log(count_stream);
@@ -83,7 +84,6 @@ $(document).ready(function() {
     setInterval('dynamic_checkbox()',200);
     get_stream_array();
     setInterval('get_stream_array()',200);
-    paint_element_stream();
     //
         
 
