@@ -44,17 +44,17 @@ function paint_element_stream(){
             console.log("\r\nchat_after_stream: " + list.chat_after_stream + "\r\nchat_active: " + list.chat_active + "\r\nchat_preview: " + list.chat_preview + "\r\nshow_members: " + list.show_members +
                 "\r\ncreated_at" + list.created_at + "\r\nupdated_at: " + list.updated_at + "\r\nlatency_mode: " + list.latency_mode + "\r\nallow_chat_links: " + list.allow_chat_links +
                 "\r\nmoderators: " + list.moderators);
-            console.log("\r\nposter \r\nid:" + list.poster.id + "\r\ntype: " + list.poster.type + "\r\nstatus" + list.poster.status + "\r\nactive: " + list.poster.active + "\r\noriginal: " + 
+            console.log("\r\nposter \r\nid:" + list.poster.id + "\r\ntype: " + list.poster.type + "\r\nstatus" + list.poster.status + "\r\nactive: " + list.poster.active + "\r\noriginal: " + list.poster.original +
                 "\r\nmd: " + list.poster.md + "\r\nsm: " + list.poster.sm + "\r\nxs: " + list.poster.xs +"\r\nfrom_time" + list.poster.from_time + "\r\nto_time" + list.poster.to_time);
-            //$.each(list,function(i,item){
-                /*var vid_sport = "";
+
+                var vid_sport = "";
                 var gorod = "";
                 var kubok = "";
                 var weigth = "";
                 var sezon = "";
                 var boss = "";
                 var region = "";
-                var tegs = item.subtitle;
+                var tegs = list.subtitle;
                 var pars = tegs.split("&");
                 sezon = pars[0];
                 kubok = pars[1];
@@ -65,9 +65,9 @@ function paint_element_stream(){
                 region = pars[6];
                 //var product_global = '';
                 var time_put, data_put;
-                if(item.stream.finished_at === null){
+                if(list.stream.finished_at === null){
                     //console.log("Трансляцич не закончена.");
-                    var parse_start = item.stream.started_at;
+                    var parse_start = list.stream.started_at;
                     var res_parstart = parse_start.split("T");
                     var res_parstart1 = res_parstart[0].split("-");
                     var res_parstart2 = res_parstart[1].split(":");
@@ -77,7 +77,7 @@ function paint_element_stream(){
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 } else {
                     //console.log("Трансляция закончена: " + item.stream.finished_at)
-                    var parse_start = item.stream.finished_at;
+                    var parse_start = list.stream.finished_at;
                     var res_parstart = parse_start.split("T");
                     var res_parstart1 = res_parstart[0].split("-");
                     var res_parstart2 = res_parstart[1].split(":");
@@ -87,7 +87,7 @@ function paint_element_stream(){
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
                 var key_post = 0;
-                var initial_gl = item.name, pre_name;
+                var initial_gl = list.name, pre_name;
                 var json_product = $.parseJSON(array_product);
                 $.each(json_product,function(i,item1){
                     //console.log(item1.initial);
@@ -108,20 +108,20 @@ function paint_element_stream(){
                 //console.log("get_product_gl: " + key_post);
                 //product_global = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
                 $("#admin-video-list").append(
-                    '<li class="admin-video-item admin-back" id="' + item.id + '">' + 
+                    '<li class="admin-video-item admin-back" id="' + list.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
                             '<input id="admin-vl' + idch +'" class="admin-video-sort-check" type="checkbox">' +
                             '<label class="admin-video-check-label" for="admin-vl' + idch + '"></label>' + 
                         '</div>' + 	
                         '<div class="admin-video-prev" id="poster_rub">' + 
-                            '<img src="' + item.poster.md + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                            '<img src="' + list.poster.md + '" alt="" class="" style="heigth: 100%; width: 100%">' +
                             pre_name +
                             //'<img src="img/rub2.png" alt="" class="admin-video-prev-stik">' +
                             //'<p>Нет потока</p>' + 
                         '</div>' + 
                             '<div class="admin-video-item-header">' + 
                                 '<div class="admin-video-item-h-list">' + 
-                                    '<span class="admin-video-item-h-date">' + item.name + '</span>' +
+                                    '<span class="admin-video-item-h-date">' + list.name + '</span>' +
                                 '</div>' + 
                                 '<div class="admin-video-item-h-hashtag">' + 
                                     '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
@@ -141,12 +141,14 @@ function paint_element_stream(){
                                 '<p class="admin-video-item-i-date">' + data_put + '</p>' +
                                 '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
                             '</div>' + 
-                        '</li>');*/
+                        '</li>');
+            //$.each(list,function(i,item){
+                /**/
  
                         
 
                     
-                //idch++;
+                idch++;
             //});
         });
     }
