@@ -59,7 +59,7 @@ function paint_element_stream(){
     var id_stream = array_stream[0];
     $.post('/php/get_stream_id.php',{ id:id_stream }, function(data)  {
         console.log(data);
-        $("#admin-video-list").append('<p class="admin-video-item-v-region">test</p>');
+        //$("#admin-video-list").append('<p class="admin-video-item-v-region">test</p>');
     });
 }
 
