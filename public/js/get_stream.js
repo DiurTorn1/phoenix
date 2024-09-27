@@ -138,7 +138,7 @@ function paint_element_stream(){
                     //console.log(output);
                     var initial_get = output? output[1]: ''
                     if(initial_get == list.name){
-                        //console.log("Стрим опубликован: " + initial_get);
+                        console.log("Стрим опубликован: " + initial_get);
                         public_stream_list.push(true);
                         //$('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
     
