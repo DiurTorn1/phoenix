@@ -182,9 +182,11 @@ function paint_element_stream(){
                             var initial_get = output? output[1]: ''
                             if(initial_get){
                                 //console.log("Стрим опубликован: " + initial_get);
-                                $('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
+                                $(".admin-video-item-h-date").css("color","#faf7f7")
+                                //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
                             } else {
-                                $('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
+                                $(".admin-video-item-h-date").css("color","#c4c4c494")
+                                //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
                                 console.log("Fuck off!!"); 
                             }
                             
