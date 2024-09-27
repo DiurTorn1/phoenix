@@ -34,10 +34,6 @@ function paint_element_stream(){
         }
         $('#span_select_list_all').text(all_sel);
     }
-    $.post('/php/get_product_all.php', function(data){
-        //var output1 = $.parseJSON(data);
-        array_product.push(data);   
-    });
     for(var i = num_list; i < num_list1; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
@@ -197,6 +193,7 @@ function get_stream_array(){
     if(array_stream[0]!=array_stream1[0]){
             //setInterval('paint_element_stream()',100);
         $("#admin-video-list").empty();
+        idch = 0;
         key_paint = 0;
     }
     //}
@@ -206,6 +203,12 @@ function get_stream_array(){
 }
 
 $(document).ready(function() {
+
+    $.post('/php/get_product_all.php', function(data){
+        //var output1 = $.parseJSON(data);
+        array_product.push(data);   
+    });
+    
     $('#block_select_stream_list').hide();
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',200);
@@ -269,6 +272,7 @@ $(document).ready(function() {
             num_list1 = num_list1-5;
             $("#admin-video-list").empty();
             key_paint = 0;
+            idch = 0;
             console.log(num_list);
             console.log(num_list1);
         }
@@ -291,6 +295,7 @@ $(document).ready(function() {
         console.log(num_list);
         console.log(num_list1);
         $("#admin-video-list").empty();
+        idch = 0;
         key_paint = 0;
     });
     
