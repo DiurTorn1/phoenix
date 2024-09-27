@@ -149,8 +149,8 @@ function paint_element_stream(){
                 $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + list.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
-                            '<input id="admin-vl' + i +'" class="admin-video-sort-check" type="checkbox">' +
-                            '<label class="admin-video-check-label" for="admin-vl' + i + '"></label>' + 
+                            '<input id="admin-vl' + idch +'" class="admin-video-sort-check" type="checkbox">' +
+                            '<label class="admin-video-check-label" for="admin-vl' + idch + '"></label>' + 
                         '</div>' + 	
                         '<div class="admin-video-prev" id="poster_rub">' + 
                             '<img src="' + list.poster.original + '" alt="" class="" style="heigth: 100%; width: 100%">' +
@@ -160,7 +160,7 @@ function paint_element_stream(){
                         '</div>' + 
                             '<div class="admin-video-item-header">' + 
                                 '<div class="admin-video-item-h-list">' + 
-                                    '<span class="admin-video-item-h-date-"' + i + '>' + list.name + '</span>' +
+                                    '<span class="admin-video-item-h-date-"' + idch + '>' + list.name + '</span>' +
                                 '</div>' + 
                                 '<div class="admin-video-item-h-hashtag">' + 
                                     '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
