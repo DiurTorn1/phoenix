@@ -50,7 +50,7 @@ $(document).ready(function() {
                     play_link_card = item.play_link;
                     rtmp_link_card = item.rtmp_link;
                     $('#card_link_play').val(item.play_link);
-                    $('#img_poster_card').attr("src", item.poster.xs);
+                    $('#img_poster_card').attr("src", item.poster.original);
                     $('#autoplay_video_ch').attr('checked', item.auto_start);
                     $('#chat_video_ch').attr('checked', item.chat_active);
                     var tegs = item.subtitle;
