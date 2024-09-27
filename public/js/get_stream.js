@@ -26,9 +26,10 @@ var num_list = 0;
 var num_list1 = 5;
 
 function paint_element_stream(){
+    var all_sel = 0;
     if(count_stream > 5){
         $('#block_select_stream_list').show();
-        var all_sel = 0;
+        
         for(var i=0; i < count_stream; i=i+5){
             all_sel++;
         }
