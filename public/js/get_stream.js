@@ -174,15 +174,19 @@ function paint_element_stream(){
                                 '<p class="admin-video-item-i-date">' + data_put + '</p>' +
                                 '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
                             '</div>' + 
-                        '</li>');
-            //$.each(list,function(i,item){
-                /**/
- 
+                        '</li>');      
                         
-
+                $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data){
+                            var output = $.parseJSON(data);
+                            //console.log(output);
+                            var initial_get = output? output[1]: ''
+                            if(initial_get){
+                                console.log("Стрим опубликован: " + initial_get);
+                            }
+                            
+                });
                     
                 idch++;
-            //});
         });
     }
 
