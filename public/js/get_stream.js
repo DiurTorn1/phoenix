@@ -62,6 +62,7 @@ function paint_element_stream(){
         minus = 0;
     }
     var top_list = num_list1-minus;
+    public_stream_list = [];
     //console.log(top_list);
     for(var i = num_list; i < top_list; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
@@ -176,7 +177,7 @@ function paint_element_stream(){
                                 '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
                             '</div>' + 
                         '</li>');      
-                public_stream_list = [];
+                
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data){
                             var output = $.parseJSON(data);
                             //console.log(output);
