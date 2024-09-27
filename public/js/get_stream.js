@@ -182,6 +182,8 @@ function paint_element_stream(){
                             var initial_get = output? output[1]: ''
                             if(initial_get){
                                 console.log("Стрим опубликован: " + initial_get);
+                            } else {
+                                console.log("Fuck off!!"); 
                             }
                             
                 });
