@@ -140,14 +140,14 @@ function paint_element_stream(){
                     if(initial_get == list.name){
                         //console.log("Стрим опубликован: " + initial_get);
                         public_stream_list.push(true);
-                        $('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
+                        //$('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
     
-                        //$(".admin-video-item-h-date").css("color","#faf7f7");
+                        $(".admin-video-item-h-date-" + idch).css("color","#faf7f7");
                         //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
                     } else {
                         public_stream_list.push(false);
-                        $('.admin-video-item-h-date-' + idch).removeClass('admin-video-item-h-date-active-' + idch);
-                        //$(".admin-video-item-h-date").css("color","#c4c4c494");
+                        //$('.admin-video-item-h-date-' + idch).removeClass('admin-video-item-h-date-active-' + idch);
+                        $(".admin-video-item-h-date-" + idch).css("color","#c4c4c494");
                         //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
                         //console.log("Fuck off!!"); 
                     }
