@@ -1,20 +1,28 @@
 var array_product = new Array();
 var idch = 0;
+var key_main_chack = 0;
 function dynamic_checkbox(){
     //video-btn-active
     //
     var int_ch =0;
-    if($("#admin-video-sort-check").is(':checked')){//inter_stream
+    if(key_main_chack){
+        if($("#admin-video-sort-check").is(':checked')){//inter_stream
+            for(var i = 0; i < idch; i++){
+                $("#admin-vl" + i).prop('checked', true);
+            }
+        }  else {
+            for(var i = 0; i < idch; i++){
+                $("#admin-vl" + i).prop('checked', false);
+            } 
+        }
+    
         for(var i = 0; i < idch; i++){
-            $("#admin-vl" + i).prop('checked', true);
+            var ch1 = $("#admin-vl" + i).is(':checked');
+            if(ch1){
+                int_ch++;
+            }
         }
-    } 
-
-    for(var i = 0; i < idch; i++){
-        var ch1 = $("#admin-vl" + i).is(':checked');
-        if(ch1){
-            int_ch++;
-        }
+        key_main_chack = 0
     }
 
     $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
@@ -317,6 +325,10 @@ $(document).ready(function() {
            // var num_list2 = num_list1 - count_stream;
            // num_list1 = num_list1 - num_list2;
         }
+    });
+
+    $("#admin-video-sort-check").on('click', function() {
+        key_main_chack = 1;
     });
     
     $(document).on('dblclick', '.admin-video-item', function() {
