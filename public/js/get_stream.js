@@ -144,6 +144,7 @@ function paint_element_stream(){
                         indic_public_stream = '<span class="admin-video-item-h-date-active">';
                         //$(".admin-video-item-h-date-" + idch).css("color","#faf7f7");
                         //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
+                        console.log(indic_public_stream); 
                     } else {
                         public_stream_list.push(false);
                         indic_public_stream = '<span class="admin-video-item-h-date">';
@@ -151,6 +152,7 @@ function paint_element_stream(){
                         //$(".admin-video-item-h-date-" + idch).css("color","#c4c4c494");
                         //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
                         //console.log("Fuck off!!"); 
+                        console.log(indic_public_stream); 
                     }
                     
                 });
