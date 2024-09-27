@@ -38,13 +38,13 @@ function paint_element_stream(){
     }
 
     num_list2 = all_sel;
-    var top_list = num_list1;
     var minus = 0;
-    if(top_list > count_stream){
-        minus = count_stream - top_list;
+    if(num_list1 > count_stream){
+        minus = num_list1 - count_stream;
     } else {
         minus = 0;
     }
+    var top_list = num_list1-minus;
     console.log(top_list);
     for(var i = num_list; i < top_list; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
