@@ -24,6 +24,7 @@ var array_stream1 = new Array();
 var key_paint = 0;
 var num_list = 0;
 var num_list1 = 5;
+var num_list2 = 0;
 
 function paint_element_stream(){
     var all_sel = 0;
@@ -35,7 +36,16 @@ function paint_element_stream(){
         }
         $('#span_select_list_all').text(all_sel);
     }
-    for(var i = num_list; i < num_list1; i ++){
+
+    num_list2 = all_sel;
+    var top_list = num_list1;
+    if(top_list > count_stream){
+        var minus = count_stream - top_list;
+        top_list = top_list - minus;
+    } else {
+        top_list = num_list1;
+    }
+    for(var i = num_list; i < top_list; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
@@ -280,9 +290,16 @@ $(document).ready(function() {
     });
 
     $("#next_list_stream").on('click', function() {
-        num_list = num_list+5;
-        num_list1 = num_list1+5;
-        //if(num_list >= num_list1){
+        var top_list = 5*num_list2;
+        
+        if(num_list1 != top_list){
+            num_list = num_list+5;
+            num_list1 = num_list1+5;
+            console.log(num_list);
+            console.log(num_list1);
+            $("#admin-video-list").empty();
+            idch = 0;
+            key_paint = 0;
             //var count_list = 0;
             //for(var i=0; i < num_list1; i=i+5){
                 //count_list++;
@@ -292,12 +309,7 @@ $(document).ready(function() {
         //if(num_list1 > count_stream){
            // var num_list2 = num_list1 - count_stream;
            // num_list1 = num_list1 - num_list2;
-        //}
-        console.log(num_list);
-        console.log(num_list1);
-        $("#admin-video-list").empty();
-        idch = 0;
-        key_paint = 0;
+        }
     });
     
     $(document).on('dblclick', '.admin-video-item', function() {
