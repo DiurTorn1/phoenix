@@ -149,8 +149,8 @@ function paint_element_stream(){
                 $("#admin-video-list").append(
                     '<li class="admin-video-item admin-back" id="' + list.id + '">' + 
                         '<div class="admin-video-sort-wrap">' + 
-                            '<input id="admin-vl' + idch +'" class="admin-video-sort-check" type="checkbox">' +
-                            '<label class="admin-video-check-label" for="admin-vl' + idch + '"></label>' + 
+                            '<input id="admin-vl' + i +'" class="admin-video-sort-check" type="checkbox">' +
+                            '<label class="admin-video-check-label" for="admin-vl' + i + '"></label>' + 
                         '</div>' + 	
                         '<div class="admin-video-prev" id="poster_rub">' + 
                             '<img src="' + list.poster.original + '" alt="" class="" style="heigth: 100%; width: 100%">' +
