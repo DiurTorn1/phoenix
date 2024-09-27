@@ -184,6 +184,7 @@ function paint_element_stream(){
                                 //console.log("Стрим опубликован: " + initial_get);
                                 $('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
                             } else {
+                                $('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
                                 console.log("Fuck off!!"); 
                             }
                             
