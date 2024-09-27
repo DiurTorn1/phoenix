@@ -6,7 +6,7 @@ function dynamic_checkbox(){
     var int_ch =0;
     if($("#inter_stream").is(':checked')){//inter_stream
         for(var i = 0; i < idch; i++){
-            $("#admin-vl" + i).prop('checked', true);
+            $("#admin-vl" + i).attr("checked",true);
         }
     } 
 
