@@ -160,7 +160,7 @@ function paint_element_stream(){
                         '</div>' + 
                             '<div class="admin-video-item-header">' + 
                                 '<div class="admin-video-item-h-list">' + 
-                                    '<span class="admin-video-item-h-date-"' + idch + '>' + list.name + '</span>' +
+                                    '<span class="admin-video-item-h-date-' + idch + '">' + list.name + '</span>' +
                                 '</div>' + 
                                 '<div class="admin-video-item-h-hashtag">' + 
                                     '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
