@@ -177,7 +177,7 @@ function paint_element_stream(){
                         '</div>' + 
                             '<div class="admin-video-item-header">' + 
                                 '<div class="admin-video-item-h-list">' + 
-                                    indic_public_stream + list.name + '</span>' +
+                                    '<span class="admin-video-item-h-date">' + list.name + '</span>' +
                                 '</div>' + 
                                 '<div class="admin-video-item-h-hashtag">' + 
                                     '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
