@@ -132,7 +132,7 @@ function paint_element_stream(){
                         //console.log(pre_name);
                     }
                 });
-
+                var indic_public_stream = '';
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data){
                     var output = $.parseJSON(data);
                     //console.log(output);
@@ -141,13 +141,14 @@ function paint_element_stream(){
                         console.log("Стрим опубликован: " + initial_get);
                         public_stream_list.push(true);
                         //$('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
-    
-                        $(".admin-video-item-h-date-" + idch).css("color","#faf7f7");
+                        indic_public_stream = '<span class="admin-video-item-h-date admin-video-item-h-date-active">';
+                        //$(".admin-video-item-h-date-" + idch).css("color","#faf7f7");
                         //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
                     } else {
                         public_stream_list.push(false);
+                        indic_public_stream = '<span class="admin-video-item-h-date">';
                         //$('.admin-video-item-h-date-' + idch).removeClass('admin-video-item-h-date-active-' + idch);
-                        $(".admin-video-item-h-date-" + idch).css("color","#c4c4c494");
+                        //$(".admin-video-item-h-date-" + idch).css("color","#c4c4c494");
                         //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
                         //console.log("Fuck off!!"); 
                     }
@@ -176,7 +177,7 @@ function paint_element_stream(){
                         '</div>' + 
                             '<div class="admin-video-item-header">' + 
                                 '<div class="admin-video-item-h-list">' + 
-                                    '<span class="admin-video-item-h-date-' + idch + '">' + list.name + '</span>' +
+                                    indic_public_stream + list.name + '</span>' +
                                 '</div>' + 
                                 '<div class="admin-video-item-h-hashtag">' + 
                                     '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
