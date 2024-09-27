@@ -2230,6 +2230,8 @@ td a:focus {
 
 .admin-video-item-h-date{
     color: #c4c4c494;
+    cursor:pointer;
+    pointer-events: auto;
 }
 /*Slider*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
