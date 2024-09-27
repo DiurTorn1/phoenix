@@ -208,12 +208,12 @@ $(document).ready(function() {
         //var output1 = $.parseJSON(data);
         array_product.push(data);   
     });
-    
+
     $('#block_select_stream_list').hide();
     dynamic_checkbox();
-    setInterval('dynamic_checkbox()',200);
+    setInterval('dynamic_checkbox()',500);
     get_stream_array();
-    setInterval('get_stream_array()',200);
+    setInterval('get_stream_array()',500);
 
         
         $("#delete_stream_checkbox").on('click', function() {
