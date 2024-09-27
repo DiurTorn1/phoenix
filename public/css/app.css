@@ -2233,6 +2233,9 @@ td a:focus {
     cursor:pointer;
     pointer-events: auto;
 }
+.admin-video-item-h-date-active{
+    color: #faf7f7; 
+}
 /*Slider*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 

@@ -181,7 +181,8 @@ function paint_element_stream(){
                             //console.log(output);
                             var initial_get = output? output[1]: ''
                             if(initial_get){
-                                console.log("Стрим опубликован: " + initial_get);
+                                //console.log("Стрим опубликован: " + initial_get);
+                                $('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
                             } else {
                                 console.log("Fuck off!!"); 
                             }
