@@ -39,14 +39,14 @@ function paint_element_stream(){
 
     num_list2 = all_sel;
     var top_list = num_list1;
+    var minus = 0
     if(top_list > count_stream){
-        var minus = count_stream - top_list;
-        top_list = top_list - minus;
+        minus = count_stream - top_list;
     } else {
-        top_list = num_list1;
+        minus = 0;
     }
     console.log(top_list);
-    for(var i = num_list; i < top_list; i ++){
+    for(var i = num_list; i < top_list-minus; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
