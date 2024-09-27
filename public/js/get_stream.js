@@ -22,7 +22,7 @@ function dynamic_checkbox(){
                 int_ch++;
             }
         }
-        key_main_chack = 0
+        key_main_chack = 0;
     }
 
     $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
