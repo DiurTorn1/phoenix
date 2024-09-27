@@ -132,6 +132,27 @@ function paint_element_stream(){
                         //console.log(pre_name);
                     }
                 });
+
+                $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data){
+                    var output = $.parseJSON(data);
+                    //console.log(output);
+                    var initial_get = output? output[1]: ''
+                    if(initial_get == list.name){
+                        //console.log("Стрим опубликован: " + initial_get);
+                        public_stream_list.push(true);
+                        $('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
+    
+                        //$(".admin-video-item-h-date").css("color","#faf7f7");
+                        //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
+                    } else {
+                        public_stream_list.push(false);
+                        $('.admin-video-item-h-date-' + idch).removeClass('admin-video-item-h-date-active-' + idch);
+                        //$(".admin-video-item-h-date").css("color","#c4c4c494");
+                        //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
+                        //console.log("Fuck off!!"); 
+                    }
+                    
+                });
                 //console.log(json_product);
                 //console.log(pre_name);//array_product);
                 if(key_post){
@@ -177,26 +198,7 @@ function paint_element_stream(){
                             '</div>' + 
                         '</li>');      
                 
-                $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data){
-                            var output = $.parseJSON(data);
-                            //console.log(output);
-                            var initial_get = output? output[1]: ''
-                            if(initial_get){
-                                //console.log("Стрим опубликован: " + initial_get);
-                                public_stream_list.push(true);
-                                $('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
-            
-                                //$(".admin-video-item-h-date").css("color","#faf7f7");
-                                //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
-                            } else {
-                                public_stream_list.push(false);
-                                $('.admin-video-item-h-date-' + idch).removeClass('admin-video-item-h-date-active-' + idch);
-                                //$(".admin-video-item-h-date").css("color","#c4c4c494");
-                                //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
-                                //console.log("Fuck off!!"); 
-                            }
-                            
-                });
+
                     
                 idch++;
         });
@@ -318,8 +320,8 @@ $(document).ready(function() {
             $("#admin-video-list").empty();
             key_paint = 0;
             idch = 0;
-            console.log(num_list);
-            console.log(num_list1);
+            //console.log(num_list);
+            //console.log(num_list1);
         }
     });
 
@@ -330,8 +332,8 @@ $(document).ready(function() {
             num_list = num_list+5;
             num_list1 = num_list1+5;
             get_ch_list = get_ch_list + 1;
-            console.log(num_list);
-            console.log(num_list1);
+            //console.log(num_list);
+            //console.log(num_list1);
             $("#admin-video-list").empty();
             idch = 0;
             key_paint = 0;
