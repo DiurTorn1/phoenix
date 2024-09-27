@@ -18,17 +18,17 @@ $(document).ready(function() {
         var params = new window.URLSearchParams(window.location.search);
         //console.log("MSG:" + params.get('block-admin-input'));
 
-    $.post('/php/get_stream.php', function(data)  {
+    $.post('/php/get_stream_id.php', { id:params.get('admin_input_id') },  function(data)  {
         var output = $.parseJSON(data);
         var list = output.data;
 
-        $.each(list,function(i,item){
-            if(item.id == params.get('admin_input_id')){
+        //$.each(list,function(i,item){
+            //if(item.id == params.get('admin_input_id')){
                     console.log("Video inform:\r\n");
                     console.log(/*"id: " + item.id + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
-                        "\r\ntype: " + item.type + */"\r\nstreamkey: " + item.streamkey /*+ "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift*/); 
+                        "\r\ntype: " + item.type + */"\r\nstreamkey: " + list.streamkey /*+ "\r\nauto_start: " + item.auto_start + "\r\nprotected: " + item.protected + "\r\ntime_shift: " + item.time_shift*/); 
                     console.log(/*"\r\nRecord: \r\n parent_id: " + item.record.parent_id + "\r\nvideo: \r\n presets: " + item.video.presets + "\r\naudio: \r\n channel_mapping: " + item.audio.channel_mapping + 
-                        //"\r\nreconnect_window:" + item.reconnect_window + "\r\nplay_link: " + item.play_link + */"\r\nrtmp_link: " + item.rtmp_link /*+ "\r\nscheduled: \r\n time: " + item.scheduled.time*/);
+                        //"\r\nreconnect_window:" + item.reconnect_window + "\r\nplay_link: " + item.play_link + */"\r\nrtmp_link: " + list.rtmp_link /*+ "\r\nscheduled: \r\n time: " + item.scheduled.time*/);
                     //console.log("\r\nstream: \r\n id: " + item.stream.id + "\r\nevent_id: " + item.stream.event_id + "\r\nstatus: " + item.stream.status + "\r\nstarted_at: " + item.stream.started_at +  "\r\nfinished_at: " + item.stream.finished_at);
                     //console.log("\r\nchat_after_stream: " + item.chat_after_stream + "\r\nchat_active: " + item.chat_active + "\r\nchat_preview: " + item.chat_preview + "\r\nshow_members: " + item.show_members +
                         //"\r\ncreated_at" + item.created_at + "\r\nupdated_at: " + item.updated_at + "\r\nlatency_mode: " + item.latency_mode + "\r\nallow_chat_links: " + item.allow_chat_links +
@@ -36,24 +36,24 @@ $(document).ready(function() {
                     //console.log("\r\nposter \r\nid:" + item.poster.id + "\r\ntype: " + item.poster.type + "\r\nstatus" + item.poster.status + "\r\nactive: " + item.poster.active + "\r\noriginal: " + 
                         //"\r\nmd: " + item.poster.md + "\r\nsm: " + item.poster.sm + "\r\nxs: " + item.poster.xs +"\r\nfrom_time" + item.poster.from_time + "\r\nto_time" + item.poster.to_time);
                     //console.log("autoplay_video_ch:" + item.auto_start + " , chat_video_ch:" + item.chat_active); // autoplay_video_ch  chat_video_ch
-                    $('#admin-input-main').val(item.name);
-                    initial_name = item.name;
-                    poster_id_par = item.poster.id;
-                    stream_id_par = item.stream.id;
-                    parent_id_par = item.record.parent_id;
-                    streamkey_par = item.streamkey;
-                    name_stream = item.name;
-                    name_card = item.card;
-                    id_card = item.id;
-                    workspace_id_card = item.workspace_id;
-                    parent_id_card = item.parent_id; 
-                    play_link_card = item.play_link;
-                    rtmp_link_card = item.rtmp_link;
-                    $('#card_link_play').val(item.play_link);
-                    $('#img_poster_card').attr("src", item.poster.original);
-                    $('#autoplay_video_ch').attr('checked', item.auto_start);
-                    $('#chat_video_ch').attr('checked', item.chat_active);
-                    var tegs = item.subtitle;
+                    $('#admin-input-main').val(list.name);
+                    initial_name = list.name;
+                    poster_id_par = list.poster.id;
+                    stream_id_par = list.stream.id;
+                    parent_id_par = list.record.parent_id;
+                    streamkey_par = list.streamkey;
+                    name_stream = list.name;
+                    name_card = list.card;
+                    id_card = list.id;
+                    workspace_id_card = list.workspace_id;
+                    parent_id_card = list.parent_id; 
+                    play_link_card = list.play_link;
+                    rtmp_link_card = list.rtmp_link;
+                    $('#card_link_play').val(list.play_link);
+                    $('#img_poster_card').attr("src", list.poster.original);
+                    $('#autoplay_video_ch').attr('checked', list.auto_start);
+                    $('#chat_video_ch').attr('checked', list.chat_active);
+                    var tegs = list.subtitle;
                     var pars = tegs.split("&");
                     sezon = pars[0];
                     kubok = pars[1];
@@ -124,16 +124,16 @@ $(document).ready(function() {
 
                     $("#admin_card_vidsporta option:selected").text(vid_sport);
                     $("#admin_card_minframe option:selected").index(0);
-                    var time_get = item.stream.started_at;
+                    var time_get = list.stream.started_at;
                     var pars_time = time_get.split("T");
                     var hour_min_sec = pars_time[1];
                     var hour_min = hour_min_sec.split(":");
                     $("#ditetime_card_start_at").val(pars_time[0] + "T" + hour_min[0] + ":" + hour_min[1]);
-                    $.post('/php/get_stream_public.php', {name_stream:item.name}, function(data)  {
+                    $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
                         var output = $.parseJSON(data);
                         //$.each(output,function(i,item){
                         var pub_name = output? output[1]: '1';
-                            if(pub_name==item.name){
+                            if(pub_name==list.name){
                                  $('#public_stream').hide();
                                  $('#unpublic_stream').show();
                              }
@@ -160,9 +160,9 @@ $(document).ready(function() {
                             '</div>' +
                         '</div>' +
                     '</div>');  */ 
-            }
+            //}
                 
-        });
+        //});
     });
     var main_image;
     var image, image_name = '';
