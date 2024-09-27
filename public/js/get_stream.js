@@ -45,6 +45,7 @@ function paint_element_stream(){
     } else {
         top_list = num_list1;
     }
+    console.log(top_list);
     for(var i = num_list; i < top_list; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
