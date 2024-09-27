@@ -18,6 +18,7 @@ function dynamic_checkbox(){
                 $("#admin-vl" + i).prop('checked', false);
             } 
         }
+        console.log(public_stream_list);
         key_main_chack = 0;
     }
     for(var i = 0; i < idch; i++){
@@ -61,14 +62,14 @@ function paint_element_stream(){
         minus = 0;
     }
     var top_list = num_list1-minus;
-    console.log(top_list);
+    //console.log(top_list);
     for(var i = num_list; i < top_list; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
             //console.log(list.id);
-            console.log("Video inform:\r\n");
+            //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
             //console.log("\r\nRecord: \r\n parent_id: " + list.record.parent_id + "\r\nvideo: \r\n presets: " + list.video.presets + "\r\naudio: \r\n channel_mapping: " + list.audio.channel_mapping + 
@@ -182,12 +183,14 @@ function paint_element_stream(){
                             var initial_get = output? output[1]: ''
                             if(initial_get){
                                 //console.log("Стрим опубликован: " + initial_get);
-                                $(".admin-video-item-h-date").css("color","#faf7f7");
+                                public_stream_list.push([idch, true]);
+                                //$(".admin-video-item-h-date").css("color","#faf7f7");
                                 //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
                             } else {
-                                $(".admin-video-item-h-date").css("color","#c4c4c494");
+                                public_stream_list.push([idch, false]);
+                                //$(".admin-video-item-h-date").css("color","#c4c4c494");
                                 //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
-                                console.log("Fuck off!!"); 
+                                //console.log("Fuck off!!"); 
                             }
                             
                 });
