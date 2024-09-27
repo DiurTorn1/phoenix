@@ -123,7 +123,7 @@
 				<select class="admin-input admin-input-select restream-select">
 					<option value="">5</option>
 				</select>
-				<span id="span_select_list">1-2</span>
+				<span id="span_select_list"></span>
 				<p>из</p>
 				<span id="span_select_list_all"></span>
 				<button class="restream-select-btn" title="Назад" id="bottom_list_stream">‹</button>

@@ -1,8 +1,11 @@
 var array_product = new Array();
 var idch = 0;
 var key_main_chack = 0;
+var public_stream_list = new Array();
+var get_ch_list = 1;
+
 function dynamic_checkbox(){
-    //video-btn-active
+    //video-btn-active 
     //
     var int_ch =0;
     if(key_main_chack){
@@ -24,6 +27,7 @@ function dynamic_checkbox(){
         }
     }
     $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
+    $('#span_select_list').text(get_ch_list);
     if(int_ch != 0){
         $('.admin-video-btn3').addClass('video-btn-active3');
     } else {
@@ -294,6 +298,7 @@ $(document).ready(function() {
         if(num_list != 0){
             num_list = num_list-5;
             num_list1 = num_list1-5;
+            get_ch_list = get_ch_list - 1;
             $("#admin-video-list").empty();
             key_paint = 0;
             idch = 0;
@@ -308,6 +313,7 @@ $(document).ready(function() {
         if(num_list1 != top_list){
             num_list = num_list+5;
             num_list1 = num_list1+5;
+            get_ch_list = get_ch_list + 1;
             console.log(num_list);
             console.log(num_list1);
             $("#admin-video-list").empty();
