@@ -39,8 +39,7 @@ function paint_element_stream(){
         array_product.push(data);   
     });
     for(var i = num_list; i < num_list1; i ++){
-        var id_stream = array_stream[i];
-        $.post('/php/get_stream_id.php',{ id:id_stream }, function(data)  {
+        $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
