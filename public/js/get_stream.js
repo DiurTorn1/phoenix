@@ -175,17 +175,17 @@ function paint_element_stream(){
                                 '<a href="#" class="admin-video-item-i-link"><img src="img/right-arrow.svg" alt="Поделиться"></a>' +
                             '</div>' + 
                         '</li>');      
-                        
+                public_stream_list = [];
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data){
                             var output = $.parseJSON(data);
                             //console.log(output);
                             var initial_get = output? output[1]: ''
                             if(initial_get){
                                 //console.log("Стрим опубликован: " + initial_get);
-                                $(".admin-video-item-h-date").css("color","#faf7f7")
+                                $(".admin-video-item-h-date").css("color","#faf7f7");
                                 //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
                             } else {
-                                $(".admin-video-item-h-date").css("color","#c4c4c494")
+                                $(".admin-video-item-h-date").css("color","#c4c4c494");
                                 //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
                                 console.log("Fuck off!!"); 
                             }
