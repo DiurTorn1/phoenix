@@ -139,7 +139,6 @@ function paint_element_stream(){
                     var initial_get = output? output[1]: '';
                     var indic_public_stream1 = '';
                     if(initial_get == list.name){
-                        console.log("Стрим опубликован: " + initial_get);
                         public_stream_list.push(true);
                         //$('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
                         indic_public_stream1 = 'admin-video-item-h-date-active';
