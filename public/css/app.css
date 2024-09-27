@@ -2228,6 +2228,9 @@ td a:focus {
     color: rgb(245, 133, 5);
 }
 
+.admin-video-item-h-date{
+    color: rgb(245, 133, 5);
+}
 /*Slider*/
 @import url('https://fonts.googleapis.com/css?family=Open+Sans|Roboto');
 
