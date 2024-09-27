@@ -15,16 +15,14 @@ function dynamic_checkbox(){
                 $("#admin-vl" + i).prop('checked', false);
             } 
         }
-    
-        for(var i = 0; i < idch; i++){
-            var ch1 = $("#admin-vl" + i).is(':checked');
-            if(ch1){
-                int_ch++;
-            }
-        }
         key_main_chack = 0;
     }
-
+    for(var i = 0; i < idch; i++){
+        var ch1 = $("#admin-vl" + i).is(':checked');
+        if(ch1){
+            int_ch++;
+        }
+    }
     $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
     if(int_ch != 0){
         $('.admin-video-btn3').addClass('video-btn-active3');
