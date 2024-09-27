@@ -21,11 +21,6 @@ function dynamic_checkbox(){
         key_main_chack = 0;
     }
     for(var i = 0; i < idch; i++){
-        if(public_stream_list[i] == true){
-            $('.admin-video-item-h-date-' + i).addClass('admin-video-item-h-date-active-'+i);
-        } else {
-            $('.admin-video-item-h-date-' + i).removeClass('admin-video-item-h-date-active-'+i);
-        }
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
             int_ch++;
@@ -187,12 +182,14 @@ function paint_element_stream(){
                             //console.log(output);
                             var initial_get = output? output[1]: ''
                             if(initial_get){
+                                $('.admin-video-item-h-date-' + i).addClass('admin-video-item-h-date-active-'+i);
                                 //console.log("Стрим опубликован: " + initial_get);
-                                public_stream_list.push(true);
+                                //public_stream_list.push(true);
                                 //$(".admin-video-item-h-date").css("color","#faf7f7");
                                 //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
                             } else {
-                                public_stream_list.push(false);
+                                $('.admin-video-item-h-date-' + i).removeClass('admin-video-item-h-date-active-'+i);
+                                //public_stream_list.push(false);
                                 //$(".admin-video-item-h-date").css("color","#c4c4c494");
                                 //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
                                 //console.log("Fuck off!!"); 
