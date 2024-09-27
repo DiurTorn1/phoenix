@@ -141,7 +141,7 @@ function paint_element_stream(){
                         console.log("Стрим опубликован: " + initial_get);
                         public_stream_list.push(true);
                         //$('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
-                        indic_public_stream = '<span class="admin-video-item-h-date admin-video-item-h-date-active">';
+                        indic_public_stream = '<span class="admin-video-item-h-date-active">';
                         //$(".admin-video-item-h-date-" + idch).css("color","#faf7f7");
                         //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
                     } else {

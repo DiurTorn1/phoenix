@@ -2235,6 +2235,8 @@ td a:focus {
 }
 .admin-video-item-h-date-active{
     color: #faf7f7; 
+    cursor:pointer;
+    pointer-events: auto;
 }
 
 /*Slider*/
