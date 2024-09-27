@@ -2228,44 +2228,12 @@ td a:focus {
     color: rgb(245, 133, 5);
 }
 
-.admin-video-item-h-date-0{
+.admin-video-item-h-date{
     color: #c4c4c494;
     cursor:pointer;
     pointer-events: auto;
 }
-.admin-video-item-h-date-active-0{
-    color: #faf7f7; 
-}
-.admin-video-item-h-date-1{
-    color: #c4c4c494;
-    cursor:pointer;
-    pointer-events: auto;
-}
-.admin-video-item-h-date-active-1{
-    color: #faf7f7; 
-}
-.admin-video-item-h-date-2{
-    color: #c4c4c494;
-    cursor:pointer;
-    pointer-events: auto;
-}
-.admin-video-item-h-date-active-2{
-    color: #faf7f7; 
-}
-.admin-video-item-h-date-3{
-    color: #c4c4c494;
-    cursor:pointer;
-    pointer-events: auto;
-}
-.admin-video-item-h-date-active-3{
-    color: #faf7f7; 
-}
-.admin-video-item-h-date-4{
-    color: #c4c4c494;
-    cursor:pointer;
-    pointer-events: auto;
-}
-.admin-video-item-h-date-active-4{
+.admin-video-item-h-date-active{
     color: #faf7f7; 
 }
 /*Slider*/
