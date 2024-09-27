@@ -4,9 +4,9 @@ function dynamic_checkbox(){
     //video-btn-active
     //
     var int_ch =0;
-    if($("#inter_stream").is(':checked')){//inter_stream
+    if($("#admin-video-sort-check").is(':checked')){//inter_stream
         for(var i = 0; i < idch; i++){
-            $("#admin-vl" + i).attr("checked",true);
+            $("#admin-vl" + i).prop('checked', true);
         }
     } 
 
