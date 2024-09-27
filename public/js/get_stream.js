@@ -4,6 +4,12 @@ function dynamic_checkbox(){
     //video-btn-active
     //
     var int_ch =0;
+    if($("#inter_stream").is(':checked')){//inter_stream
+        for(var i = 0; i < idch; i++){
+            $("#admin-vl" + i).prop('checked', true);
+        }
+    } 
+
     for(var i = 0; i < idch; i++){
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
