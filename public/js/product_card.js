@@ -281,7 +281,7 @@ $(document).ready(function() {
     r.on('fileAdded', function(file, event){
         r.upload();
         console.log('fileAdded...');
-        //console.log('fileAdded...', event);
+        console.log('fileAdded...', event);
         //var output = $.parseJSON(file);
         //console.log(output);
         //console.log(file);
