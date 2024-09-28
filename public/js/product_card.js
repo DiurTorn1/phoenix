@@ -233,8 +233,108 @@ $(document).ready(function() {
     });
 
     $("#product_unpublic_user").on('click', function(){
-        
+
     });
+
+    var main_image;
+    var image, image_name = '';
+    var r = new Resumable({
+        target: '/'
+      });
+      
+      
+      r.assignBrowse(document.getElementById('upload_main_banner_product'));
+      
+      r.on('fileSuccess', function(file){
+            console.log('fileSuccess',file);
+            console.log(file.file);
+            //$('#img_poster_card').attr("src", file.file);
+            var reader = new FileReader();
+            
+            image_name = file.file.name;
+            reader.readAsDataURL(file.file);
+            //var output = $.parseJSON(file);
+            // var form_data = new FormData();
+            reader.onloadend = function(e) { 
+                //console.log(e.target.result);
+                $('#img_poster_card').attr("src", e.target.result);
+                //console.log(e.target.result);
+                main_image = e.target.result;
+                var image_res = e.target.result;
+                //console.log(image_res.split(',')[1]);
+                image = image_res.split(',')[1];
+                $.post('/php/upload_banners.php', { image: image, image_name:image_name }, function(data)  {
+                    //console.log(data);
+                    if(data === 'Successfully Uploaded'){ 
+                        //<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
+                        //$("#banners_turnir").append('<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>');
+                        $('#img_banner_trash').show();
+                    }
+                });
+
+                //form_data.append('file',image);
+                /*$.ajax({
+                    url:'/php/upload_banners.php',
+                    method:'POST',
+                    data:form_data,
+                    contentType:false,
+                    processData:false,
+                    beforeSend:function(){
+                      //$('#msg').html('Loading......');
+                      console.log('Loading......');
+                    },
+                    success:function(data){
+                        //var output = $.parseJSON(data);
+                        console.log(data);
+                      //$('#msg').html(data);
+                    },
+                    error: function(xhr, ajaxOptions, thrownError) {
+                       console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                    }
+                });*/
+            };
+
+          
+        });
+      r.on('fileProgress', function(file){
+          console.log('fileProgress', file);
+        });
+      r.on('fileAdded', function(file, event){
+          r.upload();
+          console.log('fileAdded...');
+          //console.log('fileAdded...', event);
+          //var output = $.parseJSON(file);
+          //console.log(output);
+          //console.log(file);
+        });
+      r.on('filesAdded', function(array){
+          r.upload();
+          //console.log('filesAdded', array);
+        });
+      r.on('fileRetry', function(file){
+          console.log('fileRetry', file);
+        });
+      r.on('fileError', function(file, message){
+          console.log('fileError', file, message);
+        });
+      r.on('uploadStart', function(){
+          console.timeLog('uploadStart');
+        });
+      r.on('complete', function(){
+          console.log('complete');
+        });
+      r.on('progress', function(){
+          console.log('progress');
+        });
+      r.on('error', function(message, file){
+          console.log('error', message, file);
+        });
+      r.on('pause', function(){
+          console.log('pause');
+        });
+      r.on('cancel', function(){
+          console.log('cancel');
+        });
 
     $("#save_product_db").on('click', function(){
 
