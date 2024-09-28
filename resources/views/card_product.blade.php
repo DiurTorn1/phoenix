@@ -113,7 +113,9 @@
 			<div class="admin-input-width50">
 				<a class="preview-product-vis-upload">
 					<p>Обложка продукта *</p>
-					<img src="img/ivs4.png" alt="" class="" style="heigth: 100%; width: 100%">
+					<div class="index-live-banner"><!-- БАННЕР ВИДЕО!! -->
+								<img src="img/phoenix.png">
+					</div>
 				</a>
 			</div>
 			<div class="admin-input-width50">
