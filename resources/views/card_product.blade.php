@@ -113,12 +113,13 @@
 			<div class="admin-input-width50">
 				<a class="preview-product-vis-upload" id="upload_main_banner_product">
 					<!--<p>Обложка продукта *</p>-->
-					</div>
+
 					<div class="index-live-banner">
 						<a href="#" class="add-preview-tournir" title="Загрузить обложку продукта"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка продукта *" id="img_poster_card"></a>
 						<div class="edit-preview-tournir" id="banners_turnir">
 							<a class="remove-preview-tournir" title="Удалить обложку" id="img_banner_trash"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
 						</div>
+					</div>
 				</a>
 			</div>
 			<div class="admin-input-width50">
