@@ -288,7 +288,7 @@ $(document).ready(function() {
     });
     r.on('filesAdded', function(array){
         r.upload();
-        //console.log('filesAdded', array);
+        console.log('filesAdded', array);
     });
     r.on('fileRetry', function(file){
         console.log('fileRetry', file);
