@@ -75,6 +75,7 @@
 					<label class="admin-video-check-label" for={{'admin-vl'. $product->id}}></label>
 				</div>
 				<div class="admin-video-prev">
+					'<img src={{ $product->img_main }} alt="" class="" style="heigth: 100%; width: 100%">'
 				</div>
 				<div class="admin-video-item-header">
 					<div class="admin-video-item-h-list">
