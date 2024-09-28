@@ -264,7 +264,7 @@ $(document).ready(function() {
             //console.log(image_res.split(',')[1]);
             image = image_res.split(',')[1];
             $.post('/php/upload_banners_product.php', { image: image, image_name:image_name }, function(data)  {
-                //console.log(data);
+                console.log(data);
                 if(data === 'Successfully Uploaded'){ 
                     //<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
                     //$("#banners_turnir").append('<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>');
