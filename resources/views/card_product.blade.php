@@ -1,6 +1,10 @@
 @extends('admin_panel')
 @section('title-block') Продукты @endsection
-@section('admin_res')	
+@section('admin_res')
+
+<script type="text/javascript" src = "{{ asset('js/product_card.js') }}"></script>
+
+	
 	<header class="header admin-header">
 		<div class="left-header">
 			<!--<a href="#" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>-->
@@ -292,6 +296,5 @@
 
 </div>
 <!--------------------------------------------->
-<script type="text/javascript" src = "{{ asset('js/Backbone.js') }}"></script>
-<script type="text/javascript" src = "{{ asset('js/product_card.js') }}"></script>
+
 @endsection
