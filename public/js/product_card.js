@@ -268,7 +268,7 @@ $(document).ready(function() {
                 //if(data === 'Successfully Uploaded'){ 
                     //<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
                     //$("#banners_turnir").append('<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>');
-                    //$('#img_banner_trash').show();
+                    $('#img_banner_trash').show();
                 //}
             //});
         };
