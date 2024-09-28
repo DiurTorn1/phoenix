@@ -116,7 +116,7 @@
 					<!--<a class="preview-product-vis-upload" id="upload_main_banner_product"> <p>Обложка продукта *</p>-->
 					<a href="#" class="add-preview-tournir" title="Загрузить обложку продукта"><img src="img/no-image.jpg" alt="Обложка продукта *" id="upload_main_banner_product"></a>
 					<div class="edit-preview-tournir" id="banners_turnir">
-						<a class="remove-preview-tournir" title="Удалить обложку" id="img_banner_trash"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
+						<a href="#" class="remove-preview-tournir" title="Удалить обложку" id="img_banner_trash"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
 					</div>
 					<!--<div class="index-live-banner">
 								<img src="img/no-image.jpg">
