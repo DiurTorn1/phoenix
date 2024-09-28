@@ -315,10 +315,6 @@ $(document).ready(function() {
         console.log('cancel');
     });
 
-    $("#save_product_db").on('click', function(){
-        alert("Save product!");
-    });
-
     $("#img_banner_trash").on('click', function(){
         $.post('/php/delete_banners_product.php', { image_name:image_name }, function(data)  {
             if(data === 'Successfully delete'){
@@ -327,6 +323,46 @@ $(document).ready(function() {
                 $('#img_banner_trash').hide();
             }
         });
+    });
+
+    $("#save_product_db").on('click', function(){
+        var name = $("#head_name_save").val();
+        var detail = type_product + "+" + $("#detail_save").val();
+        var datetime_start = $("#start_access_time").val() + " 00:00:00";
+        var datetime_stop = $("#stop_access_time").val() + " 00:00:00";
+        var type = $("#type_save option:selected").text();
+        var country = $("#sive_bilet_region option:selected").text();
+        var valute = $("#valute_bilet option:selected").text();
+        var valute_bilet = "";
+        if(valute == "Российский рубль (RUB)"){
+            valute_bilet ="RUB";
+        } else if(valute == "Казахский тенге (KZT)"){
+            valute_bilet ="KZT";
+        } else if(valute == "Белорусский рубль (BYN)"){
+            valute_bilet ="BYN";
+        } else if(valute == "Американский доллар (USD)"){
+            valute_bilet ="USD";
+        }
+        var period_job = $("#save_days_job_bilet").val();
+        var datetime_start_sell = $("#date_start_sell_bilet").val() +":00";
+        var price = $("#input_prace_bilet").val();
+        var old_price = $("#input_old_prace_bilet").val();
+        var datetime_start_access = $("#date_start_access_bilet").val() +":00";
+        var datetime_stop_access = $("#date_stop_access_bilet").val() +":00";
+        var datetime_stop_sell = $("#date_stop_sell_bilet").val() +":00";
+        var img_main = "img/product_banners/" + image_name;
+        
+        $.post('/php/upload_product.php', { id:id, name:name, detail:detail, datetime_start:datetime_start, datetime_stop:datetime_stop, type:type, country:country,
+                                            valute:valute_bilet, period_job:period_job, datetime_start_sell:datetime_start_sell, price:price, old_price:old_price,
+                                            datetime_start_access:datetime_start_access, datetime_stop_access:datetime_stop_access, datetime_stop_sell:datetime_stop_sell, img_main:img_main
+                                        }, function(data)  {
+            if(data === 'OK'){
+                alert('Продукт изменён');
+                //$('#upload_main_banner_product').attr("src", 'img/no-image.jpg');
+                //$('#img_banner_trash').hide();
+            }
+        });
+        //alert("Save product!");
     });
 
 
