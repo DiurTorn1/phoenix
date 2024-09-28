@@ -323,6 +323,7 @@ $(document).ready(function() {
         $.post('/php/delete_banners_product.php', { image_name:image_name }, function(data)  {
             if(data === 'Successfully delete'){
                 alert('Баннер удалён');
+                $('#upload_main_banner_product').attr("src", 'img/no-image.jpg');
                 $('#img_banner_trash').hide();
             }
         });
