@@ -260,7 +260,7 @@ $(document).ready(function() {
             $('#upload_main_banner_product').attr("src", e.target.result);
             //console.log(e.target.result);
             main_image = e.target.result;
-            //var image_res = e.target.result;
+            var image_res = e.target.result;
             //console.log(image_res.split(',')[1]);
             image = image_res.split(',')[1];
             $.post('/php/upload_banners_product.php', { image: image, image_name:image_name }, function(data)  {
