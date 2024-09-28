@@ -231,5 +231,15 @@ $(document).ready(function() {
             //console.log(data);
         });
     });
+
+    $("#product_unpublic_user").on('click', function(){
+        
+    });
+
+    $("#save_product_db").on('click', function(){
+
+    });
+
+
     
 });
