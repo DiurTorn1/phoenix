@@ -1,6 +1,7 @@
 @extends('admin_panel')
 @section('title-block') Продукты @endsection
 @section('admin_res')
+<script type="text/javascript" src = "{{ asset('js/Backbone.js') }}"></script>
 <script type="text/javascript" src = "{{ asset('js/product_card.js') }}"></script>
 
 	
