@@ -251,7 +251,7 @@ $(document).ready(function() {
         //$('#img_poster_card').attr("src", file.file);
         var reader = new FileReader();
             
-        image_name = file.file.name;
+        //image_name = file.file.name;
         reader.readAsDataURL(file.file);
         //var output = $.parseJSON(file);
         // var form_data = new FormData();
@@ -316,7 +316,7 @@ $(document).ready(function() {
     });
 
     $("#save_product_db").on('click', function(){
-
+        alert("Save product!");
     });
 
 
