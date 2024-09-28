@@ -319,6 +319,15 @@ $(document).ready(function() {
         alert("Save product!");
     });
 
+    $("#img_banner_trash").on('click', function(){
+        $.post('/php/delete_banners_product.php', { image_name:image_name }, function(data)  {
+            if(data === 'Successfully delete'){
+                alert('Баннер удалён');
+                $('#img_banner_trash').hide();
+            }
+        });
+    });
+
 
     
 });
