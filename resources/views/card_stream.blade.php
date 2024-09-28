@@ -123,7 +123,7 @@
 
 			<div class="preview-tournir-vis" id="player_stream_card">
 				<!--<img src="https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b" alt="Заставка трансляции" title="Нет трансляции">-->
-				<iframe src="" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" id="player_broadcast"></iframe>
+				<iframe src="" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" id="player_stream_card_link"></iframe>
 			</div>
 
 			<div class="block-admin-container admin-back">
