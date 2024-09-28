@@ -251,7 +251,7 @@ $(document).ready(function() {
         //$('#img_poster_card').attr("src", file.file);
         var reader = new FileReader();
             
-        //image_name = file.file.name;
+        image_name = file.file.name;
         reader.readAsDataURL(file.file);
         //var output = $.parseJSON(file);
         // var form_data = new FormData();
@@ -259,18 +259,18 @@ $(document).ready(function() {
             //console.log(e.target.result);
             $('#upload_main_banner_product').attr("src", e.target.result);
             //console.log(e.target.result);
-            //main_image = e.target.result;
+            main_image = e.target.result;
             //var image_res = e.target.result;
             //console.log(image_res.split(',')[1]);
-            //image = image_res.split(',')[1];
-            //$.post('/php/upload_banners.php', { image: image, image_name:image_name }, function(data)  {
+            image = image_res.split(',')[1];
+            $.post('/php/upload_banners_product.php', { image: image, image_name:image_name }, function(data)  {
                 //console.log(data);
-                //if(data === 'Successfully Uploaded'){ 
+                if(data === 'Successfully Uploaded'){ 
                     //<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
                     //$("#banners_turnir").append('<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>');
                     $('#img_banner_trash').show();
-                //}
-            //});
+                }
+            });
         };
 
           
