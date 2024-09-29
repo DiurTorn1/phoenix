@@ -67,7 +67,7 @@ function get_stream_array(){
         var output = $.parseJSON(data);
         //console.log(output);
         var pre_arr = new Array();
-        $.each(output.id,function(i,item){
+        $.each(output,function(i,item){
             pre_arr.push(item.id);
             //count++;
         });
