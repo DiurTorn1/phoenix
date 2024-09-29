@@ -39,11 +39,13 @@ function paint_element_stream(){
 
         $.post('/php/get_stream_public.php', {name_stream:name_stream_glob}, function(data)  {
             //console.log(data);
+            var name_stream_loc_pub = '';
             if(data != null){
                 var output = $.parseJSON(data);
-                if(output[1]==name_stream_glob){
-                    console.log(name_stream_glob);
-                    console.log(output[1]);
+                name_stream_loc_pub = output? output[1]: '';
+                if(name_stream_loc_pub==name_stream_glob){
+                    console.log("name_stream_glob: "+name_stream_glob);
+                    console.log("name_stream_loc_pub:"+name_stream_loc_pub);
                     key_public = 1;
                 }
             }
