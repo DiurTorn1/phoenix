@@ -21,7 +21,7 @@ function user_sells(){
         var output = $.parseJSON(data);
         var user_sell = output ? output[2]:''; 
         if(user_sell){
-            console.log(user_sell);
+            console.log(output[1]);
         }
     });
 }
