@@ -47,6 +47,7 @@ function paint_element_stream(){
                    //});
             
                 });
+                console.log("key_public: "+key_public);
                 if(key_public){
                     $("#slider").append(
                         '<div class="slide index-live-item" id="' + list.id + '">'+
