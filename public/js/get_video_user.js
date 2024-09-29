@@ -21,7 +21,10 @@ function user_sells(){
         var output = $.parseJSON(data);
         if(output){
             $.each(output,function(i,item){
-                console.log(item.product_id);
+                if(item.user_email == user_email){
+                    console.log(item.product_id);
+                }
+                
             });
         }
         //var user_sell = output ? output[2]:''; 
