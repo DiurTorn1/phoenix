@@ -99,9 +99,9 @@ function paint_element_product(){
             //console.log(data);
             var output = $.parseJSON(data);
             for(var i = 0; i < key_sell_user; i++){
-                if(users_sells[i] == output[0]){
+                //if(users_sells[i] == output[0]){
                     console.log(users_sells[i]);
-                }
+                //}
             }
             $("#slider1").append(
                 '<div class="index-live-item" id="' + output[0] + '">' +
