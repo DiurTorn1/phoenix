@@ -46,10 +46,11 @@ function paint_element_stream(){
                          //console.log(output[2]);
                          //console.log(output[3]);
                          key_public = key_public_get;
+                         console.log("key_public: "+key_public);
                    //});
             
                 });
-                console.log("key_public: "+key_public);
+                
                 if(key_public){
                     $("#slider").append(
                         '<div class="slide index-live-item" id="' + list.id + '">'+
