@@ -1,9 +1,11 @@
 var array_product = new Array();
-var array_stream = new Array();
 var idch = 0;
 var key_main_chack = 0;
 var public_stream_list = new Array();
 var get_ch_list = 1;
+var count_stream = 0;
+var array_stream = new Array();
+var array_stream1 = new Array();
 var key_paint = 0;
 
 function get_stream_array(){
