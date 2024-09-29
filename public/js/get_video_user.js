@@ -37,13 +37,15 @@ function paint_element_stream(){
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
                     var output = $.parseJSON(data);
                     //$.each(output,function(i,item){
+                    var key_public_get = 0;
                     var pub_name = output? output[1]: '1';
                         if(pub_name==name_stream_gl){
                             console.log(pub_name);
-                            key_public = 1;
+                            key_public_get = 1;
                          }
                          //console.log(output[2]);
                          //console.log(output[3]);
+                         key_public = key_public_get;
                    //});
             
                 });
