@@ -35,10 +35,16 @@ function paint_element_stream(){
             //console.log("\r\nposter \r\nid:" + list.poster.id + "\r\ntype: " + list.poster.type + "\r\nstatus" + list.poster.status + "\r\nactive: " + list.poster.active + "\r\noriginal: " + list.poster.original +
                 //"\r\nmd: " + list.poster.md + "\r\nsm: " + list.poster.sm + "\r\nxs: " + list.poster.xs +"\r\nfrom_time" + list.poster.from_time + "\r\nto_time" + list.poster.to_time);
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
-                    //console.log(data);
-                    if(data != null){
-                        key_public = 1;
-                    }
+                    var output = $.parseJSON(data);
+                    //$.each(output,function(i,item){
+                    var pub_name = output? output[1]: '1';
+                        if(pub_name==list.name){
+                            key_public = 1;
+                         }
+                         //console.log(output[2]);
+                         //console.log(output[3]);
+                   //});
+            
                 });
                 if(key_public){
                     console.log(list.name);
