@@ -20,10 +20,10 @@ function user_sells(){
     $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
         var output = $.parseJSON(data);
         //console.log(output);
-        var user_sell = output ? output[2]:''; 
+        var user_sell = output ? output[2]:console.log(output); 
         var user_product = output ? output[1]:'';
         if(user_sell){
-            console.log(user_product);
+            console.log(user_sell);
         }
     });
 }
