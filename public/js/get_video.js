@@ -67,7 +67,8 @@ function paint_element_product(){
                         '</ul>' +
                     '</div>' +
                     '<div class="index-live-item-text">' +
-                        '<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
+                        //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
+                        '<a  class="user-button" id="product_price">Куплено &#8381;</a>'+
                     '</div>' +
                 '</div>');
         });
