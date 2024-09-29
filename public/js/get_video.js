@@ -7,7 +7,7 @@ var get_ch_list = 1;
 var count_stream = 0, count_product = 0;
 var array_stream = new Array();
 var array_stream1 = new Array();
-var key_paint = 0;
+var key_paint = 0, key_paint1 = 0;
 
 function paint_element_stream(){
     for(var i = 0; i < count_stream; i ++){
@@ -48,7 +48,7 @@ function paint_element_stream(){
 
 function paint_element_product(){
     for(var i = 0; i < count_product; i ++){
-        
+
     }
 
 }
