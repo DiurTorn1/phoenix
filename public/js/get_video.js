@@ -63,11 +63,27 @@ function get_stream_array(){
         }
         count_stream = count;
     });
+    $.post('/php/get_product.php', function(data)  {
+        var output = $.parseJSON(data);
+        var pre_arr = new Array();
+        $.each(output.data,function(i,item){
+            pre_arr.push(item.id);
+            count++;
+        });
+        //pre_arr.push(output.data);
+        
+        for(var i = 0; i < pre_arr.length; i++){
+            array_product.push(pre_arr[i]);
+            
+        }
+        //count_stream = count;
+    });
     if(!key_paint){
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
         }
         if(array_stream1[0]){
+            console.log(array_product);
             paint_element_stream();
             key_paint = 1;
         }
@@ -89,8 +105,8 @@ function get_stream_array(){
 $(document).ready(function() {
     get_stream_array();
     setInterval('get_stream_array()',500);
-    console.log(array_stream1);
-    console.log(count_stream);
+    //console.log(array_stream1);
+    //console.log(count_stream);
     
     //$("#admin-video-list-btn").on('click', function(){
         //var main = $('#admin-input-main').val();
