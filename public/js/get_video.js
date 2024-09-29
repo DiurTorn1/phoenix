@@ -49,6 +49,7 @@ function paint_element_stream(){
 function paint_element_product(){
     for(var i = 0; i < count_product; i ++){
         $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
+            console.log(data);
             var output = $.parseJSON(data);
             $("#slider1").append(
                 '<div class="index-live-item" id="' + output.id + '">' +
