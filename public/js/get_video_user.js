@@ -11,16 +11,15 @@ var key_paint = 0, key_paint1 = 0;
 var user_global = "";
 
 function paint_element_stream(){
-    var key_public = 0;
     var user_email = $('#name_user_get').text();
     //console.log(user_email);
-    var name_stream_glob = '';
+    var name_stream = '';
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
-            name_stream_glob = list.name;
+            name_stream = list.name;
             
             console.log(list.name);
             //console.log("Video inform:\r\n");
@@ -34,38 +33,27 @@ function paint_element_stream(){
                 //"\r\nmoderators: " + list.moderators);
             //console.log("\r\nposter \r\nid:" + list.poster.id + "\r\ntype: " + list.poster.type + "\r\nstatus" + list.poster.status + "\r\nactive: " + list.poster.active + "\r\noriginal: " + list.poster.original +
                 //"\r\nmd: " + list.poster.md + "\r\nsm: " + list.poster.sm + "\r\nxs: " + list.poster.xs +"\r\nfrom_time" + list.poster.from_time + "\r\nto_time" + list.poster.to_time);
+                $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
+                    //console.log(data);
+                    if(data != null){
+                        $("#slider").append(
+                            '<div class="slide index-live-item" id="' + list.id + '">'+
+                                '<div class="index-live-item-video">'+
+                                    '<a >'+ 
+                                        '<div class="index-live-banner">' +
+                                            '<img src="' + list.poster.original + '">' +
+                                        '</div>' +
+                                    '</a>' +
+                                    
+                                '</div>'+
+                                '<div class="index-live-item-text">'+
+                                    '<a >' + list.name + '</a>'+
+                                '</div>'+
+                            '</div>');
+                    }
+                });
 
         });
-
-        $.post('/php/get_stream_public.php', {name_stream:name_stream_glob}, function(data)  {
-            //console.log(data);
-            var name_stream_loc_pub = '';
-            if(data != null){
-                var output = $.parseJSON(data);
-                name_stream_loc_pub = output? output[1]: '';
-                console.log("name_stream_glob: "+name_stream_glob);
-                console.log("name_stream_loc_pub:"+name_stream_loc_pub);
-                key_public = 1;
-            }
-        });
-        if(key_public){
-            $("#slider").append(
-                '<div class="slide index-live-item" id="' + list.id + '">'+
-                    '<div class="index-live-item-video">'+
-                        '<a >'+ 
-                            '<div class="index-live-banner">' +
-                                '<img src="' + list.poster.original + '">' +
-                            '</div>' +
-                        '</a>' +
-                        
-                    '</div>'+
-                    '<div class="index-live-item-text">'+
-                        '<a >' + list.name + '</a>'+
-                    '</div>'+
-                '</div>');
-
-            key_public = 0;
-        }
     }
 
 }
