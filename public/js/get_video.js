@@ -48,9 +48,49 @@ function paint_element_stream(){
 
 function paint_element_product(){
     for(var i = 0; i < count_product; i ++){
-
+        $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
+            var output = $.parseJSON(data);
+            $("#slider1").append(
+                '<div class="index-live-item" id="' + output.id + '">' +
+                    '<div class="index-live-item-video">' +
+                        '<a href="#">' +
+                            '<div class="index-live-banner">' +
+                                '<img src="' + output.img_main + '">' +
+                            '</div> ' +
+                        '</a>' +
+                    '</div>' +
+                    '<div class="index-item-text-wrap">' + 
+                        '<a href="#">' + output.name + '</a>' +
+                        '<ul>' +
+                            //'<li>Билет на 5 дней</li>' +
+                        '</ul>' +
+                    '</div>' +
+                    '<div class="index-live-item-text">' +
+                        '<a href="#" class="user-button">' + output.price + ' &#8381;</a>'+
+                    '</div>' +
+                '</div>');
+        });
     }
-
+/*
+				<div class="index-live-item">
+					<div class="index-live-item-video">
+						<a href="#">
+							<div class="index-live-banner"><!-- БАННЕР ВИДЕО!! -->
+								<img src="img/phoenix.png">
+							</div>
+						</a>
+					</div>
+					<div class="index-item-text-wrap">
+						<a href="#">27.04.2024 Баскетбол ДБЛ "Аврора" Д 2013 Ф г. Окуневка</a>
+						<ul>
+							<li>Билет на 5 дней</li>
+						</ul>
+					</div>
+					<div class="index-live-item-text"> 
+						<a href="#" class="user-button">150 &#8381;</a>
+					</div>
+				</div>
+*/ 
 }
 
 function get_stream_array(){

@@ -90,10 +90,15 @@
 	<div class="index-live">
 			<h2>Подписка</h2>
 			<div class="index-live-list">
-				<div class="index-live-item">
+				<div id="slider-wrap1">
+         			<div id="active-slide1">
+           				<div id="slider1">
+           			</div>
+         		</div>
+				<!--<div class="index-live-item">
 					<div class="index-live-item-video">
 						<a href="#">
-							<div class="index-live-banner"><!-- БАННЕР ВИДЕО!! -->
+							<div class="index-live-banner">
 								<img src="img/phoenix.png">
 							</div>
 						</a>
@@ -135,9 +140,9 @@
 							<li>На всю жизнь</li>
 						</ul>
 					</div>
-					<div class="index-live-item-text"> 
-						<a href="#" class="user-button user-button-subs"><span>300 &#8381;<p class="user-button-old-price">500 &#8381;</p></span><p class="user-button-slash">/</p><p class="user-button-text">три месяца</p></a><!-- Кнопка с старой ценой и текстом -->
-					</div>
+					<div class="index-live-item-text"> -->
+						<!--<a href="#" class="user-button user-button-subs"><span>300 &#8381;<p class="user-button-old-price">500 &#8381;</p></span><p class="user-button-slash">/</p><p class="user-button-text">три месяца</p></a>--><!-- Кнопка с старой ценой и текстом -->
+					<!--</div>
 				</div>
 				<div class="index-live-item">
 					<div class="index-live-item-video">
@@ -153,7 +158,7 @@
 					<div class="index-live-item-text"> 
 						<a href="#" class="user-button user-button-subs"><span>3000 &#8381;<p class="user-button-old-price">5000 &#8381;</p></span><p class="user-button-slash">/</p><p class="user-button-text">полгода</p></a>
 					</div>
-				</div>
+				</div>-->
 
 			</div>
 		</div>
