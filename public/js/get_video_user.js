@@ -11,6 +11,7 @@ var key_paint = 0, key_paint1 = 0;
 var user_global = "";
 
 function paint_element_stream(){
+    var key_public = 0;
     var user_email = $('#name_user_get').text();
     //console.log(user_email);
     var name_stream = '';
@@ -19,9 +20,9 @@ function paint_element_stream(){
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
-            name_stream = list.name;
+            //name_stream = list.name;
             
-            console.log(list.name);
+            
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
@@ -36,22 +37,28 @@ function paint_element_stream(){
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
                     //console.log(data);
                     if(data != null){
-                        $("#slider").append(
-                            '<div class="slide index-live-item" id="' + list.id + '">'+
-                                '<div class="index-live-item-video">'+
-                                    '<a >'+ 
-                                        '<div class="index-live-banner">' +
-                                            '<img src="' + list.poster.original + '">' +
-                                        '</div>' +
-                                    '</a>' +
-                                    
-                                '</div>'+
-                                '<div class="index-live-item-text">'+
-                                    '<a >' + list.name + '</a>'+
-                                '</div>'+
-                            '</div>');
+                        key_public = 1;
                     }
                 });
+                if(key_public){
+                    console.log(list.name);
+                    $("#slider").append(
+                        '<div class="slide index-live-item" id="' + list.id + '">'+
+                            '<div class="index-live-item-video">'+
+                                '<a >'+ 
+                                    '<div class="index-live-banner">' +
+                                        '<img src="' + list.poster.original + '">' +
+                                    '</div>' +
+                                '</a>' +
+                                
+                            '</div>'+
+                            '<div class="index-live-item-text">'+
+                                '<a >' + list.name + '</a>'+
+                            '</div>'+
+                        '</div>');
+
+                    key_public = 0;
+                }
 
         });
     }
