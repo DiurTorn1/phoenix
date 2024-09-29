@@ -17,7 +17,10 @@ function user_sells(){
 
     console.log(user_email);
     
-    $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {});
+    $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
+        var output = $.parseJSON(data);
+        
+    });
 }
 
 function paint_element_stream(){
