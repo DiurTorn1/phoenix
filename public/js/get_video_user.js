@@ -10,11 +10,13 @@ var array_stream1 = new Array();
 var key_paint = 0, key_paint1 = 0;
 
 function paint_element_stream(){
+    var key_public = 0;
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
+            
             //console.log(list.id);
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
@@ -28,22 +30,30 @@ function paint_element_stream(){
             //console.log("\r\nposter \r\nid:" + list.poster.id + "\r\ntype: " + list.poster.type + "\r\nstatus" + list.poster.status + "\r\nactive: " + list.poster.active + "\r\noriginal: " + list.poster.original +
                 //"\r\nmd: " + list.poster.md + "\r\nsm: " + list.poster.sm + "\r\nxs: " + list.poster.xs +"\r\nfrom_time" + list.poster.from_time + "\r\nto_time" + list.poster.to_time);
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
-                    console.log(data);
+                    //console.log(data);
+                    if(data != null){
+                        key_public = 1;
+                    }
                 });
-                $("#slider").append(
-                    '<div class="slide index-live-item" id="' + list.id + '">'+
-                        '<div class="index-live-item-video">'+
-                            '<a >'+ 
-                                '<div class="index-live-banner">' +
-                                    '<img src="' + list.poster.original + '">' +
-                                '</div>' +
-                            '</a>' +
-                            
-                        '</div>'+
-                        '<div class="index-live-item-text">'+
-                            '<a >' + list.name + '</a>'+
-                        '</div>'+
-                    '</div>');
+                if(key_public){
+                    $("#slider").append(
+                        '<div class="slide index-live-item" id="' + list.id + '">'+
+                            '<div class="index-live-item-video">'+
+                                '<a >'+ 
+                                    '<div class="index-live-banner">' +
+                                        '<img src="' + list.poster.original + '">' +
+                                    '</div>' +
+                                '</a>' +
+                                
+                            '</div>'+
+                            '<div class="index-live-item-text">'+
+                                '<a >' + list.name + '</a>'+
+                            '</div>'+
+                        '</div>');
+
+                    key_public = 0;
+                }
+
         });
     }
 
