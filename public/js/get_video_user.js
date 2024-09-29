@@ -14,13 +14,13 @@ function paint_element_stream(){
     var key_public = 0;
     var user_email = $('#name_user_get').text();
     //console.log(user_email);
-    var name_stream = '';
+    var name_stream_gl = '';
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
-            //name_stream = list.name;
+            name_stream_gl = list.name;
             
             
             //console.log("Video inform:\r\n");
@@ -38,7 +38,7 @@ function paint_element_stream(){
                     var output = $.parseJSON(data);
                     //$.each(output,function(i,item){
                     var pub_name = output? output[1]: '1';
-                        if(pub_name==list.name){
+                        if(pub_name==name_stream_gl){
                             console.log(pub_name);
                             key_public = 1;
                          }
@@ -48,7 +48,6 @@ function paint_element_stream(){
             
                 });
                 if(key_public){
-                    console.log(list.name);
                     $("#slider").append(
                         '<div class="slide index-live-item" id="' + list.id + '">'+
                             '<div class="index-live-item-video">'+
