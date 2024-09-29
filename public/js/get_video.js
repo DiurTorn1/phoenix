@@ -67,7 +67,7 @@ function paint_element_product(){
                         '</ul>' +
                     '</div>' +
                     '<div class="index-live-item-text">' +
-                        '<a href="#" class="user-button">' + output[12] + ' &#8381;</a>'+
+                        '<a href="#" class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
                     '</div>' +
                 '</div>');
         });
@@ -212,9 +212,17 @@ $(document).ready(function() {
                                 '<a >' + item.name + '</a>'+
                             '</div>'+
                         '</div>');
-            });
+            });product_price
             
         });*/
+
+        $(document).on('click', '.user-button', function() {
+            var id = this.id;
+            console.log(id);
+            //$("#admin_input_id").val(id);
+            //window.location.href='/player_stream?player_stream_id='+id;
+            //alert("Text: " + this.id);
+        });
 
         $(document).on('click', '.slide', function() {
             var id = this.id;
