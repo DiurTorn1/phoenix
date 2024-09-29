@@ -164,6 +164,7 @@ function get_stream_array(){
         }
         if(array_stream1[0]){
             user_email = $('#name_user_get').text();
+            user_sells();
             paint_element_stream();
             key_paint = 1;
         }
