@@ -19,7 +19,10 @@ function user_sells(){
     
     $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
         var output = $.parseJSON(data);
-        console.log(output);
+        var user_sell = output ? output[2]:''; 
+        if(user_sell){
+            console.log(user_sell);
+        }
     });
 }
 
