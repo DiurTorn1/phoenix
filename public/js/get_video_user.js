@@ -8,7 +8,7 @@ var count_stream = 0, count_product = 0;
 var array_stream = new Array();
 var array_stream1 = new Array();
 var users_sells = new Array();
-var key_paint = 0, key_paint1 = 0;
+var key_paint = 0, key_paint1 = 0, key_sell_user = 0;
 var user_global = "";
 var user_email = '';
 //
@@ -22,7 +22,9 @@ function user_sells(){
         if(output){
             $.each(output,function(i,item){
                 if(item.user_email == user_email){
-                    console.log(item.product_id);
+                    //console.log(item.product_id);
+                    users_sells.push(item.product_id);
+                    key_sell_user++;
                 }
                 
             });
@@ -38,6 +40,9 @@ function paint_element_stream(){
     // $('#name_user_get').text();
     //console.log(user_email);
     var name_stream_gl = '';
+    for(var i = 0; i < key_sell_user; i++){
+        console.log(users_sells[i]);
+    }
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
