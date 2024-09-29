@@ -43,11 +43,9 @@ function paint_element_stream(){
             if(data != null){
                 var output = $.parseJSON(data);
                 name_stream_loc_pub = output? output[1]: '';
-                if(name_stream_loc_pub==name_stream_glob){
-                    console.log("name_stream_glob: "+name_stream_glob);
-                    console.log("name_stream_loc_pub:"+name_stream_loc_pub);
-                    key_public = 1;
-                }
+                console.log("name_stream_glob: "+name_stream_glob);
+                console.log("name_stream_loc_pub:"+name_stream_loc_pub);
+                key_public = 1;
             }
         });
         if(key_public){
