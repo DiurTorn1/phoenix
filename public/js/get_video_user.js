@@ -21,6 +21,7 @@ function user_sells(){
         var output = $.parseJSON(data);
         //console.log(output);
         var user_sell = output ? output[2]:console.log(output); 
+        console.log(user_sell);
         var user_product = output ? output[1]:'';
         if(user_sell){
             console.log(user_sell);
