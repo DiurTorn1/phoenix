@@ -34,9 +34,9 @@ function user_sells(){
             //console.log(output[1]);
         //}
     });
-    for(var i = 0; i < key_sell_user; i++){
-        console.log(users_sells[i]);
-    }
+    //for(var i = 0; i < key_sell_user; i++){
+        //console.log(users_sells[i]);
+    //}
 }
 
 function paint_element_stream(){
@@ -67,6 +67,9 @@ function paint_element_stream(){
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
                     if(pub_name==name_stream_gl){
+                        for(var i = 0; i < key_sell_user; i++){
+                            console.log(users_sells[i]);
+                        }
                         $("#slider").append(
                             '<div class="slide index-live-item" id="' + list.id + '">'+
                                 '<div class="index-live-item-video">'+
