@@ -50,7 +50,7 @@ function paint_element_stream(){
     
         });
         
-        if(key_public){
+        //if(key_public){
             $("#slider").append(
                 '<div class="slide index-live-item" id="' + id_stream_gl + '">'+
                     '<div class="index-live-item-video">'+
@@ -65,7 +65,7 @@ function paint_element_stream(){
                         '<a >' + name_stream_gl + '</a>'+
                     '</div>'+
                 '</div>');
-        }
+        //}
     }
 
 }
