@@ -11,7 +11,6 @@ var key_paint = 0, key_paint1 = 0;
 var user_global = "";
 
 function paint_element_stream(){
-    var key_public = 0;
     var user_email = $('#name_user_get').text();
     //console.log(user_email);
     var name_stream_gl = '';
@@ -20,6 +19,7 @@ function paint_element_stream(){
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
+            var key_public = 0;
             name_stream_gl = list.name;
             
             
@@ -63,8 +63,6 @@ function paint_element_stream(){
                                 '<a >' + list.name + '</a>'+
                             '</div>'+
                         '</div>');
-
-                    key_public = 0;
                 }
 
         });
