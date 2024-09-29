@@ -52,22 +52,22 @@ function paint_element_product(){
             console.log(data);
             var output = $.parseJSON(data);
             $("#slider1").append(
-                '<div class="index-live-item" id="' + output.id + '">' +
+                '<div class="index-live-item" id="' + output[0] + '">' +
                     '<div class="index-live-item-video">' +
                         '<a href="#">' +
                             '<div class="index-live-banner">' +
-                                '<img src="' + output.img_main + '">' +
+                                '<img src="' + output[17] + '">' +
                             '</div> ' +
                         '</a>' +
                     '</div>' +
                     '<div class="index-item-text-wrap">' + 
-                        '<a href="#">' + output.name + '</a>' +
+                        '<a href="#">' + output[1] + '</a>' +
                         '<ul>' +
                             //'<li>Билет на 5 дней</li>' +
                         '</ul>' +
                     '</div>' +
                     '<div class="index-live-item-text">' +
-                        '<a href="#" class="user-button">' + output.price + ' &#8381;</a>'+
+                        '<a href="#" class="user-button">' + output[12] + ' &#8381;</a>'+
                     '</div>' +
                 '</div>');
         });
