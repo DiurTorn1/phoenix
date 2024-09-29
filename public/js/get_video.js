@@ -76,6 +76,7 @@ function get_stream_array(){
             array_product.push(pre_arr[i]);
             
         }
+        console.log(array_product);
         //count_stream = count;
     });
     if(!key_paint){
@@ -83,7 +84,7 @@ function get_stream_array(){
             array_stream1.push(array_stream[i]);           
         }
         if(array_stream1[0]){
-            console.log(array_product);
+            
             paint_element_stream();
             key_paint = 1;
         }
