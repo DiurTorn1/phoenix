@@ -31,7 +31,7 @@ function get_stream_array(){
             array_stream1.push(array_stream[i]);           
         }
         if(array_stream1[0]){
-            paint_element_stream();
+            //paint_element_stream();
             key_paint = 1;
         }
 
