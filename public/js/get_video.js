@@ -53,6 +53,7 @@ $(document).ready(function() {
     get_stream_array();
     setInterval('get_stream_array()',500);
     console.log(array_stream);
+    console.log(count_stream);
     //$("#admin-video-list-btn").on('click', function(){
         //var main = $('#admin-input-main').val();
         //$.post('/php/get_stream.php', function(data)  {
