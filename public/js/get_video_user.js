@@ -189,7 +189,7 @@ function get_stream_array(){
         }
         if(array_stream1[0]){
             user_email = $('#name_user_get').text();
-            user_sells();
+            
             paint_element_stream();
             key_paint = 1;
         }
@@ -207,7 +207,7 @@ function get_stream_array(){
             array_product1.push(array_product[i]);           
         }
         if(array_product1[0]){
-            
+            user_sells();
             paint_element_product();
             key_paint1 = 1;
         }
