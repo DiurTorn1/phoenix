@@ -65,16 +65,16 @@ function get_stream_array(){
     });
     $.post('/php/get_product.php', function(data)  {
         var output = $.parseJSON(data);
-        console.log(output);
-        //var pre_arr = new Array();
-        //$.each(output.data,function(i,item){
-            //pre_arr.push(item.id);
+        //console.log(output);
+        var pre_arr = new Array();
+        $.each(output.id,function(i,item){
+            pre_arr.push(item.id);
             //count++;
-        //});
+        });
         //pre_arr.push(output.data);
-        
+        console.log(pre_arr);
         //for(var i = 0; i < pre_arr.length; i++){
-            array_product.push(pre_arr[i]);
+            //array_product.push(pre_arr[i]);
             
         //}
         //console.log(array_product);
