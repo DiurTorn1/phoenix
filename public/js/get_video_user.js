@@ -8,9 +8,12 @@ var count_stream = 0, count_product = 0;
 var array_stream = new Array();
 var array_stream1 = new Array();
 var key_paint = 0, key_paint1 = 0;
+var user_global = "";
 
 function paint_element_stream(){
     var key_public = 0;
+    var user_email = $('#name_user_get').text();
+    console.log(user_email);
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
@@ -60,6 +63,8 @@ function paint_element_stream(){
 }
 
 function paint_element_product(){
+    var user_email = $('#name_user_get').text();
+    console.log(user_email);
     for(var i = 0; i < count_product; i ++){
         $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
             //console.log(data);
