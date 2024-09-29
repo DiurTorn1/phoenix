@@ -15,10 +15,11 @@ var user_email = '';
 
 function user_sells(){
 
-    console.log(user_email);
+    //console.log(user_email);
     
     $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
         var output = $.parseJSON(data);
+        //console.log(user_email);
         var user_sell = output ? output[2]:''; 
         if(user_sell){
             console.log(output[1]);
