@@ -39,6 +39,7 @@ function paint_element_stream(){
                     //$.each(output,function(i,item){
                     var pub_name = output? output[1]: '1';
                         if(pub_name==list.name){
+                            console.log(pub_name);
                             key_public = 1;
                          }
                          //console.log(output[2]);
