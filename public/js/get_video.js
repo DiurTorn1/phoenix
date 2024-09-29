@@ -8,6 +8,43 @@ var array_stream = new Array();
 var array_stream1 = new Array();
 var key_paint = 0;
 
+function paint_element_stream(){
+    for(var i = 0; i < count_stream; i ++){
+        $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
+            //console.log(data);
+            var output = $.parseJSON(data);
+            var list = output.data;
+            //console.log(list.id);
+            //console.log("Video inform:\r\n");
+            //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
+                //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
+            //console.log("\r\nRecord: \r\n parent_id: " + list.record.parent_id + "\r\nvideo: \r\n presets: " + list.video.presets + "\r\naudio: \r\n channel_mapping: " + list.audio.channel_mapping + 
+                //"\r\nreconnect_window:" + list.reconnect_window + "\r\nplay_link: " + list.play_link + "\r\nrtmp_link: " + list.rtmp_link + "\r\nscheduled: \r\n time: " + list.scheduled.time);
+            //console.log("\r\nstream: \r\n id: " + list.stream.id + "\r\nevent_id: " + list.stream.event_id + "\r\nstatus: " + list.stream.status + "\r\nstarted_at: " + list.stream.started_at +  "\r\nfinished_at: " + list.stream.finished_at);
+            //console.log("\r\nchat_after_stream: " + list.chat_after_stream + "\r\nchat_active: " + list.chat_active + "\r\nchat_preview: " + list.chat_preview + "\r\nshow_members: " + list.show_members +
+                //"\r\ncreated_at" + list.created_at + "\r\nupdated_at: " + list.updated_at + "\r\nlatency_mode: " + list.latency_mode + "\r\nallow_chat_links: " + list.allow_chat_links +
+                //"\r\nmoderators: " + list.moderators);
+            //console.log("\r\nposter \r\nid:" + list.poster.id + "\r\ntype: " + list.poster.type + "\r\nstatus" + list.poster.status + "\r\nactive: " + list.poster.active + "\r\noriginal: " + list.poster.original +
+                //"\r\nmd: " + list.poster.md + "\r\nsm: " + list.poster.sm + "\r\nxs: " + list.poster.xs +"\r\nfrom_time" + list.poster.from_time + "\r\nto_time" + list.poster.to_time);
+                $("#slider").append(
+                    '<div class="slide index-live-item" id="' + list.id + '">'+
+                        '<div class="index-live-item-video">'+
+                            '<a >'+ 
+                                '<div class="index-live-banner">' +
+                                    '<img src="' + list.poster.original + '">' +
+                                '</div>' +
+                            '</a>' +
+                            
+                        '</div>'+
+                        '<div class="index-live-item-text">'+
+                            '<a >' + list.name + '</a>'+
+                        '</div>'+
+                    '</div>');
+        });
+    }
+
+}
+
 function get_stream_array(){
     
     var count = 0;
@@ -31,7 +68,7 @@ function get_stream_array(){
             array_stream1.push(array_stream[i]);           
         }
         if(array_stream1[0]){
-            //paint_element_stream();
+            paint_element_stream();
             key_paint = 1;
         }
 
@@ -52,9 +89,9 @@ function get_stream_array(){
 $(document).ready(function() {
     get_stream_array();
     setInterval('get_stream_array()',500);
-    console.log(array_stream);
     console.log(array_stream1);
     console.log(count_stream);
+    
     //$("#admin-video-list-btn").on('click', function(){
         //var main = $('#admin-input-main').val();
         //$.post('/php/get_stream.php', function(data)  {
