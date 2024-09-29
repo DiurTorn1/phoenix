@@ -67,9 +67,7 @@ function paint_element_stream(){
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
                     if(pub_name==name_stream_gl){
-                        for(var i = 0; i < key_sell_user; i++){
-                            console.log(users_sells[i]);
-                        }
+
                         $("#slider").append(
                             '<div class="slide index-live-item" id="' + list.id + '">'+
                                 '<div class="index-live-item-video">'+
@@ -100,6 +98,11 @@ function paint_element_product(){
         $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
+            for(var i = 0; i < key_sell_user; i++){
+                if(users_sells[i] == output[0]){
+                    console.log(users_sells[i]);
+                }
+            }
             $("#slider1").append(
                 '<div class="index-live-item" id="' + output[0] + '">' +
                     '<div class="index-live-item-video">' +
