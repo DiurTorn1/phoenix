@@ -46,7 +46,7 @@ function paint_element_stream(){
     var name_stream_gl = '';
     for(var i = 0; i < count_product; i ++){
         console.log(array_product[i]);
-        for(var i = 0; i < key_sell_user; i++){
+        for(var i = 0; i < count_sells; i++){
             //if(users_sells[i] == output[0]){
                 console.log(users_sells[i]);
             //}
@@ -233,7 +233,7 @@ function get_stream_array(){
             //setInterval('paint_element_stream()',100);
         $("#slider").empty();
         //idch = 0;
-        array_stream = [];
+        //array_stream = [];
         key_paint = 0;
     }
     if(!key_paint1){
@@ -251,7 +251,7 @@ function get_stream_array(){
     if(array_product[0]!=array_product1[0]){
         //setInterval('paint_element_stream()',100);
         $("#slider1").empty();
-        array_product = [];
+        //array_product = [];
         //idch = 0;
         key_paint1 = 0;
     }
@@ -270,7 +270,7 @@ function get_stream_array(){
     if(users_sells[0]!=users_sells1[0]){
         //setInterval('paint_element_stream()',100);
         //$("#slider1").empty();
-        users_sells = [];
+        //users_sells = [];
         //idch = 0;
         key_paint2 = 0;
     }
