@@ -211,27 +211,50 @@ function paint_element_product(){
                             key_sell = 1;
                         }
                     }
-                    $("#slider1").append(
-                        '<div class="index-live-item" id="' + id_product + '">' +
-                            '<div class="index-live-item-video">' +
-                                '<a href="#">' +
-                                    '<div class="index-live-banner">' +
-                                        '<img src="' + src_product + '">' +
-                                    '</div> ' +
-                                '</a>' +
-                            '</div>' +
-                            '<div class="index-item-text-wrap">' + 
-                                '<a href="#">' + name_product + '</a>' +
-                                '<ul>' +
-                                    //'<li>Билет на 5 дней</li>' +
-                                '</ul>' +
-                            '</div>' +
-                            '<div class="index-live-item-text">' +
-                                //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
-                                '<a  class="user-button" id="product_price">' + price_product + ' &#8381;</a>'+
-                            '</div>' +
-                        '</div>');
-                        console.log(key_sell);
+                    if(key_sell){
+                        $("#slider1").append(
+                            '<div class="index-live-item" id="' + id_product + '">' +
+                                '<div class="index-live-item-video">' +
+                                    '<a href="#">' +
+                                        '<div class="index-live-banner">' +
+                                            '<img src="' + src_product + '">' +
+                                        '</div> ' +
+                                    '</a>' +
+                                '</div>' +
+                                '<div class="index-item-text-wrap">' + 
+                                    '<a href="#">' + name_product + '</a>' +
+                                    '<ul>' +
+                                        //'<li>Билет на 5 дней</li>' +
+                                    '</ul>' +
+                                '</div>' +
+                                '<div class="index-live-item-text">' +
+                                    //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
+                                    //'<a  class="user-button" id="product_price">' + price_product + ' &#8381;</a>'+
+                                    '<a  class="user-button" >Куплено</a>'+
+                                '</div>' +
+                            '</div>');
+                    }else{
+                        $("#slider1").append(
+                            '<div class="index-live-item" id="' + id_product + '">' +
+                                '<div class="index-live-item-video">' +
+                                    '<a href="#">' +
+                                        '<div class="index-live-banner">' +
+                                            '<img src="' + src_product + '">' +
+                                        '</div> ' +
+                                    '</a>' +
+                                '</div>' +
+                                '<div class="index-item-text-wrap">' + 
+                                    '<a href="#">' + name_product + '</a>' +
+                                    '<ul>' +
+                                        //'<li>Билет на 5 дней</li>' +
+                                    '</ul>' +
+                                '</div>' +
+                                '<div class="index-live-item-text">' +
+                                    //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
+                                    '<a  class="user-button" id="product_price">' + price_product + ' &#8381;</a>'+
+                                '</div>' +
+                            '</div>');
+                    }
                 }
             });
             /**/
