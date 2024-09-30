@@ -113,7 +113,7 @@ function paint_element_stream(){
                         }
                         if(key_sell){
                             $("#slider").append(
-                                '<div class="slide index-live-item" id="' + list.id + '">'+
+                                '<div class="slide bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
                                         '<a >'+ 
                                             '<div class="index-live-banner">' +
@@ -129,7 +129,7 @@ function paint_element_stream(){
                         } else {
                             console.log("Product not bay");
                                 $("#slider").append(
-                                    '<div class="slide index-live-item" id="' + list.id + '">'+
+                                    '<div class="slide no-bay index-live-item" id="' + list.id + '">'+
                                         '<div class="index-live-item-video">'+
                                             '<a >'+ 
                                                 '<div class="index-live-banner">' +
@@ -385,7 +385,7 @@ $(document).ready(function() {
             //alert("Text: " + this.id);
         });
 
-        $(document).on('click', '.slide', function() {
+        $(document).on('click', '.bay', function() {
             var id = this.id;
             //console.log(id);
             //$("#admin_input_id").val(id);
