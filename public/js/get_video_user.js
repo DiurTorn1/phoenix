@@ -51,7 +51,11 @@ function paint_element_stream(){
             var key_public = 0;
             name_stream_gl = list.name;
             
-            
+            for(var i = 0; i < key_sell_user; i++){
+                //if(users_sells[i] == output[0]){
+                    console.log(users_sells[i]);
+                //}
+            }
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
@@ -98,11 +102,6 @@ function paint_element_product(){
         $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
-            for(var i = 0; i < key_sell_user; i++){
-                //if(users_sells[i] == output[0]){
-                    console.log(users_sells[i]);
-                //}
-            }
             $("#slider1").append(
                 '<div class="index-live-item" id="' + output[0] + '">' +
                     '<div class="index-live-item-video">' +
@@ -189,7 +188,7 @@ function get_stream_array(){
         }
         if(array_stream1[0]){
             user_email = $('#name_user_get').text();
-            
+            user_sells();
             paint_element_stream();
             key_paint = 1;
         }
@@ -207,14 +206,14 @@ function get_stream_array(){
             array_product1.push(array_product[i]);           
         }
         if(array_product1[0]){
-            user_sells();
+            
             paint_element_product();
             key_paint1 = 1;
         }
 
     }
     //for(var i = 0; i < count_stream; i++){
-    if(array_stream[0]!=array_stream1[0]){
+    if(array_product[0]!=array_product1[0]){
         //setInterval('paint_element_stream()',100);
         //$("#slider").empty();
         //idch = 0;
