@@ -56,6 +56,9 @@ function paint_element_stream(){
                     console.log(users_sells[i]);
                 //}
             }
+            for(var i = 0; i < count_product; i ++){
+                console.log(array_product[i]);
+            }
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
