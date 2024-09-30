@@ -251,7 +251,7 @@ function paint_element_product(){
                                 '</div>' +
                                 '<div class="index-live-item-text">' +
                                     //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
-                                    '<a  class="user-button" id="product_price">' + price_product + ' &#8381;</a>'+
+                                    '<a  class="user-button button_sell_user" id="product_price">' + price_product + ' &#8381;</a>'+
                                 '</div>' +
                             '</div>');
                     }
@@ -454,7 +454,7 @@ $(document).ready(function() {
             
         });*/
 
-        $(document).on('click', '.user-button', function() {
+        $(document).on('click', '.button_sell_user', function() {
             var id = this.id;
             console.log(id);
             //$("#admin_input_id").val(id);
