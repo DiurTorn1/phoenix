@@ -48,17 +48,24 @@ function paint_element_stream(){
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
-            var key_public = 0;
+            var key_sell_product = 0;
+            var sells_user_var, product_user_var, arr_user_product;
             name_stream_gl = list.name;
             
             for(var i = 0; i < key_sell_user; i++){
                 //if(users_sells[i] == output[0]){
-                    console.log(users_sells[i]);
+                    sells_user_var = users_sells[i];
+                    //console.log(users_sells[i]);
+                    for(var i = 0; i < count_product; i ++){
+                        //console.log(array_product[i]);
+                        product_user_var = array_product[i];
+                        if(sells_user_var == product_user_var){
+                            arr_user_product = arr_user_product + 1;
+                        }
+                    }
                 //}
             }
-            for(var i = 0; i < count_product; i ++){
-                console.log(array_product[i]);
-            }
+            console.log(arr_user_product);
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
