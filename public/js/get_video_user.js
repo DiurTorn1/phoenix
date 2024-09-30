@@ -202,7 +202,7 @@ function paint_element_product(){
                 var prm_prod = output ? output[1]:'';
                 
                 var key_sell = 0;
-                if(pub_name==name_stream_gl){
+                if(prm_prod == id_product){
                     for(var i = 0; i < public_product_perm.length; i++){
                         if(public_product_perm[i] == name_stream_gl){
                             //console.log(public_product_perm.length);
@@ -210,8 +210,6 @@ function paint_element_product(){
                             key_sell = 1;
                         }
                     }
-                }
-                if(prm_prod == id_product){
                     $("#slider1").append(
                         '<div class="index-live-item" id="' + output[0] + '">' +
                             '<div class="index-live-item-video">' +
