@@ -103,8 +103,12 @@ function paint_element_stream(){
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
                     if(pub_name==name_stream_gl){
-                        console.log(public_product_perm.length);
-                        console.log(public_product_perm);
+                        for(var i = 0; i < public_product_perm.length; i++){
+                            if(public_product_perm[i] == name_stream_gl){
+                                console.log(public_product_perm.length);
+                                console.log(public_product_perm);
+                            }
+                        }
                         $("#slider").append(
                             '<div class="slide index-live-item" id="' + list.id + '">'+
                                 '<div class="index-live-item-video">'+
