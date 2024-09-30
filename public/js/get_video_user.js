@@ -132,8 +132,8 @@ function paint_element_stream(){
                                     '<div class="slide index-live-item" id="' + list.id + '">'+
                                         '<div class="index-live-item-video">'+
                                             '<a >'+ 
-                                                '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
                                                 '<div class="index-live-banner">' +
+                                                    '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
                                                     '<img src="' + list.poster.original + '">' +
                                                 '</div>' +
                                             '</a>' +
