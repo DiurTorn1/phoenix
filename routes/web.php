@@ -140,6 +140,10 @@ Route::get('/video_add', function () {
     return view('video_add');
 });
 
+Route::get('/sell_panel', function () {
+    return view('sell_panel');
+});
+
 //Route::resource('products', ProductPhoenix::class);
 //Route::group(['middleware' => ['web']], function() {
     //Route::resource('products', ProductPhoenix::class);
