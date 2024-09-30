@@ -128,6 +128,18 @@ function paint_element_stream(){
                                 '</div>');
                         } else {
                             console.log("Product not bay");
+                            $("#slider").append(
+                                '<div class="slide index-live-item" id="' + list.id + '">' +
+                                    '<div class="index-live-item-video" id="parent_sell_div' + list.id + '">' +
+                                        '<a id = "sell-' + list.id + '">' + 
+                                            '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
+                                            '<img src="' + list.poster.original + '">' +
+                                        '</a>' +
+                                    '</div>' +
+                                    '<div class="index-live-item-text">' +
+                                    '<a href="#">' +list.name+'</a>'+
+                                    '</div>' +
+                                '</div>');
                         }
                         
                     }
