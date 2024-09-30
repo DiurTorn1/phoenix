@@ -47,8 +47,8 @@ function paint_element_stream(){
     for(var i = 0; i < key_sell_user; i++){
         //if(users_sells[i] == output[0]){
             sells_user_var = users_sells[i];
-            //console.log(users_sells[i]);
-            console.log(sells_user_var);
+            console.log(users_sells[i]);
+            //console.log(sells_user_var);
             for(var i = 0; i < count_product; i ++){
                 //console.log(array_product[i]);
                 product_user_var = array_product[i];
