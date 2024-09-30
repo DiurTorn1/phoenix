@@ -47,8 +47,12 @@ function paint_element_stream(){
     if(count_product >= count_sells){
         for(var i = 0; i < count_product; i ++){
             if(array_product[i] == users_sells[i]){
-                console.log(array_product[i]);
-                console.log(users_sells[i]);
+                //console.log(array_product[i]);
+                //console.log(users_sells[i]);
+                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                    var output = $.parseJSON(data);
+                    console.log(output);
+                });
             }
            
     
@@ -56,8 +60,12 @@ function paint_element_stream(){
     } else if(count_sells > count_product){
         for(var i = 0; i < count_sells; i ++){
             if(array_product[i] == users_sells[i]){
-                console.log(array_product[i]);
-                console.log(users_sells[i]);
+                //console.log(array_product[i]);
+                //console.log(users_sells[i]);
+                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                    var output = $.parseJSON(data);
+                    console.log(output);
+                });
             }
            
     
