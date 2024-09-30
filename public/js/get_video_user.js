@@ -166,7 +166,7 @@ function paint_element_product(){
                 $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                     var output = $.parseJSON(data);
                     //console.log(output);
-                    var prm_prod = output ? output[4]:'';
+                    var prm_prod = output ? output[1]:'';
                     public_product_perm.push(prm_prod);
                 });
             }
@@ -181,7 +181,7 @@ function paint_element_product(){
                 $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                     var output = $.parseJSON(data);
                     //console.log(output);
-                    var prm_prod = output ? output[4]:'';
+                    var prm_prod = output ? output[1]:'';
                     public_product_perm.push(prm_prod);
                 });
             }
@@ -204,14 +204,14 @@ function paint_element_product(){
                 var key_sell = 0;
                 if(prm_prod == id_product){
                     for(var i = 0; i < public_product_perm.length; i++){
-                        if(public_product_perm[i] == name_stream_gl){
+                        if(public_product_perm[i] == id_product){
                             //console.log(public_product_perm.length);
                             //console.log(public_product_perm);
                             key_sell = 1;
                         }
                     }
                     $("#slider1").append(
-                        '<div class="index-live-item" id="' + output[0] + '">' +
+                        '<div class="index-live-item" id="' + id_product + '">' +
                             '<div class="index-live-item-video">' +
                                 '<a href="#">' +
                                     '<div class="index-live-banner">' +
@@ -220,14 +220,14 @@ function paint_element_product(){
                                 '</a>' +
                             '</div>' +
                             '<div class="index-item-text-wrap">' + 
-                                '<a href="#">' + output[1] + '</a>' +
+                                '<a href="#">' + src_product + '</a>' +
                                 '<ul>' +
                                     //'<li>Билет на 5 дней</li>' +
                                 '</ul>' +
                             '</div>' +
                             '<div class="index-live-item-text">' +
                                 //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
-                                '<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
+                                '<a  class="user-button" id="product_price">' + name_product + ' &#8381;</a>'+
                             '</div>' +
                         '</div>');
                         console.log(key_sell);
