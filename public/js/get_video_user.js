@@ -61,9 +61,10 @@ function paint_element_stream(){
                     count_perm_prod1++;
                 });
             }
-            count_perm_prod = count_perm_prod1;
+            
     
         }
+        count_perm_prod = count_perm_prod1;
     } else if(count_sells > count_product){
         for(var i = 0; i < count_sells; i ++){
             var count_perm_prod1 = 0;
@@ -79,9 +80,10 @@ function paint_element_stream(){
                     count_perm_prod1++;
                 });
             }
-            count_perm_prod = count_perm_prod1;
+            
     
         }
+        count_perm_prod = count_perm_prod1;
     }
 
     console.log(count_perm_prod);
