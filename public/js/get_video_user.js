@@ -48,34 +48,38 @@ function paint_element_stream(){
     var count_perm_prod = 0;
     if(count_product >= count_sells){
         for(var i = 0; i < count_product; i ++){
+            var count_perm_prod1 = 0;
             if(array_product[i] == users_sells[i]){
                 //console.log(array_product[i]);
                 //console.log(users_sells[i]);
+                
                 $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                     var output = $.parseJSON(data);
                     //console.log(output);
                     var prm_prod = output ? output[4]:'';
                     public_product_perm.push(prm_prod);
-                    count_perm_prod++;
+                    count_perm_prod1++;
                 });
             }
-           
+            count_perm_prod = count_perm_prod1;
     
         }
     } else if(count_sells > count_product){
         for(var i = 0; i < count_sells; i ++){
+            var count_perm_prod1 = 0;
             if(array_product[i] == users_sells[i]){
                 //console.log(array_product[i]);
                 //console.log(users_sells[i]);
+                
                 $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                     var output = $.parseJSON(data);
                     //console.log(output);
                     var prm_prod = output ? output[4]:'';
                     public_product_perm.push(prm_prod);
-                    count_perm_prod++;
+                    count_perm_prod1++;
                 });
             }
-           
+            count_perm_prod = count_perm_prod1;
     
         }
     }
