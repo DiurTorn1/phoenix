@@ -77,8 +77,7 @@ function paint_element_stream(){
         }
     }
 
-    console.log(public_product_perm.length);
-    //console.log(public_product_perm);
+
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
@@ -104,7 +103,8 @@ function paint_element_stream(){
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
                     if(pub_name==name_stream_gl){
-
+                        console.log(public_product_perm.length);
+                        console.log(public_product_perm);
                         $("#slider").append(
                             '<div class="slide index-live-item" id="' + list.id + '">'+
                                 '<div class="index-live-item-video">'+
