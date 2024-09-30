@@ -38,24 +38,6 @@
 					<div class="popup-title-wrap-row popup-title-none" data-content="user-autorization">
 						<h2 class="popup-title">Авторизация</h2>
 					</div>
-
-					<navigation class="top-navigation" id="top-navigation-menu">
-						<ul>
-							<li><a class="user-navigation-link active-navigation-link-user" data-open-block="user-profile" href="#">Профиль</a></li>
-						</ul>
-						<ul>
-							<li><a class="user-navigation-link" data-open-block="user-pay" href="#">Оплата</a></li>
-						</ul>
-						<ul>
-							<li><a class="user-navigation-link" data-open-block="user-promocode" href="#">Промокоды</a></li>
-						</ul>
-						<ul>
-							<li><a class="user-navigation-link" data-open-block="user-gadget" href="#">Устройства</a></li>
-						</ul>
-						<ul>
-							<li><a class="user-navigation-link" data-open-block="user-autorization" href="#">Авторизация</a></li>
-						</ul>
-					</navigation>
 				</div>
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
@@ -174,8 +156,8 @@
 		
 	</main>
 
-	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
-	<script type="text/javascript" src = "{{ asset('js/user_menu.js') }}"></script> 
+	<!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script> <script type="text/javascript" src = "{{ asset('js/user_menu.js') }}"></script> -->
+	
 
         @endif
     @endforeach
