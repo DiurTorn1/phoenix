@@ -195,6 +195,7 @@ function paint_element_product(){
             var output = $.parseJSON(data);
             var id_product = output[0];
             var src_product = output[17];
+            console.log(output[17]);
             var name_product = output[1];
             $.post('/php/get_product_public.php',{ id:id_product }, function(data)  {
                 var output = $.parseJSON(data);
