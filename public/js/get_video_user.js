@@ -156,7 +156,6 @@ function get_stream_array(){
     
     var count = 0;
     user_email = $('#name_user_get').text();
-    array_stream = [];
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         var pre_arr = new Array();
@@ -173,7 +172,6 @@ function get_stream_array(){
         count_stream = count;
     });
     var count1 = 0;
-    array_product = [];
     $.post('/php/get_product.php', function(data)  {
         var output = $.parseJSON(data);
         //console.log(output);
@@ -191,8 +189,7 @@ function get_stream_array(){
         //console.log(array_product);
         count_product = count1;
     });
-    var count2 = 0;
-    users_sells = []; 
+    var count2 = 0; 
     $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
         var output = $.parseJSON(data);
         //console.log(output);
@@ -236,6 +233,7 @@ function get_stream_array(){
             //setInterval('paint_element_stream()',100);
         $("#slider").empty();
         //idch = 0;
+        array_stream = [];
         key_paint = 0;
     }
     if(!key_paint1){
@@ -253,6 +251,7 @@ function get_stream_array(){
     if(array_product[0]!=array_product1[0]){
         //setInterval('paint_element_stream()',100);
         $("#slider1").empty();
+        array_product = [];
         //idch = 0;
         key_paint1 = 0;
     }
@@ -271,6 +270,7 @@ function get_stream_array(){
     if(users_sells[0]!=users_sells1[0]){
         //setInterval('paint_element_stream()',100);
         //$("#slider1").empty();
+        users_sells = [];
         //idch = 0;
         key_paint2 = 0;
     }
