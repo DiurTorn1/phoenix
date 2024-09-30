@@ -195,8 +195,8 @@ function paint_element_product(){
             var output = $.parseJSON(data);
             var id_product = output[0];
             var src_product = output[17];
-            console.log(output[17]);
             var name_product = output[1];
+            var price_product = output[12];
             $.post('/php/get_product_public.php',{ id:id_product }, function(data)  {
                 var output = $.parseJSON(data);
                 //console.log(output);
@@ -216,19 +216,19 @@ function paint_element_product(){
                             '<div class="index-live-item-video">' +
                                 '<a href="#">' +
                                     '<div class="index-live-banner">' +
-                                        '<img src="' + output[17] + '">' +
+                                        '<img src="' + src_product + '">' +
                                     '</div> ' +
                                 '</a>' +
                             '</div>' +
                             '<div class="index-item-text-wrap">' + 
-                                '<a href="#">' + src_product + '</a>' +
+                                '<a href="#">' + name_product + '</a>' +
                                 '<ul>' +
                                     //'<li>Билет на 5 дней</li>' +
                                 '</ul>' +
                             '</div>' +
                             '<div class="index-live-item-text">' +
                                 //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
-                                '<a  class="user-button" id="product_price">' + name_product + ' &#8381;</a>'+
+                                '<a  class="user-button" id="product_price">' + price_product + ' &#8381;</a>'+
                             '</div>' +
                         '</div>');
                         console.log(key_sell);
