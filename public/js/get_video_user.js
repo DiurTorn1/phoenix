@@ -392,6 +392,14 @@ $(document).ready(function() {
             window.location.href='/player_stream?player_stream_id='+id;
             //alert("Text: " + this.id);
         });
+
+        $(document).on('click', '.no-bay', function() {
+            var id = this.id;
+            //console.log(id);
+            //$("#admin_input_id").val(id);
+            //window.location.href='/player_stream?player_stream_id='+id;
+            alert("Это видео не для тебя и не таких как ты");
+        });
         var timeList = 600;
         var TimeView = 1000000;
         var RadioBut = true;
