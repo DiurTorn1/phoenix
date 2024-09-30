@@ -53,11 +53,12 @@ function paint_element_stream(){
                 product_user_var = array_product[i];
                 if(sells_user_var == product_user_var){
                     arr_user_product = arr_user_product + 1;
+                    console.log(product_user_var);
                 }
             }
         //}
     }
-    console.log(arr_user_product);
+    
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
