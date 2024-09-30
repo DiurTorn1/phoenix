@@ -200,30 +200,42 @@ function paint_element_product(){
                 var output = $.parseJSON(data);
                 //console.log(output);
                 var prm_prod = output ? output[1]:'';
+                
+                var key_sell = 0;
+                if(pub_name==name_stream_gl){
+                    for(var i = 0; i < public_product_perm.length; i++){
+                        if(public_product_perm[i] == name_stream_gl){
+                            //console.log(public_product_perm.length);
+                            //console.log(public_product_perm);
+                            key_sell = 1;
+                        }
+                    }
+                }
                 if(prm_prod == id_product){
-                    console.log(prm_prod);
+                    $("#slider1").append(
+                        '<div class="index-live-item" id="' + output[0] + '">' +
+                            '<div class="index-live-item-video">' +
+                                '<a href="#">' +
+                                    '<div class="index-live-banner">' +
+                                        '<img src="' + output[17] + '">' +
+                                    '</div> ' +
+                                '</a>' +
+                            '</div>' +
+                            '<div class="index-item-text-wrap">' + 
+                                '<a href="#">' + output[1] + '</a>' +
+                                '<ul>' +
+                                    //'<li>Билет на 5 дней</li>' +
+                                '</ul>' +
+                            '</div>' +
+                            '<div class="index-live-item-text">' +
+                                //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
+                                '<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
+                            '</div>' +
+                        '</div>');
+                        console.log(key_sell);
                 }
             });
-            /*$("#slider1").append(
-                '<div class="index-live-item" id="' + output[0] + '">' +
-                    '<div class="index-live-item-video">' +
-                        '<a href="#">' +
-                            '<div class="index-live-banner">' +
-                                '<img src="' + output[17] + '">' +
-                            '</div> ' +
-                        '</a>' +
-                    '</div>' +
-                    '<div class="index-item-text-wrap">' + 
-                        '<a href="#">' + output[1] + '</a>' +
-                        '<ul>' +
-                            //'<li>Билет на 5 дней</li>' +
-                        '</ul>' +
-                    '</div>' +
-                    '<div class="index-live-item-text">' +
-                        //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
-                        '<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
-                    '</div>' +
-                '</div>');*/
+            /**/
         });
     }
 /*
