@@ -43,13 +43,13 @@ function paint_element_stream(){
     // $('#name_user_get').text();
     //console.log(user_email);
     var name_stream_gl = '';
-    for(var i = 0; i < key_sell_user; i++){
-        //if(users_sells[i] == output[0]){
-            console.log(users_sells[i]);
-        //}
-    }
     for(var i = 0; i < count_product; i ++){
         console.log(array_product[i]);
+        for(var i = 0; i < key_sell_user; i++){
+            //if(users_sells[i] == output[0]){
+                console.log(users_sells[i]);
+            //}
+        }
     }
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
