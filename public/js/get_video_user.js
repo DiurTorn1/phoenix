@@ -213,7 +213,7 @@ function paint_element_product(){
                     }
                     if(key_sell){
                         $("#slider1").append(
-                            '<div class="index-live-item" id="' + id_product + '">' +
+                            '<div class="slide index-live-item" id="' + id_product + '">' +
                                 '<div class="index-live-item-video">' +
                                     '<a href="#">' +
                                         '<div class="index-live-banner">' +
@@ -235,7 +235,7 @@ function paint_element_product(){
                             '</div>');
                     }else{
                         $("#slider1").append(
-                            '<div class="index-live-item" id="' + id_product + '">' +
+                            '<div class="slide index-live-item" id="' + id_product + '">' +
                                 '<div class="index-live-item-video">' +
                                     '<a href="#">' +
                                         '<div class="index-live-banner">' +
