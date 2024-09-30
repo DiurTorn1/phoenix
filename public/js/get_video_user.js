@@ -127,7 +127,7 @@ function paint_element_stream(){
                                     '</div>'+
                                 '</div>');
                         } else {
-                            console.log("Product not bay");
+                            //console.log("Product not bay");
                                 $("#slider").append(
                                     '<div class="slide no-bay index-live-item" id="' + list.id + '">'+
                                         '<div class="index-live-item-video">'+
@@ -157,11 +157,54 @@ function paint_element_stream(){
 function paint_element_product(){
     //var user_email = $('#name_user_get').text();
     //console.log(user_email);
+    var public_product_perm = new Array();
+    if(count_product >= count_sells){
+        for(var i = 0; i < count_product; i ++){
+            if(array_product[i] == users_sells[i]){
+                //console.log(array_product[i]);
+                //console.log(users_sells[i]);
+                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                    var output = $.parseJSON(data);
+                    //console.log(output);
+                    var prm_prod = output ? output[4]:'';
+                    public_product_perm.push(prm_prod);
+                });
+            }
+           
+    
+        }
+    } else if(count_sells > count_product){
+        for(var i = 0; i < count_sells; i ++){
+            if(array_product[i] == users_sells[i]){
+                //console.log(array_product[i]);
+                //console.log(users_sells[i]);
+                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                    var output = $.parseJSON(data);
+                    //console.log(output);
+                    var prm_prod = output ? output[4]:'';
+                    public_product_perm.push(prm_prod);
+                });
+            }
+           
+    
+        }
+    }
     for(var i = 0; i < count_product; i ++){
         $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
-            $("#slider1").append(
+            var id_product = output[0];
+            var src_product = output[17];
+            var name_product = output[1];
+            $.post('/php/get_product_public.php',{ id:id_product }, function(data)  {
+                var output = $.parseJSON(data);
+                //console.log(output);
+                var prm_prod = output ? output[1]:'';
+                if(prm_prod == id_product){
+                    console.log(prm_prod);
+                }
+            });
+            /*$("#slider1").append(
                 '<div class="index-live-item" id="' + output[0] + '">' +
                     '<div class="index-live-item-video">' +
                         '<a href="#">' +
@@ -180,7 +223,7 @@ function paint_element_product(){
                         //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
                         '<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
                     '</div>' +
-                '</div>');
+                '</div>');*/
         });
     }
 /*
