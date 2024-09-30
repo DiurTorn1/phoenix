@@ -44,14 +44,24 @@ function paint_element_stream(){
     // $('#name_user_get').text();
     //console.log(user_email);
     var name_stream_gl = '';
-    for(var i = 0; i < count_product; i ++){
-        console.log(array_product[i]);
-
-    }
-    for(var i = 0; i < count_sells; i++){
-        //if(users_sells[i] == output[0]){
-            console.log(users_sells[i]);
-        //}
+    if(count_product >= count_sells){
+        for(var i = 0; i < count_product; i ++){
+            if(array_product[i] == users_sells[i]){
+                console.log(array_product[i]);
+                console.log(users_sells[i]);
+            }
+           
+    
+        }
+    } else if(count_sells > count_product){
+        for(var i = 0; i < count_sells; i ++){
+            if(array_product[i] == users_sells[i]){
+                console.log(array_product[i]);
+                console.log(users_sells[i]);
+            }
+           
+    
+        }
     }
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
