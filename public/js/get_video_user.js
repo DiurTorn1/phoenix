@@ -102,13 +102,16 @@ function paint_element_stream(){
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
+                    var key_sell = 0;
                     if(pub_name==name_stream_gl){
                         for(var i = 0; i < public_product_perm.length; i++){
                             if(public_product_perm[i] == name_stream_gl){
-                                console.log(public_product_perm.length);
-                                console.log(public_product_perm);
+                                //console.log(public_product_perm.length);
+                                //console.log(public_product_perm);
+                                key_sell = 1;
                             }
                         }
+                        console.log(key_sell);
                         $("#slider").append(
                             '<div class="slide index-live-item" id="' + list.id + '">'+
                                 '<div class="index-live-item-video">'+
