@@ -18,25 +18,8 @@
 					<button class="popup-close close-btn" title="Закрыть" onclick="window.location.href = '/';"><img src="img/close.png" alt="Закрыть" ></button>
 
 					<div class="popup-title-wrap-row popup-title-none is-active" data-content="user-profile">
-						<h2 class="popup-title">Профиль</h2>
-						<button type="submit" class="top-menu-btn">Сохранить</button>
-					</div>
-
-					<div class="popup-title-wrap-row popup-title-none" data-content="user-pay">
-						<h2 class="popup-title">Способы оплаты</h2>
-					</div>
-
-					<div class="popup-title-wrap-row popup-title-none" data-content="user-promocode">
-						<h2 class="popup-title">Промокоды</h2>
-					</div>
-
-					<div class="popup-title-wrap-row popup-title-none" data-content="user-gadget">
-						<h2 class="popup-title">Устройства</h2>
-						<a href="#" class="top-menu-btn">Добавить устройство</a>
-					</div>
-
-					<div class="popup-title-wrap-row popup-title-none" data-content="user-autorization">
-						<h2 class="popup-title">Авторизация</h2>
+						<h2 class="popup-title">Карточка покупки</h2>
+						<button type="submit" class="top-menu-btn">Оплатить</button>
 					</div>
 				</div>
 
@@ -80,75 +63,6 @@
 						</div>
 					</div>
 				</div>
-
-				<div class="popup-content-wrap-item" data-content="user-promocode"><!-- Вкладка ПРОМОКОДЫ ------- -->
-					<div class="user-input-box block-w100">
-						<div class="user-input-box-wrap">
-							<div class="user-box-no-data">
-								<img class="no-data-img" src="img/promo.png" alt="Нет промокодов">
-								<span class="top-menu-title no-data-title">Промокодов нет</span>
-								<p class="no-data-text">Полученные промокоды будут отображаться здесь</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="popup-content-wrap-item" data-content="user-gadget"><!-- Вкладка УСТРОЙСТВА ------- -->
-					<div class="user-input-box block-w100">
-						<div class="user-input-box-wrap">
-							<div class="user-box-no-data">
-								<img class="no-data-img" src="img/gadget.png" alt="Нет устройств">
-								<span class="top-menu-title no-data-title">Устройств нет</span>
-								<p class="no-data-text">Подключение приложения Смарт ТВ к вашему аккаунту</p>
-							</div>
-						</div>
-					</div>
-				</div>
-
-				<div class="popup-content-wrap-item" data-content="user-autorization"><!-- Вкладка АВТОРИЗАЦИЯ------- -->
-					<div class="user-input-box block-w100">
-						<div class="user-input-box-wrap fl-dir-col">
-							<p class="no-data-text">Сервис временно недоступен!</p>
-							<ul class="user-box-list">
-								<li class="user-box-item">
-									<div class="left-header">
-										<div class="user-box-item-img">
-											<img src="img/vk.png" alt="">
-										</div>
-										<span>Вконтакте</span>
-									</div>
-									<div class="right-header">
-										<button type="submit" class="top-menu-btn mb-none">Подключить</button>
-									</div>
-								</li>
-								<li class="user-box-item">
-									<div class="left-header">
-										<div class="user-box-item-img">
-											<img src="img/google.png" alt="">
-										</div>
-										<span>Google</span>
-									</div>
-									<div class="right-header">
-										<button type="submit" class="top-menu-btn mb-none">Подключить</button>
-									</div>
-								</li>
-								<li class="user-box-item">
-									<div class="left-header">
-										<div class="user-box-item-img">
-											<img src="img/apple.png" alt="">
-										</div>
-										<span>Apple ID</span>
-									</div>
-									<div class="right-header">
-										<button type="submit" class="top-menu-btn mb-none">Подключить</button>
-									</div>
-								</li>
-
-							</ul>
-						</div>
-					</div>
-				</div>
-
 			</div>
 		</div>
 	</div>
