@@ -25,27 +25,15 @@
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
 					<div class="popup-content-wrap-row">
-						<img src="img/phoenix.png">
+						<img src="">
 					</div>
 					<div class="user-input-box block-w100">
 						<label>Название</label>
 						<input type="text" placeholder="" class="user-input" title="" disabled>
 					</div>
-					<div class="popup-content-wrap-row">
+					<div class="user-input-box block-w100">
 						<label>Цена</label>
 						<input type="text" placeholder="" class="user-input" title="" disabled>
-					</div>
-				</div>
-
-				<div class="popup-content-wrap-item" data-content="user-pay"><!-- Вкладка ОПЛАТА ------- -->
-					<div class="user-input-box block-w100">
-						<div class="user-input-box-wrap">
-							<div class="user-box-no-data">
-								<img class="no-data-img" src="img/card.png" alt="Нет способов оплаты">
-								<span class="top-menu-title no-data-title">Нет способов оплаты</span>
-								<p class="no-data-text">Здесь будут отображаться сохраненные вами способы оплаты</p>
-							</div>
-						</div>
 					</div>
 				</div>
 			</div>
