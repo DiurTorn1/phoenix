@@ -25,30 +25,15 @@
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
 					<div class="popup-content-wrap-row">
-						<input type="text" placeholder="Имя" class="user-input" title="Ваше имя">
-						<input type="text" placeholder="Фамилия" class="user-input" title="Ваша фамилия">
+						<img src="img/phoenix.png">
 					</div>
 					<div class="user-input-box block-w100">
-						<label>Страна*</label>
-						<select class="user-input-list admin-input-select">
-							<option value="Баскетбол">Россия</option>
-							<option value="Волейбол">Казахстан</option>
-						</select>
+						<label>Название</label>
+						<input type="text" placeholder="" class="user-input" title="" disabled>
 					</div>
 					<div class="popup-content-wrap-row">
-						<div class="user-input-box">
-							<label>Язык</label>
-							<select class="user-input-list admin-input-select">
-								<option value="Баскетбол">Русский</option>
-							</select>
-						</div>
-						<div class="user-input-box">
-							<label>Часовой пояс</label>
-							<select class="user-input-list admin-input-select">
-								<option value="Баскетбол">Москва</option>
-								<option value="Волейбол">Екатеринбург</option>
-							</select>
-						</div>
+						<label>Цена</label>
+						<input type="text" placeholder="" class="user-input" title="" disabled>
 					</div>
 				</div>
 
