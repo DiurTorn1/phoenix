@@ -475,7 +475,7 @@ $(document).ready(function() {
             //console.log(id);
             //$("#admin_input_id").val(id);
             //window.location.href='/player_stream?player_stream_id='+id;
-            alert("Это видео не для тебя и не таких как ты");
+            alert("Это видео не куплено");
         });
         var timeList = 600;
         var TimeView = 1000000;
