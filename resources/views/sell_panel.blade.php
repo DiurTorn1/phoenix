@@ -28,7 +28,11 @@
 						<img src="">
 					</div>
 					<div class="user-input-box block-w100">
-						<label>Название</label>
+						<label>Пользователь</label>
+						<input type="text" placeholder="" class="user-input" title="" disabled>
+					</div>
+					<div class="user-input-box block-w100">
+						<label>Название продукта</label>
 						<input type="text" placeholder="" class="user-input" title="" disabled>
 					</div>
 					<div class="user-input-box block-w100">
