@@ -26,7 +26,7 @@
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
 					<div class="popup-content-wrap-row">
-						<img src="">
+						<img id="sell_src_img" src="">
 					</div>
 					<div class="user-input-box block-w100">
 						<label>Пользователь</label>
