@@ -13,7 +13,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);//res_parse_stop_access
 }
 
-$sql = "INSERT INTO `sell_users_permission`(`product_id`, `user_email`, `create_at`, `type_sell`) VALUES ('". $_POST['product_global'] ."','". $_POST['user_global'] ."', '2024-08-28 15:37:32', '')";
+$sql = "INSERT INTO `sell_users_permission`(`product_id`, `user_email`, `create_at`, `type_sell`) VALUES ('". $_POST['product_global'] ."','". $_POST['user_global'] ."', '". $_POST['create_at'] ."', '')";
 
 if ($conn->query($sql) === TRUE) {
   echo "OK";

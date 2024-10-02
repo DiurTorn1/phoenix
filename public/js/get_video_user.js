@@ -421,8 +421,18 @@ function get_stream_array(){
         $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
             //console.log(data);
             if(data=='OK'){
-                alert("Оплата прошла!");
-                console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
+                
+                //console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
+                if(OutSum && InvId && SignatureValue && Culture){
+                    
+                    var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+                    $.post('/php/sell_user_add.php', {user_global:user_global, product_global:InvId, create_at:localdate}, function(data)  {
+                    if(data == 'OK'){
+                        alert("Оплата прошла!");
+                        window.location.href="/";
+                    }
+                    });
+                }
                 //$.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {
                     //if(data == 'OK'){
                         //window.location.href="/";
