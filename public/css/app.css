@@ -1324,6 +1324,10 @@ td a:focus {
     display: flex;
     justify-content: space-between;
 }
+
+.popup-content-wrap-row img{
+    width:100%;
+}
 .register-wrapper {
     justify-content: space-between;
     margin-bottom: 1rem;
