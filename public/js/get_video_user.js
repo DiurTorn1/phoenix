@@ -421,9 +421,8 @@ function get_stream_array(){
         $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
             //console.log(data);
             if(data=='OK'){
-                
-                //console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
                 if(OutSum && InvId && SignatureValue && Culture){
+                    user_global = $('#name_user_get').text();
                     var dNow = new Date();
                     var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
                     $.post('/php/sell_user_add.php', {user_global:user_global, product_global:InvId, create_at:localdate}, function(data)  {
@@ -433,12 +432,6 @@ function get_stream_array(){
                     }
                     });
                 }
-                //$.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {
-                    //if(data == 'OK'){
-                        //window.location.href="/";
-                    //}
-                //});
-                // 
             } else {
                 alert("Оплата не прошла!");
                 window.location.href="/";
