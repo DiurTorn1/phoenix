@@ -121,8 +121,8 @@ $(document).ready(function() {
     var date_start_sell_bilet = "";
     var input_prace_bilet = "";
     var input_old_prace_bilet = "";
-    var input_prob_period_subs = "";
-    var input_price_prob_period_subs = "";
+    var input_prob_period_subs = "1";
+    var input_price_prob_period_subs = "1";
     var price_bilet = $("#prace_bilet").val();
     $("#save_product_db").on('click', function(){
         var head_name = $("#head_name_save").val();
