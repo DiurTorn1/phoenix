@@ -424,7 +424,7 @@ function get_stream_array(){
                 
                 //console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
                 if(OutSum && InvId && SignatureValue && Culture){
-                    
+                    var dNow = new Date();
                     var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
                     $.post('/php/sell_user_add.php', {user_global:user_global, product_global:InvId, create_at:localdate}, function(data)  {
                     if(data == 'OK'){
