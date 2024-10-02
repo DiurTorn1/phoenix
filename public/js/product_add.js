@@ -231,14 +231,14 @@ $(document).ready(function() {
         } else if(period_select_subs == "1 год"){
             days_job_bilet = 360;
         }
-        var valute_subs = $("#valute_subscript option:selected").text();
-        if(valute_subs == "Российский рубль (RUB)"){
+        var valute_bilet = $("#valute_subscript option:selected").text();
+        if(valute_bilet == "Российский рубль (RUB)"){
             bilet_out ="RUB";
-        } else if(valute_subs == "Казахский тенге (KZT)"){
+        } else if(valute_bilet == "Казахский тенге (KZT)"){
             bilet_out ="KZT";
-        } else if(valute_subs == "Белорусский рубль (BYN)"){
+        } else if(valute_bilet == "Белорусский рубль (BYN)"){
             bilet_out ="BYN";
-        } else if(valute_subs == "Американский доллар (USD)"){
+        } else if(valute_bilet == "Американский доллар (USD)"){
             bilet_out ="USD";
         }
         input_prob_period_subs = $("#input_prob_period_subs").val();
