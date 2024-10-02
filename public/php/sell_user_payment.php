@@ -2,7 +2,7 @@
 
 $mrh_login = "phoenixtv.ru";
 $mrh_pass1 = "l6ZcHuk6nzW1Rc3QuLF6";
-$inv_id = 5;
+$inv_id = 40;
 $inv_desc = $_POST['name_product'];
 $out_summ = $_POST['price_product'];
 $IsTest = 1;

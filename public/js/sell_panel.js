@@ -11,12 +11,13 @@ $(document).ready(function() {
     //console.log(id_product_sell);
     var id_product = id_product_sell.split("_");
     //console.log(id_product[2]);
+    var id_product;
     var src_product;
     var name_product;
     var price_product;
     $.post('/php/get_product_id.php',{ id:id_product[2] }, function(data)  {
         var output = $.parseJSON(data);
-        var id_product = output[0];
+        var id_product_loc = output[0];
         var src_product_loc = output[17];
         var name_product_loc = output[1];
         var price_product_loc = output[12];
