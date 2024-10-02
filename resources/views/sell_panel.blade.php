@@ -34,11 +34,11 @@
 					</div>
 					<div class="user-input-box block-w100">
 						<label>Название продукта</label>
-						<input type="text" placeholder="" class="user-input" title="" disabled>
+						<input type="text" placeholder="" id="name_product_sell" class="user-input" title="" disabled>
 					</div>
 					<div class="user-input-box block-w100">
 						<label>Цена</label>
-						<input type="text" placeholder="" class="user-input" title="" disabled>
+						<input type="text" placeholder="" id="price_product_sell" class="user-input" title="" disabled>
 					</div>
 				</div>
 			</div>
