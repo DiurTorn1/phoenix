@@ -238,14 +238,14 @@
 			</div>
 
 			<div class="right-heder">
-				<button class="top-menu-btn">Сохранить</button>
+				<button class="top-menu-btn" id="save_price_subscript">Сохранить</button>
 			</div>
 		</div>
 
 			<div class="top-menu-sort block-admin-section tr-wrapper-mb admin-back">
 				<div class="admin-input-box block-admin-input">
 					<label>Доступен в странах</label>
-					<select class="admin-input admin-input-select block-admin-input">
+					<select class="admin-input admin-input-select block-admin-input" id="sive_subscript_region">
 						<option value="">Только Россия (RUB)</option>
 						<option value="">Только Казахстан (KZT)</option>
 						<option value="">Только Беларусь (BYN)</option>

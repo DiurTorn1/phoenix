@@ -204,4 +204,8 @@ $(document).ready(function() {
         $('#add-ticket-price').toggle();
     });
 
+    $("#save_price_subscript").on('click', function(){
+        region_select_bilet = $("#sive_subscript_region option:selected").text();
+    });
+
 });

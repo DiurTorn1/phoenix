@@ -496,7 +496,7 @@ $(document).ready(function() {
             var id = this.id;
             //console.log(id);
             //$("#admin_input_id").val(id);
-            window.location.href='/player_stream?User_pay='+id;
+            window.location.href='/player_stream?player_stream_id='+id;
             //alert("Text: " + this.id);
         });
 
