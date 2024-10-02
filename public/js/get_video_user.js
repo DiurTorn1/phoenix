@@ -285,6 +285,18 @@ function paint_element_product(){
 function get_stream_array(){
     
     var count = 0;
+
+    var params = new window.URLSearchParams(window.location.search);
+    var OutSum = params.get('OutSum');
+    var InvId = params.get('InvId');
+    var SignatureValue = params.get('SignatureValue');
+    var Culture = params.get('Culture');
+
+    if(!OutSum && !InvId && !SignatureValue && !Culture){
+        console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
+    }
+
+
     user_email = $('#name_user_get').text();
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
