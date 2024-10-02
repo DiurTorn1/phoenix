@@ -30,7 +30,7 @@
 					</div>
 					<div class="user-input-box block-w100">
 						<label>Пользователь</label>
-						<input type="text" placeholder="" class="user-input" title="" disabled>
+						<input type="text" placeholder="" id="user_sell" class="user-input" title="" disabled>
 					</div>
 					<div class="user-input-box block-w100">
 						<label>Название продукта</label>
