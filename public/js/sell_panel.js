@@ -31,9 +31,13 @@ $(document).ready(function() {
     });
 
     $("#bay_product").on('click', function() {
-        console.log(src_product);
-        console.log(name_product);
-        console.log(price_product);
+        //console.log(src_product);
+        //console.log(name_product);
+        //console.log(price_product);
+        $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:price_product}, function(data)  {
+            //console.log(data);
+            window.location.href=data;
+        });
     });
 
 });
