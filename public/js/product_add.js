@@ -121,6 +121,8 @@ $(document).ready(function() {
     var date_start_sell_bilet = "";
     var input_prace_bilet = "";
     var input_old_prace_bilet = "";
+    var input_prob_period_subs = "";
+    var input_price_prob_period_subs = "";
     var price_bilet = $("#prace_bilet").val();
     $("#save_product_db").on('click', function(){
         var head_name = $("#head_name_save").val();
@@ -153,11 +155,14 @@ $(document).ready(function() {
         var res_parse_stop_sell_bilet = parse_stop_sell_bilet[0] + " " + parse_stop_sell_bilet[1] + ":00";
         var int_price_bilet = parseInt(input_prace_bilet);
         var int_old_price_bilet = parseInt(input_old_prace_bilet);
+        var int_input_prob_period_subs = parseInt(input_prob_period_subs);
+        var int_input_price_prob_period_subs = parseInt(input_price_prob_period_subs);
         //console.log(start_access_tame);
         $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, 
                                         detail_save:detail_save, type_save:type_save, region_select_bilet:region_select_bilet, valute_db:valute_db, days_job_bilet:days_job_bilet,
                                         res_date_start_sell:res_date_start_sell, int_price_bilet:int_price_bilet, int_old_price_bilet:int_old_price_bilet, res_parse_start_access:res_parse_start_access,
-                                        res_parse_stop_access:res_parse_stop_access, res_parse_stop_sell_bilet:res_parse_stop_sell_bilet}, function(data){
+                                        res_parse_stop_access:res_parse_stop_access, res_parse_stop_sell_bilet:res_parse_stop_sell_bilet, int_input_prob_period_subs:int_input_prob_period_subs,
+                                        int_input_price_prob_period_subs:int_input_price_prob_period_subs}, function(data){
             if(data == "OK"){
                 alert("Продукт создан");
             }
@@ -201,11 +206,54 @@ $(document).ready(function() {
 			'<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
-        $('#add-ticket-price').toggle();
+        $('#add-ticket-price').hide();
     });
 
     $("#save_price_subscript").on('click', function(){
         region_select_bilet = $("#sive_subscript_region option:selected").text();
+        var region_out = "";
+        if(region_select_bilet == "Только Россия (RUB)"){
+            region_out ="Только Россия";
+        } else if(region_select_bilet == "Только Казахстан (KZT)"){
+            region_out ="Только Казахстан";
+        } else if(region_select_bilet == "Только Беларусь (BYN)"){
+            region_out ="Только Беларусь";
+        }
+        var period_select_subs = $("#sive_subscript_region option:selected").text();
+        if(period_select_subs == "Неделя"){
+            days_job_bilet = 7;
+        } else if(period_select_subs == "1 месяц"){
+            days_job_bilet = 30;
+        } else if(period_select_subs == "3 месяца"){
+            days_job_bilet = 90;
+        } else if(period_select_subs == "6 месяцев"){
+            days_job_bilet = 180;
+        } else if(period_select_subs == "1 год"){
+            days_job_bilet = 360;
+        }
+        var valute_subs = $("#valute_subscript option:selected").text();
+        if(valute_subs == "Российский рубль (RUB)"){
+            bilet_out ="RUB";
+        } else if(valute_subs == "Казахский тенге (KZT)"){
+            bilet_out ="KZT";
+        } else if(valute_subs == "Белорусский рубль (BYN)"){
+            bilet_out ="BYN";
+        } else if(valute_subs == "Американский доллар (USD)"){
+            bilet_out ="USD";
+        }
+        input_prob_period_subs = $("#input_prob_period_subs").val();
+        input_price_prob_period_subs = $("#input_price_prob_period_subs").val();
+        date_start_sell_bilet = $("#date_start_sell_subs").val();
+        var pars_datae_start = date_start_sell_bilet.split("T");
+        res_date_start_sell = pars_datae_start[0] + " " + pars_datae_start[1] + ":00";
+        input_prace_bilet = $("#input_prace_subs").val();
+        input_old_prace_bilet = $("#input_old_prace_subs").val();
+        $("#input_buff_product").append(
+            '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
+			'<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
+			'<p >' + region_out + '</p>' +
+            '<p style="display:none;">' + input_old_prace_bilet + '</p>');
+        $('#add-subscrip-price').hide();
     });
 
 });

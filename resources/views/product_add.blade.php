@@ -254,7 +254,7 @@
 
 				<div class="admin-input-box admin-input-width50">
 					<label>Период *</label>
-					<select required class="admin-input admin-input-select block-admin-input">
+					<select required class="admin-input admin-input-select block-admin-input" id="sive_subscript_period">
 						<option value="">Неделя</option>
 						<option value="">1 месяц</option>
 						<option value="">3 месяца</option>
@@ -265,7 +265,7 @@
 
 				<div class="admin-input-box admin-input-width50">
 					<label>Валюта *</label>
-					<select required class="admin-input admin-input-select block-admin-input">
+					<select required class="admin-input admin-input-select block-admin-input" id="valute_subscript">
 						<option value="">Российский рубль (RUB)</option>
 						<option value="">Казахский тенге (KZT)</option>
 						<option value="">Белорусский рубль (BYN)</option>
@@ -275,12 +275,12 @@
 
 				<div class="admin-input-box admin-input-width50">
 					<label>Пробный период (ДНЕЙ)</label>
-					<input type="text" pattern="[0-9]*" title="Допускаются только числа" placeholder="Введите число" class="admin-input block-admin-input">
+					<input type="text" pattern="[0-9]*" title="Допускаются только числа" placeholder="Введите число" class="admin-input block-admin-input" id="input_prob_period_subs">
 				</div>
 
 				<div class="admin-input-box admin-input-width50">
 					<label>Цена на пробный период</label>
-					<input type="text" pattern="[0-9]*" title="Допускаются только числа" class="admin-input block-admin-input">
+					<input type="text" pattern="[0-9]*" title="Допускаются только числа" class="admin-input block-admin-input" id="input_price_prob_period_subs">
 				</div>
 			</div>
 
@@ -288,17 +288,17 @@
 			<div class="top-menu-sort block-admin-section">
 				<div class="admin-input-box admin-input-width25">
 					<label>Дата и время начала продажи *</label>
-					<input class="admin-input admin-input-width-date" required type="datetime-local" value="Дата начала действи билета">
+					<input class="admin-input admin-input-width-date" required type="datetime-local" value="Дата начала действи билета" id="date_start_sell_subs">
 				</div>
 
 				<div class="admin-input-box admin-input-width25">
 					<label>ЦЕНА *</label>
-					<input type="text" pattern="[0-9]*" required title="Допускаются только числа" class="admin-input block-admin-input">
+					<input type="text" pattern="[0-9]*" required title="Допускаются только числа" class="admin-input block-admin-input" id="input_prace_subs">
 				</div>
 
 				<div class="admin-input-box admin-input-width25">
 					<label>Старая цена</label>
-					<input type="text" pattern="[0-9]*" title="Допускаются только числа" class="admin-input block-admin-input">
+					<input type="text" pattern="[0-9]*" title="Допускаются только числа" class="admin-input block-admin-input" id="input_old_prace_subs">
 				</div>
 			</div>
 		</div>
