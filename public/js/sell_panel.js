@@ -29,7 +29,11 @@ $(document).ready(function() {
         name_product = name_product_loc;
         price_product = price_product_loc;
     });
-    console.log(src_product);
-    console.log(name_product);
-    console.log(price_product);
+
+    $("#bay_product").on('click', function() {
+        console.log(src_product);
+        console.log(name_product);
+        console.log(price_product);
+    });
+
 });
