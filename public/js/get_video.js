@@ -52,7 +52,7 @@ function paint_element_product(){
             //console.log(data);
             var output = $.parseJSON(data);
             $("#slider1").append(
-                '<div class="index-live-item" id="' + output[0] + '">' +
+                '<div class="slide index-live-item" id="' + output[0] + '">' +
                     '<div class="index-live-item-video">' +
                         '<a href="#">' +
                             '<div class="index-live-banner">' +
