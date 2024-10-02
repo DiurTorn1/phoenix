@@ -458,7 +458,7 @@ $(document).ready(function() {
             var id = this.id;
             console.log(id);
             //$("#admin_input_id").val(id);
-            window.location.href='/sell_panel?player_stream_id='+user_email+ '&id_product_sell='+id;
+            window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
             //alert("Text: " + this.id);
         });
 

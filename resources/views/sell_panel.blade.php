@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title-block') Панель пользователя @endsection
+@section('title-block') Панель оплаты @endsection
 
 @section('content')
 
@@ -10,6 +10,7 @@
 	@if(!empty(Auth::user()->getRoleNames()))
     @foreach( Auth::user()->getRoleNames() as $v)
 		@if($v == "nullbody")
+		<script type="text/javascript" src = "{{ asset('js/sell_panel.js') }}"></script>
         <!-------------------------------Окно НАСТРОЕК Пользователя------------------------------->
   	<div class="popup-back-user"> 
 		<div class="popup-container">
