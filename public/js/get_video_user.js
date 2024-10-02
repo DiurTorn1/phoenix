@@ -416,7 +416,7 @@ function get_stream_array(){
     var SignatureValue = params.get('SignatureValue');
     var Culture = params.get('Culture');
 
-    if(!OutSum && !InvId && !SignatureValue && !Culture){
+    if(OutSum && InvId && SignatureValue && Culture){
         console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
     }
 }
