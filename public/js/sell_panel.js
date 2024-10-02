@@ -17,12 +17,17 @@ $(document).ready(function() {
     $.post('/php/get_product_id.php',{ id:id_product[2] }, function(data)  {
         var output = $.parseJSON(data);
         var id_product = output[0];
-        src_product = output[17];
-        name_product = output[1];
-        price_product = output[12];
-        $('#sell_src_img').attr('src', src_product);
-        $('#name_product_sell').val(name_product);
-        $('#price_product_sell').val(price_product);
+        var src_product_loc = output[17];
+        var name_product_loc = output[1];
+        var price_product_loc = output[12];
+
+        $('#sell_src_img').attr('src', src_product_loc);
+        $('#name_product_sell').val(name_product_loc);
+        $('#price_product_sell').val(price_product_loc);
+
+        src_product = src_product_loc;
+        name_product = name_product_loc;
+        price_product = price_product_loc;
     });
     console.log(src_product);
     console.log(name_product);
