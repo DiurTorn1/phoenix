@@ -57,11 +57,29 @@
 	    </div>
 	<!----------------------------Админ-контент---------------------------------->
 	<div class="admin-content">
-		    <div class="index-live-list">
-			    <div class="index-live-item" id="player_stream_get">
-			    </div>
+		<div class="admin-content admin-content-raw">
+		<div class="block-admin-left">
+			
+			<div class="block-admin-container admin-back">
+				<div class="index-live-item" id="player_stream_get">
+				</div>
+			</div>
+
+			<div class="block-admin-container admin-back soc-container">
+				<div class="admin-input-wrap">
+					<div class="social-list">
+						<a href="#" class="social-list-item"><img src="img/telegram.png" alt="Телеграм"></a>
+						<a href="#" class="social-list-item"><img src="img/whatsapp.png" alt="Whatsapp"></a>
+						<a href="#" class="social-list-item"><img src="img/facebook.png" alt="Facebook"></a>
+						<a href="#" class="social-list-item"><img src="img/twitter.png" alt="Twitter"></a>
+					</div>
+				</div>
+			</div>
+
 		</div>
-	</div>	
+	</div>
+	</div>
+	
 
 	<!----------------->
 @endguest
