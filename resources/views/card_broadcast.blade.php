@@ -14,7 +14,7 @@
 			<div class="block-admin-container admin-back">
 				<!--<div class="preview-tournir-vis">-->
 					<!--<img src="img/ivs4.png" alt="Заставка трансляции" title="Нет трансляции">-->
-					<iframe src="" width="100%" height="1024" frameborder="0"
+					<iframe src="" width="100%" height="640" frameborder="0"
     					allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;" id="player_broadcast"></iframe>
 				<!--</div>-->
 			</div>
