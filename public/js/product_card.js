@@ -123,7 +123,8 @@ $(document).ready(function() {
         var output = $.parseJSON(data);
         //console.log(pars[0]);
         //console.log(pars[1]);
-        if(output[1]==id){
+        var get_id = output ? output[1]: '';
+        if(get_id==id){
             $('#product_public_user').hide();
             $('#product_unpublic_user').show();
         }
