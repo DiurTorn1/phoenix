@@ -422,11 +422,12 @@ function get_stream_array(){
             //console.log(data);
             if(data=='OK'){
                 alert("Оплата прошла!");
-                $.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {
-                    if(data == 'OK'){
-                        window.location.href="/";
-                    }
-                });
+                console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
+                //$.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {
+                    //if(data == 'OK'){
+                        //window.location.href="/";
+                    //}
+                //});
                 // 
             } else {
                 alert("Оплата не прошла!");
