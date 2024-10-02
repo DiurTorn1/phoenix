@@ -417,7 +417,22 @@ function get_stream_array(){
     var Culture = params.get('Culture');
 
     if(OutSum && InvId && SignatureValue && Culture){
-        console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
+        //console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
+        $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
+            //console.log(data);
+            if(data=='OK'){
+                alert("Оплата прошла!");
+                $.post('/php/sell_user_add.php', {user_global:user_global, product_global:product_global}, function(data)  {
+                    if(data == 'OK'){
+                        window.location.href="/";
+                    }
+                });
+                // 
+            } else {
+                alert("Оплата не прошла!");
+                window.location.href="/";
+            }
+        });
     }
 }
 
