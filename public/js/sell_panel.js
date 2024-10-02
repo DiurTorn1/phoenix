@@ -29,13 +29,14 @@ $(document).ready(function() {
         src_product = src_product_loc;
         name_product = name_product_loc;
         price_product = price_product_loc;
+        id_product = id_product_loc;
     });
 
     $("#bay_product").on('click', function() {
         //console.log(src_product);
         //console.log(name_product);
         //console.log(price_product);
-        $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:price_product}, function(data)  {
+        $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:price_product, id_product:id_product}, function(data)  {
             //console.log(data);
             window.location.href=data;
         });
