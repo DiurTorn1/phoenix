@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title-block') ГЛАВНАЯ - Феникс ТВ @endsection
+@section('title-block') Феникс ТВ @endsection
 @include('inc.header')
 @include('inc.banner')
 
@@ -45,14 +45,14 @@
 		</div>-->
 
 	
-		<h2>В эфире</h2>
+		<!--<h2>В эфире</h2>
 		<div class="live_item_stream" id ="live_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
 			<div class="index-live-item">
 				<div class="index-live-item-video">
 					<a href="#">
 						<span class="label">LIVE</span>
 
-						<div class="index-live-banner"><!-- БАННЕР ВИДЕО!! -->
+						<div class="index-live-banner">
 								<img src="img/phoenix.png">
 						</div>
 					</a>
@@ -62,7 +62,7 @@
 				</div>
 			</div>
 		</div>
-		</div>
+		</div>-->
 
 		<div class = "slide_main">
     </div>

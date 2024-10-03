@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title-block') ГЛАВНАЯ - Феникс ТВ @endsection
+@section('title-block') Феникс ТВ @endsection
 
 
 @include('inc.banner')
