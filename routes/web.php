@@ -22,9 +22,9 @@ Route::get('/', function () {
     return view('main');
 });
 
-Route::get('/bascet', function () {
-    return view('bascet_phenix');
-});
+//Route::get('/bascet', function () {
+    //return view('bascet_phenix');
+//});
 
 Route::get('/admin_panel', function () {
     return view('admin_panel');

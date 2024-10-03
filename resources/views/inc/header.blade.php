@@ -7,22 +7,22 @@
 				<li><a href="/" selected>Главная</a></li>
 			</ul>
 			<ul>
-				<li><a href="/bascet">Кубок Феникса</a></li>
+				<li><a href="/">Кубок Феникса</a></li>
 			</ul>
 			<ul>
-				<li><a href="#">Лига "Аврора"</a></li>
+				<li><a href="/">Лига "Аврора"</a></li>
 			</ul>
 			<ul>
-				<li><a href="#">ОФБ</a></li>
+				<li><a href="/">ОФБ</a></li>
 			</ul>
 			<ul>
-				<li><a href="#">Космолига</a></li>
+				<li><a href="/">Космолига</a></li>
 			</ul>
 			<ul>
-				<li><a href="#">Pskov-Volley</a></li>
+				<li><a href="/">Pskov-Volley</a></li>
 			</ul>
 			<ul>
-				<li><a href="#">Архив</a></li>
+				<li><a href="/">Архив</a></li>
 			</ul>
 			<ul>
 				<li><a href="/about">О нас</a></li>
