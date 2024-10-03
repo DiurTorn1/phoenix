@@ -15,9 +15,7 @@ function paint_element_stream(){
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
-            var key_sell_product = 0;
             var name_stream_gl = list.name;
-            console.log(count_stream);
 
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +

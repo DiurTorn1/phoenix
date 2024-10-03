@@ -4,11 +4,53 @@
 @section('content')
 
 @guest
+        <!--<header class="header admin-header">		
+		<div class="left-header">
+			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
+		</div>
+	    </header>-->
+		<script type="text/javascript" src = "{{ asset('js/player_stream.js') }}"></script>
         <header class="header admin-header">		
 		<div class="left-header">
 			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
 		</div>
+		<div class="right-heder dropdown">
+		</div>
 	    </header>
+        <main class="admin-container">
+	    <!-----------------------Меню админа------------------------------>
+	    <div class="admin-menu">
+		<div class="admin-menu-header admin-back">
+			<!--<div class="admin-tour-logo">
+				<img src="{{ asset('img/phoenix1.png') }}" alt="логотип кубка (турнира)">
+			</div>
+			<span>Открытый турнир "Кубок Феникса"</span>-->
+		</div>
+	    </div>
+	<!----------------------------Админ-контент---------------------------------->
+	<div class="admin-content">
+		<div class="admin-content admin-content-raw">
+		<div class="block-admin-left">
+			
+			<div class="block-admin-container admin-back">
+				<div class="index-live-item" id="player_stream_get">
+				</div>
+			</div>
+
+			<div class="block-admin-container admin-back soc-container">
+				<div class="admin-input-wrap">
+					<div class="social-list">
+						<a href="#" class="social-list-item"><img src="img/telegram.png" alt="Телеграм"></a>
+						<a href="#" class="social-list-item"><img src="img/whatsapp.png" alt="Whatsapp"></a>
+						<a href="#" class="social-list-item"><img src="img/facebook.png" alt="Facebook"></a>
+						<a href="#" class="social-list-item"><img src="img/twitter.png" alt="Twitter"></a>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	</div>
 
 @else
         <script type="text/javascript" src = "{{ asset('js/player_stream.js') }}"></script>
