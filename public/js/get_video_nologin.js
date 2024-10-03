@@ -8,8 +8,6 @@ var key_paint = 0;
 function paint_element_stream(){
     // $('#name_user_get').text();
     //console.log(user_email);
-    var name_stream_gl = '';
-    var public_product_perm = new Array();
 
 
     for(var i = 0; i < count_stream; i ++){
@@ -18,8 +16,8 @@ function paint_element_stream(){
             var output = $.parseJSON(data);
             var list = output.data;
             var key_sell_product = 0;
-            name_stream_gl = list.name;
-            
+            var name_stream_gl = list.name;
+            console.log(count_stream);
 
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
