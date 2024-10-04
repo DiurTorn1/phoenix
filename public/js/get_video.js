@@ -15,7 +15,8 @@ function paint_element_stream(){
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
-            //console.log(list.id);
+            var name_stream_gl = list.name;
+
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
@@ -27,20 +28,29 @@ function paint_element_stream(){
                 //"\r\nmoderators: " + list.moderators);
             //console.log("\r\nposter \r\nid:" + list.poster.id + "\r\ntype: " + list.poster.type + "\r\nstatus" + list.poster.status + "\r\nactive: " + list.poster.active + "\r\noriginal: " + list.poster.original +
                 //"\r\nmd: " + list.poster.md + "\r\nsm: " + list.poster.sm + "\r\nxs: " + list.poster.xs +"\r\nfrom_time" + list.poster.from_time + "\r\nto_time" + list.poster.to_time);
-                $("#slider").append(
-                    '<div class="slide index-live-item" id="' + list.id + '">'+
-                        '<div class="index-live-item-video">'+
-                            '<a >'+ 
-                                '<div class="index-live-banner">' +
-                                    '<img src="' + list.poster.original + '">' +
-                                '</div>' +
-                            '</a>' +
-                            
-                        '</div>'+
-                        '<div class="index-live-item-text">'+
-                            '<a >' + list.name + '</a>'+
-                        '</div>'+
-                    '</div>');
+                $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
+                    var output = $.parseJSON(data);
+                    var pub_name = output? output[1]: '1';
+                    if(pub_name==name_stream_gl){
+                            $("#slider").append(
+                                '<div class="slide bay index-live-item" id="' + list.id + '">'+
+                                    '<div class="index-live-item-video">'+
+                                        '<a >'+ 
+                                            '<div class="index-live-banner">' +
+                                                '<img src="' + list.poster.original + '">' +
+                                            '</div>' +
+                                        '</a>' +
+                                        
+                                    '</div>'+
+                                    '<div class="index-live-item-text">'+
+                                        '<a >' + list.name + '</a>'+
+                                    '</div>'+
+                                '</div>');
+                        
+                    }
+            
+                });
+
         });
     }
 
@@ -48,30 +58,74 @@ function paint_element_stream(){
 
 function paint_element_product(){
     for(var i = 0; i < count_product; i ++){
-        $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
-            //console.log(data);
+        if(array_product[i] == users_sells[i]){
+            //console.log(array_product[i]);
+            //console.log(users_sells[i]);
+            $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                var output = $.parseJSON(data);
+                //console.log(output);
+                var prm_prod = output ? output[1]:'';
+                public_product_perm.push(prm_prod);
+            });
+        }
+       
+
+    }
+} else if(count_sells > count_product){
+    for(var i = 0; i < count_sells; i ++){
+        if(array_product[i] == users_sells[i]){
+            //console.log(array_product[i]);
+            //console.log(users_sells[i]);
+            $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                var output = $.parseJSON(data);
+                //console.log(output);
+                var prm_prod = output ? output[1]:'';
+                public_product_perm.push(prm_prod);
+            });
+        }
+       
+
+    }
+}
+for(var i = 0; i < count_product; i ++){
+    $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
+        //console.log(data);
+        var output = $.parseJSON(data);
+        var id_product = output[0];
+        var src_product = output[17];
+        var name_product = output[1];
+        $.post('/php/get_product_public.php',{ id:id_product }, function(data)  {
             var output = $.parseJSON(data);
-            $("#slider1").append(
-                '<div class="slide index-live-item" id="' + output[0] + '">' +
-                    '<div class="index-live-item-video">' +
-                        '<a href="#">' +
-                            '<div class="index-live-banner">' +
-                                '<img src="' + output[17] + '">' +
-                            '</div> ' +
-                        '</a>' +
-                    '</div>' +
-                    '<div class="index-item-text-wrap">' + 
-                        '<a href="#">' + output[1] + '</a>' +
-                        '<ul>' +
-                            //'<li>Билет на 5 дней</li>' +
-                        '</ul>' +
-                    '</div>' +
-                    '<div class="index-live-item-text">' +
-                        //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
-                        '<a  class="user-button" id="product_price">Куплено &#8381;</a>'+
-                    '</div>' +
-                '</div>');
+            //console.log(output);
+            var prm_prod = output ? output[1]:'';
+            if(prm_prod == id_product){
+                for(var i = 0; i < public_product_perm.length; i++){
+                    $("#slider1").append(
+                        '<div class="slide index-live-item" id="' + id_product + '">' +
+                            '<div class="index-live-item-video">' +
+                                '<a href="#">' +
+                                    '<div class="index-live-banner">' +
+                                        '<img src="' + src_product + '">' +
+                                    '</div> ' +
+                                '</a>' +
+                            '</div>' +
+                            '<div class="index-item-text-wrap">' + 
+                                '<a href="#">' + name_product + '</a>' +
+                                '<ul>' +
+                                    //'<li>Билет на 5 дней</li>' +
+                                '</ul>' +
+                            '</div>' +
+                            '<div class="index-live-item-text">' +
+                                //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
+                                //'<a  class="user-button" id="product_price">' + price_product + ' &#8381;</a>'+
+                                '<a  class="user-button" >Куплено</a>'+
+                            '</div>' +
+                        '</div>');
+                }
+            }
         });
+        /**/
+    });
     }
 /*
 				<div class="index-live-item">
