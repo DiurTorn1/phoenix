@@ -65,13 +65,12 @@ for(var i = 0; i < count_product; i ++){
         var id_product = output[0];
         var src_product = output[17];
         var name_product = output[1];
-        
+
         $.post('/php/get_product_public.php',{ id:id_product }, function(data)  {
             var output = $.parseJSON(data);
             //console.log(output);
             var prm_prod = output ? output[1]:'';
             if(prm_prod == id_product){
-                for(var i = 0; i < public_product_perm.length; i++){
                     $("#slider1").append(
                         '<div class="slide index-live-item" id="' + id_product + '">' +
                             '<div class="index-live-item-video">' +
@@ -93,7 +92,6 @@ for(var i = 0; i < count_product; i ++){
                                 '<a  class="user-button" >Куплено</a>'+
                             '</div>' +
                         '</div>');
-                }
             }
         });
         /**/
