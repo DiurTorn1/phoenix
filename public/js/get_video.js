@@ -57,36 +57,7 @@ function paint_element_stream(){
 }
 
 function paint_element_product(){
-    for(var i = 0; i < count_product; i ++){
-        if(array_product[i] == users_sells[i]){
-            //console.log(array_product[i]);
-            //console.log(users_sells[i]);
-            $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
-                var output = $.parseJSON(data);
-                //console.log(output);
-                var prm_prod = output ? output[1]:'';
-                public_product_perm.push(prm_prod);
-            });
-        }
-       
 
-    }
-} else if(count_sells > count_product){
-    for(var i = 0; i < count_sells; i ++){
-        if(array_product[i] == users_sells[i]){
-            //console.log(array_product[i]);
-            //console.log(users_sells[i]);
-            $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
-                var output = $.parseJSON(data);
-                //console.log(output);
-                var prm_prod = output ? output[1]:'';
-                public_product_perm.push(prm_prod);
-            });
-        }
-       
-
-    }
-}
 for(var i = 0; i < count_product; i ++){
     $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
         //console.log(data);
@@ -94,6 +65,7 @@ for(var i = 0; i < count_product; i ++){
         var id_product = output[0];
         var src_product = output[17];
         var name_product = output[1];
+        
         $.post('/php/get_product_public.php',{ id:id_product }, function(data)  {
             var output = $.parseJSON(data);
             //console.log(output);
