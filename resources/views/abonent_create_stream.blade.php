@@ -1,5 +1,5 @@
 @extends('layouts.app')
-@section('title-block') Панель админа @endsection
+@section('title-block') Панель абонента @endsection
 
 @section('content')
 

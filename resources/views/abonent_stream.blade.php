@@ -1,7 +1,7 @@
 @extends('abonent_panel')
 @section('title-block') Стримы @endsection
 @section('abonent_res')
-<script type="text/javascript" src = "{{ asset('js/get_stream.js') }}"></script> 
+<script type="text/javascript" src = "{{ asset('js/get_abonent_stream.js') }}"></script> 
 <div class="top-menu-admin admin-back">
 			<div class="top-menu-head">
 				<h2 class="top-menu-title">Стримы</h2>
