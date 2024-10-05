@@ -1,4 +1,4 @@
-@extends('card_stream_main')
+@extends('abonent_card_stream_main')
 @section('title-block') Редактировать @endsection
 @section('abonent_card_stream_res')
 	<div class="admin-content admin-content-raw" id="admin-content">
