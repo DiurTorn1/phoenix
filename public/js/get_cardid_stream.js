@@ -297,10 +297,14 @@ $(document).ready(function() {
         //region = pars[6];
         //$("#admin_card_product").val('100%');
         vid_sport = $("#admin_card_vidsporta option:selected").text();
+        var post_time1 = $("#ditetime_card_start_at").val();
+        var post_time_pars = post_time1.split("T")
+        var post_time_pars1 = post_time_pars[1].split(":");
+        var teme_plus = parseInt(post_time_pars1[0])-3;
         var post_time = $("#ditetime_card_start_at").val();
         var name_product = $("#admin_card_product option:selected").text();
         var name_entrypoints = $("#admin_card_entrypoint option:selected").text();
-        console.log(post_time);
+        console.log(teme_plus);
         $.post('/php/entrypoints_stream_get_name.php', {name_entrypoints:name_entrypoints}, function(data)  {
             var output = $.parseJSON(data);
             var entrypoints_get = output? output[2]: '1';
