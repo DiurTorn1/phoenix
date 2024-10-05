@@ -923,8 +923,7 @@ content: '\2713';
     width: -webkit-fill-available;
 }
 .block-admin-right {
-    max-width: 60%;
-    padding-right: 0.5rem;
+    max-width: 40%;
 }
 .block-admin-section {
     display: flex;
