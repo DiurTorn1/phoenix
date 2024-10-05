@@ -130,8 +130,7 @@ $(document).ready(function() {
                     var hour_min_sec = pars_time[1];
                     var hour_min = hour_min_sec.split(":");
                     var teme_plus = parseInt(hour_min[0])+3;
-                    var res_time_tt = pars_time[0] + "T" + teme_plus + ":" + hour_min[1];
-                    $("#ditetime_card_start_at").val(res_time_tt);
+                    $("#ditetime_card_start_at").val(pars_time[0] + "T" + hour_min[0] + ":" + hour_min[1]);
                     $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
                         var output = $.parseJSON(data);
                         //$.each(output,function(i,item){
