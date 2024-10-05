@@ -74,6 +74,10 @@ Route::get('/card_monitor', function () {
     return view('card_monitor');
 });
 
+Route::get('/abonent_card_monitor', function () {
+    return view('abonent_card_monitor');
+});
+
 Route::get('/card_broadcast', function () {
     return view('card_broadcast');
 });
