@@ -924,7 +924,6 @@ content: '\2713';
 }
 .block-admin-right {
     max-width: 40%;
-    padding-right: 0.5rem;
 }
 .block-admin-section {
     display: flex;
@@ -1566,7 +1565,7 @@ td a:focus {
     margin-bottom: 1rem;
 }
 .block-admin-right-monitor {
-    max-width: 40%;
+    max-width: 30%;
 }
 .block-admin-left-monitor {
     width: inherit;
