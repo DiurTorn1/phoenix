@@ -50,6 +50,10 @@ Route::get('/create_stream', function () {
     return view('create_stream');
 });
 
+Route::get('/abonent_create_stream', function () {
+    return view('abonent_create_stream');
+});
+
 Route::get('/card_stream', function () {
     return view('card_stream');
 });
