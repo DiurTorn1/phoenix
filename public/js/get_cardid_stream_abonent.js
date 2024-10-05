@@ -433,10 +433,10 @@ $(document).ready(function() {
     $("#card_stream_link").on('click', function(){
         window.location.href='/abonent_card_stream?admin_input_id='+params.get('admin_input_id');
     });
-    /*$("#card_broadcast_link").on('click', function(){
-        window.location.href='/card_broadcast?admin_input_id='+params.get('admin_input_id');
+    $("#card_broadcast_link").on('click', function(){
+        window.location.href='/abonent_card_broadcast?admin_input_id='+params.get('admin_input_id');
     });
-    $("#card_monitor_link").on('click', function(){
+    /*$("#card_monitor_link").on('click', function(){
         window.location.href='/card_monitor?admin_input_id='+params.get('admin_input_id');
     });
     $("#analitik_card_link").on('click', function(){
