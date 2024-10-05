@@ -918,12 +918,12 @@ content: '\2713';
     flex-direction: column;
 }
 .block-admin-left {
-    max-width: 60%;
+    max-width: 65%;
     width: -moz-available;
     width: -webkit-fill-available;
 }
 .block-admin-right {
-    max-width: 40%;
+    max-width: 60%;
     padding-right: 0.5rem;
 }
 .block-admin-section {
