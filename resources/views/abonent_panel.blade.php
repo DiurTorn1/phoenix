@@ -57,7 +57,7 @@
 			</ul>-->
 			<ul class="admin-navigation-list admin-back"> 
 				<!--<li class="admin-navigation-item"><a href="/video" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/play.png') }}" alt="Видео">Видео</a></li>-->
-				<li class="admin-navigation-item"><a href="/operator_stream" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/stream.png') }}" alt="Стримы">Стримы</a></li>
+				<li class="admin-navigation-item"><a href="/abonent_stream" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/stream.png') }}" alt="Стримы">Стримы</a></li>
 				<!--<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Коллекции">Коллекции</a></li>
 				<li class="admin-navigation-item"><a href="/product_admin" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Продукты">Продукты</a></li>
 				<li class="admin-navigation-item"><a href="/promocode" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Промокоды">Промокоды</a></li>-->
