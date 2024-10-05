@@ -78,6 +78,10 @@ Route::get('/card_broadcast', function () {
     return view('card_broadcast');
 });
 
+Route::get('/abonent_card_broadcast', function () {
+    return view('abonent_card_broadcast');
+});
+
 Route::get('/card_restream', function () {
     return view('card_restream');
 });
