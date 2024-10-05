@@ -300,6 +300,7 @@ $(document).ready(function() {
         var post_time = $("#ditetime_card_start_at").val();
         var name_product = $("#admin_card_product option:selected").text();
         var name_entrypoints = $("#admin_card_entrypoint option:selected").text();
+        console.log(post_time);
         $.post('/php/entrypoints_stream_get_name.php', {name_entrypoints:name_entrypoints}, function(data)  {
             var output = $.parseJSON(data);
             var entrypoints_get = output? output[2]: '1';
