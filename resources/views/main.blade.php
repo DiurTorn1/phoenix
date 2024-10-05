@@ -18,6 +18,8 @@
 				@elseif($v == "nullbody")
 					<script type="text/javascript" src = "{{ asset('js/get_video_user.js') }}"></script>
 					<a id="name_user_get" class="name_user_get">{{ Auth::user()->email }}</a>
+				@elseif($v == "operator")
+					<script type="text/javascript" src = "{{ asset('js/get_video.js') }}"></script> 
 				@endif
             @endforeach
         @endif
