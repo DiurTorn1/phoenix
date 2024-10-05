@@ -301,11 +301,9 @@ $(document).ready(function() {
         var post_time_pars = post_time1.split("T")
         var post_time_pars1 = post_time_pars[1].split(":");
         var teme_plus = parseInt(post_time_pars1[0])-3;
-        var tttttime = post_time_pars[0] + 'T'+ teme_plus + ':' + post_time_pars1[1];
-        var post_time = $("#ditetime_card_start_at").val();
+        var post_time = post_time_pars[0] + 'T'+ teme_plus + ':' + post_time_pars1[1];//$("#ditetime_card_start_at").val();
         var name_product = $("#admin_card_product option:selected").text();
         var name_entrypoints = $("#admin_card_entrypoint option:selected").text();
-        console.log(tttttime+'         '+ post_time);
         $.post('/php/entrypoints_stream_get_name.php', {name_entrypoints:name_entrypoints}, function(data)  {
             var output = $.parseJSON(data);
             var entrypoints_get = output? output[2]: '1';
