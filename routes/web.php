@@ -58,6 +58,10 @@ Route::get('/card_stream', function () {
     return view('card_stream');
 });
 
+Route::get('/abonent_card_stream', function () {
+    return view('abonent_card_stream');
+});
+
 Route::get('/card_stream_main', function () {
     return view('card_stream_main');
 });
