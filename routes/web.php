@@ -38,6 +38,10 @@ Route::get('/stream', function () {
     return view('stream');
 });
 
+Route::get('/abonent_stream', function () {
+    return view('abonent_stream');
+});
+
 Route::get('/video', function () {
     return view('video');
 });

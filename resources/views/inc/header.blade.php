@@ -56,7 +56,7 @@
 							<a href="/user_panel" class="exit-button"><img src="img/setting.png" alt="Настройки" title="Настройки пользователя">Настройки</a>
 							<a href="#" class="exit-button"><img src="img/cart-min.png" alt="Ваши покупки">Покупки</a>
 						@elseif($v == "operator")
-						<a href="/" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Панель абонента</a>
+						<a href="/abonent_stream" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Панель абонента</a>
 						@endif
                 	@endforeach
            	 		@endif
