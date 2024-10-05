@@ -641,7 +641,6 @@ footer {
 .admin-content {
     display: flex;
     flex-direction: column;
-    margin: 0.5rem;
     width: 100%;
 }
 .admin-content-raw {
@@ -924,6 +923,7 @@ content: '\2713';
 }
 .block-admin-right {
     max-width: 40%;
+    padding-right: 0.5rem;
 }
 .block-admin-section {
     display: flex;
