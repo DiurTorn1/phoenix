@@ -30,9 +30,9 @@
 				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link" id="card_stream_link"><img class="admin-menu-icon" src="{{ asset('img/edit.png') }}" alt="Редактировать">Редактировать</a></li>
 				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link" id="card_broadcast_link"><img class="admin-menu-icon" src="{{ asset('img/broadcast.png') }}" alt="Трансляция">Трансляция</a></li>
 				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link" id="card_monitor_link"><img class="admin-menu-icon" src="{{ asset('img/monitor.png') }}" alt="Мониторинг">Мониторинг</a></li>
-				<!--<li class="admin-navigation-item"><a href="#" class="admin-navigation-link" id="analitik_card_link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Аналитика">Аналитика</a></li>
+				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link" id="analitik_card_link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Аналитика">Аналитика</a></li>
 				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link" id="card_restream_link"><img class="admin-menu-icon" src="{{ asset('img/restream.png') }}" alt="Рестрим">Рестрим</a></li>
-				<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/studio.png') }}" alt="Студия">Студия</a></li>-->
+				<!--<li class="admin-navigation-item"><a href="#" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/studio.png') }}" alt="Студия">Студия</a></li>-->
 			</ul>
 		</nav>
 	</div>

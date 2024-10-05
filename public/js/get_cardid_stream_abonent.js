@@ -439,11 +439,11 @@ $(document).ready(function() {
     $("#card_monitor_link").on('click', function(){
         window.location.href='/abonent_card_monitor?admin_input_id='+params.get('admin_input_id');
     });
-    /*$("#analitik_card_link").on('click', function(){
-        window.location.href='/analitik_card?admin_input_id='+params.get('admin_input_id');
+    $("#analitik_card_link").on('click', function(){
+        window.location.href='/abonent_analitik_card?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_restream_link").on('click', function(){
-        window.location.href='/card_restream?admin_input_id='+params.get('admin_input_id');
-    });*/
+        window.location.href='/abonent_card_restream?admin_input_id='+params.get('admin_input_id');
+    });
     
 });

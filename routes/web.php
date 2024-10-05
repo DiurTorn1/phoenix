@@ -70,6 +70,10 @@ Route::get('/analitik_card', function () {
     return view('analitik_card');
 });
 
+Route::get('/abonent_analitik_card', function () {
+    return view('analitik_card');
+});
+
 Route::get('/card_monitor', function () {
     return view('card_monitor');
 });
@@ -88,6 +92,10 @@ Route::get('/abonent_card_broadcast', function () {
 
 Route::get('/card_restream', function () {
     return view('card_restream');
+});
+
+Route::get('/abonent_card_restream', function () {
+    return view('abonent_card_restream');
 });
 
 Route::get('/user_panel', function () {
