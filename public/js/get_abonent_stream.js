@@ -105,8 +105,16 @@ function paint_element_stream(){
                     var res_parstart = parse_start.split("T");
                     var res_parstart1 = res_parstart[0].split("-");
                     var res_parstart2 = res_parstart[1].split(":");
+                    var teme_plus = parseInt(res_parstart2[0])+3;
+                    //console.log(teme_plus);
+                    var tttime = '';
+                    if(teme_plus <= 9){
+                        tttime = '0'+teme_plus;
+                    } else if(teme_plus > 9){
+                        tttime = teme_plus;
+                    }
                     //console.log("Начало в: " + res_parstart2[0] + ":" + res_parstart2[1]);
-                    time_put = "Начало в: " + res_parstart2[0] + ":" + res_parstart2[1];
+                    time_put = "Начало в: " + tttime + ":" + res_parstart2[1];
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 } else {
@@ -115,6 +123,14 @@ function paint_element_stream(){
                     var res_parstart = parse_start.split("T");
                     var res_parstart1 = res_parstart[0].split("-");
                     var res_parstart2 = res_parstart[1].split(":");
+                    var teme_plus = parseInt(res_parstart2[0])+3;
+                    //console.log(teme_plus);
+                    var tttime = '';
+                    if(teme_plus <= 9){
+                        tttime = '0'+teme_plus;
+                    } else if(teme_plus > 9){
+                        tttime = teme_plus;
+                    }
                     //console.log("Закончено в: " + res_parstart2[0] + ":" + res_parstart2[1]);
                     time_put = "Закончено в: " + res_parstart2[0] + ":" + res_parstart2[1];
                     //console.log(res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0]);

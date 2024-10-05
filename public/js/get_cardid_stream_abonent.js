@@ -129,7 +129,15 @@ $(document).ready(function() {
                     var pars_time = time_get.split("T");
                     var hour_min_sec = pars_time[1];
                     var hour_min = hour_min_sec.split(":");
-                    $("#ditetime_card_start_at").val(pars_time[0] + "T" + hour_min[0] + ":" + hour_min[1]);
+                    var teme_plus = parseInt(hour_min[0])+3;
+                    //console.log(teme_plus);
+                    var tttime = '';
+                    if(teme_plus <= 9){
+                        tttime = '0'+teme_plus;
+                    } else if(teme_plus > 9){
+                        tttime = teme_plus;
+                    }
+                    $("#ditetime_card_start_at").val(pars_time[0] + "T" + tttime + ":" + hour_min[1]);
                     $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
                         var output = $.parseJSON(data);
                         //$.each(output,function(i,item){
