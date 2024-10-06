@@ -442,6 +442,14 @@ $(document).ready(function() {
             //console.log(data);
         });
     });
+
+    
+    $("#copy_serch_link").on('click', function(){
+        var $temp = $('#card_link_play').val();
+        navigator.clipboard.writeText($temp);
+
+    });
+
     $("#card_stream_link").on('click', function(){
         window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });

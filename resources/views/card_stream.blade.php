@@ -140,7 +140,7 @@
 					<a href="#" class="admin-video-link-stream" title="Перейти">
 						<img src="img/right-arrow.svg" alt="Перейти">
 					</a>
-					<a href="#" class="admin-video-link-copy" title="Скопировать ссылку">
+					<a href="#" class="admin-video-link-copy"  id="copy_serch_link" title="Скопировать ссылку">
 						<img src="img/copy.png" alt="Скопировать ссылку">
 					</a>
 				</div>
