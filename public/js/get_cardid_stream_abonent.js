@@ -49,7 +49,7 @@ $(document).ready(function() {
                     parent_id_card = list.parent_id; 
                     play_link_card = list.play_link;
                     rtmp_link_card = list.rtmp_link;
-                    $('#card_link_play').val('https://phoenix.tehnodir.ru/player_stream?player_stream_id='+item.id);//list.play_link);
+                    $('#card_link_play').val('https://phoenix.tehnodir.ru/player_stream?player_stream_id='+list.id);//list.play_link);
                     $('#img_poster_card').attr("src", list.poster.original);
                     $('#autoplay_video_ch').attr('checked', list.auto_start);
                     $('#chat_video_ch').attr('checked', list.chat_active);

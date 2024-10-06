@@ -50,7 +50,7 @@ $(document).ready(function() {
                     play_link_card = list.play_link;
                     rtmp_link_card = list.rtmp_link;
                     //https://phoenix.tehnodir.ru/player_stream?player_stream_id=81cd4861-bccc-4d10-bad9-9296e9484652
-                    $('#card_link_play').val('https://phoenix.tehnodir.ru/player_stream?player_stream_id='+item.id);//list.play_link);
+                    $('#card_link_play').val('https://phoenix.tehnodir.ru/player_stream?player_stream_id='+list.id);//list.play_link);
                     $('#img_poster_card').attr("src", list.poster.original);
                     $('#autoplay_video_ch').attr('checked', list.auto_start);
                     $('#chat_video_ch').attr('checked', list.chat_active);
