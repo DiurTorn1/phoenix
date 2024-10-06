@@ -447,7 +447,7 @@ $(document).ready(function() {
     $("#copy_serch_link").on('click', function(){
         var $temp = $('#card_link_play').val();
         navigator.clipboard.writeText($temp);
-
+        $('.admin-video-link-copy').hide();
     });
 
     $("#card_stream_link").on('click', function(){
