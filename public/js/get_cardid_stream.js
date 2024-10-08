@@ -85,15 +85,14 @@ $(document).ready(function() {
                                             if(item1.id_stream == id_card){
                                                 //key_product_get = 1;
                                                 key_product_get1 = 1;
-                                                //console.log(item1.id_stream);
                                             }
                                             
                                         });
                                         key_product_get = key_product_get1;
+                                        console.log(key_product_get1);
                                     });
-                                    console.log(key_product_get1);
                                 }
-                                
+                                //console.log(key_product_get1);
 
                                 if(item.initial && key_product_get != 1){
                                     $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
