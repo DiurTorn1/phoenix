@@ -103,7 +103,7 @@
 		<div class="block-admin-left">
 			
 			<div class="block-admin-container admin-back">
-				<div class="index-live-item" id="player_stream_get">
+				<div class="index-live-item-1" id="player_stream_get">
 				</div>
 			</div>
 
