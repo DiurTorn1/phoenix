@@ -237,7 +237,14 @@ $(document).ready(function() {
     });
 
     $("#product_unpublic_user").on('click', function(){
-
+        $.post('/php/unpublic_product.php', { id_product: id_product}, function(data){
+            if(data == "OK"){
+                alert("Продукт снят с публикации");
+                $('#product_public_user').show();
+                $('#product_unpublic_user').hide();
+            }
+            //console.log(data);
+        });
     });
 
     var main_image;
