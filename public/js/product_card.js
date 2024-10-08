@@ -223,7 +223,10 @@ $(document).ready(function() {
     });
     //alert(params);detail_pars  id_product
     $("#product_public_user").on('click', function(){
-        $.post('/php/public_product.php', { id_product: id_product, type_product:type_product }, function(data){
+        var dNow = new Date();
+        var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+        var initial_table = type_product + '_' + id_product;
+        $.post('/php/public_product.php', { id_product: id_product, type_product:type_product, initial:initial_table, datetime:localdate }, function(data){
             if(data == "OK"){
                 alert("Продукт опубликован");
                 $('#product_public_user').hide();

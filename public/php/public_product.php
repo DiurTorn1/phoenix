@@ -13,7 +13,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);//res_parse_stop_access
 }
 
-$sql = "INSERT INTO `product_public_permission`(`id_product`, `type`, `create_at` , `initial`) VALUES ('". $_POST['id_product'] ."','". $_POST['type_product'] ."','2024-08-28 15:37:32', '')";
+$sql = "INSERT INTO `product_public_permission`(`id_product`, `type`, `create_at` , `initial`) VALUES ('". $_POST['id_product'] ."','". $_POST['type_product'] ."','". $_POST['datetime'] ."', '". $_POST['initial'] ."')";
 
 if ($conn->query($sql) === TRUE) {
   echo "OK";
