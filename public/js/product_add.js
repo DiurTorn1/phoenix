@@ -167,6 +167,9 @@ $(document).ready(function() {
                                         res_parse_stop_access:res_parse_stop_access, res_parse_stop_sell_bilet:res_parse_stop_sell_bilet, int_input_prob_period_subs:int_input_prob_period_subs,
                                         int_input_price_prob_period_subs:int_input_price_prob_period_subs}, function(data){
             if(data == "OK"){
+                $.post('/php/get_product_card_name.php', { name: head_name}, function(data){
+                    console.log(data);
+                });
                 alert("Продукт создан");
             }
             //console.log(data);
