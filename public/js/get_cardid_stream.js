@@ -1,6 +1,3 @@
-
-var key_backbone = 1;
-
 $(document).ready(function() {
     //$("#jjj").on('click', function(){/card_stream
     var vid_sport = "";
@@ -195,15 +192,12 @@ $(document).ready(function() {
     });
     var main_image;
     var image, image_name = '';
-
     var r = new Resumable({
         target: '/'
       });
       
-    if(key_backbone) {
-        r.assignBrowse(document.getElementById('img_poster_card'));
-    } 
       
+      r.assignBrowse(document.getElementById('img_poster_card'));
       
       r.on('fileSuccess', function(file){
             console.log('fileSuccess',file);
@@ -476,11 +470,9 @@ $(document).ready(function() {
     });
 
     $("#card_stream_link").on('click', function(){
-        key_backbone = 1;
         window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_broadcast_link").on('click', function(){
-        key_backbone = 0;
         window.location.href='/card_broadcast?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_monitor_link").on('click', function(){
