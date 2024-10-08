@@ -169,7 +169,11 @@ $(document).ready(function() {
             if(data == "OK"){
                 $.post('/php/get_product_card_name.php', { name: head_name}, function(data){
                     var pars = data.split("&");
-                    console.log(type_product + '_' + pars[0]);
+                    //console.log(type_product + '_' + pars[0]);
+                    var name_table = type_product + '_' + pars[0];
+                    $.post('/php/create_table_product.php', { name: name_table}, function(data){
+                        
+                    });
                     //
                 });
                 alert("Продукт создан");
