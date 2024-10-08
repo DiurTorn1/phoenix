@@ -77,7 +77,7 @@ $(document).ready(function() {
                                 var key_product_get = 0;
                                 $.post('/php/get_product_table.php', { table:item.initial, id_stream:id_card }, function(data)  {
                                     var output1 = $.parseJSON(data);
-                                    var id_get = output? output[1]: '1';
+                                    var id_get = output1? output1[1]: '1';
                                     if(id_get == id_card){
                                         key_product_get = 1;
                                     }
