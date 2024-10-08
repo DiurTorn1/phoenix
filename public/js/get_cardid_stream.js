@@ -87,6 +87,7 @@ $(document).ready(function() {
                                                 key_product_get1 = 1;
                                                 console.log(item1.id_stream);
                                             }
+                                            console.log(key_product_get1);
                                         });
                                         key_product_get = key_product_get1;
                                     });
