@@ -168,7 +168,8 @@ $(document).ready(function() {
                                         int_input_price_prob_period_subs:int_input_price_prob_period_subs}, function(data){
             if(data == "OK"){
                 $.post('/php/get_product_card_name.php', { name: head_name}, function(data){
-                    console.log(data);
+                    var pars = data.split("&");
+                    console.log(pars[0]);
                 });
                 alert("Продукт создан");
             }
