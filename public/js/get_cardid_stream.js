@@ -334,7 +334,7 @@ $(document).ready(function() {
         //} else {
 
         //}
-        if(name_product){
+        if(name_product && name_product != "Не добавлять к продукту"){
             $.post('/php/get_product_card_name.php', {name:name_product}, function(data)  {
                 var pars = data.split("&");
                 //console.log(pars[0]);
