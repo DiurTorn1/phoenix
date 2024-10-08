@@ -70,12 +70,11 @@ $(document).ready(function() {
                     $("#admin_card_weigth option:selected").text(weigth);
                     $('#player_stream_card_link').attr('src', list.play_link);
                     //$("#admin_card_product").val('100%');
-                    var key_product_get = 0;
                     $.post('/php/get_product_all.php', function(data)  {
                         //for(var i=0; i<data.length;i++){
                             var output = $.parseJSON(data);
                             $.each(output,function(i,item){
-                                
+                                var key_product_get = 0;
                                 if(item.initial){
                                     //console.log(item.initial);
                                     $.post('/php/get_product_table.php', { table:item.initial }, function(data)  {
@@ -86,13 +85,13 @@ $(document).ready(function() {
                                             if(item1.id_stream == id_card){
                                                 //key_product_get = 1;
                                                 key_product_get1 = 1;
-                                                console.log(item1.id_stream);
+                                                //console.log(item1.id_stream);
                                             }
                                             
                                         });
                                         key_product_get = key_product_get1;
                                     });
-                                    console.log(key_product_get);
+                                    console.log(key_product_get1);
                                 }
                                 
 
