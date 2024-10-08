@@ -356,7 +356,7 @@ $(document).ready(function() {
                     console.log(output[4]);
                     var dNow1= new Date();
                     var localdate1= dNow1.getFullYear() + '-' + (dNow1.getMonth()+1) + '-' + dNow1.getDate() + ' ' + dNow1.getHours() + ':' + dNow1.getMinutes() + ':00';//2024-08-28 15:37:32
-                    $.post('/php/add_table product.php', {table:output[4], table:id_card, reg_date:localdate1 }, function(data)  {
+                    $.post('/php/add_table product.php', {table:output[4], id_stream:id_card, reg_date:localdate1 }, function(data)  {
                         if(data == "OK"){
                             alert("Стрим добавлен к продукту: " + name_product);
                             $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
