@@ -197,99 +197,101 @@ $(document).ready(function() {
         target: '/'
       });
       
+      if(doc_byid.length != null){
+        r.assignBrowse(doc_byid);
       
-      r.assignBrowse(doc_byid);
-      
-      r.on('fileSuccess', function(file){
-            console.log('fileSuccess',file);
-            console.log(file.file);
-            //$('#img_poster_card').attr("src", file.file);
-            var reader = new FileReader();
+        r.on('fileSuccess', function(file){
+              console.log('fileSuccess',file);
+              console.log(file.file);
+              //$('#img_poster_card').attr("src", file.file);
+              var reader = new FileReader();
+              
+              image_name = file.file.name;
+              reader.readAsDataURL(file.file);
+              //var output = $.parseJSON(file);
+              // var form_data = new FormData();
+              reader.onloadend = function(e) { 
+                  //console.log(e.target.result);
+                  $('#img_poster_card').attr("src", e.target.result);
+                  //console.log(e.target.result);
+                  main_image = e.target.result;
+                  var image_res = e.target.result;
+                  //console.log(image_res.split(',')[1]);
+                  image = image_res.split(',')[1];
+                  $.post('/php/upload_banners.php', { image: image, image_name:image_name }, function(data)  {
+                      //console.log(data);
+                      if(data === 'Successfully Uploaded'){ 
+                          //<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
+                          //$("#banners_turnir").append('<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>');
+                          $('#img_banner_trash').show();
+                      }
+                  });
+  
+                  //form_data.append('file',image);
+                  /*$.ajax({
+                      url:'/php/upload_banners.php',
+                      method:'POST',
+                      data:form_data,
+                      contentType:false,
+                      processData:false,
+                      beforeSend:function(){
+                        //$('#msg').html('Loading......');
+                        console.log('Loading......');
+                      },
+                      success:function(data){
+                          //var output = $.parseJSON(data);
+                          console.log(data);
+                        //$('#msg').html(data);
+                      },
+                      error: function(xhr, ajaxOptions, thrownError) {
+                         console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
+                      }
+                  });*/
+              };
+  
             
-            image_name = file.file.name;
-            reader.readAsDataURL(file.file);
+          });
+        r.on('fileProgress', function(file){
+            console.log('fileProgress', file);
+          });
+        r.on('fileAdded', function(file, event){
+            r.upload();
+            console.log('fileAdded...');
+            //console.log('fileAdded...', event);
             //var output = $.parseJSON(file);
-            // var form_data = new FormData();
-            reader.onloadend = function(e) { 
-                //console.log(e.target.result);
-                $('#img_poster_card').attr("src", e.target.result);
-                //console.log(e.target.result);
-                main_image = e.target.result;
-                var image_res = e.target.result;
-                //console.log(image_res.split(',')[1]);
-                image = image_res.split(',')[1];
-                $.post('/php/upload_banners.php', { image: image, image_name:image_name }, function(data)  {
-                    //console.log(data);
-                    if(data === 'Successfully Uploaded'){ 
-                        //<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
-                        //$("#banners_turnir").append('<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>');
-                        $('#img_banner_trash').show();
-                    }
-                });
+            //console.log(output);
+            //console.log(file);
+          });
+        r.on('filesAdded', function(array){
+            r.upload();
+            //console.log('filesAdded', array);
+          });
+        r.on('fileRetry', function(file){
+            console.log('fileRetry', file);
+          });
+        r.on('fileError', function(file, message){
+            console.log('fileError', file, message);
+          });
+        r.on('uploadStart', function(){
+            console.timeLog('uploadStart');
+          });
+        r.on('complete', function(){
+            console.log('complete');
+          });
+        r.on('progress', function(){
+            console.log('progress');
+          });
+        r.on('error', function(message, file){
+            console.log('error', message, file);
+          });
+        r.on('pause', function(){
+            console.log('pause');
+          });
+        r.on('cancel', function(){
+            console.log('cancel');
+          });
+      }
 
-                //form_data.append('file',image);
-                /*$.ajax({
-                    url:'/php/upload_banners.php',
-                    method:'POST',
-                    data:form_data,
-                    contentType:false,
-                    processData:false,
-                    beforeSend:function(){
-                      //$('#msg').html('Loading......');
-                      console.log('Loading......');
-                    },
-                    success:function(data){
-                        //var output = $.parseJSON(data);
-                        console.log(data);
-                      //$('#msg').html(data);
-                    },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                       console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-                    }
-                });*/
-            };
-
-          
-        });
-      r.on('fileProgress', function(file){
-          console.log('fileProgress', file);
-        });
-      r.on('fileAdded', function(file, event){
-          r.upload();
-          console.log('fileAdded...');
-          //console.log('fileAdded...', event);
-          //var output = $.parseJSON(file);
-          //console.log(output);
-          //console.log(file);
-        });
-      r.on('filesAdded', function(array){
-          r.upload();
-          //console.log('filesAdded', array);
-        });
-      r.on('fileRetry', function(file){
-          console.log('fileRetry', file);
-        });
-      r.on('fileError', function(file, message){
-          console.log('fileError', file, message);
-        });
-      r.on('uploadStart', function(){
-          console.timeLog('uploadStart');
-        });
-      r.on('complete', function(){
-          console.log('complete');
-        });
-      r.on('progress', function(){
-          console.log('progress');
-        });
-      r.on('error', function(message, file){
-          console.log('error', message, file);
-        });
-      r.on('pause', function(){
-          console.log('pause');
-        });
-      r.on('cancel', function(){
-          console.log('cancel');
-        });
 
     $("#img_banner_trash").on('click', function(){
         $.post('/php/delete_banners.php', { image_name:image_name }, function(data)  {
@@ -471,12 +473,10 @@ $(document).ready(function() {
     });
 
     $("#card_stream_link").on('click', function(){
-        doc_byid = document.getElementById('img_poster_card');
         window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_broadcast_link").on('click', function(){
-        doc_byid = document.getElementById('img_poster_card');
-        window.location.href='/card_broadcast?admin_input_id='+params.get('RTMP_url_input');
+        window.location.href='/card_broadcast?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_monitor_link").on('click', function(){
         window.location.href='/card_monitor?admin_input_id='+params.get('admin_input_id');
