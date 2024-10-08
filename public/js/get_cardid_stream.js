@@ -76,8 +76,7 @@ $(document).ready(function() {
                             $.each(output,function(i,item){
                                 var key_product_get = 0;
                                 if(item.initial){
-                                    console.log(jQuery.type(id_card));
-                                    
+                                    //console.log(item.initial);
                                     $.post('/php/get_product_table.php', { table:item.initial, id_stream:id_card }, function(data)  {
                                         console.log(data);
                                         //var output1 = $.parseJSON(data);
