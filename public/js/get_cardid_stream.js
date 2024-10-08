@@ -81,9 +81,10 @@ $(document).ready(function() {
                                         //console.log(data);
                                         var output1 = $.parseJSON(data);
                                         $.each(output1,function(i,item1){
-                                            if(item1.id_stream == id_card){
-                                                key_product_get = 1;
-                                            }
+                                            console.log(item1.id_stream);
+                                            //if(item1.id_stream == id_card){
+                                                //key_product_get = 1;
+                                            //}
                                         });
                                     });
                                 }
