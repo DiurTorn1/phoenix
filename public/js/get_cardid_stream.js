@@ -89,7 +89,7 @@ $(document).ready(function() {
                                             
                                         });
                                         key_product_get = key_product_get1;
-                                        console.log(key_product_get1);
+                                        console.log(key_product_get);
                                     });
                                 }
                                 //console.log(key_product_get1);
