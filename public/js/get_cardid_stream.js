@@ -92,7 +92,7 @@ $(document).ready(function() {
                                         console.log(key_product_get);
                                     });
                                 }
-                                //console.log(key_product_get1);
+                                console.log(key_product_get);
 
                                 if(item.initial && key_product_get != 1){
                                     $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
