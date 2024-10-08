@@ -11,7 +11,6 @@
     @foreach( Auth::user()->getRoleNames() as $v)
 		@if($v == "admin")
     <header class="header admin-header">
-	<script type="text/javascript" src = "{{ asset('js/Backbone.js') }}"></script>
 	<script type="text/javascript" src = "{{ asset('js/get_cardid_stream.js') }}"></script>
 		<div class="left-header">
 			<a href="/stream" class="close-btn" title="Закрыть" ><img src="{{ asset('img/close.png') }}" alt="Закрыть" width="24" height="24"></a>

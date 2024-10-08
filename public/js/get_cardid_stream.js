@@ -190,6 +190,7 @@ $(document).ready(function() {
                 
         //});
     });
+    var doc_byid = document.getElementById('img_poster_card');
     var main_image;
     var image, image_name = '';
     var r = new Resumable({
@@ -197,7 +198,7 @@ $(document).ready(function() {
       });
       
       
-      r.assignBrowse(document.getElementById('img_poster_card'));
+      r.assignBrowse(doc_byid);
       
       r.on('fileSuccess', function(file){
             console.log('fileSuccess',file);
