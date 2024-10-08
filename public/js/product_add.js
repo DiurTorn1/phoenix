@@ -172,11 +172,13 @@ $(document).ready(function() {
                     //console.log(type_product + '_' + pars[0]);
                     var name_table = type_product + '_' + pars[0];
                     $.post('/php/create_table_product.php', { name: name_table}, function(data){
-                        
+                        if(data == "OK"){
+                            alert("Продукт создан");
+                        }
                     });
                     //
                 });
-                alert("Продукт создан");
+                
             }
             //console.log(data);
         });
