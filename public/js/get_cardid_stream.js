@@ -1,3 +1,6 @@
+
+var key_backbone = 1;
+
 $(document).ready(function() {
     //$("#jjj").on('click', function(){/card_stream
     var vid_sport = "";
@@ -190,7 +193,6 @@ $(document).ready(function() {
                 
         //});
     });
-    var key_backbone = 1;
     var main_image;
     var image, image_name = '';
 
