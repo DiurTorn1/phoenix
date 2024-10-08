@@ -79,6 +79,7 @@ $(document).ready(function() {
                                     //console.log(item.initial);
                                     $.post('/php/get_product_table.php', { table:item.initial, id_stream:id_card }, function(data)  {
                                         var output1 = $.parseJSON(data);
+                                        console.log(output1);
                                         var id_get = output1? output1[1]: '1';
                                         console.log(id_get);
                                         if(id_get == id_card){
