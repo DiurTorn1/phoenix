@@ -83,7 +83,7 @@ $(document).ready(function() {
                                         var output1 = $.parseJSON(data);
                                         $.each(output1,function(i,item1){
                                             if(item1.id_stream == id_card){
-                                                //key_product_get = 1;
+                                                key_product_get = 1;
                                                 key_product_get1 = 1;
                                             }
                                             
