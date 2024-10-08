@@ -314,6 +314,12 @@ p {
     background-color: #000; 
     height: auto;
 }
+
+.index-live-item-video {
+	width: 100%;
+    height: 100%;
+}
+
 .index-item-text-wrap,
 .index-live-item-text {
 	display: flex;
