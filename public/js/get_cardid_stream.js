@@ -78,13 +78,13 @@ $(document).ready(function() {
                                 if(item.initial){
                                     //console.log(item.initial);
                                     $.post('/php/get_product_table.php', { table:item.initial, id_stream:id_card }, function(data)  {
-                                        var output1 = $.parseJSON(data);
                                         console.log(data);
-                                        var id_get = output1? output1[1]: '1';
-                                        console.log(id_get);
-                                        if(id_get == id_card){
-                                            key_product_get = 1;
-                                        }
+                                        //var output1 = $.parseJSON(data);
+                                       // var id_get = output1? output1[1]: '1';
+                                        ///console.log(id_get);
+                                        //if(id_get == id_card){
+                                           //key_product_get = 1;
+                                        //}
                                     });
                                 }
 
