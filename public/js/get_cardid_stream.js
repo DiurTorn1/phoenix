@@ -74,37 +74,33 @@ $(document).ready(function() {
                         //for(var i=0; i<data.length;i++){
                             var output = $.parseJSON(data);
                             $.each(output,function(i,item){
-                                var key_product_get = 0;
                                 if(item.initial){
                                     //console.log(item.initial);
                                     $.post('/php/get_product_table.php', { table:item.initial }, function(data)  {
                                         //console.log(data);
-                                        var key_product_get1 = 0;
+                                        var key_product_get = 0;
                                         var output1 = $.parseJSON(data);
                                         $.each(output1,function(i,item1){
                                             if(item1.id_stream == id_card){
                                                 key_product_get = 1;
-                                                key_product_get1 = 1;
                                             }
                                             
                                         });
-                                        key_product_get = key_product_get1;
-                                        console.log(key_product_get);
+                                        if(key_product_get != 1){
+                                            $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
+                                                var pars = data.split("&");
+                                                //console.log(pars[1]);
+                                                $('#admin_card_product').append($('<option>', {
+                                                    value: 1,
+                                                    text: pars[1]
+                                                }));
+                                            });
+        
+                                        }
                                     });
                                 }
-                                console.log(key_product_get);
 
-                                if(item.initial && key_product_get != 1){
-                                    $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
-                                        var pars = data.split("&");
-                                        //console.log(pars[1]);
-                                        $('#admin_card_product').append($('<option>', {
-                                            value: 1,
-                                            text: pars[1]
-                                        }));
-                                    });
 
-                                }
 
                                 //console.log(item.id_product);
                             });
