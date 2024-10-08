@@ -74,7 +74,15 @@ $(document).ready(function() {
                         //for(var i=0; i<data.length;i++){
                             var output = $.parseJSON(data);
                             $.each(output,function(i,item){
-                                if(item.initial){
+                                var key_product_get = 0;
+                                $.post('/php/get_product_table.php', { table:item.initial, id_stream:id_card }, function(data)  {
+                                    var output1 = $.parseJSON(data);
+                                    var id_get = output? output[1]: '1';
+                                    if(id_get == id_card){
+                                        key_product_get = 1;
+                                    }
+                                });
+                                if(item.initial && key_product_get != 1){
                                     $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
                                         var pars = data.split("&");
                                         //console.log(pars[1]);
