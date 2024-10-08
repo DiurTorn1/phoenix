@@ -14,7 +14,13 @@ $(document).ready(function() {
                 $.post('/php/get_product_id.php',{ id:id }, function(data)  {
                     var output = $.parseJSON(data);
                     var parse_detail = output[2].split("+");
-                    console.log(parse_detail[0] + '_' + output[0]);
+                    //console.log(parse_detail[0] + '_' + output[0]);
+                    var name_drop = parse_detail[0] + '_' + output[0];
+                    $.post('/php/drop_table_product.php', {name:name_drop}, function(data){
+                        if(data == 'OK'){
+                            alert("Table DROP");
+                        }
+                    });
                 });
                 $.post('/php/delete_product.php', {id:id}, function(data){
                     alert(data);
