@@ -25,7 +25,7 @@ $(document).ready(function() {
 
                     $("#player_stream_get").append(
                         '<div class="index-live-item-video">' +
-                            '<iframe src="' + item.play_link + '" width="100%" height="100%" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
+                            '<iframe src="' + item.play_link + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
                         '</div>' +
                         '<div class="index-live-item-text">' +
                         '<a>' + item.name + '</a>' +
