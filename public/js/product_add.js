@@ -222,7 +222,8 @@ $(document).ready(function() {
         } else if(region_select_bilet == "Только Беларусь (BYN)"){
             region_out ="Только Беларусь";
         }
-        //var period_select_subs = $("#sive_subscript_region option:selected").text();
+        var period_select_subs = $("#sive_subscript_region option:selected").text();
+        console.log(period_select_subs);
         if(period_select_subs == "Неделя"){
             days_job_bilet = 7;
         } else if(period_select_subs == "1 месяц"){
