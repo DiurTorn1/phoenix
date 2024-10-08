@@ -80,6 +80,7 @@ $(document).ready(function() {
                                     $.post('/php/get_product_table.php', { table:item.initial, id_stream:id_card }, function(data)  {
                                         var output1 = $.parseJSON(data);
                                         var id_get = output1? output1[1]: '1';
+                                        console.log(id_get);
                                         if(id_get == id_card){
                                             key_product_get = 1;
                                         }
