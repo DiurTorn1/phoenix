@@ -158,9 +158,9 @@ $(document).ready(function() {
         var int_input_prob_period_subs = parseInt(input_prob_period_subs);
         var int_input_price_prob_period_subs = parseInt(input_price_prob_period_subs);
         //console.log(start_access_tame);
-        console.log(head_name + " : " + start_access_time + " : " + stop_access_time + " : " + detail_save + " : " + type_save + " : " + region_select_bilet + " : " + valute_db + " : " + days_job_bilet
-                    + " : " + res_date_start_sell + " : " + int_price_bilet + " : " + int_old_price_bilet + " : " + res_parse_start_access + " : " + res_parse_stop_access + " : " + res_parse_stop_sell_bilet
-                    + " : " + int_input_prob_period_subs + " : " + int_input_price_prob_period_subs);
+        //console.log(head_name + " : " + start_access_time + " : " + stop_access_time + " : " + detail_save + " : " + type_save + " : " + region_select_bilet + " : " + valute_db + " : " + days_job_bilet
+                    //+ " : " + res_date_start_sell + " : " + int_price_bilet + " : " + int_old_price_bilet + " : " + res_parse_start_access + " : " + res_parse_stop_access + " : " + res_parse_stop_sell_bilet
+                    //+ " : " + int_input_prob_period_subs + " : " + int_input_price_prob_period_subs);
         $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, 
                                         detail_save:detail_save, type_save:type_save, region_select_bilet:region_select_bilet, valute_db:valute_db, days_job_bilet:days_job_bilet,
                                         res_date_start_sell:res_date_start_sell, int_price_bilet:int_price_bilet, int_old_price_bilet:int_old_price_bilet, res_parse_start_access:res_parse_start_access,
@@ -169,7 +169,8 @@ $(document).ready(function() {
             if(data == "OK"){
                 $.post('/php/get_product_card_name.php', { name: head_name}, function(data){
                     var pars = data.split("&");
-                    console.log(pars[0]);
+                    console.log(type_product + '_' + pars[0]);
+                    //
                 });
                 alert("Продукт создан");
             }
