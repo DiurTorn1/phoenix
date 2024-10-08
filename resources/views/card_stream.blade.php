@@ -73,7 +73,7 @@
 					<label>Добавить к продукту</label>
 					<!--<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_product">-->
 						<select class="admin-input admin-input-select block-admin-input" id="admin_card_product">
-
+							<option value="Не добавлять к продукту">Не добавлять к продукту</option>
 						</select>
 				</div>
 				<!--<div class="admin-input-box admin-input-wrap">
