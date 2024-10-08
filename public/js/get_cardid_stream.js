@@ -190,6 +190,7 @@ $(document).ready(function() {
                 
         //});
     });
+    var element_id_img = 'img_poster_card';
     var main_image;
     var image, image_name = '';
     var r = new Resumable({
@@ -197,7 +198,7 @@ $(document).ready(function() {
       });
       
       
-      //r.assignBrowse(document.getElementById('img_poster_card'));
+      r.assignBrowse(document.getElementById(element_id_img));
       
       r.on('fileSuccess', function(file){
             console.log('fileSuccess',file);
@@ -470,9 +471,11 @@ $(document).ready(function() {
     });
 
     $("#card_stream_link").on('click', function(){
+        element_id_img = 'img_poster_card';
         window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_broadcast_link").on('click', function(){
+        element_id_img = 'test';
         window.location.href='/card_broadcast?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_monitor_link").on('click', function(){
