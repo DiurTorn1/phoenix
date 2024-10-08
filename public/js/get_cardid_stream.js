@@ -76,7 +76,7 @@ $(document).ready(function() {
                             $.each(output,function(i,item){
                                 var key_product_get = 0;
                                 if(item.initial){
-                                    console.log(item.initial);
+                                    //console.log(item.initial);
                                     $.post('/php/get_product_table.php', { table:item.initial, id_stream:id_card }, function(data)  {
                                         var output1 = $.parseJSON(data);
                                         var id_get = output1? output1[1]: '1';
@@ -353,8 +353,10 @@ $(document).ready(function() {
                 $.post('/php/get_product_public.php', {id:pars[0]}, function(data)  {
                     //var pars = data.split("&");
                     var output = $.parseJSON(data);
-                    console.log(output[1]);
-                    $.post('/php/upload_product_public.php', {id:output[1], initial:initial_name}, function(data)  {
+                    console.log(output[4]);
+                    var dNow1= new Date();
+                    var localdate1= dNow1.getFullYear() + '-' + (dNow1.getMonth()+1) + '-' + dNow1.getDate() + ' ' + dNow1.getHours() + ':' + dNow1.getMinutes() + ':00';//2024-08-28 15:37:32
+                    $.post('/php/add_table product.php', {table:output[4], table:id_card, reg_date:localdate1 }, function(data)  {
                         if(data == "OK"){
                             alert("Стрим добавлен к продукту: " + name_product);
                             $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
