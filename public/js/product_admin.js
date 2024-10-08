@@ -11,8 +11,13 @@ $(document).ready(function() {
             var pars = idsarr[0].split("vl");
             var id = pars[1];
             if(ch){
+                $.post('/php/get_product_id.php',{ id:id }, function(data)  {
+                    var output = $.parseJSON(data);
+                    var parse_detail = output[2].split("+");
+                    console.log(parse_detail[0] + '_' + output[0]);
+                });
                 $.post('/php/delete_product.php', {id:id}, function(data){
-                    console.log(data);
+                    alert(data);
                 });
                 
             }
