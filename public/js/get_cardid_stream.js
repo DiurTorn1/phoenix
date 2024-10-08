@@ -74,7 +74,7 @@ $(document).ready(function() {
                         //for(var i=0; i<data.length;i++){
                             var output = $.parseJSON(data);
                             $.each(output,function(i,item){
-                                if(!item.initial){
+                                if(item.initial){
                                     $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
                                         var pars = data.split("&");
                                         //console.log(pars[1]);
