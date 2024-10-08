@@ -471,9 +471,11 @@ $(document).ready(function() {
     });
 
     $("#card_stream_link").on('click', function(){
+        doc_byid = document.getElementById('img_poster_card');
         window.location.href='/card_stream?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_broadcast_link").on('click', function(){
+        doc_byid = 'test';
         window.location.href='/card_broadcast?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_monitor_link").on('click', function(){
