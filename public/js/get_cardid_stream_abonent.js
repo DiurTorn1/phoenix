@@ -439,19 +439,19 @@ $(document).ready(function() {
         });
     });
     $("#card_stream_link").on('click', function(){
-        window.location.href='/abonent_card_stream?admin_input_id='+params.get('admin_input_id');
+        window.location.href='/abonent_card_stream1?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_broadcast_link").on('click', function(){
-        window.location.href='/abonent_card_broadcast?admin_input_id='+params.get('admin_input_id');
+        window.location.href='/abonent_card_broadcast1?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_monitor_link").on('click', function(){
-        window.location.href='/abonent_card_monitor?admin_input_id='+params.get('admin_input_id');
+        window.location.href='/abonent_card_monitor1?admin_input_id='+params.get('admin_input_id');
     });
     $("#analitik_card_link").on('click', function(){
-        window.location.href='/abonent_analitik_card?admin_input_id='+params.get('admin_input_id');
+        window.location.href='/abonent_analitik_card1?admin_input_id='+params.get('admin_input_id');
     });
     $("#card_restream_link").on('click', function(){
-        window.location.href='/abonent_card_restream?admin_input_id='+params.get('admin_input_id');
+        window.location.href='/abonent_card_restream1?admin_input_id='+params.get('admin_input_id');
     });
     
 });
