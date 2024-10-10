@@ -52,10 +52,10 @@ function paint_element_stream(){
                 //console.log(users_sells[i]);
         $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
             var output = $.parseJSON(data);
-            console.log(output);
+            //console.log(output);
             var prm_prod = output ? output[4]:'';
             if(prm_prod != 0){
-                console.log(prm_prod);
+                //console.log(prm_prod);
                 public_product_perm.push(prm_prod);
             }
             
@@ -107,32 +107,25 @@ function paint_element_stream(){
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
-                    var key_sell = 1;
+                    var key_sell = 1, key_product_table;
                     if(pub_name==name_stream_gl){
                         for(var i = 0; i < public_product_perm.length; i++){
                             //console.log(public_product_perm[i]);
-                            /*  $.post('/php/get_product_table.php', { table:item.initial }, function(data)  {
-                                        //console.log(data);
-                                        var key_product_get = 0;
-                                        var output1 = $.parseJSON(data);
-                                        $.each(output1,function(i,item1){
-                                            if(item1.id_stream == id_card){
-                                                key_product_get = 1;
-                                            }
+                            $.post('/php/get_product_table.php', { table:item.initial }, function(data)  {
+                                //console.log(data);
+                                var key_product_get = 0;
+                                var output1 = $.parseJSON(data);
+                                $.each(output1,function(i,item1){
+                                    if(item1.id_stream == id_stream){
+                                        key_product_get = 1;
+                                    }
                                             
-                                        });
-                                        if(key_product_get != 1){
-                                            $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
-                                                var pars = data.split("&");
-                                                //console.log(pars[1]);
-                                                $('#admin_card_product').append($('<option>', {
-                                                    value: 1,
-                                                    text: pars[1]
-                                                }));
-                                            });
+                                });
+                                if(key_product_get == 1){
+                                    console.log(output1.id_stream);
         
-                                        }
-                                    }); */
+                                }
+                            }); 
                             //if(public_product_perm[i] == name_stream_gl){
                                 //console.log(public_product_perm.length);
                                 //console.log(public_product_perm);
