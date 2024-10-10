@@ -14,7 +14,7 @@
 		<div class="right-heder">
 			<button class="top-menu-btn non-publish" id="product_unpublic_user">Отменить публикацию</button> <!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 			<button class="top-menu-btn yes-publish" id="product_public_user">Опубликовать</button> <!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
-			<button class="top-menu-btn save-st" id="save_product_db">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<button class="top-menu-btn save-st" id="save_product_db" style="margin-right: 1rem !important;">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 		</div>
 	</header> 
 	<!----------------------------Админ-контент---------------------------------->
