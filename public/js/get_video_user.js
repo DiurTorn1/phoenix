@@ -111,7 +111,7 @@ function paint_element_stream(){
                     if(pub_name==name_stream_gl){
                         for(var i = 0; i < public_product_perm.length; i++){
                             //console.log(public_product_perm[i]);
-                            $.post('/php/get_product_table.php', { table:item.initial }, function(data)  {
+                            $.post('/php/get_product_table.php', { table:public_product_perm[i] }, function(data)  {
                                 //console.log(data);
                                 var key_product_get = 0;
                                 var output1 = $.parseJSON(data);
