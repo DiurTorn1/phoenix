@@ -54,9 +54,7 @@ function paint_element_stream(){
                     var output = $.parseJSON(data);
                     //console.log(output);
                     var prm_prod = output ? output[4]:'';
-                    if(prm_prod){
-                        public_product_perm.push(prm_prod);
-                    }
+                    public_product_perm.push(prm_prod);
                 });
             }
            
@@ -71,9 +69,7 @@ function paint_element_stream(){
                     var output = $.parseJSON(data);
                     //console.log(output);
                     var prm_prod = output ? output[4]:'';
-                    if(prm_prod){
-                        public_product_perm.push(prm_prod);
-                    }
+                    public_product_perm.push(prm_prod);
                     
                 });
             }
