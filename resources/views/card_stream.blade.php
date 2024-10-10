@@ -1,6 +1,7 @@
 @extends('card_stream_main')
 @section('title-block') Редактировать @endsection
 @section('card_stream_res')
+	<script type="text/javascript" src = "{{ asset('js/card_stream_redactor.js') }}"></script>
 	<div class="admin-content admin-content-raw" id="admin-content">
 		<div class="block-admin-left" id="block-admin-left">
 			<div class="block-admin-container admin-back">
