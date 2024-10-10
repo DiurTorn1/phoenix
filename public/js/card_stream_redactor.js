@@ -311,7 +311,8 @@ $(document).ready(function() {
         name_card = $('#admin-input-main').val();
         region = $("#card_region_select option:selected").text();
         sezon = $("#admin_card_season").val();
-        kubok = $("#admin_card_turnir").val();
+        kubok = $("#admin_card_turnir").val();opisanie_strima
+        opisanie_strima = $("#opisanie_strima").val();
         weigth = $("#admin_card_weigth option:selected").text();//$("#admin_card_weigth").val();
         var check_autoplay = $('#autoplay_video_ch').is(":checked");
         var check_chat = $('#chat_video_ch').is(":checked");
@@ -367,7 +368,7 @@ $(document).ready(function() {
                         if(data == "OK"){
                             
                             $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
-                                ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
+                                ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, opisanie_strima:opisanie_strima, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
                                 parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par, ch_autoplay:check_autoplay, ch_chat:check_chat }, function(data){
                                 var output = $.parseJSON(data);
                                 //console.log(output);
@@ -398,7 +399,7 @@ $(document).ready(function() {
         }else{
             
             $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
-                ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
+                ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, opisanie_strima:opisanie_strima, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
                 parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
                 var output = $.parseJSON(data);
                 //console.log(output);

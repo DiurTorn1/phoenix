@@ -3,7 +3,7 @@
 
 $token = "179c96f0-a67a-4324-b235-f0b3960baf95";
 
-$tegs = $_POST['sezon'] . '&' . $_POST['kubok'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sport'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'];
+$tegs = $_POST['sezon'] . '&' . $_POST['kubok'] . '&' . $_POST['weigth'] . '&' . $_POST['vid_sport'] . '&' . ' ' . '&' . ' ' . '&' . $_POST['region'] . '&' . $_POST['opisanie_strima'];
 
 $data = array( "id" => $_POST['id'], "workspace_id" => $_POST['workspace_id'], "parent_id" => $_POST['parent_id'], 
                 "name" => $_POST['name'], "subtitle" => $tegs, "type" => "one-time",
