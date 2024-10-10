@@ -712,6 +712,11 @@ footer {
     color: #feeeee;
     cursor: pointer;
 }
+
+.top-menu-btn:hover{
+    background-color: #feeeee;
+    color: #f58505; 
+}
 .user-button-ok,
 .user-button {
     display: flex !important;
