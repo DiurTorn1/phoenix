@@ -11,7 +11,7 @@
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Описание</label>
-					<textarea name="Описание" class="block-admin-input respons-input admin-input"></textarea>
+					<textarea name="Описание" class="block-admin-input respons-input admin-input" id = "opisanie_strima"></textarea>
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<textarea name="Описание для премиум клиентов" class="block-admin-prem-input block-admin-input admin-input">Описание для премиум клиентов</textarea>

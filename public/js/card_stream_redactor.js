@@ -9,7 +9,7 @@ $(document).ready(function() {
     var region = "";
     var name_card = "";
     var id_card, workspace_id_card, parent_id_card, play_link_card, rtmp_link_card, 
-        streamkey_par, parent_id_par, stream_id_par, poster_id_par, initial_name;
+        streamkey_par, parent_id_par, stream_id_par, poster_id_par, initial_name, opisanie_strima;
 
     var name_stream = "";
     var type_stream = "";
@@ -63,9 +63,12 @@ $(document).ready(function() {
                     gorod = pars[4];
                     boss = pars[5];
                     region = pars[6];
+                    opisanie_strima = pars[7];
+                    
                     $("#card_region_select option:selected").text(region);
                     $("#admin_card_season").val(sezon);
                     $("#admin_card_turnir").val(kubok);
+                    $("#opisanie_strima").val(opisanie_strima);
                     //$("#admin_card_weigth").val(weigth);
                     $("#admin_card_weigth option:selected").text(weigth);
                     $('#player_stream_card_link').attr('src', list.play_link);

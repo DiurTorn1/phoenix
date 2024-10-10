@@ -46,7 +46,7 @@
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 					<label>Описание</label>
-					<textarea name="Описание" class="block-admin-input respons-input admin-input"></textarea>
+					<textarea name="Описание" class="block-admin-input respons-input admin-input" id="opisanie_strima"></textarea>
 				</div>
 				<div class="admin-input-box admin-input-wrap">
 				<textarea name="Описание для премиум клиентов" class="block-admin-prem-input block-admin-input admin-input admin-input-min">Описание для премиум клиентов</textarea>
@@ -66,7 +66,7 @@
 						</div>
 					</div>
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
-						<a href="#" class="add-preview-tournir" title="Загрузить обложку турнира"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка турнира" id="img_poster_card"></a>
+						<a href="" class="add-preview-tournir" title="Загрузить обложку турнира"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка турнира" id="img_poster_card"></a>
 						<div class="edit-preview-tournir" id="banners_turnir">
 							<a class="remove-preview-tournir" title="Удалить обложку" id="img_banner_trash"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
 						</div>
