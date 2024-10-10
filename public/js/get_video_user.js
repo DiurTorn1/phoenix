@@ -122,10 +122,12 @@ function paint_element_stream(){
                                             
                                 });
                                 if(key_product_get == 1){
-                                    console.log(output1);
+                                    key_product_table = 1;
+                                    
         
                                 }
                             }); 
+                            console.log(key_product_table);
                             //if(public_product_perm[i] == name_stream_gl){
                                 //console.log(public_product_perm.length);
                                 //console.log(public_product_perm);
