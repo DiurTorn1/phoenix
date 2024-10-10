@@ -105,11 +105,12 @@ function paint_element_stream(){
                     var key_sell = 0;
                     if(pub_name==name_stream_gl){
                         for(var i = 0; i < public_product_perm.length; i++){
-                            if(public_product_perm[i] == name_stream_gl){
+                            //if(public_product_perm[i] == name_stream_gl){
                                 //console.log(public_product_perm.length);
                                 //console.log(public_product_perm);
-                                key_sell = 1;
-                            }
+                                //key_sell = 1;
+                            //}
+                            
                         }
                         if(key_sell){
                             $("#slider").append(
