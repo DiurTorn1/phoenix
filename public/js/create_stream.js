@@ -154,12 +154,13 @@ $(document).ready(function() {
              if(list.play_link){
                 alert("Стрим создан");
                 if(image_name){
+                    var idiss = list.id;
                     $.post('/php/upload_poster.php',{ image_name:image_name, id:list.id }, function(data){
                         //console.log(data);
                         var output = $.parseJSON(data);
                         var list2 = output.data;
                         $.each(list2,function(i,item2){
-                            if(item2.id == params.get('admin_input_id')){
+                            if(item2.id == idiss){
                                 alert("Постер добавлен к стриму");
                             }
                         });
