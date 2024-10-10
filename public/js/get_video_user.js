@@ -42,25 +42,29 @@ function user_sells(){
 
 function paint_element_stream(){
     // $('#name_user_get').text();
-    console.log(user_email);
+    //console.log(user_email);
     var name_stream_gl = '';
     var public_product_perm = new Array();
-    if(count_product >= count_sells){
-        for(var i = 0; i < count_product; i ++){
-            if(array_product[i] == users_sells[i]){
+    //if(count_product >= count_sells){
+    for(var i = 0; i < count_product; i ++){
+            //if(array_product[i] == users_sells[i]){
                 //console.log(array_product[i]);
                 //console.log(users_sells[i]);
-                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
-                    var output = $.parseJSON(data);
-                    console.log(output);
-                    var prm_prod = output ? output[4]:'';
-                    public_product_perm.push(prm_prod);
-                });
+        $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+            var output = $.parseJSON(data);
+            console.log(output);
+            var prm_prod = output ? output[4]:'';
+            if(prm_prod != 0){
+                console.log(prm_prod);
+                public_product_perm.push(prm_prod);
             }
+            
+        });
+            //}
            
     
-        }
-    } else if(count_sells > count_product){
+    }
+    /*} else if(count_sells > count_product){
         for(var i = 0; i < count_sells; i ++){
             if(array_product[i] == users_sells[i]){
                 //console.log(array_product[i]);
@@ -76,7 +80,7 @@ function paint_element_stream(){
            
     
         }
-    }
+    }*/
 
 
     for(var i = 0; i < count_stream; i ++){
