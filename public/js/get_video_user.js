@@ -45,42 +45,37 @@ function paint_element_stream(){
     //console.log(user_email);
     var name_stream_gl = '';
     var public_product_perm = new Array();
-    //if(count_product >= count_sells){
-    for(var i = 0; i < count_product; i ++){
-            //if(array_product[i] == users_sells[i]){
+    if(count_product >= count_sells){
+        for(var i = 0; i < count_product; i ++){
+            if(array_product[i] == users_sells[i]){
                 //console.log(array_product[i]);
                 //console.log(users_sells[i]);
-        $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
-            var output = $.parseJSON(data);
-            //console.log(output);
-            var prm_prod = output ? output[4]:'';
-            if(prm_prod != 0){
-                //console.log(prm_prod);
-                public_product_perm.push(prm_prod);
+                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                    var output = $.parseJSON(data);
+                    //console.log(output);
+                    var prm_prod = output ? output[4]:'';
+                    public_product_perm.push(prm_prod);
+                });
             }
-            
-        });
-            //}
            
     
-    }
-    /*} else if(count_sells > count_product){
+        }
+    } else if(count_sells > count_product){
         for(var i = 0; i < count_sells; i ++){
             if(array_product[i] == users_sells[i]){
                 //console.log(array_product[i]);
                 //console.log(users_sells[i]);
                 $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                     var output = $.parseJSON(data);
-                    console.log(output);
+                    //console.log(output);
                     var prm_prod = output ? output[4]:'';
                     public_product_perm.push(prm_prod);
-                    
                 });
             }
            
     
         }
-    }*/
+    }
 
 
     for(var i = 0; i < count_stream; i ++){
@@ -89,7 +84,7 @@ function paint_element_stream(){
             var output = $.parseJSON(data);
             var list = output.data;
             var key_sell_product = 0;
-            var id_stream = list.id;
+            var 
             name_stream_gl = list.name;
             
 
@@ -107,32 +102,15 @@ function paint_element_stream(){
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
-                    var key_sell = 1, key_product_table;
+                    var key_sell = 0;
                     if(pub_name==name_stream_gl){
-                        //for(var i = 0; i < public_product_perm.length; i++){
-                            //console.log(public_product_perm[i]);
-                           // $.post('/php/get_product_table.php', { table:public_product_perm[i] }, function(data)  {
-                                //console.log(data);
-                                //var key_product_get = 0;
-                                //var output1 = $.parseJSON(data);
-                                //$.each(output1,function(i,item1){
-                                    //if(item1.id_stream == id_stream){
-                                        //key_product_get = 1;
-                                    //}
-                                            
-                                //});
-                                //if(key_product_get == 1){
-                                    //key_product_table = 1;
-                                //}
-                            //}); 
-                            //console.log(key_product_table);
-                            //if(public_product_perm[i] == name_stream_gl){
+                        for(var i = 0; i < public_product_perm.length; i++){
+                            if(public_product_perm[i] == name_stream_gl){
                                 //console.log(public_product_perm.length);
                                 //console.log(public_product_perm);
-                                //key_sell = 1;
-                            //}
-
-                        //}
+                                key_sell = 1;
+                            }
+                        }
                         if(key_sell){
                             $("#slider").append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+
