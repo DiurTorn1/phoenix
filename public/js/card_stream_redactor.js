@@ -108,7 +108,7 @@ $(document).ready(function() {
                         //}
                         
                     });
-                    $.post('/php/entrypoints_stream_get.php', {stream:name_stream}, function(data)  {
+                    /*$.post('/php/entrypoints_stream_get.php', {stream:name_stream}, function(data)  {
                         var output = $.parseJSON(data);
                         var srteam_get = output? output[1]: '1';
                         if(srteam_get == name_stream){
@@ -138,7 +138,7 @@ $(document).ready(function() {
                                 
                             });
                         }
-                    });
+                    });*/
                     
                     $("#admin_card_vidsporta option:selected").text(vid_sport);
                     $("#admin_card_minframe option:selected").index(0);
@@ -328,7 +328,7 @@ $(document).ready(function() {
         var teme_plus = parseInt(post_time_pars1[0])-3;
         var post_time = post_time_pars[0] + 'T'+ teme_plus + ':' + post_time_pars1[1];//$("#ditetime_card_start_at").val();
         var name_product = $("#admin_card_product option:selected").text();
-        var name_entrypoints = $("#admin_card_entrypoint option:selected").text();
+        /*var name_entrypoints = $("#admin_card_entrypoint option:selected").text();
         $.post('/php/entrypoints_stream_get_name.php', {name_entrypoints:name_entrypoints}, function(data)  {
             var output = $.parseJSON(data);
             var entrypoints_get = output? output[2]: '1';
@@ -344,7 +344,7 @@ $(document).ready(function() {
                     }
                 });
             }
-        });
+        });*/
         //if(!name_entrypoints){
             //alert("Entrypoint не выбран!");
         //} else {
@@ -362,7 +362,7 @@ $(document).ready(function() {
                     var localdate1= dNow1.getFullYear() + '-' + (dNow1.getMonth()+1) + '-' + dNow1.getDate() + ' ' + dNow1.getHours() + ':' + dNow1.getMinutes() + ':00';//2024-08-28 15:37:32
                     $.post('/php/add_table product.php', {table:output[4], id_stream:id_card, reg_date:localdate1 }, function(data)  {
                         if(data == "OK"){
-                            alert("Стрим добавлен к продукту: " + name_product);
+                            
                             $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
                                 ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
                                 parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par, ch_autoplay:check_autoplay, ch_chat:check_chat }, function(data){
@@ -378,7 +378,7 @@ $(document).ready(function() {
                                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                                     if(id_card == params.get('admin_input_id')){
-                                        alert("Редактирование успешно!");
+                                        alert("Стрим добавлен к продукту: " + name_product + "Редактирование успешно!");
                                         window.location.href='/stream';
                                     } else {
                                         alert("Ошибка редактирования!");
@@ -393,7 +393,7 @@ $(document).ready(function() {
                 });
             });
         }else{
-            alert("Стрим не добавлен к продукту");
+            
             $.post('/php/upload_stream.php', { id: id_card, workspace_id: workspace_id_card, parent_id:parent_id_card, name:name_card, sezon:sezon, kubok:kubok, weigth:weigth
                 ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
                 parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
@@ -408,7 +408,7 @@ $(document).ready(function() {
                         var list2 = output.data;
                         $.each(list2,function(i,item2){
                             if(item2.id == params.get('admin_input_id')){
-                                alert("Постер добавлен к стриму");
+                                //alert("Постер добавлен к стриму");
                             }
                         });
     
@@ -423,7 +423,7 @@ $(document).ready(function() {
                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                     if(id_card == params.get('admin_input_id')){
-                        alert("Редактирование стрима успешно!");
+                        alert("Стрим не добавлен к продукту Редактирование стрима успешно!");
                         window.location.href='/stream';
                     } else {
                         alert("Ошибка редактирования!");
