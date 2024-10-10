@@ -122,7 +122,7 @@ function paint_element_stream(){
                                             
                                 });
                                 if(key_product_get == 1){
-                                    console.log(output1.id_stream);
+                                    console.log(output1);
         
                                 }
                             }); 
