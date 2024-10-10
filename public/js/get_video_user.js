@@ -109,32 +109,30 @@ function paint_element_stream(){
                     var pub_name = output? output[1]: '1';
                     var key_sell = 1, key_product_table;
                     if(pub_name==name_stream_gl){
-                        for(var i = 0; i < public_product_perm.length; i++){
+                        //for(var i = 0; i < public_product_perm.length; i++){
                             //console.log(public_product_perm[i]);
-                            $.post('/php/get_product_table.php', { table:public_product_perm[i] }, function(data)  {
+                           // $.post('/php/get_product_table.php', { table:public_product_perm[i] }, function(data)  {
                                 //console.log(data);
-                                var key_product_get = 0;
-                                var output1 = $.parseJSON(data);
-                                $.each(output1,function(i,item1){
-                                    if(item1.id_stream == id_stream){
-                                        key_product_get = 1;
-                                    }
+                                //var key_product_get = 0;
+                                //var output1 = $.parseJSON(data);
+                                //$.each(output1,function(i,item1){
+                                    //if(item1.id_stream == id_stream){
+                                        //key_product_get = 1;
+                                    //}
                                             
-                                });
-                                if(key_product_get == 1){
-                                    key_product_table = 1;
-                                    
-        
-                                }
-                            }); 
-                            console.log(key_product_table);
+                                //});
+                                //if(key_product_get == 1){
+                                    //key_product_table = 1;
+                                //}
+                            //}); 
+                            //console.log(key_product_table);
                             //if(public_product_perm[i] == name_stream_gl){
                                 //console.log(public_product_perm.length);
                                 //console.log(public_product_perm);
                                 //key_sell = 1;
                             //}
 
-                        }
+                        //}
                         if(key_sell){
                             $("#slider").append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+
