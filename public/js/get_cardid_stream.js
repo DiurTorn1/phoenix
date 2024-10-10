@@ -374,6 +374,12 @@ $(document).ready(function() {
                                         console.log(data);
                                     });
                                 }
+                                $.post('/php/delete_banners.php', { image_name:image_name }, function(data)  {
+                                    if(data === 'Successfully delete'){
+                                        //alert('Баннер удалён');
+                                        $('#img_banner_trash').hide();
+                                    }
+                                });
                                 
                                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
@@ -412,6 +418,11 @@ $(document).ready(function() {
                             }
                         });
     
+                    });
+                    $.post('/php/delete_banners.php', { image_name:image_name }, function(data)  {
+                        if(data === 'Successfully delete'){
+                            $('#img_banner_trash').hide();
+                        }
                     });
                 }
 
