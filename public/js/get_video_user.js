@@ -67,7 +67,7 @@ function paint_element_stream(){
                 //console.log(users_sells[i]);
                 $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                     var output = $.parseJSON(data);
-                    //console.log(output);
+                    console.log(output);
                     var prm_prod = output ? output[4]:'';
                     public_product_perm.push(prm_prod);
                     
@@ -81,7 +81,7 @@ function paint_element_stream(){
 
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
-            //console.log(data);
+            console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
             var key_sell_product = 0;
