@@ -372,7 +372,7 @@ $(document).ready(function() {
         key_main_chack = 1;
     });
     
-    $(document).on('click', '.admin-video-item', function() {
+    $(document).on('dblclick', '.admin-video-item', function() {
         var id = this.id;
         $("#admin_input_id").val(id);
         window.location.href='/abonent_card_stream?admin_input_id='+id;
