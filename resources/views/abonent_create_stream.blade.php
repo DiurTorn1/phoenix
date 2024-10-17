@@ -66,9 +66,9 @@
 						</div>
 					</div>
 					<div class="block-admin-sector block-admin-container block-admin-section-item">
-						<a href="#" class="add-preview-tournir" title="Загрузиь обложку турнира"><img src="https://nextcloud.tehnodir.ru/index.php/apps/files_sharing/publicpreview/3M57JCrBwTz7tq8?file=/&fileId=1983&x=1920&y=1080&a=true&etag=cbe2366c226f3374946830bd6d5fac9b" alt="Обложка турнира"></a>
-						<div class="edit-preview-tournir">
-							<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
+						<a href="" class="add-preview-tournir" title="Загрузить обложку турнира"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка турнира" id="img_poster_card"></a>
+						<div class="edit-preview-tournir" id="banners_turnir">
+							<a class="remove-preview-tournir" title="Удалить обложку" id="img_banner_trash"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
 						</div>
 					</div>	
 				</div>
