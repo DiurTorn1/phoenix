@@ -37,7 +37,7 @@ function paint_element_stream(){
                 $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
                     var output1 = $.parseJSON(data1);
                     $.each(output1,function(i,item1){
-                        console.log(item1);
+                        console.log(item1.id_stream);
                     });
                     
                 });
