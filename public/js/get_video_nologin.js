@@ -22,16 +22,23 @@ function paint_element_stream(){
                 //console.log(prm_prod);
                 //public_product_perm.push(prm_prod);
                 $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
+                    var public_product_perm1 = new Array();
+                    var key_product_perm = 0;
                     var output1 = $.parseJSON(data1);
                     $.each(output1,function(i,item1){
                         //if(item1.id_stream == id_stream_prod){
-                            console.log(item1.id_stream);
-                            public_product_perm.push(item1.id_stream);
+                            //console.log(item1.id_stream);
+                            public_product_perm1.push(item1.id_stream);
+                            key_product_perm++;
                             //key_prod_perm_stream1 = 1;
                         //}
                         //console.log(id_stream_prod);
                     });
                     //console.log(key_prod_perm_stream);
+                    for(var i = 0; i < key_product_perm; i++){
+                        public_product_perm.push(public_product_perm1[i]);
+                    }
+                    
                 });
             });
         //}
