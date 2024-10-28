@@ -33,11 +33,13 @@ function paint_element_stream(){
             var output = $.parseJSON(data);
             var list = output.data;
             var name_stream_gl = list.name;
+            var id_stream_prod = list.id;
             for(var i = 0; i < count_product; i ++){
                 $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
                     var output1 = $.parseJSON(data1);
                     $.each(output1,function(i,item1){
-                        console.log(item1.id_stream);
+                        //if(item1.id_stream == id_stream_prod){console.log(item1.id_stream);}
+                        console.log(id_stream_prod);
                     });
                     
                 });
