@@ -46,12 +46,6 @@ function paint_element_stream(){
        
 
     }
-    console.log(public_product_perm);
-    //for(var i = 0; i < count_product; i ++){
-
-        //if(key_prod_perm_stream1){
-        //}
-    //}
 
     for(var i = 0; i < count_stream; i ++){
 
@@ -61,6 +55,7 @@ function paint_element_stream(){
             var list = output.data;
             var name_stream_gl = list.name;
             var id_stream_prod = list.id;
+            console.log(public_product_perm);
             /*var key_prod_perm_stream = 0;
             for(var i = 0; i < count_product; i ++){
                 var key_prod_perm_stream1 = 0;
