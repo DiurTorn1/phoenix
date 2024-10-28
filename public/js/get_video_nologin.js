@@ -36,7 +36,10 @@ function paint_element_stream(){
             for(var i = 0; i < count_product; i ++){
                 $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
                     var output1 = $.parseJSON(data1);
-                    console.log(output1.id_stream);
+                    $.each(output1,function(i,item1){
+                        console.log(item1);
+                    });
+                    
                 });
             }
             //console.log("Video inform:\r\n");
