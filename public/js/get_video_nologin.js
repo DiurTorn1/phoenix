@@ -42,12 +42,12 @@ function paint_element_stream(){
                     $.each(output1,function(i,item1){
                         if(item1.id_stream == id_stream_prod){
                             //console.log(item1.id_stream);
-                            key_prod_perm_stream1 = 1;
+                            key_prod_perm_stream = 1;
                         }
                         //console.log(id_stream_prod);
                     });
-                    key_prod_perm_stream = key_prod_perm_stream1;
-                    console.log(key_prod_perm_stream);
+                    //key_prod_perm_stream = key_prod_perm_stream1;
+                    //console.log(key_prod_perm_stream);
                 });
             }
             if(key_prod_perm_stream){
