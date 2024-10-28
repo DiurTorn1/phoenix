@@ -43,10 +43,11 @@ function paint_element_stream(){
                         if(item1.id_stream == id_stream_prod){
                             //console.log(item1.id_stream);
                             key_prod_perm_stream1 = 1;
+                            console.log(key_prod_perm_stream1);
                         }
                         //console.log(id_stream_prod);
                     });
-                    key_prod_perm_stream = key_prod_perm_stream1;
+                    //key_prod_perm_stream = key_prod_perm_stream1;
                 });
                 
             }
