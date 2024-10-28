@@ -34,16 +34,23 @@ function paint_element_stream(){
             var list = output.data;
             var name_stream_gl = list.name;
             var id_stream_prod = list.id;
+            var key_prod_perm_stream = 0;
             for(var i = 0; i < count_product; i ++){
                 $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
+                    var key_prod_perm_stream1 = 0;
                     var output1 = $.parseJSON(data1);
                     $.each(output1,function(i,item1){
-                        if(item1.id_stream == id_stream_prod){console.log(item1.id_stream);}
+                        if(item1.id_stream == id_stream_prod){
+                            //console.log(item1.id_stream);
+                            key_prod_perm_stream1 = 1;
+                        }
                         //console.log(id_stream_prod);
                     });
-                    
+                    key_prod_perm_stream = key_prod_perm_stream1;
                 });
+                
             }
+            console.log(key_prod_perm_stream);
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
