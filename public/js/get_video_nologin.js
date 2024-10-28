@@ -46,7 +46,7 @@ function paint_element_stream(){
                         }
                         //console.log(id_stream_prod);
                     });
-                    key_prod_perm_stream1 = key_prod_perm_stream1;
+                    key_prod_perm_stream = key_prod_perm_stream1;
                     console.log(key_prod_perm_stream);
                 });
             }
