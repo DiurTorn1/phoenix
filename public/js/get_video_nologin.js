@@ -1,9 +1,11 @@
 
 var public_stream_list = new Array();
-var count_stream = 0;
+var count_stream = 0, count_product = 0;
 var array_stream = new Array();
 var array_stream1 = new Array();
-var key_paint = 0;
+var key_paint = 0, key_paint1 = 0;
+var array_product = new Array();
+var array_product1 = new Array();
 
 function paint_element_stream(){
     // $('#name_user_get').text();
@@ -75,6 +77,25 @@ function get_stream_array(){
         count_stream = count;
     });
 
+    var count1 = 0;
+    $.post('/php/get_product.php', function(data)  {
+        var output = $.parseJSON(data);
+        //console.log(output);
+        var pre_arr = new Array();
+        $.each(output,function(i,item){
+            pre_arr.push(item.id);
+            count1++;
+        });
+        //pre_arr.push(output.data);
+        //console.log(pre_arr);
+        for(var i = 0; i < pre_arr.length; i++){
+            array_product.push(pre_arr[i]);
+            
+        }
+        //console.log(array_product);
+        count_product = count1;
+    });
+
     if(!key_paint){
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
@@ -92,6 +113,25 @@ function get_stream_array(){
         //idch = 0;
         //array_stream = [];
         key_paint = 0;
+    }
+    if(!key_paint1){
+        for(var i = 0; i < count_product; i++){
+            array_product1.push(array_product[i]);           
+        }
+        if(array_product1[0]){
+            
+            //paint_element_product();
+            key_paint1 = 1;
+        }
+
+    }
+    //for(var i = 0; i < count_stream; i++){
+    if(array_product[0]!=array_product1[0]){
+        //setInterval('paint_element_stream()',100);
+        $("#slider1").empty();
+        //array_product = [];
+        //idch = 0;
+        key_paint1 = 0;
     }
     //}
     //console.log(count_stream);
