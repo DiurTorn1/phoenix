@@ -20,9 +20,6 @@ function paint_element_stream(){
                 //console.log(output);
                 var prm_prod = output ? output[4]:'';
                 //console.log(prm_prod);
-                $.post('/php/get_product_table.php',{ table:prm_prod }, function(data)  {
-                    console.log(data);
-                });
                 public_product_perm.push(prm_prod);
             });
         //}
@@ -36,7 +33,11 @@ function paint_element_stream(){
             var output = $.parseJSON(data);
             var list = output.data;
             var name_stream_gl = list.name;
-
+            for(var i = 0; i < count_product; i ++){
+                $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data)  {
+                    console.log(data);
+                });
+            }
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
