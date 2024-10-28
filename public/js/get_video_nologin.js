@@ -19,7 +19,10 @@ function paint_element_stream(){
                 var output = $.parseJSON(data);
                 //console.log(output);
                 var prm_prod = output ? output[4]:'';
-                console.log(prm_prod);
+                //console.log(prm_prod);
+                $.post('/php/get_product_table.php',{ table:prm_prod }, function(data)  {
+                    console.log(data);
+                });
                 public_product_perm.push(prm_prod);
             });
         //}
