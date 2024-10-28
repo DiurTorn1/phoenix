@@ -26,6 +26,7 @@ function paint_element_stream(){
                     $.each(output1,function(i,item1){
                         //if(item1.id_stream == id_stream_prod){
                             console.log(item1.id_stream);
+                            public_product_perm.push(item1.id_stream);
                             //key_prod_perm_stream1 = 1;
                         //}
                         //console.log(id_stream_prod);
@@ -37,6 +38,7 @@ function paint_element_stream(){
        
 
     }
+    console.log(public_product_perm);
     //for(var i = 0; i < count_product; i ++){
 
         //if(key_prod_perm_stream1){
