@@ -6,6 +6,7 @@ var array_stream1 = new Array();
 var key_paint = 0, key_paint1 = 0;
 var array_product = new Array();
 var array_product1 = new Array();
+var key_prod_perm_stream = 0;
 
 function paint_element_stream(){
     // $('#name_user_get').text();
@@ -34,9 +35,8 @@ function paint_element_stream(){
             var list = output.data;
             var name_stream_gl = list.name;
             var id_stream_prod = list.id;
-            var key_prod_perm_stream = 0;
+            
             for(var i = 0; i < count_product; i ++){
-                var key_prod_perm_stream2 = 0;
                 $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
                     var key_prod_perm_stream1 = 0;
                     var output1 = $.parseJSON(data1);
@@ -47,10 +47,9 @@ function paint_element_stream(){
                         }
                         //console.log(id_stream_prod);
                     });
-                    key_prod_perm_stream2 = key_prod_perm_stream1;
+                    key_prod_perm_stream1 = key_prod_perm_stream1;
                     
                 });
-                console.log(key_prod_perm_stream2);
             }
             if(key_prod_perm_stream){
                 console.log(key_prod_perm_stream);
