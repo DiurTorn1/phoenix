@@ -49,9 +49,9 @@ function paint_element_stream(){
                     });
                     //console.log(key_prod_perm_stream);
                 });
-                if(key_prod_perm_stream1){
+                //if(key_prod_perm_stream1){
                     console.log(key_prod_perm_stream1);
-                }
+                //}
             }
             if(key_prod_perm_stream){
                 console.log(key_prod_perm_stream);
