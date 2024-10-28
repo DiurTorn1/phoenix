@@ -26,21 +26,23 @@ function paint_element_stream(){
        
 
     }
-    
-    for(var i = 0; i < count_product; i ++){
-        $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
-            var output1 = $.parseJSON(data1);
-            $.each(output1,function(i,item1){
-                if(item1.id_stream){
-                    console.log(item1.id_stream);
-                }
-                //console.log(id_stream_prod);
-            });
-            //console.log(key_prod_perm_stream);
-        });
-    }
 
     for(var i = 0; i < count_stream; i ++){
+
+        for(var i = 0; i < count_product; i ++){
+            $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
+                var output1 = $.parseJSON(data1);
+                $.each(output1,function(i,item1){
+                    if(item1.id_stream){
+                        console.log(item1.id_stream);
+                    }
+                    //console.log(id_stream_prod);
+                });
+                //console.log(key_prod_perm_stream);
+            });
+        }
+
+        
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
