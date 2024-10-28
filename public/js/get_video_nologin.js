@@ -17,8 +17,9 @@ function paint_element_stream(){
             //console.log(users_sells[i]);
             $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                 var output = $.parseJSON(data);
-                console.log(output);
+                //console.log(output);
                 var prm_prod = output ? output[4]:'';
+                console.log(prm_prod);
                 public_product_perm.push(prm_prod);
             });
         //}
