@@ -37,16 +37,15 @@ function paint_element_stream(){
             var key_prod_perm_stream = 0;
             for(var i = 0; i < count_product; i ++){
                 $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
-                    var key_prod_perm_stream1 = 0;
+                    key_prod_perm_stream = 0;
                     var output1 = $.parseJSON(data1);
                     $.each(output1,function(i,item1){
                         if(item1.id_stream == id_stream_prod){
                             //console.log(item1.id_stream);
-                            key_prod_perm_stream1 = 1;
+                            key_prod_perm_stream = 1;
                         }
                         //console.log(id_stream_prod);
                     });
-                    key_prod_perm_stream = key_prod_perm_stream1;
                     console.log(key_prod_perm_stream);
                 });
             }
