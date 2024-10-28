@@ -20,27 +20,28 @@ function paint_element_stream(){
                 //console.log(output);
                 var prm_prod = output ? output[4]:'';
                 //console.log(prm_prod);
-                public_product_perm.push(prm_prod);
+                //public_product_perm.push(prm_prod);
+                $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
+                    var output1 = $.parseJSON(data1);
+                    $.each(output1,function(i,item1){
+                        //if(item1.id_stream == id_stream_prod){
+                            console.log(item1.id_stream);
+                            //key_prod_perm_stream1 = 1;
+                        //}
+                        //console.log(id_stream_prod);
+                    });
+                    //console.log(key_prod_perm_stream);
+                });
             });
         //}
        
 
     }
-    for(var i = 0; i < count_product; i ++){
-        $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
-            var output1 = $.parseJSON(data1);
-            $.each(output1,function(i,item1){
-                //if(item1.id_stream == id_stream_prod){
-                    console.log(item1.id_stream);
-                    //key_prod_perm_stream1 = 1;
-                //}
-                //console.log(id_stream_prod);
-            });
-            //console.log(key_prod_perm_stream);
-        });
+    //for(var i = 0; i < count_product; i ++){
+
         //if(key_prod_perm_stream1){
         //}
-    }
+    //}
 
     for(var i = 0; i < count_stream; i ++){
 
