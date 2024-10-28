@@ -42,8 +42,8 @@ function paint_element_stream(){
                     $.each(output1,function(i,item1){
                         if(item1.id_stream == id_stream_prod){
                             //console.log(item1.id_stream);
-                            key_prod_perm_stream1 = 1;
-                            console.log(key_prod_perm_stream1);
+                            key_prod_perm_stream = 1;
+                            console.log(key_prod_perm_stream);
                         }
                         //console.log(id_stream_prod);
                     });
