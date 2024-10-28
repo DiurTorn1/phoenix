@@ -10,7 +10,21 @@ var array_product1 = new Array();
 function paint_element_stream(){
     // $('#name_user_get').text();
     //console.log(user_email);
+    var public_product_perm = new Array();
+    for(var i = 0; i < count_product; i ++){
+        //if(array_product[i] == users_sells[i]){
+            //console.log(array_product[i]);
+            //console.log(users_sells[i]);
+            $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                var output = $.parseJSON(data);
+                console.log(output);
+                var prm_prod = output ? output[4]:'';
+                public_product_perm.push(prm_prod);
+            });
+        //}
+       
 
+    }
 
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
