@@ -45,37 +45,28 @@ function paint_element_stream(){
     // $('#name_user_get').text();
     //console.log(user_email);
     var name_stream_gl = '';
+
+    //var key_prod_perm_stream = 0;
+    for(var i = 0; i < public_product_perm2.length; i++){
+        var get_str = public_product_perm2[i];
+        console.log(get_str.table);
+        //if(public_product_perm[i] == id_stream_prod){
+        //key_prod_perm_stream = 1;
+        //}
+    }
+
     var public_product_perm = new Array();
-    if(count_product >= count_sells){
-        for(var i = 0; i < count_product; i ++){
-            if(array_product[i] == users_sells[i]){
-                //console.log(array_product[i]);
-                //console.log(users_sells[i]);
-                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+    for(var i = 0; i < count_sells; i ++){
+        if(array_product[i] == users_sells[i]){
+            $.post('/php/get_product_public.php',{ id:users_sells[i] }, function(data)  {
                     var output = $.parseJSON(data);
                     //console.log(output);
                     var prm_prod = output ? output[4]:'';
                     public_product_perm.push(prm_prod);
-                });
-            }
+            });
+        }
            
     
-        }
-    } else if(count_sells > count_product){
-        for(var i = 0; i < count_sells; i ++){
-            if(array_product[i] == users_sells[i]){
-                //console.log(array_product[i]);
-                //console.log(users_sells[i]);
-                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
-                    var output = $.parseJSON(data);
-                    //console.log(output);
-                    var prm_prod = output ? output[4]:'';
-                    public_product_perm.push(prm_prod);
-                });
-            }
-           
-    
-        }
     }
 
 
@@ -105,20 +96,13 @@ function paint_element_stream(){
                     var pub_name = output? output[1]: '1';
                     var key_sell = 0;
                     if(pub_name==name_stream_gl){
-                        //var key_prod_perm_stream = 0;
-                        for(var i = 0; i < public_product_perm2.length; i++){
-                            var get_str = public_product_perm2[i];
-                            console.log(get_str.table);
-                            //if(public_product_perm[i] == id_stream_prod){
-                                //key_prod_perm_stream = 1;
-                            //}
-                        }
+
                         for(var i = 0; i < public_product_perm.length; i++){
-                            if(public_product_perm[i] == name_stream_gl){
+                            //if(public_product_perm[i] == name_stream_gl){
                                 //console.log(public_product_perm.length);
-                                //console.log(public_product_perm);
-                                key_sell = 1;
-                            }
+                                console.log(public_product_perm[i]);
+                               // key_sell = 1;
+                            //}
                         }
                         if(key_sell){
                             $("#slider").append(
