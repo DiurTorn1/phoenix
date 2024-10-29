@@ -5,6 +5,25 @@ $(document).ready(function() {
     var count_stream = 0, count_product = 0, count_sells = 0;
     var array_stream = new Array();
     var users_sells = new Array();
+    var count1 = 0;
+    $.post('/php/get_product.php', function(data)  {
+        var output = $.parseJSON(data);
+        //console.log(output);
+        var pre_arr = new Array();
+        $.each(output,function(i,item){
+            pre_arr.push(item.id);
+            count1++;
+        });
+        //pre_arr.push(output.data);
+        //console.log(pre_arr);
+        for(var i = 0; i < pre_arr.length; i++){
+            array_product.push(pre_arr[i]);
+            
+        }
+        //console.log(array_product);
+        //count_product = count1;
+    });
+    console.log(array_product);
     if(!user_email){
         alert("Продукт запрещён к просмотру незарег польз");
     } else {
