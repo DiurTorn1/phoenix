@@ -1,7 +1,15 @@
 $(document).ready(function() {
     var params = new window.URLSearchParams(window.location.search);
     var user_email = $('#name_user_get').text();
-    console.log(user_email);
+    var array_product = new Array();
+    var count_stream = 0, count_product = 0, count_sells = 0;
+    var array_stream = new Array();
+    var users_sells = new Array();
+    if(!user_email){
+        alert("Продукт запрещён к просмотру незарег польз");
+    } else {
+        console.log(user_email);
+    }
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         var list = output.data;
