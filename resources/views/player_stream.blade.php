@@ -2,14 +2,14 @@
 @section('title-block') Плеер @endsection
 
 @section('content')
-
+<script type="text/javascript" src = "{{ asset('js/player_stream.js') }}"></script>
+<a id="name_user_get" class="name_user_get">{{ Auth::user()->email }}</a>
 @guest
         <!--<header class="header admin-header">		
 		<div class="left-header">
 			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
 		</div>
 	    </header>-->
-		<script type="text/javascript" src = "{{ asset('js/player_stream.js') }}"></script>
         <header class="header admin-header">		
 		<div class="left-header">
 			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
@@ -53,7 +53,6 @@
 	</div>
 
 @else
-        <script type="text/javascript" src = "{{ asset('js/player_stream.js') }}"></script>
         <header class="header admin-header">		
 		<div class="left-header">
 			<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
