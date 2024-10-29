@@ -190,7 +190,7 @@ $(document).ready(function() {
                                     var pars = get_var.table;
                                     var pars1 = pars.split("_");
                                     //console.log(pars1[1]);
-                                    if(users_sells1[k] == pars[1]){
+                                    if(users_sells1[k] == pars1[1]){
                                         console.log("You grand");
                                     }
                                 }
