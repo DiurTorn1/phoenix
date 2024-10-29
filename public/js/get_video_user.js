@@ -105,14 +105,16 @@ function paint_element_stream(){
                     var pub_name = output? output[1]: '1';
                     var key_sell = 0;
                     if(pub_name==name_stream_gl){
+                        var get_str = $.parseJSON(public_product_perm2);
+                        console.log(get_str);
                         //var key_prod_perm_stream = 0;
-                        for(var i = 0; i < public_product_perm2.length; i++){
-                            var get_str = public_product_perm2[i];
-                            console.log(get_str[1]);
+                        //for(var i = 0; i < public_product_perm2.length; i++){
+                            //var get_str = public_product_perm2[i];
+                            //console.log(get_str[1]);
                             //if(public_product_perm[i] == id_stream_prod){
                                 //key_prod_perm_stream = 1;
                             //}
-                        }
+                        //}
                         for(var i = 0; i < public_product_perm.length; i++){
                             if(public_product_perm[i] == name_stream_gl){
                                 //console.log(public_product_perm.length);
