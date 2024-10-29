@@ -189,7 +189,10 @@ $(document).ready(function() {
                                 for(var k=0; k<users_sells1.length; k++){
                                     var pars = get_var.table;
                                     var pars1 = pars.split("_");
-                                    console.log(pars1[1]);
+                                    //console.log(pars1[1]);
+                                    if(users_sells1[k] == pars[1]){
+                                        console.log("You grand");
+                                    }
                                 }
                                 //console.log(get_var.id_stream);
                             }
