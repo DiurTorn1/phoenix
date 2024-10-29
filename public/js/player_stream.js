@@ -22,7 +22,7 @@ $(document).ready(function() {
         //console.log(array_product);
         count_product = count1;
     });
-    console.log(count_product);
+    
     var public_product_perm = new Array();
     for(var i = 0; i < count_product; i ++){
         //if(array_product[i] == users_sells[i]){
@@ -97,7 +97,7 @@ $(document).ready(function() {
             //console.log(array_product);
             //count_sells = count2;
         });
-
+        console.log(count_product);
         console.log(array_product);
         console.log(users_sells);
     }
