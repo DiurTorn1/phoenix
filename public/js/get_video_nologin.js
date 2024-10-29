@@ -272,12 +272,12 @@ $(document).ready(function() {
             $('#popup-back-login').toggle();
         });
 
-        $("#popup-close").on('click', function(){
+        $("#popup-close-login").on('click', function(){
             //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
             $('#popup-back').toggle();
         });
 
-        
+
         var timeList = 600;
         var TimeView = 1000000;
         var RadioBut = true;
