@@ -267,7 +267,8 @@ $(document).ready(function() {
             //console.log(id);
             //$("#admin_input_id").val(id);
             //window.location.href='/player_stream?player_stream_id='+id;
-            alert("Это видео не куплено");
+            //alert("Это видео не куплено");
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
         });
         var timeList = 600;
         var TimeView = 1000000;
