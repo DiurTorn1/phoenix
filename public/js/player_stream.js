@@ -187,7 +187,9 @@ $(document).ready(function() {
                             var get_var = public_product_perm2[i];
                             if(get_var.id_stream == item.id){
                                 for(var k=0; k<users_sells1.length; k++){
-                                    console.log(users_sells1[k]);
+                                    var pars = get_var.table;
+                                    var pars1 = pars.split("_");
+                                    console.log(pars1[1]);
                                 }
                                 //console.log(get_var.id_stream);
                             }
