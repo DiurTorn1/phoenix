@@ -100,11 +100,22 @@ function paint_element_stream(){
                         for(var i = 0; i < public_product_perm.length; i++){
                             //if(public_product_perm[i] == name_stream_gl){
                                 //console.log(public_product_perm.length);
-                                console.log(public_product_perm[i]);
+                                //console.log(public_product_perm[i]);
+                                for(var i = 0; i < public_product_perm2.length; i++){
+                                    var get_str = public_product_perm2[i];
+                                    //console.log(get_str.id_stream);
+                                    if(get_str.id_stream == id_stream_prod){
+                                        key_sell = 1;
+                                    }
+                                }
                                // key_sell = 1;
                             //}
                         }
-                        if(key_prod_perm_stream){
+                        if(key_sell){
+                            console.log(key_sell);
+                        }
+                        
+                        if(!key_prod_perm_stream){
                             $("#slider").append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
