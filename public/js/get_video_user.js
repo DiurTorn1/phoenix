@@ -400,8 +400,8 @@ function get_stream_array(){
                                     "id_product": item1.id_stream 
                                 };
                                 //if(item1.id_stream == id_stream_prod){
-                                    console.log(struct_prod);
-                                    //public_product_perm1.push(struct_prod);
+                                    //console.log(struct_prod);
+                                    public_product_perm1.push(struct_prod);
                                     key_product_perm++;
                                     //key_prod_perm_stream1 = 1;
                                 //}
@@ -409,7 +409,7 @@ function get_stream_array(){
                             });
                             //console.log(key_prod_perm_stream);
                             for(var i = 0; i < key_product_perm; i++){
-                                //console.log(public_product_perm1[i]);
+                                console.log(public_product_perm1[i]);
                                 public_product_perm.push(public_product_perm1[i]);
                             }
                             
