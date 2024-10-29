@@ -107,7 +107,7 @@ function paint_element_stream(){
                     if(pub_name==name_stream_gl){
                         //var key_prod_perm_stream = 0;
                         for(var i = 0; i < public_product_perm2.length; i++){
-                            var get_str = $.parseJSON(public_product_perm2);
+                            var get_str = $.parseJSON(public_product_perm2[i]);
                             console.log(get_str);
                             //if(public_product_perm[i] == id_stream_prod){
                                 //key_prod_perm_stream = 1;
