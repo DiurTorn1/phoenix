@@ -3,6 +3,7 @@ $(document).ready(function() {
     var user_email = $('#name_user_get').text();
     var array_product = new Array();
     var users_sells = new Array();
+    var count_product = 0;
     var count1 = 0;
     $.post('/php/get_product.php', function(data)  {
         var output = $.parseJSON(data);
@@ -19,10 +20,10 @@ $(document).ready(function() {
             
         }
         //console.log(array_product);
-        //count_product = count1;
+        count_product = count1;
     });
     var public_product_perm = new Array();
-    for(var i = 0; i < array_product.length; i ++){
+    for(var i = 0; i < count_product; i ++){
         //if(array_product[i] == users_sells[i]){
             //console.log(array_product[i]);
             //console.log(users_sells[i]);
