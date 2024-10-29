@@ -182,10 +182,12 @@ $(document).ready(function() {
                     if(!user_email){
                         alert("USERS not register");
                     }else{
-                        console.log(user_email);
+                        //console.log(user_email);
                         for(var i = 0; i < public_product_perm2.length; i++){
                             var get_var = public_product_perm2[i];
-                            console.log(get_var.id_stream);
+                            if(get_var.id_stream == item.id){
+                                console.log(get_var.id_stream);
+                            }
                         }
                     }
                     $("#player_stream_get").append(
