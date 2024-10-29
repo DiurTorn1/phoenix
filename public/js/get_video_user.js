@@ -75,7 +75,7 @@ function paint_element_stream(){
             var key_prod_perm_stream = 0;
             for(var i = 0; i < public_product_perm2.length; i++){
                 var get_str = public_product_perm2[i];
-                console.log(get_str.id_stream);
+                //console.log(get_str.id_stream);
                 if(get_str.id_stream == id_stream_prod){
                     key_prod_perm_stream = 1;
                 }
@@ -111,9 +111,7 @@ function paint_element_stream(){
                                // key_sell = 1;
                             //}
                         }
-                        if(key_sell){
-                            console.log(key_sell);
-                        }
+
                         
                         if(!key_prod_perm_stream){
                             $("#slider").append(
@@ -131,7 +129,23 @@ function paint_element_stream(){
                                     '</div>'+
                                 '</div>');
                         } else {
-                            //console.log("Product not bay");
+                            if(key_sell){
+                                $("#slider").append(
+                                    '<div class="slide bay index-live-item" id="' + list.id + '">'+
+                                        '<div class="index-live-item-video">'+
+                                            '<a >'+ 
+                                                '<div class="index-live-banner">' +
+                                                    '<img src="' + list.poster.original + '">' +
+                                                '</div>' +
+                                            '</a>' +
+                                            
+                                        '</div>'+
+                                        '<div class="index-live-item-text">'+
+                                            '<a >' + list.name + '</a>'+
+                                        '</div>'+
+                                    '</div>');
+                            } else {
+                                //console.log("Product not bay");
                                 $("#slider").append(
                                     '<div class="slide no-bay index-live-item" id="' + list.id + '">'+
                                         '<div class="index-live-item-video">'+
@@ -147,6 +161,8 @@ function paint_element_stream(){
                                             '<a >' + list.name + '</a>'+
                                         '</div>'+
                                     '</div>');
+                            }
+
                         }
                         
                     }
