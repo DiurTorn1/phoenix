@@ -57,7 +57,7 @@
 
 
 <div class="popup-back-login" id="popup-back-login">
-        <form method="POST" action="" class="popup-container">
+        <form method="" action="" class="popup-container">
 			<div class="popup-content">
             	<!--@csrf-->
 				<div class="popup-title-wrap">
