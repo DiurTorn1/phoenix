@@ -46,14 +46,7 @@ function paint_element_stream(){
     //console.log(user_email);
     var name_stream_gl = '';
 
-    //var key_prod_perm_stream = 0;
-    for(var i = 0; i < public_product_perm2.length; i++){
-        var get_str = public_product_perm2[i];
-        console.log(get_str.table);
-        //if(public_product_perm[i] == id_stream_prod){
-        //key_prod_perm_stream = 1;
-        //}
-    }
+
 
     var public_product_perm = new Array();
     for(var i = 0; i < count_sells; i ++){
@@ -78,8 +71,15 @@ function paint_element_stream(){
             var key_sell_product = 0;
             var 
             name_stream_gl = list.name;
-            
-
+            var id_stream_prod = list.id;
+            var key_prod_perm_stream = 0;
+            for(var i = 0; i < public_product_perm2.length; i++){
+                var get_str = public_product_perm2[i];
+                console.log(get_str.id_stream);
+                if(get_str.id_stream == id_stream_prod){
+                    key_prod_perm_stream = 1;
+                }
+            }
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
@@ -104,7 +104,7 @@ function paint_element_stream(){
                                // key_sell = 1;
                             //}
                         }
-                        if(key_sell){
+                        if(key_prod_perm_stream){
                             $("#slider").append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
@@ -383,7 +383,7 @@ function get_stream_array(){
                             $.each(output1,function(i,item1){
                                 var struct_prod = {
                                     "table": prm_prod, 
-                                    "id_product": item1.id_stream 
+                                    "id_stream ": item1.id_stream 
                                 };
                                 //if(item1.id_stream == id_stream_prod){
                                     //console.log(struct_prod);
