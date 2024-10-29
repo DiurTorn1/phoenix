@@ -146,6 +146,8 @@ $(document).ready(function() {
     setInterval('get_stream_array()',500);
     var params = new window.URLSearchParams(window.location.search);
 
+    console.log(users_sells1);
+    console.log(public_product_perm2);
     if(!user_email){
         alert("USERS not register");
     }else{
