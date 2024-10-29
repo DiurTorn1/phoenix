@@ -146,14 +146,6 @@ $(document).ready(function() {
     setInterval('get_stream_array()',500);
     var params = new window.URLSearchParams(window.location.search);
 
-    console.log(users_sells1);
-    console.log(public_product_perm2);
-    if(!user_email){
-        alert("USERS not register");
-    }else{
-        console.log(user_email);
-    }
-
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         var list = output.data;
@@ -185,6 +177,17 @@ $(document).ready(function() {
                     boss = pars[5];
                     region = pars[6];
                     var opisanie_strima = pars[7];
+                    //console.log(users_sells1);
+                    //console.log(public_product_perm2);
+                    if(!user_email){
+                        alert("USERS not register");
+                    }else{
+                        console.log(user_email);
+                        for(var i = 0; i < public_product_perm2.length; i++){
+                            var get_var = public_product_perm2[i];
+                            console.log(get_var.id_stream);
+                        }
+                    }
                     $("#player_stream_get").append(
                         '<div class="index-live-item-video-1">' +
                             '<iframe src="' + item.play_link + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
