@@ -186,7 +186,10 @@ $(document).ready(function() {
                         for(var i = 0; i < public_product_perm2.length; i++){
                             var get_var = public_product_perm2[i];
                             if(get_var.id_stream == item.id){
-                                console.log(get_var.id_stream);
+                                for(var k=0; k<users_sells1.length; k++){
+                                    console.log(users_sells1[k]);
+                                }
+                                //console.log(get_var.id_stream);
                             }
                         }
                     }
