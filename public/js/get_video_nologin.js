@@ -6,56 +6,20 @@ var array_stream1 = new Array();
 var key_paint = 0, key_paint1 = 0;
 var array_product = new Array();
 var array_product1 = new Array();
+var public_product_perm = new Array();
 
 function paint_element_stream(){
     // $('#name_user_get').text();
     //console.log(user_email);
-    var public_product_perm = new Array();
-    for(var i = 0; i < count_product; i ++){
-        //if(array_product[i] == users_sells[i]){
-            //console.log(array_product[i]);
-            //console.log(users_sells[i]);
-            $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
-                var output = $.parseJSON(data);
-                //console.log(output);
-                var prm_prod = output ? output[4]:'';
-                //console.log(prm_prod);
-                //public_product_perm.push(prm_prod);
-                $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
-                    var public_product_perm1 = new Array();
-                    var key_product_perm = 0;
-                    var output1 = $.parseJSON(data1);
-                    $.each(output1,function(i,item1){
-                        //if(item1.id_stream == id_stream_prod){
-                            //console.log(item1.id_stream);
-                            public_product_perm1.push(item1.id_stream);
-                            key_product_perm++;
-                            //key_prod_perm_stream1 = 1;
-                        //}
-                        //console.log(id_stream_prod);
-                    });
-                    //console.log(key_prod_perm_stream);
-                    for(var i = 0; i < key_product_perm; i++){
-                        console.log(public_product_perm1[i]);
-                        public_product_perm.push(public_product_perm1[i]);
-                    }
-                    
-                });
-            });
-        //}
-       
-
-    }
-
+    
+    console.log(public_product_perm);
     for(var i = 0; i < count_stream; i ++){
-
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
             var name_stream_gl = list.name;
-            var id_stream_prod = list.id;
-            console.log(public_product_perm);
+            var id_stream_prod = list.id;           
             /*var key_prod_perm_stream = 0;
             for(var i = 0; i < count_product; i ++){
                 var key_prod_perm_stream1 = 0;
@@ -179,7 +143,41 @@ function get_stream_array(){
             array_product1.push(array_product[i]);           
         }
         if(array_product1[0]){
-            
+            for(var i = 0; i < count_product; i ++){
+                //if(array_product[i] == users_sells[i]){
+                    //console.log(array_product[i]);
+                    //console.log(users_sells[i]);
+                    $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                        var output = $.parseJSON(data);
+                        //console.log(output);
+                        var prm_prod = output ? output[4]:'';
+                        //console.log(prm_prod);
+                        //public_product_perm.push(prm_prod);
+                        $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
+                            var public_product_perm1 = new Array();
+                            var key_product_perm = 0;
+                            var output1 = $.parseJSON(data1);
+                            $.each(output1,function(i,item1){
+                                //if(item1.id_stream == id_stream_prod){
+                                    //console.log(item1.id_stream);
+                                    public_product_perm1.push(item1.id_stream);
+                                    key_product_perm++;
+                                    //key_prod_perm_stream1 = 1;
+                                //}
+                                //console.log(id_stream_prod);
+                            });
+                            //console.log(key_prod_perm_stream);
+                            for(var i = 0; i < key_product_perm; i++){
+                                //console.log(public_product_perm1[i]);
+                                public_product_perm.push(public_product_perm1[i]);
+                            }
+                            
+                        });
+                    });
+                //}
+               
+        
+            }
             //paint_element_product();
             key_paint1 = 1;
         }
