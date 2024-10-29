@@ -89,12 +89,13 @@ function paint_element_stream(){
             name_stream_gl = list.name;
             
             //var key_prod_perm_stream = 0;
-            //for(var i = 0; i < public_product_perm.length; i++){
-                console.log(public_product_perm2);
+            for(var i = 0; i < public_product_perm.length; i++){
+                var get_str = $.parseJSON(public_product_perm2);
+                console.log(get_str);
                 //if(public_product_perm[i] == id_stream_prod){
                     //key_prod_perm_stream = 1;
                 //}
-            //}
+            }
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
