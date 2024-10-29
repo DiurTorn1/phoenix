@@ -1,6 +1,7 @@
 $(document).ready(function() {
     var params = new window.URLSearchParams(window.location.search);
-
+    var user_email = $('#name_user_get').text();
+    console.log(user_email);
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         var list = output.data;
