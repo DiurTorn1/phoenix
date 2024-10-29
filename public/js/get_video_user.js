@@ -9,6 +9,7 @@ var array_stream = new Array();
 var array_stream1 = new Array();
 var users_sells = new Array();
 var users_sells1 = new Array();
+var public_product_perm = new Array();
 var key_paint = 0, key_paint1 = 0, key_paint2 = 0, key_sell_user = 0;
 var user_global = "";
 var user_email = '';
