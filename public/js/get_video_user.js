@@ -9,7 +9,7 @@ var array_stream = new Array();
 var array_stream1 = new Array();
 var users_sells = new Array();
 var users_sells1 = new Array();
-var public_product_perm = new Array();
+var public_product_perm2 = new Array();
 var key_paint = 0, key_paint1 = 0, key_paint2 = 0, key_sell_user = 0;
 var user_global = "";
 var user_email = '';
@@ -90,7 +90,7 @@ function paint_element_stream(){
             
             //var key_prod_perm_stream = 0;
             //for(var i = 0; i < public_product_perm.length; i++){
-                console.log(public_product_perm);
+                console.log(public_product_perm2);
                 //if(public_product_perm[i] == id_stream_prod){
                     //key_prod_perm_stream = 1;
                 //}
@@ -409,8 +409,8 @@ function get_stream_array(){
                             });
                             //console.log(key_prod_perm_stream);
                             for(var i = 0; i < key_product_perm; i++){
-                                console.log(public_product_perm1[i]);
-                                public_product_perm.push(public_product_perm1[i]);
+                                //console.log(public_product_perm1[i]);
+                                public_product_perm2.push(public_product_perm1[i]);
                             }
                             
                         });
