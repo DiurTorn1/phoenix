@@ -21,7 +21,7 @@ $(document).ready(function() {
         //console.log(array_product);
         //count_product = count1;
     });
-    console.log(array_product);
+    
     if(!user_email){
         alert("Продукт запрещён к просмотру незарег польз");
     } else {
@@ -54,6 +54,7 @@ $(document).ready(function() {
             //console.log(array_product);
             //count_sells = count2;
         });
+        console.log(array_product);
         console.log(users_sells);
     }
     $.post('/php/get_stream.php', function(data)  {
