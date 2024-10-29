@@ -98,7 +98,7 @@ $(document).ready(function() {
             //count_sells = count2;
         });
 
-        console.log(public_product_perm);
+        console.log(array_product);
         console.log(users_sells);
     }
     $.post('/php/get_stream.php', function(data)  {
