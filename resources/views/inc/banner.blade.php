@@ -57,23 +57,23 @@
 
 
 <div class="popup-back-login" id="popup-back-login">
-        <form method="POST" action="" class="popup-container">
+        <!--<form method="POST" action="" class="popup-container">-->
 			<div class="popup-content">
-            	@csrf
+            	<!--@csrf-->
 				<div class="popup-title-wrap">
 					<button class="popup-close close-btn" id="popup-close-login" title="Закрыть"><img src="{{ asset('img/close.png') }}" alt="Закрыть"></button>
 					<h2 class="popup-title">Регистрация</h2>
 					<h3 class="popup-title">Доступ к видео ограничен. Зарегестрируйтесь для покупки видео.</h3>
 				</div>
 				<div class="popup-content-wrap">
-                	<!--<input id="user-input" type="email" placeholder="Телефон или email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
-					@error('email')
+                	<input id="user-input" type="email" placeholder="Телефон или email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
+					<!--@error('email')-->
                     	<span class="invalid-feedback" role="alert">
                     	<strong>{{ $message }}</strong>
                     	</span>
-                	@enderror
+                	<!--@enderror-->
 				
-                	<input id="password" type="password" placeholder="Телефон или email" class="user-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                	<!--<input id="password" type="password" placeholder="Телефон или email" class="user-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 					@error('password')
                     	<span class="invalid-feedback" role="alert">
                     	<strong>{{ $message }}</strong>
@@ -84,11 +84,11 @@
                 		<label class="admin-video-check-label" for="remember">
                         	{{ __('Запомнить меня') }}
         				</label>
-					</div>
+					</div>-->
                     <button type="submit" class="top-menu-btn" id="top-menu-btn">
-						Войти
+						Подтвердить пароль
                     </button>
-					<div class="popup-content-wrap-row register-wrapper">
+					<!--<div class="popup-content-wrap-row register-wrapper">
 						<a href="#" class="register-link">Регистрация</a>
 						<a href="#" class="mem-password">Забыли пароль?</a>
 					</div>-->
@@ -96,5 +96,5 @@
 			</div>
 			
 
-        </form>
+        <!--</form>-->
 </div>
