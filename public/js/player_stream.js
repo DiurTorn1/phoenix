@@ -43,7 +43,7 @@ $(document).ready(function() {
                             "id_stream": item1.id_stream 
                         };
                         //if(item1.id_stream == id_stream_prod){
-                            //console.log(struct_prod);
+                            console.log(struct_prod);
                             public_product_perm1.push(struct_prod);
                             key_product_perm++;
                             //key_prod_perm_stream1 = 1;
