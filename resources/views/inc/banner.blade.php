@@ -57,7 +57,7 @@
 
 
 <div class="popup-back-login" id="popup-back-login">
-        <form method="" action="" class="popup-container">
+        <div class="popup-container">
 			<div class="popup-content">
             	<!--@csrf-->
 				<div class="popup-title-wrap">
@@ -95,5 +95,5 @@
 				</div>
 			</div>
 			
-        </form>
+		</div>
 </div>
