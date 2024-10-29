@@ -2,8 +2,6 @@ $(document).ready(function() {
     var params = new window.URLSearchParams(window.location.search);
     var user_email = $('#name_user_get').text();
     var array_product = new Array();
-    var count_stream = 0, count_product = 0, count_sells = 0;
-    var array_stream = new Array();
     var users_sells = new Array();
     var count1 = 0;
     $.post('/php/get_product.php', function(data)  {
@@ -27,7 +25,36 @@ $(document).ready(function() {
     if(!user_email){
         alert("Продукт запрещён к просмотру незарег польз");
     } else {
-        console.log(user_email);
+        //console.log(user_email);
+        var count2 = 0; 
+        $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
+            var output = $.parseJSON(data);
+            //console.log(output);
+            var pre_arr = new Array();
+            if(output){
+                $.each(output,function(i,item){
+                    if(item.user_email == user_email){
+                        //console.log(item.product_id);
+                        pre_arr.push(item.product_id);
+                        count2++;
+                    }
+                    
+                });
+            }
+            //$.each(output,function(i,item){
+               // pre_arr.push(item.id);
+               // count1++;
+            //});
+            //pre_arr.push(output.data); count_sells
+            //console.log(pre_arr);
+            for(var i = 0; i < pre_arr.length; i++){
+                users_sells.push(pre_arr[i]);
+                
+            }
+            //console.log(array_product);
+            //count_sells = count2;
+        });
+        console.log(users_sells);
     }
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
