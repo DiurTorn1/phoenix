@@ -11,8 +11,10 @@ var public_product_perm = new Array();
 function paint_element_stream(){
     // $('#name_user_get').text();
     //console.log(user_email);
-    
-    console.log(public_product_perm);
+    for(var i = 0; i < public_product_perm.length; i++){
+        console.log(public_product_perm[i]);
+    }
+    //console.log(public_product_perm);
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
             //console.log(data);
