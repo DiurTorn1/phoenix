@@ -44,8 +44,23 @@ function paint_element_stream(){
                     var pub_name = output? output[1]: '1';
                     if(pub_name==name_stream_gl){
                         if(key_prod_perm_stream){
-                            console.log(key_prod_perm_stream);
-                        }
+                            //console.log(key_prod_perm_stream);
+                            $("#slider").append(
+                                '<div class="slide no-bay index-live-item" id="' + list.id + '">'+
+                                    '<div class="index-live-item-video">'+
+                                        '<a >'+ 
+                                            '<div class="index-live-banner">' +
+                                                '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
+                                                '<img src="' + list.poster.original + '">' +
+                                            '</div>' +
+                                        '</a>' +
+                                        
+                                    '</div>'+
+                                    '<div class="index-live-item-text">'+
+                                        '<a >' + list.name + '</a>'+
+                                    '</div>'+
+                                '</div>');
+                        } else {
                             $("#slider").append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
@@ -60,6 +75,8 @@ function paint_element_stream(){
                                         '<a >' + list.name + '</a>'+
                                     '</div>'+
                                 '</div>');
+                        }
+
                         
                     }
             
