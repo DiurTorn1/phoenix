@@ -3,8 +3,8 @@ $(document).ready(function() {
     var user_email = $('#name_user_get').text();
     var array_product = new Array();
     var users_sells = new Array();
-    var count_product = 0;
     var count1 = 0;
+    var public_product_perm = new Array();
     $.post('/php/get_product.php', function(data)  {
         var output = $.parseJSON(data);
         //console.log(output);
@@ -16,54 +16,55 @@ $(document).ready(function() {
         //pre_arr.push(output.data);
         //console.log(pre_arr);
         for(var i = 0; i < pre_arr.length; i++){
-            array_product.push(pre_arr[i]);
+            //array_product.push(pre_arr[i]);
+            
+            //for(var i = 0; i < count_product; i ++){
+                //if(array_product[i] == users_sells[i]){
+                    //console.log(array_product[i]);
+                    //console.log(users_sells[i]);
+                    $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                        var output = $.parseJSON(data);
+                        //console.log(output);
+                        var prm_prod = output ? output[4]:'';
+                        //console.log(prm_prod);
+                        //public_product_perm.push(prm_prod);
+                        $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
+                            var public_product_perm1 = new Array();
+                            var key_product_perm = 0;
+                            var output1 = $.parseJSON(data1);
+        
+                            $.each(output1,function(i,item1){
+                                var struct_prod = {
+                                    "table": prm_prod, 
+                                    "id_stream": item1.id_stream 
+                                };
+                                //if(item1.id_stream == id_stream_prod){
+                                    console.log(struct_prod);
+                                    public_product_perm1.push(struct_prod);
+                                    key_product_perm++;
+                                    //key_prod_perm_stream1 = 1;
+                                //}
+                                //console.log(id_stream_prod);
+                            });
+                            //console.log(key_prod_perm_stream);
+                            for(var i = 0; i < key_product_perm; i++){
+                                //console.log(public_product_perm1[i]);
+                                public_product_perm.push(public_product_perm1[i]);
+                            }
+                            
+                        });
+                    });
+                //}
+               
+        
+            //}
             
         }
         //console.log(array_product);
-        count_product = count1;
+        //count_product = count1;
     });
     
-    var public_product_perm = new Array();
-    for(var i = 0; i < count_product; i ++){
-        //if(array_product[i] == users_sells[i]){
-            //console.log(array_product[i]);
-            //console.log(users_sells[i]);
-            $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
-                var output = $.parseJSON(data);
-                //console.log(output);
-                var prm_prod = output ? output[4]:'';
-                //console.log(prm_prod);
-                //public_product_perm.push(prm_prod);
-                $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
-                    var public_product_perm1 = new Array();
-                    var key_product_perm = 0;
-                    var output1 = $.parseJSON(data1);
 
-                    $.each(output1,function(i,item1){
-                        var struct_prod = {
-                            "table": prm_prod, 
-                            "id_stream": item1.id_stream 
-                        };
-                        //if(item1.id_stream == id_stream_prod){
-                            console.log(struct_prod);
-                            public_product_perm1.push(struct_prod);
-                            key_product_perm++;
-                            //key_prod_perm_stream1 = 1;
-                        //}
-                        //console.log(id_stream_prod);
-                    });
-                    //console.log(key_prod_perm_stream);
-                    for(var i = 0; i < key_product_perm; i++){
-                        //console.log(public_product_perm1[i]);
-                        public_product_perm.push(public_product_perm1[i]);
-                    }
-                    
-                });
-            });
-        //}
-       
-
-    }
     
     if(!user_email){
         alert("Продукт запрещён к просмотру незарег польз");
@@ -97,8 +98,7 @@ $(document).ready(function() {
             //console.log(array_product);
             //count_sells = count2;
         });
-        console.log(count_product);
-        console.log(array_product);
+        console.log(public_product_perm);
         console.log(users_sells);
     }
     $.post('/php/get_stream.php', function(data)  {
