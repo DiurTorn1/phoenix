@@ -11,9 +11,6 @@ var public_product_perm = new Array();
 function paint_element_stream(){
     // $('#name_user_get').text();
     //console.log(user_email);
-    for(var i = 0; i < public_product_perm.length; i++){
-        console.log(public_product_perm[i]);
-    }
     //console.log(public_product_perm);
     for(var i = 0; i < count_stream; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
@@ -21,8 +18,18 @@ function paint_element_stream(){
             var output = $.parseJSON(data);
             var list = output.data;
             var name_stream_gl = list.name;
-            var id_stream_prod = list.id;           
-            /*var key_prod_perm_stream = 0;
+            var id_stream_prod = list.id;
+            var key_prod_perm_stream = 0;
+            for(var i = 0; i < public_product_perm.length; i++){
+                //console.log(public_product_perm[i]);
+                if(public_product_perm[i] == id_stream_prod){
+                    key_prod_perm_stream = 1;
+                }
+            }
+            if(key_prod_perm_stream){
+                console.log(key_prod_perm_stream);
+            }           
+            /*
             for(var i = 0; i < count_product; i ++){
                 var key_prod_perm_stream1 = 0;
                 $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
@@ -40,9 +47,6 @@ function paint_element_stream(){
                 //if(key_prod_perm_stream1){
                     console.log(key_prod_perm_stream1);
                 //}
-            }
-            if(key_prod_perm_stream){
-                console.log(key_prod_perm_stream);
             }*/
             
             //console.log("Video inform:\r\n");
