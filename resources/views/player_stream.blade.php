@@ -3,7 +3,7 @@
 
 @section('content')
 <script type="text/javascript" src = "{{ asset('js/player_stream.js') }}"></script>
-<a id="name_user_get" class="name_user_get">{{ Auth::user()->email }}</a>
+
 @guest
         <!--<header class="header admin-header">		
 		<div class="left-header">
@@ -100,7 +100,7 @@
 	<div class="admin-content">
 		<div class="admin-content admin-content-raw">
 		<div class="block-admin-left">
-			
+			<a id="name_user_get" class="name_user_get">{{ Auth::user()->email }}</a>
 			<div class="block-admin-container admin-back">
 				<div class="index-live-item-1" id="player_stream_get">
 				</div>
