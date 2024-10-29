@@ -563,8 +563,8 @@ $(document).ready(function() {
             var id = this.id;
             //console.log(id);
             //$("#admin_input_id").val(id);
-            //window.location.href='/player_stream?player_stream_id='+id;
-            alert("Это видео не куплено");
+            window.location.href='/player_stream?player_stream_id='+id;
+            //alert("Это видео не куплено");
         });
         var timeList = 600;
         var TimeView = 1000000;
