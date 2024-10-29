@@ -22,16 +22,28 @@ $(document).ready(function() {
                     //$('#admin-input-main').val(item.name);
                     //initial_name = item.name;
                     //rtmp_link_card = item.rtmp_link;
-
+                    var tegs = item.subtitle;
+                    var pars = tegs.split("&");
+                    var opisanie_strima = pars[7];
                     $("#player_stream_get").append(
                         '<div class="index-live-item-video-1">' +
                             '<iframe src="' + item.play_link + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
                         '</div>' +
                         '<div class="index-live-item-text">' +
                         '<a>' + item.name + '</a>' +
+                        '</div>' + 
+                        '<div class="index-live-item-text">' +
+                            '<div class="admin-input-box admin-input-wrap">' +
+                                '<label>Описание</label>' +
+                                '<textarea name="Описание" class="block-admin-input respons-input admin-input" disabled>' + opisanie_strima + '</textarea>' +
+                            '</div>' +
                         '</div>'); 
             }
                 
         });
     });
 });
+/*				<div class="admin-input-box admin-input-wrap">
+					<label>Описание</label>
+					<textarea name="Описание" class="block-admin-input respons-input admin-input" id = "opisanie_strima"></textarea>
+				</div> */

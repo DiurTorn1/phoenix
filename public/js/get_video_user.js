@@ -87,7 +87,13 @@ function paint_element_stream(){
             var 
             name_stream_gl = list.name;
             
-
+            //var key_prod_perm_stream = 0;
+            //for(var i = 0; i < public_product_perm.length; i++){
+                console.log(public_product_perm);
+                //if(public_product_perm[i] == id_stream_prod){
+                    //key_prod_perm_stream = 1;
+                //}
+            //}
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
@@ -372,7 +378,46 @@ function get_stream_array(){
             array_product1.push(array_product[i]);           
         }
         if(array_product1[0]){
-            
+            for(var i = 0; i < count_product; i ++){
+                //if(array_product[i] == users_sells[i]){
+                    //console.log(array_product[i]);
+                    //console.log(users_sells[i]);
+                    $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                        var output = $.parseJSON(data);
+                        //console.log(output);
+                        var prm_prod = output ? output[4]:'';
+                        //console.log(prm_prod);
+                        //public_product_perm.push(prm_prod);
+                        $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
+                            var public_product_perm1 = new Array();
+                            var key_product_perm = 0;
+                            var output1 = $.parseJSON(data1);
+
+                            $.each(output1,function(i,item1){
+                                var struct_prod = {
+                                    "table": prm_prod, 
+                                    "id_product": item1.id_stream 
+                                };
+                                //if(item1.id_stream == id_stream_prod){
+                                    //console.log(item1.id_stream);
+                                    public_product_perm1.push(struct_prod);
+                                    key_product_perm++;
+                                    //key_prod_perm_stream1 = 1;
+                                //}
+                                //console.log(id_stream_prod);
+                            });
+                            //console.log(key_prod_perm_stream);
+                            for(var i = 0; i < key_product_perm; i++){
+                                //console.log(public_product_perm1[i]);
+                                public_product_perm.push(public_product_perm1[i]);
+                            }
+                            
+                        });
+                    });
+                //}
+               
+        
+            }
             paint_element_product();
             key_paint1 = 1;
         }
