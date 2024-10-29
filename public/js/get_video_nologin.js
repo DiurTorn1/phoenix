@@ -26,28 +26,7 @@ function paint_element_stream(){
                     key_prod_perm_stream = 1;
                 }
             }
-            if(key_prod_perm_stream){
-                console.log(key_prod_perm_stream);
-            }           
-            /*
-            for(var i = 0; i < count_product; i ++){
-                var key_prod_perm_stream1 = 0;
-                $.post('/php/get_product_table.php',{ table:public_product_perm[i] }, function(data1)  {
-                    key_prod_perm_stream1 = 0;
-                    var output1 = $.parseJSON(data1);
-                    $.each(output1,function(i,item1){
-                        if(item1.id_stream == id_stream_prod){
-                            //console.log(item1.id_stream);
-                            key_prod_perm_stream1 = 1;
-                        }
-                        //console.log(id_stream_prod);
-                    });
-                    //console.log(key_prod_perm_stream);
-                });
-                //if(key_prod_perm_stream1){
-                    console.log(key_prod_perm_stream1);
-                //}
-            }*/
+
             
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
@@ -64,6 +43,9 @@ function paint_element_stream(){
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
                     if(pub_name==name_stream_gl){
+                        if(key_prod_perm_stream){
+                            console.log(key_prod_perm_stream);
+                        }
                             $("#slider").append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
