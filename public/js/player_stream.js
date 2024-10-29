@@ -1,10 +1,18 @@
-$(document).ready(function() {
-    var params = new window.URLSearchParams(window.location.search);
-    var user_email = $('#name_user_get').text();
-    var array_product = new Array();
-    var users_sells = new Array();
+var array_product = new Array();
+var array_product1 = new Array();
+var count_product = 0, count_sells = 0;
+var users_sells = new Array();
+var users_sells1 = new Array();
+var public_product_perm2 = new Array();
+var key_paint = 0, key_paint1 = 0, key_paint2 = 0, key_sell_user = 0;
+var user_global = "";
+var user_email = '';
+
+
+function get_stream_array(){
+
+    user_email = $('#name_user_get').text();
     var count1 = 0;
-    var public_product_perm = new Array();
     $.post('/php/get_product.php', function(data)  {
         var output = $.parseJSON(data);
         //console.log(output);
@@ -16,9 +24,46 @@ $(document).ready(function() {
         //pre_arr.push(output.data);
         //console.log(pre_arr);
         for(var i = 0; i < pre_arr.length; i++){
-            //array_product.push(pre_arr[i]);
+            array_product.push(pre_arr[i]);
             
-            //for(var i = 0; i < count_product; i ++){
+        }
+        //console.log(array_product);
+        count_product = count1;
+    });
+    var count2 = 0; 
+    $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
+        var output = $.parseJSON(data);
+        //console.log(output);
+        var pre_arr = new Array();
+        if(output){
+            $.each(output,function(i,item){
+                if(item.user_email == user_email){
+                    //console.log(item.product_id);
+                    pre_arr.push(item.product_id);
+                    count2++;
+                }
+                
+            });
+        }
+        //$.each(output,function(i,item){
+           // pre_arr.push(item.id);
+           // count1++;
+        //});
+        //pre_arr.push(output.data); count_sells
+        //console.log(pre_arr);
+        for(var i = 0; i < pre_arr.length; i++){
+            users_sells.push(pre_arr[i]);
+            
+        }
+        //console.log(array_product);
+        count_sells = count2;
+    });
+    if(!key_paint1){
+        for(var i = 0; i < count_product; i++){
+            array_product1.push(array_product[i]);           
+        }
+        if(array_product1[0]){
+            for(var i = 0; i < count_product; i ++){
                 //if(array_product[i] == users_sells[i]){
                     //console.log(array_product[i]);
                     //console.log(users_sells[i]);
@@ -32,14 +77,14 @@ $(document).ready(function() {
                             var public_product_perm1 = new Array();
                             var key_product_perm = 0;
                             var output1 = $.parseJSON(data1);
-        
+
                             $.each(output1,function(i,item1){
                                 var struct_prod = {
                                     "table": prm_prod, 
                                     "id_stream": item1.id_stream 
                                 };
                                 //if(item1.id_stream == id_stream_prod){
-                                    console.log(struct_prod);
+                                    //console.log(struct_prod);
                                     public_product_perm1.push(struct_prod);
                                     key_product_perm++;
                                     //key_prod_perm_stream1 = 1;
@@ -49,7 +94,7 @@ $(document).ready(function() {
                             //console.log(key_prod_perm_stream);
                             for(var i = 0; i < key_product_perm; i++){
                                 //console.log(public_product_perm1[i]);
-                                public_product_perm.push(public_product_perm1[i]);
+                                public_product_perm2.push(public_product_perm1[i]);
                             }
                             
                         });
@@ -57,50 +102,56 @@ $(document).ready(function() {
                 //}
                
         
-            //}
-            
+            }
+            key_paint1 = 1;
         }
-        //console.log(array_product);
-        //count_product = count1;
-    });
-    
 
-    
-    if(!user_email){
-        alert("Продукт запрещён к просмотру незарег польз");
-    } else {
-        //console.log(user_email);
-        var count2 = 0; 
-        $.post('/php/get_sell_user.php', {user_email:user_email}, function(data)  {
-            var output = $.parseJSON(data);
-            //console.log(output);
-            var pre_arr = new Array();
-            if(output){
-                $.each(output,function(i,item){
-                    if(item.user_email == user_email){
-                        //console.log(item.product_id);
-                        pre_arr.push(item.product_id);
-                        count2++;
-                    }
-                    
-                });
-            }
-            //$.each(output,function(i,item){
-               // pre_arr.push(item.id);
-               // count1++;
-            //});
-            //pre_arr.push(output.data); count_sells
-            //console.log(pre_arr);
-            for(var i = 0; i < pre_arr.length; i++){
-                users_sells.push(pre_arr[i]);
-                
-            }
-            //console.log(array_product);
-            //count_sells = count2;
-        });
-        console.log(public_product_perm);
-        console.log(users_sells);
     }
+    //for(var i = 0; i < count_stream; i++){
+    if(array_product[0]!=array_product1[0]){
+        //setInterval('paint_element_stream()',100);
+        $("#slider1").empty();
+        //array_product = [];
+        //idch = 0;
+        key_paint1 = 0;
+    }
+    if(!key_paint2){
+        for(var i = 0; i < count_sells; i++){
+            users_sells1.push(users_sells[i]);           
+        }
+        if(users_sells1[0]){
+            
+            //paint_element_product();
+            key_paint2 = 1;
+        }
+
+    }
+    //for(var i = 0; i < count_stream; i++){
+    if(users_sells[0]!=users_sells1[0]){
+        //setInterval('paint_element_stream()',100);
+        //$("#slider1").empty();
+        //users_sells = [];
+        //idch = 0;
+        key_paint2 = 0;
+    }
+    //}
+    //console.log(count_stream);
+    //console.log(array_stream);
+    //var list = json_product.data;
+}
+
+
+$(document).ready(function() {
+    get_stream_array();
+    setInterval('get_stream_array()',500);
+    var params = new window.URLSearchParams(window.location.search);
+
+    if(!user_email){
+        alert("USERS not register");
+    }else{
+        console.log(user_email);
+    }
+
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         var list = output.data;
@@ -124,6 +175,13 @@ $(document).ready(function() {
                     //rtmp_link_card = item.rtmp_link;
                     var tegs = item.subtitle;
                     var pars = tegs.split("&");
+                    sezon = pars[0];
+                    kubok = pars[1];
+                    weigth = pars[2];
+                    vid_sport = pars[3];
+                    gorod = pars[4];
+                    boss = pars[5];
+                    region = pars[6];
                     var opisanie_strima = pars[7];
                     $("#player_stream_get").append(
                         '<div class="index-live-item-video-1">' +
