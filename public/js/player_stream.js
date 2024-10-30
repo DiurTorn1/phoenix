@@ -177,6 +177,7 @@ $(document).ready(function() {
                     boss = pars[5];
                     region = pars[6];
                     var opisanie_strima = pars[7];
+                    var key_player = 0, key_player1 = 0;
                     //console.log(users_sells1);
                     //console.log(public_product_perm2);
                     if(!user_email){
@@ -186,31 +187,65 @@ $(document).ready(function() {
                         for(var i = 0; i < public_product_perm2.length; i++){
                             var get_var = public_product_perm2[i];
                             if(get_var.id_stream == item.id){
+                                key_player1 = 1;
                                 for(var k=0; k<users_sells1.length; k++){
                                     var pars = get_var.table;
                                     var pars1 = pars.split("_");
                                     //console.log(pars1[1]);
                                     if(users_sells1[k] == pars1[1]){
                                         console.log("You grand");
+                                        key_player = 1;
                                     }
                                 }
                                 //console.log(get_var.id_stream);
                             }
                         }
                     }
-                    $("#player_stream_get").append(
-                        '<div class="index-live-item-video-1">' +
-                            '<iframe src="' + item.play_link + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
-                        '</div>' +
-                        '<div class="index-live-item-text">' +
-                        '<a>' + item.name + '</a>' +
-                        '</div>' + 
-                        '<div class="index-live-item-text">' +
-                            '<div class="admin-input-box admin-input-wrap">' +
-                                '<label>Описание</label>' +
-                                '<textarea name="Описание" class="block-admin-input respons-input admin-input" disabled>' + opisanie_strima + '</textarea>' +
+                    if(key_player1 == 0 && key_player == 0){
+                        $("#player_stream_get").append(
+                            '<div class="index-live-item-video-1">' +
+                                '<iframe src="' + item.play_link + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
                             '</div>' +
-                        '</div>'); 
+                            '<div class="index-live-item-text">' +
+                            '<a>' + item.name + '</a>' +
+                            '</div>' + 
+                            '<div class="index-live-item-text">' +
+                                '<div class="admin-input-box admin-input-wrap">' +
+                                    '<label>Описание</label>' +
+                                    '<textarea name="Описание" class="block-admin-input respons-input admin-input" disabled>' + opisanie_strima + '</textarea>' +
+                                '</div>' +
+                            '</div>'); 
+                    } else if(key_player1 == 1 && key_player == 1){
+                        $("#player_stream_get").append(
+                            '<div class="index-live-item-video-1">' +
+                                '<iframe src="' + item.play_link + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
+                            '</div>' +
+                            '<div class="index-live-item-text">' +
+                            '<a>' + item.name + '</a>' +
+                            '</div>' + 
+                            '<div class="index-live-item-text">' +
+                                '<div class="admin-input-box admin-input-wrap">' +
+                                    '<label>Описание</label>' +
+                                    '<textarea name="Описание" class="block-admin-input respons-input admin-input" disabled>' + opisanie_strima + '</textarea>' +
+                                '</div>' +
+                            '</div>'); 
+
+                    } else if(key_player1 == 1 && key_player == 0){
+                        $("#player_stream_get").append(
+                            '<div class="index-live-item-video-1">' +
+                                //'<iframe src="' + item.play_link + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
+                            '</div>' +
+                            '<div class="index-live-item-text">' +
+                            '<a>' + item.name + '</a>' +
+                            '</div>' + 
+                            '<div class="index-live-item-text">' +
+                                '<div class="admin-input-box admin-input-wrap">' +
+                                    '<label>Описание</label>' +
+                                    '<textarea name="Описание" class="block-admin-input respons-input admin-input" disabled>' + opisanie_strima + '</textarea>' +
+                                '</div>' +
+                            '</div>'); 
+
+                    }
             }
                 
         });
