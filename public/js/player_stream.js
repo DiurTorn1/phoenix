@@ -239,6 +239,10 @@ $(document).ready(function() {
                         $("#player_stream_get").append(
                             '<div class="index-live-item-video-2">' +
                                 '<div class="index-live-item-video-3">' +
+                                    '<div class="top-menu-head">' +
+                                        '<button class="top-menu-btn" >Купить Подписку</button>' +
+                                        '<button class="top-menu-btn" >Купить билет</button>' +
+                                    '</div>' +
                                 '</div>' +
                                 //'<iframe src="' + item.play_link + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
                             '</div>' +
