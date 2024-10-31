@@ -246,13 +246,12 @@ $(document).ready(function() {
                             '</div>'); 
 
                     } else if(key_player1 == 1 && key_player == 0){
-                        var id_ticket, id_subs;
+                        var id_ticket = 0, id_subs = 0;
 
                         for(var i = 0; i < array_sells_product_btn.length; i++){
                             var cycle_prod = array_sells_product_btn[i];
                             if(cycle_prod.type == 'ticket'){
                                 id_ticket = cycle_prod.id_prod;
-                                console.log(cycle_prod.id_prod);
                             }
                             if(cycle_prod.type == 'subscribe'){
                                 id_subs = cycle_prod.id_prod;
