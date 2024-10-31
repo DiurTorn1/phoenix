@@ -100,7 +100,7 @@ function paint_element_stream(){
                     var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
                     console.log(localdate);
                     console.log(finish_time);
-                    if(pub_name==name_stream_gl && finish_time != null){
+                    if(pub_name==name_stream_gl && finish_time == null){
 
                         var key_player = 0, key_player1 = 0;
                         for(var i = 0; i < public_product_perm2.length; i++){
