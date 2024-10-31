@@ -264,7 +264,7 @@ $(document).ready(function() {
                                     '<div class="index-live-banner-1">' +
                                         '<button class="top-menu-btn-1" id = "product_price_' + id_subs + '">Купить Подписку</button>' +
                                         '<button class="top-menu-btn-2" id = "product_price_' + id_ticket + '">Купить билет</button>' +
-                                        '<img src="' + item.poster.original + '" style="opacity: 0.6;">' +
+                                        '<img src="' + item.poster.original + '">' +
                                     '</div>' +
                                 '</div>' +
                                 //'<iframe src="' + item.play_link + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
