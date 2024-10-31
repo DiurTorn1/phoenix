@@ -238,6 +238,8 @@ $(document).ready(function() {
                     } else if(key_player1 == 1 && key_player == 0){
                         $("#player_stream_get").append(
                             '<div class="index-live-item-video-2">' +
+                                '<div class="index-live-item-video-3">' +
+                                '</div>' +
                                 //'<iframe src="' + item.play_link + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
                             '</div>' +
                             '<div class="index-live-item-text">' +
