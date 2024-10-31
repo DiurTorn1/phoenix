@@ -181,7 +181,12 @@ $(document).ready(function() {
                     //console.log(users_sells1);
                     //console.log(public_product_perm2);
                     if(!user_email){
-                        alert("USERS not register");
+                        for(var i = 0; i < public_product_perm2.length; i++){
+                            var get_var = public_product_perm2[i];
+                            if(get_var.id_stream == item.id){
+                                key_player1 = 1;
+                            }
+                        }
                     }else{
                         //console.log(user_email);
                         for(var i = 0; i < public_product_perm2.length; i++){
@@ -193,7 +198,7 @@ $(document).ready(function() {
                                     var pars1 = pars.split("_");
                                     //console.log(pars1[1]);
                                     if(users_sells1[k] == pars1[1]){
-                                        console.log("You grand");
+                                        //console.log("You grand");
                                         key_player = 1;
                                     }
                                 }

@@ -72,14 +72,14 @@ function paint_element_stream(){
             var 
             name_stream_gl = list.name;
             var id_stream_prod = list.id;
-            var key_prod_perm_stream = 0;
-            for(var i = 0; i < public_product_perm2.length; i++){
-                var get_str = public_product_perm2[i];
+            //var key_prod_perm_stream = 0;
+            //for(var i = 0; i < public_product_perm2.length; i++){
+                //var get_str = public_product_perm2[i];
                 //console.log(get_str.id_stream);
-                if(get_str.id_stream == id_stream_prod){
-                    key_prod_perm_stream = 1;
-                }
-            }
+                //if(get_str.id_stream == id_stream_prod){
+                    //key_prod_perm_stream = 1;
+                //}
+            //}
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
                 //"\r\ntype: " + list.type + "\r\nstreamkey: " + list.streamkey + "\r\nauto_start: " + list.auto_start + "\r\nprotected: " + list.protected + "\r\ntime_shift: " + list.time_shift); 
@@ -97,23 +97,24 @@ function paint_element_stream(){
                     var key_sell = 0;
                     if(pub_name==name_stream_gl){
 
-                        for(var i = 0; i < public_product_perm.length; i++){
-                            //if(public_product_perm[i] == name_stream_gl){
-                                //console.log(public_product_perm.length);
-                                //console.log(public_product_perm[i]);
-                                for(var i = 0; i < public_product_perm2.length; i++){
-                                    var get_str = public_product_perm2[i];
-                                    //console.log(get_str.id_stream);
-                                    if(get_str.id_stream == id_stream_prod){
-                                        key_sell = 1;
+                        var key_player = 0, key_player1 = 0;
+                        for(var i = 0; i < public_product_perm2.length; i++){
+                            var get_var = public_product_perm2[i];
+                            if(get_var.id_stream == id_stream_prod){
+                                key_player1 = 1;
+                                for(var k=0; k<users_sells1.length; k++){
+                                    var pars = get_var.table;
+                                    var pars1 = pars.split("_");
+                                    //console.log(pars1[1]);
+                                    if(users_sells1[k] == pars1[1]){
+                                        //console.log("You grand");
+                                        key_player = 1;
                                     }
                                 }
-                               // key_sell = 1;
-                            //}
+                                //console.log(get_var.id_stream);
+                            }
                         }
-
-                        
-                        if(!key_prod_perm_stream){
+                        if(key_player1 == 0 && key_player == 0){
                             $("#slider").append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
@@ -128,41 +129,39 @@ function paint_element_stream(){
                                         '<a >' + list.name + '</a>'+
                                     '</div>'+
                                 '</div>');
-                        } else {
-                            if(key_sell){
-                                $("#slider").append(
-                                    '<div class="slide bay index-live-item" id="' + list.id + '">'+
-                                        '<div class="index-live-item-video">'+
-                                            '<a >'+ 
-                                                '<div class="index-live-banner">' +
-                                                    '<img src="' + list.poster.original + '">' +
-                                                '</div>' +
-                                            '</a>' +
+                        } else if(key_player1 == 1 && key_player == 1){
+                            $("#slider").append(
+                                '<div class="slide bay index-live-item" id="' + list.id + '">'+
+                                    '<div class="index-live-item-video">'+
+                                        '<a >'+ 
+                                            '<div class="index-live-banner">' +
+                                                '<img src="' + list.poster.original + '">' +
+                                            '</div>' +
+                                        '</a>' +
+                                        
+                                    '</div>'+
+                                    '<div class="index-live-item-text">'+
+                                        '<a >' + list.name + '</a>'+
+                                    '</div>'+
+                                '</div>');
+    
+                        } else if(key_player1 == 1 && key_player == 0){
+                             //console.log("Product not bay");
+                            $("#slider").append(
+                                '<div class="slide no-bay index-live-item" id="' + list.id + '">'+
+                                    '<div class="index-live-item-video">'+
+                                        '<a >'+ 
+                                            '<div class="index-live-banner">' +
+                                                '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
+                                                '<img src="' + list.poster.original + '">' +
+                                            '</div>' +
+                                        '</a>' +
                                             
-                                        '</div>'+
-                                        '<div class="index-live-item-text">'+
-                                            '<a >' + list.name + '</a>'+
-                                        '</div>'+
-                                    '</div>');
-                            } else {
-                                //console.log("Product not bay");
-                                $("#slider").append(
-                                    '<div class="slide no-bay index-live-item" id="' + list.id + '">'+
-                                        '<div class="index-live-item-video">'+
-                                            '<a >'+ 
-                                                '<div class="index-live-banner">' +
-                                                    '<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span>' +
-                                                    '<img src="' + list.poster.original + '">' +
-                                                '</div>' +
-                                            '</a>' +
-                                            
-                                        '</div>'+
-                                        '<div class="index-live-item-text">'+
-                                            '<a >' + list.name + '</a>'+
-                                        '</div>'+
-                                    '</div>');
-                            }
-
+                                    '</div>'+
+                                    '<div class="index-live-item-text">'+
+                                        '<a >' + list.name + '</a>'+
+                                    '</div>'+
+                                '</div>');
                         }
                         
                     }
@@ -177,38 +176,6 @@ function paint_element_stream(){
 function paint_element_product(){
     //var user_email = $('#name_user_get').text();
     //console.log(user_email);
-    var public_product_perm = new Array();
-    if(count_product >= count_sells){
-        for(var i = 0; i < count_product; i ++){
-            if(array_product[i] == users_sells[i]){
-                //console.log(array_product[i]);
-                //console.log(users_sells[i]);
-                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
-                    var output = $.parseJSON(data);
-                    //console.log(output);
-                    var prm_prod = output ? output[1]:'';
-                    public_product_perm.push(prm_prod);
-                });
-            }
-           
-    
-        }
-    } else if(count_sells > count_product){
-        for(var i = 0; i < count_sells; i ++){
-            if(array_product[i] == users_sells[i]){
-                //console.log(array_product[i]);
-                //console.log(users_sells[i]);
-                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
-                    var output = $.parseJSON(data);
-                    //console.log(output);
-                    var prm_prod = output ? output[1]:'';
-                    public_product_perm.push(prm_prod);
-                });
-            }
-           
-    
-        }
-    }
     for(var i = 0; i < count_product; i ++){
         $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
             //console.log(data);
@@ -224,14 +191,20 @@ function paint_element_product(){
                 
                 var key_sell = 0;
                 if(prm_prod == id_product){
-                    for(var i = 0; i < public_product_perm.length; i++){
-                        if(public_product_perm[i] == id_product){
-                            //console.log(public_product_perm.length);
-                            //console.log(public_product_perm);
-                            key_sell = 1;
-                        }
+                    var key_player = 0;
+                    for(var i = 0; i < public_product_perm2.length; i++){
+                        var get_var = public_product_perm2[i];
+                            for(var k=0; k<users_sells1.length; k++){
+                                var pars = get_var.table;
+                                var pars1 = pars.split("_");
+                                //console.log(pars1[1]);
+                                if(users_sells1[k] == pars1[1]){
+                                    //console.log("You grand");
+                                    key_player = 1;
+                                }
+                            }
                     }
-                    if(key_sell){
+                    if(key_player){
                         $("#slider1").append(
                             '<div class="slide index-live-item" id="' + id_product + '">' +
                                 '<div class="index-live-item-video">' +
