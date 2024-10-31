@@ -241,7 +241,7 @@ $(document).ready(function() {
                                 '<div class="index-live-item-video-3">' +
                                     '<div class="index-live-banner-1">' +
                                         '<button class="top-menu-btn-1" >Купить Подписку</button>' +
-                                        '<button class="top-menu-btn-1" >Купить билет</button>' +
+                                        '<button class="top-menu-btn-2" >Купить билет</button>' +
                                         '<img src="' + item.poster.original + '">' +
                                     '</div>' +
                                 '</div>' +

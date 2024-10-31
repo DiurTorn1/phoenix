@@ -2464,7 +2464,7 @@ td a:focus {
     -webkit-tap-highlight-color: transparent;
     outline: 0;
     margin-top: 30%;
-    margin-left: 30%;
+    margin-left: 25%;
     margin-right: 25%;
     user-select: none;
     vertical-align: middle;
@@ -2484,6 +2484,38 @@ td a:focus {
 }
 
 .top-menu-btn-1:hover{
+    background-color: #feeeee;
+    color: #f58505; 
+}
+.top-menu-btn-2 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+    outline: 0;
+    margin-top: 30%;
+    margin-left: 50%;
+    margin-right: 25%;
+    user-select: none;
+    vertical-align: middle;
+    text-decoration: none;
+    font-size: 0.875rem;
+    line-height: 1.75;
+    font-weight: 600;
+    text-transform: uppercase;
+    min-width: 64px;
+    max-height: 36.5px;
+    padding: 5px 15px;
+    border-radius: 4px;
+    border: 1px solid rgba(245, 133, 5, 0.5);
+    background-color: #f58505;
+    color: #feeeee;
+    cursor: pointer;
+}
+
+.top-menu-btn-2:hover{
     background-color: #feeeee;
     color: #f58505; 
 }
