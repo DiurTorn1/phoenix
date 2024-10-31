@@ -336,15 +336,15 @@ p {
     height: 100%;
 }
 .index-live-item-video-2 {
-	width: 96%;
+	width: 100%;
     height: 840px;
-    background-color: #000; 
 }
 
 .index-live-item-video-3 {
 	width: 100%;
     height: 100%;
     margin: 2%;
+    background-color: #000; 
 }
 
 .index-item-text-wrap,
