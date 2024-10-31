@@ -145,6 +145,7 @@ $(document).ready(function() {
     get_stream_array();
     setInterval('get_stream_array()',500);
     var params = new window.URLSearchParams(window.location.search);
+    var array_sells_product_btn = new Array();
 
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
@@ -178,7 +179,7 @@ $(document).ready(function() {
                     region = pars[6];
                     var opisanie_strima = pars[7];
                     var key_player = 0, key_player1 = 0;
-                    var array_sells_product_btn = new Array();
+                    
                     //console.log(users_sells1);
                     //console.log(public_product_perm2);
                     if(!user_email){
