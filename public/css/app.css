@@ -2437,7 +2437,6 @@ td a:focus {
 .top-menu-head-1 {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
 }
 
 .top-menu-btn-1 {
