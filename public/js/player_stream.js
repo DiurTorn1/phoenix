@@ -251,6 +251,7 @@ $(document).ready(function() {
                         for(var i = 0; i < array_sells_product_btn.length; i++){
                             if(array_sells_product_btn.type == 'ticket'){
                                 id_ticket = array_sells_product_btn.id_prod;
+                                console.log(array_sells_product_btn.id_prod);
                             }
                             if(array_sells_product_btn.type == 'subscribe'){
                                 id_subs = array_sells_product_btn.id_prod;
