@@ -287,10 +287,11 @@ $(document).ready(function() {
 
     $(document).on('click', '.top-menu-btn-1', function() {
         var id = this.id;       
-        if(id){
-            console.log(id);
-        } else {
+        if(id == 0){
+            //console.log(id);
             alert("Стрим не добавлен к подписке. Обратитесь к администратору.");
+        } else {
+            
         }
         //$("#admin_input_id").val(id);
         //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
@@ -299,10 +300,10 @@ $(document).ready(function() {
     });
     $(document).on('click', '.top-menu-btn-2', function() {       
         var id = this.id;
-        if(id){
-            console.log(id);
-        } else {
+        if(id == 0){
             alert("Стрим не добавлен к билету. Обратитесь к администратору.");
+        } else {
+            console.log(id);
         }
         //$("#admin_input_id").val(id);
         //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
