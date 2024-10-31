@@ -2463,7 +2463,7 @@ td a:focus {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     outline: 0;
-    box-shadow: 10px 5px 5px #ecaeae;
+    box-shadow: 10px 5px 5px #8a3737;
     margin-top: 30%;
     margin-left: 25%;
     margin-right: 25%;
@@ -2496,7 +2496,7 @@ td a:focus {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     outline: 0;
-    box-shadow: 10px 5px 5px #ecaeae;
+    box-shadow: 10px 5px 5px #8a3737;
     margin-top: 30%;
     margin-left: 50%;
     margin-right: 25%;
@@ -2518,6 +2518,6 @@ td a:focus {
 }
 
 .top-menu-btn-2:hover{
-    background-color: #a1f505;
+    background-color: #b93a36;
     color: #feeeee; 
 }
