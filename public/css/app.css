@@ -2433,6 +2433,7 @@ td a:focus {
     height: 96%;
     margin: 2%;
     background-color: #000; 
+    border-radius: 10px;
 }
 
 .index-live-banner-1 {
@@ -2441,13 +2442,13 @@ td a:focus {
     height: 100%;
     flex-direction: row;
     overflow: hidden;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 .index-live-banner-1 img {
     display: block;
     max-height: 100%;
     max-width: 100%;
-    border-radius: 4px;
+    border-radius: 10px;
 }
 .top-menu-head-1 {
     display: flex;
