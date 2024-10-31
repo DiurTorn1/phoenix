@@ -2465,6 +2465,7 @@ td a:focus {
     outline: 0;
     margin-top: 30%;
     margin-left: 25%;
+    margin-right: 25%;
     user-select: none;
     vertical-align: middle;
     text-decoration: none;
@@ -2475,7 +2476,6 @@ td a:focus {
     min-width: 64px;
     max-height: 36.5px;
     padding: 5px 15px;
-    padding-right: 10%;
     border-radius: 4px;
     border: 1px solid rgba(245, 133, 5, 0.5);
     background-color: #f58505;
