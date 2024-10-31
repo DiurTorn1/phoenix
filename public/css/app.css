@@ -2463,6 +2463,7 @@ td a:focus {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     outline: 0;
+    box-shadow: #0f0f0f 4px;
     margin-top: 30%;
     margin-left: 25%;
     margin-right: 25%;
@@ -2495,6 +2496,7 @@ td a:focus {
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     outline: 0;
+    box-shadow: #0f0f0f 4px;
     margin-top: 30%;
     margin-left: 50%;
     margin-right: 25%;
