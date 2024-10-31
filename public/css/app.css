@@ -2479,14 +2479,14 @@ td a:focus {
     padding: 5px 15px;
     border-radius: 4px;
     border: 1px solid rgba(245, 133, 5, 0.5);
-    background-color: #f58505;
-    color: #feeeee;
+    background-color: #feeeee;
+    color: #f58505;
     cursor: pointer;
 }
 
 .top-menu-btn-1:hover{
-    background-color: #feeeee;
-    color: #f58505; 
+    background-color: #a1f505;
+    color: #feeeee; 
 }
 .top-menu-btn-2 {
     display: flex;
@@ -2512,12 +2512,12 @@ td a:focus {
     padding: 5px 15px;
     border-radius: 4px;
     border: 1px solid rgba(245, 133, 5, 0.5);
-    background-color: #f58505;
-    color: #feeeee;
+    background-color: #feeeee;
+    color: #f58505;
     cursor: pointer;
 }
 
 .top-menu-btn-2:hover{
-    background-color: #feeeee;
-    color: #f58505; 
+    background-color: #a1f505;
+    color: #feeeee; 
 }
