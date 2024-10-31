@@ -286,7 +286,8 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.top-menu-btn-1', function() {
-        var id = this.id;       
+        var id = this.id;
+        $('#popup-back-sells').toggle();       
         if(id == 0){
             //console.log(id);
             alert("Стрим не добавлен к подписке. Обратитесь к администратору.");
