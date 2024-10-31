@@ -246,9 +246,10 @@ $(document).ready(function() {
                             '</div>'); 
 
                     } else if(key_player1 == 1 && key_player == 0){
-                        /*var id_ticket, id_subs;
+                        var id_ticket, id_subs;
 
                         for(var i = 0; i < array_sells_product_btn.length; i++){
+                            console.log(array_sells_product_btn.id_prod);
                             if(array_sells_product_btn.type == 'ticket'){
                                 id_ticket = array_sells_product_btn.id_prod;
                                 console.log(array_sells_product_btn.id_prod);
@@ -256,13 +257,13 @@ $(document).ready(function() {
                             if(array_sells_product_btn.type == 'subscribe'){
                                 id_subs = array_sells_product_btn.id_prod;
                             }
-                        }*/
+                        }
                         $("#player_stream_get").append(
                             '<div class="index-live-item-video-2">' +
                                 '<div class="index-live-item-video-3">' +
                                     '<div class="index-live-banner-1">' +
-                                        '<button class="top-menu-btn-1" id = "' + 0 + '">Купить Подписку</button>' +
-                                        '<button class="top-menu-btn-2" id = "' + 0 + '">Купить билет</button>' +
+                                        '<button class="top-menu-btn-1" id = "' + id_subs + '">Купить Подписку</button>' +
+                                        '<button class="top-menu-btn-2" id = "' + id_ticket + '">Купить билет</button>' +
                                         '<img src="' + item.poster.original + '">' +
                                     '</div>' +
                                 '</div>' +
@@ -293,15 +294,6 @@ $(document).ready(function() {
         console.log(array_sells_product_btn);
     });
     $(document).on('click', '.top-menu-btn-2', function() {
-        for(var i = 0; i < array_sells_product_btn.length; i++){
-            if(array_sells_product_btn.type == 'ticket'){
-                //id_ticket = array_sells_product_btn.id_prod;
-                console.log(array_sells_product_btn.id_prod);
-            }
-            //if(array_sells_product_btn.type == 'subscribe'){
-                //id_subs = array_sells_product_btn.id_prod;
-            //}
-        }
         var id = this.id;
         console.log(id);
         //$("#admin_input_id").val(id);
