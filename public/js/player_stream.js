@@ -287,17 +287,22 @@ $(document).ready(function() {
     });
 
     $(document).on('click', '.top-menu-btn-1', function() {
-        //var id = this.id;
-        //console.log(id);
+        var id = this.id;
+        console.log(id);
+        if(!id){
+            alert("Стрим не добавлен к подписке. Обратитесь к администратору.");
+        }
         //$("#admin_input_id").val(id);
         //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
         //alert("Text: " + this.id);
-        console.log(array_sells_product_btn);
+        //console.log(array_sells_product_btn);
     });
-    $(document).on('click', '.top-menu-btn-2', function() {
-        
+    $(document).on('click', '.top-menu-btn-2', function() {       
         var id = this.id;
         console.log(id);
+        if(!id){
+            alert("Стрим не добавлен к билету. Обратитесь к администратору.");
+        }
         //$("#admin_input_id").val(id);
         //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
         //alert("Text: " + this.id);
