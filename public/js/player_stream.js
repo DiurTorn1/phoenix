@@ -249,26 +249,16 @@ $(document).ready(function() {
                         var id_ticket, id_subs;
 
                         for(var i = 0; i < array_sells_product_btn.length; i++){
-                            console.log(array_sells_product_btn.id_prod);
-                            /*if(array_sells_product_btn.type == 'ticket'){
-                                id_ticket = array_sells_product_btn.id_prod;
-                                console.log(array_sells_product_btn.id_prod);
+                            var cycle_prod = array_sells_product_btn[i];
+                            if(cycle_prod.type == 'ticket'){
+                                id_ticket = cycle_prod.id_prod;
+                                console.log(cycle_prod.id_prod);
                             }
-                            if(array_sells_product_btn.type == 'subscribe'){
-                                id_subs = array_sells_product_btn.id_prod;
-                            }*/
-                        }
-                        for(var i = 0; i < array_sells_product_btn.length; i++){
-                            console.log(array_sells_product_btn.type);
-                            /*if(array_sells_product_btn.type == 'ticket'){
-                                id_ticket = array_sells_product_btn.id_prod;
-                                console.log(array_sells_product_btn.id_prod);
+                            if(cycle_prod.type == 'subscribe'){
+                                id_subs = cycle_prod.id_prod;
                             }
-                            if(array_sells_product_btn.type == 'subscribe'){
-                                id_subs = array_sells_product_btn.id_prod;
-                            }*/
                         }
-                        console.log(array_sells_product_btn);
+                        //console.log(array_sells_product_btn);
                         $("#player_stream_get").append(
                             '<div class="index-live-item-video-2">' +
                                 '<div class="index-live-item-video-3">' +
@@ -306,8 +296,8 @@ $(document).ready(function() {
     });
     $(document).on('click', '.top-menu-btn-2', function() {
         
-        //var id = this.id;
-        //console.log(id);
+        var id = this.id;
+        console.log(id);
         //$("#admin_input_id").val(id);
         //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
         //alert("Text: " + this.id);
