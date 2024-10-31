@@ -2459,7 +2459,7 @@ td a:focus {
     display: flex;
     align-items: center;
     justify-content: center;
-    position: relative;
+    position: absolute;
     box-sizing: border-box;
     -webkit-tap-highlight-color: transparent;
     outline: 0;
