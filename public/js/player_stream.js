@@ -178,6 +178,7 @@ $(document).ready(function() {
                     region = pars[6];
                     var opisanie_strima = pars[7];
                     var key_player = 0, key_player1 = 0;
+                    var array_sells_product_btn = new Array();
                     //console.log(users_sells1);
                     //console.log(public_product_perm2);
                     if(!user_email){
@@ -189,6 +190,7 @@ $(document).ready(function() {
                         }
                     }else{
                         //console.log(user_email);
+                        
                         for(var i = 0; i < public_product_perm2.length; i++){
                             var get_var = public_product_perm2[i];
                             if(get_var.id_stream == item.id){
@@ -202,7 +204,14 @@ $(document).ready(function() {
                                         key_player = 1;
                                     }
                                 }
+                                var pars2 = get_var.table;
+                                var pars3 = pars2.split("_");
+                                var struct_sell_btn = {
+                                    "type": pars3[0], 
+                                    "id_prod": pars3[1] 
+                                };
                                 //console.log(get_var.id_stream);
+                                array_sells_product_btn.push(struct_sell_btn);
                             }
                         }
                     }
@@ -261,6 +270,23 @@ $(document).ready(function() {
             }
                 
         });
+    });
+
+    $(document).on('click', '.top-menu-btn-1', function() {
+        //var id = this.id;
+        //console.log(id);
+        //$("#admin_input_id").val(id);
+        //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
+        //alert("Text: " + this.id);
+        console.log(array_sells_product_btn);
+    });
+    $(document).on('click', '.top-menu-btn-2', function() {
+        //var id = this.id;
+        //console.log(id);
+        //$("#admin_input_id").val(id);
+        //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
+        //alert("Text: " + this.id);
+        console.log(array_sells_product_btn);
     });
 });
 /*				<div class="admin-input-box admin-input-wrap">
