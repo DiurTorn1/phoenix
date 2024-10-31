@@ -20,6 +20,7 @@ function paint_element_stream(){
             var name_stream_gl = list.name;
             var id_stream_prod = list.id;
             var key_prod_perm_stream = 0;
+            var finish_time = list.stream.finished_at;
             for(var i = 0; i < public_product_perm.length; i++){
                 //console.log(public_product_perm[i]);
                 if(public_product_perm[i] == id_stream_prod){
@@ -42,7 +43,11 @@ function paint_element_stream(){
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data)  {
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
-                    if(pub_name==name_stream_gl){
+                    var dNow = new Date();
+                    var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+                    console.log(localdate);
+                    console.log(finish_time);
+                    if(pub_name==name_stream_gl && finish_time == null){
                         if(key_prod_perm_stream){
                             //console.log(key_prod_perm_stream);
                             $("#slider").append(
