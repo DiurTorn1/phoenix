@@ -189,22 +189,17 @@ function paint_element_product(){
                 //console.log(output);
                 var prm_prod = output ? output[1]:'';
                 
-                var key_sell = 0;
+                
                 if(prm_prod == id_product){
-                    var key_player = 0;
-                    for(var i = 0; i < public_product_perm2.length; i++){
-                        var get_var = public_product_perm2[i];
-                            for(var k=0; k<users_sells1.length; k++){
-                                var pars = get_var.table;
-                                var pars1 = pars.split("_");
-                                //console.log(pars1[1]);
-                                if(users_sells1[k] == pars1[1]){
-                                    //
-                                    key_player = 1;
-                                }
-                            }
+                    var key_sell = 0;
+                    for(var k=0; k<users_sells1.length; k++){
+                        //console.log(pars1[1]);
+                        if(users_sells1[k] == id_product){
+                            //
+                            key_sell = 1;
+                        }
                     }
-                    if(key_player){
+                    if(key_sell){
                         $("#slider1").append(
                             '<div class="slide index-live-item" id="' + id_product + '">' +
                                 '<div class="index-live-item-video">' +
