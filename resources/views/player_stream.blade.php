@@ -123,8 +123,8 @@
 	
 
 	<!----------------->
-	<div class="popup-back-sells" id="popup-back">
-        <!--<form method="POST" action="" class="popup-container">
+	<div class="popup-back-sells" id="popup-back-sells">
+        <form method="POST" action="" class="popup-container">
 			<div class="popup-content">
             	@csrf
 				<div class="popup-title-wrap">
@@ -162,7 +162,7 @@
 			</div>
 			
 
-        </form>-->
+        </form>
 </div>
 @endguest
 </main>
