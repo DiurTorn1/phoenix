@@ -258,6 +258,7 @@ $(document).ready(function() {
                                 id_subs = array_sells_product_btn.id_prod;
                             }
                         }
+                        console.log(array_sells_product_btn);
                         $("#player_stream_get").append(
                             '<div class="index-live-item-video-2">' +
                                 '<div class="index-live-item-video-3">' +
@@ -294,8 +295,9 @@ $(document).ready(function() {
         console.log(array_sells_product_btn);
     });
     $(document).on('click', '.top-menu-btn-2', function() {
-        var id = this.id;
-        console.log(id);
+        
+        //var id = this.id;
+        //console.log(id);
         //$("#admin_input_id").val(id);
         //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
         //alert("Text: " + this.id);
