@@ -246,12 +246,22 @@ $(document).ready(function() {
                             '</div>'); 
 
                     } else if(key_player1 == 1 && key_player == 0){
+                        var id_ticket, id_subs;
+
+                        for(var i = 0; i < array_sells_product_btn.length; i++){
+                            if(array_sells_product_btn.type == 'ticket'){
+                                id_ticket = array_sells_product_btn.id;
+                            }
+                            if(array_sells_product_btn.type == 'subscribe'){
+                                id_subs = array_sells_product_btn.id;
+                            }
+                        }
                         $("#player_stream_get").append(
                             '<div class="index-live-item-video-2">' +
                                 '<div class="index-live-item-video-3">' +
                                     '<div class="index-live-banner-1">' +
-                                        '<button class="top-menu-btn-1" >Купить Подписку</button>' +
-                                        '<button class="top-menu-btn-2" >Купить билет</button>' +
+                                        '<button class="top-menu-btn-1" id = "' + id_subs + '">Купить Подписку</button>' +
+                                        '<button class="top-menu-btn-2" id = "' + id_ticket + '">Купить билет</button>' +
                                         '<img src="' + item.poster.original + '">' +
                                     '</div>' +
                                 '</div>' +
@@ -282,12 +292,12 @@ $(document).ready(function() {
         console.log(array_sells_product_btn);
     });
     $(document).on('click', '.top-menu-btn-2', function() {
-        //var id = this.id;
-        //console.log(id);
+        var id = this.id;
+        console.log(id);
         //$("#admin_input_id").val(id);
         //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
         //alert("Text: " + this.id);
-        console.log(array_sells_product_btn);
+        //console.log(array_sells_product_btn);
     });
 });
 /*				<div class="admin-input-box admin-input-wrap">
