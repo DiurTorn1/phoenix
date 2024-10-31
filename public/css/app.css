@@ -2451,8 +2451,7 @@ td a:focus {
     -webkit-tap-highlight-color: transparent;
     outline: 0;
     margin-top: 30%;
-    margin-left: 20%;
-    margin-right: 20%;
+    margin-left: 25%;
     user-select: none;
     vertical-align: middle;
     text-decoration: none;
