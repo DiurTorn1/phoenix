@@ -262,8 +262,8 @@ $(document).ready(function() {
                             '<div class="index-live-item-video-2">' +
                                 '<div class="index-live-item-video-3">' +
                                     '<div class="index-live-banner-1">' +
-                                        '<button class="top-menu-btn-1" id = "' + id_subs + '">Купить Подписку</button>' +
-                                        '<button class="top-menu-btn-2" id = "' + id_ticket + '">Купить билет</button>' +
+                                        '<button class="top-menu-btn-1" id = "product_price_' + id_subs + '">Купить Подписку</button>' +
+                                        '<button class="top-menu-btn-2" id = "product_price_' + id_ticket + '">Купить билет</button>' +
                                         '<img src="' + item.poster.original + '">' +
                                     '</div>' +
                                 '</div>' +
