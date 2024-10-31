@@ -289,7 +289,7 @@ $(document).ready(function() {
     $(document).on('click', '.top-menu-btn-1', function() {
         var id = this.id;
         console.log(id);
-        if(!id){
+        if(id == undefined){
             alert("Стрим не добавлен к подписке. Обратитесь к администратору.");
         }
         //$("#admin_input_id").val(id);
@@ -300,7 +300,7 @@ $(document).ready(function() {
     $(document).on('click', '.top-menu-btn-2', function() {       
         var id = this.id;
         console.log(id);
-        if(!id){
+        if(id == undefined){
             alert("Стрим не добавлен к билету. Обратитесь к администратору.");
         }
         //$("#admin_input_id").val(id);
