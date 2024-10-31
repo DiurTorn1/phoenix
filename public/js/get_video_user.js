@@ -221,7 +221,6 @@ function paint_element_product(){
                                     '<a  class="user-button" >Куплено</a>'+
                                 '</div>' +
                             '</div>');
-                            console.log("You grand");
                     }else{
                         $("#slider1").append(
                             '<div class="slide index-live-item" id="' + id_product + '">' +
