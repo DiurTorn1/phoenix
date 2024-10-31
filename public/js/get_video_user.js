@@ -199,7 +199,7 @@ function paint_element_product(){
                                 var pars1 = pars.split("_");
                                 //console.log(pars1[1]);
                                 if(users_sells1[k] == pars1[1]){
-                                    //console.log("You grand");
+                                    //
                                     key_player = 1;
                                 }
                             }
@@ -226,6 +226,7 @@ function paint_element_product(){
                                     '<a  class="user-button" >Куплено</a>'+
                                 '</div>' +
                             '</div>');
+                            console.log("You grand");
                     }else{
                         $("#slider1").append(
                             '<div class="slide index-live-item" id="' + id_product + '">' +
