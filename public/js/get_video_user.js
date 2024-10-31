@@ -95,6 +95,9 @@ function paint_element_stream(){
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
                     var key_sell = 0;
+                    var dNow = new Date();
+                    var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+                    console.log(localdate);
                     if(pub_name==name_stream_gl){
 
                         var key_player = 0, key_player1 = 0;
