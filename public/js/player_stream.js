@@ -292,10 +292,11 @@ $(document).ready(function() {
             //console.log(id);
             alert("Стрим не добавлен к подписке. Обратитесь к администратору.");
         } else {
-            $('#popup-back-sells').toggle();  
+            window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
+            //$('#popup-back-sells').toggle();  
         }
         //$("#admin_input_id").val(id);
-        //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
+        //
         //alert("Text: " + this.id);
         //console.log(array_sells_product_btn);
     });
@@ -304,11 +305,11 @@ $(document).ready(function() {
         if(id == 0){
             alert("Стрим не добавлен к билету. Обратитесь к администратору.");
         } else {
-            console.log(id);
-            $('#popup-back-sells').toggle();
+            window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
+            //$('#popup-back-sells').toggle();
         }
         //$("#admin_input_id").val(id);
-        //window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
+        //
         //alert("Text: " + this.id);
         //console.log(array_sells_product_btn);
     });
