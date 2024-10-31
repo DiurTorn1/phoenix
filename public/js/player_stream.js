@@ -311,6 +311,10 @@ $(document).ready(function() {
         //alert("Text: " + this.id);
         //console.log(array_sells_product_btn);
     });
+    $("#popup-close").on('click', function(){
+        //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
+        $('#popup-back-sells').toggle();
+    });
 });
 /*				<div class="admin-input-box admin-input-wrap">
 					<label>Описание</label>
