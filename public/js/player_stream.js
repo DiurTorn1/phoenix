@@ -239,8 +239,8 @@ $(document).ready(function() {
                         $("#player_stream_get").append(
                             '<div class="index-live-item-video-2">' +
                                 '<div class="index-live-item-video-3">' +
-                                    '<div class="top-menu-head">' +
-                                        //'<button class="top-menu-btn" >Купить Подписку</button>' +
+                                    '<div class="top-menu-head-1">' +
+                                        '<button class="top-menu-btn" >Купить Подписку</button>' +
                                         '<button class="top-menu-btn" >Купить билет</button>' +
                                     '</div>' +
                                 '</div>' +
