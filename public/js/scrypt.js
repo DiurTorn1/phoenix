@@ -23,17 +23,25 @@ $(document).ready(function() {
 
     $("#send_mail").on('click',function(){
         var data = "test";
-        $("#user-input-registr").toggle();
-        $("#send_mail").toggle();
-        $("#details_registr").text("Отправка сообщения на указанную почту...");
-        $.post('/php/python_send.php',{data:data}, function(data) {   
-            console.log(data);
-            if(data == 'Error'){
-                $("#details_registr").text("Ошибка отправки сообщения!!!");
-            }else{
+        var email_get = $("#user-input-registr").val();
+        if(!email_get){
+            $("#details_registr").text("Графа с андресом почты не должно быть пустым");
+        } else {
+            var split_email = email_get.split("@");
+            console.log(split_email[0]);
+            $("#user-input-registr").toggle();
+            $("#send_mail").toggle();
+            $("#details_registr").text("Отправка сообщения на указанную почту...");
+            $.post('/php/python_send.php',{data:data}, function(data) {   
+                console.log(data);
+                if(data == 'Error'){
+                    $("#details_registr").text("Ошибка отправки сообщения!!!");
+                }else{
+    
+                }
+            });
+        }
 
-            }
-        });
         //alert("Send email");
     });
     $("#registr_push").on('click', function(){
