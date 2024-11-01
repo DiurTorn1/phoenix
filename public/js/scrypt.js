@@ -22,7 +22,19 @@ $(document).ready(function() {
     });
 
     $("#send_mail").on('click',function(){
-        alert("Send email");
+        var data = "test";
+        $.ajax({
+            url: '/exchange_data',
+            type: 'POST',
+            data: { data: data },
+            success: function(response) {
+                $('#response').text('Response from Python: ' + response.output);
+            },
+            error: function(xhr, status, error) {
+                $('#response').text('Error: ' + error);
+            }
+        });
+        //alert("Send email");
     });
 
     //$("#top-menu-btn").on('click', function(){
