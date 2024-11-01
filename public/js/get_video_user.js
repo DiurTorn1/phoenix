@@ -112,8 +112,8 @@ function paint_element_stream(){
                         var pars_date = pars_data[0].split("-");
                         //console.log(pars_data[1]);
                         var pars_time = pars_data[1].split(":");
-                        if(pars_time[0] == dNow.getFullYear()){
-                            console.log(pars_time[1]);
+                        if(pars_date[0] == dNow.getFullYear()){
+                            console.log(pars_date[1]);
                             console.log(dNow.getMonth()+1);
                         }
                         var key_player = 0, key_player1 = 0;
