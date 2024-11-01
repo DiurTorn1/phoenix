@@ -26,9 +26,13 @@ $(document).ready(function() {
         $("#user-input-registr").toggle();
         $("#send_mail").toggle();
         $("#details_registr").text("Отправка сообщения на указанную почту...");
-        $.post('/php/python_send.php',{data:data}, function(data) {
-                
+        $.post('/php/python_send.php',{data:data}, function(data) {   
             console.log(data);
+            if(data == 'Error'){
+                $("#details_registr").text("Ошибка отправки сообщения!!!");
+            }else{
+
+            }
         });
         //alert("Send email");
     });
