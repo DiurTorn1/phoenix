@@ -23,6 +23,8 @@ $(document).ready(function() {
 
     $("#send_mail").on('click',function(){
         var data = "test";
+        $("#user-input-registr").toggle();
+        $("#send_mail").toggle();
         $.post('/php/python_send.php',{data:data}, function(data) {
                 
             console.log(data);

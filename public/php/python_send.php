@@ -11,7 +11,7 @@ $options = array(
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 if ($result === FALSE) {
-    echo "Error calling the Python API.";
+    echo "Error";
 } else {
     $response = json_decode($result, true);
     echo $response['output'];

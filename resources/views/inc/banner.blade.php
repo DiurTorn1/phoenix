@@ -66,7 +66,7 @@
 					<h3 class="popup-title" id="details_registr"></h3>
 				</div>
 				<div class="popup-content-wrap">
-                	<input id="user-input" type="email" placeholder="Введите email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
+                	<input id="user-input-registr" type="email" placeholder="Введите email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
 					<!--@error('email')-->
                     	<span class="invalid-feedback" role="alert">
                     	<strong>{{ $message }}</strong>
