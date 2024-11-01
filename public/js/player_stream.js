@@ -253,7 +253,7 @@ $(document).ready(function() {
                             if(cycle_prod.type == 'ticket'){
                                 id_ticket = cycle_prod.id_prod;
                             }
-                            if(cycle_prod.type == 'subscribe'){
+                            if(cycle_prod.type == 'subscript'){
                                 id_subs = cycle_prod.id_prod;
                             }
                         }
