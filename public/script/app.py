@@ -1,10 +1,10 @@
 from flask import Flask, request, jsonify
 import subprocess
 
-from OpenSSL import SSL
-context = SSL.Context(SSL.TLSv1_2_METHOD)
-context.use_privatekey_file('cert.key')
-context.use_certificate_file('cert.crt')  
+#from OpenSSL import SSL
+#context = SSL.Context(SSL.TLSv1_2_METHOD)
+#context.use_privatekey_file('cert.key')
+#context.use_certificate_file('cert.crt')  
 
 app = Flask(__name__)
 
@@ -20,4 +20,4 @@ def exchange_data():
 
 if __name__ == '__main__':
     #context = ('/etc/apache2/ssl/cert.crt', '/etc/apache2/ssl/cert.key')#certificate and key files
-    app.run(host='127.0.0.1', debug=True, ssl_context=context)
+    app.run(host='127.0.0.1', debug=True)#, ssl_context=context)
