@@ -14,7 +14,9 @@
 
 <!------------------ Окно Входа -------------------------->
 <div class="popup-back" id="popup-back">
-        <form method="POST" action="" class="popup-container">
+    <div class="popup-container">
+
+		<form method="POST" action="">
 			<div class="popup-content">
             	@csrf
 				<div class="popup-title-wrap">
@@ -54,6 +56,7 @@
 			<a href="" class="register-link" id="registr_push">Регистрация</a>
 			<a href="" class="mem-password">Забыли пароль?</a>
 		</div>
+	</div>
 </div>
 
 
