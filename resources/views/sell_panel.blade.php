@@ -40,6 +40,10 @@
 						<label>Цена</label>
 						<input type="text" placeholder="" id="price_product_sell" class="user-input" title="" disabled>
 					</div>
+					<div class="user-input-box block-w100">
+						<label>Промокод</label>
+						<input type="text" placeholder="Введите промокод" id="promocode_product_sell" class="user-input" title="">
+					</div>
 				</div>
 			</div>
 		</div>
