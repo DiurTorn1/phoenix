@@ -3,8 +3,8 @@ import subprocess
 
 from OpenSSL import SSL
 context = SSL.Context(SSL.TLSv1_2_METHOD)
-context.use_privatekey_file('/etc/apache2/ssl/cert.key')
-context.use_certificate_file('/etc/apache2/ssl/cert.crt')  
+context.use_privatekey_file('cert.key')
+context.use_certificate_file('cert.crt')  
 
 app = Flask(__name__)
 
