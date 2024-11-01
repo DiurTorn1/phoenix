@@ -28,10 +28,10 @@ $(document).ready(function() {
             type: 'POST',
             data: { data: data },
             success: function(response) {
-                $('#response').text('Response from Python: ' + response.output);
+                console.log('Response from Python: ' + response.output);
             },
             error: function(xhr, status, error) {
-                $('#response').text('Error: ' + error);
+                console.log('Error: ' + error);
             }
         });
         //alert("Send email");
