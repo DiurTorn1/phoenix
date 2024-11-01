@@ -1,23 +1,15 @@
 from flask import Flask, request, jsonify
-import subprocess
-
-#from OpenSSL import SSL
-#context = SSL.Context(SSL.TLSv1_2_METHOD)
-#context.use_privatekey_file('cert.key')
-#context.use_certificate_file('cert.crt')  
 
 app = Flask(__name__)
 
-@app.route('/', methods=['POST'])
-def exchange_data():
-    data = request.form.get('data')
+@app.route('/process_data', methods=['POST'])
+def process_data():
+    data = request.json.get('data')
     if data:
-        # Execute the independent Python script with the data
-        result = subprocess.run(['python', 'data.py', data], capture_output=True, text=True)
-        return jsonify({'status': 'success', 'output': result.stdout})
+        processed_data = "Processed: " + data
+        return jsonify({'status': 'success', 'output': processed_data})
     else:
         return jsonify({'status': 'error', 'message': 'No data provided'})
 
 if __name__ == '__main__':
-    #context = ('/etc/apache2/ssl/cert.crt', '/etc/apache2/ssl/cert.key')#certificate and key files
-    app.run(host='127.0.0.1', debug=True)#, ssl_context=context)
+    app.run(debug=True)

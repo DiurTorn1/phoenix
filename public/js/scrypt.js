@@ -23,16 +23,9 @@ $(document).ready(function() {
 
     $("#send_mail").on('click',function(){
         var data = "test";
-        $.ajax({
-            url: '/',
-            type: 'POST',
-            data: { data: data },
-            success: function(response) {
-                console.log('Response from Python: ' + response.output);
-            },
-            error: function(xhr, status, error) {
-                console.log('Error: ' + error);
-            }
+        $.post('/php/python_send.php',{data:data}, function(data) {
+                
+            console.log(data);
         });
         //alert("Send email");
     });
