@@ -21,6 +21,10 @@ $(document).ready(function() {
         $('#popup-back').toggle();
     });
 
+    $("#send_mail").on('click',function(){
+        alert("Send email");
+    });
+
     //$("#top-menu-btn").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();

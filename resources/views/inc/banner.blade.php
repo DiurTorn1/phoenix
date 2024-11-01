@@ -22,14 +22,14 @@
 					<h2 class="popup-title">Вход</h2>
 				</div>
 				<div class="popup-content-wrap">
-                	<input id="user-input" type="email" placeholder="Телефон или email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
+                	<input id="user-input" type="email" placeholder="Введите email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
 					@error('email')
                     	<span class="invalid-feedback" role="alert">
                     	<strong>{{ $message }}</strong>
                     	</span>
                 	@enderror
 				
-                	<input id="password" type="password" placeholder="Телефон или email" class="user-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
+                	<input id="password" type="password" placeholder="Пароль" class="user-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 					@error('password')
                     	<span class="invalid-feedback" role="alert">
                     	<strong>{{ $message }}</strong>
@@ -66,7 +66,7 @@
 					<h3 class="popup-title">Доступ к видео ограничен. Зарегестрируйтесь для покупки видео.</h3>
 				</div>
 				<div class="popup-content-wrap">
-                	<input id="user-input" type="email" placeholder="Телефон или email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
+                	<input id="user-input" type="email" placeholder="Введите email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
 					<!--@error('email')-->
                     	<span class="invalid-feedback" role="alert">
                     	<strong>{{ $message }}</strong>
@@ -85,7 +85,7 @@
                         	{{ __('Запомнить меня') }}
         				</label>
 					</div>-->
-                    <button type="submit" class="top-menu-btn" id="top-menu-btn">
+                    <button type="submit" class="top-menu-btn" id="send_mail">
 						Подтвердить пароль
                     </button>
 					<!--<div class="popup-content-wrap-row register-wrapper">
