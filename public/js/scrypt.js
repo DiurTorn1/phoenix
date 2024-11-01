@@ -25,6 +25,7 @@ $(document).ready(function() {
         var data = "test";
         $("#user-input-registr").toggle();
         $("#send_mail").toggle();
+        $("#details_registr").text("Отправка сообщения на указанную почту...");
         $.post('/php/python_send.php',{data:data}, function(data) {
                 
             console.log(data);
