@@ -24,7 +24,7 @@ $(document).ready(function() {
     $("#send_mail").on('click',function(){
         var data = "test";
         $.ajax({
-            url: '/exchange_data',
+            url: '/script/exchange_data',
             type: 'POST',
             data: { data: data },
             success: function(response) {
