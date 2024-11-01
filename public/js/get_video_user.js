@@ -72,7 +72,8 @@ function paint_element_stream(){
             var 
             name_stream_gl = list.name;
             var id_stream_prod = list.id;
-            var finish_time = list.stream.finished_at
+            var finish_time = list.stream.finished_at;
+            var started_time = list.stream.started_at;
             //var key_prod_perm_stream = 0;
             //for(var i = 0; i < public_product_perm2.length; i++){
                 //var get_str = public_product_perm2[i];
@@ -103,6 +104,7 @@ function paint_element_stream(){
                     if(pub_name==name_stream_gl && finish_time == null){
                         console.log(localdate);
                         console.log(finish_time);
+                        console.log(started_time);
                         var key_player = 0, key_player1 = 0;
                         for(var i = 0; i < public_product_perm2.length; i++){
                             var get_var = public_product_perm2[i];
