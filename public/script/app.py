@@ -14,5 +14,5 @@ def exchange_data():
         return jsonify({'status': 'error', 'message': 'No data provided'})
 
 if __name__ == '__main__':
-    context = ('local.crt', 'local.key')#certificate and key files
+    context = ('/etc/apache2/ssl/cert.crt', '/etc/apache2/ssl/cert.key')#certificate and key files
     app.run(debug=True, ssl_context=context)
