@@ -3,7 +3,7 @@ import subprocess
 
 app = Flask(__name__)
 
-@app.route('/exchange_data', methods=['POST'])
+@app.route('/', methods=['POST'])
 def exchange_data():
     data = request.form.get('data')
     if data:
