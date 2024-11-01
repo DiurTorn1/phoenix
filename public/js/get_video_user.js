@@ -114,7 +114,7 @@ function paint_element_stream(){
                         var pars_time = pars_data[1].split(":");
                         if(pars_date[0] == dNow.getFullYear() && pars_date[1] == (dNow.getMonth()+1)){
                             console.log(pars_date[2]);
-                            console.log(dNow.getDate());
+                            console.log('0'+dNow.getDate());
                         }
                         var key_player = 0, key_player1 = 0;
                         for(var i = 0; i < public_product_perm2.length; i++){
