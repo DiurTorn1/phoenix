@@ -44,15 +44,16 @@
                     <button type="submit" class="top-menu-btn" id="top-menu-btn">
 						Войти
                     </button>
-					<div class="popup-content-wrap-row register-wrapper">
-						<a href="" class="register-link" id="registr_push">Регистрация</a>
-						<a href="" class="mem-password">Забыли пароль?</a>
-					</div>
+
 				</div>
 			</div>
 			
 
         </form>
+		<div class="popup-content-wrap-row register-wrapper">
+			<a href="" class="register-link" id="registr_push">Регистрация</a>
+			<a href="" class="mem-password">Забыли пароль?</a>
+		</div>
 </div>
 
 
