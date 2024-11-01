@@ -105,6 +105,7 @@ function paint_element_stream(){
                         console.log(localdate);
                         console.log(finish_time);
                         console.log(started_time);
+                        var div_video = "#slider";
                         var key_player = 0, key_player1 = 0;
                         for(var i = 0; i < public_product_perm2.length; i++){
                             var get_var = public_product_perm2[i];
@@ -123,7 +124,7 @@ function paint_element_stream(){
                             }
                         }
                         if(key_player1 == 0 && key_player == 0){
-                            $("#slider").append(
+                            $(div_video).append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
                                         '<a >'+ 
@@ -138,7 +139,7 @@ function paint_element_stream(){
                                     '</div>'+
                                 '</div>');
                         } else if(key_player1 == 1 && key_player == 1){
-                            $("#slider").append(
+                            $(div_video).append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
                                         '<a >'+ 
@@ -155,7 +156,7 @@ function paint_element_stream(){
     
                         } else if(key_player1 == 1 && key_player == 0){
                              //console.log("Product not bay");
-                            $("#slider").append(
+                            $(div_video).append(
                                 '<div class="slide no-bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
                                         '<a >'+ 

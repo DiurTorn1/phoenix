@@ -2530,3 +2530,23 @@ td a:focus {
     background-color: #000000d6;
     z-index: 10;
 }
+
+.index-live-2 {
+    display: none;
+	margin: 64px 24px 0 24px;
+}
+.index-live-2 h2 {
+	display: flex;
+	margin: 0;
+	align-items: center;
+	flex-wrap: nowrap;
+	font-size: 2.0243rem;
+	font-weight: 600;
+	line-height: 1.235;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    padding: 25px 0px 16px;
+    margin-right: 4px;
+    text-transform: uppercase;
+}

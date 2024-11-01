@@ -47,24 +47,14 @@
 		</div>-->
 
 	
-		<!--<h2>В эфире</h2>
-		<div class="live_item_stream" id ="live_item_stream" style="display:flex; flex-direction: row; justify-content: center; align-items: center">
-			<div class="index-live-item">
-				<div class="index-live-item-video">
-					<a href="#">
-						<span class="label">LIVE</span>
-
-						<div class="index-live-banner">
-								<img src="img/phoenix.png">
-						</div>
-					</a>
-				</div>
-				<div class="index-live-item-text">
-					<a href="#"></a>
-				</div>
-			</div>
-		</div>
-		</div>-->
+	<div class="index-live-2" id="index-live-2">
+		<h2>Скоро</h2>
+		<div id="slider-wrap">
+         <div id="active-slide">
+           <div id="slider-2">
+           </div>
+         </div>
+    </div>
 
 		<div class = "slide_main">
     </div>
