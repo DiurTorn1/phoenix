@@ -36,6 +36,8 @@ $(document).ready(function() {
                 console.log(data);
                 if(data == 'Error'){
                     $("#details_registr").text("Ошибка отправки сообщения!!!");
+                    $("#user-input-registr").toggle();
+                    $("#send_mail").toggle();
                 }else{
     
                 }
