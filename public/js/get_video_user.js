@@ -114,10 +114,8 @@ function paint_element_stream(){
                         var pars_time = pars_data[1].split(":");
                         if(pars_date[0] == dNow.getFullYear() && pars_date[1] == (dNow.getMonth()+1) && pars_date[2] == dNow.getDate()){
                            if(dNow.getHours() >= pars_time[0]){
-                                console.log(pars_time[0]);
-                                console.log(pars_time[1]);
-                                console.log(dNow.getHours());
-                                console.log(dNow.getMinutes());
+                                div_video = "#slider-2";
+                                $('#index-live-2').toggle();  
                             }
 
                         }
