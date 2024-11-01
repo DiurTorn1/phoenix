@@ -97,17 +97,19 @@ function paint_element_stream(){
                     var output = $.parseJSON(data);
                     var pub_name = output? output[1]: '1';
                     var key_sell = 0;
-                    var dNow = new Date();
-                    var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+
                     //
                     
                     if(pub_name==name_stream_gl && finish_time == null){
                         console.log(localdate);
                         console.log(finish_time);
-                        console.log(started_time);
+                        var dNow = new Date();
+                        //var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
                         var div_video = "#slider";
                         var data_div = $('#slider-2').html();
-                        console.log(data_div);
+                        var pars_data = started_time.split("T");
+                        console.log(pars_data[0]);
+                        console.log(pars_data[1]);
                         var key_player = 0, key_player1 = 0;
                         for(var i = 0; i < public_product_perm2.length; i++){
                             var get_var = public_product_perm2[i];
