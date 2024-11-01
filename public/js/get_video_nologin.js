@@ -48,9 +48,25 @@ function paint_element_stream(){
                     //console.log(localdate);
                     //console.log(finish_time);
                     if(pub_name==name_stream_gl && finish_time == null){
+                        var dNow = new Date();
+                        //var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+                        var div_video = "#slider";
+                        var data_div = $('#slider-2').html();
+                        var pars_data = started_time.split("T");
+                        //console.log(pars_data[0]);
+                        var pars_date = pars_data[0].split("-");
+                        //console.log(pars_data[1]);
+                        var pars_time = pars_data[1].split(":");
+                        if(pars_date[0] == dNow.getFullYear() && pars_date[1] == (dNow.getMonth()+1) && pars_date[2] == dNow.getDate()){
+                           if(dNow.getHours() >= pars_time[0]){
+                                div_video = "#slider-2";
+                                $('#index-live-2').toggle();  
+                            }
+
+                        }
                         if(key_prod_perm_stream){
                             //console.log(key_prod_perm_stream);
-                            $("#slider").append(
+                            $(div_video).append(
                                 '<div class="slide no-bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
                                         '<a >'+ 
@@ -66,7 +82,7 @@ function paint_element_stream(){
                                     '</div>'+
                                 '</div>');
                         } else {
-                            $("#slider").append(
+                            $(div_video).append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+
                                     '<div class="index-live-item-video">'+
                                         '<a >'+ 
