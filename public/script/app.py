@@ -8,6 +8,7 @@ def process_data():
     if data:
         processed_data = "Processed: " + data
         print(processed_data)
+        put = "Maksimalochka"
         return jsonify({'status': 'success', 'output': processed_data})
     else:
         return jsonify({'status': 'error', 'message': 'No data provided'})
