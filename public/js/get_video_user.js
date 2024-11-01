@@ -108,8 +108,14 @@ function paint_element_stream(){
                         var div_video = "#slider";
                         var data_div = $('#slider-2').html();
                         var pars_data = started_time.split("T");
-                        console.log(pars_data[0]);
-                        console.log(pars_data[1]);
+                        //console.log(pars_data[0]);
+                        var pars_date = pars_data[0].split("-");
+                        //console.log(pars_data[1]);
+                        var pars_time = pars_data[1].split(":");
+                        if(pars_time[0] == dNow.getFullYear()){
+                            console.log(pars_time[1]);
+                            console.log(dNow.getMonth()+1);
+                        }
                         var key_player = 0, key_player1 = 0;
                         for(var i = 0; i < public_product_perm2.length; i++){
                             var get_var = public_product_perm2[i];
