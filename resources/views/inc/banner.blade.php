@@ -53,8 +53,8 @@
 
         </form>
 		<div class="popup-content-wrap-row register-wrapper">
-			<a href="" class="register-link" id="registr_push">Регистрация</a>
-			<a href="" class="mem-password">Забыли пароль?</a>
+			<a class="register-link" id="registr_push">Регистрация</a>
+			<a class="mem-password">Забыли пароль?</a>
 		</div>
 	</div>
 </div>
