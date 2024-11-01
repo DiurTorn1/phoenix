@@ -21,6 +21,7 @@ function paint_element_stream(){
             var id_stream_prod = list.id;
             var key_prod_perm_stream = 0;
             var finish_time = list.stream.finished_at;
+            var started_time = list.stream.started_at;
             for(var i = 0; i < public_product_perm.length; i++){
                 //console.log(public_product_perm[i]);
                 if(public_product_perm[i] == id_stream_prod){
