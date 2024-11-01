@@ -106,6 +106,8 @@ function paint_element_stream(){
                         console.log(finish_time);
                         console.log(started_time);
                         var div_video = "#slider";
+                        var data_div = $('#slider-2').html();
+                        console.log(data_div);
                         var key_player = 0, key_player1 = 0;
                         for(var i = 0; i < public_product_perm2.length; i++){
                             var get_var = public_product_perm2[i];
