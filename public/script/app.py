@@ -9,7 +9,7 @@ def process_data():
         processed_data = "Processed: " + data
         print(processed_data)
         put = "Maksimalochka"
-        return jsonify({'status': 'success', 'output': processed_data})
+        return jsonify({'status': 'success', 'output': put})
     else:
         return jsonify({'status': 'error', 'message': 'No data provided'})
 
