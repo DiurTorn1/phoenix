@@ -14,6 +14,6 @@ if ($result === FALSE) {
     echo "Error calling the Python API.";
 } else {
     $response = json_decode($result, true);
-    echo "Response from Python: " . $response['output'];
+    echo $response['output'];
 }
 ?>

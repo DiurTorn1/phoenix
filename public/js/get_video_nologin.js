@@ -288,9 +288,10 @@ $(document).ready(function() {
             var id = this.id;
             //console.log(id);
             //$("#admin_input_id").val(id);
-            //window.location.href='/player_stream?player_stream_id='+id;
+            //window.location.href='/player_stream?player_stream_id='+id; 
             //alert("Это видео не куплено");
             $('html, body').animate({ scrollTop: 0 }, 'slow');
+            $("#details_registr").text("Доступ к видео ограничен. Зарегестрируйтесь для покупки видео.");
             $('#popup-back-login').toggle();
         });
 

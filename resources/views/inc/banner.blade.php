@@ -45,8 +45,8 @@
 						Войти
                     </button>
 					<div class="popup-content-wrap-row register-wrapper">
-						<a href="#" class="register-link">Регистрация</a>
-						<a href="#" class="mem-password">Забыли пароль?</a>
+						<a href="" class="register-link" id="registr_push">Регистрация</a>
+						<a href="" class="mem-password">Забыли пароль?</a>
 					</div>
 				</div>
 			</div>
@@ -63,7 +63,7 @@
 				<div class="popup-title-wrap">
 					<button class="popup-close close-btn" id="popup-close-login" title="Закрыть"><img src="{{ asset('img/close.png') }}" alt="Закрыть"></button>
 					<h2 class="popup-title">Регистрация</h2>
-					<h3 class="popup-title">Доступ к видео ограничен. Зарегестрируйтесь для покупки видео.</h3>
+					<h3 class="popup-title" id="details_registr"></h3>
 				</div>
 				<div class="popup-content-wrap">
                 	<input id="user-input" type="email" placeholder="Введите email" class="user-input @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus> 
