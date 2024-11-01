@@ -101,8 +101,8 @@ function paint_element_stream(){
                     //
                     
                     if(pub_name==name_stream_gl && finish_time == null){
-                        console.log(localdate);
-                        console.log(finish_time);
+                        //console.log(localdate);
+                        //console.log(finish_time);
                         var dNow = new Date();
                         //var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
                         var div_video = "#slider";
