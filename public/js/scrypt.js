@@ -24,7 +24,7 @@ $(document).ready(function() {
     $("#send_mail").on('click',function(){
         var data = "test";
         $.ajax({
-            url: 'http://127.0.0.1:5000',
+            url: '/',
             type: 'POST',
             data: { data: data },
             success: function(response) {
