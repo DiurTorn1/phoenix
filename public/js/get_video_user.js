@@ -112,10 +112,10 @@ function paint_element_stream(){
                         var pars_date = pars_data[0].split("-");
                         //console.log(pars_data[1]);
                         var pars_time = pars_data[1].split(":");
-                        if(pars_date[0] == dNow.getFullYear() && pars_date[1] == (dNow.getMonth()+1)){
-                            if(pars_date[2] == dNow.getDate()){
-                                console.log(pars_date[2]);
-                                console.log('0'+dNow.getDate());
+                        if(pars_date[0] == dNow.getFullYear() && pars_date[1] == (dNow.getMonth()+1) && pars_date[2] == dNow.getDate()){
+                            if(pars_time[0] <= dNow.getHours() && pars_time[0] <= dNow.getMinutes()){
+                                console.log(pars_time[0]);
+                                console.log(pars_time[1]);
                             }
 
                         }
