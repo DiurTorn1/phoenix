@@ -7,6 +7,7 @@ def process_data():
     data = request.json.get('data')
     if data:
         processed_data = "Processed: " + data
+        print(processed_data)
         return jsonify({'status': 'success', 'output': processed_data})
     else:
         return jsonify({'status': 'error', 'message': 'No data provided'})
