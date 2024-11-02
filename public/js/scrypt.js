@@ -22,7 +22,7 @@ $(document).ready(function() {
     });
 
     $("#send_mail").on('click',function(){
-        var data = "test";
+        var mail = "xxx@mail.ru";
         var email_get = $("#user-input-registr").val();
         if(!email_get){
             $("#details_registr").text("Графа с андресом почты не должно быть пустым");
@@ -32,7 +32,7 @@ $(document).ready(function() {
             $("#user-input-registr").toggle();
             $("#send_mail").toggle();
             $("#details_registr").text("Отправка сообщения на указанную почту...");
-            $.post('/php/python_send.php',{data:data}, function(data) {   
+            $.post('/php/python_send.php',{mail:mail}, function(data) {   
                 
                 if(data == 'Error'){
                     $("#details_registr").text("Ошибка отправки сообщения!!!");
