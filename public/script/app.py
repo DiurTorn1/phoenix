@@ -7,7 +7,7 @@ from email.mime.multipart import MIMEMultipart
 # Email configuration
 sender_email = "tehnodir.d@mail.ru"
 receiver_email = "diur_tornbeornson@mail.ru"
-subject = "Styled HTML Email from Python"
+subject = "Подтверждение почты в сервисе Феникс"
 
 
 
@@ -34,7 +34,7 @@ def process_data():
             <head>
                 <meta charset="UTF-8">
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-                <title>Email Confirmation</title>
+                <title>Поодтверждение</title>
                 <style>
                 body {
                     font-family: Arial, sans-serif;
