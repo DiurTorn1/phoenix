@@ -1,5 +1,5 @@
 <?php
-$data = "Hello from PHP";
+$data = array("mail" => "xxx@mail.ru");
 $url = 'http://127.0.0.1:5000/process_data';
 $options = array(
     'http' => array(
