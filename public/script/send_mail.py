@@ -69,7 +69,7 @@ msg.attach(MIMEText(html_message, 'html'))
 # Send the email
 try:
     # Use SMTP_SSL for secure connection
-    with smtplib.SMTP_SSL('smtp.localhost', 465) as server:
+    with smtplib.SMTP_SSL('localhost', 465) as server:
         server.login(sender_email, "190984Dilen!?")
         server.sendmail(sender_email, receiver_email, msg.as_string())
     print("Email sent successfully!")
