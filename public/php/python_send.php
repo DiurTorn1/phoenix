@@ -1,11 +1,11 @@
 <?php
-$data = array("mail" => "xxx@mail.ru");
+$data = $_POST['mail'];
 $url = 'http://127.0.0.1:5000/process_data';
 $options = array(
     'http' => array(
         'header'  => "Content-type: application/json\r\n",
         'method'  => 'POST',
-        'content' => json_encode(array('mail' => $_POST['mail'])),
+        'content' => json_encode(array('data' => $data, 'mail' => 'nnn')),
     ),
 );
 $context  = stream_context_create($options);
