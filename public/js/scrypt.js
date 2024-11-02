@@ -29,19 +29,24 @@ $(document).ready(function() {
         } else {
             var split_email = email_get.split("@");
             console.log(split_email[1]);
-            $("#user-input-registr").toggle();
-            $("#send_mail").toggle();
-            $("#details_registr").text("Отправка сообщения на указанную почту...");
-            $.post('/php/python_send.php',{mail:mail}, function(data) {   
-                
-                if(data == 'Error'){
-                    $("#details_registr").text("Ошибка отправки сообщения!!!");
-                    $("#user-input-registr").toggle();
-                    $("#send_mail").toggle();
-                }else{
-                    console.log(data);
-                }
-            });
+            if(!split_email[1]){
+                $("#details_registr").text("Адрес почты должен содержать символ @...");
+            }else {
+                $("#user-input-registr").toggle();
+                $("#send_mail").toggle();
+                $("#details_registr").text("Отправка сообщения на указанную почту...");
+                $.post('/php/python_send.php',{mail:mail}, function(data) {   
+                    
+                    if(data == 'Error'){
+                        $("#details_registr").text("Ошибка отправки сообщения!!!");
+                        $("#user-input-registr").toggle();
+                        $("#send_mail").toggle();
+                    }else{
+                        console.log(data);
+                    }
+                });
+            }
+
         }
 
         //alert("Send email");

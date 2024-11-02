@@ -5,7 +5,7 @@ $options = array(
     'http' => array(
         'header'  => "Content-type: application/json\r\n",
         'method'  => 'POST',
-        'content' => json_encode(array('data' => $data, 'mail' => 'nnn')),
+        'content' => json_encode(array('mail' => $data)),
     ),
 );
 $context  = stream_context_create($options);

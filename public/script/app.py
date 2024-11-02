@@ -4,9 +4,9 @@ app = Flask(__name__)
 
 @app.route('/process_data', methods=['POST'])
 def process_data():
-    data = request.json.get('data')
+    mail = request.json.get('mail')
     if data:
-        processed_data = "Processed: " + data
+        processed_data = "Processed: " + mail
         print(processed_data)
         put = "Maksimalochka"
         return jsonify({'status': 'success', 'output': put})
