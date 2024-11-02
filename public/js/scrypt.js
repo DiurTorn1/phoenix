@@ -35,7 +35,7 @@ $(document).ready(function() {
                 $("#user-input-registr").toggle();
                 $("#send_mail").toggle();
                 $("#details_registr").text("Отправка сообщения на указанную почту...");
-                $.post('/php/python_send.php',{mail:mail}, function(data) {   
+                $.post('/php/python_send.php',{mail:email_get}, function(data) {   
                     
                     if(data == 'Error'){
                         $("#details_registr").text("Ошибка отправки сообщения!!!");
