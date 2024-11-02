@@ -17,8 +17,7 @@ msg['From'] = sender_email
 msg['To'] = receiver_email
 msg['Subject'] = subject
 
-# Attach the HTML message to the email
-msg.attach(MIMEText(html_message, 'html'))
+
 
 app = Flask(__name__)
 
@@ -81,7 +80,8 @@ def process_data():
         </body>
         </html>
         """
-
+        # Attach the HTML message to the email
+        msg.attach(MIMEText(html_message, 'html'))
         put = "Maksimalochka"
         try:
             # Use SMTP_SSL for secure connection
