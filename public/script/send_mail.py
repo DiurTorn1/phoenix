@@ -70,7 +70,7 @@ msg.attach(MIMEText(html_message, 'html'))
 try:
     # Use SMTP_SSL for secure connection
     with smtplib.SMTP_SSL('smtp.mail.ru', 465) as server:
-        server.login(sender_email, "89340426Gerd!")
+        server.login(sender_email, "2jU9mvTg5EajYrizvbwV")
         server.sendmail(sender_email, receiver_email, msg.as_string())
     print("Email sent successfully!")
 except Exception as e:
