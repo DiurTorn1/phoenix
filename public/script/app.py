@@ -74,7 +74,7 @@ def process_data():
             <div class="container">
                 <h1>Добро пожаловать в сервис спортивных трансляций Феникс</h1>
                 <p>Благодприм вас за регистрацию! Нажмите на кнопку для подтверждения почты:</p>
-                <a href="https://phoenix.tehnodir.ru/ class="button">Подтвердить почту</a>
+                <a href="https://phoenix.tehnodir.ru/login" class="button">Подтвердить почту</a>
                 <p>Если вы не ригестрировались на данном сервисе, то проигнорируйте сообщение.</p>
             </div>
         </body>
