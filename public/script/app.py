@@ -55,7 +55,7 @@ html_message = """
     <div class="container">
         <h1>Welcome to Our Service</h1>
         <p>Thank you for registering! Please confirm your email address by clicking the button below:</p>
-        <a href="{{ url_for('confirm_email', token=token, _external=True) }}" class="button">Confirm Email</a>
+        <a href="{{ url_for('confirm_email', token=token, _external=True) }}" class="button">Подтвердить почту</a>
         <p>If you did not register for this service, you can safely ignore this email.</p>
     </div>
 </body>
