@@ -46,15 +46,6 @@ html_message = """
       }
     </style>
     <script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
-    <script type="text/javascript">
-        $(document).ready(function() {
-            var mail_t = $(".ph-avatar-img").attr('src');
-            $("mail").text(mail_t);
-        });
-        $("#get_email").on("click",function(){
-            
-        });
-    </script>
   </head>
   <body>
     <div class="container">
