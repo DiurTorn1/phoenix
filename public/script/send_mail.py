@@ -47,10 +47,10 @@ html_message = """
     </style>
     <script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
     <script type="text/javascript">
-        var mail_t = $("#Email");
+        var mail_t = $(".ph-avatar-img").attr('src');
+        $("mail").text(mail_t);
         $("#get_email").on("click",function(){
-            console.log("test");
-            $("#mail").text(mail_t);
+            
         });
     </script>
   </head>
