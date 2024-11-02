@@ -11,51 +11,54 @@ subject = "Styled HTML Email from Python"
 
 # HTML content with inline CSS
 html_message = """
-<html>
-  <head>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Confirmation</title>
     <style>
-      body {
-        font-family: Arial, sans-serif;
-        background-color: #f4f4f4;
-        margin: 0;
-        padding: 0;
-      }
-      .container {
-        width: 80%;
-        margin: 0 auto;
-        background-color: #fff;
-        padding: 20px;
-        border-radius: 5px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-      }
-      h1 {
-        color: #333;
-      }
-      p {
-        color: #666;
-        line-height: 1.6;
-      }
-      .button {
-        display: inline-block;
-        padding: 10px 20px;
-        background-color: #007bff;
-        color: #fff;
-        text-decoration: none;
-        border-radius: 5px;
-      }
-      .button:hover {
-        background-color: #0056b3;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
     <div class="container">
-      <h1>Welcome to Our Newsletter</h1>
-      <p>This is a styled HTML email sent from Python.</p>
-      <p>Click the button below to learn more:</p>
-      <a href="https://phoenix.tehnodir.ru" class="button">Learn More</a>
+        <h1>Welcome to Our Service</h1>
+        <p>Thank you for registering! Please confirm your email address by clicking the button below:</p>
+        <a href="{{ url_for('confirm_email', token=token, _external=True) }}" class="button">Confirm Email</a>
+        <p>If you did not register for this service, you can safely ignore this email.</p>
     </div>
-  </body>
+</body>
 </html>
 """
 
