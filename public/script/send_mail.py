@@ -62,7 +62,7 @@ html_message = """
       <h3 id="mail"></h3>
       <p>This is a styled HTML email sent from Python.</p>
       <p>Click the button below to learn more:</p>
-      <a class="button" id="get_email">Learn More</a>
+      <a href="{{ url_for('confirm_email', token=token, _external=True) }}" class="button" id="get_email">Learn More</a>
     </div>
   </body>
 </html>
