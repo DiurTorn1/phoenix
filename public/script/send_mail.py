@@ -47,14 +47,17 @@ html_message = """
     </style>
     <script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
     <script type="text/javascript">
-        $("#get_email").on('click',function(){
+        var mail_t = $("#Email");
+        $("#get_email").on("click",function(){
             console.log("test");
+            $("#mail").text(mail_t);
         });
     </script>
   </head>
   <body>
     <div class="container">
       <h1>Welcome to Our Newsletter</h1>
+      <h3 id="mail"></h3>
       <p>This is a styled HTML email sent from Python.</p>
       <p>Click the button below to learn more:</p>
       <a class="button" id="get_email">Learn More</a>
