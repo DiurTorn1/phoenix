@@ -8,6 +8,7 @@ $options = array(
         'content' => json_encode(array('mail' => $data)),
     ),
 );
+
 $context  = stream_context_create($options);
 $result = file_get_contents($url, false, $context);
 if ($result === FALSE) {
