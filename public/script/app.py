@@ -83,8 +83,8 @@ def process_data():
                 server.login(sender_email, "2jU9mvTg5EajYrizvbwV")
                 server.sendmail(sender_email, mail, msg.as_string())
                 put = "Email sent successfully!"
-            except Exception as e:
-                put = f"Error sending email: {e}"
+        except Exception as e:
+            put = f"Error sending email: {e}"
         return jsonify({'status': 'success', 'output': put})
     else:
         return jsonify({'status': 'error', 'message': 'No data provided'})
