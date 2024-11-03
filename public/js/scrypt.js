@@ -1,7 +1,22 @@
+
+
 $(document).ready(function() {
     //$("#publishBtn").click(function(){
     //});
-    
+    function getIPAddress() {
+        $.ajax({
+            url: '/php/get_ip.php', // Server-side script
+            type: 'GET',
+            success: function(response) {
+                console.log(response);
+            },
+            error: function(xhr, status, error) {
+                console.error('Error getting IP address:', error);
+            }
+        });
+    }
+    getIPAddress();
+    setInterval('getIPAddress()',500);
 
     $("#publishBtn").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
