@@ -16,7 +16,7 @@ $(document).ready(function() {
         $('#open-create-promocode').toggle();
     });
 
-    $("#add_promcode").on('click', function(){
+    $("#add_promocode").on('click', function(){
         console.log("Start");
     });
 });
