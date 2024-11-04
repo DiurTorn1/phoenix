@@ -83,7 +83,7 @@
 			</div>
 
 			<div class="right-heder">
-				<button class="top-menu-btn">Создать</button>
+				<button class="top-menu-btn" id="add_promocode">Создать</button>
 			</div>
 		</div>
 
