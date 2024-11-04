@@ -1,7 +1,7 @@
 @extends('admin_panel')
 @section('title-block') Промокоды @endsection
 @section('admin_res')
-
+<script type="text/javascript" src = "{{ asset('js/promocode.js') }}"></script> 
 <div class="top-menu-admin admin-back">
 			<div class="top-menu-head">
 				<h2 class="top-menu-title">Промокоды</h2>
