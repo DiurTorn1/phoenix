@@ -13,6 +13,6 @@ $(document).ready(function() {
     });
 
     $("#close-add-promocode").on('click', function(){
-        $('#open-create-multi-promocode').toggle();
+        $('#open-create-promocode').toggle();
     });
 });
