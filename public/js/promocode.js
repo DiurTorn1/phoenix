@@ -7,4 +7,12 @@ $(document).ready(function() {
     $("#add-multi-promocode").on('click', function(){
         $('#open-create-multi-promocode').toggle();
     });
+    
+    $("#close-multi-promocode").on('click', function(){
+        $('#open-create-multi-promocode').toggle();
+    });
+
+    $("#close-add-promocode").on('click', function(){
+        $('#open-create-multi-promocode').toggle();
+    });
 });
