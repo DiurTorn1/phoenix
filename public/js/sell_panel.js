@@ -1,6 +1,7 @@
-var promocode, sale, key_promocode = 0, price_product;
+var promocode, sale, key_promocode = 0, price_product, res_price;
 function getPromocode() {
     promocode = $("#promocode_product_sell").val();
+    res_price = price_product;
     if(promocode){
         //console.log(promocode);
         $.post('/php/get_promocode_name.php',{ name:promocode }, function(data)  {
@@ -11,6 +12,7 @@ function getPromocode() {
                 var sale = parseInt(output[5]);
                 //console.log(price-(sale*0.01*price));
                 var res_sale = price-(sale*0.01*price);
+                res_price = res_sale;
                 $('#price_product_sell').val(res_sale);
                 //sale = output[5];
             }
@@ -63,7 +65,7 @@ $(document).ready(function() {
         //console.log(src_product);
         //console.log(name_product);
         //console.log(price_product);
-        $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:price_product, id_product:id_product}, function(data)  {
+        $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:res_price, id_product:id_product}, function(data)  {
             //console.log(data);
             window.location.href=data;
         });
