@@ -4,7 +4,10 @@ function getPromocode() {
     if(promocode){
         //console.log(promocode);
         $.post('/php/get_promocode_name.php',{ name:promocode }, function(data)  {
-            console.log(data);
+            if(data){
+                console.log(data);
+            }
+            
         });
     }
     
