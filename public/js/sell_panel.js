@@ -8,7 +8,8 @@ function getPromocode() {
             var sale_loc;
             if(output){
                 //var sale = output ? output[4]:'';
-                console.log(output[4]);
+                console.log(output[5]);
+                sale = output[5];
             }
             
             
@@ -54,7 +55,7 @@ $(document).ready(function() {
         price_product = price_product_loc;
         id_product = id_product_loc;
     });
-
+    console.log(sale);
     $("#bay_product").on('click', function() {
         //console.log(src_product);
         //console.log(name_product);
