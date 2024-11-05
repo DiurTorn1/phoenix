@@ -21,7 +21,6 @@ $(document).ready(function() {
         var title = $("#title_promocode_top").val();
         console.log(title);
         if(!title){
-            $("#log_promocode_add").toggle();
             $("#log_promocode_add").text("Графа с заголовком не должна быть пустой.");
         }
         var promo_company = $("#promo_company").val();
@@ -30,6 +29,9 @@ $(document).ready(function() {
         console.log(code_promocode);
         var limit_promocode = $("#limit_promocode").val();
         var int_limit_promocode = parseInt(limit_promocode);
+        if(int_limit_promocode == NaN){
+            $("#log_promocode_add").text("Графа с лимитом должна содержить цифру.");
+        }
         console.log(int_limit_promocode);
     });
 });
