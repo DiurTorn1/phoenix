@@ -73,8 +73,19 @@ $(document).ready(function() {
         console.log(product_promocode);
 
         var datetime_start = $("#datetime_start").val();
-        console.log(datetime_start);
+        var res_datetime_start = "";
+        var pars_datetime_start = datetime_start.split("T");
+        res_datetime_start = pars_datetime_start[0] + " " + pars_datetime_start[1] + ":00";
+        console.log(res_datetime_start);
+
         var datetime_stop = $("#datetime_stop").val();
-        console.log(datetime_stop);
+        var res_datetime_stop = "";
+        var pars_datetime_stop = datetime_stop.split("T");
+        res_datetime_stop = pars_datetime_stop[0] + " " + pars_datetime_stop[1] + ":00";
+        console.log(res_datetime_stop);
+
+        var dNow = new Date();
+        var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+        console.log(localdate);
     });
 });
