@@ -1,7 +1,7 @@
 <?php
 require "config_bd.php";
 
-$sql = "SELECT `id`, `name`, `promo-company`, `code`, `limit-code`, `sale-pers`, `sale-sum`, `product`, `datetime-start`, `datetime-stop`, `datetime-at` FROM `promocode` WHERE name='".$_POST['name']."'";
+$sql = "SELECT `id`, `name`, `promo-company`, `code`, `limit-code`, `sale-pers`, `sale-sum`, `product`, `datetime-start`, `datetime-stop`, `datetime-at` FROM `promocode` WHERE code='".$_POST['name']."'";
 
 $result = $conn->query($sql);
 $row = $result->fetch_row();
