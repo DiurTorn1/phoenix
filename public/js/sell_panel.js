@@ -5,7 +5,7 @@ $(document).ready(function() {
         console.log(promocode);
     }
     getPromocode();
-    setInterval('get_stream_array()',500);
+    setInterval('getPromocode()',500);
     var params = new window.URLSearchParams(window.location.search);
     //user_sell='+user_email+ '&id_product_sell='+id
     var user_sell = params.get('user_sell');
