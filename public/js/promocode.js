@@ -21,6 +21,7 @@ $(document).ready(function() {
         var title = $("#title_promocode_top").val();
         console.log(title);
         if(!title){
+            $("#log_promocode_add").toggle();
             $("#log_promocode_add").text("Графа с заголовком не должна быть пустой.");
         }
     });
