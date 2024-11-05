@@ -1,7 +1,10 @@
 var promocode;
 function getPromocode() {
     promocode = $("#promocode_product_sell").val();
-    console.log(promocode);
+    if(promocode){
+        console.log(promocode);
+    }
+    
 }
 
 $(document).ready(function() {
