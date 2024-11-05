@@ -1,9 +1,11 @@
+var promocode;
+function getPromocode() {
+    promocode = $("#promocode_product_sell").val();
+    console.log(promocode);
+}
+
 $(document).ready(function() {
-    var promocode;
-    function getPromocode() {
-        promocode = $("#promocode_product_sell").val();
-        console.log(promocode);
-    }
+
     getPromocode();
     setInterval('getPromocode()',500);
     var params = new window.URLSearchParams(window.location.search);
