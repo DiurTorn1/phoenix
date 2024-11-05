@@ -71,5 +71,10 @@ $(document).ready(function() {
         console.log(int_sum_sale);
         var product_promocode = $("#product_promocode option:selected").text();
         console.log(product_promocode);
+
+        var datetime_start = $("#datetime_start").val();
+        console.log(datetime_start);
+        var datetime_stop = $("#datetime_stop").val();
+        console.log(datetime_stop);
     });
 });

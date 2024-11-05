@@ -164,12 +164,12 @@
 			<div class="top-menu-sort block-admin-section">
 				<div class="admin-input-box admin-input-width50">
 					<label>Действует с *</label>
-					<input class="admin-input admin-input-width-date" required type="datetime-local" title="Дата начала действия промокода">
+					<input class="admin-input admin-input-width-date" required type="datetime-local" title="Дата начала действия промокода" id="datetime_start">
 				</div>
 
 				<div class="admin-input-box admin-input-width50">
 					<label>Действует до</label>
-					<input class="admin-input admin-input-width-date" required type="datetime-local" title="Дата окончания действи промокода">
+					<input class="admin-input admin-input-width-date" required type="datetime-local" title="Дата окончания действи промокода" id="datetime_stop">
 				</div>
 			</div>
 		</div>
