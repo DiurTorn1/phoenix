@@ -94,7 +94,7 @@
 				</div>
 
 				<div class="admin-input-box block-admin-input">
-					<input type="text" title="Промо-кампания" placeholder="Промо-кампания" class="admin-input block-admin-input">
+					<input type="text" title="Промо-кампания" placeholder="Промо-кампания" class="admin-input block-admin-input" id="promo_company">
 				</div>
 
 				<div class="admin-input-box block-admin-input justi-fl-st">
@@ -114,12 +114,12 @@
 
 			<div id="discount_container" class="top-menu-sort block-admin-section tr-wrapper-mb admin-back"> <!-- блок появлятся при выборе СКИДКИ -->
 				<div class="admin-input-box admin-input-width50">
-					<input type="text" required title="Придумайте код" placeholder="Код *" class="admin-input block-admin-input">
+					<input type="text" required title="Придумайте код" placeholder="Код *" class="admin-input block-admin-input" id="code_promocode">
 				</div>
 
 				<div class="admin-input-box admin-input-width50">
 					<label>Лимит *</label>
-					<input type="text" pattern="[0-9]*" required title="Количество купонов. Допускаются только числа" class="admin-input block-admin-input">
+					<input type="text" pattern="[0-9]*" required title="Количество купонов. Допускаются только числа" class="admin-input block-admin-input" id="limit_promocode">
 				</div>
 
 				<div class="admin-input-box admin-input-width50">

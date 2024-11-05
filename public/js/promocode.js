@@ -24,5 +24,12 @@ $(document).ready(function() {
             $("#log_promocode_add").toggle();
             $("#log_promocode_add").text("Графа с заголовком не должна быть пустой.");
         }
+        var promo_company = $("#promo_company").val();
+        console.log(promo_company);
+        var code_promocode = $("#code_promocode").val();
+        console.log(code_promocode);
+        var limit_promocode = $("#limit_promocode").val();
+        var int_limit_promocode = parseInt(limit_promocode);
+        console.log(int_limit_promocode);
     });
 });
