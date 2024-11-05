@@ -151,9 +151,8 @@
 			<div class="top-menu-sort block-admin-section">
 				<div class="admin-input-box block-admin-input">
 					<label>Продукт</label>
-					<select class="admin-input admin-input-select block-admin-input">
-						<option value="">Тестовый продукт 1</option>
-						<option value="">Тестовый продукт номер 2</option>
+					<select class="admin-input admin-input-select block-admin-input" id="product_promocode">
+						<option value="">Продукт не выбран</option>
 					</select>
 				</div>
 			</div>

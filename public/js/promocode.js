@@ -1,4 +1,27 @@
 $(document).ready(function() {
+
+    $.post('/php/get_product_all.php', function(data)  {
+        //for(var i=0; i<data.length;i++){
+            var output = $.parseJSON(data);
+            $.each(output,function(i,item){
+                if(!item.initial){
+                    $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
+                        var pars = data.split("&");
+                        //console.log(pars[1]);
+                        $('#product_promocode').append($('<option>', {
+                            value: 1,
+                            text: pars[1]
+                        }));
+                    });
+
+                }
+
+                //console.log(item.id_product);
+            });
+            
+        //}
+        
+    });
     
     $("#add-new-promocode").on('click', function(){
         $('#open-create-promocode').toggle();
@@ -46,5 +69,7 @@ $(document).ready(function() {
             $("#log_promocode_add").text("Графа со скидкой должна содержить цифру.");
         }
         console.log(int_sum_sale);
+        var product_promocode = $("#product_promocode option:selected").text();
+        console.log(product_promocode);
     });
 });
