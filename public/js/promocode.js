@@ -23,7 +23,7 @@ $(document).ready(function() {
         
     });
 
-    $.post('/php/get_ppromocode_all.php', function(data)  {
+    $.post('/php/get_promocode_all.php', function(data)  {
         var output = $.parseJSON(data);
         console.log(output);
     });
