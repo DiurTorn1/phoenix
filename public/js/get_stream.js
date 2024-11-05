@@ -293,6 +293,7 @@ $(document).ready(function() {
         
         $("#delete_stream_checkbox").on('click', function() {
             $("#window_ok").toggle();
+            $("#div_button_window").toggle();
             $("#aler_window").text("Удаление стрима");
             for(var i = 0; i < 5; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
