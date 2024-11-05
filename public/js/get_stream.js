@@ -393,6 +393,7 @@ $(document).ready(function() {
     });
     $("#button_window_OK").on('click', function() {
         $("#window_ok").toggle();
+        window.location.href='/stream';
     });
     $(document).on('dblclick', '.admin-video-item', function() {
         var id = this.id;
