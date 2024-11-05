@@ -124,16 +124,16 @@ function paint_element_stream(){
                     var res_parstart1 = res_parstart[0].split("-");
                     var res_parstart2 = res_parstart[1].split(":");
                     var teme_plus = parseInt(res_parstart2[0])+3;
-                    var dNow = new Date();
-                    var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+                    //var dNow = new Date();
+                    //var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
                     //console.log(localdate);
-                    if(res_parstart1[2] <= (dNow.getDate()-7) && res_parstart1[1] == (dNow.getMonth()+1) && res_parstart1[0] == dNow.getFullYear()){
+                    /*if(res_parstart1[2] <= (dNow.getDate()-7) && res_parstart1[1] == (dNow.getMonth()+1) && res_parstart1[0] == dNow.getFullYear()){
                         console.log(list.stream.finished_at + "   :   " + list.id + "    :    " + list.name);
                     } else if(res_parstart1[2] >= (dNow.getDate()-7) && res_parstart1[1] <= (dNow.getMonth()+1) && res_parstart1[0] == dNow.getFullYear()){
                         console.log(list.stream.finished_at + "   :   " + list.id + "    :    " + list.name);
                     } else if(res_parstart1[2] >= (dNow.getDate()-7) && res_parstart1[1] >= (dNow.getMonth()+1) && res_parstart1[0] <= dNow.getFullYear()){
                         console.log(list.stream.finished_at + "   :   " + list.id + "    :    " + list.name);
-                    }
+                    }*/
                     //console.log(teme_plus);
                     var tttime = '';
                     if(teme_plus <= 9){
@@ -333,7 +333,9 @@ $(document).ready(function() {
                     
                     $.post('/php/delete_stream.php', {id:id}, function(data){
                         //console.log("Delete stream: " + data);
-                        alert("Стрим удалён!");
+                        //alert("Стрим удалён!");
+                        $("#aler_window").text("Стрим удален");
+                        $("#window_ok").toggle();
                     });
                     
                 }
@@ -382,6 +384,12 @@ $(document).ready(function() {
         key_main_chack = 1;
     });
     
+    $("#close-window").on('click', function() {
+        $("#window_ok").toggle();
+    });
+    $("#button_window_OK").on('click', function() {
+        $("#window_ok").toggle();
+    });
     $(document).on('dblclick', '.admin-video-item', function() {
         var id = this.id;
         $("#admin_input_id").val(id);

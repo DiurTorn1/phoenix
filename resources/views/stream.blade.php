@@ -63,4 +63,48 @@
 			</div>
 		</div>
 		<!--<button id="test_sell">Sell</button>-->
+
+<div class="product-content-popup" id="window_ok"> <!--------- PopUP --------->
+	<div class="admin-content block-admin-left-w650 fix-position">
+
+		<div class="header admin-header">
+			<div class="left-header">
+				<a href="#" class="close-btn" id="close-window" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
+				<!--<h2 class="top-menu-title">Создать промокод</h2>-->
+			</div>
+		</div>
+		<div class="admin-back">
+			<h3 id="aler_window"></h3>
+			<!--<div class="top-menu-sort block-admin-section">
+				<div class="admin-input-box block-admin-input">
+					<label>Продукт</label>
+					<select class="admin-input admin-input-select block-admin-input" id="product_promocode">
+						<option value="">Продукт не выбран</option>
+					</select>
+				</div>
+			</div>
+
+			<div class="top-menu-sort block-admin-section pb-none">
+				<p>Срок действия:</p>
+			</div>
+			
+			<div class="top-menu-sort block-admin-section">
+				<div class="admin-input-box admin-input-width50">
+					<label>Действует с *</label>
+					<input class="admin-input admin-input-width-date" required type="datetime-local" title="Дата начала действия промокода" id="datetime_start">
+				</div>
+
+				<div class="admin-input-box admin-input-width50">
+					<label>Действует до</label>
+					<input class="admin-input admin-input-width-date" required type="datetime-local" title="Дата окончания действи промокода" id="datetime_stop">
+				</div>
+			</div>-->
+			<div class="right-heder">
+				<button class="top-menu-btn" id="button_window_OK">OK</button>
+			</div>
+		</div>
+
+	</div>
+
+</div>
 @endsection
