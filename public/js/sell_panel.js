@@ -11,7 +11,7 @@ function getPromocode() {
                 var sale = parseInt(output[5]);
                 //console.log(price-(sale*0.01*price));
                 var res_sale = price-(sale*0.01*price);
-                $('#price_product_sell').val(price_product_loc);
+                $('#price_product_sell').val(res_sale);
                 //sale = output[5];
             }
             
