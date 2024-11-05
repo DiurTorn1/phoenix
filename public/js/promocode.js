@@ -18,6 +18,7 @@ $(document).ready(function() {
 
     $("#add_promocode").on('click', function(){
         //console.log("Start");
+        $("#log_promocode_add").text("");
         var title = $("#title_promocode_top").val();
         console.log(title);
         if(!title){
