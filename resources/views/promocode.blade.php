@@ -26,7 +26,7 @@
 		</div>
 
 	<table> <!------------ Список промокодов --------------->
-		<tbody class="tbody-wrapper">
+		<tbody class="tbody-wrapper" id="body_promocode">
 		 	<tr class="tr-wrapper admin-video-item admin-back">
 
 		 		<td class="table-one-column-check">
