@@ -9,8 +9,9 @@ function getPromocode() {
             if(output){
                 var price = parseInt(price_product);
                 var sale = parseInt(output[5]);
-                console.log(price-(sale*0.01*price));
-                //$('#price_product_sell').val(price_product_loc);
+                //console.log(price-(sale*0.01*price));
+                var res_sale = price-(sale*0.01*price);
+                $('#price_product_sell').val(price_product_loc);
                 //sale = output[5];
             }
             
