@@ -87,5 +87,14 @@ $(document).ready(function() {
         var dNow = new Date();
         var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
         console.log(localdate);
+
+        $.post('/php/promocode_add.php', { title: title, promo_company:promo_company, code_promocode:code_promocode, limit_promocode:int_limit_promocode,
+                                        sale_in_pers:int_sale_in_pers, sum_sale:int_sum_sale, product_promocode:product_promocode, res_datetime_start:res_datetime_start,
+                                        res_datetime_stop:res_datetime_stop, create_at:localdate}, function(data){
+            if(data == "OK"){
+                alert("Промокод создан");
+            }
+            //console.log(data);
+        });
     });
 });
