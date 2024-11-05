@@ -1,13 +1,14 @@
-var promocode, sale;
+var promocode, sale, key_promocode = 0;
 function getPromocode() {
     promocode = $("#promocode_product_sell").val();
     if(promocode){
         //console.log(promocode);
         $.post('/php/get_promocode_name.php',{ name:promocode }, function(data)  {
             var output = $.parseJSON(data);
+            var sale_loc;
             if(output){
                 //var sale = output ? output[4]:'';
-                console.log(output);
+                console.log(output[4]);
             }
             
             
@@ -19,7 +20,10 @@ function getPromocode() {
 $(document).ready(function() {
 
     getPromocode();
-    setInterval('getPromocode()',500);
+    if(!key_promocode){
+        setInterval('getPromocode()',500);
+    }
+    
     var params = new window.URLSearchParams(window.location.search);
     //user_sell='+user_email+ '&id_product_sell='+id
     var user_sell = params.get('user_sell');
