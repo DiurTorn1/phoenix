@@ -37,9 +37,9 @@ $(document).ready(function() {
 				'</td>' +
 		    	'<th class="table-one-column">'+ item.name +'</th>' +
 		    	'<td><p class="promo-prew-admin">'+ item.code +'</p></td>' +
-		    	'<td>5</td>' +
 		    	'<td>0</td>' +
-		    	'<td>05 сентября 2024</td>' +
+		    	'<td>0</td>' +
+		    	'<td></td>' +
 			'</tr>');  
         });
     });

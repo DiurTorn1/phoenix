@@ -1,6 +1,11 @@
 $(document).ready(function() {
-
-
+    var promocode;
+    function getPromocode() {
+        promocode = $("#promocode_product_sell").val();
+        console.log(promocode);
+    }
+    getPromocode();
+    setInterval('get_stream_array()',500);
     var params = new window.URLSearchParams(window.location.search);
     //user_sell='+user_email+ '&id_product_sell='+id
     var user_sell = params.get('user_sell');
