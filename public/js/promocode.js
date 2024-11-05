@@ -34,5 +34,17 @@ $(document).ready(function() {
             $("#log_promocode_add").text("Графа с лимитом должна содержить цифру.");
         }
         console.log(int_limit_promocode);
+        var sale_in_pers = $("#sale_in_pers").val();
+        var int_sale_in_pers = parseInt(sale_in_pers);
+        if(!int_sale_in_pers){
+            $("#log_promocode_add").text("Графа со скидкой должна содержить цифру.");
+        }
+        console.log(int_sale_in_pers);
+        var sum_sale = $("#sum_sale").val();
+        var int_sum_sale = parseInt(sum_sale);
+        if(!int_sum_sale){
+            $("#log_promocode_add").text("Графа со скидкой должна содержить цифру.");
+        }
+        console.log(int_sum_sale);
     });
 });

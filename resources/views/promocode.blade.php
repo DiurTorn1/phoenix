@@ -124,11 +124,11 @@
 
 				<div class="admin-input-box admin-input-width50">
 					<label>Скидка в процентах (%)</label>
-					<input type="text" pattern="[0-9]*" title="Допускаются только числа" class="admin-input block-admin-input">
+					<input type="text" pattern="[0-9]*" title="Допускаются только числа" class="admin-input block-admin-input" id="sale_in_pers">
 				</div>
 				<div class="admin-input-box admin-input-width50">
 					<label>Сумма скидки</label>
-					<input type="text" pattern="[0-9]*" title="Допускаются только числа" class="admin-input block-admin-input">
+					<input type="text" pattern="[0-9]*" title="Допускаются только числа" class="admin-input block-admin-input" id="sum_sale">
 				</div>
 			</div>
 
