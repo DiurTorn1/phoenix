@@ -1,4 +1,4 @@
-var promocode, sale, key_promocode = 0;
+var promocode, sale, key_promocode = 0, price_product;
 function getPromocode() {
     promocode = $("#promocode_product_sell").val();
     if(promocode){
@@ -8,7 +8,7 @@ function getPromocode() {
             var sale_loc;
             if(output){
                 //var sale = output ? output[4]:'';
-                //console.log(output[5]);
+                console.log(price_product);
                 sale = output[5];
             }
             
@@ -38,7 +38,7 @@ $(document).ready(function() {
     var id_product;
     var src_product;
     var name_product;
-    var price_product;
+    //var price_product;
     $.post('/php/get_product_id.php',{ id:id_product[2] }, function(data)  {
         var output = $.parseJSON(data);
         var id_product_loc = output[0];
