@@ -75,6 +75,8 @@
 		</div>
 		<div class="admin-back">
 			<h3 id="aler_window"></h3>
+			<h3 id="aler_window1"></h3>
+			<h3 id="aler_window2"></h3>
 			<!--<div class="top-menu-sort block-admin-section">
 				<div class="admin-input-box block-admin-input">
 					<label>Продукт</label>
@@ -99,7 +101,7 @@
 					<input class="admin-input admin-input-width-date" required type="datetime-local" title="Дата окончания действи промокода" id="datetime_stop">
 				</div>
 			</div>-->
-			<div class="right-heder">
+			<div class="right-heder" id="div_button_window">
 				<button class="top-menu-btn" id="button_window_OK">OK</button>
 			</div>
 		</div>

@@ -292,6 +292,8 @@ $(document).ready(function() {
 
         
         $("#delete_stream_checkbox").on('click', function() {
+            $("#window_ok").toggle();
+            $("#aler_window").text("Удаление стрима");
             for(var i = 0; i < 5; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
                 if(ch1){
@@ -308,7 +310,8 @@ $(document).ready(function() {
                                 console.log(initial_get);
                                 $.post('/php/unpublic_stream.php', { name_stream: initial_get }, function(data){
                                     if(data == "OK"){
-                                        alert("Продукт снят с публикации");
+                                        //alert("Продукт снят с публикации");
+                                        $("#aler_window").text("Продукт снят с публикации");
                                     }
                                     //console.log(data);
                                 });
@@ -323,7 +326,8 @@ $(document).ready(function() {
                                 console.log(initial_get);
                                 $.post('/php/upload_product_public1.php', { initial: initial_get, initial_set: ''  }, function(data){
                                     if(data == "OK"){
-                                        alert("удалена зависимость стрима и продукта");
+                                        //alert("удалена зависимость стрима и продукта");
+                                        $("#aler_window").text("удалена зависимость стрима и продукта");
                                     }
                                     //console.log(data);
                                 });
@@ -335,7 +339,7 @@ $(document).ready(function() {
                         //console.log("Delete stream: " + data);
                         //alert("Стрим удалён!");
                         $("#aler_window").text("Стрим удален");
-                        $("#window_ok").toggle();
+                        $("#div_button_window").toggle();
                     });
                     
                 }
