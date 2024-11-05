@@ -93,6 +93,8 @@ $(document).ready(function() {
                                         res_datetime_stop:res_datetime_stop, create_at:localdate}, function(data){
             if(data == "OK"){
                 alert("Промокод создан");
+                $('#open-create-promocode').toggle();
+                window.location.href='/promocode';
             }
             //console.log(data);
         });
