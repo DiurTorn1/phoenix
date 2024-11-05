@@ -22,6 +22,24 @@ $(document).ready(function() {
         //}
         
     });
+
+    $.post('/php/get_ppromocode_all.php', function(data)  {
+        var output = $.parseJSON(data);
+        console.log(output);
+    });
+    /*<tr class="tr-wrapper admin-video-item admin-back">
+				<td class="table-one-column-check">
+		 			<div class="admin-video-sort-wrap">
+						<input id="check-promo-1" class="admin-video-sort-check" type="checkbox">
+						<label class="admin-video-check-label" for="check-promo-1"></label>
+					</div>
+				</td>
+		    	<th class="table-one-column">Промокод Волей</th>
+		    	<td><p class="promo-prew-admin">Wolley2024</p></td>
+		    	<td>5</td>
+		    	<td>0</td>
+		    	<td>05 сентября 2024</td>
+			</tr>*/ 
     
     $("#add-new-promocode").on('click', function(){
         $('#open-create-promocode').toggle();

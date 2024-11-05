@@ -41,7 +41,7 @@
 		   		<td>Выручка</td>
 		   		<td>Создан</td>
 			</tr>
-			<tr class="tr-wrapper admin-video-item admin-back">
+			<!--<tr class="tr-wrapper admin-video-item admin-back">
 				<td class="table-one-column-check">
 		 			<div class="admin-video-sort-wrap">
 						<input id="check-promo-1" class="admin-video-sort-check" type="checkbox">
@@ -53,7 +53,7 @@
 		    	<td>5</td>
 		    	<td>0</td>
 		    	<td>05 сентября 2024</td>
-			</tr>
+			</tr>-->
 		</tbody>
 	</table>
 
