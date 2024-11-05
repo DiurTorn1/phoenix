@@ -19,6 +19,7 @@ $(document).ready(function() {
     $("#add_promocode").on('click', function(){
         //console.log("Start");
         var title = $("#title_promocode_top").val();
+        console.log(title);
         if(!title){
             $("#log_promocode_add").text("Графа с заголовком не должна быть пустой.");
         }
