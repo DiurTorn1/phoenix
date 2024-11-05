@@ -88,8 +88,9 @@
 		</div>
 
 			<div class="top-menu-sort block-admin-section tr-wrapper-mb admin-back">
+				<h3 class="log_promocode_add" id="log_promocode_add"></h3>
 				<div class="admin-input-box block-admin-input">
-					<input type="text" required title="Заголовок" placeholder="Заголовок *" class="admin-input block-admin-input">
+					<input type="text" required title="Заголовок" placeholder="Заголовок *" class="admin-input block-admin-input" id="title_promocode_top">
 				</div>
 
 				<div class="admin-input-box block-admin-input">

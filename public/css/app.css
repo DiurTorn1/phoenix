@@ -2550,3 +2550,7 @@ td a:focus {
     margin-right: 4px;
     text-transform: uppercase;
 }
+
+.log_promocode_add{
+    display: none;
+}

@@ -17,6 +17,10 @@ $(document).ready(function() {
     });
 
     $("#add_promocode").on('click', function(){
-        console.log("Start");
+        //console.log("Start");
+        var title = $("#title_promocode_top").val();
+        if(!title){
+            $("#log_promocode_add").text("Графа с заголовком не должна быть пустой.");
+        }
     });
 });
