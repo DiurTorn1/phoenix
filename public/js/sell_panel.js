@@ -8,7 +8,7 @@ function getPromocode() {
             var sale_loc;
             if(output){
                 //var sale = output ? output[4]:'';
-                console.log(output[5]);
+                //console.log(output[5]);
                 sale = output[5];
             }
             
