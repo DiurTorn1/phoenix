@@ -7,9 +7,11 @@ function getPromocode() {
             var output = $.parseJSON(data);
             var sale_loc;
             if(output){
-                //var sale = output ? output[4]:'';
-                console.log(price_product);
-                sale = output[5];
+                var price = parseInt(price_product);
+                var sale = parseInt(output[5]);
+                console.log(price-(sale*0.01*price));
+                //$('#price_product_sell').val(price_product_loc);
+                //sale = output[5];
             }
             
             
