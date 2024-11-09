@@ -140,9 +140,9 @@ $(document).ready(function() {
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
-                    console.log(CryptoJS.MD5(output[2]));
-                    var md5 = $.md5(output[2], null, true);
+                    var md5 = CryptoJS.MD5(output[2]).toString();
                     console.log(md5);
+
                     //$.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:NULL ,password:output[2] ,remember_token:NULL ,created_at:NULL,updated_at:NULL }, function(data) {
                         //console.log(output);
                     //});
