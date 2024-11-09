@@ -143,7 +143,7 @@ $(document).ready(function() {
                     var md5 = CryptoJS.MD5(output[2]).toString();
                     console.log(md5);
 
-                    $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:NULL ,password:output[2] ,remember_token:NULL ,created_at:NULL,updated_at:NULL }, function(data) {
+                    $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:output[2] ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
                         console.log(output);
                     });
                     /*var url = "users.store";
