@@ -140,7 +140,10 @@ $(document).ready(function() {
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
-                    $('#form_for_reg').toggle();
+                    console.log(CryptoJS.MD5(output[2]));
+                    //$.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:NULL ,password:output[2] ,remember_token:NULL ,created_at:NULL,updated_at:NULL }, function(data) {
+                        //console.log(output);
+                    //});
                     /*var url = "users.store";
                     $.ajax({
                         url: url,
