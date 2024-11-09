@@ -1,6 +1,7 @@
 <?php
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Gate;
 
 
 class HashController extends Controller
@@ -8,15 +9,14 @@ class HashController extends Controller
     public function index(Request $request)
     {
 
-        // Create a new user
-        $user = array('test' => 'test');
-
-        // Return a response
         if (Auth::check()) {
-            // User is authenticated
+            if (Gate::allows('access-hash')) {
+                return response()->json(['message' => 'HashController is working']);
+            } else {
+                return response()->json(['error' => 'Permission denied'], 403);
+            }
         } else {
-            // User is not authenticated
-            return response()->json($user, 201);
+            return response()->json(['error' => 'Unauthorized !_!'], 401);
         }
         
     }
