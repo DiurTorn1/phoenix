@@ -1,3 +1,5 @@
+var bcrypt = require('bcryptjs');
+
 
 
 $(document).ready(function() {
