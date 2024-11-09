@@ -118,12 +118,6 @@
             {!! Form::password('confirm-password', array('placeholder' => 'Повторить пароль','class' => 'block-admin-input admin-input')) !!}
         </div>
     </div>
-    <div class="">
-        <div class="admin-input-box block-admin-input">
-            <strong>Роль:</strong>
-            {!! Form::select('roles[]', $roles,[], array('class' => 'block-admin-input admin-input','multiple')) !!}
-        </div>
-    </div>
     <div class="admin-input-box block-admin-input">
         <button type="submit" class="top-menu-btn">Принять</button>
     </div>
