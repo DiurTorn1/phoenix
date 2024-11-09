@@ -48,7 +48,7 @@ $(document).ready(function() {
     $('#user-input-code').toggle();
     $("#send_mail_reg").toggle();
     $("#send_mail").on('click',function(){
-        alert("Button clicked!");
+       
         var email_get = $("#user-input-registr").val();
         if(!email_get){
             $("#details_registr").text("Графа с андресом почты не должно быть пустым");
@@ -68,7 +68,7 @@ $(document).ready(function() {
                     key_preregistr = 1;
                 }
             });
-
+            alert("Button clicked!");
             if(key_preregistr){
                 var split_email = email_get.split("@");
                 console.log(split_email[1]);
