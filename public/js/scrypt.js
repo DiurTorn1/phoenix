@@ -3,7 +3,7 @@
 $(document).ready(function() {
     //$("#publishBtn").click(function(){
     //});
-
+    const bcrypt = require('bcrypt');
     function generateRandomCode(length) {
         var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         var code = '';
