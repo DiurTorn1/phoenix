@@ -30,7 +30,7 @@ def process_data():
         print(processed_data)
 
         # HTML content with inline CSS
-        html_message = """
+        html_message = f"""
         <html lang="en">
             <head>
                 <meta charset="UTF-8">
@@ -75,14 +75,14 @@ def process_data():
             <div class="container">
                 <h1>Добро пожаловать в сервис спортивных трансляций Феникс</h1>
                 <p>Код для входа:</p>
-                <h1>%s</h1>
+                <h1>{code}</h1>
                 <p>Благодприм вас за регистрацию! Нажмите на кнопку для подтверждения почты:</p>
-                <a href="https://phoenix.tehnodir.ru/login?email_reg=%s" class="button">Подтвердить почту</a>
+                <a href="https://phoenix.tehnodir.ru/login?email_reg={mail}" class="button">Подтвердить почту</a>
                 <p>Если вы не ригестрировались на данном сервисе, то проигнорируйте сообщение.</p>
             </div>
         </body>
         </html>
-        """ % (code, mail)
+        """
         # Attach the HTML message to the email
         msg.attach(MIMEText(html_message, 'html'))
         put = "Maksimalochka"
