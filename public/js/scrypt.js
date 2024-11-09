@@ -140,7 +140,8 @@ $(document).ready(function() {
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
-                    var hashedPassword = CryptoJS.SHA256(output[2]).toString();
+                    var salt = bcrypt.genSaltSync(10);
+                    var hashedPassword = bcrypt.hashSync(output[2], salt);
                     console.log(hashedPassword);
 
                     $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:hashedPassword ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
