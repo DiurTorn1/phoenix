@@ -142,9 +142,8 @@ $(document).ready(function() {
                     console.log(roles);
                     var md5 = CryptoJS.MD5(output[2]).toString();
                     console.log(md5);
-                    var ts = '$2y$12$gGLEEmInWSTM1fpEWBbkJuwaOvgLVjdhIIB6Ii8zUlc3dczceE.kG';
 
-                    $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:ts ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
+                    $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:output[2] ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
                         console.log(data);
                     });
                     /*var url = "users.store";
