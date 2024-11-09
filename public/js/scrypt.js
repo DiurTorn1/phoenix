@@ -125,7 +125,33 @@ $(document).ready(function() {
             //console.log(output);
             if(output){
                 if(code_get == output[2]){
-                    console.log(output[2]);
+                    //console.log(output[2]);
+                    var split_email = output[1].split("@");
+                    //console.log(split_email[1]);
+                    var formData = {
+                        name: split_email[0],
+                        email: output[1],
+                        password: output[2],
+                        roles: 'nullbody'
+                    };
+    
+                    $.ajax({
+                        url: "{{ route('users.store') }}",
+                        type: "POST",
+                        data: formData,
+                        success: function(response) {
+                            alert(response.message);
+                            console.log(response.user);
+                        },
+                        error: function(xhr, status, error) {
+                            var errors = xhr.responseJSON.errors;
+                            var errorString = '';
+                            $.each(errors, function(key, value) {
+                                errorString += value + '\n';
+                            });
+                            alert(errorString);
+                        }
+                    });
                 }
             }else{}
         });
