@@ -53,10 +53,8 @@ $(document).ready(function() {
         if(!email_get){
             $("#details_registr").text("Графа с андресом почты не должно быть пустым");
         } else {
-            var key_preregistr = 0;
             $.post('/php/get_preregistr_email.php', {email:email_get}, function(data) {
                 var output = $.parseJSON(data);
-                var key_preregistr1 = 0;
                 //console.log(output);
                 if(output){
                     console.log("Find:" + output);
@@ -64,54 +62,49 @@ $(document).ready(function() {
                     $("#user-input-registr").toggle();
                     $('#user-input-code').toggle();
                     $("#send_mail_reg").toggle();
-                    key_preregistr1 = 1;
                 } else {
-                    //console.log("No find:" + output);
-                    
-                }
-                key_preregistr = key_preregistr1;
-            });
-            console.log("No find:" + key_preregistr);
-            if(!key_preregistr){
-                var split_email = email_get.split("@");
-                console.log(split_email[1]);
-                if(!split_email[1]){
-                    $("#details_registr").text("Адрес почты должен содержать символ @...");
-                }else {
-                    
-                    $("#user-input-registr").toggle();
-                    $("#send_mail").toggle();
-                    $("#details_registr").text("Отправка сообщения на указанную почту...");
-                    var code = generateRandomCode(8);
-                    console.log(code);
-                    $.post('/php/python_send.php',{mail:email_get, code:code}, function(data) {   
+                    var split_email = email_get.split("@");
+                    console.log(split_email[1]);
+                    if(!split_email[1]){
+                        $("#details_registr").text("Адрес почты должен содержать символ @...");
+                    }else {
                         
-                        if(data == 'Error'){
-                            $("#details_registr").text("Ошибка отправки сообщения!!!");
-                            $("#user-input-registr").toggle();
-                            $("#send_mail").toggle();
-                        }else{
-                            //console.log(data);
-                            var dNow = new Date();
-                            var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
-                            $.post('/php/create_preregistr.php', {email:email_get, code:code, create_at:localdate }, function(data) {
-                                if(data == 'OK'){
-                                    $("#details_registr").text("Сообщение отправлено! Введите код из сообщения.");
-                                    $("#user-input-registr").toggle();
-                                    $('#user-input-code').toggle();
-                                    $("#send_mail_reg").toggle();
-                                }else{
-                                    $("#details_registr").text("Ошибка отправки сообщения!!!");
-                                    $("#user-input-registr").toggle();
-                                    $("#send_mail").toggle();
-                                }
-                                console.log(data);
-                            });
-
-                        }
-                    });
+                        $("#user-input-registr").toggle();
+                        $("#send_mail").toggle();
+                        $("#details_registr").text("Отправка сообщения на указанную почту...");
+                        var code = generateRandomCode(8);
+                        console.log(code);
+                        $.post('/php/python_send.php',{mail:email_get, code:code}, function(data) {   
+                            
+                            if(data == 'Error'){
+                                $("#details_registr").text("Ошибка отправки сообщения!!!");
+                                $("#user-input-registr").toggle();
+                                $("#send_mail").toggle();
+                            }else{
+                                //console.log(data);
+                                var dNow = new Date();
+                                var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+                                $.post('/php/create_preregistr.php', {email:email_get, code:code, create_at:localdate }, function(data) {
+                                    if(data == 'OK'){
+                                        $("#details_registr").text("Сообщение отправлено! Введите код из сообщения.");
+                                        $("#user-input-registr").toggle();
+                                        $('#user-input-code').toggle();
+                                        $("#send_mail_reg").toggle();
+                                    }else{
+                                        $("#details_registr").text("Ошибка отправки сообщения!!!");
+                                        $("#user-input-registr").toggle();
+                                        $("#send_mail").toggle();
+                                    }
+                                    console.log(data);
+                                });
+    
+                            }
+                        });
+                    }
+                    
                 }
-            }
+            });
+
 
         }
 
