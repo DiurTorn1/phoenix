@@ -1,7 +1,9 @@
 <?php
 namespace App\Http\Controllers;
 
-
+Route::middleware('auth')->group(function () {
+    Route::get('/hash', [HashController::class, 'index']);
+});
 class HashController extends Controller
 {
     public function index(Request $request)
