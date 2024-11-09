@@ -8,6 +8,7 @@
 
 @include('inc.header')
 <script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bcryptjs/2.4.3/bcrypt.min.js"></script>
 <script type="text/javascript" src = "{{ asset('js/get_video_nologin.js') }}"></script> 
 <div class="index-live" id="index-live">
 		<h2>Скоро</h2>
