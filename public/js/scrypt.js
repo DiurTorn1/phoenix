@@ -136,6 +136,9 @@ $(document).ready(function() {
                         roles: roles
                     };
                     console.log(split_email[1]);
+                    console.log(output[1]);
+                    console.log(output[2]);
+                    console.log(roles);
                     var url = "{{ route('users.store') }}";
                     $.ajax({
                         url: url,
