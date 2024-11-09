@@ -92,7 +92,7 @@
 					<button type="submit" class="top-menu-btn" id="send_mail_reg">
 						Завершить регистрацию
                     </button>
-					{!! Form::open(array('route' => 'users.store','method'=>'POST','class' => 'admin-content top-menu-sort block-admin-left-w650 admin-back' id='form_for_reg')) !!}
+					{!! Form::open(array('route' => 'users.store','method'=>'POST','class' => 'admin-content top-menu-sort block-admin-left-w650 admin-back')) !!}
 						<div class="">
     						<div class="">
         						<div class="admin-input-box block-admin-input">
