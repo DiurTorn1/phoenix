@@ -53,7 +53,7 @@ $(document).ready(function() {
         if(!email_get){
             $("#details_registr").text("Графа с андресом почты не должно быть пустым");
         } else {
-            var key_preregistr;
+            var key_preregistr = 0;
             $.post('/php/get_preregistr_email.php', {email:email_get}, function(data) {
                 var output = $.parseJSON(data);
                 //console.log(output);
@@ -68,7 +68,7 @@ $(document).ready(function() {
                     key_preregistr = 1;
                 }
             });
-            alert("Button clicked!");
+            console.log("No find:" + key_preregistr);
             if(key_preregistr){
                 var split_email = email_get.split("@");
                 console.log(split_email[1]);
