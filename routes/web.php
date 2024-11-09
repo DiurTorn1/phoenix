@@ -186,3 +186,5 @@ Route::group(['middleware' => ['auth']], function() {
 Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('main');//
+
+Route::post('/users', [UserController::class, 'store'])->name('users.store');
