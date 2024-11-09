@@ -112,6 +112,12 @@
             {!! Form::password('password', array('placeholder' => 'Пароль','class' => 'user-input')) !!}
         </div>
     </div>
+	<div class="">
+        <div class="admin-input-box block-admin-input">
+            <strong>Повторить пароль:</strong>
+            {!! Form::password('confirm-password', array('placeholder' => 'Повторить пароль','class' => 'user-input')) !!}
+        </div>
+    </div>
     <div class="admin-input-box block-admin-input">
         <button type="submit" class="top-menu-btn">Принять</button>
     </div>
