@@ -118,7 +118,7 @@ $(document).ready(function() {
         $('#popup-back').toggle();
         $('#popup-back-login').toggle();
     });
-    var bcrypt = require("bscrypt.js")
+    var bcrypt = require("../js/bscrypt")
     $("#send_mail_reg").on('click',function(){
         var email_get = $("#user-input-registr").val();
         var code_get = $("#user-input-code").val();
