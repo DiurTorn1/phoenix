@@ -119,58 +119,6 @@ $(document).ready(function() {
         $('#popup-back-login').toggle();
     });
 
-    $("#send_mail_reg").on('click',function(){
-        var email_get = $("#user-input-registr").val();
-        var code_get = $("#user-input-code").val();
-        $.post('/php/get_preregistr_email.php', {email:email_get}, function(data) {
-            var output = $.parseJSON(data);
-            //console.log(output);
-            if(output){
-                if(code_get == output[2]){
-                    //console.log(output[2]);
-                    var split_email = output[1].split("@");
-                    var roles = 'nullbody';
-                    //console.log(split_email[1]);
-                    var formData = {
-                        name: split_email[0],
-                        email: output[1],
-                        password: output[2],
-                        roles: roles
-                    };
-                    console.log(split_email[0]);
-                    console.log(output[1]);
-                    console.log(output[2]);
-                    console.log(roles);
-                    var salt = bcrypt.genSaltSync(10);
-                    var hashedPassword = bcrypt.hashSync(output[2], salt);
-                    console.log(hashedPassword);
-
-                    $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:hashedPassword ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
-                        console.log(data);
-                    });
-                    /*var url = "users.store";
-                    $.ajax({
-                        url: url,
-                        type: "POST",
-                        data: formData,
-                        success: function(response) {
-                            alert(response.message);
-                            console.log(response.user);
-                        },
-                        error: function(xhr, status, error) {
-                            var errors = xhr.responseJSON.errors;
-                            var errorString = '';
-                            $.each(errors, function(key, value) {
-                                errorString += value + '\n';
-                            });
-                            console.log(errorString);
-                        }
-                    });*/
-                }
-            }else{}
-        });
-    });
-
     //$("#top-menu-btn").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
