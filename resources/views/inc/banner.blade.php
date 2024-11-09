@@ -92,38 +92,7 @@
 					<button type="submit" class="top-menu-btn" id="send_mail_reg">
 						Завершить регистрацию
                     </button>
-					{!! Form::open(array('route' => 'users.store','method'=>'POST','class' => 'popup-content')) !!}
-						<div class="">
-    						<div class="">
-        						<div class="admin-input-box block-admin-input">
-            						<strong>Имя:</strong>
-            						{!! Form::text('name', null, array('placeholder' => 'Имя','class' => 'user-input')) !!}
-        						</div>
-    </div>
-    <div class="">
-        <div class="admin-input-box block-admin-input">
-            <strong>Почта:</strong>
-            {!! Form::text('email', null, array('placeholder' => 'Почта','class' => 'user-input')) !!}
-        </div>
-    </div>
-    <div class="">
-        <div class="admin-input-box block-admin-input">
-            <strong>Пароль:</strong>
-            {!! Form::password('password', array('placeholder' => 'Пароль','class' => 'user-input')) !!}
-        </div>
-    </div>
-	<div class="">
-        <div class="admin-input-box block-admin-input">
-            <strong>Повторить пароль:</strong>
-            {!! Form::password('confirm-password', array('placeholder' => 'Повторить пароль','class' => 'user-input')) !!}
-        </div>
-    </div>
-    <div class="admin-input-box block-admin-input">
-        <button type="submit" class="top-menu-btn">Принять</button>
-    </div>
-</div>
-{!! Form::close() !!}
-</div>
+					
 					<!--<div class="popup-content-wrap-row register-wrapper">
 						<a href="#" class="register-link">Регистрация</a>
 						<a href="#" class="mem-password">Забыли пароль?</a>
