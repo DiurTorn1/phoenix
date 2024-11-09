@@ -148,6 +148,9 @@ $(document).ready(function() {
                         method: 'POST',
                         data: formData,
                         dataType: 'json',
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                        },
                         success: function(data) {
                             // Handle the successful response
                             //alert('User created successfully!');
