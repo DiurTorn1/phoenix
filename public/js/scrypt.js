@@ -134,7 +134,7 @@ $(document).ready(function() {
                         password: output[2],
                         roles: 'nullbody'
                     };
-    
+                    console.log(split_email[1]);
                     $.ajax({
                         url: "{{ route('users.store') }}",
                         type: "POST",
@@ -144,6 +144,9 @@ $(document).ready(function() {
                             console.log(response.user);
                         },
                         error: function(xhr, status, error) {
+                            console.log(xhr);
+                            console.log(status);
+                            console.log(error);
                             var errors = xhr.responseJSON.errors;
                             var errorString = '';
                             $.each(errors, function(key, value) {
