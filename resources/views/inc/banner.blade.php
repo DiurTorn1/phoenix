@@ -92,6 +92,46 @@
 					<button type="submit" class="top-menu-btn" id="send_mail_reg">
 						Завершить регистрацию
                     </button>
+					{!! Form::open(array('route' => 'users.store','method'=>'POST','class' => 'admin-content top-menu-sort block-admin-left-w650 admin-back' id='form_for_reg')) !!}
+						<div class="">
+    						<div class="">
+        						<div class="admin-input-box block-admin-input">
+            						<strong>Имя:</strong>
+            						{!! Form::text('name', null, array('placeholder' => 'Имя','class' => 'block-admin-input admin-input')) !!}
+        						</div>
+    </div>
+    <div class="">
+        <div class="admin-input-box block-admin-input">
+            <strong>Почта:</strong>
+            {!! Form::text('email', null, array('placeholder' => 'Почта','class' => 'block-admin-input admin-input')) !!}
+        </div>
+    </div>
+    <div class="">
+        <div class="admin-input-box block-admin-input">
+            <strong>Пароль:</strong>
+            {!! Form::password('password', array('placeholder' => 'Пароль','class' => 'block-admin-input admin-input')) !!}
+        </div>
+    </div>
+    <div class="">
+        <div class="admin-input-box block-admin-input">
+            <strong>Повторить пароль:</strong>
+            {!! Form::password('confirm-password', array('placeholder' => 'Повторить пароль','class' => 'block-admin-input admin-input')) !!}
+        </div>
+    </div>
+    <div class="">
+        <div class="admin-input-box block-admin-input">
+            <strong>Роль:</strong>
+            {!! Form::select('roles[]', $roles,[], array('class' => 'block-admin-input admin-input','multiple')) !!}
+        </div>
+    </div>
+    <div class="admin-input-box block-admin-input">
+        <button type="submit" class="top-menu-btn">Принять</button>
+    </div>
+</div>
+{!! Form::close() !!}
+</div>
+
+@endsection
 					<!--<div class="popup-content-wrap-row register-wrapper">
 						<a href="#" class="register-link">Регистрация</a>
 						<a href="#" class="mem-password">Забыли пароль?</a>

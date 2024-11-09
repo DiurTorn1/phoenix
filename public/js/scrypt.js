@@ -47,6 +47,7 @@ $(document).ready(function() {
     });
     $('#user-input-code').toggle();
     $("#send_mail_reg").toggle();
+    $('#form_for_reg').toggle();
     $("#send_mail").on('click',function(){
        
         var email_get = $("#user-input-registr").val();
@@ -139,7 +140,8 @@ $(document).ready(function() {
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
-                    var url = "users.store";
+                    $('#form_for_reg').toggle();
+                    /*var url = "users.store";
                     $.ajax({
                         url: url,
                         type: "POST",
@@ -156,7 +158,7 @@ $(document).ready(function() {
                             });
                             console.log(errorString);
                         }
-                    });
+                    });*/
                 }
             }else{}
         });
