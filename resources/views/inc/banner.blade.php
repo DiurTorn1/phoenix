@@ -92,30 +92,24 @@
 					<button type="submit" class="top-menu-btn" id="send_mail_reg">
 						Завершить регистрацию
                     </button>
-					{!! Form::open(array('route' => 'users.store','method'=>'POST','class' => 'admin-content top-menu-sort block-admin-left-w650 admin-back')) !!}
+					{!! Form::open(array('route' => 'users.store','method'=>'POST','class' => 'popup-content')) !!}
 						<div class="">
     						<div class="">
         						<div class="admin-input-box block-admin-input">
             						<strong>Имя:</strong>
-            						{!! Form::text('name', null, array('placeholder' => 'Имя','class' => 'block-admin-input admin-input')) !!}
+            						{!! Form::text('name', null, array('placeholder' => 'Имя','class' => 'user-input')) !!}
         						</div>
     </div>
     <div class="">
         <div class="admin-input-box block-admin-input">
             <strong>Почта:</strong>
-            {!! Form::text('email', null, array('placeholder' => 'Почта','class' => 'block-admin-input admin-input')) !!}
+            {!! Form::text('email', null, array('placeholder' => 'Почта','class' => 'user-input')) !!}
         </div>
     </div>
     <div class="">
         <div class="admin-input-box block-admin-input">
             <strong>Пароль:</strong>
-            {!! Form::password('password', array('placeholder' => 'Пароль','class' => 'block-admin-input admin-input')) !!}
-        </div>
-    </div>
-    <div class="">
-        <div class="admin-input-box block-admin-input">
-            <strong>Повторить пароль:</strong>
-            {!! Form::password('confirm-password', array('placeholder' => 'Повторить пароль','class' => 'block-admin-input admin-input')) !!}
+            {!! Form::password('password', array('placeholder' => 'Пароль','class' => 'user-input')) !!}
         </div>
     </div>
     <div class="admin-input-box block-admin-input">
