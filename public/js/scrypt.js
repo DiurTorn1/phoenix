@@ -139,7 +139,7 @@ $(document).ready(function() {
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
-                    var url = "{{ route('users.store') }}";
+                    var url = "route('users.store')";
                     $.ajax({
                         url: url,
                         type: "POST",
