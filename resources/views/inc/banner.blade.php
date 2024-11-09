@@ -124,8 +124,6 @@
 </div>
 {!! Form::close() !!}
 </div>
-
-@endsection
 					<!--<div class="popup-content-wrap-row register-wrapper">
 						<a href="#" class="register-link">Регистрация</a>
 						<a href="#" class="mem-password">Забыли пароль?</a>
