@@ -53,7 +53,7 @@ $(document).ready(function() {
             $("#details_registr").text("Графа с андресом почты не должно быть пустым");
         } else {
             var key_preregistr;
-            $.post('/php/get_preregister_email.php', {email:email_get}, function(data) {
+            $.post('/php/get_preregistr_email.php', {email:email_get}, function(data) {
                 var output = $.parseJSON(data);
                 //console.log(output);
                 if(output){
