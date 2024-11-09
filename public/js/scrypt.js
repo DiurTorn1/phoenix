@@ -56,6 +56,7 @@ $(document).ready(function() {
             var key_preregistr = 0;
             $.post('/php/get_preregistr_email.php', {email:email_get}, function(data) {
                 var output = $.parseJSON(data);
+                var key_preregistr1 = 0;
                 //console.log(output);
                 if(output){
                     console.log("Find:" + output);
@@ -63,13 +64,15 @@ $(document).ready(function() {
                     $("#user-input-registr").toggle();
                     $('#user-input-code').toggle();
                     $("#send_mail_reg").toggle();
+                    key_preregistr1 = 1;
                 } else {
                     //console.log("No find:" + output);
-                    key_preregistr = 1;
+                    
                 }
+                key_preregistr = key_preregistr1;
             });
             console.log("No find:" + key_preregistr);
-            if(key_preregistr){
+            if(!key_preregistr){
                 var split_email = email_get.split("@");
                 console.log(split_email[1]);
                 if(!split_email[1]){
