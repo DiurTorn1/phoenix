@@ -187,4 +187,4 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('main');//
 
-Route::post('/hash', [HashController::class, 'store']);
+Route::post('/hash', [App\Http\Controllers\HomeController::class, 'index']);

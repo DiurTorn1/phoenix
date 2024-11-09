@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 class HashController extends Controller
 {
-    public function store(Request $request)
+    public function index(Request $request)
     {
 
         // Create a new user
