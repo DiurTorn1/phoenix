@@ -85,8 +85,12 @@
                         	{{ __('Запомнить меня') }}
         				</label>
 					</div>-->
+					<input id="user-input-code" type="password" placeholder="Введите пароль подтверждения почты" class="user-input @error('password') is-invalid @enderror" name="password" required autocomplete="current-password"> 
                     <button type="submit" class="top-menu-btn" id="send_mail">
 						Подтвердить пароль
+                    </button>
+					<button type="submit" class="top-menu-btn" id="send_mail_reg">
+						Завершить регистрацию
                     </button>
 					<!--<div class="popup-content-wrap-row register-wrapper">
 						<a href="#" class="register-link">Регистрация</a>

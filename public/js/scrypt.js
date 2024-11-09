@@ -3,6 +3,17 @@
 $(document).ready(function() {
     //$("#publishBtn").click(function(){
     //});
+
+    function generateRandomCode(length) {
+        var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+        var code = '';
+        for (var i = 0; i < length; i++) {
+            var randomIndex = Math.floor(Math.random() * characters.length);
+            code += characters.charAt(randomIndex);
+        }
+        return code;
+    }
+
     function getIPAddress() {
         $.ajax({
             url: '/php/get_ip.php', // Server-side script
@@ -34,13 +45,23 @@ $(document).ready(function() {
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         $('#popup-back').toggle();
     });
-
+    $('#user-input-code').toggle();
+    $("#send_mail_reg").toggle();
     $("#send_mail").on('click',function(){
-        var mail = "xxx@mail.ru";
         var email_get = $("#user-input-registr").val();
         if(!email_get){
             $("#details_registr").text("Графа с андресом почты не должно быть пустым");
         } else {
+            var key_preregistr;
+            $.post('/php/get_preregister_email.php', {mail:email_get}, function(data) {
+                var output = $.parseJSON(data);
+                //console.log(output);
+                if(output){
+                    console.log("Find:" + output);
+                } else {
+                    console.log("No find:" + output);
+                }
+            });
             var split_email = email_get.split("@");
             console.log(split_email[1]);
             if(!split_email[1]){
@@ -49,6 +70,8 @@ $(document).ready(function() {
                 $("#user-input-registr").toggle();
                 $("#send_mail").toggle();
                 $("#details_registr").text("Отправка сообщения на указанную почту...");
+                var code = generateRandomCode(8);
+                console.log(code);
                 $.post('/php/python_send.php',{mail:email_get}, function(data) {   
                     
                     if(data == 'Error'){
@@ -56,7 +79,11 @@ $(document).ready(function() {
                         $("#user-input-registr").toggle();
                         $("#send_mail").toggle();
                     }else{
-                        console.log(data);
+                        //console.log(data);
+                        $("#details_registr").text("Сообщение отправлено! Введите код из сообщения.");
+                        $("#user-input-registr").toggle();
+                        $('#user-input-code').toggle();
+                        $("#send_mail_reg").toggle();
                     }
                 });
             }
@@ -69,6 +96,10 @@ $(document).ready(function() {
         $("#details_registr").text("Регистрация пользователя");
         $('#popup-back').toggle();
         $('#popup-back-login').toggle();
+    });
+
+    $("#send_mail_reg").on('click',function(){
+
     });
 
     //$("#top-menu-btn").on('click', function(){

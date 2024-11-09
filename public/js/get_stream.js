@@ -391,6 +391,7 @@ $(document).ready(function() {
     
     $("#close-window").on('click', function() {
         $("#window_ok").toggle();
+        window.location.href='/stream';
     });
     $("#button_window_OK").on('click', function() {
         $("#window_ok").toggle();
