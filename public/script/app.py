@@ -25,6 +25,38 @@ app = Flask(__name__)
 def process_data():
     mail = request.json.get('mail')
     code = request.json.get('code')
+    style = """body {
+                    font-family: Arial, sans-serif;
+                    background-color: #f4f4f4;
+                    margin: 0;
+                    padding: 0;
+                }
+                .container {
+                    width: 80%;
+                    margin: 0 auto;
+                    background-color: #fff;
+                    padding: 20px;
+                    border-radius: 5px;
+                    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                }
+                h1 {
+                    color: #333;
+                }
+                p {
+                    color: #666;
+                    line-height: 1.6;
+                }
+                .button {
+                    display: inline-block;
+                    padding: 10px 20px;
+                    background-color: #007bff;
+                    color: #fff;
+                    text-decoration: none;
+                    border-radius: 5px;
+                }
+                .button:hover {
+                    background-color: #0056b3;
+                }"""
     if mail:
         processed_data = "Processed: " + mail
         print(processed_data)
@@ -37,6 +69,7 @@ def process_data():
                 <meta name="viewport" content="width=device-width, initial-scale=1.0">
                 <title>Поодтверждение</title>
                 <style>
+                    {style}
                 </style>
             </head>
             <body>
