@@ -24,6 +24,7 @@ app = Flask(__name__)
 @app.route('/process_data', methods=['POST'])
 def process_data():
     mail = request.json.get('mail')
+    code = request.json.get('code')
     if mail:
         processed_data = "Processed: " + mail
         print(processed_data)
@@ -73,13 +74,15 @@ def process_data():
         <body>
             <div class="container">
                 <h1>Добро пожаловать в сервис спортивных трансляций Феникс</h1>
+                <p>Код для входа:</p>
+                <h1>{}</h1>
                 <p>Благодприм вас за регистрацию! Нажмите на кнопку для подтверждения почты:</p>
-                <a href="https://phoenix.tehnodir.ru/login" class="button">Подтвердить почту</a>
+                <a href="https://phoenix.tehnodir.ru/login?email_reg={}" class="button">Подтвердить почту</a>
                 <p>Если вы не ригестрировались на данном сервисе, то проигнорируйте сообщение.</p>
             </div>
         </body>
         </html>
-        """
+        """.format(code, mail)
         # Attach the HTML message to the email
         msg.attach(MIMEText(html_message, 'html'))
         put = "Maksimalochka"

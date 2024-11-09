@@ -58,34 +58,55 @@ $(document).ready(function() {
                 //console.log(output);
                 if(output){
                     console.log("Find:" + output);
+                    $("#details_registr").text("На данную почту уже было отправленно сообщение с кодом регистрации. Проверьте почту или обратитесь к администратору сайта.");
+                    $("#user-input-registr").toggle();
+                    $('#user-input-code').toggle();
+                    $("#send_mail_reg").toggle();
                 } else {
-                    console.log("No find:" + output);
+                    //console.log("No find:" + output);
+                    key_preregistr = 1;
                 }
             });
-            var split_email = email_get.split("@");
-            console.log(split_email[1]);
-            if(!split_email[1]){
-                $("#details_registr").text("Адрес почты должен содержать символ @...");
-            }else {
-                $("#user-input-registr").toggle();
-                $("#send_mail").toggle();
-                $("#details_registr").text("Отправка сообщения на указанную почту...");
-                var code = generateRandomCode(8);
-                console.log(code);
-                $.post('/php/python_send.php',{mail:email_get}, function(data) {   
+
+            if(key_preregistr){
+                var split_email = email_get.split("@");
+                console.log(split_email[1]);
+                if(!split_email[1]){
+                    $("#details_registr").text("Адрес почты должен содержать символ @...");
+                }else {
                     
-                    if(data == 'Error'){
-                        $("#details_registr").text("Ошибка отправки сообщения!!!");
-                        $("#user-input-registr").toggle();
-                        $("#send_mail").toggle();
-                    }else{
-                        //console.log(data);
-                        $("#details_registr").text("Сообщение отправлено! Введите код из сообщения.");
-                        $("#user-input-registr").toggle();
-                        $('#user-input-code').toggle();
-                        $("#send_mail_reg").toggle();
-                    }
-                });
+                    $("#user-input-registr").toggle();
+                    $("#send_mail").toggle();
+                    $("#details_registr").text("Отправка сообщения на указанную почту...");
+                    var code = generateRandomCode(8);
+                    console.log(code);
+                    $.post('/php/python_send.php',{mail:email_get, code:code}, function(data) {   
+                        
+                        if(data == 'Error'){
+                            $("#details_registr").text("Ошибка отправки сообщения!!!");
+                            $("#user-input-registr").toggle();
+                            $("#send_mail").toggle();
+                        }else{
+                            //console.log(data);
+                            var dNow = new Date();
+                            var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+                            $.post('/php/create_preregistr.php', {email:email_get, code:code, create_at:localdate }, function(data) {
+                                if(data == 'OK'){
+                                    $("#details_registr").text("Сообщение отправлено! Введите код из сообщения.");
+                                    $("#user-input-registr").toggle();
+                                    $('#user-input-code').toggle();
+                                    $("#send_mail_reg").toggle();
+                                }else{
+                                    $("#details_registr").text("Ошибка отправки сообщения!!!");
+                                    $("#user-input-registr").toggle();
+                                    $("#send_mail").toggle();
+                                }
+                                console.log(data);
+                            });
+
+                        }
+                    });
+                }
             }
 
         }
