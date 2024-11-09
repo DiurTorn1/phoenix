@@ -59,7 +59,8 @@ $(document).ready(function() {
                 if(output){
                     console.log("Find:" + output);
                     $("#details_registr").text("На данную почту уже было отправленно сообщение с кодом регистрации. Проверьте почту или обратитесь к администратору сайта.");
-                    $("#user-input-registr").toggle();
+                    $("#send_mail").toggle();
+                    //$("#user-input-registr").toggle();
                     $('#user-input-code').toggle();
                     $("#send_mail_reg").toggle();
                 } else {
