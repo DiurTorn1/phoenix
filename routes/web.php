@@ -191,5 +191,5 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ma
 
 Route::middleware('auth')->group(function () {
     //Route::get('/hash', [HashController::class, 'index']);
-    Route::post('/hash', [App\Http\Controllers\HomeController::class, 'index']);
+    Route::post('/hash', [App\Http\Controllers\HashController::class, 'index']);
 });
