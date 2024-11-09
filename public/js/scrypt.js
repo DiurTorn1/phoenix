@@ -1,9 +1,10 @@
-const bcrypt = require('bcrypt');
+
 
 $(document).ready(function() {
     //$("#publishBtn").click(function(){
     //});
- 
+    const {bcrypt} = require('bcrypt');
+    //const bcrypt = require('bcrypt');
     function generateRandomCode(length) {
         var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         var code = '';
