@@ -140,10 +140,10 @@ $(document).ready(function() {
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
-                    var md5 = CryptoJS.MD5(output[2]).toString();
+                    var hashedPassword = CryptoJS.SHA256(output[2]).toString();
                     console.log(md5);
 
-                    $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:md5 ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
+                    $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:hashedPassword ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
                         console.log(data);
                     });
                     /*var url = "users.store";
