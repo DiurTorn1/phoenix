@@ -19,9 +19,11 @@
 		<meta data-rh="true" name="description" content="Официальный видеосервис Центра развития спортивных проектов &quot;ФЕНИКС">
 		<meta data-rh="true" property="og:description" content="Официальный видеосервис Центра развития спортивных проектов &quot;ФЕНИКС">
 		<meta data-rh="true" name="twitter:description" content="Официальный видеосервис Центра развития спортивных проектов &quot;ФЕНИКС">
+
 		
         <title>@yield('title-block')</title>
 		<script type="text/javascript" src = "https://code.jquery.com/jquery-3.7.1.js"></script>
+		<meta name="csrf-token" content="{{ csrf_token() }}">
         <script type="text/javascript" src = "{{ asset('js/scrypt.js') }}"></script>
 		<script type="text/javascript" src = "{{ asset('js/Backbone.js') }}"></script>
 		
