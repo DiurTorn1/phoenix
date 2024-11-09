@@ -187,4 +187,4 @@ Auth::routes();
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('main');//
 
-Route::post('/users', [UserController::class, 'store'])->name('users.store');
+Route::post('/users', 'UserController@store')->name('users.store');

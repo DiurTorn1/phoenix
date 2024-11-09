@@ -135,7 +135,7 @@ $(document).ready(function() {
                         password: output[2],
                         roles: roles
                     };
-                    console.log(split_email[1]);
+                    console.log(split_email[0]);
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
