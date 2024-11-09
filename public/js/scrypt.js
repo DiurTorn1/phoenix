@@ -3,6 +3,7 @@
 $(document).ready(function() {
     //$("#publishBtn").click(function(){
     //});
+
     function generateRandomCode(length) {
         var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
         var code = '';
