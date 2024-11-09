@@ -146,15 +146,12 @@ $(document).ready(function() {
                             console.log(response.user);
                         },
                         error: function(xhr, status, error) {
-                            console.log(xhr);
-                            console.log(status);
-                            console.log(error);
                             var errors = xhr.responseJSON.errors;
                             var errorString = '';
                             $.each(errors, function(key, value) {
                                 errorString += value + '\n';
                             });
-                            //alert(errorString);
+                            console.log(errorString);
                         }
                     });
                 }

@@ -56,8 +56,8 @@ class UserController extends Controller
         $user = User::create($input);
         $user->assignRole($request->input('roles'));
     
-        //return redirect()->route('users.index')->with('success','User created successfully');
-        return response()->json(['message' => 'User created successfully', 'user' => $user], 201);
+        return redirect()->route('users.index')->with('success','User created successfully');
+        //return response()->json(['message' => 'User created successfully', 'user' => $user], 201);
     }
     
     /**
