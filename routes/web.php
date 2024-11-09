@@ -189,7 +189,7 @@ Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('main');//
 
 
-Route::middleware('auth')->group(function () {
+Route::group(['middleware' => ['auth']], function() {
     //Route::get('/hash', [HashController::class, 'index']);
     Route::post('/hash', [App\Http\Controllers\HashController::class, 'index']);
 });
