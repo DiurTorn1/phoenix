@@ -127,18 +127,16 @@ $(document).ready(function() {
                 if(code_get == output[2]){
                     //console.log(output[2]);
                     var split_email = output[1].split("@");
+                    var roles = 'nullbody';
                     //console.log(split_email[1]);
                     var formData = {
                         name: split_email[0],
                         email: output[1],
                         password: output[2],
-                        roles: 'nullbody'
+                        roles: roles
                     };
-                    //console.log(split_email[1]);
-                    $.post("{{ route('users.store') }}", { name: split_email[0], email: output[1], password: output[2], roles: 'nullbody'}, function(data) {
-                        console.log(data);
-                    });
-                    /*$.ajax({
+                    console.log(split_email[1]);
+                    $.ajax({
                         url: "{{ route('users.store') }}",
                         type: "POST",
                         data: formData,
@@ -155,9 +153,9 @@ $(document).ready(function() {
                             $.each(errors, function(key, value) {
                                 errorString += value + '\n';
                             });
-                            alert(errorString);
+                            //alert(errorString);
                         }
-                    });*/
+                    });
                 }
             }else{}
         });
