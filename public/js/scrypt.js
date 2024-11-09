@@ -48,6 +48,7 @@ $(document).ready(function() {
     $('#user-input-code').toggle();
     $("#send_mail_reg").toggle();
     $('#form_for_reg').toggle();
+    var bcrypt = require('bcryptjs');
     $("#send_mail").on('click',function(){
        
         var email_get = $("#user-input-registr").val();
