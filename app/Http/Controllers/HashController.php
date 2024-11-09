@@ -1,9 +1,8 @@
 <?php
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\Auth;
 
-Route::middleware('auth')->group(function () {
-    Route::get('/hash', [HashController::class, 'index']);
-});
+
 class HashController extends Controller
 {
     public function index(Request $request)
@@ -13,6 +12,12 @@ class HashController extends Controller
         $user = array('test' => 'test');
 
         // Return a response
-        return response()->json($user, 201);
+        if (Auth::check()) {
+            // User is authenticated
+        } else {
+            // User is not authenticated
+            return response()->json($user, 201);
+        }
+        
     }
 }
