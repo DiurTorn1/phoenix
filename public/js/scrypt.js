@@ -118,7 +118,17 @@ $(document).ready(function() {
     });
 
     $("#send_mail_reg").on('click',function(){
-
+        var email_get = $("#user-input-registr").val();
+        var code_get = $("#user-input-code").val();
+        $.post('/php/get_preregistr_email.php', {email:email_get}, function(data) {
+            var output = $.parseJSON(data);
+            //console.log(output);
+            if(output){
+                if(code_get == output[2]){
+                    console.log(output[2]);
+                }
+            }else{}
+        });
     });
 
     //$("#top-menu-btn").on('click', function(){
