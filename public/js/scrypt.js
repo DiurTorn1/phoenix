@@ -134,8 +134,11 @@ $(document).ready(function() {
                         password: output[2],
                         roles: 'nullbody'
                     };
-                    console.log(split_email[1]);
-                    $.ajax({
+                    //console.log(split_email[1]);
+                    $.post("{{ route('users.store') }}", { name: split_email[0], email: output[1], password: output[2], roles: 'nullbody'}, function(data) {
+                        console.log(data);
+                    });
+                    /*$.ajax({
                         url: "{{ route('users.store') }}",
                         type: "POST",
                         data: formData,
@@ -154,7 +157,7 @@ $(document).ready(function() {
                             });
                             alert(errorString);
                         }
-                    });
+                    });*/
                 }
             }else{}
         });
