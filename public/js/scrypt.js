@@ -150,6 +150,7 @@ $(document).ready(function() {
                             //console.log(response);
                             $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:response ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
                                 if(data == 'OK'){
+                                    console.log(output[1]);
                                     $.post('/php/users_get_reg.php', { email:output[1] }, function(data) {
                                         console.log(data);
                                     });
