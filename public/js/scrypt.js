@@ -142,8 +142,9 @@ $(document).ready(function() {
                     console.log(roles);
                     var hash_passw;
                     $.post('/php/hash_pass.php', {pass:output[2]}, function(data) {
-                        
-                        hash_passw = data;
+                        var hash_test = data;
+                        hash_passw = hash_test;
+                        console.log(hash_passw);
                     });
                     console.log(hash_passw);
                     //var salt = bcrypt.genSaltSync(10);
