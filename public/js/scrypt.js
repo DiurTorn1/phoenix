@@ -144,7 +144,10 @@ $(document).ready(function() {
                     $.post('/php/users_get_reg.php', { email:output[1] }, function(data) {
                         
                         var output = $.parseJSON(data);
-                        console.log(output[0]);
+                        $.post('/php/users_role_put.php', { model_id:output[0] }, function(data) {
+                            console.log(data);
+                        });
+                        //console.log(output[0]);
                     });
 
                     /*$.ajax({
