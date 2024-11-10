@@ -141,8 +141,11 @@ $(document).ready(function() {
                     console.log(output[2]);
                     console.log(roles);
                     //var hash_passw;
+                    $.post('/php/users_get_reg.php', { email:output[1] }, function(data) {
+                        console.log(data);
+                    });
 
-                    $.ajax({
+                    /*$.ajax({
                         url: '/php/hash_pass.php',
                         type: 'POST',
                         data: { pass:output[2] },
@@ -165,33 +168,6 @@ $(document).ready(function() {
                             console.log(xhr);
                             console.log(status);
                             console.log(error);
-                        }
-                    });
-                    //while(!hash_passw){
-                       // $.post('/php/hash_pass.php', {pass:output[2]}, function(data) {
-                            //hash_passw = data;
-                        //});
-                    //}
-                    //var salt = bcrypt.genSaltSync(10);
-                    //var hashedPassword = bcrypt.hashSync(output[2], salt);
-                    //console.log(hashedPassword);
-
-                    /*var url = "users.store";
-                    $.ajax({
-                        url: url,
-                        type: "POST",
-                        data: formData,
-                        success: function(response) {
-                            alert(response.message);
-                            console.log(response.user);
-                        },
-                        error: function(xhr, status, error) {
-                            var errors = xhr.responseJSON.errors;
-                            var errorString = '';
-                            $.each(errors, function(key, value) {
-                                errorString += value + '\n';
-                            });
-                            console.log(errorString);
                         }
                     });*/
                 }
