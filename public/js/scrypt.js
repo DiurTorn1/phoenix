@@ -118,25 +118,6 @@ $(document).ready(function() {
         $('#popup-back-login').toggle();
     });
 
-    function has_password(pass){
-        var result;
-        $.ajax({
-            url: '/php/hash_pass.php',
-            type: 'POST',
-            data: { pass:pass },
-            success: function(response) {
-                result = response;
-            },
-            error: function(xhr, status, error) {
-                console.log(xhr);
-                console.log(status);
-                console.log(error);
-            }
-        });
-
-        return result;
-    }
-
     $("#send_mail_reg").on('click',function(){
         var email_get = $("#user-input-registr").val();
         var code_get = $("#user-input-code").val();
@@ -159,22 +140,33 @@ $(document).ready(function() {
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
-                    var hash_passw;
+                    //var hash_passw;
 
-
+                    $.ajax({
+                        url: '/php/hash_pass.php',
+                        type: 'POST',
+                        data: { pass:output[2] },
+                        success: function(response) {
+                            //console.log(response);
+                            $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:response ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
+                                console.log(data);
+                            });
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(xhr);
+                            console.log(status);
+                            console.log(error);
+                        }
+                    });
                     //while(!hash_passw){
                        // $.post('/php/hash_pass.php', {pass:output[2]}, function(data) {
                             //hash_passw = data;
                         //});
                     //}
-                    console.log(has_password('3030'));
-                    console.log(hash_passw);
                     //var salt = bcrypt.genSaltSync(10);
                     //var hashedPassword = bcrypt.hashSync(output[2], salt);
                     //console.log(hashedPassword);
-                    //$.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:hashedPassword ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
-                        //console.log(data);
-                    //});
+
                     /*var url = "users.store";
                     $.ajax({
                         url: url,
