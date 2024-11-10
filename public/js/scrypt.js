@@ -144,7 +144,8 @@ $(document).ready(function() {
                     $.post('/php/users_get_reg.php', { email:output[1] }, function(data) {
                         
                         var output = $.parseJSON(data);
-                        $.post('/php/users_role_put.php', { model_id:output[0] }, function(data) {
+                        var model_type = "App\Models\User";
+                        $.post('/php/users_role_put.php', { model_id:output[0], model_type:model_type }, function(data) {
                             console.log(data);
                         });
                         //console.log(output[0]);
