@@ -193,3 +193,8 @@ Route::middleware('auth')->group(function () {
     //Route::get('/hash', [HashController::class, 'index']);
     Route::post('/hash', [App\Http\Controllers\HashController::class, 'index'])->name('hash');
 });
+
+Route::middleware('auth')->group(function () {
+    //Route::get('/hash', [HashController::class, 'index']);
+    Route::post('/pass', [App\Http\Controllers\PassController::class, 'index'])->name('pass');
+});
