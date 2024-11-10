@@ -140,9 +140,12 @@ $(document).ready(function() {
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
+                    var hash_passw;
                     $.post('/php/hash_pass.php', {pass:output[2]}, function(data) {
-                        console.log(data);
+                        
+                        hash_passw = data;
                     });
+                    console.log(hash_passw);
                     //var salt = bcrypt.genSaltSync(10);
                     //var hashedPassword = bcrypt.hashSync(output[2], salt);
                     //console.log(hashedPassword);
