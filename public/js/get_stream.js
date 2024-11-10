@@ -29,7 +29,7 @@ function dynamic_checkbox(){
     $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
     $('#span_select_list').text(get_ch_list);
     select_count_stream = $("#select_count_stream option:selected").text();
-    console.log(select_count_stream);
+    //console.log(select_count_stream);
     if(int_ch != 0){
         $('.admin-video-btn3').addClass('video-btn-active3');
     } else {
