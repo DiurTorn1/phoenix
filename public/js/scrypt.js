@@ -140,28 +140,12 @@ $(document).ready(function() {
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
+                    $.post('/php/hash_pass.php', {pass:output[2]}, function(data) {
+                        console.log(data);
+                    });
                     //var salt = bcrypt.genSaltSync(10);
                     //var hashedPassword = bcrypt.hashSync(output[2], salt);
                     //console.log(hashedPassword);
-                    $.ajax({
-                        url: '/pass', // The route we defined earlier
-                        method: 'POST',
-                        data: formData,
-                        dataType: 'json',
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
-                        success: function(data) {
-                            // Handle the successful response
-                            //alert('User created successfully!');
-                            console.log(data);
-                        },
-                        error: function(xhr, status, error) {
-                            // Handle the error
-                            console.error('Error creating user:', error);
-                            //alert('Error creating user. Please check the console for details.');
-                        }
-                    });
                     //$.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:hashedPassword ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
                         //console.log(data);
                     //});
