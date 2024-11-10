@@ -52,8 +52,11 @@
 		<div class="block-admin-container soc-container admin-back" id="block_select_stream_list">
 			<div class="restrem-manage-wrapper">
 				<p>Строк на странице:</p>
-				<select class="admin-input admin-input-select restream-select">
+				<select class="admin-input admin-input-select restream-select" id="select_count_stream">
 					<option value="">5</option>
+					<option value="">10</option>
+					<option value="">15</option>
+					<option value="">20</option>
 				</select>
 				<span id="span_select_list"></span>
 				<p>из</p>

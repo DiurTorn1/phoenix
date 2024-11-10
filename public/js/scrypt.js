@@ -167,7 +167,6 @@ $(document).ready(function() {
                                                 //$("#user-input-registr").toggle();
                                                 $("#user-input-registr").toggle();
                                                 $('#user-input-code').toggle();
-                                                $("#send_mail_reg").toggle();
                                                 $("#send_mail_OK").toggle();
                                                 
                                             }
