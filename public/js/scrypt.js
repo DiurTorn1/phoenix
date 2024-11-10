@@ -117,7 +117,7 @@ $(document).ready(function() {
         $('#popup-back').toggle();
         $('#popup-back-login').toggle();
     });
-
+    var hash_passw;
     $("#send_mail_reg").on('click',function(){
         var email_get = $("#user-input-registr").val();
         var code_get = $("#user-input-code").val();
@@ -140,7 +140,7 @@ $(document).ready(function() {
                     console.log(output[1]);
                     console.log(output[2]);
                     console.log(roles);
-                    var hash_passw;
+                    
 
                     $.ajax({
                         url: '/php/hash_pass.php',
