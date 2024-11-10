@@ -149,7 +149,15 @@ $(document).ready(function() {
                         success: function(response) {
                             //console.log(response);
                             $.post('/php/users_finish_reg.php', { name:split_email[0] ,email:output[1] ,email_verified_at:null ,password:response ,remember_token:null ,created_at:null,updated_at:null }, function(data) {
-                                console.log(data);
+                                if(data == 'OK'){
+                                    $.post('/php/users_get_reg.php', { email:output[1] }, function(data) {
+                                        console.log(data);
+                                    });
+                                }
+                                //$.post('/php/users_role_put.php', { name:split_email[0] }, function(data) {});
+                                //console.log(data);
+                                //$('#popup-back-login').toggle();
+                                //$('#popup-back').toggle();
                             });
                         },
                         error: function(xhr, status, error) {
