@@ -141,11 +141,11 @@ $(document).ready(function() {
                     console.log(output[2]);
                     console.log(roles);
                     var hash_passw;
-                    while(!hash_passw){
+                    //while(!hash_passw){
                         $.post('/php/hash_pass.php', {pass:output[2]}, function(data) {
                             hash_passw = data;
                         });
-                    }
+                    //}
                     console.log(hash_passw);
                     //var salt = bcrypt.genSaltSync(10);
                     //var hashedPassword = bcrypt.hashSync(output[2], salt);
