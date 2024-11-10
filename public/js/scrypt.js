@@ -144,7 +144,7 @@ $(document).ready(function() {
                     //var hashedPassword = bcrypt.hashSync(output[2], salt);
                     //console.log(hashedPassword);
                     $.ajax({
-                        url: '{{ route("hash") }}', // The route we defined earlier
+                        url: '/hash', // The route we defined earlier
                         method: 'POST',
                         data: formData,
                         dataType: 'json',
