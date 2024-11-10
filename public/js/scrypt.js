@@ -142,7 +142,9 @@ $(document).ready(function() {
                     console.log(roles);
                     //var hash_passw;
                     $.post('/php/users_get_reg.php', { email:output[1] }, function(data) {
-                        console.log(data);
+                        
+                        var output = $.parseJSON(data);
+                        console.log(output[0]);
                     });
 
                     /*$.ajax({
