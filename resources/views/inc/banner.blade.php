@@ -92,6 +92,9 @@
 					<button type="submit" class="top-menu-btn" id="send_mail_reg">
 						Завершить регистрацию
                     </button>
+					<button type="submit" class="top-menu-btn" id="send_mail_OK">
+						OK
+                    </button>
 					
 					<!--<div class="popup-content-wrap-row register-wrapper">
 						<a href="#" class="register-link">Регистрация</a>
