@@ -141,10 +141,24 @@ $(document).ready(function() {
                     console.log(output[2]);
                     console.log(roles);
                     var hash_passw;
+
+                    $.ajax({
+                        url: '/php/hash_pass.php',
+                        type: 'POST',
+                        data: { pass:output[2] },
+                        success: function(response) {
+                            console.log(response);
+                        },
+                        error: function(xhr, status, error) {
+                            console.log(xhr);
+                            console.log(status);
+                            console.log(error);
+                        }
+                    });
                     //while(!hash_passw){
-                        $.post('/php/hash_pass.php', {pass:output[2]}, function(data) {
-                            hash_passw = data;
-                        });
+                       // $.post('/php/hash_pass.php', {pass:output[2]}, function(data) {
+                            //hash_passw = data;
+                        //});
                     //}
                     console.log(hash_passw);
                     //var salt = bcrypt.genSaltSync(10);
