@@ -144,13 +144,10 @@ $(document).ready(function() {
                     //var hashedPassword = bcrypt.hashSync(output[2], salt);
                     //console.log(hashedPassword);
                     $.ajax({
-                        url: '/hash', // The route we defined earlier
+                        url: '{{ route("hash") }}', // The route we defined earlier
                         method: 'POST',
                         data: formData,
                         dataType: 'json',
-                        headers: {
-                            'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
-                        },
                         success: function(data) {
                             // Handle the successful response
                             //alert('User created successfully!');
