@@ -62,7 +62,7 @@ $(document).ready(function() {
                     $("#send_mail").toggle();
                     //$("#user-input-registr").toggle();
                     //$("#send_mail_reg").toggle();
-                    $('#popup-back-login').toggle();
+                    $("#user-input-registr").toggle();
                     $("#send_mail_OK").toggle();
                 }else{
                     $.post('/php/get_preregistr_email.php', {email:email_get}, function(data) {
@@ -165,8 +165,8 @@ $(document).ready(function() {
                                                 $("#details_registr").text("Регистрация завершена.");
                                                 $("#send_mail").toggle();
                                                 //$("#user-input-registr").toggle();
+                                                $("#user-input-registr").toggle();
                                                 $('#user-input-code').toggle();
-                                                $('#popup-back-login').toggle();
                                                 $("#send_mail_reg").toggle();
                                                 $("#send_mail_OK").toggle();
                                                 
