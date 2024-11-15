@@ -284,7 +284,7 @@ function get_stream_array(){
 $(document).ready(function() {
 
     var count1 = 0;
-    $.post('/php/get_product.php', function(data)  {
+    /*$.post('/php/get_product.php', function(data)  {
         var output = $.parseJSON(data);
         //console.log(output);
         var pre_arr = new Array();
@@ -300,7 +300,7 @@ $(document).ready(function() {
         }
         //console.log(array_product);
         count_product = count1;
-    });
+    });*/
 
     /*for(var i = 0; i < array_product.length; i ++){
         //if(array_product[i] == users_sells[i]){
