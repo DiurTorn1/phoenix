@@ -302,7 +302,7 @@ $(document).ready(function() {
         count_product = count1;
     });
 
-    for(var i = 0; i < array_product.length; i ++){
+    /*for(var i = 0; i < array_product.length; i ++){
         //if(array_product[i] == users_sells[i]){
             //console.log(array_product[i]);
             //console.log(users_sells[i]);
@@ -336,7 +336,7 @@ $(document).ready(function() {
         //}
        
 
-    }
+    }*/
 
     console.log(public_product_perm);
     $('#block_select_stream_list').hide();
