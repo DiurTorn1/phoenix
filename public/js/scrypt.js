@@ -163,10 +163,9 @@ $(document).ready(function() {
                                         $.post('/php/users_role_put.php', { model_id:output[0] }, function(data) {
                                             if(data == 'OK'){
                                                 $("#details_registr").text("Регистрация завершена.");
-                                                $("#send_mail").toggle();
-                                                //$("#user-input-registr").toggle();
                                                 $("#user-input-registr").toggle();
                                                 $('#user-input-code').toggle();
+                                                $("#send_mail_reg").toggle();
                                                 $("#send_mail_OK").toggle();
                                                 
                                             }

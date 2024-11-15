@@ -2,7 +2,9 @@ var array_product = new Array();
 var idch = 0;
 var key_main_chack = 0;
 var public_stream_list = new Array();
+var public_product_perm = new Array();
 var get_ch_list = 1, select_count_stream;
+var count_product = 0;
 
 function dynamic_checkbox(){
     //video-btn-active 
@@ -281,11 +283,62 @@ function get_stream_array(){
 
 $(document).ready(function() {
 
-    $.post('/php/get_product_all.php', function(data){
-        //var output1 = $.parseJSON(data);
-        array_product.push(data);   
+    var count1 = 0;
+    $.post('/php/get_product.php', function(data)  {
+        var output = $.parseJSON(data);
+        //console.log(output);
+        var pre_arr = new Array();
+        $.each(output,function(i,item){
+            pre_arr.push(item.id);
+            count1++;
+        });
+        //pre_arr.push(output.data);
+        //console.log(pre_arr);
+        for(var i = 0; i < pre_arr.length; i++){
+            array_product.push(pre_arr[i]);
+            
+        }
+        //console.log(array_product);
+        count_product = count1;
     });
 
+    for(var i = 0; i < array_product.length; i ++){
+        //if(array_product[i] == users_sells[i]){
+            //console.log(array_product[i]);
+            //console.log(users_sells[i]);
+            $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                var output = $.parseJSON(data);
+                //console.log(output);
+                var prm_prod = output ? output[4]:'';
+                //console.log(prm_prod);
+                //public_product_perm.push(prm_prod);
+                $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
+                    var public_product_perm1 = new Array();
+                    var key_product_perm = 0;
+                    var output1 = $.parseJSON(data1);
+                    $.each(output1,function(i,item1){
+                        //if(item1.id_stream == id_stream_prod){
+                            //console.log(item1.id_stream);
+                            public_product_perm1.push(item1.id_stream);
+                            key_product_perm++;
+                            //key_prod_perm_stream1 = 1;
+                        //}
+                        //console.log(id_stream_prod);
+                    });
+                    //console.log(key_prod_perm_stream);
+                    for(var i = 0; i < key_product_perm; i++){
+                        //console.log(public_product_perm1[i]);
+                        public_product_perm.push(public_product_perm1[i]);
+                    }
+                    
+                });
+            });
+        //}
+       
+
+    }
+
+    console.log(public_product_perm);
     $('#block_select_stream_list').hide();
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',500);
