@@ -86,20 +86,20 @@ function dynamic_checkbox(){
         // Вывод результата
         if (allEqual) {
             //$('#result').text('Все элементы массива равны.');
-            console.log(key_pod);
+            //console.log(key_pod);
+            if(key_pod){
+                $('.admin-video-btn1').addClass('video-btn-active1');
+                $('.admin-video-btn2').removeClass('video-btn-active2');
+            } else {
+                $('.admin-video-btn1').removeClass('video-btn-active1');
+                $('.admin-video-btn2').addClass('video-btn-active2');
+            }
         } else {
             //console.log(allEqual);
             //$('#result').text('Не все элементы массива равны.');
             $('.admin-video-btn1').removeClass('video-btn-active1');
             $('.admin-video-btn2').removeClass('video-btn-active2');
         }
-        /*if(key_pub){
-            $('.admin-video-btn1').addClass('video-btn-active1');
-            $('.admin-video-btn2').removeClass('video-btn-active2');
-        } else {
-            $('.admin-video-btn1').removeClass('video-btn-active1');
-            $('.admin-video-btn2').addClass('video-btn-active2');
-        }*/
     } else {
         $('.admin-video-btn3').removeClass('video-btn-active3');
     }
