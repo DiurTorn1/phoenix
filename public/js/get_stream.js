@@ -546,7 +546,7 @@ $(document).ready(function() {
             $.post('/php/get_product_id.php', {id:array_product[i]}, function(data){
                 var output = $.parseJSON(data);
 
-                $("product_list_add").append(
+                $("#product_list_add").append(
                     '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
                         '<div class="admin-video-prev">' +
 					        '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
