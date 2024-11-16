@@ -38,11 +38,12 @@ function dynamic_checkbox(){
             //console.log(id);array_stream[i]
             
             //console.log(array_name_stream);
-            for(var i = 0; i < public_stream_list.length; i++){
-                var name_list = public_stream_list[i];
+            var name_list = $.parseJSON(public_stream_list);
+            //for(var i = 0; i < public_stream_list.length; i++){
+                //var name_list = public_stream_list[i];
                 //if(name_list.id == id){ console.log(name_list.name); }
-                console.log(name_list.id);
-            }
+                console.log(name_list);
+            //}
             int_ch++;
         }
     }
