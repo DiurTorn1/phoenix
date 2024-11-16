@@ -26,7 +26,12 @@ function dynamic_checkbox(){
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
             var id = $("#admin-vl" + i).parent().parent().attr('id');
-            console.log(id);
+            //console.log(id);
+            $.post('/php/get_stream_id.php',{ id:id }, function(data)  {
+                var output = $.parseJSON(data);
+                var list = output.data;
+                console.log(id);
+            });
             int_ch++;
         }
     }
