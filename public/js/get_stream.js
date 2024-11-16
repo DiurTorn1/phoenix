@@ -39,7 +39,7 @@ function dynamic_checkbox(){
             //var key_pub = 0;
             var id = $("#admin-vl" + i).parent().parent().attr('id');
 
-            arr_pub.push({num: int_ch, id:id });
+            arr_pub.push(id);
             
         }
     }
@@ -53,7 +53,7 @@ function dynamic_checkbox(){
                     //console.log(id);array_stream[i]
         for(var i = 0; i < array_name_stream.length; i++){
             var name_list = array_name_stream[i];
-            if(name_list.id == arr_pub[i].id){
+            if(name_list.id == arr_pub[i]){
                              //console.log(name_list.name);
                              
                 for(var i = 0; i < public_stream_list.length; i++){
