@@ -31,6 +31,7 @@ function dynamic_checkbox(){
         }
         key_main_chack = 0;
     }
+    var arr_pub = [];
     for(var i = 0; i < idch; i++){
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
@@ -56,6 +57,7 @@ function dynamic_checkbox(){
     //console.log(select_count_stream);
     if(int_ch != 0){
         $('.admin-video-btn3').addClass('video-btn-active3');
+        console.log(arr_pub);
         /*if(key_pub){
             $('.admin-video-btn1').addClass('video-btn-active1');
             $('.admin-video-btn2').removeClass('video-btn-active2');
