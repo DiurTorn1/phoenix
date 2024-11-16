@@ -545,7 +545,37 @@ $(document).ready(function() {
         for(var i = 0; i < array_product.length; i ++){
             $.post('/php/get_product_id.php', {id:array_product[i]}, function(data){
                 var output = $.parseJSON(data);
-                console.log(output);
+                //console.log(output);
+                $.each(output,function(i,item){
+                    console.log(item.name);
+                });
+                /*
+                			<li class="admin-video-item admin-back" id={{'parrent_parrent_id_checkbox'. $i}}>
+				<div class="admin-video-sort-wrap" id={{'parrent_id_checkbox'. ++$i}}>
+					<input id={{'admin-vl'. $product->id}} class="admin-video-sort-check" type="checkbox">
+					<label class="admin-video-check-label" for={{'admin-vl'. $product->id}}></label>
+				</div>
+				<div class="admin-video-prev">
+					<img src={{ $product->img_main }} alt="" class="" style="heigth: 100%; width: 100%">
+				</div>
+				<div class="admin-video-item-header">
+					<div class="admin-video-item-h-list">
+						<span class="admin-video-item-h-date">{{ $product->name }}</span>
+					</div>
+					<div class="admin-video-item-h-hashtag">
+						<span class="admin-prod-hashtag">{{ $product->detail }}</span>
+					</div>
+				</div>
+				<div class="admin-video-item-view admin-prod-item-view">
+					<p class="admin-video-item-v-count"><span>0</span>продаж</p>
+					<p class="admin-video-item-v-count"><span>0</span>возвратов</p>
+					<p class="admin-video-item-v-count"><span>0</span>стримов</p>
+				</div>
+				<div class="admin-video-item-info admin-video-item-view">
+					<p class="admin-prod-hashtag">{{ $product->state }}</p>
+				</div>
+			</li>
+                 */
             });
         }
     });
