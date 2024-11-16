@@ -259,13 +259,13 @@ function paint_element_stream(){
                 //});
                 var key_pub = 0;
                 for(var i = 0; i < public_stream_list.length; i++){
-                    if(public_stream_list[i] == list.name){}
-                    console.log(public_stream_list);
+                    if(public_stream_list[i] == list.name){ key_pub = 1;}
+                    //console.log(public_stream_list);
                 }
                 if(key_pub){
                     console.log(list.name);
                 } else {
-                    
+
                 }
                 //console.log(indic_public_stream);
                 //console.log(pre_name);//array_product);
