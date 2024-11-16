@@ -46,8 +46,7 @@ var num_list = 0;
 var num_list1 = 5;
 var num_list2 = 0;
 
-function paint_element_stream(){
-
+function get_product_public(){
     var count1 = 0;
     $.post('/php/get_product.php', function(data)  {
         var output = $.parseJSON(data);
@@ -103,7 +102,9 @@ function paint_element_stream(){
        
 
     }
+}
 
+function paint_element_stream(){
 
     console.log(public_product_perm);
     var all_sel = 0;
@@ -350,6 +351,8 @@ $(document).ready(function() {
     setInterval('dynamic_checkbox()',500);
     get_stream_array();
     setInterval('get_stream_array()',500);
+    get_product_public();
+    setInterval('get_product_public()',500);
 
         
         $("#delete_stream_checkbox").on('click', function() {
