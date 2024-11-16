@@ -428,7 +428,7 @@ $(document).ready(function() {
             $("#window_ok").toggle();
             $("#div_button_window").toggle();
             $("#aler_window").text("Удаление стрима");
-            for(var i = 0; i < 5; i++){
+            for(var i = 0; i < num_list1; i++){
                 var ch1 = $("#admin-vl" + i).is(':checked');
                 if(ch1){
                     var id = $("#admin-vl" + i).parent().parent().attr('id');
@@ -445,7 +445,7 @@ $(document).ready(function() {
                                 $.post('/php/unpublic_stream.php', { name_stream: initial_get }, function(data){
                                     if(data == "OK"){
                                         //alert("Продукт снят с публикации");
-                                        $("#aler_window").text("Продукт снят с публикации");
+                                        $("#aler_window").text("Стрим снят с публикации");
                                     }
                                     //console.log(data);
                                 });
@@ -472,14 +472,33 @@ $(document).ready(function() {
                     $.post('/php/delete_stream.php', {id:id}, function(data){
                         //console.log("Delete stream: " + data);
                         //alert("Стрим удалён!");
-                        $("#aler_window").text("Стрим удален");
-                        $("#div_button_window").toggle();
+                        //$("#aler_window").text("Стрим удален");
+                        
                     });
                     
                 }
             }
+            $("#div_button_window").toggle();
             
         });
+
+    $("#public_stream_checkbox").on('click', function() {
+        $("#window_ok").toggle();
+        $("#div_button_window").toggle();
+        $("#aler_window").text("Публикация стрима");
+        for(var i = 0; i < num_list1; i++){}
+        $("#div_button_window").toggle();
+    });
+
+    $("#unpublic_stream_checkbox").on('click', function() {
+        $("#window_ok").toggle();
+        $("#div_button_window").toggle();
+        $("#aler_window").text("снятие с публикации стрима");
+        for(var i = 0; i < num_list1; i++){}
+        $("#div_button_window").toggle();
+    });
+
+    $("#add_product_stream_checkbox").on('click', function() {});
     
     $("#bottom_list_stream").on('click', function() {
         if(num_list != 0){
