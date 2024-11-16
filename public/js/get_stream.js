@@ -215,8 +215,11 @@ function paint_element_stream(){
                 }
                 var key_post = 0;
                 var initial_gl = list.id, pre_name;
-                var json_product = $.parseJSON(public_product_perm);
-                console.log(json_product);
+                //var json_product = $.parseJSON(public_product_perm);
+                for(var i = 0; i < public_product_perm.length; i++){
+                    console.log(public_product_perm[i]);
+                }
+                //
                 //$.each(json_product,function(i,item1){
                     //console.log(item1.initial);
                     //if(item1.initial === initial_gl){
