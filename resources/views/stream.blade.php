@@ -112,4 +112,19 @@
 	</div>
 
 </div>
+<div class="product-add-popup" id="window_product_pre"> <!--------- PopUP --------->
+	<div class="admin-content block-admin-left-w650 fix-position">
+
+		<div class="header admin-header">
+			<div class="left-header">
+				<a href="#" class="close-btn" id="close-window-prod" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
+				<!--<h2 class="top-menu-title">Создать промокод</h2>-->
+			</div>
+		</div>
+		<div class="admin-back" id="product_list_add">
+		</div>
+
+	</div>
+
+</div>
 @endsection

@@ -49,6 +49,7 @@ function dynamic_checkbox(){
     //console.log(select_count_stream);
     if(int_ch != 0){
         $('.admin-video-btn3').addClass('video-btn-active3');
+        $('.admin-video-btn4').addClass('video-btn-active4');
         //console.log(arr_pub);
                     //console.log(id);array_stream[i]
         var arr_res = [];
@@ -104,6 +105,7 @@ function dynamic_checkbox(){
         $('.admin-video-btn3').removeClass('video-btn-active3');
         $('.admin-video-btn1').removeClass('video-btn-active1');
         $('.admin-video-btn2').removeClass('video-btn-active2');
+        $('.admin-video-btn4').removeClass('video-btn-active4');
     }
 }
 
@@ -537,7 +539,9 @@ $(document).ready(function() {
         $("#div_button_window").toggle();
     });
 
-    $("#add_product_stream_checkbox").on('click', function() {});
+    $("#add_product_stream_checkbox").on('click', function() {
+        $("#window_product_pre").toggle();
+    });
     
     $("#bottom_list_stream").on('click', function() {
         if(num_list != 0){
@@ -582,6 +586,10 @@ $(document).ready(function() {
     
     $("#close-window").on('click', function() {
         $("#window_ok").toggle();
+        window.location.href='/stream';
+    });
+    $("#close-window-prod").on('click', function() {
+        //$("#window_ok").toggle();
         window.location.href='/stream';
     });
     $("#button_window_OK").on('click', function() {
