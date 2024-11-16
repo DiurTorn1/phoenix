@@ -30,7 +30,12 @@ function dynamic_checkbox(){
             $.post('/php/get_stream_id.php',{ id:id }, function(data)  {
                 var output = $.parseJSON(data);
                 var list = output.data;
-                console.log(list);
+                //console.log(list);
+                var key_pub = 0;
+                for(var i = 0; i < public_stream_list.length; i++){
+                    if(public_stream_list[i] == list.name){ key_pub = 1;}
+                    //console.log(public_stream_list);
+                }
             });
             int_ch++;
         }
@@ -41,6 +46,13 @@ function dynamic_checkbox(){
     //console.log(select_count_stream);
     if(int_ch != 0){
         $('.admin-video-btn3').addClass('video-btn-active3');
+        if(key_pub){
+            $('.admin-video-btn1').addClass('video-btn-active1');
+            $('.admin-video-btn2').removeClass('video-btn-active2');
+        } else {
+            $('.admin-video-btn1').removeClass('video-btn-active1');
+            $('.admin-video-btn2').addClass('video-btn-active2');
+        }
     } else {
         $('.admin-video-btn3').removeClass('video-btn-active3');
     }
