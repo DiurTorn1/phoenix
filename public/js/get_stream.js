@@ -546,7 +546,7 @@ $(document).ready(function() {
             $.post('/php/get_product_id.php', {id:array_product[i]}, function(data){
                 var output = $.parseJSON(data);
                 console.log(output[1]);
-            });
+                
                 /*
                 			<li class="admin-video-item admin-back" id={{'parrent_parrent_id_checkbox'. $i}}>
 				<div class="admin-video-sort-wrap" id={{'parrent_id_checkbox'. ++$i}}>
