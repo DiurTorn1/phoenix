@@ -103,6 +103,30 @@ function get_product_public(){
            
     
         }
+        var count2 = 0;
+        $.post('/php/get_stream_public_all.php', function(data){
+            var output = $.parseJSON(data);
+            console.log(output);
+            //var initial_get = output? output[1]: '';
+            //var indic_public_stream1 = '';
+            //if(initial_get == list.name){
+                //public_stream_list.push(true);
+                //$('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
+                //indic_public_stream1 = 'admin-video-item-h-date-active';
+                //$(".admin-video-item-h-date-" + idch).css("color","#faf7f7");
+                //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
+                //console.log(indic_public_stream); 
+           // } else {
+                //public_stream_list.push(false);
+                //indic_public_stream1 = 'admin-video-item-h-date';
+                //$('.admin-video-item-h-date-' + idch).removeClass('admin-video-item-h-date-active-' + idch);
+                //$(".admin-video-item-h-date-" + idch).css("color","#c4c4c494");
+                //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
+                //console.log("Fuck off!!"); 
+                //console.log(indic_public_stream); 
+            //}
+            //indic_public_stream = indic_public_stream1; 
+        });
     }
 
 }
@@ -229,30 +253,7 @@ function paint_element_stream(){
                 //$.each(json_product,function(i,item1){
                     //console.log(item1.initial);
                 //});
-                var indic_public_stream = '';
-                $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data){
-                    var output = $.parseJSON(data);
-                    //console.log(output);
-                    var initial_get = output? output[1]: '';
-                    var indic_public_stream1 = '';
-                    if(initial_get == list.name){
-                        public_stream_list.push(true);
-                        //$('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
-                        indic_public_stream1 = 'admin-video-item-h-date-active';
-                        //$(".admin-video-item-h-date-" + idch).css("color","#faf7f7");
-                        //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
-                        //console.log(indic_public_stream); 
-                    } else {
-                        public_stream_list.push(false);
-                        indic_public_stream1 = 'admin-video-item-h-date';
-                        //$('.admin-video-item-h-date-' + idch).removeClass('admin-video-item-h-date-active-' + idch);
-                        //$(".admin-video-item-h-date-" + idch).css("color","#c4c4c494");
-                        //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
-                        //console.log("Fuck off!!"); 
-                        //console.log(indic_public_stream); 
-                    }
-                    indic_public_stream = indic_public_stream1; 
-                });
+
                 //console.log(indic_public_stream);
                 //console.log(pre_name);//array_product);
                 if(key_post){
