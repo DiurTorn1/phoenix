@@ -106,7 +106,10 @@ function get_product_public(){
         var count2 = 0;
         $.post('/php/get_stream_public_all.php', function(data){
             var output = $.parseJSON(data);
-            console.log(output);
+            //console.log(output);
+            $.each(output,function(i,item){
+                console.log(item.name_stream);
+            });
             //var initial_get = output? output[1]: '';
             //var indic_public_stream1 = '';
             //if(initial_get == list.name){
