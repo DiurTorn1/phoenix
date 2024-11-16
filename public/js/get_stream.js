@@ -63,7 +63,7 @@ function dynamic_checkbox(){
                         ///console.log(public_stream_list);
                     //}
                    
-                //}
+                }
             }
             
 
