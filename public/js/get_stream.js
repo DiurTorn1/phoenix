@@ -5,6 +5,14 @@ var public_stream_list = new Array();
 var public_product_perm = new Array();
 var get_ch_list = 1, select_count_stream;
 var count_product = 0;
+var count_stream = 0;
+var array_stream = new Array();
+var array_stream1 = new Array();
+var array_name_stream = new Array();
+var key_paint = 0;
+var num_list = 0;
+var num_list1 = 5;
+var num_list2 = 0;
 
 function dynamic_checkbox(){
     //video-btn-active 
@@ -27,16 +35,9 @@ function dynamic_checkbox(){
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
             var id = $("#admin-vl" + i).parent().parent().attr('id');
-            //console.log(id);
+            //console.log(id);array_stream[i]
             var name_list;
-            $.post('/php/get_stream_id.php',{ id:id }, function(data)  {
-                var output = $.parseJSON(data);
-                var list = output.data;
-                //console.log(list);
-                name_list = list.name;
-                
-            });
-            console.log(name_list);
+            console.log(array_name_stream);
             for(var i = 0; i < public_stream_list.length; i++){
                 if(public_stream_list[i] == name_list){ console.log(name_list); }
                 //console.log(public_stream_list);
@@ -61,13 +62,6 @@ function dynamic_checkbox(){
         $('.admin-video-btn3').removeClass('video-btn-active3');
     }
 }
-var count_stream = 0;
-var array_stream = new Array();
-var array_stream1 = new Array();
-var key_paint = 0;
-var num_list = 0;
-var num_list1 = 5;
-var num_list2 = 0;
 
 function get_product_public(){
     var count1 = 0;
@@ -186,6 +180,7 @@ function paint_element_stream(){
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
+            array_name_stream.push(list.name);
             //console.log(list.id);
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
