@@ -47,6 +47,27 @@ var num_list1 = 5;
 var num_list2 = 0;
 
 function paint_element_stream(){
+
+    var count1 = 0;
+    $.post('/php/get_product.php', function(data)  {
+        var output = $.parseJSON(data);
+        //console.log(output);
+        var pre_arr = new Array();
+        $.each(output,function(i,item){
+            pre_arr.push(item.id);
+            count1++;
+        });
+        //pre_arr.push(output.data);
+        //console.log(pre_arr);
+        for(var i = 0; i < pre_arr.length; i++){
+            array_product.push(pre_arr[i]);
+            
+        }
+        //console.log(array_product);
+        count_product = count1;
+    });
+
+    console.log(array_product);
     var all_sel = 0;
     if(count_stream > 5){
         $('#block_select_stream_list').show();
@@ -186,7 +207,7 @@ function paint_element_stream(){
                     }
                     indic_public_stream = indic_public_stream1; 
                 });
-                console.log(indic_public_stream);
+                //console.log(indic_public_stream);
                 //console.log(pre_name);//array_product);
                 if(key_post){
                     pre_name = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
@@ -338,7 +359,7 @@ $(document).ready(function() {
 
     }*/
 
-    console.log(public_product_perm);
+    //console.log(public_product_perm);
     $('#block_select_stream_list').hide();
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',500);
