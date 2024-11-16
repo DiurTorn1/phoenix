@@ -102,6 +102,8 @@ function dynamic_checkbox(){
         }
     } else {
         $('.admin-video-btn3').removeClass('video-btn-active3');
+        $('.admin-video-btn1').removeClass('video-btn-active1');
+        $('.admin-video-btn2').removeClass('video-btn-active2');
     }
 }
 
