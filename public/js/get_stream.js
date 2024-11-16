@@ -48,7 +48,7 @@ var num_list2 = 0;
 
 function get_product_public(){
     var count1 = 0;
-    if(!public_product_perm){
+    if(!public_product_perm[0]){
         $.post('/php/get_product.php', function(data)  {
             var output = $.parseJSON(data);
             //console.log(output);
