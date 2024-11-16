@@ -52,16 +52,21 @@ function dynamic_checkbox(){
         //console.log(arr_pub);
                     //console.log(id);array_stream[i]
         for(var i = 0; i < int_ch; i++){
-            var name_list = array_name_stream[i];
-            if(name_list.id == arr_pub[i]){
-                             //console.log(name_list.name);
-                             
+            var arr_p = arr_pub[i];
+            for(var k=0; k<array_name_stream.length;k++){
+                var name_list = array_name_stream[k];
+                if(name_list.id == arr_p){
+                    //console.log(name_list.name);
+                    
                 for(var i = 0; i < public_stream_list.length; i++){
                     if(public_stream_list[i] == name_list.name){ console.log(public_stream_list[i]);}
-                    //console.log(public_stream_list);
+                        //console.log(public_stream_list);
+                    }
+                   
                 }
-                            
             }
+            
+
                         //console.log(array_name_stream[i]);
         }
         /*if(key_pub){
