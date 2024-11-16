@@ -59,10 +59,10 @@ function dynamic_checkbox(){
                             //console.log(name_list.name);
                     
                     for(var j = 0; j < public_stream_list.length; j++){
-                        //if(public_stream_list[i] == name_list.name){ 
-                            //console.log(public_stream_list[i]);
-                        //}
-                        //console.log(public_stream_list);
+                        if(public_stream_list[j] == name_list.name){ 
+                            console.log(public_stream_list[j]);
+                        }
+                        //console.log(public_stream_list[j]);
                     }
                    
                 }
@@ -145,7 +145,7 @@ function get_product_public(){
             var output = $.parseJSON(data);
             //console.log(output);
             $.each(output,function(i,item){
-                console.log(item.name_stream);
+                //console.log(item.name_stream);
                 public_stream_list.push(item.name_stream);
             });
         });
