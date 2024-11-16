@@ -30,7 +30,7 @@ function dynamic_checkbox(){
             $.post('/php/get_stream_id.php',{ id:id }, function(data)  {
                 var output = $.parseJSON(data);
                 var list = output.data;
-                console.log(id);
+                console.log(list);
             });
             int_ch++;
         }
