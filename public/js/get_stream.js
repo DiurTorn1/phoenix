@@ -62,7 +62,7 @@ function dynamic_checkbox(){
                         //if(public_stream_list[i] == name_list.name){ 
                             //console.log(public_stream_list[i]);
                         //}
-                        console.log(public_stream_list);
+                        //console.log(public_stream_list);
                     }
                    
                 }
@@ -145,28 +145,9 @@ function get_product_public(){
             var output = $.parseJSON(data);
             //console.log(output);
             $.each(output,function(i,item){
-                //console.log(item.name_stream);
+                console.log(item.name_stream);
                 public_stream_list.push(item.name_stream);
             });
-            //var initial_get = output? output[1]: '';
-            //var indic_public_stream1 = '';
-            //if(initial_get == list.name){
-                //public_stream_list.push(true);
-                //$('.admin-video-item-h-date-' + idch).addClass('admin-video-item-h-date-active-' + idch);
-                //indic_public_stream1 = 'admin-video-item-h-date-active';
-                //$(".admin-video-item-h-date-" + idch).css("color","#faf7f7");
-                //$('.admin-video-item-h-date').addClass('admin-video-item-h-date-active');
-                //console.log(indic_public_stream); 
-           // } else {
-                //public_stream_list.push(false);
-                //indic_public_stream1 = 'admin-video-item-h-date';
-                //$('.admin-video-item-h-date-' + idch).removeClass('admin-video-item-h-date-active-' + idch);
-                //$(".admin-video-item-h-date-" + idch).css("color","#c4c4c494");
-                //$('.admin-video-item-h-date').removeClass('admin-video-item-h-date-active');
-                //console.log("Fuck off!!"); 
-                //console.log(indic_public_stream); 
-            //}
-            //indic_public_stream = indic_public_stream1; 
         });
     }
 
