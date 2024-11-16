@@ -37,7 +37,7 @@ function dynamic_checkbox(){
             var id = $("#admin-vl" + i).parent().parent().attr('id');
             //console.log(id);array_stream[i]
             for(var i = 0; i < array_name_stream.length; i++){
-                var name_list = public_stream_list[i];
+                var name_list = array_name_stream[i];
                 if(name_list.id == id){ console.log(name_list.name); }
                 //console.log(array_name_stream[i]);
             }
