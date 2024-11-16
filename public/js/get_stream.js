@@ -40,8 +40,8 @@ function dynamic_checkbox(){
             //console.log(array_name_stream);
             for(var i = 0; i < public_stream_list.length; i++){
                 var name_list = public_stream_list[i];
-                if(name_list.id == id){ console.log(name_list.name); }
-                //console.log(public_stream_list);
+                //if(name_list.id == id){ console.log(name_list.name); }
+                console.log(name_list.id);
             }
             int_ch++;
         }
