@@ -543,7 +543,7 @@ $(document).ready(function() {
         $("#window_product_pre").toggle();
         $("#aler_window_prod").text("Выберите продукт");
         for(var i = 0; i < array_product.length; i ++){
-            $.post('/php/get_product_id.php', {id:id}, function(data){
+            $.post('/php/get_product_id.php', {id:array_product[i]}, function(data){
                 var output = $.parseJSON(data);
                 console.log(output);
             });
