@@ -180,7 +180,11 @@ function paint_element_stream(){
             //console.log(data);
             var output = $.parseJSON(data);
             var list = output.data;
-            array_name_stream.push(list.name);
+            var arr_str_n = {
+                id : list.id,
+                name : list.name
+            };
+            array_name_stream.push(arr_str_n);
             //console.log(list.id);
             //console.log("Video inform:\r\n");
             //console.log("id: " + list.id + "\r\nworkspace_id: " + list.workspace_id + "\r\nparent_id: " + list.parent_id + "\r\nname: " + list.name + "\r\nsubtitle: " + list.subtitle +
