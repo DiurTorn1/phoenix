@@ -75,7 +75,18 @@ function dynamic_checkbox(){
                         //console.log(array_name_stream[i]);
             arr_res.push(key_pub);
         }
-        console.log(arr_res);
+        var allEqual = array.every(function(value, index, arr_res) {
+            return value === arr[0];
+        });
+
+        // Вывод результата
+        if (allEqual) {
+            //$('#result').text('Все элементы массива равны.');
+            console.log(allEqual);
+        } else {
+            console.log(allEqual);
+            //$('#result').text('Не все элементы массива равны.');
+        }
         /*if(key_pub){
             $('.admin-video-btn1').addClass('video-btn-active1');
             $('.admin-video-btn2').removeClass('video-btn-active2');
