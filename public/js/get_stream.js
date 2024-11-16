@@ -73,8 +73,9 @@ function dynamic_checkbox(){
             
 
                         //console.log(array_name_stream[i]);
+            arr_res.push(key_pub);
         }
-        console.log(key_pub);
+        console.log(arr_res);
         /*if(key_pub){
             $('.admin-video-btn1').addClass('video-btn-active1');
             $('.admin-video-btn2').removeClass('video-btn-active2');
