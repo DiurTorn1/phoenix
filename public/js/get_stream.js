@@ -39,19 +39,19 @@ function dynamic_checkbox(){
             //var key_pub = 0;
             var id = $("#admin-vl" + i).parent().parent().attr('id');
             //console.log(id);array_stream[i]
-            for(var i = 0; i < array_name_stream.length; i++){
-                var name_list = array_name_stream[i];
-                if(name_list.id == id){
+            //for(var i = 0; i < array_name_stream.length; i++){
+                //var name_list = array_name_stream[i];
+                //if(name_list.id == id){
                      //console.log(name_list.name);
                      
-                     for(var i = 0; i < public_stream_list.length; i++){
-                        if(public_stream_list[i] == name_list.name){ console.log(public_stream_list[i]);}
+                     //for(var i = 0; i < public_stream_list.length; i++){
+                        //if(public_stream_list[i] == name_list.name){ console.log(public_stream_list[i]);}
                         //console.log(public_stream_list);
-                    }
+                    //}
                     
-                }
+                //}
                 //console.log(array_name_stream[i]);
-            }
+            //}
             //arr_pub.push(key_pub);
             
         }
