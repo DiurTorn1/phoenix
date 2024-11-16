@@ -217,17 +217,17 @@ function paint_element_stream(){
                 var initial_gl = list.id, pre_name;
                 //var json_product = $.parseJSON(public_product_perm);
                 for(var i = 0; i < public_product_perm.length; i++){
-                    console.log(public_product_perm[i]);
+                    //console.log(public_product_perm[i]);
+                    if(public_product_perm[i] === initial_gl){
+                        //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
+                        key_post = 1;
+                        //pre_name = item1.initial;
+                        //console.log(pre_name);
+                    }
                 }
                 //
                 //$.each(json_product,function(i,item1){
                     //console.log(item1.initial);
-                    //if(item1.initial === initial_gl){
-                    //get_product_gl = '<img src="img/rub2.png" alt="" class="admin-video-prev-stik">';
-                        //key_post = 1;
-                        //pre_name = item1.initial;
-                        //console.log(pre_name);
-                    //}
                 //});
                 var indic_public_stream = '';
                 $.post('/php/get_stream_public.php', {name_stream:list.name}, function(data){
