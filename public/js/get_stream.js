@@ -10,6 +10,7 @@ function dynamic_checkbox(){
     //video-btn-active 
     //
     var int_ch =0;
+    var key_pub = 0;
     if(key_main_chack){
         if($("#admin-video-sort-check").is(':checked')){//inter_stream
             for(var i = 0; i < idch; i++){
@@ -31,7 +32,6 @@ function dynamic_checkbox(){
                 var output = $.parseJSON(data);
                 var list = output.data;
                 //console.log(list);
-                var key_pub = 0;
                 for(var i = 0; i < public_stream_list.length; i++){
                     if(public_stream_list[i] == list.name){ key_pub = 1;}
                     //console.log(public_stream_list);
