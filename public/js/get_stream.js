@@ -109,6 +109,7 @@ function get_product_public(){
             //console.log(output);
             $.each(output,function(i,item){
                 console.log(item.name_stream);
+                public_stream_list.push(item.name_stream);
             });
             //var initial_get = output? output[1]: '';
             //var indic_public_stream1 = '';
@@ -155,7 +156,7 @@ function paint_element_stream(){
         minus = 0;
     }
     var top_list = num_list1-minus;
-    public_stream_list = [];
+    //public_stream_list = [];
     //console.log(top_list);
     for(var i = num_list; i < top_list; i ++){
         $.post('/php/get_stream_id.php',{ id:array_stream[i] }, function(data)  {
@@ -256,6 +257,8 @@ function paint_element_stream(){
                 //$.each(json_product,function(i,item1){
                     //console.log(item1.initial);
                 //});
+                console.log(public_stream_list);
+                
 
                 //console.log(indic_public_stream);
                 //console.log(pre_name);//array_product);
