@@ -76,6 +76,8 @@ function dynamic_checkbox(){
             arr_res.push(key_pub);
         }
         var allEqual = arr_res.every(function(value, index, arr) {
+            console.log(value);
+            console.log(arr[0]);
             return value === arr[0];
         });
 
