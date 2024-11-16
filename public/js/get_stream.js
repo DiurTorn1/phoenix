@@ -31,11 +31,13 @@ function dynamic_checkbox(){
             $.post('/php/get_stream_id.php',{ id:id }, function(data)  {
                 var output = $.parseJSON(data);
                 var list = output.data;
+                var key_pub1 = 0;
                 //console.log(list);
                 for(var i = 0; i < public_stream_list.length; i++){
-                    if(public_stream_list[i] == list.name){ key_pub = 1;}
+                    if(public_stream_list[i] == list.name){ key_pub1 = 1;}
                     //console.log(public_stream_list);
                 }
+                key_pub = key_pub1;
             });
             int_ch++;
         }
