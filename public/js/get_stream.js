@@ -41,10 +41,12 @@ function dynamic_checkbox(){
                 var name_list = array_name_stream[i];
                 if(name_list.id == id){
                      //console.log(name_list.name);
+                     var key_pub = 0;
                      for(var i = 0; i < public_stream_list.length; i++){
                         if(public_stream_list[i] == name_list.name){ console.log(public_stream_list[i]);}
                         //console.log(public_stream_list);
                     }
+                    arr_pub.push(key_pub);
                 }
                 //console.log(array_name_stream[i]);
             }
