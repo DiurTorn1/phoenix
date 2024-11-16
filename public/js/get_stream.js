@@ -10,7 +10,7 @@ function dynamic_checkbox(){
     //video-btn-active 
     //
     var int_ch =0;
-    var key_pub = 0;
+    var key_pub = 0
     if(key_main_chack){
         if($("#admin-video-sort-check").is(':checked')){//inter_stream
             for(var i = 0; i < idch; i++){
@@ -28,17 +28,19 @@ function dynamic_checkbox(){
         if(ch1){
             var id = $("#admin-vl" + i).parent().parent().attr('id');
             //console.log(id);
+            var name_list;
             $.post('/php/get_stream_id.php',{ id:id }, function(data)  {
                 var output = $.parseJSON(data);
                 var list = output.data;
-                var key_pub1 = 0;
                 //console.log(list);
-                for(var i = 0; i < public_stream_list.length; i++){
-                    if(public_stream_list[i] == list.name){ key_pub1 = 1;}
-                    //console.log(public_stream_list);
-                }
-                key_pub = key_pub1;
+                name_list = list.name;
+
+                
             });
+            for(var i = 0; i < public_stream_list.length; i++){
+                if(public_stream_list[i] == name_list){ console.log(name_list); }
+                //console.log(public_stream_list);
+            }
             int_ch++;
         }
     }
@@ -48,13 +50,13 @@ function dynamic_checkbox(){
     //console.log(select_count_stream);
     if(int_ch != 0){
         $('.admin-video-btn3').addClass('video-btn-active3');
-        if(key_pub){
+        /*if(key_pub){
             $('.admin-video-btn1').addClass('video-btn-active1');
             $('.admin-video-btn2').removeClass('video-btn-active2');
         } else {
             $('.admin-video-btn1').removeClass('video-btn-active1');
             $('.admin-video-btn2').addClass('video-btn-active2');
-        }
+        }*/
     } else {
         $('.admin-video-btn3').removeClass('video-btn-active3');
     }
