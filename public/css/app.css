@@ -2553,10 +2553,11 @@ td a:focus {
 
 .product-add-popup {
     display: none;
+    justify-content: flex-end;
     position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 10;
+    left: 30%;
+    top: 30%;
+    z-index: 5;
     width: 100%;
     height: 100%;
     background-color: #000000d6;
