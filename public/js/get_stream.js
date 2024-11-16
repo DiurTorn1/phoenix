@@ -93,7 +93,7 @@ function paint_element_stream(){
                     });
                     //console.log(key_prod_perm_stream);
                     for(var i = 0; i < key_product_perm; i++){
-                        //console.log(public_product_perm1[i]);
+                        console.log(public_product_perm1[i]);
                         public_product_perm.push(public_product_perm1[i]);
                     }
                     
