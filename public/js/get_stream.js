@@ -35,21 +35,23 @@ function dynamic_checkbox(){
     for(var i = 0; i < idch; i++){
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
+            var key_pub = 0;
             var id = $("#admin-vl" + i).parent().parent().attr('id');
             //console.log(id);array_stream[i]
             for(var i = 0; i < array_name_stream.length; i++){
                 var name_list = array_name_stream[i];
                 if(name_list.id == id){
                      //console.log(name_list.name);
-                     var key_pub = 0;
+                     
                      for(var i = 0; i < public_stream_list.length; i++){
                         if(public_stream_list[i] == name_list.name){ console.log(public_stream_list[i]);}
                         //console.log(public_stream_list);
                     }
-                    arr_pub.push(key_pub);
+                    
                 }
                 //console.log(array_name_stream[i]);
             }
+            arr_pub.push(key_pub);
             int_ch++;
         }
     }
