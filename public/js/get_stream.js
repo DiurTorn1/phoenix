@@ -35,7 +35,8 @@ function dynamic_checkbox(){
     for(var i = 0; i < idch; i++){
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
-            var key_pub = 0;
+            int_ch++;
+            //var key_pub = 0;
             var id = $("#admin-vl" + i).parent().parent().attr('id');
             //console.log(id);array_stream[i]
             for(var i = 0; i < array_name_stream.length; i++){
@@ -51,8 +52,8 @@ function dynamic_checkbox(){
                 }
                 //console.log(array_name_stream[i]);
             }
-            arr_pub.push(key_pub);
-            int_ch++;
+            //arr_pub.push(key_pub);
+            
         }
     }
     $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
