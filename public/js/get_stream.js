@@ -36,10 +36,10 @@ function dynamic_checkbox(){
         if(ch1){
             var id = $("#admin-vl" + i).parent().parent().attr('id');
             //console.log(id);array_stream[i]
-            var name_list;
+            //var name_list;
             console.log(array_name_stream);
             for(var i = 0; i < public_stream_list.length; i++){
-                if(public_stream_list[i] == name_list){ console.log(name_list); }
+                if(public_stream_list[i].id == id){ console.log(id); }
                 //console.log(public_stream_list);
             }
             int_ch++;
