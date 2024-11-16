@@ -60,9 +60,9 @@ function dynamic_checkbox(){
                     
                     for(var j = 0; j < public_stream_list.length; j++){
                         //if(public_stream_list[i] == name_list.name){ 
-                            console.log(public_stream_list[i]);
+                            //console.log(public_stream_list[i]);
                         //}
-                        ///console.log(public_stream_list);
+                        console.log(public_stream_list);
                     }
                    
                 }
