@@ -51,8 +51,10 @@ function dynamic_checkbox(){
         $('.admin-video-btn3').addClass('video-btn-active3');
         //console.log(arr_pub);
                     //console.log(id);array_stream[i]
+        var arr_res = [];
         for(var i = 0; i < int_ch; i++){
             var arr_p = arr_pub[i];
+            var key_pub = 0;
             for(var k=0; k<array_name_stream.length;k++){
                 var name_list = array_name_stream[k];
                 if(name_list.id == arr_p){
@@ -60,7 +62,8 @@ function dynamic_checkbox(){
                     
                     for(var j = 0; j < public_stream_list.length; j++){
                         if(public_stream_list[j] == name_list.name){ 
-                            console.log(public_stream_list[j]);
+                            //console.log(public_stream_list[j]);
+                            key_pub = 1;
                         }
                         //console.log(public_stream_list[j]);
                     }
@@ -71,6 +74,7 @@ function dynamic_checkbox(){
 
                         //console.log(array_name_stream[i]);
         }
+        console.log(key_pub);
         /*if(key_pub){
             $('.admin-video-btn1').addClass('video-btn-active1');
             $('.admin-video-btn2').removeClass('video-btn-active2');
