@@ -36,10 +36,21 @@ function dynamic_checkbox(){
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
             int_ch++;
-            var key_pub = 0;
+            //var key_pub = 0;
             var id = $("#admin-vl" + i).parent().parent().attr('id');
-            //console.log(id);array_stream[i]
-            //for(var i = 0; i < array_name_stream.length; i++){
+            arr_pub.push(id);
+            
+        }
+    }
+    $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
+    $('#span_select_list').text(get_ch_list);
+    select_count_stream = $("#select_count_stream option:selected").text();
+    //console.log(select_count_stream);
+    if(int_ch != 0){
+        $('.admin-video-btn3').addClass('video-btn-active3');
+        console.log(arr_pub);
+                    //console.log(id);array_stream[i]
+        for(var i = 0; i < arr_pub.length; i++){
                 //var name_list = array_name_stream[i];
                 //if(name_list.id == id){
                      //console.log(name_list.name);
@@ -51,18 +62,7 @@ function dynamic_checkbox(){
                     
                 //}
                 //console.log(array_name_stream[i]);
-            //}
-            arr_pub.push(key_pub);
-            
         }
-    }
-    $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
-    $('#span_select_list').text(get_ch_list);
-    select_count_stream = $("#select_count_stream option:selected").text();
-    //console.log(select_count_stream);
-    if(int_ch != 0){
-        $('.admin-video-btn3').addClass('video-btn-active3');
-        console.log(arr_pub);
         /*if(key_pub){
             $('.admin-video-btn1').addClass('video-btn-active1');
             $('.admin-video-btn2').removeClass('video-btn-active2');
