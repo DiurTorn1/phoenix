@@ -25,6 +25,8 @@ function dynamic_checkbox(){
     for(var i = 0; i < idch; i++){
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
+            var id = $("#admin-vl" + i).parent().parent().attr('id');
+            console.log(id);
             int_ch++;
         }
     }
