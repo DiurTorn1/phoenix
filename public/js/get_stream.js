@@ -56,14 +56,14 @@ function dynamic_checkbox(){
             for(var k=0; k<array_name_stream.length;k++){
                 var name_list = array_name_stream[k];
                 if(name_list.id == arr_p){
-                    //console.log(name_list.name);
+                    console.log(name_list.name);
                     
-                for(var i = 0; i < public_stream_list.length; i++){
-                    if(public_stream_list[i] == name_list.name){ console.log(public_stream_list[i]);}
-                        //console.log(public_stream_list);
-                    }
+                //for(var i = 0; i < public_stream_list.length; i++){
+                    //if(public_stream_list[i] == name_list.name){ console.log(public_stream_list[i]);}
+                        ///console.log(public_stream_list);
+                    //}
                    
-                }
+                //}
             }
             
 
