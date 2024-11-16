@@ -257,15 +257,16 @@ function paint_element_stream(){
                 //$.each(json_product,function(i,item1){
                     //console.log(item1.initial);
                 //});
-                var key_pub = 0;
+                var key_pub = 0, active_class = '';
                 for(var i = 0; i < public_stream_list.length; i++){
                     if(public_stream_list[i] == list.name){ key_pub = 1;}
                     //console.log(public_stream_list);
                 }
                 if(key_pub){
-                    console.log(list.name);
+                    //console.log(list.name);
+                    active_class = 'admin-video-item-h-date-active';
                 } else {
-
+                    active_class = '';
                 }
                 //console.log(indic_public_stream);
                 //console.log(pre_name);//array_product);
@@ -290,7 +291,7 @@ function paint_element_stream(){
                         '</div>' + 
                             '<div class="admin-video-item-header">' + 
                                 '<div class="admin-video-item-h-list">' + 
-                                    '<span class="admin-video-item-h-date admin-video-item-h-date-active">' + list.name + '</span>' +
+                                    '<span class="admin-video-item-h-date ' + active_class + '">' + list.name + '</span>' +
                                 '</div>' + 
                                 '<div class="admin-video-item-h-hashtag">' + 
                                     '<span class="admin-video-hashtag-date">' + sezon + '</span>' + 
