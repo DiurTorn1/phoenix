@@ -108,7 +108,7 @@ function get_product_public(){
             var output = $.parseJSON(data);
             //console.log(output);
             $.each(output,function(i,item){
-                console.log(item.name_stream);
+                //console.log(item.name_stream);
                 public_stream_list.push(item.name_stream);
             });
             //var initial_get = output? output[1]: '';
@@ -257,9 +257,16 @@ function paint_element_stream(){
                 //$.each(json_product,function(i,item1){
                     //console.log(item1.initial);
                 //});
-                console.log(public_stream_list);
-                
-
+                var key_pub = 0;
+                for(var i = 0; i < public_stream_list.length; i++){
+                    if(public_stream_list[i] == list.name){}
+                    console.log(public_stream_list);
+                }
+                if(key_pub){
+                    console.log(list.name);
+                } else {
+                    
+                }
                 //console.log(indic_public_stream);
                 //console.log(pre_name);//array_product);
                 if(key_post){
