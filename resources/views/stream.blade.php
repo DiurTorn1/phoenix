@@ -121,7 +121,12 @@
 				<!--<h2 class="top-menu-title">Создать промокод</h2>-->
 			</div>
 		</div>
+		<div class="admin-back">
+			<h3 id="aler_window_prod"></h3>
+		</div>
+		
 		<div class="admin-back" id="product_list_add">
+			
 		</div>
 
 	</div>
