@@ -36,7 +36,7 @@ function dynamic_checkbox(){
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
             int_ch++;
-            //var key_pub = 0;
+            var key_pub = 0;
             var id = $("#admin-vl" + i).parent().parent().attr('id');
             //console.log(id);array_stream[i]
             //for(var i = 0; i < array_name_stream.length; i++){
@@ -52,7 +52,7 @@ function dynamic_checkbox(){
                 //}
                 //console.log(array_name_stream[i]);
             //}
-            //arr_pub.push(key_pub);
+            arr_pub.push(key_pub);
             
         }
     }
