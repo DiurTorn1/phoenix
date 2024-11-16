@@ -93,7 +93,7 @@ function get_product_public(){
                         });
                         //console.log(key_prod_perm_stream);
                         for(var i = 0; i < key_product_perm; i++){
-                            console.log(public_product_perm1[i]);
+                            //console.log(public_product_perm1[i]);
                             public_product_perm.push(public_product_perm1[i]);
                         }
                         
@@ -109,7 +109,7 @@ function get_product_public(){
 
 function paint_element_stream(){
 
-    console.log(public_product_perm);
+    //console.log(public_product_perm);
     var all_sel = 0;
     if(count_stream > 5){
         $('#block_select_stream_list').show();
@@ -214,8 +214,9 @@ function paint_element_stream(){
                     data_put = res_parstart1[2] + " " + res_parstart1[1] + " " + res_parstart1[0];
                 }
                 var key_post = 0;
-                var initial_gl = list.name, pre_name;
-                //var json_product = $.parseJSON(array_product);
+                var initial_gl = list.id, pre_name;
+                var json_product = $.parseJSON(public_product_perm);
+                console.log(json_product);
                 //$.each(json_product,function(i,item1){
                     //console.log(item1.initial);
                     //if(item1.initial === initial_gl){
