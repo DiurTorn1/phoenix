@@ -542,10 +542,33 @@ $(document).ready(function() {
     $("#add_product_stream_checkbox").on('click', function() {
         $("#window_product_pre").toggle();
         $("#aler_window_prod").text("Выберите продукт");
-        for(var i = 0; i < array_product.length; i ++){
+        for(var i = 0; i < array_product.length; i++){
             $.post('/php/get_product_id.php', {id:array_product[i]}, function(data){
                 var output = $.parseJSON(data);
+                console.log(output[0]);
                 console.log(output[1]);
+                console.log(output[2]);
+                console.log(output[3]);
+                console.log(output[4]);
+                console.log(output[5]);
+                console.log(output[6]);
+                console.log(output[7]);
+                console.log(output[8]);
+                console.log(output[9]);
+                console.log(output[10]);
+                console.log(output[11]);
+                console.log(output[12]);
+                console.log(output[13]);
+                console.log(output[14]);
+                console.log(output[15]);
+                console.log(output[16]);
+                console.log(output[17]);
+                console.log(output[18]);
+                console.log(output[19]);
+                console.log(output[20]);
+                console.log(output[21]);
+
+                //$("product_list_add").append();
                 
                 /*
                 			<li class="admin-video-item admin-back" id={{'parrent_parrent_id_checkbox'. $i}}>
