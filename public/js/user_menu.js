@@ -11,4 +11,6 @@ $(document).ready(function(){
   		$(`[data-content="${$(this).data('open-block')}"`).addClass(activeCls);
 	});
     $('#password_div').toggle();
+    $('#password_div_1').toggle();
+    $('#password_div_2').toggle();
 });

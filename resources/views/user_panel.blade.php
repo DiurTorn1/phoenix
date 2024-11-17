@@ -74,10 +74,10 @@
 					<div class="popup-content-wrap-row-1" id="password_div">
 						<input type="text" placeholder="Старый пароль" class="user-input" title="Пароль">
 					</div>
-					<div class="popup-content-wrap-row-1" id="password_div">
+					<div class="popup-content-wrap-row-1" id="password_div_1">
 						<input type="text" placeholder="Введите пароль" class="user-input" title="Пароль">
 					</div>
-					<div class="popup-content-wrap-row-1" id="password_div">
+					<div class="popup-content-wrap-row-1" id="password_div_2">
 						<input type="text" placeholder="Повторите пароль" class="user-input" title="Пароль">
 					</div>
 					<div class="user-input-box block-w100">
