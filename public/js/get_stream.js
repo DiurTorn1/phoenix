@@ -552,29 +552,27 @@ $(document).ready(function() {
                 var table_get = output ? output[4]:'';
                 $.post('/php/get_product_id.php', {id:prm_prod}, function(data){
                     var output = $.parseJSON(data);
-                    var arr_add_prod = [];
+                    
                     for(var i = 0; i < num_list1; i++){
                         var ch1 = $("#admin-vl" + i).is(':checked');
+                        var arr_add_prod = [];
                         if(ch1){
+
                             var id = $("#admin-vl" + i).parent().parent().attr('id');
                             //console.log(table_get);
                             $.post('/php/get_product_table.php',{ table:table_get }, function(data1)  {
                                 var output1 = $.parseJSON(data1);
                                 //console.log(output1);
                                 $.each(output1,function(i,item1){
-                                    if(item1.id_stream == id){
-                                        arr_add_prod.push({table:table_get,id:id});
-                                    }
-                                    
-                                    
+                                    arr_add_prod.push({table:table_get,id:id}); 
                                 });
                                
                             });
-
+                            console.log(arr_add_prod);
                         }
                     }
-                    arr_add_prod1.push(arr_add_prod);
-                    console.log(arr_add_prod1);
+                    //arr_add_prod1.push(arr_add_prod);
+                    
                     /*var key_pod = 0;
                     if(!key_gluk){
                         var allEqual = arr_add_prod.every(function(value, index, arr) {
