@@ -5,7 +5,7 @@
 
 @guest
 
-
+<script type="text/javascript">window.location.href='/';</script>
 @else
 	@if(!empty(Auth::user()->getRoleNames()))
     @foreach( Auth::user()->getRoleNames() as $v)
