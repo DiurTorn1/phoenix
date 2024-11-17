@@ -594,6 +594,7 @@ $(document).ready(function() {
 
                         }
                     }
+                    console.log(arr_res);
                     //arr_add_prod1.push(arr_add_prod);
                     
                     /*var key_pod = 0;
