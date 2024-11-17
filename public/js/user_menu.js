@@ -53,7 +53,10 @@ $(document).ready(function(){
             $('#user_panel_password').addClass("user-input-err");
         } else {
             $('#user_panel_password').removeClass("user-input-err");
-            var pass_get = '';
+            var pass_get = '',pass_get1 = '';
+            $.post('/php/hash_pass.php', { pass:pass }, function(data) {
+                console.log(data);
+            });
             $.post('/php/users_get_reg.php', { email:params.get('user_email') }, function(data) {
                 var output = $.parseJSON(data);
                 console.log(output[4]);
