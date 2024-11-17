@@ -542,6 +542,7 @@ $(document).ready(function() {
     $("#add_product_stream_checkbox").on('click', function() {
         $("#window_product_pre").toggle();
         $("#aler_window_prod").text("Выберите продукт");
+        var key_gluk = 0;
         for(var i = 0; i < array_product.length/2; i++){
             $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                 var output = $.parseJSON(data);
@@ -575,13 +576,18 @@ $(document).ready(function() {
                     }
 
                     var key_pod = 0;
-                    var allEqual = arr_add_prod.every(function(value, index, arr) {
-                        console.log(value);
-                        console.log(arr[0]);
-                        key_pod = value;
-                        return value === arr[0];
-                    });
-                    console.log(allEqual);
+                    if(!key_gluk){
+                        var allEqual = arr_add_prod.every(function(value, index, arr) {
+                            console.log(value);
+                            console.log(arr[0]);
+                            key_pod = value;
+                            return value === arr[0];
+                        });
+                        console.log(allEqual);
+                        console.log(arr_add_prod);
+                        key_gluk = 1;
+                    }
+
                     /*                                    if(item1.id_stream == id){
                                         $("#product_list_add").append(
                                             '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
