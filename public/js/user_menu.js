@@ -60,7 +60,7 @@ $(document).ready(function(){
                     //console.log(pass);
                     //console.log(pass_get);
                     console.log(data1);
-                    if(data1 == 'OK'){
+                    if(data1 === 'OK'){
                         $('#user_panel_password').removeClass("user-input-err");
                         alert("Correct");
                     } //else {
