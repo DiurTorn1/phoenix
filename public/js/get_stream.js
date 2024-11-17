@@ -581,6 +581,10 @@ $(document).ready(function() {
             });
         }
     });
+
+    $(".button_prod_dyn").on('click', function() {
+        alert(this.id);
+    });
     
     $("#bottom_list_stream").on('click', function() {
         if(num_list != 0){

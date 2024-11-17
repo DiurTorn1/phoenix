@@ -13,6 +13,7 @@ var public_product_perm2 = new Array();
 var key_paint = 0, key_paint1 = 0, key_paint2 = 0, key_sell_user = 0;
 var user_global = "";
 var user_email = '';
+var key_live = 0;
 //
 
 function user_sells(){
@@ -115,7 +116,11 @@ function paint_element_stream(){
                         if(pars_date[0] == dNow.getFullYear() && pars_date[1] == (dNow.getMonth()+1) && pars_date[2] == dNow.getDate()){
                            if(dNow.getHours() >= pars_time[0]){
                                 div_video = "#slider-2";
-                                $('#index-live-2').toggle();  
+                                if(!key_live){
+                                    $('#index-live-2').toggle();
+                                    key_live = 1;
+                                }
+                                  
                             }
 
                         }
