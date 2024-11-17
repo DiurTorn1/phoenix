@@ -62,6 +62,8 @@
 					<div class="popup-content-wrap-row">
 						<input type="text" placeholder="Имя" class="user-input" title="Ваше имя">
 						<input type="text" placeholder="Фамилия" class="user-input" title="Ваша фамилия">
+					</div>
+					<div class="popup-content-wrap-row">
 						<input type="text" placeholder="Почта" class="user-input" title="Ваша почта">
 					</div>
 					<div class="user-input-box block-w100">
