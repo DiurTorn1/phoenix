@@ -158,14 +158,14 @@ function get_stream_array(){
 
     }
     //for(var i = 0; i < count_stream; i++){
-    if(array_stream[0]!=array_stream1[0]){
+    //if(array_stream[0]!=array_stream1[0]){
             //setInterval('paint_element_stream()',100);
-        $("#slider").empty();
-        $("#slider-2").empty();
+        //$("#slider").empty();
+        //$("#slider-2").empty();
         //idch = 0;
         //array_stream = [];
-        key_paint = 0;
-    }
+        //key_paint = 0;
+    //}
     if(!key_paint1){
         for(var i = 0; i < count_product; i++){
             array_product1.push(array_product[i]);           
