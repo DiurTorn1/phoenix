@@ -2580,6 +2580,14 @@ td a:focus {
     justify-content: space-between;
 }
 
+.user-input-err {
+    border-color: #f52105; 
+    box-shadow: 0 0 1px 1px #8a0303;
+    box-shadow: 0 0 0 1px -moz-mac-focusring; 
+    color: #868686;
+    outline: none; 
+}
+
 .log_promocode_add{
     
 }

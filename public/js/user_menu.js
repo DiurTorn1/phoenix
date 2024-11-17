@@ -49,8 +49,10 @@ $(document).ready(function(){
         //window.location.href='/user_panel?user_email='+params.get('user_email');
         var pass = $('#user_panel_password').val();
         if(!pass){
-            alert("Графа с паролем не должно быть пустым");
+            //alert("Графа с паролем не должно быть пустым");
+            $('#user_panel_password').addClass("user-input-err");
         } else {
+            $('#user_panel_password').removeClass("user-input-err");
             $.post('/php/users_get_reg.php', { email:params.get('user_email') }, function(data) {
                 var output = $.parseJSON(data);
                 console.log(output);
