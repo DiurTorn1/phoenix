@@ -2575,6 +2575,12 @@ td a:focus {
     padding: 0 5px 3px 5px;
 }
 
+.popup-content-wrap-row-1 {
+    display: none;
+    display: flex;
+    justify-content: space-between;
+}
+
 .log_promocode_add{
     
 }

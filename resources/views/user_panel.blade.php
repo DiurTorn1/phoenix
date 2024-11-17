@@ -62,6 +62,15 @@
 					<div class="popup-content-wrap-row">
 						<input type="text" placeholder="Имя" class="user-input" title="Ваше имя">
 						<input type="text" placeholder="Фамилия" class="user-input" title="Ваша фамилия">
+						<input type="text" placeholder="Почта" class="user-input" title="Ваша почта">
+					</div>
+					<div class="user-input-box block-w100">
+						<button type="submit" class="top-menu-btn" id="">Обновить пароль</button>
+					</div>
+					<div class="popup-content-wrap-row-1">
+						<input type="text" placeholder="Старый пароль" class="user-input" title="Пароль">
+						<input type="text" placeholder="Введите пароль" class="user-input" title="Пароль">
+						<input type="text" placeholder="Повторите пароль" class="user-input" title="Пароль">
 					</div>
 					<div class="user-input-box block-w100">
 						<label>Страна*</label>
