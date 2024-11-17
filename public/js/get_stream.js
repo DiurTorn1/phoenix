@@ -573,7 +573,7 @@ $(document).ready(function() {
                 var table_get = output ? output[4]:'';
                 $.post('/php/get_product_id.php', {id:prm_prod}, function(data){
                     var output = $.parseJSON(data);
-                    
+                    var arr_res = [];
                     for(var i = 0; i < num_list1; i++){
                         var ch1 = $("#admin-vl" + i).is(':checked');
                         if(ch1){
@@ -584,7 +584,10 @@ $(document).ready(function() {
                             for(var k = 0; k < public_product_perm2.length; k++){
                                 var get_mass = public_product_perm2[k];
                                 if(get_mass.table == table_get && get_mass.id == id){
-                                    console.log(get_mass.table +' : ' + get_mass.id);
+                                    //console.log(get_mass.table +' : ' + get_mass.id);
+                                    arr_res.push(1);
+                                } else {
+                                    arr_res.push(0);
                                 }
                                 
                             }
