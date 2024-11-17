@@ -672,15 +672,20 @@ $(document).ready(function() {
             var split_tag = table_array_gl[k].split('_');
             if(id == split_tag[1]){
                 table_name = table_array_gl[k];
-                console.log(table_name);
+                //console.log(table_name);
             }
         }
-        console.log(table_name);
+        //console.log(table_name);
         for(var i = 0; i < num_list1; i++){
             var ch1 = $("#admin-vl" + i).is(':checked');
             if(ch1){
                 var id_stream = $("#admin-vl" + i).parent().parent().attr('id');
-                console.log(table_name + ' : ' + id_stream + ' : ' + localdate1);
+                //console.log(table_name + ' : ' + id_stream + ' : ' + localdate1);
+                $.post('/php/add_table_product.php', {table:table_name, id_stream:id_stream, reg_date:localdate1 }, function(data)  {
+                    if(data=='OK'){
+                        
+                    }
+                });
             }
         }
     });
