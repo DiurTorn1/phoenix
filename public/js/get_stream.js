@@ -597,8 +597,8 @@ $(document).ready(function() {
                     }
                     //console.log(arr_res);
                     var allEqual = arr_res.every(function(value, index, arr) {
-                        console.log(value);
-                        console.log(arr[0]);
+                        //console.log(value);
+                        //console.log(arr[0]);
                         key_pod = value;
                         return value === arr[0];
                     });
@@ -658,7 +658,7 @@ $(document).ready(function() {
     $(document).on('click', '.button_prod_dyn', function() {
         //alert(this.id);
         var id = this.id;
-
+        console.log(id);
         //$.post('/php/add_table_product.php', {table:output[4], id_stream:id_card, reg_date:localdate1 }, function(data)  {});
     });
     
