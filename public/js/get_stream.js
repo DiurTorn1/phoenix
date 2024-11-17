@@ -602,55 +602,43 @@ $(document).ready(function() {
                         key_pod = value;
                         return value === arr[0];
                     });
-                    console.log(allEqual);
-                    console.log(arr_res);
-                    console.log(key_pod);
-                    //arr_add_prod1.push(arr_add_prod);
-                    
-                    /*var key_pod = 0;
-                    if(!key_gluk){
-
-                        key_gluk = 1;
-                    }*/
-
-                    /*                                    if(item1.id_stream == id){
-                                        $("#product_list_add").append(
-                                            '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
-                                            '<div class="admin-video-prev">' +
-                                                '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
-                                            '</div>' +
-                                            '<div class="admin-video-item-header">' +
-                                                '<div class="admin-video-item-h-list">' +
-                                                    '<span class="admin-video-item-h-date">' + output[1] + '</span>' +
-                                                '</div>' +
-                                                '<div class="admin-video-item-h-hashtag">' +
-                                                    '<span class="admin-prod-hashtag">' + output[2] + '</span>' +
-                                                '</div>' +
-                                                '<div class="admin-video-item-info admin-video-item-view">' +
-                                                    '<h3>Стрим добавлен к продукту</h3>' +
-                                                '</div>' +
-                                            '</div>' +
-                                        '</li>');
-                                    } else {
-                                        $("#product_list_add").append(
-                                            '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
-                                            '<div class="admin-video-prev">' +
-                                                '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
-                                            '</div>' +
-                                            '<div class="admin-video-item-header">' +
-                                                '<div class="admin-video-item-h-list">' +
-                                                    '<span class="admin-video-item-h-date">' + output[1] + '</span>' +
-                                                '</div>' +
-                                                '<div class="admin-video-item-h-hashtag">' +
-                                                    '<span class="admin-prod-hashtag">' + output[2] + '</span>' +
-                                                '</div>' +
-                                                '<div class="admin-video-item-info admin-video-item-view">' +
-                                                    '<button class="button_prod_dyn" id="' + output[0] + '">Добавить</button>' +
-                                                '</div>' +
-                                            '</div>' +
-                                        '</li>');
-                                    }*/
-                    /**/
+                    if (allEqual) {
+                        $("#product_list_add").append(
+                            '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
+                            '<div class="admin-video-prev">' +
+                                '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                            '</div>' +
+                            '<div class="admin-video-item-header">' +
+                                '<div class="admin-video-item-h-list">' +
+                                    '<span class="admin-video-item-h-date">' + output[1] + '</span>' +
+                                '</div>' +
+                                '<div class="admin-video-item-h-hashtag">' +
+                                    '<span class="admin-prod-hashtag">' + output[2] + '</span>' +
+                                '</div>' +
+                                '<div class="admin-video-item-info admin-video-item-view">' +
+                                    '<button class="button_prod_dyn" id="' + output[0] + '">Добавить</button>' +
+                                '</div>' +
+                            '</div>' +
+                        '</li>');
+                    } else {
+                        $("#product_list_add").append(
+                            '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
+                            '<div class="admin-video-prev">' +
+                                '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                            '</div>' +
+                            '<div class="admin-video-item-header">' +
+                                '<div class="admin-video-item-h-list">' +
+                                    '<span class="admin-video-item-h-date">' + output[1] + '</span>' +
+                                '</div>' +
+                                '<div class="admin-video-item-h-hashtag">' +
+                                    '<span class="admin-prod-hashtag">' + output[2] + '</span>' +
+                                '</div>' +
+                                '<div class="admin-video-item-info admin-video-item-view">' +
+                                    '<h3>Стрим добавлен к продукту</h3>' +
+                                '</div>' +
+                            '</div>' +
+                        '</li>');
+                    }
                 });
                 /*
                     var public_product_perm1 = new Array();
