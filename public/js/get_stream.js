@@ -683,11 +683,12 @@ $(document).ready(function() {
                 //console.log(table_name + ' : ' + id_stream + ' : ' + localdate1);
                 $.post('/php/add_table_product.php', {table:table_name, id_stream:id_stream, reg_date:localdate1 }, function(data)  {
                     if(data=='OK'){
-                        
+
                     }
                 });
             }
         }
+        window.location.href='/stream';
     });
     
     $("#bottom_list_stream").on('click', function() {
