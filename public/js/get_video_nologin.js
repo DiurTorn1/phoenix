@@ -161,6 +161,7 @@ function get_stream_array(){
     if(array_stream[0]!=array_stream1[0]){
             //setInterval('paint_element_stream()',100);
         $("#slider").empty();
+        $("#slider-2").empty();
         //idch = 0;
         //array_stream = [];
         key_paint = 0;

@@ -17,14 +17,6 @@
                 </div>
             </div>
         </div>
-		<div class="index-live-2" id="index-live-2">
-		<h2>В эфире</h2>
-		<div id="slider-wrap">
-         <div id="active-slide">
-           <div id="slider-2">
-           </div>
-         </div>
-    	</div>
 		<!--<div class="gallery-wrapper">
 			<div class="content">
 				<div class="gallery full">
@@ -59,7 +51,7 @@
 		</div>-->
 
 		<div class = "slide_main">
-    </div>
+    	</div>
 		<!--<h2>Прямой эфир</h2>
 		<div class="index-live-list">
 			<div class="index-live-item">
@@ -80,7 +72,16 @@
 				</div>
 			</div>
 		</div>-->
-	</div>      
+</div>
+<div class="index-live-2" id="index-live-2">
+			<h2>В эфире</h2>
+			<div id="slider-wrap">
+         		<div id="active-slide">
+           			<div id="slider-2">
+           			</div>
+				</div>
+         	</div>
+</div>     
 @section('content')
 
 </main>
