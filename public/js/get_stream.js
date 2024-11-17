@@ -557,42 +557,57 @@ $(document).ready(function() {
                             //console.log(table_get);
                             $.post('/php/get_product_table.php',{ table:table_get }, function(data1)  {
                                 var output1 = $.parseJSON(data1);
-                                console.log(output1);
+                                //console.log(output1);
+                                $.each(output1,function(i,item1){
+                                    if(item1.id_stream == id){
+                                        $("#product_list_add").append(
+                                            '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
+                                            '<div class="admin-video-prev">' +
+                                                '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                                            '</div>' +
+                                            '<div class="admin-video-item-header">' +
+                                                '<div class="admin-video-item-h-list">' +
+                                                    '<span class="admin-video-item-h-date">' + output[1] + '</span>' +
+                                                '</div>' +
+                                                '<div class="admin-video-item-h-hashtag">' +
+                                                    '<span class="admin-prod-hashtag">' + output[2] + '</span>' +
+                                                '</div>' +
+                                                '<div class="admin-video-item-info admin-video-item-view">' +
+                                                    '<h3>Стрим добавлен к продукту</h3>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</li>');
+                                    } else {
+                                        $("#product_list_add").append(
+                                            '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
+                                            '<div class="admin-video-prev">' +
+                                                '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                                            '</div>' +
+                                            '<div class="admin-video-item-header">' +
+                                                '<div class="admin-video-item-h-list">' +
+                                                    '<span class="admin-video-item-h-date">' + output[1] + '</span>' +
+                                                '</div>' +
+                                                '<div class="admin-video-item-h-hashtag">' +
+                                                    '<span class="admin-prod-hashtag">' + output[2] + '</span>' +
+                                                '</div>' +
+                                                '<div class="admin-video-item-info admin-video-item-view">' +
+                                                    '<button class="button_prod_dyn" id="' + output[0] + '">Добавить</button>' +
+                                                '</div>' +
+                                            '</div>' +
+                                        '</li>');
+                                    }
+                                    //console.log(id_stream_prod);
+                                });
                             });
                         }
                     }
-                    /*$("#product_list_add").append(
-                            '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
-                            '<div class="admin-video-prev">' +
-					            '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
-				            '</div>' +
-                            '<div class="admin-video-item-header">' +
-					            '<div class="admin-video-item-h-list">' +
-						            '<span class="admin-video-item-h-date">' + output[1] + '</span>' +
-					            '</div>' +
-					            '<div class="admin-video-item-h-hashtag">' +
-						            '<span class="admin-prod-hashtag">' + output[2] + '</span>' +
-					            '</div>' +
-                                '<div class="admin-video-item-info admin-video-item-view">' +
-					                '<button class="button_prod_dyn" id="' + output[0] + '">Добавить</button>' +
-				                '</div>' +
-				            '</div>' +
-                        '</li>'
-                    );*/
+                    /**/
                 });
                 /*
                     var public_product_perm1 = new Array();
                     var key_product_perm = 0;
                     var output1 = $.parseJSON(data1);
-                    $.each(output1,function(i,item1){
-                        //if(item1.id_stream == id_stream_prod){
-                            //console.log(item1.id_stream);
-                            public_product_perm1.push(item1.id_stream);
-                            key_product_perm++;
-                            //key_prod_perm_stream1 = 1;
-                        //}
-                        //console.log(id_stream_prod);
-                    });
+
                     //console.log(key_prod_perm_stream);
                     for(var i = 0; i < key_product_perm; i++){
                         //console.log(public_product_perm1[i]);
