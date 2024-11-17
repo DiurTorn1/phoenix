@@ -665,7 +665,8 @@ $(document).ready(function() {
 
         //});
         var table_name = '';
-        $.post('/php/get_product_public.php',{ id:id }, function(data)  {
+        var int_id = parseInt(id);
+        $.post('/php/get_product_public.php',{ id:int_id }, function(data)  {
             var output = $.parseJSON(data);
             table_name = output ? output[4]:'';
         });
