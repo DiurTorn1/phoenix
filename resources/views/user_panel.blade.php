@@ -61,6 +61,8 @@
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
 					<div class="popup-content-wrap-row">
 						<input type="text" placeholder="Имя" class="user-input" title="Ваше имя">
+					</div>
+					<div class="popup-content-wrap-row">
 						<input type="text" placeholder="Фамилия" class="user-input" title="Ваша фамилия">
 					</div>
 					<div class="popup-content-wrap-row">
@@ -70,9 +72,15 @@
 						<button type="submit" class="top-menu-btn" id="">Обновить пароль</button>
 					</div>
 					<div class="popup-content-wrap-row-1">
-						<input type="text" placeholder="Старый пароль" class="user-input" title="Пароль">
-						<input type="text" placeholder="Введите пароль" class="user-input" title="Пароль">
-						<input type="text" placeholder="Повторите пароль" class="user-input" title="Пароль">
+						<div class="popup-content-wrap-row">
+							<input type="text" placeholder="Старый пароль" class="user-input" title="Пароль">
+						</div>
+						<div class="popup-content-wrap-row">
+							<input type="text" placeholder="Введите пароль" class="user-input" title="Пароль">
+						</div>
+						<div class="popup-content-wrap-row">
+							<input type="text" placeholder="Повторите пароль" class="user-input" title="Пароль">
+						</div>
 					</div>
 					<div class="user-input-box block-w100">
 						<label>Страна*</label>
