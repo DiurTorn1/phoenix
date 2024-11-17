@@ -1,8 +1,12 @@
 $(document).ready(function(){
 
     var params = new window.URLSearchParams(window.location.search);
-    console.log(params.get('user_email'));
-    
+    //console.log(params.get('user_email'));
+
+    $.post('/php/users_get_reg.php', { email:params.get('user_email') }, function(data) {
+        console.log(data);
+    });
+
     $(document).on('click', '.user-navigation-link', function(){ // Подсветка активного пункта меню админа
         $('.user-navigation-link').removeClass('active-navigation-link-user');
         $(this).addClass('active-navigation-link-user');//Потом добавляем его на текущую кликнутую.
