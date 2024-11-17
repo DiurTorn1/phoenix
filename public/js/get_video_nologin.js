@@ -7,6 +7,7 @@ var key_paint = 0, key_paint1 = 0;
 var array_product = new Array();
 var array_product1 = new Array();
 var public_product_perm = new Array();
+var key_live = 0;
 
 function paint_element_stream(){
     // $('#name_user_get').text();
@@ -20,7 +21,7 @@ function paint_element_stream(){
             var name_stream_gl = list.name;
             var id_stream_prod = list.id;
             var key_prod_perm_stream = 0;
-            var key_live = 0;
+            
             var finish_time = list.stream.finished_at;
             var started_time = list.stream.started_at;
             for(var i = 0; i < public_product_perm.length; i++){
