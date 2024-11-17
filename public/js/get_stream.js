@@ -554,8 +554,11 @@ $(document).ready(function() {
                         var ch1 = $("#admin-vl" + i).is(':checked');
                         if(ch1){
                             var id = $("#admin-vl" + i).parent().parent().attr('id');
-                            console.log(table_get);
-                            //var get_table = 
+                            //console.log(table_get);
+                            $.post('/php/get_product_table.php',{ table:table_get }, function(data1)  {
+                                var output1 = $.parseJSON(data1);
+                                console.log(output1);
+                            });
                         }
                     }
                     /*$("#product_list_add").append(
@@ -577,7 +580,7 @@ $(document).ready(function() {
                         '</li>'
                     );*/
                 });
-                /*$.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
+                /*
                     var public_product_perm1 = new Array();
                     var key_product_perm = 0;
                     var output1 = $.parseJSON(data1);
@@ -594,9 +597,7 @@ $(document).ready(function() {
                     for(var i = 0; i < key_product_perm; i++){
                         //console.log(public_product_perm1[i]);
                         public_product_perm.push(public_product_perm1[i]);
-                    }
-                    
-                });*/
+                    }*/
             });
 
         }
