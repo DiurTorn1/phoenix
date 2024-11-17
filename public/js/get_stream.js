@@ -550,6 +550,7 @@ $(document).ready(function() {
                 var table_get = output ? output[4]:'';
                 $.post('/php/get_product_id.php', {id:prm_prod}, function(data){
                     var output = $.parseJSON(data);
+                    var arr_add_prod = [];
                     for(var i = 0; i < num_list1; i++){
                         var ch1 = $("#admin-vl" + i).is(':checked');
                         if(ch1){
@@ -559,7 +560,29 @@ $(document).ready(function() {
                                 var output1 = $.parseJSON(data1);
                                 //console.log(output1);
                                 $.each(output1,function(i,item1){
+                                    var key_id_t = 0;
                                     if(item1.id_stream == id){
+                                        key_id_t = 1;
+                                    } else {
+                                        key_id_t = 0;
+                                    }
+                                    //console.log(id_stream_prod);
+                                    arr_add_prod.push(key_id_t)
+                                });
+                            });
+
+                        }
+                    }
+
+                    var key_pod = 0;
+                    var allEqual = arr_add_prod.every(function(value, index, arr) {
+                        console.log(value);
+                        console.log(arr[0]);
+                        key_pod = value;
+                        return value === arr[0];
+                    });
+                    console.log(allEqual);
+                    /*                                    if(item1.id_stream == id){
                                         $("#product_list_add").append(
                                             '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
                                             '<div class="admin-video-prev">' +
@@ -595,12 +618,7 @@ $(document).ready(function() {
                                                 '</div>' +
                                             '</div>' +
                                         '</li>');
-                                    }
-                                    //console.log(id_stream_prod);
-                                });
-                            });
-                        }
-                    }
+                                    }*/
                     /**/
                 });
                 /*
