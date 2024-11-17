@@ -568,7 +568,7 @@ $(document).ready(function() {
                                     } else {
                                         key_id_t = 0;
                                     }
-                                    //console.log(id_stream_prod);
+                                    console.log(key_id_t);
                                     
                                 });
                                 arr_add_prod.push(key_id_t);
