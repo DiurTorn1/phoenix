@@ -54,7 +54,7 @@
                     		<a href="/stream" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Admin-Panel</a>
 						@elseif($v == "nullbody")
 							<a href="/user_panel" class="exit-button"><img src="img/setting.png" alt="Настройки" title="Настройки пользователя">Настройки</a>
-							<a href="#" class="exit-button"><img src="img/cart-min.png" alt="Ваши покупки">Покупки</a>
+							<a href="/sells_user" class="exit-button"><img src="img/cart-min.png" alt="Ваши покупки">Покупки</a>
 						@elseif($v == "operator")
 						<a href="/abonent_stream" class="exit-button"><img src="img/logo_main.png" alt="Профиль">Панель абонента</a>
 						@endif

@@ -173,6 +173,10 @@ Route::get('/sell_panel', function () {
     return view('sell_panel');
 });
 
+Route::get('/sells_user', function () {
+    return view('sells_user');
+});
+
 //Route::resource('products', ProductPhoenix::class);
 //Route::group(['middleware' => ['web']], function() {
     //Route::resource('products', ProductPhoenix::class);
