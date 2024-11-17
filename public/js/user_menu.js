@@ -46,6 +46,11 @@ $(document).ready(function(){
         $('#password_div_3').toggle();
     });
     $('#user_panel_bottom1').on('click', function(){
-        window.location.href='/user_panel?user_email='+params.get('user_email');
+        //window.location.href='/user_panel?user_email='+params.get('user_email');
+        $.post('/php/users_get_reg.php', { email:params.get('user_email') }, function(data) {
+            var output = $.parseJSON(data);
+            console.log(output);
+        });
+
     });
 });
