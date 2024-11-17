@@ -53,16 +53,14 @@ $(document).ready(function(){
             $('#user_panel_password').addClass("user-input-err");
         } else {
             $('#user_panel_password').removeClass("user-input-err");
-            var pass_get = '';
             $.post('/php/users_get_reg.php', { email:params.get('user_email') }, function(data) {
                 var output = $.parseJSON(data);
                 //console.log(output[4]);
-                pass_get = output[4];
-            });
-            $.post('/php/hash_vert.php', { pass1:pass, pass2:pass_get }, function(data) {
-                console.log(pass);
-                console.log(pass_get);
-                console.log(data);
+                $.post('/php/hash_vert.php', { pass1:pass, pass2:output[4] }, function(data) {
+                    //console.log(pass);
+                    //console.log(pass_get);
+                    console.log(data);
+                });
             });
         }
 
