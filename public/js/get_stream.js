@@ -3,6 +3,7 @@ var idch = 0;
 var key_main_chack = 0;
 var public_stream_list = new Array();
 var public_product_perm = new Array();
+var public_product_perm2 = new Array();
 var get_ch_list = 1, select_count_stream;
 var count_product = 0;
 var count_stream = 0;
@@ -158,6 +159,26 @@ function get_product_public(){
                         for(var i = 0; i < key_product_perm; i++){
                             //console.log(public_product_perm1[i]);
                             public_product_perm.push(public_product_perm1[i]);
+                        }
+                        
+                    });
+                    $.post('/php/get_product_table.php',{ table:prm_prod }, function(data2)  {
+                        var public_product_perm3 = new Array();
+                        var key_product_perm1 = 0;
+                        var output2 = $.parseJSON(data2);
+                        $.each(output2,function(i,item2){
+                            //if(item1.id_stream == id_stream_prod){
+                                //console.log(item1.id_stream);
+                                public_product_perm3.push({table:prm_prod, id:item2.id_stream});
+                                key_product_perm1++;
+                                //key_prod_perm_stream1 = 1;
+                            //}
+                            //console.log(id_stream_prod);
+                        });
+                        //console.log(key_prod_perm_stream);
+                        for(var i = 0; i < key_product_perm1; i++){
+                            //console.log(public_product_perm1[i]);
+                            public_product_perm2.push(public_product_perm3[i]);
                         }
                         
                     });
@@ -555,20 +576,11 @@ $(document).ready(function() {
                     
                     for(var i = 0; i < num_list1; i++){
                         var ch1 = $("#admin-vl" + i).is(':checked');
-                        var arr_add_prod = [];
                         if(ch1){
 
                             var id = $("#admin-vl" + i).parent().parent().attr('id');
-                            //console.log(table_get);
-                            $.post('/php/get_product_table.php',{ table:table_get }, function(data1)  {
-                                var output1 = $.parseJSON(data1);
-                                //console.log(output1);
-                                $.each(output1,function(i,item1){
-                                    arr_add_prod.push({table:table_get,id:id}); 
-                                });
-                               
-                            });
-                            console.log(arr_add_prod);
+                            console.log(public_product_perm);
+                            console.log(public_product_perm2);
                         }
                     }
                     //arr_add_prod1.push(arr_add_prod);
