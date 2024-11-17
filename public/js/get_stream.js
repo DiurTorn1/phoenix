@@ -557,10 +557,10 @@ $(document).ready(function() {
                         if(ch1){
                             var id = $("#admin-vl" + i).parent().parent().attr('id');
                             //console.log(table_get);
-                            $.post('/php/get_product_table.php',{ table:table_get }, function(data1)  {
+                            $.post('/php/get_product_table_point.php',{ table:table_get, id_stream:id }, function(data1)  {
                                 var output1 = $.parseJSON(data1);
-                                //console.log(output1);
-                                var key_id_t = 0;
+                                console.log(output1);
+                                /*var key_id_t = 0;
                                 $.each(output1,function(i,item1){
                                     var key_key = 0;
                                     if(item1.id_stream == id){
@@ -572,14 +572,14 @@ $(document).ready(function() {
                                     console.log(key_id_t);
                                     arr_add_prod.push(key_id_t);
                                     
-                                });
+                                });*/
                                
                             });
 
                         }
                     }
 
-                    var key_pod = 0;
+                    /*var key_pod = 0;
                     if(!key_gluk){
                         var allEqual = arr_add_prod.every(function(value, index, arr) {
                             console.log(value);
@@ -590,7 +590,7 @@ $(document).ready(function() {
                         console.log(allEqual);
                         console.log(arr_add_prod);
                         key_gluk = 1;
-                    }
+                    }*/
 
                     /*                                    if(item1.id_stream == id){
                                         $("#product_list_add").append(
