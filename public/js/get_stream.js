@@ -668,7 +668,14 @@ $(document).ready(function() {
         var table_name = '';
         //var int_id = parseInt(id);
         console.log(table_array_gl);
-
+        for(var k=0;k<table_array_gl.length;k++){
+            var split_tag = table_array_gl[k].split('_');
+            if(id == split_tag[1]){
+                table_name = table_array_gl[k];
+                console.log(table_name);
+            }
+        }
+        console.log(table_name);
         for(var i = 0; i < num_list1; i++){
             var ch1 = $("#admin-vl" + i).is(':checked');
             if(ch1){
