@@ -543,6 +543,7 @@ $(document).ready(function() {
         $("#window_product_pre").toggle();
         $("#aler_window_prod").text("Выберите продукт");
         var key_gluk = 0;
+        var arr_add_prod1 = [];
         for(var i = 0; i < array_product.length/2; i++){
             $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                 var output = $.parseJSON(data);
@@ -572,7 +573,8 @@ $(document).ready(function() {
 
                         }
                     }
-                    console.log(arr_add_prod);
+                    arr_add_prod1.push(arr_add_prod);
+                    console.log(arr_add_prod1);
                     /*var key_pod = 0;
                     if(!key_gluk){
                         var allEqual = arr_add_prod.every(function(value, index, arr) {
