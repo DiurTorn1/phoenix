@@ -59,7 +59,7 @@ $(document).ready(function(){
                 $.post('/php/hash_vert.php', { pass1:pass, pass2:output[4] }, function(data) {
                     //console.log(pass);
                     //console.log(pass_get);
-                    //console.log(data);
+                    console.log(data);
                     if(data == 'OK'){
 
                     } else {
