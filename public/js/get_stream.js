@@ -545,10 +545,36 @@ $(document).ready(function() {
         for(var i = 0; i < array_product.length; i++){
             $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                 var output = $.parseJSON(data);
-                console.log(output);
-                //var prm_prod = output ? output[4]:'';
-                //console.log(prm_prod);
-                //public_product_perm.push(prm_prod);
+                //console.log(output);
+                var prm_prod = output ? output[1]:'';
+                $.post('/php/get_product_id.php', {id:prm_prod}, function(data){
+                    var output = $.parseJSON(data);
+                    for(var i = 0; i < num_list1; i++){
+                        var ch1 = $("#admin-vl" + i).is(':checked');
+                        if(ch1){
+                            var id = $("#admin-vl" + i).parent().parent().attr('id');
+                            console.log(prm_prod);
+                        }
+                    }
+                    /*$("#product_list_add").append(
+                            '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
+                            '<div class="admin-video-prev">' +
+					            '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+				            '</div>' +
+                            '<div class="admin-video-item-header">' +
+					            '<div class="admin-video-item-h-list">' +
+						            '<span class="admin-video-item-h-date">' + output[1] + '</span>' +
+					            '</div>' +
+					            '<div class="admin-video-item-h-hashtag">' +
+						            '<span class="admin-prod-hashtag">' + output[2] + '</span>' +
+					            '</div>' +
+                                '<div class="admin-video-item-info admin-video-item-view">' +
+					                '<button class="button_prod_dyn" id="' + output[0] + '">Добавить</button>' +
+				                '</div>' +
+				            '</div>' +
+                        '</li>'
+                    );*/
+                });
                 /*$.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
                     var public_product_perm1 = new Array();
                     var key_product_perm = 0;
@@ -570,42 +596,7 @@ $(document).ready(function() {
                     
                 });*/
             });
-            /*$.post('/php/get_product_id.php', {id:array_product[i]}, function(data){
-                var output = $.parseJSON(data);
 
-                $("#product_list_add").append(
-                    '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
-                        '<div class="admin-video-prev">' +
-					        '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
-				        '</div>' +
-                        '<div class="admin-video-item-header">' +
-					        '<div class="admin-video-item-h-list">' +
-						        '<span class="admin-video-item-h-date">' + output[1] + '</span>' +
-					        '</div>' +
-					        '<div class="admin-video-item-h-hashtag">' +
-						        '<span class="admin-prod-hashtag">' + output[2] + '</span>' +
-					        '</div>' +
-                            '<div class="admin-video-item-info admin-video-item-view">' +
-					            '<button class="button_prod_dyn" id="' + output[0] + '">Добавить</button>' +
-				            '</div>' +
-				        '</div>' +
-                    '</li>'
-                );
-                
-                /*
-
-
-				<div class="admin-video-item-view admin-prod-item-view">
-					<p class="admin-video-item-v-count"><span>0</span>продаж</p>
-					<p class="admin-video-item-v-count"><span>0</span>возвратов</p>
-					<p class="admin-video-item-v-count"><span>0</span>стримов</p>
-				</div>
-				<div class="admin-video-item-info admin-video-item-view">
-					<p class="admin-prod-hashtag">{{ $product->state }}</p>
-				</div>
-			
-                 */
-            //});
         }
     });
 
