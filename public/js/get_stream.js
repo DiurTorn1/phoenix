@@ -604,7 +604,7 @@ $(document).ready(function() {
                     });
                     if (allEqual) {
                         $("#product_list_add").append(
-                            '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
+                            '<li class="admin-video-item admin-back" id="' + output[0] + '">' +
                             '<div class="admin-video-prev">' +
                                 '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
                             '</div>' +
@@ -622,7 +622,7 @@ $(document).ready(function() {
                         '</li>');
                     } else {
                         $("#product_list_add").append(
-                            '<li class="admin-video-item admin-back" id="parrent_parrent_id_checkbox_' + output[0] + '">' +
+                            '<li class="admin-video-item admin-back" id="' + output[0] + '">' +
                             '<div class="admin-video-prev">' +
                                 '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
                             '</div>' +
