@@ -72,13 +72,13 @@
 						<button type="submit" class="top-menu-btn" id="user_panel_bottom">Обновить пароль</button>
 					</div>
 					<div class="popup-content-wrap-row-1" id="password_div">
-						<input type="text" placeholder="Старый пароль" class="user-input" id="user_panel_password" title="Пароль">
+						<input type="password" placeholder="Старый пароль" class="user-input" id="user_panel_password" title="Пароль">
 					</div>
 					<div class="popup-content-wrap-row-1" id="password_div_1">
-						<input type="text" placeholder="Введите пароль" class="user-input" id="user_panel_password1" title="Пароль">
+						<input type="password" placeholder="Введите пароль" class="user-input" id="user_panel_password1" title="Пароль">
 					</div>
 					<div class="popup-content-wrap-row-1" id="password_div_2">
-						<input type="text" placeholder="Повторите пароль" class="user-input" id="user_panel_password2" title="Пароль">
+						<input type="password" placeholder="Повторите пароль" class="user-input" id="user_panel_password2" title="Пароль">
 					</div>
 					<div class="popup-content-wrap-row-1" id="password_div_3">
 					<button type="submit" class="top-menu-btn" id="user_panel_bottom1">Сохранить пароль</button>
