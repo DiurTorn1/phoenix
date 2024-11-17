@@ -5,7 +5,11 @@ $(document).ready(function(){
 
     $.post('/php/users_get_reg.php', { email:params.get('user_email') }, function(data) {
         var output = $.parseJSON(data);
-        console.log(output);
+        var splin_name = output[1].split('&');
+        $('#user_panel_name').val(splin_name[0]);
+        $('#user_panel_family').val(splin_name[1]);
+        $('#user_panel_email').val(output[2]);
+        //console.log(output);
     });
 
     $(document).on('click', '.user-navigation-link', function(){ // Подсветка активного пункта меню админа
