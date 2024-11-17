@@ -568,7 +568,7 @@ $(document).ready(function() {
                                         key_id_t = 0;
                                     }
                                     //console.log(id_stream_prod);
-                                    arr_add_prod.push(key_id_t)
+                                    arr_add_prod.push(key_id_t);
                                 });
                             });
 
