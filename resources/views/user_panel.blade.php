@@ -19,7 +19,7 @@
 
 					<div class="popup-title-wrap-row popup-title-none is-active" data-content="user-profile">
 						<h2 class="popup-title">Профиль</h2>
-						<button type="submit" class="top-menu-btn">Сохранить</button>
+						<button type="submit" class="top-menu-btn" id="save_data_user">Сохранить</button>
 					</div>
 
 					<div class="popup-title-wrap-row popup-title-none" data-content="user-pay">

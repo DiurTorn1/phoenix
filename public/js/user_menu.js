@@ -27,4 +27,8 @@ $(document).ready(function(){
     $('#password_div_1').toggle();
     $('#password_div_2').toggle();
     $('#password_div_3').toggle();
+
+    $('#save_data_user').on('click', function(){
+        alert('Save status');
+    });
 });
