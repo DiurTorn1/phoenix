@@ -669,6 +669,7 @@ $(document).ready(function() {
         $.post('/php/get_product_public.php',{ id:int_id }, function(data)  {
             var output = $.parseJSON(data);
             table_name = output ? output[4]:'';
+            console.log(output);
         });
 
         for(var i = 0; i < num_list1; i++){
