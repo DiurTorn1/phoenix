@@ -561,7 +561,10 @@ $(document).ready(function() {
                                 var output1 = $.parseJSON(data1);
                                 //console.log(output1);
                                 $.each(output1,function(i,item1){
-                                    arr_add_prod.push({table:table_get,id_stream:item1.id_stream});
+                                    if(item1.id_stream == id){
+                                        arr_add_prod.push({table:table_get,id_stream:item1.id_stream});
+                                    }
+                                    
                                     
                                 });
                                
