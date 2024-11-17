@@ -583,7 +583,10 @@ $(document).ready(function() {
                             //console.log(public_product_perm2);
                             for(var k = 0; k < public_product_perm2.length; k++){
                                 var get_mass = public_product_perm2[k];
-                                console.log(get_mass.table +' : ' + get_mass.id);
+                                if(get_mass.table == table_get && get_mass.id == id){
+                                    console.log(get_mass.table +' : ' + get_mass.id);
+                                }
+                                
                             }
 
                         }
