@@ -19,8 +19,8 @@
 					<button class="popup-close close-btn" title="Закрыть" onclick="window.location.href = '/';"><img src="img/close.png" alt="Закрыть" ></button>
 
 					<div class="popup-title-wrap-row popup-title-none is-active" data-content="user-profile">
-						<h2 class="popup-title">Карточка покупки</h2>
-						<button type="submit" class="top-menu-btn" id="bay_product">Оплатить</button>
+						<h2 class="popup-title">Покупки</h2>
+						<!--<button type="submit" class="top-menu-btn" id="bay_product">Оплатить</button>-->
 					</div>
 				</div>
 
