@@ -563,8 +563,6 @@ $(document).ready(function() {
                                 $.each(output1,function(i,item1){
                                     if(item1.id_stream == id){
                                         arr_add_prod.push({table:table_get,id:id});
-                                    } else {
-                                        arr_add_prod.push(0);
                                     }
                                     
                                     
