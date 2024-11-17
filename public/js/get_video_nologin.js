@@ -20,6 +20,7 @@ function paint_element_stream(){
             var name_stream_gl = list.name;
             var id_stream_prod = list.id;
             var key_prod_perm_stream = 0;
+            var key_live = 0;
             var finish_time = list.stream.finished_at;
             var started_time = list.stream.started_at;
             for(var i = 0; i < public_product_perm.length; i++){
@@ -61,7 +62,11 @@ function paint_element_stream(){
                         if(pars_date[0] == dNow.getFullYear() && pars_date[1] == (dNow.getMonth()+1) && pars_date[2] == dNow.getDate()){
                            if(dNow.getHours() >= pars_time[0]){
                                 div_video = "#slider-2";
-                                $('#index-live-2').toggle();  
+                                if(!key_live){
+                                    $('#index-live-2').toggle();
+                                    key_live = 1;
+                                }
+                                  
                             }
 
                         }
@@ -158,14 +163,14 @@ function get_stream_array(){
 
     }
     //for(var i = 0; i < count_stream; i++){
-    //if(array_stream[0]!=array_stream1[0]){
+    if(array_stream[0]!=array_stream1[0]){
             //setInterval('paint_element_stream()',100);
-        //$("#slider").empty();
-        //$("#slider-2").empty();
+        $("#slider").empty();
+        $("#slider-2").empty();
         //idch = 0;
         //array_stream = [];
-        //key_paint = 0;
-    //}
+        key_paint = 0;
+    }
     if(!key_paint1){
         for(var i = 0; i < count_product; i++){
             array_product1.push(array_product[i]);           
