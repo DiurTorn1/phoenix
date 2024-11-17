@@ -570,9 +570,10 @@ $(document).ready(function() {
                                     }
                                     key_id_t = key_key;
                                     console.log(key_id_t);
+                                    arr_add_prod.push(key_id_t);
                                     
                                 });
-                                arr_add_prod.push(key_id_t);
+                               
                             });
 
                         }
