@@ -658,8 +658,25 @@ $(document).ready(function() {
     $(document).on('click', '.button_prod_dyn', function() {
         //alert(this.id);
         var id = this.id;
-        console.log(id);
-        //$.post('/php/add_table_product.php', {table:output[4], id_stream:id_card, reg_date:localdate1 }, function(data)  {});
+        //console.log(id);                    
+        var dNow1= new Date();
+        var localdate1= dNow1.getFullYear() + '-' + (dNow1.getMonth()+1) + '-' + dNow1.getDate() + ' ' + dNow1.getHours() + ':' + dNow1.getMinutes() + ':00';//2024-08-28 15:37:32
+        //$.post('/php/add_table_product.php', {table:output[4], id_stream:id_card, reg_date:localdate1 }, function(data)  {
+
+        //});
+        var table_name = '';
+        $.post('/php/get_product_public.php',{ id:id }, function(data)  {
+            var output = $.parseJSON(data);
+            table_name = output ? output[4]:'';
+        });
+
+        for(var i = 0; i < num_list1; i++){
+            var ch1 = $("#admin-vl" + i).is(':checked');
+            if(ch1){
+                var id_stream = $("#admin-vl" + i).parent().parent().attr('id');
+                console.log(table_name + ' : ' + id_stream + ' : ' + localdate1);
+            }
+        }
     });
     
     $("#bottom_list_stream").on('click', function() {
