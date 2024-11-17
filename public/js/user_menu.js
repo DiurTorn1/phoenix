@@ -4,7 +4,8 @@ $(document).ready(function(){
     //console.log(params.get('user_email'));
 
     $.post('/php/users_get_reg.php', { email:params.get('user_email') }, function(data) {
-        console.log(data);
+        var output = $.parseJSON(data);
+        console.log(output);
     });
 
     $(document).on('click', '.user-navigation-link', function(){ // Подсветка активного пункта меню админа

@@ -60,13 +60,13 @@
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
 					<div class="popup-content-wrap-row">
-						<input type="text" placeholder="Имя" class="user-input" title="Ваше имя">
+						<input type="text" placeholder="Имя" class="user-input" id="user_panel_name" title="Ваше имя">
 					</div>
 					<div class="popup-content-wrap-row">
-						<input type="text" placeholder="Фамилия" class="user-input" title="Ваша фамилия">
+						<input type="text" placeholder="Фамилия" class="user-input" id="user_panel_family" title="Ваша фамилия">
 					</div>
 					<div class="popup-content-wrap-row">
-						<input type="text" placeholder="Почта" class="user-input" title="Ваша почта">
+						<input type="text" placeholder="Почта" class="user-input" id="user_panel_email" title="Ваша почта">
 					</div>
 					<div class="user-input-box block-w100">
 						<button type="submit" class="top-menu-btn" id="">Обновить пароль</button>
