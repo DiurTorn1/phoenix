@@ -61,7 +61,7 @@ $(document).ready(function(){
                     //console.log(pass_get);
                     console.log(data);
                     if(data == 'OK'){
-
+                        $('#user_panel_password').removeClass("user-input-err");
                     } else {
                         $('#user_panel_password').addClass("user-input-err"); 
                     }
