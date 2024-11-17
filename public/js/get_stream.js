@@ -560,16 +560,18 @@ $(document).ready(function() {
                             $.post('/php/get_product_table.php',{ table:table_get }, function(data1)  {
                                 var output1 = $.parseJSON(data1);
                                 //console.log(output1);
+                                var key_id_t = 0;
                                 $.each(output1,function(i,item1){
-                                    var key_id_t = 0;
+                                    
                                     if(item1.id_stream == id){
                                         key_id_t = 1;
                                     } else {
                                         key_id_t = 0;
                                     }
                                     //console.log(id_stream_prod);
-                                    arr_add_prod.push(key_id_t);
+                                    
                                 });
+                                arr_add_prod.push(key_id_t);
                             });
 
                         }
