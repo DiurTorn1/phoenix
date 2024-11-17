@@ -80,6 +80,9 @@
 					<div class="popup-content-wrap-row-1" id="password_div_2">
 						<input type="text" placeholder="Повторите пароль" class="user-input" title="Пароль">
 					</div>
+					<div class="popup-content-wrap-row-1" id="password_div_3">
+					<button type="submit" class="top-menu-btn" id="">Сохранить пароль</button>
+					</div>
 					<div class="user-input-box block-w100">
 						<label>Страна*</label>
 						<select class="user-input-list admin-input-select">
