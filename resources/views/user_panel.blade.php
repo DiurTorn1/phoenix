@@ -69,7 +69,7 @@
 						<input type="text" placeholder="Почта" class="user-input" id="user_panel_email" title="Ваша почта">
 					</div>
 					<div class="user-input-box block-w100">
-						<button type="submit" class="top-menu-btn" id="">Обновить пароль</button>
+						<button type="submit" class="top-menu-btn" id="user_panel_bottom">Обновить пароль</button>
 					</div>
 					<div class="popup-content-wrap-row-1" id="password_div">
 						<input type="text" placeholder="Старый пароль" class="user-input" title="Пароль">
@@ -81,7 +81,7 @@
 						<input type="text" placeholder="Повторите пароль" class="user-input" title="Пароль">
 					</div>
 					<div class="popup-content-wrap-row-1" id="password_div_3">
-					<button type="submit" class="top-menu-btn" id="">Сохранить пароль</button>
+					<button type="submit" class="top-menu-btn" id="user_panel_bottom1">Сохранить пароль</button>
 					</div>
 					<div class="user-input-box block-w100">
 						<label>Страна*</label>

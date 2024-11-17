@@ -29,12 +29,23 @@ $(document).ready(function(){
     $('#password_div_3').toggle();
 
     $('#save_data_user').on('click', function(){
-        //alert('Save status');
+        //alert('Save status');user_panel_bottom
         var name_user = $('#user_panel_name').val()+'&'+$('#user_panel_family').val();
         $.post('/php/users_upload_name.php', { email:params.get('user_email'), name:name_user }, function(data) {
             if(data=='OK'){
                 window.location.href='/user_panel?user_email='+params.get('user_email');
             }
         });
+    });
+    $('#user_panel_bottom').on('click', function(){
+        //alert('Save status');
+        $('#user_panel_bottom').toggle();
+        $('#password_div').toggle();
+        $('#password_div_1').toggle();
+        $('#password_div_2').toggle();
+        $('#password_div_3').toggle();
+    });
+    $('#user_panel_bottom1').on('click', function(){
+        window.location.href='/user_panel?user_email='+params.get('user_email');
     });
 });
