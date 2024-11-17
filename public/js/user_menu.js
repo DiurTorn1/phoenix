@@ -60,6 +60,8 @@ $(document).ready(function(){
                 pass_get = output[4];
             });
             $.post('/php/hash_vert.php', { pass1:pass, pass2:pass_get }, function(data) {
+                console.log(pass);
+                console.log(pass_get);
                 console.log(data);
             });
         }
