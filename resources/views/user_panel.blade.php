@@ -71,13 +71,13 @@
 					<div class="user-input-box block-w100">
 						<button type="submit" class="top-menu-btn" id="">Обновить пароль</button>
 					</div>
-					<div class="popup-content-wrap-row-1">
+					<div class="popup-content-wrap-row-1" id="password_div">
 						<input type="text" placeholder="Старый пароль" class="user-input" title="Пароль">
 					</div>
-					<div class="popup-content-wrap-row-1">
+					<div class="popup-content-wrap-row-1" id="password_div">
 						<input type="text" placeholder="Введите пароль" class="user-input" title="Пароль">
 					</div>
-					<div class="popup-content-wrap-row-1">
+					<div class="popup-content-wrap-row-1" id="password_div">
 						<input type="text" placeholder="Повторите пароль" class="user-input" title="Пароль">
 					</div>
 					<div class="user-input-box block-w100">

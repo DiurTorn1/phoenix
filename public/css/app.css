@@ -2576,7 +2576,6 @@ td a:focus {
 }
 
 .popup-content-wrap-row-1 {
-    display: none;
     display: flex;
     justify-content: space-between;
 }

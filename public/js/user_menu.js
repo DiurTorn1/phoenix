@@ -10,4 +10,5 @@ $(document).ready(function(){
 		$('[data-content]').removeClass(activeCls);
   		$(`[data-content="${$(this).data('open-block')}"`).addClass(activeCls);
 	});
+    $('#password_div').toggle();
 });
