@@ -32,7 +32,9 @@ $(document).ready(function(){
         //alert('Save status');
         var name_user = $('#user_panel_name').val()+'&'+$('#user_panel_family').val();
         $.post('/php/users_upload_name.php', { email:params.get('user_email'), name:name_user }, function(data) {
-
+            if(data=='OK'){
+                window.location.href='/user_panel?user_email='+params.get('user_email');
+            }
         });
     });
 });
