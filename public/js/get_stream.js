@@ -10,6 +10,7 @@ var count_stream = 0;
 var array_stream = new Array();
 var array_stream1 = new Array();
 var array_name_stream = new Array();
+var table_array_gl = new Array();
 var key_paint = 0;
 var num_list = 0;
 var num_list1 = 5;
@@ -141,7 +142,7 @@ function get_product_public(){
                     //console.log(output);
                     var prm_prod = output ? output[4]:'';
                     //console.log(prm_prod);
-                    //public_product_perm.push(prm_prod);
+                    table_array_gl.push(prm_prod);
                     $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
                         var public_product_perm1 = new Array();
                         var key_product_perm = 0;
@@ -665,12 +666,8 @@ $(document).ready(function() {
 
         //});
         var table_name = '';
-        var int_id = parseInt(id);
-        $.post('/php/get_product_public.php',{ id:int_id }, function(data)  {
-            var output = $.parseJSON(data);
-            table_name = output ? output[4]:'';
-            console.log(output);
-        });
+        //var int_id = parseInt(id);
+        console.log(table_array_gl);
 
         for(var i = 0; i < num_list1; i++){
             var ch1 = $("#admin-vl" + i).is(':checked');
