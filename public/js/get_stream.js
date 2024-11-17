@@ -542,8 +542,35 @@ $(document).ready(function() {
     $("#add_product_stream_checkbox").on('click', function() {
         $("#window_product_pre").toggle();
         $("#aler_window_prod").text("Выберите продукт");
-        for(var i = 0; i < array_product.length/2; i++){
-            $.post('/php/get_product_id.php', {id:array_product[i]}, function(data){
+        for(var i = 0; i < array_product.length; i++){
+            $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                var output = $.parseJSON(data);
+                console.log(output);
+                //var prm_prod = output ? output[4]:'';
+                //console.log(prm_prod);
+                //public_product_perm.push(prm_prod);
+                /*$.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
+                    var public_product_perm1 = new Array();
+                    var key_product_perm = 0;
+                    var output1 = $.parseJSON(data1);
+                    $.each(output1,function(i,item1){
+                        //if(item1.id_stream == id_stream_prod){
+                            //console.log(item1.id_stream);
+                            public_product_perm1.push(item1.id_stream);
+                            key_product_perm++;
+                            //key_prod_perm_stream1 = 1;
+                        //}
+                        //console.log(id_stream_prod);
+                    });
+                    //console.log(key_prod_perm_stream);
+                    for(var i = 0; i < key_product_perm; i++){
+                        //console.log(public_product_perm1[i]);
+                        public_product_perm.push(public_product_perm1[i]);
+                    }
+                    
+                });*/
+            });
+            /*$.post('/php/get_product_id.php', {id:array_product[i]}, function(data){
                 var output = $.parseJSON(data);
 
                 $("#product_list_add").append(
@@ -578,15 +605,16 @@ $(document).ready(function() {
 				</div>
 			
                  */
-            });
+            //});
         }
     });
+
     $(document).on('click', '.button_prod_dyn', function() {
-        alert(this.id);
-    });
-    //$(".button_prod_dyn").on('click', function() {
         //alert(this.id);
-    //});
+        var id = this.id;
+
+        //$.post('/php/add_table_product.php', {table:output[4], id_stream:id_card, reg_date:localdate1 }, function(data)  {});
+    });
     
     $("#bottom_list_stream").on('click', function() {
         if(num_list != 0){
