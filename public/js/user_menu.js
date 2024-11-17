@@ -47,10 +47,16 @@ $(document).ready(function(){
     });
     $('#user_panel_bottom1').on('click', function(){
         //window.location.href='/user_panel?user_email='+params.get('user_email');
-        $.post('/php/users_get_reg.php', { email:params.get('user_email') }, function(data) {
-            var output = $.parseJSON(data);
-            console.log(output);
-        });
+        var pass = $('#user_panel_password').val();
+        if(!pass){
+            alert("Графа с паролем не должно быть пустым");
+        } else {
+            $.post('/php/users_get_reg.php', { email:params.get('user_email') }, function(data) {
+                var output = $.parseJSON(data);
+                console.log(output);
+            });
+        }
+
 
     });
 });
