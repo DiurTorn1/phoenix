@@ -562,12 +562,13 @@ $(document).ready(function() {
                                 //console.log(output1);
                                 var key_id_t = 0;
                                 $.each(output1,function(i,item1){
-                                    
+                                    var key_key = 0;
                                     if(item1.id_stream == id){
-                                        key_id_t = 1;
+                                        key_key = 1;
                                     } else {
-                                        key_id_t = 0;
+                                        key_key = 0;
                                     }
+                                    key_id_t = key_key;
                                     console.log(key_id_t);
                                     
                                 });
