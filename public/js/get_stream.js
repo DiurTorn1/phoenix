@@ -574,6 +574,7 @@ $(document).ready(function() {
                 $.post('/php/get_product_id.php', {id:prm_prod}, function(data){
                     var output = $.parseJSON(data);
                     var arr_res = [];
+                    var key_pod;
                     for(var i = 0; i < num_list1; i++){
                         var ch1 = $("#admin-vl" + i).is(':checked');
                         if(ch1){
@@ -594,19 +595,21 @@ $(document).ready(function() {
 
                         }
                     }
+                    //console.log(arr_res);
+                    var allEqual = arr_res.every(function(value, index, arr) {
+                        console.log(value);
+                        console.log(arr[0]);
+                        key_pod = value;
+                        return value === arr[0];
+                    });
+                    console.log(allEqual);
                     console.log(arr_res);
+                    console.log(key_pod);
                     //arr_add_prod1.push(arr_add_prod);
                     
                     /*var key_pod = 0;
                     if(!key_gluk){
-                        var allEqual = arr_add_prod.every(function(value, index, arr) {
-                            console.log(value);
-                            console.log(arr[0]);
-                            key_pod = value;
-                            return value === arr[0];
-                        });
-                        console.log(allEqual);
-                        console.log(arr_add_prod);
+
                         key_gluk = 1;
                     }*/
 
