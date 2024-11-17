@@ -542,18 +542,20 @@ $(document).ready(function() {
     $("#add_product_stream_checkbox").on('click', function() {
         $("#window_product_pre").toggle();
         $("#aler_window_prod").text("Выберите продукт");
-        for(var i = 0; i < array_product.length; i++){
+        for(var i = 0; i < array_product.length/2; i++){
             $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                 var output = $.parseJSON(data);
                 //console.log(output);
                 var prm_prod = output ? output[1]:'';
+                var table_get = output ? output[4]:'';
                 $.post('/php/get_product_id.php', {id:prm_prod}, function(data){
                     var output = $.parseJSON(data);
                     for(var i = 0; i < num_list1; i++){
                         var ch1 = $("#admin-vl" + i).is(':checked');
                         if(ch1){
                             var id = $("#admin-vl" + i).parent().parent().attr('id');
-                            console.log(prm_prod);
+                            console.log(table_get);
+                            //var get_table = 
                         }
                     }
                     /*$("#product_list_add").append(
