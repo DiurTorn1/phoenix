@@ -581,8 +581,11 @@ $(document).ready(function() {
                             var id = $("#admin-vl" + i).parent().parent().attr('id');
                             //console.log(public_product_perm);
                             //console.log(public_product_perm2);
-                            var get_mass = $.parseJSON(public_product_perm2);
-                            console.log(get_mass.table +' : ' + get_mass.id);
+                            for(var k = 0; k < public_product_perm2.length; k++){
+                                var get_mass = public_product_perm2[k];
+                                console.log(get_mass.table +' : ' + get_mass.id);
+                            }
+
                         }
                     }
                     //arr_add_prod1.push(arr_add_prod);
