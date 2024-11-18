@@ -3,8 +3,10 @@
 $(document).ready(function() {
     //$("#publishBtn").click(function(){
     //});
-    var email_for_pars = $("#email_get_pars").text();
-    console.log(email_for_pars);
+    $.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data) {
+        var output1 = $.parseJSON(data);
+        console.log(output1);
+    });
 
     function generateRandomCode(length) {
         var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
