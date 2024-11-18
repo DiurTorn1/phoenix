@@ -63,9 +63,9 @@ $(document).ready(function(){
                     if(data1 === 'OK'){
                         $('#user_panel_password').removeClass("user-input-err");
                         alert("Correct");
-                    } //else {
-                        //$('#user_panel_password').addClass("user-input-err"); 
-                    //}
+                    } else {
+                        $('#user_panel_password').addClass("user-input-err"); 
+                    }
                 });
             });
         }
