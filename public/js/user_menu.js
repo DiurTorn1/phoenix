@@ -48,6 +48,20 @@ $(document).ready(function(){
     $('#user_panel_bottom1').on('click', function(){
         //window.location.href='/user_panel?user_email='+params.get('user_email');
         var pass = $('#user_panel_password').val();
+        var pass1 = $('#user_panel_password1').val();
+        var pass2 = $('#user_panel_password2').val();
+        if(!pass1){
+            //alert("Графа с паролем не должно быть пустым");
+            $('#user_panel_password1').addClass("user-input-err");
+        } else {
+            $('#user_panel_password1').removeClass("user-input-err");
+        }
+        if(!pass2){
+            //alert("Графа с паролем не должно быть пустым");
+            $('#user_panel_password2').addClass("user-input-err");
+        } else {
+            $('#user_panel_password2').removeClass("user-input-err");
+        }
         if(!pass){
             //alert("Графа с паролем не должно быть пустым");
             $('#user_panel_password').addClass("user-input-err");
@@ -61,7 +75,14 @@ $(document).ready(function(){
                     var int_baa = parseInt(data1);
                     if(int_baa == 1){
                         $('#user_panel_password').removeClass("user-input-err");
-                        alert("Correct");
+                        if(pass1 === pass2){
+                            $('#user_panel_password1').removeClass("user-input-err");
+                            $('#user_panel_password2').removeClass("user-input-err");
+                        } else {
+                            $('#user_panel_password1').addClass("user-input-err");
+                            $('#user_panel_password2').addClass("user-input-err");
+                        }
+                        //alert("Correct");
                     } else {
                         $('#user_panel_password').addClass("user-input-err"); 
                     }
