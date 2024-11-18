@@ -63,7 +63,7 @@ $(document).ready(function(){
                     console.log(data1);
                     if(data1 === 'OK'){
                         //$('#user_panel_password').removeClass("user-input-err");
-                        //alert("Correct");
+                        alert("Correct");
                         data_ok = 1;
                     } else {
                         //$('#user_panel_password').addClass("user-input-err"); 
