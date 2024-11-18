@@ -1,11 +1,14 @@
 
 
 $(document).ready(function() {
-    //$("#publishBtn").click(function(){
+    //$("#publishBtn").click(function(){ name_get_pars
     //});
     $.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data) {
         var output1 = $.parseJSON(data);
-        console.log(output1);
+        //console.log(output1);
+        var pars_name = output1[1].split('&');
+        $("#name_main_get").text(pars_name[1] + " " + pars_name[0]);
+        $("#name_get_pars").text(pars_name[0]);
     });
 
     function generateRandomCode(length) {
