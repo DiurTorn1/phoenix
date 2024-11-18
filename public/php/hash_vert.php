@@ -13,6 +13,6 @@
   if ($verify) { 
       echo 'OK'; 
   } else { 
-      echo 'Incorrect Password!'; 
+      echo ''; 
   } 
 ?> 
