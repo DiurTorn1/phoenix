@@ -27,10 +27,20 @@
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
 					<div class="popup-content-wrap-row">
 						<div class="user-input-box block-w100" style="background: white; height: 600pxpx; width: 100%;">
-							
+							<label>TEST</label>
+							<label>TEST</label>
+							<label>TEST</label>
+							<label>TEST</label>
+							<label>TEST</label>
+							<label>TEST</label>
 						</div>
 						<div class="user-input-box block-w100" style="background: white; height: 600pxpx; width: 100%;">
-							
+							<label>TEST</label>
+							<label>TEST</label>
+							<label>TEST</label>
+							<label>TEST</label>
+							<label>TEST</label>
+							<label>TEST</label>
 						</div>
 					</div>
 					<!--<div class="user-input-box block-w100">
