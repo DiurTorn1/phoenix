@@ -84,8 +84,11 @@ $(document).ready(function(){
                             $('#user_panel_password1').removeClass("user-input-err");
                             $('#user_panel_password2').removeClass("user-input-err");
                             $.post('/php/hash_pass.php', { pass:pass1 }, function(data) {
-                                console.log(params.get('user_email'));
-                                console.log(data);
+                                $.post('/php/users_upload_pass.php', { email:params.get('user_email'), pass:data }, function(data1) {
+                                    if(data1=='OK'){
+                                        window.location.href='/user_panel?user_email='+params.get('user_email');
+                                    }
+                                });
                             });
                             
                         } else {
