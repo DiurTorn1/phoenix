@@ -86,7 +86,7 @@ $(document).ready(function(){
                             $.post('/php/hash_pass.php', { pass:pass1 }, function(data) {
                                 $.post('/php/users_upload_pass.php', { email:params.get('user_email'), pass:data }, function(data1) {
                                     if(data1=='OK'){
-                                        window.location.href='/user_panel?user_email='+params.get('user_email');
+                                        window.location.href="{{ route('logout') }}";
                                     }
                                 });
                             });
