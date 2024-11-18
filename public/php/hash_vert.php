@@ -12,7 +12,5 @@
   // Print the result depending if they match 
   if ($verify) { 
       echo 'OK'; 
-  } else { 
-      echo ''; 
-  } 
+  }
 ?> 
