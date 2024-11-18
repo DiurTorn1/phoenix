@@ -11,7 +11,7 @@
   
   // Print the result depending if they match 
   if ($verify) { 
-      echo "OK"; 
+      echo $verify; 
   } else { 
       echo "Incorrect Password!"; 
   } 
