@@ -6,7 +6,8 @@ $(document).ready(function() {
     $.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data) {
         var output1 = $.parseJSON(data);
         //console.log(output1);
-        var pars_name = output1[1].split('&');
+        var pars_name1 = output1 ? output1[1] : '';
+        var pars_name = pars_name1.split('&');
         $("#name_main_get").text(pars_name[1] + " " + pars_name[0]);
         $("#name_get_pars").text(pars_name[0]);
     });
