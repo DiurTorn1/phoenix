@@ -34,6 +34,27 @@
 									<span class="admin-video-item-h-date">Подписка на год</span>
 								</div>
 							</div>
+							<div class="admin-video-prev">
+							</div>
+							<div class="admin-video-item-header">
+								<div class="admin-video-item-h-list">
+									<span class="admin-video-item-h-date">Подписка на год</span>
+								</div>
+							</div>
+							<div class="admin-video-prev">
+							</div>
+							<div class="admin-video-item-header">
+								<div class="admin-video-item-h-list">
+									<span class="admin-video-item-h-date">Подписка на год</span>
+								</div>
+							</div>
+							<div class="admin-video-prev">
+							</div>
+							<div class="admin-video-item-header">
+								<div class="admin-video-item-h-list">
+									<span class="admin-video-item-h-date">Подписка на год</span>
+								</div>
+							</div>
 						</div>
 						<div class="user-input-box block-w100" >
 							<div class="admin-video-prev">
