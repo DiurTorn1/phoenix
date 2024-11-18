@@ -56,19 +56,16 @@ $(document).ready(function(){
             $.post('/php/users_get_reg.php', { email:params.get('user_email') }, function(data) {
                 var output = $.parseJSON(data);
                 //console.log(output[4]);
-                var data_ok = 0;
+                var data_ok;
                 $.post('/php/hash_vert.php', { pass1:pass, pass2:output[4] }, function(data1) {
-                    //console.log(pass);
-                    //console.log(pass_get);
                     console.log(data1);
-                    if(data1 === 'OK'){
-                        //$('#user_panel_password').removeClass("user-input-err");
+                    data_ok = data;
+                    /*if(data1 === 'OK'){
+                        $('#user_panel_password').removeClass("user-input-err");
                         alert("Correct");
-                        data_ok = 1;
                     } else {
-                        //$('#user_panel_password').addClass("user-input-err"); 
-                        data_ok = 0;
-                    }
+                        $('#user_panel_password').addClass("user-input-err"); 
+                    }*/
                 });
                 console.log(data_ok);
             });
