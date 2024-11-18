@@ -76,13 +76,18 @@ $(document).ready(function(){
                 var output = $.parseJSON(data);
                 //console.log(output[4]);
                 $.post('/php/hash_vert.php', { pass1:pass, pass2:output[4] }, function(data1) {
-                    console.log(data1);
+                    //console.log(data1);
                     var int_baa = parseInt(data1);
                     if(int_baa == 1){
                         $('#user_panel_password').removeClass("user-input-err");
                         if(pass1 === pass2 && key_pass1 == 1 && key_pass2 == 1){
                             $('#user_panel_password1').removeClass("user-input-err");
                             $('#user_panel_password2').removeClass("user-input-err");
+                            var pass_hash = '';
+                            $.post('/php/hash_pass.php', { pass:pass1 }, function(data) {
+                                pass_hash = data;
+                            });
+                            console.log(pass_has);
                         } else {
                             $('#user_panel_password1').addClass("user-input-err");
                             $('#user_panel_password2').addClass("user-input-err");
