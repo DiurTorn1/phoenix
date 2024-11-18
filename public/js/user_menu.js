@@ -83,11 +83,10 @@ $(document).ready(function(){
                         if(pass1 === pass2 && key_pass1 == 1 && key_pass2 == 1){
                             $('#user_panel_password1').removeClass("user-input-err");
                             $('#user_panel_password2').removeClass("user-input-err");
-                            var pass_hash = '';
                             $.post('/php/hash_pass.php', { pass:pass1 }, function(data) {
-                                pass_hash = data;
+                                console.log(data);
                             });
-                            console.log(pass_hash);
+                            
                         } else {
                             $('#user_panel_password1').addClass("user-input-err");
                             $('#user_panel_password2').addClass("user-input-err");
