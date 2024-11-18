@@ -26,7 +26,7 @@
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
 					<div class="popup-content-wrap-row">
-						<div class="user-input-box block-w100" style="background: white; height: 600pxpx; width: 100%;">
+						<div class="user-input-box block-w100">
 							<div class="admin-video-prev">
 							</div>
 							<div class="admin-video-item-header">
@@ -46,13 +46,26 @@
 								<p class="admin-prod-hashtag">Не опубликован</p>
 							</div>
 						</div>
-						<div class="user-input-box block-w100" style="background: white; height: 600pxpx; width: 100%;">
-							<label>TEST</label>
-							<label>TEST</label>
-							<label>TEST</label>
-							<label>TEST</label>
-							<label>TEST</label>
-							<label>TEST</label>
+						<div class="user-input-box block-w100" >
+							<div class="admin-video-prev">
+								</div>
+								<div class="admin-video-item-header">
+									<div class="admin-video-item-h-list">
+										<span class="admin-video-item-h-date">Подписка на год</span>
+									</div>
+									<div class="admin-video-item-h-hashtag">
+										<span class="admin-prod-hashtag">Подписка за 1000 рублей.</span>
+									</div>
+								</div>
+								<div class="admin-video-item-view admin-prod-item-view">
+									<p class="admin-video-item-v-count"><span>33</span>продано</p>
+									<p class="admin-video-item-v-count"><span>0</span>возвратов</p>
+									<p class="admin-video-item-v-count"><span>396</span>стримов</p>
+								</div>
+								<div class="admin-video-item-info admin-video-item-view">
+									<p class="admin-prod-hashtag">Не опубликован</p>
+								</div>
+							</div>
 						</div>
 					</div>
 					<!--<div class="user-input-box block-w100">
