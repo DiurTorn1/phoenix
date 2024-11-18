@@ -3,6 +3,8 @@
 $(document).ready(function() {
     //$("#publishBtn").click(function(){
     //});
+    var email_for_pars = $("#email_get_pars").text();
+    console.log(email_for_pars);
 
     function generateRandomCode(length) {
         var characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
