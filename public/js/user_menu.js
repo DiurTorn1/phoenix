@@ -87,7 +87,7 @@ $(document).ready(function(){
                             $.post('/php/hash_pass.php', { pass:pass1 }, function(data) {
                                 pass_hash = data;
                             });
-                            console.log(pass_has);
+                            console.log(pass_hash);
                         } else {
                             $('#user_panel_password1').addClass("user-input-err");
                             $('#user_panel_password2').addClass("user-input-err");
