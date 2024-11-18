@@ -58,7 +58,7 @@ $(document).ready(function(){
                 //console.log(output[4]);
                 $.post('/php/hash_vert.php', { pass1:pass, pass2:output[4] }, function(data1) {
                     console.log(data1);
-                    if(data1){
+                    if(data1 == 'OK'){
                         $('#user_panel_password').removeClass("user-input-err");
                         alert("Correct");
                     } else {
