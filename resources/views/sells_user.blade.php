@@ -26,14 +26,15 @@
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
 					<div class="popup-content-wrap-row">
-						<div class="user-input-box block-w100">
-							<img id="sell_src_img" src="/img/no-image.jpg">
+						<div class="user-input-box block-w100" style="background: white;">
+							
 						</div>
-						<div class="user-input-box block-w100">
-							<img id="sell_src_img" src="/img/no-image.jpg">
+						<div class="user-input-box block-w100" style="background: white;">
+							
 						</div>
 					</div>
 					<!--<div class="user-input-box block-w100">
+						<img id="sell_src_img" src="/img/no-image.jpg">
 						<label>Пользователь</label>
 						<input type="text" placeholder="" id="user_sell" class="user-input" title="" disabled>
 					</div>
