@@ -50,17 +50,22 @@ $(document).ready(function(){
         var pass = $('#user_panel_password').val();
         var pass1 = $('#user_panel_password1').val();
         var pass2 = $('#user_panel_password2').val();
+        var key_pass1=0,keypass2=0;
         if(!pass1){
             //alert("Графа с паролем не должно быть пустым");
             $('#user_panel_password1').addClass("user-input-err");
+            key_pass1 = 0;
         } else {
             $('#user_panel_password1').removeClass("user-input-err");
+            key_pass1 = 1;
         }
         if(!pass2){
             //alert("Графа с паролем не должно быть пустым");
             $('#user_panel_password2').addClass("user-input-err");
+            key_pass2 = 0;
         } else {
             $('#user_panel_password2').removeClass("user-input-err");
+            key_pass2 = 1;
         }
         if(!pass){
             //alert("Графа с паролем не должно быть пустым");
@@ -75,7 +80,7 @@ $(document).ready(function(){
                     var int_baa = parseInt(data1);
                     if(int_baa == 1){
                         $('#user_panel_password').removeClass("user-input-err");
-                        if(pass1 === pass2){
+                        if(pass1 === pass2 && key_pass1 == 1 && key_pass2 == 1){
                             $('#user_panel_password1').removeClass("user-input-err");
                             $('#user_panel_password2').removeClass("user-input-err");
                         } else {
