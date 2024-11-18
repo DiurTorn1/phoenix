@@ -26,10 +26,10 @@
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
 					<div class="popup-content-wrap-row">
-						<div class="user-input-box block-w100" style="background: white;">
+						<div class="user-input-box block-w100" style="background: white; heigth:600px;">
 							
 						</div>
-						<div class="user-input-box block-w100" style="background: white;">
+						<div class="user-input-box block-w100" style="background: white; heigth:600px;">
 							
 						</div>
 					</div>
