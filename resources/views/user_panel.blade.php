@@ -35,10 +35,6 @@
 						<a href="#" class="top-menu-btn">Добавить устройство</a>
 					</div>
 
-					<div class="popup-title-wrap-row popup-title-none" data-content="user-autorization">
-						<h2 class="popup-title">Авторизация</h2>
-					</div>
-
 					<navigation class="top-navigation" id="top-navigation-menu">
 						<ul>
 							<li><a class="user-navigation-link active-navigation-link-user" data-open-block="user-profile" href="#">Профиль</a></li>
