@@ -26,12 +26,14 @@ $(document).ready(function() {
     $.post('/php/get_product.php', function(data) {
         var output = $.parseJSON(data);
         //console.log(output);
-        console.log(user_arr_product);
-        console.log(user_arr_sell);
+        //console.log(user_arr_product);
+        //console.log(user_arr_sell);
         $.each(output,function(i,item){
             var key_sell = 0;
+            console.log(item.id);
             for(var k=0;k<user_arr_sell.length;k++){
                 var sell_user = user_arr_sell[i];
+                console.log(sell_user.id_product);
                 if(item.id == sell_user.id_product){
                     //console.log(sell_user.id_product);
                     key_sell = 1;
@@ -39,6 +41,7 @@ $(document).ready(function() {
                 
             }
             for(var i=0; i<user_arr_product.length;i++){
+                console.log(user_arr_product[i]);
                 if(item.id == user_arr_product[i]){
                     var pars_detail = item.detail.split("+");
                     if(pars_detail[0] == 'ticket'){
