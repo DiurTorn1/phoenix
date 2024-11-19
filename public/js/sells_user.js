@@ -17,7 +17,7 @@ $(document).ready(function() {
                 console.log(output1);
                 $.each(output,function(i,item1){
                     console.log(item1.id_product);
-                    user_arr_sell.push({email:params.get('user_email'), id_product:int_id})
+                    user_arr_sell.push({email:params.get('user_email'), id_product:item1.id_product})
                 });
             });
         });
