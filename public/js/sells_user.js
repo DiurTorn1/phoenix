@@ -9,7 +9,7 @@ $(document).ready(function() {
             //console.log(item.id_product);
             var key_sell = 0;
             (async function() {
-                var globalVariable;
+                //var globalVariable;
             
                 try {
                     const response = await $.ajax({
@@ -24,7 +24,7 @@ $(document).ready(function() {
                     console.log('Global Variable:', output1);
             
                     // Выполняем нужные действия с globalVariable
-                    doSomethingWithGlobalVariable(output1);
+                    doSomethingWithGlobalVariable(key_sell);
                 } catch (error) {
                     console.error('AJAX Error:', error);
                 }
