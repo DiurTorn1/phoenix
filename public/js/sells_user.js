@@ -10,6 +10,7 @@ $(document).ready(function() {
             var key_sell = 0;
             $.post('/php/get_sell_user_id.php',{product_id:item.id_product}, function(data1) {
                 var output1 = $.parseJSON(data1);  
+                var key_sell1 = 0;
                 if(output1[2]==params.get('user_email')){
                     key_sell=1;
                     console.log(output1);
@@ -17,6 +18,7 @@ $(document).ready(function() {
                 //$.each(output,function(i,item){
                     //console.log(item.id_product);
                 //});
+                key_sell = key_sell1;
             });
             console.log(key_sell);
         });
