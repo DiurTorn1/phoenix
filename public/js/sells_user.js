@@ -28,6 +28,7 @@ $(document).ready(function() {
         //console.log(output);
         //console.log(user_arr_product);
         //console.log(user_arr_sell);
+        var count_sub = 0, count_tick = 0;
         $.each(output,function(i,item){
             var key_sell = 0;
             console.log(item.id);
@@ -45,15 +46,37 @@ $(document).ready(function() {
                 if(item.id == user_arr_product[i]){
                     var pars_detail = item.detail.split("+");
                     if(pars_detail[0] == 'ticket'){
-                        console.log(item.name + '   ^   '+ key_sell);
+                        count_sub++;
+                        //console.log(item.name + '   ^   '+ key_sell);
+                        $("#sell_ticket_user").append(
+                            '<div class="admin-video-prev">' +
+                                '<img id="sell_src_img" src="' + item.img_main + '">' +
+                            '</div>' +
+                            '<div class="admin-video-item-header">' +
+                                '<div class="admin-video-item-h-list">' +
+                                    '<span class="admin-video-item-h-date">' + item.name + '</span>'+
+                                '</div>' +
+                            '</div>'
+                        );
 
                     }else if(pars_detail[0] == 'subscript'){
-                        console.log(item.name + '   ^   '+ key_sell);
+                        count_tick
+                        //console.log(item.name + '   ^   '+ key_sell);
+                        $("#sell_subs_user").append(
+                            '<div class="admin-video-prev">' +
+                                '<img id="sell_src_img" src="' + item.img_main + '">' +
+                            '</div>' +
+                            '<div class="admin-video-item-header">' +
+                                '<div class="admin-video-item-h-list">' +
+                                    '<span class="admin-video-item-h-date">' + item.name + '</span>'+
+                                '</div>' +
+                            '</div>'
+                        );
                     }
 
                 }
             }
-            //console.log(item.id_product);
+            console.log(count_sub + "  ^  " + count_tick);
             //var int_id = parseInt(item.id_product);
             //user_arr_sell.push({email:params.get('user_email'), id_product:int_id})
             /**
@@ -74,6 +97,8 @@ $(document).ready(function() {
                                 '</div>' +
                             '</div>' +
                         '</li>');
+
+							
              */
         });
     });
