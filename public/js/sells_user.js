@@ -34,7 +34,7 @@ $(document).ready(function() {
             //console.log(item.id);
             for(var k=0;k<user_arr_sell.length;k++){
                 var sell_user = user_arr_sell[i];
-                console.log(sell_user.id_product);
+                //console.log(sell_user.id_product);
                 if(item.id == sell_user.id_product){
                     //console.log(sell_user.id_product);
                     key_sell = 1;
@@ -45,7 +45,7 @@ $(document).ready(function() {
                 //console.log(user_arr_product[i]);
                 if(item.id == user_arr_product[i]){
                     var pars_detail = item.detail.split("+");
-                    if(pars_detail[0] == 'ticket'){
+                    if(pars_detail[0] == 'ticket' && key_sell){
                         count_tick++;
                         //console.log(item.name + '   ^   '+ key_sell);
                         $("#sell_ticket_user").append(
@@ -59,7 +59,7 @@ $(document).ready(function() {
                             '</div>'
                         );
 
-                    }else if(pars_detail[0] == 'subscript'){
+                    }else if(pars_detail[0] == 'subscript' && key_sell){
                         count_sub++;
                         //console.log(item.name + '   ^   '+ key_sell);
                         $("#sell_subs_user").append(
@@ -77,6 +77,7 @@ $(document).ready(function() {
                 }
             }
             if(!count_sub){
+                $("#sell_ticket_user").empty();
                 $("#sell_ticket_user").append(
                     '<div class="admin-video-item-header">' +
                         '<div class="admin-video-item-h-list">' +
@@ -86,7 +87,8 @@ $(document).ready(function() {
                 );
             }
             if(!count_tick){
-                $("#sell_ticket_user").append(
+                $("#sell_subs_user").empty();
+                $("#sell_subs_user").append(
                     '<div class="admin-video-item-header">' +
                         '<div class="admin-video-item-h-list">' +
                             '<span class="admin-video-item-h-date">У вас не куплено ни одной подписки</span>'+
