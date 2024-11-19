@@ -32,7 +32,6 @@ $(document).ready(function() {
         $.each(output,function(i,item){
             for(var i=0; i<user_arr_product.length;i++){
                 //console.log(user_arr_product[i]);
-                console.log(key_sell);
                 if(item.id == user_arr_product[i]){
                     var pars_detail = item.detail.split("+");
 
@@ -42,13 +41,13 @@ $(document).ready(function() {
                         var sell_user = user_arr_sell[i];
                         //console.log(sell_user.id_product);
                         if(item.id == sell_user.id_product){
-                            //console.log(sell_user.id_product);
+                            console.log(sell_user.id_product);
                             key_sell = 1;
                         }
                         
                     }
 
-                    
+
                     if(pars_detail[0] == 'ticket' && key_sell == 1){
                         count_tick++;
                         //console.log(item.name + '   ^   '+ key_sell);
