@@ -24,7 +24,7 @@ $(document).ready(function() {
                     console.log('Global Variable:', output1);
             
                     // Выполняем нужные действия с globalVariable
-                    doSomethingWithGlobalVariable(globalVariable);
+                    doSomethingWithGlobalVariable(output1);
                 } catch (error) {
                     console.error('AJAX Error:', error);
                 }
