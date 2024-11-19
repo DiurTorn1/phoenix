@@ -7,7 +7,8 @@ $(document).ready(function() {
         //console.log(output);
         $.each(output,function(i,item){
             console.log(item.id_product);
-            user_arr_sell.push({email:params.get('user_email'), id_product:item.id_product})
+            var int_id = parseInt(item.id_product);
+            user_arr_sell.push({email:params.get('user_email'), id_product:int_id})
         });
     });
     
