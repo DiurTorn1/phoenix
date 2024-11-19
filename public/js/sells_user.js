@@ -60,7 +60,7 @@ $(document).ready(function() {
                         );
 
                     }else if(pars_detail[0] == 'subscript'){
-                        count_tick
+                        count_tick++;
                         //console.log(item.name + '   ^   '+ key_sell);
                         $("#sell_subs_user").append(
                             '<div class="admin-video-prev">' +
