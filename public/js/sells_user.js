@@ -17,7 +17,7 @@ $(document).ready(function() {
             console.log(item.id_product);
             $.post('/php/get_sell_user_id.php',{product_id:item.id_product}, function(data1) {
                 var output1 = $.parseJSON(data1);  
-                if(output1){
+                if(output1[2]==params.get('user_email')){
                     console.log(output1);
                 }
                 //$.each(output,function(i,item){
