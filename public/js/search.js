@@ -21,7 +21,7 @@ $(document).ready(function() {
                                 
                             '</div>'+
                             '<div class="index-live-item-text">'+
-                                '<a >' + item.name + '</a>'+
+                                '<a >' + item.title + '</a>'+
                             '</div>'+
                         '</div>');
 
