@@ -50,6 +50,7 @@ $(document).ready(function() {
                     console.log("\r\nshls_link:" + item.hls_link);*/
                     var pars_subtitle = item.subtitle;
                     var pars =  pars_subtitle.split("&");
+                    console.log(pars);
                     $("#admin-video-list-ct").append(
                         '<li class="admin-video-item admin-back">' +
                             '<div class="admin-video-sort-wrap">' +
