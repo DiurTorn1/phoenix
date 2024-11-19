@@ -29,20 +29,49 @@ $(document).ready(function() {
         console.log(user_arr_product);
         console.log(user_arr_sell);
         $.each(output,function(i,item){
+            var key_sell = 0;
+            for(var k=0;k<user_arr_sell.length;k++){
+                var sell_user = user_arr_sell[i];
+                if(item.id == sell_user.id_product){
+                    //console.log(sell_user.id_product);
+                    key_sell = 1;
+                }
+                
+            }
             for(var i=0; i<user_arr_product.length;i++){
                 if(item.id == user_arr_product[i]){
-                    for(var k=0;k<user_arr_sell.length;k++){
-                        var sell_user = user_arr_sell[i];
-                        if(item.id == sell_user.id_product){
-                            console.log(sell_user.id_product);
-                        }
-                        
+                    var pars_detail = item.detail.split("+");
+                    if(pars_detail[0] == 'ticket'){
+                        console.log(item.name + '   ^   '+ key_sell);
+
+                    }else if(pars_detail[0] == 'subscript'){
+                        console.log(item.name + '   ^   '+ key_sell);
                     }
+
                 }
             }
             //console.log(item.id_product);
             //var int_id = parseInt(item.id_product);
             //user_arr_sell.push({email:params.get('user_email'), id_product:int_id})
+            /**
+             *                         $("#product_list_add").append(
+                            '<li class="admin-video-item admin-back" id="' + output[0] + '">' +
+                            '<div class="admin-video-prev">' +
+                                '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                            '</div>' +
+                            '<div class="admin-video-item-header">' +
+                                '<div class="admin-video-item-h-list">' +
+                                    '<span class="admin-video-item-h-date">' + output[1] + '</span>' +
+                                '</div>' +
+                                '<div class="admin-video-item-h-hashtag">' +
+                                    '<span class="admin-prod-hashtag">' + output[2] + '</span>' +
+                                '</div>' +
+                                '<div class="admin-video-item-info admin-video-item-view">' +
+                                    '<button class="button_prod_dyn" id="' + output[0] + '">Добавить</button>' +
+                                '</div>' +
+                            '</div>' +
+                        '</li>');
+             */
         });
     });
 });
