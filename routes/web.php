@@ -177,6 +177,10 @@ Route::get('/sells_user', function () {
     return view('sells_user');
 });
 
+Route::get('/video_card', function () {
+    return view('video_card');
+});
+
 //Route::resource('products', ProductPhoenix::class);
 //Route::group(['middleware' => ['web']], function() {
     //Route::resource('products', ProductPhoenix::class);

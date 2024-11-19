@@ -91,7 +91,7 @@ $(document).ready(function() {
         var id = this.id;
         //$("#admin_input_id").val(id);
         console.log(id)
-        //window.location.href='/card_stream?admin_input_id='+id;
+        window.location.href='/video_card';//?admin_input_id='+id;
         //alert("Text: " + this.id);count_stream
     });
 });
