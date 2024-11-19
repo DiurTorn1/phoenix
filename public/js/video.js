@@ -80,6 +80,8 @@ $(document).ready(function() {
                                 '<p class="admin-video-item-i-time">Не опубликовано</p>' +
                             '</div>' +
                     '</li>');
+
+                count_ch++;
             });
             
         });
