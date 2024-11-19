@@ -45,7 +45,7 @@ $(document).ready(function() {
                 //console.log(user_arr_product[i]);
                 if(item.id == user_arr_product[i]){
                     var pars_detail = item.detail.split("+");
-                    if(pars_detail[0] == 'ticket' && key_sell){
+                    if(pars_detail[0] == 'ticket' && key_sell == 1){
                         count_tick++;
                         //console.log(item.name + '   ^   '+ key_sell);
                         $("#sell_ticket_user").append(
@@ -59,7 +59,7 @@ $(document).ready(function() {
                             '</div>'
                         );
 
-                    }else if(pars_detail[0] == 'subscript' && key_sell){
+                    }else if(pars_detail[0] == 'subscript' && key_sell == 1){
                         count_sub++;
                         //console.log(item.name + '   ^   '+ key_sell);
                         $("#sell_subs_user").append(
