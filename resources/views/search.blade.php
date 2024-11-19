@@ -21,27 +21,8 @@
 <!--------------------- РЕЗУЛЬТАТ ПОИСКА ---------------------------->
 		<div class="index-live">
 			<h2 class="search-title">Результаты поиска</h2>
-			<div class="index-live-list">
-				<div class="index-live-item">
-					<div class="index-live-item-video">
-						<a href="#">
-							<span class="label">LIVE</span>
-						</a>
-					</div>
-					<div class="index-live-item-text">
-						<a href="#">27.04.2024 Баскетбол ДБЛ "Аврора" Д 2012 Ф г. Окуловка</a>
-					</div>
-				</div>
-				<div class="index-live-item"> <!-- С значком ЗАМКА в углу -->
-					<div class="index-live-item-video">
-						<a href="#">
-							<span class="label-block"><img src="img/lock.png" alt="Просмотр заблокирован" title="Просмотр заблокирован. Купите билет."></span> <!-- Вот ТУТ -->
-						</a>
-					</div>
-					<div class="index-live-item-text">
-						<a href="#">27.04.2024 Баскетбол ДБЛ "Аврора" Д 2013 Ф г. Окуневка</a>
-					</div>
-				</div>
+			<div class="index-live-list" id="video_list_search">
+				
 			</div>
 		</div>
 </main> 
