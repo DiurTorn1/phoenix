@@ -55,7 +55,7 @@ $(document).ready(function() {
                                 '<label class="admin-video-check-label" for="admin-vl1"></label>' +
                             '</div>' +
                             '<div class="admin-video-prev">' +
-                                '<img src="' + list.poster.original + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                                '<img src="' + item.poster.original + '" alt="" class="" style="heigth: 100%; width: 100%">' +
                             '</div>' +
                             '<div class="admin-video-item-header">' +
                                 '<div class="admin-video-item-h-list">' +
