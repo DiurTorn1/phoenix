@@ -43,6 +43,7 @@ $(document).ready(function() {
             }
             for(var i=0; i<user_arr_product.length;i++){
                 //console.log(user_arr_product[i]);
+                console.log(key_sell);
                 if(item.id == user_arr_product[i]){
                     var pars_detail = item.detail.split("+");
                     if(pars_detail[0] == 'ticket' && key_sell == 1){
