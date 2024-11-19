@@ -2,7 +2,7 @@ $(document).ready(function() {
     //$("#view-video-btn").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
-
+        var count_ch = 0;
         $.post('/php/kines.php', function(data)  {
             //$('#res-video-text').text(data);
             var output = $.parseJSON(data);
@@ -48,11 +48,13 @@ $(document).ready(function() {
                     console.log("\r\nsubtitles:" + item.subtitles);
                     console.log("\r\nsubtitles_enabled:" + item.subtitles_enabled);
                     console.log("\r\nshls_link:" + item.hls_link);*/
+                    var pars_subtitle = item.subtitle;
+                    var pars =  pars_subtitle.split("&");
                     $("#admin-video-list-ct").append(
                         '<li class="admin-video-item admin-back">' +
                             '<div class="admin-video-sort-wrap">' +
-                                '<input id="admin-vl1" class="admin-video-sort-check" type="checkbox">' +
-                                '<label class="admin-video-check-label" for="admin-vl1"></label>' +
+                                '<input id="admin-vl' + count_ch + '" class="admin-video-sort-check" type="checkbox">' +
+                                '<label class="admin-video-check-label" for="admin-vl' + count_ch + '"></label>' +
                             '</div>' +
                             '<div class="admin-video-prev">' +
                                 '<img src="' + item.poster.original + '" alt="" class="" style="heigth: 100%; width: 100%">' +
@@ -62,17 +64,16 @@ $(document).ready(function() {
                                     '<span class="admin-video-item-h-date">' + item.title + '</span>' +
                                 '</div>' +
                                 '<div class="admin-video-item-h-hashtag">' +
-                                    /*'<span class="admin-video-hashtag-date">2023-2024</span>' +
-                                    '<span class="admin-video-hashtag-kubok">Кубок Феникса</span>' +
-                                    '<span class="admin-video-hashtag-group">Ю11</span>' +
-                                    '<span class="admin-video-hashtag-sport">Волейбол</span>' +
-                                    '<span class="admin-video-hashtag-city">Псков</span>' +
-                                    '<span class="admin-video-hashtag-org">ЦРСП "ФЕНИКС"</span>' +*/
+                                    '<span class="admin-video-hashtag-date">' + pars[0] + '</span>' +
+                                    '<span class="admin-video-hashtag-kubok">' + pars[1] + '</span>' +
+                                    '<span class="admin-video-hashtag-group">' + pars[2] + '</span>' +
+                                    '<span class="admin-video-hashtag-sport">' + pars[3] + '</span>' +
+                                    '<span class="admin-video-hashtag-city">' + pars[4] + '</span>' +
                                 '</div>' +
                             '</div>' +
                             '<div class="admin-video-item-view">' +
-                                '<p class="admin-video-item-v-count"><span>0</span>просмотров</p>' +
-                                '<p class="admin-video-item-v-region">Все регионы</p>' +
+                                //'<p class="admin-video-item-v-count"><span>0</span>просмотров</p>' +
+                                //'<p class="admin-video-item-v-region">Все регионы</p>' +
                             '</div>' +
                             '<div class="admin-video-item-info admin-video-item-view">' +
                                 '<p class="admin-video-item-i-time">Не опубликовано</p>' +
