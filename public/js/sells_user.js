@@ -16,8 +16,9 @@ $(document).ready(function() {
     
     var params = new window.URLSearchParams(window.location.search);
     user_gl_name = params.get('user_email');
-
-
+    
+    paint_element_stream();
+    //setInterval('get_stream_array()',500);
     console.log(user_sells);
     //console.log(params.get('user_email'));
     $.post('/php/get_product_all.php', function(data) {
