@@ -9,6 +9,7 @@
 
 
 <!-- БЛОК ПОИСКА -->
+<script src="{{ asset('js/search.js') }}"></script>
 <div class="top-menu-sort block-admin-section mt-1r pr-0 pl-24px">
 			<div class="admin-input-box admin-input-wrap">
 				<input type="text" name="Поиск по названию" class="user-input block-admin-input block-admin-input-key block-w-avai" placeholder="Поиск">

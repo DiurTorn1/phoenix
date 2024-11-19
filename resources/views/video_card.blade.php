@@ -8,8 +8,11 @@
 		</div>
 
 		<div class="right-heder">
-			<button class="menu-btn-grey save-st menu-btn-grey-active">Опубликовать</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
-			<button class="menu-btn-grey menu-btn-grey-active">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+            <button class="top-menu-btn save-st" id="upload_stream">Сохранить</button>
+			<button class="top-menu-btn non-publish" id="unpublic_stream">Отменить публикацию</button>
+			<button class="top-menu-btn yes-publish" id="public_stream">Опубликовать</button>
+			<!-- <button class="menu-btn-grey save-st menu-btn-grey-active">Опубликовать</button> Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<!-- <button class="menu-btn-grey menu-btn-grey-active">Сохранить</button> Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 		</div>
 </header>
 <div class="admin-content block-admin-left-w1080">
@@ -91,5 +94,5 @@
 		</div>
 
 	</div>
-    <script src="{{ asset('js/video_add.js') }}"></script>
+    <script src="{{ asset('js/video_card.js') }}"></script>
 @endsection
