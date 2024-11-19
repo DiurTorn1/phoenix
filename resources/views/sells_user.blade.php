@@ -28,6 +28,7 @@
 					<div class="popup-content-wrap-row">
 						<div class="user-input-box block-w100">
 							<div class="admin-video-prev">
+								<img id="sell_src_img" src="/img/no-image.jpg">
 							</div>
 							<div class="admin-video-item-header">
 								<div class="admin-video-item-h-list">
@@ -58,6 +59,7 @@
 						</div>
 						<div class="user-input-box block-w100" >
 							<div class="admin-video-prev">
+								<img id="sell_src_img" src="/img/no-image.jpg">
 								</div>
 								<div class="admin-video-item-header">
 									<div class="admin-video-item-h-list">
