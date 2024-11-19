@@ -50,9 +50,9 @@ $(document).ready(function() {
                     console.log("\r\nshls_link:" + item.hls_link);*/
                     var pars_subtitle = item.subtitle;
                     var pars =  pars_subtitle.split("&");
-                    console.log(pars);
+                    //console.log(pars);
                     $("#admin-video-list-ct").append(
-                        '<li class="admin-video-item admin-back">' +
+                        '<li class="admin-video-item admin-back push_to_card" id="' + item.id + '">' +
                             '<div class="admin-video-sort-wrap">' +
                                 '<input id="admin-vl' + count_ch + '" class="admin-video-sort-check" type="checkbox">' +
                                 '<label class="admin-video-check-label" for="admin-vl' + count_ch + '"></label>' +
@@ -86,5 +86,13 @@ $(document).ready(function() {
             
         });
     //});
+
+    $(document).on('dblclick', '.push_to_card', function() {
+        var id = this.id;
+        //$("#admin_input_id").val(id);
+        console.log(id)
+        //window.location.href='/card_stream?admin_input_id='+id;
+        //alert("Text: " + this.id);count_stream
+    });
 });
 /**/ 
