@@ -19,6 +19,8 @@ $(document).ready(function() {
                     //console.log(item.id_product);
                 //});
                 key_sell = key_sell1;
+            }).fail(function(jqXHR, textStatus, errorThrown) {
+                console.error('AJAX Error:', textStatus, errorThrown);
             });
             console.log(key_sell);
         });
