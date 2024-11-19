@@ -76,7 +76,7 @@ $(document).ready(function() {
 
                 }
             }
-            if(!count_sub){
+            /*if(!count_sub){
                 $("#sell_ticket_user").empty();
                 $("#sell_ticket_user").append(
                     '<div class="admin-video-item-header">' +
@@ -95,7 +95,7 @@ $(document).ready(function() {
                         '</div>' +
                     '</div>'
                 );
-            }
+            }*/
         });
     });
 });
