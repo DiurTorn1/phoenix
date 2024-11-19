@@ -8,8 +8,8 @@
 		</div>
 
 		<div class="right-heder">
-			<button class="menu-btn-grey save-st">Опубликовать</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
-			<button class="menu-btn-grey">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<button class="menu-btn-grey save-st menu-btn-grey-active">Опубликовать</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<button class="menu-btn-grey menu-btn-grey-active">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 		</div>
 </header>
 <div class="admin-content block-admin-left-w1080">
