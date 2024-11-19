@@ -22,9 +22,6 @@ $(document).ready(function() {
                         key_sell=1;
                     }
                     console.log('Global Variable:', output1);
-            
-                    // Выполняем нужные действия с globalVariable
-                    doSomethingWithGlobalVariable(key_sell);
                 } catch (error) {
                     console.error('AJAX Error:', error);
                 }
