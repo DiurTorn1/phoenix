@@ -192,9 +192,9 @@ $(document).ready(function() {
 
     $(document).on('click', '.bay', function() {
         var id = this.id;
-        console.log(id);
+        //console.log(id);
         //$("#admin_input_id").val(id);
-        //window.location.href='/player_stream?player_stream_id='+id;
+        window.location.href='/player_video?player_stream_id='+id;
         //alert("Text: " + this.id);
     });
     //$("#view-video-btn").on('click', function(){
