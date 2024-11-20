@@ -113,10 +113,10 @@ $(document).ready(function() {
         count_stream = 100;
         var count_ch = 0;
         var all_sel = 0;
-        if(count_stream > 5){
+        if(count_stream > 10){
             $('#block_select_stream_list').show();
             
-            for(var i=0; i < count_stream; i=i+5){
+            for(var i=0; i < count_stream; i=i+10){
                 all_sel++;
             }
             $('#span_select_list_all').text(all_sel);
@@ -130,7 +130,7 @@ $(document).ready(function() {
             minus = 0;
         }
         var top_list = num_list1-minus;
-        for(var i = num_list; i < top_list; i ++){
+        for(var i = num_list; i < 10; i ++){
             $.post('/php/kines.php', function(data)  {
                 //$('#res-video-text').text(data);
                 var output = $.parseJSON(data);
