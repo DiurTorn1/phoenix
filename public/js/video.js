@@ -1,5 +1,6 @@
 var idch = 0;
 var key_main_chack = 0;
+var get_ch_list = 1;
 
 function dynamic_checkbox(){
         //video-btn-active 
