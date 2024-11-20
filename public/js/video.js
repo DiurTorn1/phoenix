@@ -128,6 +128,7 @@ function get_stream_array(){
             array_stream.push(pre_arr[i]);
             
         }
+        console.log(count);
         count_stream = count;
     });
     if(!key_paint){
