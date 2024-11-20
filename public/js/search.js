@@ -15,6 +15,27 @@ var public_product_perm = new Array();
 var public_product_perm2 = new Array();
 var array_product = new Array();
 
+function get_paint_element_video(){
+    for(var i = 0; i < count_stream; i ++){
+        $.post('/php/get_video_id.php',{ id:array_stream[i] }, function(data)  {
+            var output = $.parseJSON(data);
+            var list = output.data;
+            //console.log(list);
+
+            var key_pub = 0, active_class = '';
+            for(var i = 0; i < public_stream_list.length; i++){
+                if(public_stream_list[i] == list.title){ key_pub = 1;}
+                //console.log(public_stream_list);
+            }
+            if(key_pub){
+                console.log(list.name);
+            } else {
+            }
+        });
+    }
+}
+
+
 function get_stream_array(){
     
     var count = 0;
@@ -40,7 +61,7 @@ function get_stream_array(){
             array_stream1.push(array_stream[i]);           
         }
         if(array_stream1[0]){
-            //get_paint_element_video();
+            get_paint_element_video();
             key_paint = 1;
         }
 
@@ -158,7 +179,7 @@ $(document).ready(function() {
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
         
-        for(var i = 0; i < count_stream; i ++){
+       /* for(var i = 0; i < count_stream; i++){
             console.log(array_stream[i]);
             $.post('/php/get_video_id.php',{ id:array_stream[i] }, function(data)  {
                 var output = $.parseJSON(data);
@@ -191,7 +212,7 @@ $(document).ready(function() {
                 //count_ch++;
             });
             
-        });
+        });*/
     //});
     /**
      * <div class="index-live-item">
