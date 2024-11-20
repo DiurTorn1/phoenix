@@ -4,6 +4,7 @@ var get_ch_list = 1;
 var num_list = 0;
 var num_list1 = 10;
 var num_list2 = 0;
+var count_stream = 0;
 
 function dynamic_checkbox(){
         //video-btn-active 
