@@ -53,63 +53,63 @@ function dynamic_checkbox(){
     //console.log(select_count_stream);
     if(int_ch != 0){
         $('.admin-video-btn3').addClass('video-btn-active3');
-        //$('.admin-video-btn4').addClass('video-btn-active4');
+        $('.admin-video-btn4').addClass('video-btn-active4');
         //console.log(arr_pub);
                     //console.log(id);array_stream[i]
-        //var arr_res = [];
-        //for(var i = 0; i < int_ch; i++){
-            //var arr_p = arr_pub[i];
-            //var key_pub = 0;
-            //for(var k=0; k<array_name_stream.length;k++){
-                //var name_list = array_name_stream[k];
-                //if(name_list.id == arr_p){
+        var arr_res = [];
+        for(var i = 0; i < int_ch; i++){
+            var arr_p = arr_pub[i];
+            var key_pub = 0;
+            for(var k=0; k<array_name_stream.length;k++){
+                var name_list = array_name_stream[k];
+                if(name_list.id == arr_p){
                             //console.log(name_list.name);
                     
-                    //for(var j = 0; j < public_stream_list.length; j++){
-                        //if(public_stream_list[j] == name_list.name){ 
-                            //console.log(public_stream_list[j]);
-                            //key_pub = 1;
-                        //}
+                    for(var j = 0; j < public_stream_list.length; j++){
+                        if(public_stream_list[j] == name_list.name){ 
+                            console.log(public_stream_list[j]);
+                            key_pub = 1;
+                        }
                         //console.log(public_stream_list[j]);
-                    //}
+                    }
                    
-                //}
-            //}
+                }
+            }
             
 
                         //console.log(array_name_stream[i]);
-            //arr_res.push(key_pub);
-        //}
-        //var key_pod = 0;
-       // var allEqual = arr_res.every(function(value, index, arr) {
+            arr_res.push(key_pub);
+        }
+        var key_pod = 0;
+        var allEqual = arr_res.every(function(value, index, arr) {
             //console.log(value);
             //console.log(arr[0]);
-            //key_pod = value;
-            //return value === arr[0];
-        //});
+            key_pod = value;
+            return value === arr[0];
+        });
 
         // Вывод результата
-        //if (allEqual) {
-            //$('#result').text('Все элементы массива равны.');
+        if (allEqual) {
+            $('#result').text('Все элементы массива равны.');
             //console.log(key_pod);
-            //if(!key_pod){
-                //$('.admin-video-btn1').addClass('video-btn-active1');
-                //$('.admin-video-btn2').removeClass('video-btn-active2');
-            //} else {
-                //$('.admin-video-btn1').removeClass('video-btn-active1');
-                //$('.admin-video-btn2').addClass('video-btn-active2');
-            //}
-        //} else {
+            if(!key_pod){
+                $('.admin-video-btn1').addClass('video-btn-active1');
+                $('.admin-video-btn2').removeClass('video-btn-active2');
+            } else {
+                $('.admin-video-btn1').removeClass('video-btn-active1');
+                $('.admin-video-btn2').addClass('video-btn-active2');
+            }
+        } else {
             //console.log(allEqual);
-            //$('#result').text('Не все элементы массива равны.');
-            //$('.admin-video-btn1').removeClass('video-btn-active1');
-            //$('.admin-video-btn2').removeClass('video-btn-active2');
-        //}
+            $('#result').text('Не все элементы массива равны.');
+            $('.admin-video-btn1').removeClass('video-btn-active1');
+            $('.admin-video-btn2').removeClass('video-btn-active2');
+        }
     } else {
         $('.admin-video-btn3').removeClass('video-btn-active3');
-        //$('.admin-video-btn1').removeClass('video-btn-active1');
-        //$('.admin-video-btn2').removeClass('video-btn-active2');
-        //$('.admin-video-btn4').removeClass('video-btn-active4');
+        $('.admin-video-btn1').removeClass('video-btn-active1');
+        $('.admin-video-btn2').removeClass('video-btn-active2');
+        $('.admin-video-btn4').removeClass('video-btn-active4');
     }
 }
 
