@@ -67,7 +67,7 @@ function dynamic_checkbox(){
                     
                     for(var j = 0; j < public_stream_list.length; j++){
                         if(public_stream_list[j] == name_list.name){ 
-                            console.log(public_stream_list[j]);
+                            //console.log(public_stream_list[j]);
                             key_pub = 1;
                         }
                         //console.log(public_stream_list[j]);
