@@ -110,6 +110,7 @@ $(document).ready(function() {
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
         var count_ch = 0;
+        var top_list = num_list1-minus;
         for(var i = num_list; i < top_list; i ++){
             $.post('/php/kines.php', function(data)  {
                 //$('#res-video-text').text(data);
