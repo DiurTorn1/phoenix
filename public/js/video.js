@@ -133,7 +133,11 @@ function get_paint_element_video(){
     }
     var top_list = num_list1-minus;
     for(var i = num_list; i < top_list; i ++){
-        
+        $.post('/php/get_video_id.php',{ id:array_stream[i] }, function(data)  {
+            var output = $.parseJSON(data);
+            var list = output.data;
+            console.log(list);
+        });
     }
 }
 
