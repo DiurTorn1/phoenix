@@ -30,7 +30,7 @@ $(document).ready(function(){
     });
 
     $("#public_stream").on('click', function(){
-        $.post('/php/public_video.php', { name: name_video, type:type_stream }, function(data){
+        $.post('/php/public_video.php', { name: name_video, type:'' }, function(data){
             if(data == "OK"){
                 alert("Продукт опубликован");
                 $('#public_stream').hide();
