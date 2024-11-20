@@ -110,6 +110,23 @@ $(document).ready(function() {
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
         var count_ch = 0;
+        var all_sel = 0;
+        if(count_stream > 5){
+            $('#block_select_stream_list').show();
+            
+            for(var i=0; i < count_stream; i=i+5){
+                all_sel++;
+            }
+            $('#span_select_list_all').text(all_sel);
+        }
+    
+        num_list2 = all_sel;
+        var minus = 0;
+        if(num_list1 > count_stream){
+            minus = num_list1 - count_stream;
+        } else {
+            minus = 0;
+        }
         var top_list = num_list1-minus;
         for(var i = num_list; i < top_list; i ++){
             $.post('/php/kines.php', function(data)  {
