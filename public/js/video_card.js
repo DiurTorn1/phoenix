@@ -10,6 +10,41 @@ $(document).ready(function(){
         console.log(list);
         $("#video_name").val(list.title);
         $("#img_poster_card").attr('src', list.poster.original);
+
+        $.post('/php/get_video_public.php', {name:list.title}, function(data)  {
+            var output = $.parseJSON(data);
+            //$.each(output,function(i,item){
+            var pub_name = output? output[1]: '1';
+                if(pub_name==list.title){
+                     $('#public_stream').hide();
+                     $('#unpublic_stream').show();
+                 }
+                 //console.log(output[2]);
+                 //console.log(output[3]);
+           //});
+    
+        });
+    });
+
+    $("#public_stream").on('click', function(){
+        $.post('/php/public_video.php', { name: name_stream, type:type_stream }, function(data){
+            if(data == "OK"){
+                alert("Продукт опубликован");
+                $('#public_stream').hide();
+                $('#unpublic_stream').show();
+            }
+            //console.log(data);
+        });
+    });
+    $("#unpublic_stream").on('click', function(){
+        $.post('/php/unpublic_video.php', { name: name_stream }, function(data){
+            if(data == "OK"){
+                alert("Продукт снят с публикации");
+                $('#public_stream').show();
+                $('#unpublic_stream').hide();
+            }
+            //console.log(data);
+        });
     });
 });
 
