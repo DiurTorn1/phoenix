@@ -15,7 +15,7 @@
 			<!-- <button class="menu-btn-grey menu-btn-grey-active">Сохранить</button> Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
 		</div>
 </header>
-<h2 id="inform_job"></h2>
+<a id="inform_job"></a>
 <div class="admin-content block-admin-left-w1080">
 		<div class="top-menu-admin admin-video-sort admin-back">
 			<div class="admin-input-box admin-input-wrap">
