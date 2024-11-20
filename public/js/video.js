@@ -54,7 +54,7 @@ function dynamic_checkbox(){
     if(int_ch != 0){
         $('.admin-video-btn3').addClass('video-btn-active3');
         $('.admin-video-btn4').addClass('video-btn-active4');
-        //console.log(arr_pub);
+        console.log(arr_pub);
                     //console.log(id);array_stream[i]
         var arr_res = [];
         for(var i = 0; i < int_ch; i++){
