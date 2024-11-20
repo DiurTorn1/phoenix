@@ -35,9 +35,10 @@
 				</div>
 
 				<div class="admin-input-width50">
-					<a href="#" class="preview-product-vis-upload">
-						<p>Превью</p>
-					</a>
+					<a href="#" class="add-preview-tournir" title="Загрузить обложку турнира"><img src="{{ asset('img/ivs4.png') }}" alt="Обложка турнира" id="img_poster_card"></a>
+					<div class="edit-preview-tournir" id="banners_turnir">
+						<a class="remove-preview-tournir" title="Удалить обложку" id="img_banner_trash"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -61,12 +62,12 @@
 				</select>
 			</div>
 
-			<div class="admin-input-box block-admin-input">
-				<label>Продукт</label>
-				<select class="admin-input admin-input-select block-admin-input">
-					<option value="">Тестовый продукт 1</option>
-					<option value="">Тестовый продукт номер 2</option>
-				</select>
+			<div class="admin-input-box admin-input-wrap">
+				<label>Добавить к продукту</label>
+				<!--<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_product">-->
+					<select class="admin-input admin-input-select block-admin-input" id="admin_card_product">
+						<option value="Не добавлять к продукту">Не добавлять к продукту</option>
+					</select>
 			</div>
 		</div>
 	
