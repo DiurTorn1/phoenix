@@ -330,7 +330,7 @@ $(document).ready(function() {
             num_list = num_list-10;
             num_list1 = num_list1-10;
             get_ch_list = get_ch_list - 1;
-            $("#admin-video-list").empty();
+            $("#admin-video-list-ct").empty();
             key_paint = 0;
             idch = 0;
             //console.log(num_list);
@@ -347,7 +347,7 @@ $(document).ready(function() {
             get_ch_list = get_ch_list + 1;
             //console.log(num_list);
             //console.log(num_list1);
-            $("#admin-video-list").empty();
+            $("#admin-video-list-ct").empty();
             idch = 0;
             key_paint = 0;
             //var count_list = 0;
