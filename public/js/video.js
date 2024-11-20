@@ -191,7 +191,7 @@ function get_product_public(){
     
         }
         var count2 = 0;
-        $.post('/php/get_stream_public_all.php', function(data){
+        $.post('/php/get_video_public_all.php', function(data){
             var output = $.parseJSON(data);
             //console.log(output);
             $.each(output,function(i,item){
