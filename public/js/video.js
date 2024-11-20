@@ -235,7 +235,17 @@ function get_paint_element_video(){
             };
             array_name_stream.push(arr_str_n);
 
-
+            var key_pub = 0, active_class = '';
+            for(var i = 0; i < public_stream_list.length; i++){
+                if(public_stream_list[i] == list.title){ key_pub = 1;}
+                //console.log(public_stream_list);
+            }
+            if(key_pub){
+                //console.log(list.name);
+                active_class = 'admin-video-item-h-date-active';
+            } else {
+                active_class = '';
+            }
             var pars_subtitle = list.subtitle;
             var pars =  pars_subtitle.split("&");
                         //console.log(pars);
@@ -250,7 +260,7 @@ function get_paint_element_video(){
                     '</div>' +
                     '<div class="admin-video-item-header">' +
                         '<div class="admin-video-item-h-list">' +
-                            '<span class="admin-video-item-h-date">' + list.title + '</span>' +
+                            '<span class="admin-video-item-h-date' + active_class + '">' + list.title + '</span>' +
                         '</div>' +
                         '<div class="admin-video-item-h-hashtag">' +
                             '<span class="admin-video-hashtag-date">' + pars[0] + '</span>' +
