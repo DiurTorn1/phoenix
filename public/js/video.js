@@ -5,6 +5,13 @@ var num_list = 0;
 var num_list1 = 10;
 var num_list2 = 0;
 var count_stream = 0;
+var array_stream = new Array();
+var array_stream1 = new Array();
+var array_name_stream = new Array();
+var table_array_gl = new Array();
+var public_stream_list = new Array();
+var public_product_perm = new Array();
+var public_product_perm2 = new Array();
 
 function dynamic_checkbox(){
         //video-btn-active 
@@ -104,9 +111,53 @@ function dynamic_checkbox(){
     }
 }
 
+function get_stream_array(){
+    
+    var count = 0;
+    $.post('/php/kines.php', function(data)  {
+        var output = $.parseJSON(data);
+        var pre_arr = new Array();
+        $.each(output.data,function(i,item){
+            pre_arr.push(item.id);
+            count++;
+        });
+        //pre_arr.push(output.data);
+        
+        for(var i = 0; i < pre_arr.length; i++){
+            array_stream.push(pre_arr[i]);
+            
+        }
+        count_stream = count;
+    });
+    if(!key_paint){
+        for(var i = 0; i < count_stream; i++){
+            array_stream1.push(array_stream[i]);           
+        }
+        if(array_stream1[0]){
+            //paint_element_stream();
+            key_paint = 1;
+        }
+
+    }
+    //for(var i = 0; i < count_stream; i++){
+    if(array_stream[0]!=array_stream1[0]){
+            //setInterval('paint_element_stream()',100);
+        $("#admin-video-list").empty();
+        idch = 0;
+        key_paint = 0;
+    }
+    //}
+    //console.log(count_stream);
+    //console.log(array_stream);
+    //var list = json_product.data;
+}
+
 $(document).ready(function() {
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',500);
+    get_stream_array();
+    setInterval('get_stream_array()',500);
+    console.log(array_stream);
     //$("#view-video-btn").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
@@ -130,7 +181,7 @@ $(document).ready(function() {
             minus = 0;
         }
         var top_list = num_list1-minus;
-        for(var i = num_list; i < 10; i ++){
+        //for(var i = num_list; i < 10; i ++){
             $.post('/php/kines.php', function(data)  {
                 //$('#res-video-text').text(data);
                 var output = $.parseJSON(data);
@@ -215,7 +266,7 @@ $(document).ready(function() {
                 
             });
         //});
-        }
+        //}
 
 
     $(document).on('dblclick', '.push_to_card', function() {
