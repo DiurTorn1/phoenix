@@ -112,6 +112,31 @@ function dynamic_checkbox(){
     }
 }
 
+function get_paint_element_video(){
+    var count_ch = 0;
+    var all_sel = 0;
+    if(count_stream > 10){
+        $('#block_select_stream_list').show();
+        
+        for(var i=0; i < count_stream; i=i+10){
+            all_sel++;
+        }
+        $('#span_select_list_all').text(all_sel);
+    }
+
+    num_list2 = all_sel;
+    var minus = 0;
+    if(num_list1 > count_stream){
+        minus = num_list1 - count_stream;
+    } else {
+        minus = 0;
+    }
+    var top_list = num_list1-minus;
+    for(var i = num_list; i < top_list; i ++){
+        
+    }
+}
+
 function get_stream_array(){
     
     var count = 0;
@@ -137,7 +162,7 @@ function get_stream_array(){
             array_stream1.push(array_stream[i]);           
         }
         if(array_stream1[0]){
-            //paint_element_stream();
+            get_paint_element_video();
             key_paint = 1;
         }
 
@@ -145,7 +170,7 @@ function get_stream_array(){
     //for(var i = 0; i < count_stream; i++){
     if(array_stream[0]!=array_stream1[0]){
             //setInterval('paint_element_stream()',100);
-        $("#admin-video-list").empty();
+        $("#admin-video-list-ct").empty();
         idch = 0;
         key_paint = 0;
     }
@@ -160,37 +185,16 @@ $(document).ready(function() {
     setInterval('dynamic_checkbox()',500);
     get_stream_array();
     setInterval('get_stream_array()',500);
-    console.log(array_stream);
     //$("#view-video-btn").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
-        count_stream = 100;
-        var count_ch = 0;
-        var all_sel = 0;
-        if(count_stream > 10){
-            $('#block_select_stream_list').show();
-            
-            for(var i=0; i < count_stream; i=i+10){
-                all_sel++;
-            }
-            $('#span_select_list_all').text(all_sel);
-        }
-    
-        num_list2 = all_sel;
-        var minus = 0;
-        if(num_list1 > count_stream){
-            minus = num_list1 - count_stream;
-        } else {
-            minus = 0;
-        }
-        var top_list = num_list1-minus;
-        //for(var i = num_list; i < 10; i ++){
-            $.post('/php/kines.php', function(data)  {
+
+            //$.post('/php/kines.php', function(data)  {
                 //$('#res-video-text').text(data);
-                var output = $.parseJSON(data);
-                var list = output.data;
+                //var output = $.parseJSON(data);
+                //var list = output.data;
     
-                $.each(list,function(i,item){
+                //$.each(list,function(i,item){
                     /*console.log("Video inform:\r\n");
                     console.log("ID:" + item.id + "\r\nProject_ID:" + item.project_id + "\r\nFolder_ID: " 
                         + item.folder_id + "\r\nPlayer_ID:" + item.player_id + "\r\nVersion:" + item.version
@@ -230,44 +234,44 @@ $(document).ready(function() {
                         console.log("\r\nsubtitles:" + item.subtitles);
                         console.log("\r\nsubtitles_enabled:" + item.subtitles_enabled);
                         console.log("\r\nshls_link:" + item.hls_link);*/
-                        var pars_subtitle = item.subtitle;
-                        var pars =  pars_subtitle.split("&");
+                        //var pars_subtitle = item.subtitle;
+                        //var pars =  pars_subtitle.split("&");
                         //console.log(pars);
-                        $("#admin-video-list-ct").append(
-                            '<li class="admin-video-item admin-back push_to_card" id="' + item.id + '">' +
-                                '<div class="admin-video-sort-wrap">' +
-                                    '<input id="admin-vl' + count_ch + '" class="admin-video-sort-check" type="checkbox">' +
-                                    '<label class="admin-video-check-label" for="admin-vl' + count_ch + '"></label>' +
-                                '</div>' +
-                                '<div class="admin-video-prev">' +
-                                    '<img src="' + item.poster.original + '" alt="" class="" style="heigth: 100%; width: 100%">' +
-                                '</div>' +
-                                '<div class="admin-video-item-header">' +
-                                    '<div class="admin-video-item-h-list">' +
-                                        '<span class="admin-video-item-h-date">' + item.title + '</span>' +
-                                    '</div>' +
-                                    '<div class="admin-video-item-h-hashtag">' +
-                                        '<span class="admin-video-hashtag-date">' + pars[0] + '</span>' +
-                                        '<span class="admin-video-hashtag-kubok">' + pars[1] + '</span>' +
-                                        '<span class="admin-video-hashtag-group">' + pars[2] + '</span>' +
-                                        '<span class="admin-video-hashtag-sport">' + pars[3] + '</span>' +
-                                        '<span class="admin-video-hashtag-city">' + pars[4] + '</span>' +
-                                    '</div>' +
-                                '</div>' +
-                                '<div class="admin-video-item-view">' +
+                        //$("#admin-video-list-ct").append(
+                            //'<li class="admin-video-item admin-back push_to_card" id="' + item.id + '">' +
+                                //'<div class="admin-video-sort-wrap">' +
+                                    //'<input id="admin-vl' + count_ch + '" class="admin-video-sort-check" type="checkbox">' +
+                                    //'<label class="admin-video-check-label" for="admin-vl' + count_ch + '"></label>' +
+                                //'</div>' +
+                                //'<div class="admin-video-prev">' +
+                                    //'<img src="' + item.poster.original + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                                //'</div>' +
+                                //'<div class="admin-video-item-header">' +
+                                    //'<div class="admin-video-item-h-list">' +
+                                        //'<span class="admin-video-item-h-date">' + item.title + '</span>' +
+                                    //'</div>' +
+                                    //'<div class="admin-video-item-h-hashtag">' +
+                                        //'<span class="admin-video-hashtag-date">' + pars[0] + '</span>' +
+                                        //'<span class="admin-video-hashtag-kubok">' + pars[1] + '</span>' +
+                                        //'<span class="admin-video-hashtag-group">' + pars[2] + '</span>' +
+                                        //'<span class="admin-video-hashtag-sport">' + pars[3] + '</span>' +
+                                        //'<span class="admin-video-hashtag-city">' + pars[4] + '</span>' +
+                                    //'</div>' +
+                                //'</div>' +
+                                //'<div class="admin-video-item-view">' +
                                     //'<p class="admin-video-item-v-count"><span>0</span>просмотров</p>' +
                                     //'<p class="admin-video-item-v-region">Все регионы</p>' +
-                                '</div>' +
-                                '<div class="admin-video-item-info admin-video-item-view">' +
-                                    '<p class="admin-video-item-i-time">Не опубликовано</p>' +
-                                '</div>' +
-                        '</li>');
+                                //'</div>' +
+                                //'<div class="admin-video-item-info admin-video-item-view">' +
+                                    //'<p class="admin-video-item-i-time">Не опубликовано</p>' +
+                                //'</div>' +
+                        //'</li>');
     
-                    count_ch++;
-                    idch++;
-                });
+                   // count_ch++;
+                    //idch++;
+                //});
                 
-            });
+            //});
         //});
         //}
 

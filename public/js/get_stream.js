@@ -404,7 +404,7 @@ function get_stream_array(){
             count++;
         });
         //pre_arr.push(output.data);
-        
+        array_stream.splice(0, array_stream.length);
         for(var i = 0; i < pre_arr.length; i++){
             array_stream.push(pre_arr[i]);
             
