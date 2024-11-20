@@ -5,6 +5,7 @@ var num_list = 0;
 var num_list1 = 10;
 var num_list2 = 0;
 var count_stream = 0;
+var key_paint = 0;
 var array_stream = new Array();
 var array_stream1 = new Array();
 var array_name_stream = new Array();
