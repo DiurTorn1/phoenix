@@ -1,7 +1,7 @@
 <?php
 require "config_bd.php";
 
-$sql = "DELETE FROM `video_public_permission` WHERE name='" . $_POST['name'] . "'";
+$sql = "DELETE FROM `video_public_perrmission` WHERE name='" . $_POST['name'] . "'";
 
 
 if ($conn->query($sql) === TRUE) {
