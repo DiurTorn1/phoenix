@@ -28,7 +28,7 @@ function get_paint_element_video(){
                 //console.log(public_stream_list);
             }
             if(key_pub){
-                console.log(list.name);
+                console.log(list.title);
             } else {
             }
         });
