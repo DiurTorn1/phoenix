@@ -181,6 +181,10 @@ Route::get('/video_card', function () {
     return view('video_card');
 });
 
+Route::get('/player_video', function () {
+    return view('player_video');
+});
+
 //Route::resource('products', ProductPhoenix::class);
 //Route::group(['middleware' => ['web']], function() {
     //Route::resource('products', ProductPhoenix::class);
