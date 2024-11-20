@@ -475,6 +475,7 @@ $(document).ready(function() {
                         var list = output.data;
                         var type_stream = '';
                         var name_stream = list.title;
+                        console.log(name_stream);
                         $.post('/php/public_video.php', { name: name_stream, type_stream:type_stream }, function(data){
                             if(data == "OK"){
                                 //alert("Продукт опубликован");
