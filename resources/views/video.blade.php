@@ -58,11 +58,11 @@
 					<option value="">10</option>
 					<option value="">20</option>
 				</select>
-				<span>1-2</span>
+				<button class="restream-select-btn" title="Назад" id="bottom_list_stream">‹</button>
+				<span id="span_select_list"></span>
 				<p>из</p>
-				<span>2</span>
-				<button class="restream-select-btn" title="Назад">‹</button>
-				<button class="restream-select-btn" title="Вперед">›</button>
+				<span id="span_select_list_all"></span>
+				<button class="restream-select-btn" title="Вперед" id="next_list_stream">›</button>
 		</div>
 </div>
 

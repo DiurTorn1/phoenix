@@ -324,6 +324,43 @@ $(document).ready(function() {
     $("#admin-video-sort-check").on('click', function() {
         key_main_chack = 1;
     });
+
+    $("#bottom_list_stream").on('click', function() {
+        if(num_list != 0){
+            num_list = num_list-10;
+            num_list1 = num_list1-10;
+            get_ch_list = get_ch_list - 1;
+            $("#admin-video-list").empty();
+            key_paint = 0;
+            idch = 0;
+            //console.log(num_list);
+            //console.log(num_list1);
+        }
+    });
+
+    $("#next_list_stream").on('click', function() {
+        var top_list = 10*num_list2;
+        
+        if(num_list1 != top_list){
+            num_list = num_list+10;
+            num_list1 = num_list1+10;
+            get_ch_list = get_ch_list + 1;
+            //console.log(num_list);
+            //console.log(num_list1);
+            $("#admin-video-list").empty();
+            idch = 0;
+            key_paint = 0;
+            //var count_list = 0;
+            //for(var i=0; i < num_list1; i=i+5){
+                //count_list++;
+           // }
+           // num_list = (num_list*count_list)-5;
+        //}
+        //if(num_list1 > count_stream){
+           // var num_list2 = num_list1 - count_stream;
+           // num_list1 = num_list1 - num_list2;
+        }
+    });
     
 });
 /**/ 
