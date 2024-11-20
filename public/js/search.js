@@ -158,7 +158,7 @@ $(document).ready(function() {
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
         
-        for(var i = 0; i < array_stream.length; i ++){
+        for(var i = 0; i < count_stream; i ++){
             console.log(array_stream[i]);
             $.post('/php/get_video_id.php',{ id:array_stream[i] }, function(data)  {
                 var output = $.parseJSON(data);
