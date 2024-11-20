@@ -20,6 +20,19 @@ function dynamic_checkbox(){
         key_main_chack = 0;
     }
 
+    //var arr_pub = [];
+    for(var i = 0; i < idch; i++){
+        var ch1 = $("#admin-vl" + i).is(':checked');
+        if(ch1){
+            int_ch++;
+            //var key_pub = 0;
+            //var id = $("#admin-vl" + i).parent().parent().attr('id');
+
+            //arr_pub.push(id);
+            
+        }
+    }
+
 
     $('#inter_stream').text('Выбрано ' + int_ch + ' стримов');
     $('#span_select_list').text(get_ch_list);
