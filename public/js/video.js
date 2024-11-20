@@ -454,6 +454,62 @@ $(document).ready(function() {
            // num_list1 = num_list1 - num_list2;
         }
     });
+    $("#public_stream_checkbox").on('click', function() {
+        //$("#window_ok").toggle();
+        //$("#div_button_window").toggle();
+        //$("#aler_window").text("Публикация стрима");
+        for(var i = 0; i < num_list1; i++){
+            var ch1 = $("#admin-vl" + i).is(':checked');
+            if(ch1){
+                var id = $("#admin-vl" + i).parent().parent().attr('id');
+                    $.post('/php/get_stream_id.php', {id:id}, function(data){
+                        var output = $.parseJSON(data);
+                        var list = output.data;
+                        var type_stream = '';
+                        var name_stream = list.title;
+                        $.post('/php/public_video.php', { name: name_stream, type_stream:type_stream }, function(data){
+                            if(data == "OK"){
+                                //alert("Продукт опубликован");
+                                window.location.href='/video';
+                                //$("#aler_window").text("Стрим опубликован");
+                            } else {
+                                //$("#aler_window").text("Ошибка публикации стрима");
+                            }
+                            //console.log(data);
+                        });
+                    });
+            }
+        }
+        $("#div_button_window").toggle();
+    });
+
+    $("#unpublic_stream_checkbox").on('click', function() {
+        //$("#window_ok").toggle();
+        //$("#div_button_window").toggle();
+        //$("#aler_window").text("Снятие с публикации стрима");
+        for(var i = 0; i < num_list1; i++){
+            var ch1 = $("#admin-vl" + i).is(':checked');
+            if(ch1){
+                var id = $("#admin-vl" + i).parent().parent().attr('id');
+                    $.post('/php/get_video_id.php', {id:id}, function(data){
+                        var output = $.parseJSON(data);
+                        var list = output.data;
+                        var name_stream = list.title;
+                        $.post('/php/unpublic_video.php', { name: name_stream }, function(data){
+                            if(data == "OK"){
+                                //alert("Продукт опубликован");
+                                //$("#aler_window").text("Стрим снят с публикации");
+                                window.location.href='/video';
+                            } else {
+                                //$("#aler_window").text("Ошибка снятии с публикации стрима");
+                            }
+                            //console.log(data);
+                        });
+                    });
+            }
+        }
+        //$("#div_button_window").toggle();
+    });
     
 });
 /**/ 
