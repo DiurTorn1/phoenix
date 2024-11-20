@@ -3,7 +3,7 @@ $(document).ready(function(){
 
     $("#unpublic_stream").toggle();
     $("#inform_job").toggle();
-    var name_video;
+    var name_video, key_pub = 0;
     
     $.post('/php/get_video_id.php', { id:params.get('admin_input_id') },  function(data)  {
         var output = $.parseJSON(data);
@@ -34,6 +34,11 @@ $(document).ready(function(){
         $.post('/php/public_video.php', { name: name_video, type:'' }, function(data){
             if(data == "OK"){
                 //alert("Продукт опубликован");
+                if(!key_pub){
+                    $("#inform_job").toggle();
+                    key_pub = 1;
+                }
+                
                 $("#inform_job").text("Видео опубликованно");
                 $('#public_stream').hide();
                 $('#unpublic_stream').show();
@@ -45,6 +50,10 @@ $(document).ready(function(){
         $.post('/php/unpublic_video.php', { name: name_video }, function(data){
             if(data == "OK"){
                 //alert("Продукт снят с публикации");
+                if(!key_pub){
+                    $("#inform_job").toggle();
+                    key_pub = 1;
+                }
                 $("#inform_job").text("Видео снято с публикации");
                 $('#public_stream').show();
                 $('#unpublic_stream').hide();
