@@ -30,17 +30,17 @@ function get_paint_element_video(){
             if(key_pub){
                 
                 $("#video_list_search").append(
-                    '<div class="slide bay index-live-item" id="' + item.id + '">'+
+                    '<div class="slide bay index-live-item" id="' + list.id + '">'+
                         '<div class="index-live-item-video">'+
                             '<a >'+ 
                                 '<div class="index-live-banner">' +
-                                    '<img src="' + item.poster.original + '">' +
+                                    '<img src="' + list.poster.original + '">' +
                                 '</div>' +
                             '</a>' +
                             
                         '</div>'+
                         '<div class="index-live-item-text">'+
-                            '<a >' + item.title + '</a>'+
+                            '<a >' + list.title + '</a>'+
                         '</div>'+
                     '</div>');
             } else {
