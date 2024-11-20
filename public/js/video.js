@@ -13,6 +13,7 @@ var table_array_gl = new Array();
 var public_stream_list = new Array();
 var public_product_perm = new Array();
 var public_product_perm2 = new Array();
+var array_product = new Array();
 
 function dynamic_checkbox(){
         //video-btn-active 
@@ -110,6 +111,96 @@ function dynamic_checkbox(){
         //$('.admin-video-btn2').removeClass('video-btn-active2');
         //$('.admin-video-btn4').removeClass('video-btn-active4');
     }
+}
+
+function get_product_public(){
+    var count1 = 0;
+    if(!public_product_perm[0]){
+        $.post('/php/get_product.php', function(data)  {
+            var output = $.parseJSON(data);
+            //console.log(output);
+            var pre_arr = new Array();
+            $.each(output,function(i,item){
+                pre_arr.push(item.id);
+                count1++;
+            });
+            //pre_arr.push(output.data);
+            //console.log(pre_arr);
+            for(var i = 0; i < pre_arr.length; i++){
+                array_product.push(pre_arr[i]);
+                
+            }
+            //console.log(array_product);
+            count_product = count1;
+        });
+    
+    
+        for(var i = 0; i < array_product.length; i ++){
+            //if(array_product[i] == users_sells[i]){
+                //console.log(array_product[i]);
+                //console.log(users_sells[i]);
+                $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
+                    var output = $.parseJSON(data);
+                    //console.log(output);
+                    var prm_prod = output ? output[4]:'';
+                    //console.log(prm_prod);
+                    table_array_gl.push(prm_prod);
+                    $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
+                        var public_product_perm1 = new Array();
+                        var key_product_perm = 0;
+                        var output1 = $.parseJSON(data1);
+                        $.each(output1,function(i,item1){
+                            //if(item1.id_stream == id_stream_prod){
+                                //console.log(item1.id_stream);
+                                public_product_perm1.push(item1.id_stream);
+                                key_product_perm++;
+                                //key_prod_perm_stream1 = 1;
+                            //}
+                            //console.log(id_stream_prod);
+                        });
+                        //console.log(key_prod_perm_stream);
+                        for(var i = 0; i < key_product_perm; i++){
+                            //console.log(public_product_perm1[i]);
+                            public_product_perm.push(public_product_perm1[i]);
+                        }
+                        
+                    });
+                    $.post('/php/get_product_table.php',{ table:prm_prod }, function(data2)  {
+                        var public_product_perm3 = new Array();
+                        var key_product_perm1 = 0;
+                        var output2 = $.parseJSON(data2);
+                        $.each(output2,function(i,item2){
+                            //if(item1.id_stream == id_stream_prod){
+                                //console.log(item1.id_stream);
+                                public_product_perm3.push({table:prm_prod, id:item2.id_stream});
+                                key_product_perm1++;
+                                //key_prod_perm_stream1 = 1;
+                            //}
+                            //console.log(id_stream_prod);
+                        });
+                        //console.log(key_prod_perm_stream);
+                        for(var i = 0; i < key_product_perm1; i++){
+                            //console.log(public_product_perm1[i]);
+                            public_product_perm2.push(public_product_perm3[i]);
+                        }
+                        
+                    });
+                });
+            //}
+           
+    
+        }
+        var count2 = 0;
+        $.post('/php/get_stream_public_all.php', function(data){
+            var output = $.parseJSON(data);
+            //console.log(output);
+            $.each(output,function(i,item){
+                //console.log(item.name_stream);
+                public_stream_list.push(item.name_stream);
+            });
+        });
+    }
+
 }
 
 function get_paint_element_video(){
@@ -222,6 +313,8 @@ $(document).ready(function() {
     setInterval('dynamic_checkbox()',500);
     get_stream_array();
     setInterval('get_stream_array()',500);
+    get_product_public();
+    setInterval('get_product_public()',500);
     //$("#view-video-btn").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
