@@ -131,7 +131,8 @@ function get_stream_array(){
         count_stream = count;
     });
     if(!key_paint){
-        console.log(count_stream);
+        array_stream.splice(0, array_stream.length);
+        //console.log(count_stream);
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
         }
