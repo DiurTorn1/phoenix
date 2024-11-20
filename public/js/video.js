@@ -110,6 +110,7 @@ $(document).ready(function() {
     //$("#view-video-btn").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
+        count_stream = 100;
         var count_ch = 0;
         var all_sel = 0;
         if(count_stream > 5){
