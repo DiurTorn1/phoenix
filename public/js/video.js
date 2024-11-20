@@ -128,17 +128,17 @@ function get_stream_array(){
             array_stream.push(pre_arr[i]);
             
         }
-        console.log(count);
         count_stream = count;
     });
     if(!key_paint){
+        console.log(count_stream);
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
         }
-        //if(array_stream1[0]){
+        if(array_stream1[0]){
             //paint_element_stream();
             key_paint = 1;
-        //}
+        }
 
     }
     //for(var i = 0; i < count_stream; i++){
@@ -146,7 +146,7 @@ function get_stream_array(){
             //setInterval('paint_element_stream()',100);
         $("#admin-video-list").empty();
         idch = 0;
-        //key_paint = 0;
+        key_paint = 0;
     }
     //}
     //console.log(count_stream);
