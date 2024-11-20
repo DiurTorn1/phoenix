@@ -39,9 +39,9 @@ function dynamic_checkbox(){
         if(ch1){
             int_ch++;
             //var key_pub = 0;
-            //var id = $("#admin-vl" + i).parent().parent().attr('id');
+            var id = $("#admin-vl" + i).parent().parent().attr('id');
 
-            //arr_pub.push(id);
+            arr_pub.push(id);
             
         }
     }
