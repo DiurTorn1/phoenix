@@ -475,17 +475,17 @@ $(document).ready(function() {
                         var list = output.data;
                         var type_stream = '';
                         var name_stream = list.title;
-                        console.log(name_stream);
-                        //$.post('/php/public_video.php', { name: name_stream, type:type_stream }, function(data){
-                            //if(data == "OK"){
+                        //console.log(name_stream);
+                        $.post('/php/public_video.php', { name: name_stream, type:type_stream }, function(data){
+                            if(data == "OK"){
                                 //alert("Продукт опубликован");
-                                //window.location.href='/video';
+                                window.location.href='/video';
                                 //$("#aler_window").text("Стрим опубликован");
-                            //} else {
+                            } else {
                                 //$("#aler_window").text("Ошибка публикации стрима");
-                            //}
+                            }
                             //console.log(data);
-                        //});
+                        });
                     });
             }
         }
