@@ -1,4 +1,5 @@
 var idch = 0;
+var key_main_chack = 0;
 
 function dynamic_checkbox(){
         //video-btn-active 
@@ -184,5 +185,10 @@ $(document).ready(function() {
         window.location.href='/video_card?admin_input_id='+id;
         //alert("Text: " + this.id);count_stream
     });
+
+    $("#admin-video-sort-check").on('click', function() {
+        key_main_chack = 1;
+    });
+    
 });
 /**/ 
