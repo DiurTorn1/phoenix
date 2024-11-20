@@ -2,13 +2,16 @@ $(document).ready(function(){
     var params = new window.URLSearchParams(window.location.search);
 
     $("#unpublic_stream").toggle();
+    var name_video;
     
     $.post('/php/get_video_id.php', { id:params.get('admin_input_id') },  function(data)  {
         var output = $.parseJSON(data);
         //console.log(output);
         var list = output.data;
         console.log(list);
+        name_video = list.title;
         $("#video_name").val(list.title);
+
         $("#img_poster_card").attr('src', list.poster.original);
 
         $.post('/php/get_video_public.php', {name:list.title}, function(data)  {
@@ -27,7 +30,7 @@ $(document).ready(function(){
     });
 
     $("#public_stream").on('click', function(){
-        $.post('/php/public_video.php', { name: name_stream, type:type_stream }, function(data){
+        $.post('/php/public_video.php', { name: name_video, type:type_stream }, function(data){
             if(data == "OK"){
                 alert("Продукт опубликован");
                 $('#public_stream').hide();
@@ -37,7 +40,7 @@ $(document).ready(function(){
         });
     });
     $("#unpublic_stream").on('click', function(){
-        $.post('/php/unpublic_video.php', { name: name_stream }, function(data){
+        $.post('/php/unpublic_video.php', { name: name_video }, function(data){
             if(data == "OK"){
                 alert("Продукт снят с публикации");
                 $('#public_stream').show();
