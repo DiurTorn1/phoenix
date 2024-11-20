@@ -470,13 +470,13 @@ $(document).ready(function() {
             var ch1 = $("#admin-vl" + i).is(':checked');
             if(ch1){
                 var id = $("#admin-vl" + i).parent().parent().attr('id');
-                    $.post('/php/get_stream_id.php', {id:id}, function(data){
+                    $.post('/php/get_video_id.php', {id:id}, function(data){
                         var output = $.parseJSON(data);
                         var list = output.data;
                         var type_stream = '';
                         var name_stream = list.title;
                         console.log(name_stream);
-                        //$.post('/php/public_video.php', { name: name_stream, type_stream:type_stream }, function(data){
+                        //$.post('/php/public_video.php', { name: name_stream, type:type_stream }, function(data){
                             //if(data == "OK"){
                                 //alert("Продукт опубликован");
                                 //window.location.href='/video';
