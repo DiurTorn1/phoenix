@@ -30,7 +30,7 @@ function get_paint_element_video(){
             if(key_pub){
                 
                 $("#video_list_search").append(
-                    '<div class="slide no-bay index-live-item" id="' + item.id + '">'+
+                    '<div class="slide bay index-live-item" id="' + item.id + '">'+
                         '<div class="index-live-item-video">'+
                             '<a >'+ 
                                 '<div class="index-live-banner">' +
