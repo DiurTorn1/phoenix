@@ -33,7 +33,7 @@ function dynamic_checkbox(){
         key_main_chack = 0;
     }
 
-    //var arr_pub = [];
+    var arr_pub = [];
     for(var i = 0; i < idch; i++){
         var ch1 = $("#admin-vl" + i).is(':checked');
         if(ch1){
