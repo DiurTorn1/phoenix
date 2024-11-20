@@ -123,7 +123,7 @@ function get_stream_array(){
             count++;
         });
         //pre_arr.push(output.data);
-        
+        array_stream.splice(0, array_stream.length);
         for(var i = 0; i < pre_arr.length; i++){
             array_stream.push(pre_arr[i]);
             
@@ -131,7 +131,7 @@ function get_stream_array(){
         count_stream = count;
     });
     if(!key_paint){
-        array_stream.splice(0, array_stream.length);
+        
         //console.log(count_stream);
         for(var i = 0; i < count_stream; i++){
             array_stream1.push(array_stream[i]);           
