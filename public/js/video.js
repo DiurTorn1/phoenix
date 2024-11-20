@@ -137,6 +137,39 @@ function get_paint_element_video(){
             var output = $.parseJSON(data);
             var list = output.data;
             console.log(list);
+            var pars_subtitle = list.subtitle;
+            var pars =  pars_subtitle.split("&");
+                        //console.log(pars);
+            $("#admin-video-list-ct").append(
+                '<li class="admin-video-item admin-back push_to_card" id="' + list.id + '">' +
+                    '<div class="admin-video-sort-wrap">' +
+                        '<input id="admin-vl' + idch + '" class="admin-video-sort-check" type="checkbox">' +
+                        '<label class="admin-video-check-label" for="admin-vl' + idch + '"></label>' +
+                    '</div>' +
+                    '<div class="admin-video-prev">' +
+                        '<img src="' + list.poster.original + '" alt="" class="" style="heigth: 100%; width: 100%">' +
+                    '</div>' +
+                    '<div class="admin-video-item-header">' +
+                        '<div class="admin-video-item-h-list">' +
+                            '<span class="admin-video-item-h-date">' + list.title + '</span>' +
+                        '</div>' +
+                        '<div class="admin-video-item-h-hashtag">' +
+                            '<span class="admin-video-hashtag-date">' + pars[0] + '</span>' +
+                            '<span class="admin-video-hashtag-kubok">' + pars[1] + '</span>' +
+                            '<span class="admin-video-hashtag-group">' + pars[2] + '</span>' +
+                            '<span class="admin-video-hashtag-sport">' + pars[3] + '</span>' +
+                            '<span class="admin-video-hashtag-city">' + pars[4] + '</span>' +
+                        '</div>' +
+                    '</div>' +
+                    '<div class="admin-video-item-view">' +
+                        '<p class="admin-video-item-v-count"><span>0</span>просмотров</p>' +
+                        '<p class="admin-video-item-v-region">Все регионы</p>' +
+                    '</div>' +
+                    '<div class="admin-video-item-info admin-video-item-view">' +
+                        '<p class="admin-video-item-i-time">Не опубликовано</p>' +
+                    '</div>' +
+                '</li>');
+            idch++;
         });
     }
 }
