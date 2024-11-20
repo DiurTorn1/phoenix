@@ -54,7 +54,7 @@ function dynamic_checkbox(){
     if(int_ch != 0){
         $('.admin-video-btn3').addClass('video-btn-active3');
         $('.admin-video-btn4').addClass('video-btn-active4');
-        console.log(arr_pub);
+        //console.log(arr_pub);
                     //console.log(id);array_stream[i]
         var arr_res = [];
         for(var i = 0; i < int_ch; i++){
@@ -228,6 +228,14 @@ function get_paint_element_video(){
             var output = $.parseJSON(data);
             var list = output.data;
             //console.log(list);
+
+            var arr_str_n = {
+                id : list.id,
+                name : list.title
+            };
+            array_name_stream.push(arr_str_n);
+
+
             var pars_subtitle = list.subtitle;
             var pars =  pars_subtitle.split("&");
                         //console.log(pars);
