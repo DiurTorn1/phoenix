@@ -152,7 +152,14 @@ $(document).ready(function() {
     //$("#view-video-btn").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
-        var count_ch = 0;
+
+        for(var i = 0; i < array_stream.length; i ++){
+            $.post('/php/get_video_id.php',{ id:array_stream[i] }, function(data)  {
+                var output = $.parseJSON(data);
+                var list = output.data;
+                console.log(list.title);
+            });
+        };
         $.post('/php/kines.php', function(data)  {
             //$('#res-video-text').text(data);
             var output = $.parseJSON(data);
