@@ -3,7 +3,7 @@
 @section('admin_res')
 <header class="header admin-header">
 		<div class="left-header">
-			<a href="#" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
+			<a href="/video" class="close-btn" title="Закрыть"><img src="img/close.png" alt="Закрыть" width="24" height="24"></a>
 			<h2 class="top-menu-title">Добавить видео</h2>
 		</div>
 
