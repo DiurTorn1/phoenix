@@ -189,6 +189,14 @@ $(document).ready(function() {
     setInterval('get_stream_array()',500);
     get_product_public();
     setInterval('get_product_public()',500);
+
+    $(document).on('click', '.bay', function() {
+        var id = this.id;
+        console.log(id);
+        //$("#admin_input_id").val(id);
+        //window.location.href='/player_stream?player_stream_id='+id;
+        //alert("Text: " + this.id);
+    });
     //$("#view-video-btn").on('click', function(){
         //alert("Button clicked!"); // This will display an alert when the button with id "myButton" is clicked
         //$('#popup-back').toggle();
