@@ -196,7 +196,7 @@ function get_product_public(){
             console.log(output);
             $.each(output,function(i,item){
                 //console.log(item.name_stream);
-                public_stream_list.push(item.name_stream);
+                public_stream_list.push(item.name);
             });
         });
     }
