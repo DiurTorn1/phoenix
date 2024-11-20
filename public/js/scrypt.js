@@ -8,7 +8,8 @@ $(document).ready(function() {
         //console.log(output1);
         var pars_name1 = output1 ? output1[1] : '';
         var pars_name = pars_name1.split('&');
-        $("#name_main_get").text(pars_name[1] + " " + pars_name[0]);
+        var family = pars_name[1] ? pars_name[1] : '';
+        $("#name_main_get").text(family + " " + pars_name[0]);
         $("#name_get_pars").text(pars_name[0]);
     });
 
