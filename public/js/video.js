@@ -136,7 +136,7 @@ function get_paint_element_video(){
         $.post('/php/get_video_id.php',{ id:array_stream[i] }, function(data)  {
             var output = $.parseJSON(data);
             var list = output.data;
-            console.log(list);
+            //console.log(list);
             var pars_subtitle = list.subtitle;
             var pars =  pars_subtitle.split("&");
                         //console.log(pars);

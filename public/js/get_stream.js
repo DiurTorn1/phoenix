@@ -13,7 +13,7 @@ var array_name_stream = new Array();
 var table_array_gl = new Array();
 var key_paint = 0;
 var num_list = 0;
-var num_list1 = 5;
+var num_list1 = 10;
 var num_list2 = 0;
 
 function dynamic_checkbox(){
@@ -205,10 +205,10 @@ function paint_element_stream(){
 
     //console.log(public_product_perm);
     var all_sel = 0;
-    if(count_stream > 5){
+    if(count_stream > 10){
         $('#block_select_stream_list').show();
         
-        for(var i=0; i < count_stream; i=i+5){
+        for(var i=0; i < count_stream; i=i+10){
             all_sel++;
         }
         $('#span_select_list_all').text(all_sel);
@@ -693,8 +693,8 @@ $(document).ready(function() {
     
     $("#bottom_list_stream").on('click', function() {
         if(num_list != 0){
-            num_list = num_list-5;
-            num_list1 = num_list1-5;
+            num_list = num_list-10;
+            num_list1 = num_list1-10;
             get_ch_list = get_ch_list - 1;
             $("#admin-video-list").empty();
             key_paint = 0;
@@ -705,11 +705,11 @@ $(document).ready(function() {
     });
 
     $("#next_list_stream").on('click', function() {
-        var top_list = 5*num_list2;
+        var top_list = 10*num_list2;
         
         if(num_list1 != top_list){
-            num_list = num_list+5;
-            num_list1 = num_list1+5;
+            num_list = num_list+10;
+            num_list1 = num_list1+10;
             get_ch_list = get_ch_list + 1;
             //console.log(num_list);
             //console.log(num_list1);
