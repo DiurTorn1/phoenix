@@ -9,7 +9,7 @@ $(document).ready(function(){
         var list = output.data;
         console.log(list);
         $("#video_name").val(list.title);
-        $("#img_poster_card").attr('src', list.postrer.original);
+        $("#img_poster_card").attr('src', list.poster.original);
     });
 });
 
