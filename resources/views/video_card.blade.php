@@ -19,7 +19,7 @@
 		<div class="top-menu-admin admin-video-sort admin-back">
 			<div class="admin-input-box admin-input-wrap">
 				<label>Заголовок *</label>
-				<input type="text" required name="Заголовок" class="block-admin-input admin-input">
+				<input type="text" required name="Заголовок" id="video_name" class="block-admin-input admin-input">
 			</div>
 
 			<div class="admin-input-box admin-input-wrap admin-input-mb">
