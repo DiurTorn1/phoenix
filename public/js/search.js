@@ -28,7 +28,21 @@ function get_paint_element_video(){
                 //console.log(public_stream_list);
             }
             if(key_pub){
-                console.log(list.title);
+                
+                $("#video_list_search").append(
+                    '<div class="slide no-bay index-live-item" id="' + item.id + '">'+
+                        '<div class="index-live-item-video">'+
+                            '<a >'+ 
+                                '<div class="index-live-banner">' +
+                                    '<img src="' + item.poster.original + '">' +
+                                '</div>' +
+                            '</a>' +
+                            
+                        '</div>'+
+                        '<div class="index-live-item-text">'+
+                            '<a >' + item.title + '</a>'+
+                        '</div>'+
+                    '</div>');
             } else {
             }
         });
@@ -194,20 +208,6 @@ $(document).ready(function() {
 
             $.each(list,function(i,item){
                     //console.log(pars);
-                    $("#video_list_search").append(
-                        '<div class="slide no-bay index-live-item" id="' + item.id + '">'+
-                            '<div class="index-live-item-video">'+
-                                '<a >'+ 
-                                    '<div class="index-live-banner">' +
-                                        '<img src="' + item.poster.original + '">' +
-                                    '</div>' +
-                                '</a>' +
-                                
-                            '</div>'+
-                            '<div class="index-live-item-text">'+
-                                '<a >' + item.title + '</a>'+
-                            '</div>'+
-                        '</div>');
 
                 //count_ch++;
             });
