@@ -476,16 +476,16 @@ $(document).ready(function() {
                         var type_stream = '';
                         var name_stream = list.title;
                         console.log(name_stream);
-                        $.post('/php/public_video.php', { name: name_stream, type_stream:type_stream }, function(data){
-                            if(data == "OK"){
+                        //$.post('/php/public_video.php', { name: name_stream, type_stream:type_stream }, function(data){
+                            //if(data == "OK"){
                                 //alert("Продукт опубликован");
-                                window.location.href='/video';
+                                //window.location.href='/video';
                                 //$("#aler_window").text("Стрим опубликован");
-                            } else {
+                            //} else {
                                 //$("#aler_window").text("Ошибка публикации стрима");
-                            }
+                            //}
                             //console.log(data);
-                        });
+                        //});
                     });
             }
         }
