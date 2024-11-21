@@ -120,7 +120,7 @@
 		</div>
 
 		<div class="admin-video-sort justi-sp-b admin-back">
-			<div class="block-admin-sector block-admin-container block-admin-section-item">
+			<div class="block-admin-sector block-admin-container block-admin-section-item" id="box_banner">
 				
 					<!--<a class="preview-product-vis-upload" id="upload_main_banner_product"> <p>Обложка продукта *</p>-->
 					<a href="#" class="add-preview-tournir" title="Загрузить обложку продукта"><img src="img/no-image.jpg" alt="Обложка продукта *" id="upload_main_banner_product"></a>
