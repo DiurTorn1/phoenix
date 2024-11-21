@@ -2,6 +2,7 @@ var head_name_gl, start_access_time_gl, stop_access_time_gl, detail_get_gl, type
 var key_tog = 0;
 function search_int(){
     //console.log("Test");
+    var arr_stat = [];
     var head_name = $("#head_name_save").val();
     var start_access_time = $("#start_access_time").val();
     var stop_access_time = $("#stop_access_time").val();
@@ -10,28 +11,29 @@ function search_int(){
     var date_start_access_bilet = $("#date_start_access_bilet").val();
     var date_stop_access_bilet = $("#date_stop_access_bilet").val();
     var date_stop_sell_bilet = $("#date_stop_sell_bilet").val();
-    if(!head_name){ head_name_gl = 0; } else { head_name_gl = 1; }
-    if(!start_access_time){ start_access_time_gl = 0; } else { start_access_time_gl = 1; }
-    if(!stop_access_time){ stop_access_time_gl = 0; } else { stop_access_time_gl = 1; }
-    if(!detail_get){ detail_get_gl = 0; } else { detail_get_gl = 1; }
-    if(!date_start_access_bilet){ date_start_access_bilet_gl = 0; } else { date_start_access_bilet_gl = 1; }
-    if(!date_stop_access_bilet){ date_stop_access_bilet_gl = 0; } else { date_stop_access_bilet_gl = 1; }
-    if(!type_save){ type_save_gl_gl = 0; } else { type_save_gl_gl = 1; }
-    if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; } else { date_stop_sell_bilet_gl = 1; }
-    if( $('#input_buff_product').is(':empty') ) { input_buff_product_gl = 1; } else { input_buff_product_gl = 0; }
-    if(head_name_gl == 1 /*&& start_access_time_gl == 1 && stop_access_time_gl == 1 && detail_get_gl == 1 && type_save_gl == 1 && date_start_access_bilet_gl == 1 &&
-        date_stop_access_bilet_gl == 1 && date_stop_sell_bilet_gl == 1*/){
+    if(!head_name){ head_name_gl = 0; arr_stat.push(0); } else { head_name_gl = 1; arr_stat.push(1); }
+    if(!start_access_time){ start_access_time_gl = 0; arr_stat.push(0); } else { start_access_time_gl = 1; arr_stat.push(1); }
+    if(!stop_access_time){ stop_access_time_gl = 0; arr_stat.push(0); } else { stop_access_time_gl = 1; arr_stat.push(1); }
+    if(!detail_get){ detail_get_gl = 0; arr_stat.push(0); } else { detail_get_gl = 1; arr_stat.push(1); }
+    if(!date_start_access_bilet){ date_start_access_bilet_gl = 0; arr_stat.push(0); } else { date_start_access_bilet_gl = 1; arr_stat.push(1); }
+    if(!date_stop_access_bilet){ date_stop_access_bilet_gl = 0; arr_stat.push(0); } else { date_stop_access_bilet_gl = 1; arr_stat.push(1); }
+    if(!type_save){ type_save_gl_gl = 0; arr_stat.push(0); } else { type_save_gl_gl = 1; arr_stat.push(1); }
+    if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; arr_stat.push(0); } else { date_stop_sell_bilet_gl = 1; arr_stat.push(1); }
+    if( $('#input_buff_product').is(':empty') ) { input_buff_product_gl = 1; arr_stat.push(1); } else { input_buff_product_gl = 0; arr_stat.push(0); }
+    //if(head_name_gl == 1 /*&& start_access_time_gl == 1 && stop_access_time_gl == 1 && detail_get_gl == 1 && type_save_gl == 1 && date_start_access_bilet_gl == 1 &&
+        //date_stop_access_bilet_gl == 1 && date_stop_sell_bilet_gl == 1*/){
             if(!key_tog){
-                $("#save_product_db").toggle();
-                $("#save_product_db-1").toggle();
+                //$("#save_product_db").toggle();
+                //$("#save_product_db-1").toggle();
+                console.log(arr_stat);
                 key_tog = 1;
             }
 
             //$("#save_product_db").addClass('menu-btn-grey-active');
-    } else {
+    //} else {
         //$("#save_product_db").addClass('menu-btn-grey');
         //$("#save_product_db").removeClass('menu-btn-grey-active');
-    }
+    //}
 }
 
 $(document).ready(function() {
