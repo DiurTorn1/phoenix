@@ -2,17 +2,11 @@
 @section('title-block') ГЛАВНАЯ - Феникс ТВ @endsection
 <main class="index-main">
 
-<header class="header">
+<header class="header admin-header">		
 	<div class="left-header">
 		<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
-		<!-- Меню -->
-		<navigation class="top-navigation">
-			<ul>
-				<li><a href="/" selected>Главная</a></li>
-			</ul>
-		</navigation>
 	</div>
-	<div class="right-heder">
+	<div class="right-heder dropdown">
 		@guest
 			<button class="entrance" onclick="window.location.href = '/';">Вход</button>
 
