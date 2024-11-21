@@ -314,6 +314,7 @@ $(document).ready(function() {
                     '<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
                     '<p >' + region_out + '</p>' +
                     '<p style="display:none;">' + input_old_prace_bilet + '</p>');
+                $("#input_buff_product").removeClass("user-input-err-1");
                 key_price = 1;
                 $('#add-ticket-price').hide();
             }
