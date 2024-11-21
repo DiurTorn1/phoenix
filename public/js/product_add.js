@@ -1,4 +1,4 @@
-var head_name_gl, start_access_time_gl;
+var head_name_gl, start_access_time_gl, stop_access_time_gl, detail_get_gl, type_save_gl, date_start_access_bilet_gl, date_stop_access_bilet_gl, date_stop_sell_bilet_gl;
 
 function search_int(){
     //console.log("Test");
@@ -10,16 +10,14 @@ function search_int(){
     var date_start_access_bilet = $("#date_start_access_bilet").val();
     var date_stop_access_bilet = $("#date_stop_access_bilet").val();
     var date_stop_sell_bilet = $("#date_stop_sell_bilet").val();
-    if(!head_name){
-        head_name_gl = 0;
-    } else {
-        head_name_gl = 1;
-    }
-    if(!start_access_time){
-        start_access_time_gl = 0;
-    } else {
-        start_access_time_gl = 1;
-    }
+    if(!head_name){ head_name_gl = 0; } else { head_name_gl = 1; }
+    if(!start_access_time){ start_access_time_gl = 0; } else { start_access_time_gl = 1; }
+    if(!stop_access_time){ stop_access_time_gl = 0; } else { stop_access_time_gl = 1; }
+    if(!detail_get){ detail_get_gl = 0; } else { detail_get_gl = 1; }
+    if(!date_start_access_bilet){ date_start_access_bilet_gl = 0; } else { date_start_access_bilet_gl = 1; }
+    if(!date_stop_access_bilet){ date_stop_access_bilet_gl = 0; } else { date_stop_access_bilet_gl = 1; }
+    if(!type_save){ type_save_gl_gl = 0; } else { type_save_gl_gl = 1; }
+    if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; } else { date_stop_sell_bilet_gl = 1; }
 }
 
 $(document).ready(function() {
@@ -185,6 +183,12 @@ $(document).ready(function() {
 
         if(!head_name_gl){ $("#head_name_save").addClass("user-input-err"); } else { $("#head_name_save").removeClass("user-input-err"); }
         if(!start_access_time_gl){ $("#start_access_time").addClass("user-input-err"); } else { $("#start_access_time").removeClass("user-input-err"); }
+        if(!stop_access_time_gl){ $("#stop_access_time").addClass("user-input-err"); } else { $("#stop_access_time").removeClass("user-input-err"); }
+        if(!detail_get_gl){ $("#detail_get").addClass("user-input-err"); } else { $("#detail_get").removeClass("user-input-err"); }
+        if(!type_save_gl){ $("#type_save").addClass("user-input-err"); } else { $("#type_save").removeClass("user-input-err"); }
+        if(!date_start_access_bilet_gl){ $("#date_start_access_bilet").addClass("user-input-err"); } else { $("#date_start_access_bilet").removeClass("user-input-err"); }
+        if(!date_stop_access_bilet_gl){ $("#date_stop_access_bilet").addClass("user-input-err"); } else { $("#date_stop_access_bilet").removeClass("user-input-err"); }
+        if(!date_stop_sell_bilet_gl){ $("#date_stop_sell_bilet").addClass("user-input-err"); } else { $("#date_stop_sell_bilet").removeClass("user-input-err"); }
         //console.log(start_access_tame); 
         //console.log(head_name + " : " + start_access_time + " : " + stop_access_time + " : " + detail_save + " : " + type_save + " : " + region_select_bilet + " : " + valute_db + " : " + days_job_bilet
                     //+ " : " + res_date_start_sell + " : " + int_price_bilet + " : " + int_old_price_bilet + " : " + res_parse_start_access + " : " + res_parse_stop_access + " : " + res_parse_stop_sell_bilet
