@@ -1,7 +1,5 @@
 @extends('layouts.app')
 @section('title-block') ГЛАВНАЯ - Феникс ТВ @endsection
-<main class="index-main">
-
 <header class="header admin-header">		
 	<div class="left-header">
 		<a href="/" class="logo"><img src="{{ asset('img/logo.png') }}" alt="Феникс ТВ"></a>
@@ -52,7 +50,7 @@
 	</div>
 </header>
 
-       
+<main class="index-main">      
 
 @section('content')
 
