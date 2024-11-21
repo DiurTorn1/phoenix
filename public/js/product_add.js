@@ -151,7 +151,7 @@ $(document).ready(function() {
     search_int();
     setInterval('search_int()', 500);
 
-    $("#save_product_db").toggle();
+    $("#save_product_db").hide();
     var region_select_bilet = "";
     var days_job_bilet = "";
     var valute_bilet = "";
