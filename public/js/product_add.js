@@ -20,7 +20,7 @@ function search_int(){
     if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; } else { date_stop_sell_bilet_gl = 1; }
     if( $('#input_buff_product').is(':empty') ) { input_buff_product_gl = 1; } else { input_buff_product_gl = 0; }
     if(head_name_gl == 1 && start_access_time_gl == 1 && stop_access_time_gl == 1 && detail_get_gl == 1 && type_save_gl == 1 && date_start_access_bilet_gl == 1 &&
-        date_stop_access_bilet_gl == 1 && date_stop_sell_bilet_gl == 1 && input_buff_product_gl == 1){
+        date_stop_access_bilet_gl == 1 && date_stop_sell_bilet_gl == 1){
             $("#save_product_db").removeClass('menu-btn-grey');
             $("#save_product_db").addClass('menu-btn-grey-active');
     } else {
