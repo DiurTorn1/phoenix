@@ -283,9 +283,7 @@ $(document).ready(function() {
         if(!date_start_sell_bilet){ $("#date_start_sell_bilet").addClass("user-input-err"); arr_bilet.push(0); } else { $("#date_start_sell_bilet").removeClass("user-input-err"); arr_bilet.push(1); }
         if(!input_prace_bilet){ $("#input_prace_bilet").addClass("user-input-err"); arr_bilet.push(0); } else { $("#input_prace_bilet").removeClass("user-input-err"); arr_bilet.push(1); }
         if(!input_old_prace_bilet){ $("#input_old_prace_bilet").addClass("user-input-err"); arr_bilet.push(0); } else { $("#input_old_prace_bilet").removeClass("user-input-err"); arr_bilet.push(1); }
-        if(!price_bilet){ $("#prace_bilet").addClass("user-input-err"); arr_bilet.push(0); } else { $("#prace_bilet").removeClass("user-input-err"); arr_bilet.push(1); }
         var key_bil = 0
-        console.log(arr_bilet);
         var allEqual1 = arr_bilet.every(function(value, index, arr) {
             //console.log(value);
             //console.log(arr[0]);
