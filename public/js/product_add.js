@@ -31,16 +31,16 @@ function search_int(){
         if(!key_pod){
             $("#save_product_db").hide();
             $("#save_product_db-1").show();
-            console.log(arr_stat);
+            //console.log(arr_stat);
         } else {
             $("#save_product_db").show();
             $("#save_product_db-1").hide();
-            console.log(arr_stat);
+            //console.log(arr_stat);
         }
     } else {
         $("#save_product_db").hide();
         $("#save_product_db-1").show();
-        console.log(arr_stat);
+        //console.log(arr_stat);
     }
     //if(head_name_gl == 1 /*&& start_access_time_gl == 1 && stop_access_time_gl == 1 && detail_get_gl == 1 && type_save_gl == 1 && date_start_access_bilet_gl == 1 &&
         //date_stop_access_bilet_gl == 1 && date_stop_sell_bilet_gl == 1*/){
