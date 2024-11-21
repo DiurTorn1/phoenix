@@ -1,5 +1,5 @@
 var head_name_gl, start_access_time_gl, stop_access_time_gl, detail_get_gl, type_save_gl, date_start_access_bilet_gl, date_stop_access_bilet_gl, date_stop_sell_bilet_gl;
-var key_tog = 0, key_price = 0, key_banner = 0;
+var key_tog = 0, key_price = 0, key_banner = 0, key_load_prod = 0;
 function search_int(){
     //console.log("Test");
     var arr_stat = [];
@@ -36,6 +36,7 @@ function search_int(){
         } else {
             $("#save_product_db").show();
             $("#save_product_db-1").hide();
+            key_load_prod = 1;
             //console.log(arr_stat);
         }
     } else {
@@ -321,27 +322,31 @@ $(document).ready(function() {
         //console.log(head_name + " : " + start_access_time + " : " + stop_access_time + " : " + detail_save + " : " + type_save + " : " + region_select_bilet + " : " + valute_db + " : " + days_job_bilet
                     //+ " : " + res_date_start_sell + " : " + int_price_bilet + " : " + int_old_price_bilet + " : " + res_parse_start_access + " : " + res_parse_stop_access + " : " + res_parse_stop_sell_bilet
                     //+ " : " + int_input_prob_period_subs + " : " + int_input_price_prob_period_subs);
-        /*$.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, 
-                                        detail_save:detail_save, type_save:type_save, region_select_bilet:region_select_bilet, valute_db:valute_db, days_job_bilet:days_job_bilet,
-                                        res_date_start_sell:res_date_start_sell, int_price_bilet:int_price_bilet, int_old_price_bilet:int_old_price_bilet, res_parse_start_access:res_parse_start_access,
-                                        res_parse_stop_access:res_parse_stop_access, res_parse_stop_sell_bilet:res_parse_stop_sell_bilet, int_input_prob_period_subs:int_input_prob_period_subs,
-                                        int_input_price_prob_period_subs:int_input_price_prob_period_subs, img_main:img_main}, function(data){
-            if(data == "OK"){
-                $.post('/php/get_product_card_name.php', { name: head_name}, function(data){
-                    var pars = data.split("&");
-                    //console.log(type_product + '_' + pars[0]);
-                    var name_table = type_product + '_' + pars[0];
-                    $.post('/php/create_table_product.php', { name: name_table}, function(data){
-                        if(data == "OK"){
-                            alert("Продукт создан");
-                        }
+        if(key_load_prod){
+            $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, 
+                detail_save:detail_save, type_save:type_save, region_select_bilet:region_select_bilet, valute_db:valute_db, days_job_bilet:days_job_bilet,
+                res_date_start_sell:res_date_start_sell, int_price_bilet:int_price_bilet, int_old_price_bilet:int_old_price_bilet, res_parse_start_access:res_parse_start_access,
+                res_parse_stop_access:res_parse_stop_access, res_parse_stop_sell_bilet:res_parse_stop_sell_bilet, int_input_prob_period_subs:int_input_prob_period_subs,
+                int_input_price_prob_period_subs:int_input_price_prob_period_subs, img_main:img_main}, function(data){
+                    if(data == "OK"){
+                    $.post('/php/get_product_card_name.php', { name: head_name}, function(data){
+                        var pars = data.split("&");
+                        //console.log(type_product + '_' + pars[0]);
+                        var name_table = type_product + '_' + pars[0];
+                        $.post('/php/create_table_product.php', { name: name_table}, function(data){
+                            if(data == "OK"){
+                                //alert("Продукт создан");
+                                window.location.href='/video';
+                            }
                     });
                     //
-                });
-                
-            }
-            //console.log(data);
-        });*/
+                    });
+
+                }
+                //console.log(data);
+            });
+        }
+        /**/
     });
     $("#save_product_db-1").on('click', function(){
 
