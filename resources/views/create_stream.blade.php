@@ -93,10 +93,8 @@
 					<label>Возраст</label>
 					<!--<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_weigth_seasonct">-->
 					<select class="admin-input admin-input-select block-admin-input" id="admin_weigth_seasonct">
-						<option value="Д10">Д8</option>
-						<option value="Д10">Ю8</option>
-						<option value="Д10">Д9</option>
-						<option value="Д10">Ю9</option>
+						<option value="Д10">Д08-09</option>
+						<option value="Д10">Ю08-09</option>
 						<option value="Д10">Д10</option>
 						<option value="Ю10">Ю10</option>
 						<option value="Д11">Д11</option>
