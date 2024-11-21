@@ -22,7 +22,8 @@
 
 		<div class="right-heder">
 			<!--<button class="menu-btn-grey save-st">Публиковать</button> Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
-			<button class="menu-btn-grey" id="save_product_db">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<button class="menu-btn-grey-active" id="save_product_db">Сохранить</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<button class="menu-btn-grey" id="save_product_db-1">Сохранить</button>
 		</div>
 	</header> 
 	<!----------------------------Админ-контент---------------------------------->

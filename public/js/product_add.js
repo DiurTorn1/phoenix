@@ -19,13 +19,14 @@ function search_int(){
     if(!type_save){ type_save_gl_gl = 0; } else { type_save_gl_gl = 1; }
     if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; } else { date_stop_sell_bilet_gl = 1; }
     if( $('#input_buff_product').is(':empty') ) { input_buff_product_gl = 1; } else { input_buff_product_gl = 0; }
-    if(head_name_gl == 1 && start_access_time_gl == 1 && stop_access_time_gl == 1 && detail_get_gl == 1 && type_save_gl == 1 && date_start_access_bilet_gl == 1 &&
-        date_stop_access_bilet_gl == 1 && date_stop_sell_bilet_gl == 1){
-            $("#save_product_db").removeClass('menu-btn-grey');
-            $("#save_product_db").addClass('menu-btn-grey-active');
+    if(head_name_gl == 1/* && start_access_time_gl == 1 && stop_access_time_gl == 1 && detail_get_gl == 1 && type_save_gl == 1 && date_start_access_bilet_gl == 1 &&
+        date_stop_access_bilet_gl == 1 && date_stop_sell_bilet_gl == 1*/){
+            $("#save_product_db").toggle();
+            $("#save_product_db-1").toggle();
+            //$("#save_product_db").addClass('menu-btn-grey-active');
     } else {
-        $("#save_product_db").addClass('menu-btn-grey');
-        $("#save_product_db").removeClass('menu-btn-grey-active');
+        //$("#save_product_db").addClass('menu-btn-grey');
+        //$("#save_product_db").removeClass('menu-btn-grey-active');
     }
 }
 
@@ -146,7 +147,7 @@ $(document).ready(function() {
     search_int();
     setInterval('search_int()', 500);
 
-
+    $("#save_product_db").toggle();
     var region_select_bilet = "";
     var days_job_bilet = "";
     var valute_bilet = "";
