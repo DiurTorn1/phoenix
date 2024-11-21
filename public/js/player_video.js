@@ -193,7 +193,7 @@ $(document).ready(function() {
     $.post('/php/get_video_id.php',{ id:params.get('player_stream_id') }, function(data)  {
         var output = $.parseJSON(data);
         var list = output.data;
-        console.log(list);
+        //console.log(list);
                     //console.log(pars);
         $("#player_stream_get").append(
             '<div class="index-live-item-video-1">' +
