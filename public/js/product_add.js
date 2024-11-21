@@ -17,7 +17,7 @@ function search_int(){
     if(!date_start_access_bilet){ date_start_access_bilet_gl = 0; arr_stat.push(0); } else { date_start_access_bilet_gl = 1; arr_stat.push(1); }
     if(!date_stop_access_bilet){ date_stop_access_bilet_gl = 0; arr_stat.push(0); } else { date_stop_access_bilet_gl = 1; arr_stat.push(1); }
     if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; arr_stat.push(0); } else { date_stop_sell_bilet_gl = 1; arr_stat.push(1); }
-    //if( $('#input_buff_product').is(':empty') ) { input_buff_product_gl = 1; arr_stat.push(1); } else { input_buff_product_gl = 0; arr_stat.push(0); }
+    if( key_price ) { input_buff_product_gl = 1; arr_stat.push(1); } else { input_buff_product_gl = 0; arr_stat.push(0); }
 
     var allEqual = arr_stat.every(function(value, index, arr) {
         //console.log(value);
@@ -42,20 +42,14 @@ function search_int(){
         $("#save_product_db-1").show();
         //console.log(arr_stat);
     }
-    //if(head_name_gl == 1 /*&& start_access_time_gl == 1 && stop_access_time_gl == 1 && detail_get_gl == 1 && type_save_gl == 1 && date_start_access_bilet_gl == 1 &&
-        //date_stop_access_bilet_gl == 1 && date_stop_sell_bilet_gl == 1*/){
-            //if(!key_tog){
-                //$("#save_product_db").toggle();
-                //$("#save_product_db-1").toggle();
-                //console.log(arr_stat);
-                //key_tog = 1;
-            //}
-
-            //$("#save_product_db").addClass('menu-btn-grey-active');
-    //} else {
-        //$("#save_product_db").addClass('menu-btn-grey');
-        //$("#save_product_db").removeClass('menu-btn-grey-active');
-    //}
+    /**
+     *  days_job_bilet = $("#save_days_job_bilet").val();
+        valute_bilet = $("#valute_bilet option:selected").text();
+        date_start_sell_bilet = $("#date_start_sell_bilet").val();
+        input_prace_bilet = $("#input_prace_bilet").val();
+        input_old_prace_bilet = $("#input_old_prace_bilet").val();
+        price_bilet = $("#prace_bilet").val();
+     */
 }
 
 $(document).ready(function() {
@@ -284,13 +278,17 @@ $(document).ready(function() {
         } else if(valute_bilet == "Американский доллар (USD)"){
             bilet_out ="USD";
         }
-
-        $("#input_buff_product").append(
+        if(!days_job_bilet){ $("#save_days_job_bilet").addClass("user-input-err"); } else { $("#save_days_job_bilet").removeClass("user-input-err"); }
+        if(!date_start_sell_bilet){ $("#date_start_sell_bilet").addClass("user-input-err"); } else { $("#date_start_sell_bilet").removeClass("user-input-err"); }
+        if(!input_prace_bilet){ $("#input_prace_bilet").addClass("user-input-err"); } else { $("#input_prace_bilet").removeClass("user-input-err"); }
+        if(!input_old_prace_bilet){ $("#input_old_prace_bilet").addClass("user-input-err"); } else { $("#input_old_prace_bilet").removeClass("user-input-err"); }
+        if(!price_bilet){ $("#input_old_prace_bilet").addClass("user-input-err"); } else { $("#input_old_prace_bilet").removeClass("user-input-err"); }
+        /*$("#input_buff_product").append(
             '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
 			'<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
 			'<p >' + region_out + '</p>' +
             '<p style="display:none;">' + input_old_prace_bilet + '</p>');
-        $('#add-ticket-price').hide();
+        $('#add-ticket-price').hide();*/
     });
 
     $("#save_price_subscript").on('click', function(){
