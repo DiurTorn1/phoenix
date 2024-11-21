@@ -2588,6 +2588,10 @@ td a:focus {
     outline: none; 
 }
 
+.user-input-err-1 {
+    background-color: #f52105; 
+}
+
 .log_promocode_add{
     
 }
