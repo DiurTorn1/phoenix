@@ -337,7 +337,7 @@ $(document).ready(function() {
                         $.post('/php/create_table_product.php', { name: name_table}, function(data){
                             if(data == "OK"){
                                 //alert("Продукт создан");
-                                window.location.href='/video';
+                                window.location.href='/product_admin';
                             }
                     });
                     //
