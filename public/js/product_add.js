@@ -184,7 +184,7 @@ $(document).ready(function() {
         if(!head_name_gl){ $("#head_name_save").addClass("user-input-err"); } else { $("#head_name_save").removeClass("user-input-err"); }
         if(!start_access_time_gl){ $("#start_access_time").addClass("user-input-err"); } else { $("#start_access_time").removeClass("user-input-err"); }
         if(!stop_access_time_gl){ $("#stop_access_time").addClass("user-input-err"); } else { $("#stop_access_time").removeClass("user-input-err"); }
-        if(!detail_get_gl){ $("#detail_get").addClass("user-input-err"); } else { $("#detail_get").removeClass("user-input-err"); }
+        if(!detail_get_gl){ $("#detail_save").addClass("user-input-err"); } else { $("#detail_save").removeClass("user-input-err"); }
         if(!type_save_gl){ $("#type_save").addClass("user-input-err"); } else { $("#type_save").removeClass("user-input-err"); }
         if(!date_start_access_bilet_gl){ $("#date_start_access_bilet").addClass("user-input-err"); } else { $("#date_start_access_bilet").removeClass("user-input-err"); }
         if(!date_stop_access_bilet_gl){ $("#date_stop_access_bilet").addClass("user-input-err"); } else { $("#date_stop_access_bilet").removeClass("user-input-err"); }
