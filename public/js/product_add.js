@@ -1,5 +1,5 @@
 var head_name_gl, start_access_time_gl, stop_access_time_gl, detail_get_gl, type_save_gl, date_start_access_bilet_gl, date_stop_access_bilet_gl, date_stop_sell_bilet_gl, input_buff_product_gl;
-
+var key_tog = 0;
 function search_int(){
     //console.log("Test");
     var head_name = $("#head_name_save").val();
@@ -21,8 +21,12 @@ function search_int(){
     if( $('#input_buff_product').is(':empty') ) { input_buff_product_gl = 1; } else { input_buff_product_gl = 0; }
     if(head_name_gl == 1/* && start_access_time_gl == 1 && stop_access_time_gl == 1 && detail_get_gl == 1 && type_save_gl == 1 && date_start_access_bilet_gl == 1 &&
         date_stop_access_bilet_gl == 1 && date_stop_sell_bilet_gl == 1*/){
-            $("#save_product_db").toggle();
-            $("#save_product_db-1").toggle();
+            if(!key_tog){
+                $("#save_product_db").toggle();
+                $("#save_product_db-1").toggle();
+                key_tog = 1;
+            }
+
             //$("#save_product_db").addClass('menu-btn-grey-active');
     } else {
         //$("#save_product_db").addClass('menu-btn-grey');
