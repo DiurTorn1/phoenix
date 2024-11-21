@@ -200,7 +200,7 @@ $(document).ready(function() {
                 '<iframe src="' + 0 + '" width="100%" height="840" frameborder="0" allow="autoplay; fullscreen; picture-in-picture; encrypted-media; gyroscope; accelerometer; clipboard-write;"></iframe>' +
             '</div>' +
             '<div class="index-live-item-text">' +
-                '<a>' + item.title + '</a>' +
+                '<a>' + list.title + '</a>' +
             '</div>' + 
             '<div class="index-live-item-text">' +
                 '<div class="admin-input-box admin-input-wrap">' +
