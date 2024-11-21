@@ -58,8 +58,9 @@
 					<label>Возраст</label>
 					<!--<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_card_weigth">-->
 					<select class="admin-input admin-input-select block-admin-input" id="admin_card_weigth">
-						<option value="Д10">Д08-09</option>
-						<option value="Д10">Ю08-09</option>
+						<option value=""></option>
+						<option value="Д08-09">Д08-09</option>
+						<option value="Ю08-09">Ю08-09</option>
 						<option value="Д10">Д10</option>
 						<option value="Ю10">Ю10</option>
 						<option value="Д11">Д11</option>
