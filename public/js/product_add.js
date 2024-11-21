@@ -179,6 +179,100 @@ $(document).ready(function() {
     var input_old_prace_bilet = "";
     var input_prob_period_subs = "1";
     var input_price_prob_period_subs = "1";
+
+    var main_image;
+    var image, image_name = '';
+    var r = new Resumable({
+        target: '/'
+    });
+      
+      
+    r.assignBrowse(document.getElementById('upload_main_banner_product'));
+      
+    r.on('fileSuccess', function(file){
+        console.log('fileSuccess',file);
+        console.log(file.file);
+        //$('#img_poster_card').attr("src", file.file);
+        var reader = new FileReader();
+            
+        image_name = file.file.name;
+        reader.readAsDataURL(file.file);
+        //var output = $.parseJSON(file);
+        // var form_data = new FormData();
+        reader.onloadend = function(e) { 
+            //console.log(e.target.result);
+            $('#upload_main_banner_product').attr("src", e.target.result);
+            //console.log(e.target.result);
+            main_image = e.target.result;
+            var image_res = e.target.result;
+            //console.log(image_res.split(',')[1]);
+            image = image_res.split(',')[1];
+            $.post('/php/upload_banners_product.php', { image: image, image_name:image_name }, function(data)  {
+                console.log(data);
+                if(data === 'Successfully Uploaded'){ 
+                    //<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
+                    //$("#banners_turnir").append('<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>');
+                    key_banner = 1;
+                    $('#img_banner_trash').show();
+                }
+            });
+        };
+
+          
+    });
+    r.on('fileProgress', function(file){
+        console.log('fileProgress', file);
+    });
+    r.on('fileAdded', function(file, event){
+        r.upload();
+        console.log('fileAdded...');
+        console.log('fileAdded...', event);
+        //var output = $.parseJSON(file);
+        //console.log(output);
+        //console.log(file);
+    });
+    r.on('filesAdded', function(array){
+        r.upload();
+        console.log('filesAdded', array);
+    });
+    r.on('fileRetry', function(file){
+        console.log('fileRetry', file);
+    });
+    r.on('fileError', function(file, message){
+        console.log('fileError', file, message);
+    });
+    r.on('uploadStart', function(){
+        console.timeLog('uploadStart');
+    });
+    r.on('complete', function(){
+        console.log('complete');
+    });
+    r.on('progress', function(){
+        console.log('progress');
+    });
+    r.on('error', function(message, file){
+        console.log('error', message, file);
+    });
+    r.on('pause', function(){
+        console.log('pause');
+    });
+    r.on('cancel', function(){
+        console.log('cancel');
+    });
+
+    $("#img_banner_trash").on('click', function(){
+        $.post('/php/delete_banners_product.php', { image_name:image_name }, function(data)  {
+            if(data === 'Successfully delete'){
+                //alert('Баннер удалён');
+                key_banner = 0;
+                $('#upload_main_banner_product').attr("src", 'img/no-image.jpg');
+                $('#img_banner_trash').hide();
+            }
+        });
+    });
+
+
+
     var price_bilet = $("#prace_bilet").val();
     $("#save_product_db").on('click', function(){
         var head_name = $("#head_name_save").val();
@@ -231,7 +325,7 @@ $(document).ready(function() {
                                         detail_save:detail_save, type_save:type_save, region_select_bilet:region_select_bilet, valute_db:valute_db, days_job_bilet:days_job_bilet,
                                         res_date_start_sell:res_date_start_sell, int_price_bilet:int_price_bilet, int_old_price_bilet:int_old_price_bilet, res_parse_start_access:res_parse_start_access,
                                         res_parse_stop_access:res_parse_stop_access, res_parse_stop_sell_bilet:res_parse_stop_sell_bilet, int_input_prob_period_subs:int_input_prob_period_subs,
-                                        int_input_price_prob_period_subs:int_input_price_prob_period_subs}, function(data){
+                                        int_input_price_prob_period_subs:int_input_price_prob_period_subs, img_main:img_main}, function(data){
             if(data == "OK"){
                 $.post('/php/get_product_card_name.php', { name: head_name}, function(data){
                     var pars = data.split("&");
