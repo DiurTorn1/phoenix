@@ -19,6 +19,12 @@ function search_int(){
     if(!type_save){ type_save_gl_gl = 0; } else { type_save_gl_gl = 1; }
     if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; } else { date_stop_sell_bilet_gl = 1; }
     if( $('#input_buff_product').is(':empty') ) { input_buff_product_gl = 1; } else { input_buff_product_gl = 0; }
+    if(head_name_gl && start_access_time_gl && stop_access_time_gl && detail_get_gl && type_save_gl && date_start_access_bilet_gl &&
+        date_stop_access_bilet_gl && date_stop_sell_bilet_gl && input_buff_product_gl){
+            $("#save_product_db").addClass('menu-btn-grey-active');
+    } else {
+        $("#save_product_db").removeClass('menu-btn-grey-active');
+    }
 }
 
 $(document).ready(function() {
