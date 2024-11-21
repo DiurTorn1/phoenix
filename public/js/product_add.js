@@ -278,17 +278,36 @@ $(document).ready(function() {
         } else if(valute_bilet == "Американский доллар (USD)"){
             bilet_out ="USD";
         }
-        if(!days_job_bilet){ $("#save_days_job_bilet").addClass("user-input-err"); } else { $("#save_days_job_bilet").removeClass("user-input-err"); }
-        if(!date_start_sell_bilet){ $("#date_start_sell_bilet").addClass("user-input-err"); } else { $("#date_start_sell_bilet").removeClass("user-input-err"); }
-        if(!input_prace_bilet){ $("#input_prace_bilet").addClass("user-input-err"); } else { $("#input_prace_bilet").removeClass("user-input-err"); }
-        if(!input_old_prace_bilet){ $("#input_old_prace_bilet").addClass("user-input-err"); } else { $("#input_old_prace_bilet").removeClass("user-input-err"); }
-        if(!price_bilet){ $("#prace_bilet").addClass("user-input-err"); } else { $("#prace_bilet").removeClass("user-input-err"); }
-        /*$("#input_buff_product").append(
-            '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
-			'<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
-			'<p >' + region_out + '</p>' +
-            '<p style="display:none;">' + input_old_prace_bilet + '</p>');
-        $('#add-ticket-price').hide();*/
+        var arr_bilet = [];
+        if(!days_job_bilet){ $("#save_days_job_bilet").addClass("user-input-err"); arr_bilet.push(0); } else { $("#save_days_job_bilet").removeClass("user-input-err"); arr_bilet.push(1); }
+        if(!date_start_sell_bilet){ $("#date_start_sell_bilet").addClass("user-input-err"); arr_bilet.push(0); } else { $("#date_start_sell_bilet").removeClass("user-input-err"); arr_bilet.push(1); }
+        if(!input_prace_bilet){ $("#input_prace_bilet").addClass("user-input-err"); arr_bilet.push(0); } else { $("#input_prace_bilet").removeClass("user-input-err"); arr_bilet.push(1); }
+        if(!input_old_prace_bilet){ $("#input_old_prace_bilet").addClass("user-input-err"); arr_bilet.push(0); } else { $("#input_old_prace_bilet").removeClass("user-input-err"); arr_bilet.push(1); }
+        if(!price_bilet){ $("#prace_bilet").addClass("user-input-err"); arr_bilet.push(0); } else { $("#prace_bilet").removeClass("user-input-err"); arr_bilet.push(1); }
+
+        var allEqual1 = arr_bilet.every(function(value, index, arr) {
+            //console.log(value);
+            //console.log(arr[0]);
+            key_bil = value;
+            return value === arr[0];
+        });
+    
+        // Вывод результата
+        if (allEqual1) {
+            if(!key_bil){
+                //$("#save_product_db").hide();
+                //$("#save_product_db-1").show();
+                //console.log(arr_stat);
+            } else {
+                $("#input_buff_product").append(
+                    '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
+                    '<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
+                    '<p >' + region_out + '</p>' +
+                    '<p style="display:none;">' + input_old_prace_bilet + '</p>');
+                $('#add-ticket-price').hide();
+            }
+        } 
+        /**/
     });
 
     $("#save_price_subscript").on('click', function(){
