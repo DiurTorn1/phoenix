@@ -1,4 +1,4 @@
-var head_name_gl, start_access_time_gl, stop_access_time_gl, detail_get_gl, type_save_gl, date_start_access_bilet_gl, date_stop_access_bilet_gl, date_stop_sell_bilet_gl;
+var head_name_gl, start_access_time_gl, stop_access_time_gl, detail_get_gl, type_save_gl, date_start_access_bilet_gl, date_stop_access_bilet_gl, date_stop_sell_bilet_gl, input_buff_product_gl;
 
 function search_int(){
     //console.log("Test");
@@ -18,6 +18,7 @@ function search_int(){
     if(!date_stop_access_bilet){ date_stop_access_bilet_gl = 0; } else { date_stop_access_bilet_gl = 1; }
     if(!type_save){ type_save_gl_gl = 0; } else { type_save_gl_gl = 1; }
     if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; } else { date_stop_sell_bilet_gl = 1; }
+    if( $('#input_buff_product').is(':empty') ) { input_buff_product_gl = 0; } else { input_buff_product_gl = 1; }
 }
 
 $(document).ready(function() {
@@ -189,6 +190,7 @@ $(document).ready(function() {
         if(!date_start_access_bilet_gl){ $("#date_start_access_bilet").addClass("user-input-err"); } else { $("#date_start_access_bilet").removeClass("user-input-err"); }
         if(!date_stop_access_bilet_gl){ $("#date_stop_access_bilet").addClass("user-input-err"); } else { $("#date_stop_access_bilet").removeClass("user-input-err"); }
         if(!date_stop_sell_bilet_gl){ $("#date_stop_sell_bilet").addClass("user-input-err"); } else { $("#date_stop_sell_bilet").removeClass("user-input-err"); }
+        if(!input_buff_product_gl){ $("#input_buff_product").addClass("user-input-err"); } else { $("#input_buff_product").removeClass("user-input-err"); }
         //console.log(start_access_tame); 
         //console.log(head_name + " : " + start_access_time + " : " + stop_access_time + " : " + detail_save + " : " + type_save + " : " + region_select_bilet + " : " + valute_db + " : " + days_job_bilet
                     //+ " : " + res_date_start_sell + " : " + int_price_bilet + " : " + int_old_price_bilet + " : " + res_parse_start_access + " : " + res_parse_stop_access + " : " + res_parse_stop_sell_bilet
