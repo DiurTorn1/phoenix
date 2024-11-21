@@ -7,7 +7,6 @@ function search_int(){
     var start_access_time = $("#start_access_time").val();
     var stop_access_time = $("#stop_access_time").val();
     var detail_get = $("#detail_save").val();
-    var type_save = $("#type_save option:selected").text();
     var date_start_access_bilet = $("#date_start_access_bilet").val();
     var date_stop_access_bilet = $("#date_stop_access_bilet").val();
     var date_stop_sell_bilet = $("#date_stop_sell_bilet").val();
@@ -17,7 +16,6 @@ function search_int(){
     if(!detail_get){ detail_get_gl = 0; arr_stat.push(0); } else { detail_get_gl = 1; arr_stat.push(1); }
     if(!date_start_access_bilet){ date_start_access_bilet_gl = 0; arr_stat.push(0); } else { date_start_access_bilet_gl = 1; arr_stat.push(1); }
     if(!date_stop_access_bilet){ date_stop_access_bilet_gl = 0; arr_stat.push(0); } else { date_stop_access_bilet_gl = 1; arr_stat.push(1); }
-    if(!type_save){ type_save_gl_gl = 0; arr_stat.push(0); } else { type_save_gl_gl = 1; arr_stat.push(1); }
     if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; arr_stat.push(0); } else { date_stop_sell_bilet_gl = 1; arr_stat.push(1); }
     if( $('#input_buff_product').is(':empty') ) { input_buff_product_gl = 1; arr_stat.push(1); } else { input_buff_product_gl = 0; arr_stat.push(0); }
     //if(head_name_gl == 1 /*&& start_access_time_gl == 1 && stop_access_time_gl == 1 && detail_get_gl == 1 && type_save_gl == 1 && date_start_access_bilet_gl == 1 &&
@@ -201,7 +199,6 @@ $(document).ready(function() {
         if(!start_access_time_gl){ $("#start_access_time").addClass("user-input-err"); } else { $("#start_access_time").removeClass("user-input-err"); }
         if(!stop_access_time_gl){ $("#stop_access_time").addClass("user-input-err"); } else { $("#stop_access_time").removeClass("user-input-err"); }
         if(!detail_get_gl){ $("#detail_save").addClass("user-input-err"); } else { $("#detail_save").removeClass("user-input-err"); }
-        if(!type_save_gl){ $("#type_save").addClass("user-input-err"); } else { $("#type_save").removeClass("user-input-err"); }
         if(!date_start_access_bilet_gl){ $("#date_start_access_bilet").addClass("user-input-err"); } else { $("#date_start_access_bilet").removeClass("user-input-err"); }
         if(!date_stop_access_bilet_gl){ $("#date_stop_access_bilet").addClass("user-input-err"); } else { $("#date_stop_access_bilet").removeClass("user-input-err"); }
         if(!date_stop_sell_bilet_gl){ $("#date_stop_sell_bilet").addClass("user-input-err"); } else { $("#date_stop_sell_bilet").removeClass("user-input-err"); }
