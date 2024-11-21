@@ -1,4 +1,4 @@
-var head_name_gl;
+var head_name_gl, start_access_time_gl;
 
 function search_int(){
     //console.log("Test");
@@ -14,6 +14,11 @@ function search_int(){
         head_name_gl = 0;
     } else {
         head_name_gl = 1;
+    }
+    if(!start_access_time){
+        start_access_time_gl = 0;
+    } else {
+        start_access_time_gl = 1;
     }
 }
 
