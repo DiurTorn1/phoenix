@@ -282,7 +282,7 @@ $(document).ready(function() {
         if(!date_start_sell_bilet){ $("#date_start_sell_bilet").addClass("user-input-err"); } else { $("#date_start_sell_bilet").removeClass("user-input-err"); }
         if(!input_prace_bilet){ $("#input_prace_bilet").addClass("user-input-err"); } else { $("#input_prace_bilet").removeClass("user-input-err"); }
         if(!input_old_prace_bilet){ $("#input_old_prace_bilet").addClass("user-input-err"); } else { $("#input_old_prace_bilet").removeClass("user-input-err"); }
-        if(!price_bilet){ $("#input_old_prace_bilet").addClass("user-input-err"); } else { $("#input_old_prace_bilet").removeClass("user-input-err"); }
+        if(!price_bilet){ $("#prace_bilet").addClass("user-input-err"); } else { $("#prace_bilet").removeClass("user-input-err"); }
         /*$("#input_buff_product").append(
             '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
 			'<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
