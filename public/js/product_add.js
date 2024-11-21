@@ -362,12 +362,39 @@ $(document).ready(function() {
         res_date_start_sell = pars_datae_start[0] + " " + pars_datae_start[1] + ":00";
         input_prace_bilet = $("#input_prace_subs").val();
         input_old_prace_bilet = $("#input_old_prace_subs").val();
-        $("#input_buff_product").append(
-            '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
-			'<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
-			'<p >' + region_out + '</p>' +
-            '<p style="display:none;">' + input_old_prace_bilet + '</p>');
-        $('#add-subscrip-price').hide();
+
+        var arr_bilet = [];
+        if(!input_prob_period_subs){ $("#input_prob_period_subs").addClass("user-input-err"); arr_bilet.push(0); } else { $("#input_prob_period_subs").removeClass("user-input-err"); arr_bilet.push(1); }
+        if(!input_price_prob_period_subs){ $("#input_price_prob_period_subs").addClass("user-input-err"); arr_bilet.push(0); } else { $("#input_price_prob_period_subs").removeClass("user-input-err"); arr_bilet.push(1); }
+        if(!date_start_sell_bilet){ $("#date_start_sell_subs").addClass("user-input-err"); arr_bilet.push(0); } else { $("#date_start_sell_subs").removeClass("user-input-err"); arr_bilet.push(1); }
+        if(!input_prace_bilet){ $("#input_prace_subs").addClass("user-input-err"); arr_bilet.push(0); } else { $("#input_prace_subs").removeClass("user-input-err"); arr_bilet.push(1); }
+        if(!input_old_prace_bilet){ $("#input_old_prace_subs").addClass("user-input-err"); arr_bilet.push(0); } else { $("#input_old_prace_subs").removeClass("user-input-err"); arr_bilet.push(1); }
+        
+        var key_bil = 0
+        var allEqual1 = arr_bilet.every(function(value, index, arr) {
+            //console.log(value);
+            //console.log(arr[0]);
+            key_bil = value;
+            return value === arr[0];
+        });
+    
+        // Вывод результата
+        if (allEqual1) {
+            if(!key_bil){
+                //$("#save_product_db").hide();
+                //$("#save_product_db-1").show();
+                //console.log(arr_stat);
+            } else {
+                $("#input_buff_product").append(
+                    '<p class="price-item-bold">' + days_job_bilet + ' дней</p>' +
+                    '<p>С <span>'+ res_date_start_sell +'</span>: <span>' + input_prace_bilet + '</span>&#x20;<span>' + bilet_out + '</span></p>' +
+                    '<p >' + region_out + '</p>' +
+                    '<p style="display:none;">' + input_old_prace_bilet + '</p>');
+                $('#add-subscrip-price').hide();
+                key_price = 1;
+            }
+        } 
+
     });
 
 });
