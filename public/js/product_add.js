@@ -18,7 +18,7 @@ function search_int(){
     if(!date_stop_access_bilet){ date_stop_access_bilet_gl = 0; } else { date_stop_access_bilet_gl = 1; }
     if(!type_save){ type_save_gl_gl = 0; } else { type_save_gl_gl = 1; }
     if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; } else { date_stop_sell_bilet_gl = 1; }
-    if( $('#input_buff_product').is(':empty') ) { input_buff_product_gl = 0; } else { input_buff_product_gl = 1; }
+    if($("#input_buff_product").checkEmpty()) { input_buff_product_gl = 0; } else { input_buff_product_gl = 1; }
 }
 
 $(document).ready(function() {
