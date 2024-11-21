@@ -1,3 +1,7 @@
+function search_int(){
+    console.log("Test");
+}
+
 $(document).ready(function() {
     var type_product = "ticket";
     /**script tihii */
@@ -112,7 +116,8 @@ $(document).ready(function() {
     });
     /**script tihii */
 
-
+    search_int();
+    setInterval('search_int()', 500);
 
 
     var region_select_bilet = "";
