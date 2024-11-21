@@ -1,5 +1,20 @@
+var head_name_gl;
+
 function search_int(){
-    console.log("Test");
+    //console.log("Test");
+    var head_name = $("#head_name_save").val();
+    var start_access_time = $("#start_access_time").val();
+    var stop_access_time = $("#stop_access_time").val();
+    var detail_get = $("#detail_save").val();
+    var type_save = $("#type_save option:selected").text();
+    var date_start_access_bilet = $("#date_start_access_bilet").val();
+    var date_stop_access_bilet = $("#date_stop_access_bilet").val();
+    var date_stop_sell_bilet = $("#date_stop_sell_bilet").val();
+    if(!head_name){
+        head_name_gl = 0;
+    } else {
+        head_name_gl = 1;
+    }
 }
 
 $(document).ready(function() {
@@ -162,11 +177,17 @@ $(document).ready(function() {
         var int_old_price_bilet = parseInt(input_old_prace_bilet);
         var int_input_prob_period_subs = parseInt(input_prob_period_subs);
         var int_input_price_prob_period_subs = parseInt(input_price_prob_period_subs);
+
+        if(!head_name_gl){
+            $("#head_name_save").addClass("user-input-err");
+        } else {
+            $("#head_name_save").removeClass("user-input-err");
+        }
         //console.log(start_access_tame);
         //console.log(head_name + " : " + start_access_time + " : " + stop_access_time + " : " + detail_save + " : " + type_save + " : " + region_select_bilet + " : " + valute_db + " : " + days_job_bilet
                     //+ " : " + res_date_start_sell + " : " + int_price_bilet + " : " + int_old_price_bilet + " : " + res_parse_start_access + " : " + res_parse_stop_access + " : " + res_parse_stop_sell_bilet
                     //+ " : " + int_input_prob_period_subs + " : " + int_input_price_prob_period_subs);
-        $.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, 
+        /*$.post('/php/product_add.php', { head_name: head_name, start_access_time:start_access_time, stop_access_time:stop_access_time, 
                                         detail_save:detail_save, type_save:type_save, region_select_bilet:region_select_bilet, valute_db:valute_db, days_job_bilet:days_job_bilet,
                                         res_date_start_sell:res_date_start_sell, int_price_bilet:int_price_bilet, int_old_price_bilet:int_old_price_bilet, res_parse_start_access:res_parse_start_access,
                                         res_parse_stop_access:res_parse_stop_access, res_parse_stop_sell_bilet:res_parse_stop_sell_bilet, int_input_prob_period_subs:int_input_prob_period_subs,
@@ -186,7 +207,7 @@ $(document).ready(function() {
                 
             }
             //console.log(data);
-        });
+        });*/
     });
 
     $("#save_price_bilet").on('click', function(){
