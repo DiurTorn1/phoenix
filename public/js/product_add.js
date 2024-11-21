@@ -247,6 +247,17 @@ $(document).ready(function() {
             //console.log(data);
         });*/
     });
+    $("#save_product_db-1").on('click', function(){
+
+        if(!head_name_gl){ $("#head_name_save").addClass("user-input-err"); } else { $("#head_name_save").removeClass("user-input-err"); }
+        if(!start_access_time_gl){ $("#start_access_time").addClass("user-input-err"); } else { $("#start_access_time").removeClass("user-input-err"); }
+        if(!stop_access_time_gl){ $("#stop_access_time").addClass("user-input-err"); } else { $("#stop_access_time").removeClass("user-input-err"); }
+        if(!detail_get_gl){ $("#detail_save").addClass("user-input-err"); } else { $("#detail_save").removeClass("user-input-err"); }
+        if(!date_start_access_bilet_gl){ $("#date_start_access_bilet").addClass("user-input-err"); } else { $("#date_start_access_bilet").removeClass("user-input-err"); }
+        if(!date_stop_access_bilet_gl){ $("#date_stop_access_bilet").addClass("user-input-err"); } else { $("#date_stop_access_bilet").removeClass("user-input-err"); }
+        if(!date_stop_sell_bilet_gl){ $("#date_stop_sell_bilet").addClass("user-input-err"); } else { $("#date_stop_sell_bilet").removeClass("user-input-err"); }
+        if(!key_price){ $("#input_buff_product").addClass("user-input-err-1"); } else { $("#input_buff_product").removeClass("user-input-err-1"); }
+    });
 
     $("#save_price_bilet").on('click', function(){
         region_select_bilet = $("#sive_bilet_region option:selected").text();
