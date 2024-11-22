@@ -1,54 +1,44 @@
-var head_name_gl;//, start_access_time_gl, stop_access_time_gl, detail_get_gl, type_save_gl, date_start_access_bilet_gl, date_stop_access_bilet_gl, date_stop_sell_bilet_gl;
-//var key_tog = 0, key_price = 0, key_banner = 0, key_load_prod = 0;
+var head_name_gl, opisanie_strima_gl, start_at_gl;
+var key_tog = 0, key_price = 0, key_banner = 0, key_load_prod = 0;
 function search_int(){
     //console.log("Test");
     var arr_stat = [];
     var head_name = $('#block-admin-inputct').val();
-    //var start_access_time = $("#start_access_time").val();
-    //var stop_access_time = $("#stop_access_time").val();
-    //var detail_get = $("#detail_save").val();
-    //var date_start_access_bilet = $("#date_start_access_bilet").val();
-    //var date_stop_access_bilet = $("#date_stop_access_bilet").val();
-    //var date_stop_sell_bilet = $("#date_stop_sell_bilet").val();
-    if(!head_name){ head_name_gl = 0; arr_stat.push(0); } else { head_name_gl = 1; arr_stat.push(1); }
-    //if(!start_access_time){ start_access_time_gl = 0; arr_stat.push(0); } else { start_access_time_gl = 1; arr_stat.push(1); }
-    //if(!stop_access_time){ stop_access_time_gl = 0; arr_stat.push(0); } else { stop_access_time_gl = 1; arr_stat.push(1); }
-    //if(!detail_get){ detail_get_gl = 0; arr_stat.push(0); } else { detail_get_gl = 1; arr_stat.push(1); }
-    //if(!date_start_access_bilet){ date_start_access_bilet_gl = 0; arr_stat.push(0); } else { date_start_access_bilet_gl = 1; arr_stat.push(1); }
-    //if(!date_stop_access_bilet){ date_stop_access_bilet_gl = 0; arr_stat.push(0); } else { date_stop_access_bilet_gl = 1; arr_stat.push(1); }
-    //if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; arr_stat.push(0); } else { date_stop_sell_bilet_gl = 1; arr_stat.push(1); }
-    //if( key_price ) { arr_stat.push(1); } else { arr_stat.push(0); }
-    //if( key_banner ) { arr_stat.push(1); } else { arr_stat.push(0); }
+    var opisanie_strima = $("#opisanie_strima").val();
+    var start_at = $("#ditetime_start_at").val();
 
-   /* var allEqual = arr_stat.every(function(value, index, arr) {
+    if(!head_name){ head_name_gl = 0; arr_stat.push(0); } else { head_name_gl = 1; arr_stat.push(1); }
+    if(!opisanie_strima){ opisanie_strima_gl = 0; arr_stat.push(0); } else { opisanie_strima_gl = 1; arr_stat.push(1); }
+    if(!start_at){ start_at_gl = 0; arr_stat.push(0); } else { start_at_gl = 1; arr_stat.push(1); }
+    if( key_banner ) { arr_stat.push(1); } else { arr_stat.push(0); }
+
+    var allEqual = arr_stat.every(function(value, index, arr) {
         //console.log(value);
         //console.log(arr[0]);
         key_pod = value;
         return value === arr[0];
-    });*/
+    });
 
     // Вывод результата
-    /*if (allEqual) {
+    if (allEqual) {
         if(!key_pod){
-            $("#save_product_db").hide();
-            $("#save_product_db-1").show();
+            $("#save-st").hide();
+            $("#save-st-1").show();
             //console.log(arr_stat);
         } else {
-            $("#save_product_db").show();
-            $("#save_product_db-1").hide();
+            $("#save-st").show();
+            $("#save-st-1").hide();
             key_load_prod = 1;
             //console.log(arr_stat);
         }
     } else {
-        $("#save_product_db").hide();
-        $("#save_product_db-1").show();
+        $("#save-st").hide();
+        $("#save-st-1").show();
         //console.log(arr_stat);
-    }*/
+    }
 }
 
 $(document).ready(function() {
-    var main_image;
-    var image, image_name = '';
 
     $('#img_banner_trash').hide();
     $('#save-st').hide();
@@ -56,116 +46,101 @@ $(document).ready(function() {
     search_int();
     setInterval('search_int()', 500);
 
+    var main_image;
+    var image, image_name = '';
     var r = new Resumable({
         target: '/'
-      });
+    });
       
       
-      r.assignBrowse(document.getElementById('img_poster_card'));
+    r.assignBrowse(document.getElementById('img_poster_card'));
       
-      r.on('fileSuccess', function(file){
-            console.log('fileSuccess',file);
-            console.log(file.file);
-            //$('#img_poster_card').attr("src", file.file);
-            var reader = new FileReader();
+    r.on('fileSuccess', function(file){
+        console.log('fileSuccess',file);
+        console.log(file.file);
+        //$('#img_poster_card').attr("src", file.file);
+        var reader = new FileReader();
             
-            image_name = file.file.name;
-            reader.readAsDataURL(file.file);
-            //var output = $.parseJSON(file);
-            // var form_data = new FormData();
-            reader.onloadend = function(e) { 
-                //console.log(e.target.result);
-                $('#img_poster_card').attr("src", e.target.result);
-                //console.log(e.target.result);
-                main_image = e.target.result;
-                var image_res = e.target.result;
-                //console.log(image_res.split(',')[1]);
-                image = image_res.split(',')[1];
-                $.post('/php/upload_banners.php', { image: image, image_name:image_name }, function(data)  {
-                    //console.log(data);
-                    if(data === 'Successfully Uploaded'){ 
-                        //<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
-                        //$("#banners_turnir").append('<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>');
-                        $('#img_banner_trash').show();
-                    }
-                });
-
-                //form_data.append('file',image);
-                /*$.ajax({
-                    url:'/php/upload_banners.php',
-                    method:'POST',
-                    data:form_data,
-                    contentType:false,
-                    processData:false,
-                    beforeSend:function(){
-                      //$('#msg').html('Loading......');
-                      console.log('Loading......');
-                    },
-                    success:function(data){
-                        //var output = $.parseJSON(data);
-                        console.log(data);
-                      //$('#msg').html(data);
-                    },
-                    error: function(xhr, ajaxOptions, thrownError) {
-                       console.log(thrownError + "\r\n" + xhr.statusText + "\r\n" + xhr.responseText);
-                    }
-                });*/
-            };
+        image_name = file.file.name;
+        reader.readAsDataURL(file.file);
+        //var output = $.parseJSON(file);
+        // var form_data = new FormData();
+        reader.onloadend = function(e) { 
+            //console.log(e.target.result);
+            $('#img_poster_card').attr("src", e.target.result);
+            //console.log(e.target.result);
+            main_image = e.target.result;
+            var image_res = e.target.result;
+            //console.log(image_res.split(',')[1]);
+            image = image_res.split(',')[1];
+            $.post('/php/upload_banners_product.php', { image: image, image_name:image_name }, function(data)  {
+                console.log(data);
+                if(data === 'Successfully Uploaded'){ 
+                    //<!--<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="{{ asset('img/trash.png') }}" alt="Удалить обложку"></a>-->
+                    //$("#banners_turnir").append('<a href="#" class="remove-preview-tournir" title="Удалить обложку"><img src="img/trash.png" alt="Удалить обложку"></a>');
+                    key_banner = 1;
+                    $('#img_banner_trash').show();
+                }
+            });
+        };
 
           
-        });
-      r.on('fileProgress', function(file){
-          console.log('fileProgress', file);
-        });
-      r.on('fileAdded', function(file, event){
-          r.upload();
-          console.log('fileAdded...');
-          //console.log('fileAdded...', event);
-          //var output = $.parseJSON(file);
-          //console.log(output);
-          //console.log(file);
-        });
-      r.on('filesAdded', function(array){
-          r.upload();
-          //console.log('filesAdded', array);
-        });
-      r.on('fileRetry', function(file){
-          console.log('fileRetry', file);
-        });
-      r.on('fileError', function(file, message){
-          console.log('fileError', file, message);
-        });
-      r.on('uploadStart', function(){
-          console.timeLog('uploadStart');
-        });
-      r.on('complete', function(){
-          console.log('complete');
-        });
-      r.on('progress', function(){
-          console.log('progress');
-        });
-      r.on('error', function(message, file){
-          console.log('error', message, file);
-        });
-      r.on('pause', function(){
-          console.log('pause');
-        });
-      r.on('cancel', function(){
-          console.log('cancel');
-        });
+    });
+    r.on('fileProgress', function(file){
+        console.log('fileProgress', file);
+    });
+    r.on('fileAdded', function(file, event){
+        r.upload();
+        console.log('fileAdded...');
+        console.log('fileAdded...', event);
+        //var output = $.parseJSON(file);
+        //console.log(output);
+        //console.log(file);
+    });
+    r.on('filesAdded', function(array){
+        r.upload();
+        console.log('filesAdded', array);
+    });
+    r.on('fileRetry', function(file){
+        console.log('fileRetry', file);
+    });
+    r.on('fileError', function(file, message){
+        console.log('fileError', file, message);
+    });
+    r.on('uploadStart', function(){
+        console.timeLog('uploadStart');
+    });
+    r.on('complete', function(){
+        console.log('complete');
+    });
+    r.on('progress', function(){
+        console.log('progress');
+    });
+    r.on('error', function(message, file){
+        console.log('error', message, file);
+    });
+    r.on('pause', function(){
+        console.log('pause');
+    });
+    r.on('cancel', function(){
+        console.log('cancel');
+    });
 
     $("#img_banner_trash").on('click', function(){
-        $.post('/php/delete_banners.php', { image_name:image_name }, function(data)  {
+        $.post('/php/delete_banners_product.php', { image_name:image_name }, function(data)  {
             if(data === 'Successfully delete'){
-                alert('Баннер удалён');
+                //alert('Баннер удалён');
+                key_banner = 0;
+                $('#upload_main_banner_product').attr("src", 'img/no-image.jpg');
                 $('#img_banner_trash').hide();
             }
         });
     });
+
     $("#save-st-1").on('click', function(){
         if(!head_name_gl){ $("#block-admin-inputct").addClass("user-input-err"); } else { $("#block-admin-inputct").removeClass("user-input-err"); }
-        //if(!start_access_time_gl){ $("#start_access_time").addClass("user-input-err"); } else { $("#start_access_time").removeClass("user-input-err"); }
-        //if(!stop_access_time_gl){ $("#stop_access_time").addClass("user-input-err"); } else { $("#stop_access_time").removeClass("user-input-err"); }
+        if(!opisanie_strima_gl){ $("#opisanie_strima").addClass("user-input-err"); } else { $("#opisanie_strima").removeClass("user-input-err"); }
+        if(!start_at_gl){ $("#ditetime_start_at").addClass("user-input-err"); } else { $("#ditetime_start_at").removeClass("user-input-err"); }
         //if(!detail_get_gl){ $("#detail_save").addClass("user-input-err"); } else { $("#detail_save").removeClass("user-input-err"); }
         //if(!date_start_access_bilet_gl){ $("#date_start_access_bilet").addClass("user-input-err"); } else { $("#date_start_access_bilet").removeClass("user-input-err"); }
         //if(!date_stop_access_bilet_gl){ $("#date_stop_access_bilet").addClass("user-input-err"); } else { $("#date_stop_access_bilet").removeClass("user-input-err"); }
