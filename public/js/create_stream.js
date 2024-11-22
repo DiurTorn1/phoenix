@@ -1,3 +1,51 @@
+var head_name_gl;//, start_access_time_gl, stop_access_time_gl, detail_get_gl, type_save_gl, date_start_access_bilet_gl, date_stop_access_bilet_gl, date_stop_sell_bilet_gl;
+//var key_tog = 0, key_price = 0, key_banner = 0, key_load_prod = 0;
+function search_int(){
+    //console.log("Test");
+    var arr_stat = [];
+    var head_name = $('#block-admin-inputct').val();
+    //var start_access_time = $("#start_access_time").val();
+    //var stop_access_time = $("#stop_access_time").val();
+    //var detail_get = $("#detail_save").val();
+    //var date_start_access_bilet = $("#date_start_access_bilet").val();
+    //var date_stop_access_bilet = $("#date_stop_access_bilet").val();
+    //var date_stop_sell_bilet = $("#date_stop_sell_bilet").val();
+    if(!head_name){ head_name_gl = 0; arr_stat.push(0); } else { head_name_gl = 1; arr_stat.push(1); }
+    //if(!start_access_time){ start_access_time_gl = 0; arr_stat.push(0); } else { start_access_time_gl = 1; arr_stat.push(1); }
+    //if(!stop_access_time){ stop_access_time_gl = 0; arr_stat.push(0); } else { stop_access_time_gl = 1; arr_stat.push(1); }
+    //if(!detail_get){ detail_get_gl = 0; arr_stat.push(0); } else { detail_get_gl = 1; arr_stat.push(1); }
+    //if(!date_start_access_bilet){ date_start_access_bilet_gl = 0; arr_stat.push(0); } else { date_start_access_bilet_gl = 1; arr_stat.push(1); }
+    //if(!date_stop_access_bilet){ date_stop_access_bilet_gl = 0; arr_stat.push(0); } else { date_stop_access_bilet_gl = 1; arr_stat.push(1); }
+    //if(!date_stop_sell_bilet){ date_stop_sell_bilet_gl = 0; arr_stat.push(0); } else { date_stop_sell_bilet_gl = 1; arr_stat.push(1); }
+    //if( key_price ) { arr_stat.push(1); } else { arr_stat.push(0); }
+    //if( key_banner ) { arr_stat.push(1); } else { arr_stat.push(0); }
+
+   /* var allEqual = arr_stat.every(function(value, index, arr) {
+        //console.log(value);
+        //console.log(arr[0]);
+        key_pod = value;
+        return value === arr[0];
+    });*/
+
+    // Вывод результата
+    /*if (allEqual) {
+        if(!key_pod){
+            $("#save_product_db").hide();
+            $("#save_product_db-1").show();
+            //console.log(arr_stat);
+        } else {
+            $("#save_product_db").show();
+            $("#save_product_db-1").hide();
+            key_load_prod = 1;
+            //console.log(arr_stat);
+        }
+    } else {
+        $("#save_product_db").hide();
+        $("#save_product_db-1").show();
+        //console.log(arr_stat);
+    }*/
+}
+
 $(document).ready(function() {
     var main_image;
     var image, image_name = '';
@@ -112,6 +160,18 @@ $(document).ready(function() {
             }
         });
     });
+    $("#save-st-1").on('click', function(){
+        if(!head_name_gl){ $("#block-admin-inputct").addClass("user-input-err"); } else { $("#block-admin-inputct").removeClass("user-input-err"); }
+        //if(!start_access_time_gl){ $("#start_access_time").addClass("user-input-err"); } else { $("#start_access_time").removeClass("user-input-err"); }
+        //if(!stop_access_time_gl){ $("#stop_access_time").addClass("user-input-err"); } else { $("#stop_access_time").removeClass("user-input-err"); }
+        //if(!detail_get_gl){ $("#detail_save").addClass("user-input-err"); } else { $("#detail_save").removeClass("user-input-err"); }
+        //if(!date_start_access_bilet_gl){ $("#date_start_access_bilet").addClass("user-input-err"); } else { $("#date_start_access_bilet").removeClass("user-input-err"); }
+        //if(!date_stop_access_bilet_gl){ $("#date_stop_access_bilet").addClass("user-input-err"); } else { $("#date_stop_access_bilet").removeClass("user-input-err"); }
+        //if(!date_stop_sell_bilet_gl){ $("#date_stop_sell_bilet").addClass("user-input-err"); } else { $("#date_stop_sell_bilet").removeClass("user-input-err"); }
+        //if(!key_price){ $("#input_buff_product").addClass("user-input-err-1"); } else { $("#input_buff_product").removeClass("user-input-err-1"); }
+        //if(!key_banner){ $("#banners_turnir").addClass("user-input-err"); } else { $("#banners_turnir").removeClass("user-input-err"); }
+    });
+
     $("#save-st").on('click', function(){
         var main = $('#block-admin-inputct').val();
         var region = $("#admin_region_selectct option:selected").text();
@@ -146,7 +206,11 @@ $(document).ready(function() {
         var opisanie_strima = $("#opisanie_strima").val();
         //console.log("Start:" + $("#ditetime_start_at").val() + ", Public:" + $("#ditetime_public_at").val());
         var start_at = $("#ditetime_start_at").val();
-        $.post('/php/create_stream.php',{name: main, region: region, season: season, turnir: turnir, weigth: weigth, opisanie_strima:opisanie_strima, product: product, vid_sporta: vid_sporta, minframe: minframe, start_at: start_at}, function(data)  {  //admin_input_select
+        var post_time_pars = start_at.split("T")
+        var post_time_pars1 = post_time_pars[1].split(":");
+        var teme_plus = parseInt(post_time_pars1[0])-3;
+        var post_time = post_time_pars[0] + 'T'+ teme_plus + ':' + post_time_pars1[1];//$("#ditetime_card_start_at").val();
+        $.post('/php/create_stream.php',{name: main, region: region, season: season, turnir: turnir, weigth: weigth, opisanie_strima:opisanie_strima, product: product, vid_sporta: vid_sporta, minframe: minframe, start_at: post_time}, function(data)  {  //admin_input_select
             //alert("Text:"+data);admin_input_seasonct   ditetime_start_at
             //console.log(data);
             var output = $.parseJSON(data);
