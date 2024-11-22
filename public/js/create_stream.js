@@ -146,7 +146,7 @@ $(document).ready(function() {
         //if(!date_stop_access_bilet_gl){ $("#date_stop_access_bilet").addClass("user-input-err"); } else { $("#date_stop_access_bilet").removeClass("user-input-err"); }
         //if(!date_stop_sell_bilet_gl){ $("#date_stop_sell_bilet").addClass("user-input-err"); } else { $("#date_stop_sell_bilet").removeClass("user-input-err"); }
         //if(!key_price){ $("#input_buff_product").addClass("user-input-err-1"); } else { $("#input_buff_product").removeClass("user-input-err-1"); }
-        //if(!key_banner){ $("#banners_turnir").addClass("user-input-err"); } else { $("#banners_turnir").removeClass("user-input-err"); }
+        if(!key_banner){ $("#img_poster_card").addClass("user-input-err"); } else { $("#img_poster_card").removeClass("user-input-err"); }
     });
 
     $("#save-st").on('click', function(){
