@@ -383,7 +383,7 @@ $(document).ready(function() {
                                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                                     if(id_card == params.get('admin_input_id')){
                                         alert("Стрим добавлен к продукту: " + name_product + "Редактирование успешно!");
-                                        window.location.href='/stream';
+                                        //window.location.href='/stream';
                                     } else {
                                         alert("Ошибка редактирования!");
                                         console.log(data);
@@ -428,7 +428,7 @@ $(document).ready(function() {
                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                     if(id_card == params.get('admin_input_id')){
                         alert("Стрим не добавлен к продукту Редактирование стрима успешно!");
-                        window.location.href='/stream';
+                        //window.location.href='/stream';
                     } else {
                         alert("Ошибка редактирования!");
                         console.log(data);

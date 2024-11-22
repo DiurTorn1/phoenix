@@ -4,6 +4,7 @@
 	<script type="text/javascript" src = "{{ asset('js/card_stream_redactor.js') }}"></script>
 	<div class="admin-content admin-content-raw" id="admin-content">
 		<div class="block-admin-left" id="block-admin-left">
+			<p id="inform_job"></p>
 			<div class="block-admin-container admin-back">
 				<div class="admin-input-box admin-input-wrap">
 					<label>Заголовок *</label>
