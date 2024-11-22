@@ -296,7 +296,8 @@ $(document).ready(function() {
     $("#img_banner_trash").on('click', function(){
         $.post('/php/delete_banners.php', { image_name:image_name }, function(data)  {
             if(data === 'Successfully delete'){
-                alert('Баннер удалён');
+                //alert('Баннер удалён');
+                $('#inform_job').text('Баннер удалён');
                 $('#img_banner_trash').hide();
             }
         });
@@ -382,10 +383,12 @@ $(document).ready(function() {
                                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                                     if(id_card == params.get('admin_input_id')){
-                                        alert("Стрим добавлен к продукту: " + name_product + "Редактирование успешно!");
+                                        //alert("Стрим добавлен к продукту: " + name_product + "Редактирование успешно!");
+                                        $('#inform_job').text("Стрим добавлен к продукту: " + name_product + "Редактирование успешно!");
                                         //window.location.href='/stream';
                                     } else {
-                                        alert("Ошибка редактирования!");
+                                        //alert("Ошибка редактирования!");
+                                        $('#inform_job').text("Ошибка редактирования!");
                                         console.log(data);
                                     }
                                 
@@ -413,6 +416,7 @@ $(document).ready(function() {
                         $.each(list2,function(i,item2){
                             if(item2.id == params.get('admin_input_id')){
                                 //alert("Постер добавлен к стриму");
+                                $('#inform_job').text("Постер добавлен к стриму");
                             }
                         });
     
@@ -420,17 +424,20 @@ $(document).ready(function() {
                 }
 
                 if(output.error){
-                    alert('Стрим закончен! Редактирование не возможно!');
+                    //alert('Стрим закончен! Редактирование не возможно!');
+                    $('#inform_job').text("Стрим закончен! Редактирование не возможно!");
                     //window.location.href='/stream';
                 } else {
                     var list = output.data;
                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                     if(id_card == params.get('admin_input_id')){
-                        alert("Стрим не добавлен к продукту Редактирование стрима успешно!");
+                        //alert("Стрим не добавлен к продукту Редактирование стрима успешно!");
+                        $('#inform_job').text("Стрим не добавлен к продукту Редактирование стрима успешно!");
                         //window.location.href='/stream';
                     } else {
-                        alert("Ошибка редактирования!");
+                        //alert("Ошибка редактирования!");
+                        $('#inform_job').text("Ошибка редактирования!");
                         console.log(data);
                     }
                 }
