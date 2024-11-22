@@ -17,8 +17,9 @@
 			<h2 class="top-menu-title">Создание стрима</h2>
 		</div>
 		<div class="right-heder">
-			<button class="top-menu-btn save-st" id="save-st">Создать</button>
 			<!--<button class="top-menu-btn">Отменить публикацию</button>-->
+			<button class="menu-btn-grey-active" id="save-st">Создать</button><!-- Когда все поля заполнены добавляем класс "menu-btn-grey-active" -->
+			<button class="menu-btn-grey" id="save-st-1">Создать</button>
 		</div>
 	</header>
 	<main class="admin-container">

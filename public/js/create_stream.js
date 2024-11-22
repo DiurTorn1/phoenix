@@ -3,6 +3,7 @@ $(document).ready(function() {
     var image, image_name = '';
 
     $('#img_banner_trash').hide();
+    $('#save-st').hide();
 
 
     var r = new Resumable({
