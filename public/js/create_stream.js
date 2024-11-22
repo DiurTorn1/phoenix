@@ -46,6 +46,45 @@ $(document).ready(function() {
     search_int();
     setInterval('search_int()', 500);
 
+    $.post('/php/get_product_all.php', function(data)  {
+        //for(var i=0; i<data.length;i++){
+            var output = $.parseJSON(data);
+            $.each(output,function(i,item){
+                if(item.initial){
+                    //console.log(item.initial);
+                    $.post('/php/get_product_table.php', { table:item.initial }, function(data)  {
+                        //console.log(data);
+                        var key_product_get = 0;
+                        var output1 = $.parseJSON(data);
+                        $.each(output1,function(i,item1){
+                            if(item1.id_stream == id_card){
+                                key_product_get = 1;
+                            }
+                            
+                        });
+                        if(key_product_get != 1){
+                            $.post('/php/get_product_card.php', {id:item.id_product}, function(data)  {
+                                var pars = data.split("&");
+                                //console.log(pars[1]);
+                                $('#admin_product_seasonct').append($('<option>', {
+                                    value: 1,
+                                    text: pars[1]
+                                }));
+                            });
+
+                        }
+                    });
+                }
+
+
+
+                //console.log(item.id_product);
+            });
+            
+        //}
+        
+    });
+
     var main_image;
     var image, image_name = '';
     var r = new Resumable({
@@ -195,7 +234,7 @@ $(document).ready(function() {
             var list = output.data;
              $('#admin_link_playct').val(list.play_link);
              if(list.play_link){
-                alert("Стрим создан");
+                //alert("Стрим создан");
                 if(image_name){
                     var idiss = list.id;
                     $.post('/php/upload_poster.php',{ image_name:image_name, id:list.id }, function(data){
@@ -204,14 +243,15 @@ $(document).ready(function() {
                         var list2 = output.data;
                         $.each(list2,function(i,item2){
                             if(item2.id == idiss){
-                                alert("Постер добавлен к стриму");
+                                //alert("Постер добавлен к стриму");
+                                window.location.href='/stream';
                             }
                         });
     
                     });
                 }
              } else {
-                alert("Ошибка создания стрима");
+                //alert("Ошибка создания стрима");
              }
             //$.each(list,function(i,item){
                 //console.log("Video inform:\r\n");

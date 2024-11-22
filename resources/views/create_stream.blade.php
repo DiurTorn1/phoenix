@@ -112,7 +112,7 @@
 					<label>Добавить к продукту</label>
 					<!--<input type="text" name="Начало трансляции" class="block-admin-input 		admin-input" placeholder=" " id="admin_product_seasonct">-->
 					<select class="admin-input admin-input-select block-admin-input" id="admin_product_seasonct">
-
+						<option value="Не добавлять к продукту">Не добавлять к продукту</option>
 					</select>
 				</div>
 			</div>

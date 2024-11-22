@@ -313,13 +313,13 @@ $(document).ready(function() {
             var entrypoints_get = output? output[2]: '1';
             console.log("Entrypoints: "+entrypoints_get);
             if(entrypoints_get == name_entrypoints){
-                alert("Стрим ранее был добавлен к etrypoint");
+                //alert("Стрим ранее был добавлен к etrypoint");
             } else {
                 $.post('/php/entrypoints_stream_add.php', {name_stream:name_stream, name_entrypoints:name_entrypoints, create_at:localdate}, function(data)  {
                     if(data=='OK'){
-                        alert("Стрим: " + name_stream + " Добавлен к entrypoint:" + name_entrypoints);
+                        //alert("Стрим: " + name_stream + " Добавлен к entrypoint:" + name_entrypoints);
                     } else {
-                        alert("Ошибка добавления entrypoint к стриму!");
+                        //alert("Ошибка добавления entrypoint к стриму!");
                     }
                 });
             }
@@ -393,18 +393,18 @@ $(document).ready(function() {
                 }
 
                 if(output.error){
-                    alert('Стрим закончен! Редактирование не возможно!');
+                   // alert('Стрим закончен! Редактирование не возможно!');
                     //window.location.href='/stream';
                 } else {
                     var list = output.data;
                     //console.log("Video inform:\r\n"); UPDATE `product_public_permission` SET `initial`='Raid shadow legends' WHERE `id_product`='34'
                     //console.log(list.id);// + "\r\nworkspace_id: " + item.workspace_id + "\r\nparent_id: " + item.parent_id + "\r\nname: " + item.name + "\r\nsubtitle: " + item.subtitle +
                     if(id_card == params.get('admin_input_id')){
-                        alert("Редактирование стрима успешно!");
+                        //alert("Редактирование стрима успешно!");
                         window.location.href='/stream';
                     } else {
-                        alert("Ошибка редактирования!");
-                        console.log(data);
+                        //alert("Ошибка редактирования!");
+                        ///console.log(data);
                     }
                 }
 
