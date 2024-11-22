@@ -53,6 +53,8 @@ $(document).ready(function() {
     $('#img_banner_trash').hide();
     $('#save-st').hide();
 
+    search_int();
+    setInterval('search_int()', 500);
 
     var r = new Resumable({
         target: '/'
