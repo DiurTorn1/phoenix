@@ -81,7 +81,22 @@
            			</div>
 				</div>
          	</div>
-</div>     
+</div>  
+<div class = "slide_main">
+</div>
+
+<div class="index-live">
+	<h2>Подписка</h2>
+	<div class="index-live-list">
+		<div id="slider-wrap1">
+         	<div id="active-slide1">
+           		<div id="slider1">
+           		</div>
+			</div>
+        </div>
+
+	</div>
+</div>   
 @section('content')
 
 </main>

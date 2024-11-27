@@ -115,6 +115,71 @@ function paint_element_stream(){
 
 }
 
+function paint_element_product(){
+    //var user_email = $('#name_user_get').text();
+    //console.log(user_email);
+    for(var i = 0; i < count_product; i ++){
+        $.post('/php/get_product_id.php',{ id:array_product[i] }, function(data)  {
+            //console.log(data);
+            var output = $.parseJSON(data);
+            var id_product = output[0];
+            var src_product = output[17];
+            var name_product = output[1];
+            var price_product = output[12];
+            $.post('/php/get_product_public.php',{ id:id_product }, function(data)  {
+                var output = $.parseJSON(data);
+                //console.log(output);
+                var prm_prod = output ? output[1]:'';
+                
+                
+                if(prm_prod == id_product){
+                        $("#slider1").append(
+                            '<div class="slide index-live-item" id="' + id_product + '">' +
+                                '<div class="index-live-item-video">' +
+                                    '<a href="#">' +
+                                        '<div class="index-live-banner">' +
+                                            '<img src="' + src_product + '">' +
+                                        '</div> ' +
+                                    '</a>' +
+                                '</div>' +
+                                '<div class="index-item-text-wrap">' + 
+                                    '<a href="#">' + name_product + '</a>' +
+                                    '<ul>' +
+                                        //'<li>Билет на 5 дней</li>' +
+                                    '</ul>' +
+                                '</div>' +
+                                '<div class="index-live-item-text">' +
+                                    //'<a  class="user-button" id="product_price">' + output[12] + ' &#8381;</a>'+
+                                    '<a  class="user-button button_sell_user" id="product_price_' +  id_product + '">' + price_product + ' &#8381;</a>'+
+                                '</div>' +
+                            '</div>');
+                }
+            });
+            /**/
+        });
+    }
+/*
+				<div class="index-live-item">
+					<div class="index-live-item-video">
+						<a href="#">
+							<div class="index-live-banner"><!-- БАННЕР ВИДЕО!! -->
+								<img src="img/phoenix.png">
+							</div>
+						</a>
+					</div>
+					<div class="index-item-text-wrap">
+						<a href="#">27.04.2024 Баскетбол ДБЛ "Аврора" Д 2013 Ф г. Окуневка</a>
+						<ul>
+							<li>Билет на 5 дней</li>
+						</ul>
+					</div>
+					<div class="index-live-item-text"> 
+						<a href="#" class="user-button">150 &#8381;</a>
+					</div>
+				</div>
+*/ 
+}
+
 function get_stream_array(){
     
     var count = 0;
@@ -212,7 +277,7 @@ function get_stream_array(){
                
         
             }
-            //paint_element_product();
+            paint_element_product();
             key_paint1 = 1;
         }
 
@@ -276,11 +341,9 @@ $(document).ready(function() {
         });*/
 
         $(document).on('click', '.button_sell_user', function() {
-            var id = this.id;
-            console.log(id);
-            //$("#admin_input_id").val(id);
-            window.location.href='/sell_panel?user_sell='+user_email+ '&id_product_sell='+id;
-            //alert("Text: " + this.id);
+            $('html, body').animate({ scrollTop: 0 }, 'slow');
+            $("#details_registr").text("Зарегестрируйтесь для покупки продукта.");
+            $('#popup-back-login').toggle();
         });
 
         $(document).on('click', '.bay', function() {
