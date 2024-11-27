@@ -3,6 +3,7 @@
 		<div class="footer-left-column">
 			<p>ANPSO «CDSP «PHOENIX» ALL RIGHTS RESERVED. <script>document.write(new Date().getFullYear());</script></p>
 			<span>Официальный видеосервис АНФСО «ЦРСП «ФЕНИКС»</span>
+			<span>ОГРН 1237800047870, ИНН 7814822027, КПП 781401001</span>
 		</div>
 		<div class="footer-center-column">
 			<a href="/privacy_policy" target="_blank">Политика конфиденциальности</a>
