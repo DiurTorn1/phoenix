@@ -68,6 +68,7 @@ $(document).ready(function() {
         $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:res_price, id_product:id_product}, function(data)  {
             //console.log(data);
             window.location.href=data;
+            window.location.href="/";
         });
     });
 
