@@ -23,6 +23,8 @@ function getPromocode() {
     
 }
 
+
+
 $(document).ready(function() {
 
     getPromocode();
@@ -61,6 +63,22 @@ $(document).ready(function() {
         id_product = id_product_loc;
     });
     console.log(sale);
+    var ip_port;
+    function getIPAddress() {
+        $.ajax({
+            url: '/php/get_ip.php', // Server-side script
+            type: 'GET',
+            success: function(response) {
+                //console.log(response);
+                ip_port = response;
+            },
+            error: function(xhr, status, error) {
+                console.error('Error getting IP address:', error);
+            }
+        });
+    }
+    getIPAddress();
+
     $("#bay_product").on('click', function() {
         //console.log(src_product);
         //console.log(name_product);
@@ -68,6 +86,13 @@ $(document).ready(function() {
         var dNow = new Date();
         var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
         console.log(localdate);
+        var status = load;
+        console.log(ip_port + ' ' + user_sell + ' ' + name_product + ' ' + res_price + ' ' + id_product + ' ' + status + ' ' + localdate );
+        //$.post('/php/presell_payment.php', {ip_port:ip_port, mail:mail, name_product:name_product, price:price, id_product:id_product, status:status, created_at:localdate}, function(data)  {
+            //console.log(data);
+           // window.location.href=data;
+           // window.location.href="/"; ip_port mail name_product price id_product created_at status
+        //});
         //$.post('/php/sell_user_payment.php', {name_product:name_product, price_product:res_price, id_product:id_product}, function(data)  {
             //console.log(data);
            // window.location.href=data;
