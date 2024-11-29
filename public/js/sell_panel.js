@@ -86,7 +86,7 @@ $(document).ready(function() {
         var dNow = new Date();
         var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
         console.log(localdate);
-        var status = load;
+        var status = 'load';
         console.log(ip_port + ' ' + user_sell + ' ' + name_product + ' ' + res_price + ' ' + id_product + ' ' + status + ' ' + localdate );
         //$.post('/php/presell_payment.php', {ip_port:ip_port, mail:mail, name_product:name_product, price:price, id_product:id_product, status:status, created_at:localdate}, function(data)  {
             //console.log(data);
