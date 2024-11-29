@@ -65,11 +65,14 @@ $(document).ready(function() {
         //console.log(src_product);
         //console.log(name_product);
         //console.log(price_product);
-        $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:res_price, id_product:id_product}, function(data)  {
+        var dNow = new Date();
+        var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+        console.log(localdate);
+        //$.post('/php/sell_user_payment.php', {name_product:name_product, price_product:res_price, id_product:id_product}, function(data)  {
             //console.log(data);
-            window.location.href=data;
-            window.location.href="/";
-        });
+           // window.location.href=data;
+           // window.location.href="/";
+        //});
     });
 
 });
