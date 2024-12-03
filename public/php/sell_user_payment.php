@@ -1,8 +1,8 @@
 <?php
 
 $mrh_login = "phoenixtv.ru";
-$mrh_pass1 = "l6ZcHuk6nzW1Rc3QuLF6";
-$inv_id = $_POST['id_product'];;
+$mrh_pass1 = "nCWY57iaB1fKog5zr2BK";
+$inv_id = $_POST['id_product'];
 $inv_desc = $_POST['name_product'];
 $out_summ = $_POST['price_product'];
 $IsTest = 1;

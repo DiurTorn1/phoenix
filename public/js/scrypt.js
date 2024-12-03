@@ -1,6 +1,8 @@
 
 
 $(document).ready(function() {
+    var user_email = $('#name_user_get').text();
+    console.log(user_email);
     //$("#publishBtn").click(function(){ name_get_pars
     //});
     $.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data) {
@@ -211,6 +213,34 @@ $(document).ready(function() {
         $('#popup-back-login').toggle();
     });
 });
+var params = new window.URLSearchParams(window.location.search);
+var OutSum = params.get('OutSum');
+var InvId = params.get('InvId');
+var SignatureValue = params.get('SignatureValue');
+var Culture = params.get('Culture');
+
+if(OutSum && InvId && SignatureValue && Culture){
+    //console.log(OutSum+" : "+InvId+" : "+SignatureValue+" : "+Culture);
+    $.post('/php/get_sell_payment.php', {OutSum:OutSum, InvId:InvId, SignatureValue:SignatureValue, Culture:Culture}, function(data){
+        //console.log(data);
+        if(data=='OK'){
+            if(OutSum && InvId && SignatureValue && Culture){
+                user_global = $('#name_user_get').text();
+                var dNow = new Date();
+                var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+                $.post('/php/sell_user_add.php', {user_global:user_global, product_global:InvId, create_at:localdate}, function(data)  {
+                if(data == 'OK'){
+                    alert("Оплата прошла!");
+                    window.location.href="/";
+                }
+                });
+            }
+        } else {
+            alert("Оплата не прошла!");
+            window.location.href="/";
+        }
+    });
+}
 
 window.glist = function(){ 
     alert("Global func");
