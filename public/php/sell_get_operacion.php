@@ -23,7 +23,9 @@ $response = curl_exec($ch);
 
 // Проверка на ошибки
 if (curl_errno($ch)) {
-    echo 'Ошибка cURL: ' . curl_error($ch);
+    $error_message = 'Ошибка cURL: ' . curl_error($ch);
+    error_log($error_message);
+    echo $error_message;
 } else {
     // Вывод ответа
     echo $response;
