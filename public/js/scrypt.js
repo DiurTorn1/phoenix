@@ -5,6 +5,10 @@ $(document).ready(function() {
     console.log(user_email);
     //$("#publishBtn").click(function(){ name_get_pars
     //});
+    $.post('/php/sell_get_operacion.php', function(data) {
+        console.log(data);
+    });
+
     $.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data) {
         var output1 = $.parseJSON(data);
         //console.log(output1);
