@@ -230,14 +230,14 @@ if(OutSum && InvId && SignatureValue && Culture){
                 var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
                 $.post('/php/sell_user_add.php', {user_global:user_global, product_global:InvId, create_at:localdate}, function(data)  {
                 if(data == 'OK'){
-                    alert("Оплата прошла!");
+                    //alert("Оплата прошла!");
                     window.location.href="/";
                 }
                 });
             }
         } else {
-            alert("Оплата не прошла!");
-            window.location.href="/";
+            //alert("Оплата не прошла!");
+            //window.location.href="/";
         }
     });
 }
