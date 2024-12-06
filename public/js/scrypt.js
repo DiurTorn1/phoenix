@@ -16,7 +16,7 @@ $(document).ready(function() {
                 console.log(item1.created_at);
                 console.log(item1.id_product);
                 console.log(item1.mail);
-            }
+            });
         }
     });
 
