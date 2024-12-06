@@ -18,18 +18,23 @@ $(document).ready(function() {
                     //console.log(data2);
                     var xmlDoc = $.parseXML(data2);
                     var $xml = $(xmlDoc);
-                    console.log($xml);
-                    console.log(xmlDoc);
+                    //console.log($xml);
+                    //console.log(xmlDoc);
                     // Выборка элементов и добавление их в список
                     $xml.find('State').each(function() {
                         var $state = $(this);
                         var code = $state.find('Code').text();
                         //var author = $book.find('author').text();
 
-                        console.log(code);
+                        //console.log(code);
+                        if(code){
+                            //$.post('/php/sell_user_add.php', {product_global:item1.id_product, user_global:item1.mail, create_at:item1.created_at}, function(data) {
+                                console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
+                            //});
+                        }
                     });
                 });
-                //$.post('/php/sell_user_add.php', {email:$("#email_get_pars").text() }, function(data) {});
+                
             });
         }
     });
