@@ -9,7 +9,8 @@ $(document).ready(function() {
         //console.log(data);
     //});
     $.post('/php/get_presell_status.php', {status:'load' }, function(data) {
-        console.log(data);
+        var output1 = $.parseJSON(data);
+        console.log(output1);
     });
 
     $.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data) {
