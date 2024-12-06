@@ -17,8 +17,8 @@ $(document).ready(function() {
                 $.post('/php/sell_get_operacion.php', function(data2) {
                     //console.log(data2);
                     var xmlDoc = $.parseXML(data2);
-                    console.log(xmlDoc);
-                    //var $xml = $(xmlDoc);
+                    var $xml = $(xmlDoc);
+                    console.log($xml);
                 });
                 //$.post('/php/sell_user_add.php', {email:$("#email_get_pars").text() }, function(data) {});
             });
