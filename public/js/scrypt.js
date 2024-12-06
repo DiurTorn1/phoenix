@@ -14,7 +14,8 @@ $(document).ready(function() {
                 //console.log(item1.created_at);
                 ////console.log(item1.id_product);
                 //console.log(item1.mail);
-                $.post('/php/sell_get_operacion.php', {id_product: item1.id_product}, function(data2) {
+                var int_id = parseInt(item1.id_product);
+                $.post('/php/sell_get_operacion.php', {id_product: int_id}, function(data2) {
                     //console.log(data2);
                     var xmlDoc = $.parseXML(data2);
                     var $xml = $(xmlDoc);
