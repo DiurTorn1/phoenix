@@ -20,6 +20,14 @@ $(document).ready(function() {
                     var $xml = $(xmlDoc);
                     console.log($xml);
                     console.log(xmlDoc);
+                    // Выборка элементов и добавление их в список
+                    $xml.find('State').each(function() {
+                        var $state = $(this);
+                        var code = $state.find('Code').text();
+                        //var author = $book.find('author').text();
+
+                        console.log(code);
+                    });
                 });
                 //$.post('/php/sell_user_add.php', {email:$("#email_get_pars").text() }, function(data) {});
             });
