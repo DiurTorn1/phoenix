@@ -19,6 +19,7 @@ $(document).ready(function() {
                     var xmlDoc = $.parseXML(data2);
                     var $xml = $(xmlDoc);
                     console.log($xml);
+                    console.log(xmlDoc);
                 });
                 //$.post('/php/sell_user_add.php', {email:$("#email_get_pars").text() }, function(data) {});
             });
