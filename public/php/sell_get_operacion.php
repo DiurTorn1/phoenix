@@ -2,7 +2,7 @@
 
 // Параметры запроса
 $merchantLogin = 'phoenixtv.ru';
-$invoiceID = 7814822027;
+$invoiceID = 58;
 $password2 = 'Z8fL6IuzbiJ7kq8K1xRb'; // Пароль#2 из технических настроек
 
 // Генерация контрольной суммы (Signature)
