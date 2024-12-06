@@ -2,10 +2,13 @@
 
 $(document).ready(function() {
     var user_email = $('#name_user_get').text();
-    console.log(user_email);
+    //console.log(user_email);
     //$("#publishBtn").click(function(){ name_get_pars
     //});
-    $.post('/php/sell_get_operacion.php', function(data) {
+    //$.post('/php/sell_get_operacion.php', function(data) {
+        //console.log(data);
+    //});
+    $.post('/php/get_presell_status.php', {status:'load' }, function(data) {
         console.log(data);
     });
 
