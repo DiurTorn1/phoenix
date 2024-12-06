@@ -10,7 +10,14 @@ $(document).ready(function() {
     //});
     $.post('/php/get_presell_status.php', {status:'load' }, function(data) {
         var output1 = $.parseJSON(data);
-        console.log(output1);
+        if(output1){
+            //console.log(output1);
+            $.each(output1,function(i,item1){
+                console.log(item1.created_at);
+                console.log(item1.id_product);
+                console.log(item1.mail);
+            }
+        }
     });
 
     $.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data) {
