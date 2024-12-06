@@ -5,17 +5,22 @@ $(document).ready(function() {
     //console.log(user_email);
     //$("#publishBtn").click(function(){ name_get_pars
     //});
-    //$.post('/php/sell_get_operacion.php', function(data) {
-        //console.log(data);
-    //});
+
     $.post('/php/get_presell_status.php', {status:'load' }, function(data) {
         var output1 = $.parseJSON(data);
         if(output1){
             //console.log(output1);
             $.each(output1,function(i,item1){
-                console.log(item1.created_at);
-                console.log(item1.id_product);
-                console.log(item1.mail);
+                //console.log(item1.created_at);
+                ////console.log(item1.id_product);
+                //console.log(item1.mail);
+                $.post('/php/sell_get_operacion.php', function(data2) {
+                    //console.log(data2);
+                    var xmlDoc = $.parseXML(data2);
+                    console.log(xmlDoc);
+                    //var $xml = $(xmlDoc);
+                });
+                //$.post('/php/sell_user_add.php', {email:$("#email_get_pars").text() }, function(data) {});
             });
         }
     });
