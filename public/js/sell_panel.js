@@ -90,9 +90,10 @@ $(document).ready(function() {
         console.log(ip_port + ' ' + user_sell + ' ' + name_product + ' ' + res_price + ' ' + id_product + ' ' + status + ' ' + localdate );
         $.post('/php/users_get_reg.php', {email:user_sell}, function(get_reg)  {
             var get_pars = $.parseJSON(get_reg);
-            console.log(get_pars[0]);
+            //console.log(get_pars[0]);
             if(get_pars){
-                //var id_pay = 1000000000 + parseInt(id_product) + get_pars[0];
+                var id_pay = 1000000000 + parseInt(id_product) + parseInt(get_pars[0]);
+                console.log(id_pay);
                 //$.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:id_pay, status:status, created_at:localdate}, function(data)  {
                     //console.log(data);
                     //if(data == 'OK'){
