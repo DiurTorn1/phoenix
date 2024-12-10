@@ -1,14 +1,5 @@
 
 function get_presell_load(){
-
-}
-
-$(document).ready(function() {
-    var user_email = $('#name_user_get').text();
-    //console.log(user_email);
-    //$("#publishBtn").click(function(){ name_get_pars
-    //});
-
     $.post('/php/get_presell_status.php', {status:'load' }, function(data) {
         var output1 = $.parseJSON(data);
         if(output1){
@@ -60,6 +51,16 @@ $(document).ready(function() {
             });
         }
     });
+}
+
+$(document).ready(function() {
+    var user_email = $('#name_user_get').text();
+    //console.log(user_email);
+    //$("#publishBtn").click(function(){ name_get_pars
+    //});
+
+    get_presell_load();
+    setInterval('get_presell_load()',1000);
 
     $.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data) {
         var output1 = $.parseJSON(data);
