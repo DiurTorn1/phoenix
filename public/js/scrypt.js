@@ -12,7 +12,7 @@ $(document).ready(function() {
             //console.log(output1);
             $.each(output1,function(i,item1){
                 //console.log(item1.created_at);
-                console.log(item1.id_product);
+                //console.log(item1.id_product);
                 //console.log(item1.mail);
                 var int_id = parseInt(item1.id_product);
                 $.post('/php/sell_get_operacion.php', {id_product: int_id}, function(data2) {
@@ -20,7 +20,7 @@ $(document).ready(function() {
                     var xmlDoc = $.parseXML(data2);
                     var $xml = $(xmlDoc);
                     //console.log($xml);
-                    console.log(xmlDoc);
+                    //console.log(xmlDoc);
                     // Выборка элементов и добавление их в список
                     $xml.find('State').each(function() {
                         var $state = $(this);
@@ -29,8 +29,16 @@ $(document).ready(function() {
 
                         //console.log(code);
                         if(code){
+                            $.post('/php/users_get_reg.php', {email:item1.mail}, function(get_reg)  {
+                                var get_pars = $.parseJSON(get_reg);
+                                //console.log(get_pars[0]);
+                                if(get_pars){
+                                    var id_pay = 1000000000 - parseInt(get_pars[0]);
+                                    console.log(id_pay+ " : " + item1.mail + " : " + item1.created_at);
+                                }
+                            });
                             //$.post('/php/sell_user_add.php', {product_global:item1.id_product, user_global:item1.mail, create_at:item1.created_at}, function(data) {
-                                console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
+                                //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
                             //});
                         }
                     });
