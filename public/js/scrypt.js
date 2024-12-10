@@ -33,7 +33,7 @@ $(document).ready(function() {
                                 var get_pars = $.parseJSON(get_reg);
                                 //console.log(get_pars[0]);
                                 if(get_pars){
-                                    var id_pay = 1000000000 - parseInt(get_pars[0]);
+                                    var id_pay = item1.id_product - 1000000000 - parseInt(get_pars[0]);
                                     console.log(id_pay+ " : " + item1.mail + " : " + item1.created_at);
                                 }
                             });
