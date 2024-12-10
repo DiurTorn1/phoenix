@@ -112,12 +112,12 @@ $(document).ready(function() {
                                 $.post('/php/upload_promocode_limit.php', {id:id_promocode, limit:lim_put}, function(data)  {
                                     if(data == 'OK'){
                                         window.location.href=data;
-                                        window.location.href="/";
+                                        //window.location.href="/";
                                     }
                                 });
                             } else {
                                 window.location.href=data;
-                                window.location.href="/";
+                                //window.location.href="/";
                             }
 
                         });
