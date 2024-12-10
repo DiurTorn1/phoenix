@@ -1,4 +1,4 @@
-var promocode, sale, key_promocode = 0, price_product, res_price;
+var promocode, sale, key_promocode = 0, price_product, res_price, id_promocode, limit_promocode;
 function getPromocode() {
     promocode = $("#promocode_product_sell").val();
     res_price = price_product;
@@ -13,7 +13,13 @@ function getPromocode() {
                 //console.log(price-(sale*0.01*price));
                 var res_sale = price-(sale*0.01*price);
                 res_price = res_sale;
-                $('#price_product_sell').val(res_sale);
+                var lim = parseInt(output[4]);
+                if(lim != 0){
+                    $('#price_product_sell').val(res_sale);
+                } else {
+                    $("#promocode_product_sell").val("Лимит промокода исчерпан");
+                }
+                
                 //sale = output[5];
             }
             
