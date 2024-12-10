@@ -98,9 +98,9 @@ $(document).ready(function() {
                     //console.log(data);
                     if(data == 'OK'){
                         $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:res_price, id_product:id_pay}, function(data)  {
-                            console.log(data);
+                            //console.log(data);
                             window.location.href=data;
-                            //window.location.href="/";
+                            window.location.href="/";
                         });
                     }
                    // window.location.href=data;
