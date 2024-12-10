@@ -107,17 +107,18 @@ $(document).ready(function() {
                     if(data == 'OK'){
                         $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:res_price, id_product:id_pay}, function(data)  {
                             //console.log(data);
+                            var url_pay = data;
                             if(id_promocode){
                                 var lim_put = limit_promocode - 1;
                                 $.post('/php/upload_promocode_limit.php', {id:id_promocode, limit:lim_put}, function(data)  {
                                     if(data == 'OK'){
-                                        window.location.href=data;
-                                        //window.location.href="/";
+                                        window.location.href=url_pay;
+                                        window.location.href="/";
                                     }
                                 });
                             } else {
-                                window.location.href=data;
-                                //window.location.href="/";
+                                window.location.href=url_pay;
+                                window.location.href="/";
                             }
 
                         });
