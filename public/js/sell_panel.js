@@ -14,6 +14,8 @@ function getPromocode() {
                 var res_sale = price-(sale*0.01*price);
                 res_price = res_sale;
                 var lim = parseInt(output[4]);
+                id_promocode = parseInt(output[0]);
+                limit_promocode = parseInt(output[4]);
                 if(lim != 0){
                     $('#price_product_sell').val(res_sale);
                 } else {
@@ -105,8 +107,19 @@ $(document).ready(function() {
                     if(data == 'OK'){
                         $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:res_price, id_product:id_pay}, function(data)  {
                             //console.log(data);
-                            window.location.href=data;
-                            window.location.href="/";
+                            if(id_promocode){
+                                var lim_put = limit_promocode - 1;
+                                $.post('/php/upload_promocode_limit.php', {id:id_promocode, limit:lim_put}, function(data)  {
+                                    if(data == 'OK'){
+                                        window.location.href=data;
+                                        window.location.href="/";
+                                    }
+                                });
+                            } else {
+                                window.location.href=data;
+                                window.location.href="/";
+                            }
+
                         });
                     }
                    // window.location.href=data;
