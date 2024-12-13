@@ -105,15 +105,14 @@ $(document).ready(function() {
                 var get_pars = $.parseJSON(get_reg);
                 //console.log(get_pars[0]);
                 if(get_pars){
-                    if(name_product == 'Тестовая на 3 дня'){
-                        window.location.href='https://auth.robokassa.ru/RecurringSubscriptionPage/Subscription/Subscribe?SubscriptionId=9d7a0500-d971-475f-a47a-53ee2aebb080';
-                    }
                     //var id_pay = 1000000000 + parseInt(id_product) + parseInt(get_pars[0]);
                     //console.log(id_pay);
-                    //$.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:id_pay, status:status, created_at:localdate}, function(data)  {
+                    $.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:id_pay, status:status, created_at:localdate}, function(data)  {
                         //console.log(data);
-                        //if(data == 'OK'){
-                            
+                        if(data == 'OK'){
+                            if(name_product == 'Тестовая на 3 дня'){
+                                window.location.href='https://auth.robokassa.ru/RecurringSubscriptionPage/Subscription/Subscribe?SubscriptionId=9d7a0500-d971-475f-a47a-53ee2aebb080';
+                            }
                             //$.post('/php/sell_user_payment.php', function(data)  {
                                 //console.log(data);
                                 //var url_pay = data;
@@ -131,10 +130,10 @@ $(document).ready(function() {
                                 //}
     
                             //});
-                        //}
+                        }
                        // window.location.href=data;
                        // window.location.href="/"; ip_port mail name_product price id_product created_at status
-                    //});
+                    });
                 }
             });
         } else if(type_product == 'ticket'){
