@@ -61,9 +61,7 @@ $(document).ready(function() {
         var src_product_loc = output[17];
         var name_product_loc = output[1];
         var price_product_loc = output[12];
-        var preparse_type = output[2];
-        //console.log(preparse_type);
-        var parse_type = preparse_type.parse("+");
+        var parse_type = output[2].split("+");
         console.log(parse_type[0]);
         $('#sell_src_img').attr('src', src_product_loc);
         $('#name_product_sell').val(name_product_loc);
