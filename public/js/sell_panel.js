@@ -44,6 +44,7 @@ $(document).ready(function() {
     //user_sell='+user_email+ '&id_product_sell='+id
     var user_sell = params.get('user_sell');
     var id_product_sell = params.get('id_product_sell');
+    var type_product;
 
     //console.log(user_sell);
     $('#user_sell').val(user_sell);
@@ -55,6 +56,8 @@ $(document).ready(function() {
     var name_product;
     //var price_product;
     $.post('/php/get_product_id.php',{ id:id_product[2] }, function(data)  {
+        var parse_type = output[2].parse("+");
+        console.log(parse_type[0]);
         var output = $.parseJSON(data);
         var id_product_loc = output[0];
         var src_product_loc = output[17];
