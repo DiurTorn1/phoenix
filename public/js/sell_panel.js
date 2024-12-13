@@ -72,7 +72,7 @@ $(document).ready(function() {
         price_product = price_product_loc;
         id_product = id_product_loc;
     });
-    console.log(sale);
+    //console.log(sale);
     var ip_port;
     function getIPAddress() {
         $.ajax({
