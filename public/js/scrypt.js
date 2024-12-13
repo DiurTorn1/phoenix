@@ -87,7 +87,7 @@ $(document).ready(function() {
             url: '/php/get_ip.php', // Server-side script
             type: 'GET',
             success: function(response) {
-                console.log(response);
+                //console.log(response);
             },
             error: function(xhr, status, error) {
                 console.error('Error getting IP address:', error);

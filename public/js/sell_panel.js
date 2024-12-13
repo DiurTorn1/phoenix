@@ -95,9 +95,9 @@ $(document).ready(function() {
         //console.log(price_product);
         var dNow = new Date();
         var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
-        console.log(localdate);
+        //console.log(localdate);
         var status = 'load';
-        console.log(ip_port + ' ' + user_sell + ' ' + name_product + ' ' + res_price + ' ' + id_product + ' ' + status + ' ' + localdate );
+        //console.log(ip_port + ' ' + user_sell + ' ' + name_product + ' ' + res_price + ' ' + id_product + ' ' + status + ' ' + localdate );
         
         if(type_product == 'subscript'){
             console.log(type_product);
