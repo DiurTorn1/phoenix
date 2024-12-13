@@ -56,14 +56,13 @@ $(document).ready(function() {
     var name_product;
     //var price_product;
     $.post('/php/get_product_id.php',{ id:id_product[2] }, function(data)  {
-        var parse_type = output[2].parse("+");
-        console.log(parse_type[0]);
         var output = $.parseJSON(data);
         var id_product_loc = output[0];
         var src_product_loc = output[17];
         var name_product_loc = output[1];
         var price_product_loc = output[12];
-
+        var parse_type = output[2].parse("+");
+        console.log(parse_type[0]);
         $('#sell_src_img').attr('src', src_product_loc);
         $('#name_product_sell').val(name_product_loc);
         $('#price_product_sell').val(price_product_loc);
