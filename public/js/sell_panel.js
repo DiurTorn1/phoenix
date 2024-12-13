@@ -98,8 +98,11 @@ $(document).ready(function() {
         console.log(localdate);
         var status = 'load';
         console.log(ip_port + ' ' + user_sell + ' ' + name_product + ' ' + res_price + ' ' + id_product + ' ' + status + ' ' + localdate );
-        console.log(type_product);
-        /*$.post('/php/users_get_reg.php', {email:user_sell}, function(get_reg)  {
+        
+        if(type_product == 'subscript'){
+            console.log(type_product);
+        } else if(type_product == 'ticket'){
+            $.post('/php/users_get_reg.php', {email:user_sell}, function(get_reg)  {
             var get_pars = $.parseJSON(get_reg);
             //console.log(get_pars[0]);
             if(get_pars){
@@ -130,7 +133,10 @@ $(document).ready(function() {
                    // window.location.href="/"; ip_port mail name_product price id_product created_at status
                 });
             }
-        });*/
+            });
+        } else {
+
+        }
 
     });
 
