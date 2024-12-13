@@ -100,7 +100,43 @@ $(document).ready(function() {
         //console.log(ip_port + ' ' + user_sell + ' ' + name_product + ' ' + res_price + ' ' + id_product + ' ' + status + ' ' + localdate );
         
         if(type_product == 'subscript'){
-            console.log(type_product);
+            //console.log(type_product);
+            $.post('/php/users_get_reg.php', {email:user_sell}, function(get_reg)  {
+                var get_pars = $.parseJSON(get_reg);
+                //console.log(get_pars[0]);
+                if(get_pars){
+                    if(name_product == 'Тестовая на 3 дня'){
+                        window.location.href='https://auth.robokassa.ru/RecurringSubscriptionPage/Subscription/Subscribe?SubscriptionId=9d7a0500-d971-475f-a47a-53ee2aebb080';
+                    }
+                    //var id_pay = 1000000000 + parseInt(id_product) + parseInt(get_pars[0]);
+                    //console.log(id_pay);
+                    //$.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:id_pay, status:status, created_at:localdate}, function(data)  {
+                        //console.log(data);
+                        //if(data == 'OK'){
+                            
+                            //$.post('/php/sell_user_payment.php', function(data)  {
+                                //console.log(data);
+                                //var url_pay = data;
+                                //if(id_promocode){
+                                    //var lim_put = limit_promocode - 1;
+                                    //$.post('/php/upload_promocode_limit.php', {id:id_promocode, limit:lim_put}, function(data)  {
+                                        //if(data == 'OK'){
+                                            //window.location.href=url_pay;
+                                            //window.location.href="/";
+                                        //}
+                                    //});
+                               // } else {
+                                    //window.location.href=url_pay;
+                                    //window.location.href="/";
+                                //}
+    
+                            //});
+                        //}
+                       // window.location.href=data;
+                       // window.location.href="/"; ip_port mail name_product price id_product created_at status
+                    //});
+                }
+            });
         } else if(type_product == 'ticket'){
             $.post('/php/users_get_reg.php', {email:user_sell}, function(get_reg)  {
             var get_pars = $.parseJSON(get_reg);
