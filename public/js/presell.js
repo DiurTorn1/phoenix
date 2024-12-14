@@ -27,6 +27,7 @@ $(document).ready(function(){
         //console.log(id);
         $.post('/php/dell_presell.php', { id:id }, function(data)  {
             console.log(data);
+            window.location.href='/presell';
         });
         //$("#admin_input_id").val(id);
         //window.location.href='/player_stream?player_stream_id='+id;
@@ -34,7 +35,7 @@ $(document).ready(function(){
     });
     $(document).on('click', '.ver_sell', function() {
         var id = this.id;
-        console.log(id);
+        //console.log(id);
         //$("#admin_input_id").val(id);
         //window.location.href='/player_stream?player_stream_id='+id;
         //alert("Text: " + this.id);
