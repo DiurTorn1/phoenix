@@ -14,11 +14,26 @@ $(document).ready(function(){
                         '</td>' +
                         '<td class="table-one-column disp-fl-sb fl-dir-col">' + item.created_at + '</td>' +
                         '<td class="td-item-action">' +
-                            '<button class="del-button" id="' + item.id + '">Удалить</button>' +
-                            '<button class="del-button" id="' + item.id + '">Подтвердить подписку</button>' +
+                            '<button class="del-button del_sell" id="' + item.id + '">Удалить</button>' +
+                            '<button class="del-button ver_sell" id="' + item.id + '">Подтвердить подписку</button>' +
                         '</td>' +
                     '</tr>'); 
             }
         });
+    });
+
+    $(document).on('click', '.del_sell', function() {
+        var id = this.id;
+        console.log(id);
+        //$("#admin_input_id").val(id);
+        //window.location.href='/player_stream?player_stream_id='+id;
+        //alert("Text: " + this.id);
+    });
+    $(document).on('click', '.ver_sell', function() {
+        var id = this.id;
+        console.log(id);
+        //$("#admin_input_id").val(id);
+        //window.location.href='/player_stream?player_stream_id='+id;
+        //alert("Text: " + this.id);
     });
 });
