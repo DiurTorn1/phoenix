@@ -185,6 +185,10 @@ Route::get('/player_video', function () {
     return view('player_video');
 });
 
+Route::get('/presell', function () {
+    return view('presell');
+});
+
 //Route::resource('products', ProductPhoenix::class);
 //Route::group(['middleware' => ['web']], function() {
     //Route::resource('products', ProductPhoenix::class);
