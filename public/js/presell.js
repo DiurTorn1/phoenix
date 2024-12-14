@@ -65,7 +65,7 @@ $(document).ready(function(){
                         //if(data == "OK"){
                             $.post('/php/upload_presell_status.php', {id:id, status:'load'}, function(data) {
                                 if(data == "OK"){
-                                    console.log("Delete subscribe");
+                                    window.location.href='/presell';
                                 } 
                             });
                         //}
@@ -93,7 +93,7 @@ $(document).ready(function(){
                         if(data == "OK"){
                             $.post('/php/upload_presell_status.php', {id:id, status:'bay'}, function(data) {
                                 if(data == "OK"){
-                                    console.log("Success bay");
+                                    window.location.href='/presell';
                                 } 
                             });
                         }
