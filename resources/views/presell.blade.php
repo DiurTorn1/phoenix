@@ -14,7 +14,7 @@
 </div>
 
 <table>
-<tbody class="tbody-wrapper">
+<tbody class="tbody-wrapper" id="presell_list">
      <tr class="tr-wrapper admin-video-item admin-back">
            <td class="admin-video-btn">Сумма</td>
            <td class="admin-video-btn">Поставщик</td>
