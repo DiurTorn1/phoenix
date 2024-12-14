@@ -35,6 +35,10 @@ $(document).ready(function(){
     });
     $(document).on('click', '.ver_sell', function() {
         var id = this.id;
+        $.post('/php/get_presell_id.php', { id:id }, function(data)  {
+            var output = $.parseJSON(data);
+            console.log(output);
+        });
         //console.log(id);
         //$("#admin_input_id").val(id);
         //window.location.href='/player_stream?player_stream_id='+id;
