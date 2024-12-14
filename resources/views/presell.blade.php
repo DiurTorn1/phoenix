@@ -16,40 +16,12 @@
 <table>
 <tbody class="tbody-wrapper" id="presell_list">
      <tr class="tr-wrapper admin-video-item admin-back">
-           <td class="admin-video-btn">Сумма</td>
-           <td class="admin-video-btn">Поставщик</td>
+           <td class="admin-video-btn">Цена</td>
+           <td class="admin-video-btn">Название продукта</td>
            <td class="admin-video-btn table-one-column">Пользователь</td>
-           <td class="admin-video-btn table-one-column">Продукт</td>
-           <td class="admin-video-btn">Продление</td>
+           <td class="admin-video-btn table-one-column">Время оплаты</td>
+           <td class="admin-video-btn">Дейстаие</td>
     </tr>
-    <tr class="tr-wrapper admin-video-item admin-back">
-        <td class="paid-amount">156 &#8381;</td>
-           <td class="">ROBOKASSA</td>
-           <td class="table-one-column">
-               <a href="#" class="paid-users">useritosone@users.com</a>
-           </td>
-           <td class="table-one-column disp-fl-sb fl-dir-col">Билет на просмотр игр 02-07.07.2024 Ю11 Финал А Город Псков (На 5 дней)
-               <span class="pay-per-view-text">Оплата за просмотр</span>
-           </td>
-           <td class=""></td>
-           <td class="">5 дней</td>
-    </tr>
-    <tr class="tr-wrapper admin-video-item admin-back">
-        <td class="paid-amount">150 &#8381;</td>
-           <td class="">ROBOKASSA</td>
-           <td class="table-one-column">
-               <a href="#" class="paid-users">useritosone@users.com</a>
-           </td>
-           <td class="table-one-column disp-fl-sb fl-dir-col">Билет на просмотр игр 02-07.07.2024 Ю11 Финал А Город Псков (На 5 дней)
-               <span class="pay-per-view-text">Оплата за просмотр</span>
-           </td>
-           <td class=""></td>
-           <td class="td-item-action">
-            <button class="del-button">Удалить</button>
-            <button class="del-button">Подтвердить подписку</button>
-           </td>
-    </tr>
-
 </tbody>
 </table>
 
