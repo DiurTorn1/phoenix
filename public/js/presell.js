@@ -18,6 +18,20 @@ $(document).ready(function(){
                             '<button class="del-button ver_sell" id="' + item.id + '">Подтвердить подписку</button>' +
                         '</td>' +
                     '</tr>'); 
+            } else {
+                $("#presell_list").append(
+                    '<tr class="tr-wrapper admin-video-item admin-back">' +
+                        '<td class="paid-amount">' + item.price + ' &#8381;</td>' +
+                        '<td class="">' + item.name_product + '</td>' +
+                        '<td class="table-one-column">' +
+                            '<a href="#" class="paid-users">' + item.mail + '</a>' +
+                        '</td>' +
+                        '<td class="table-one-column disp-fl-sb fl-dir-col">' + item.created_at + '</td>' +
+                        '<td class="td-item-action">' +
+                            '<button class="del-button del_sell" id="' + item.id + '">Удалить</button>' +
+                            '<button class="del-button ver_sell" id="' + item.id + '">Отменить подписку</button>' +
+                        '</td>' +
+                    '</tr>');  
             }
         });
     });
