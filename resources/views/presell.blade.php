@@ -20,7 +20,7 @@
            <td class="admin-video-btn">Название продукта</td>
            <td class="admin-video-btn table-one-column">Пользователь</td>
            <td class="admin-video-btn table-one-column">Время оплаты</td>
-           <td class="admin-video-btn">Дейстаие</td>
+           <td class="admin-video-btn"></td>
     </tr>
 </tbody>
 </table>
