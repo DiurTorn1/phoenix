@@ -48,7 +48,7 @@ $(document).ready(function(){
                     $.post('/php/sell_user_add.php', {product_global:id_pay, user_global:output[2], create_at:output[6]}, function(data) {
                         //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
                         if(data == "OK"){
-                            $.post('/php/upload_presell_status.php', {id:output[5], status:'bay'}, function(data) {
+                            $.post('/php/upload_presell_status.php', {id:id, status:'bay'}, function(data) {
                                 if(data == "OK"){
                                     console.log("Success bay");
                                 } 
