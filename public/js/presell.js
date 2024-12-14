@@ -37,7 +37,26 @@ $(document).ready(function(){
         var id = this.id;
         $.post('/php/get_presell_id.php', { id:id }, function(data)  {
             var output = $.parseJSON(data);
-            console.log(output);
+            //console.log(output);
+            $.post('/php/users_get_reg.php', {email:output[2]}, function(get_reg)  {
+                var get_pars = $.parseJSON(get_reg);
+                //console.log(get_pars[0]);
+                if(get_pars){
+                    console.log(output[5]);
+                    /*var id_pay = item1.id_product - 1000000000 - parseInt(get_pars[0]);
+                    //console.log(id_pay+ " : " + item1.mail + " : " + item1.created_at);
+                    $.post('/php/sell_user_add.php', {product_global:id_pay, user_global:item1.mail, create_at:item1.created_at}, function(data) {
+                        //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
+                        if(data == "OK"){
+                            $.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
+                                if(data == "OK"){
+                                    console.log("Success bay");
+                                } 
+                            });
+                        }
+                    });*/
+                }
+            });
         });
         //console.log(id);
         //$("#admin_input_id").val(id);
