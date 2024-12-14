@@ -44,7 +44,10 @@
                <span class="pay-per-view-text">Оплата за просмотр</span>
            </td>
            <td class=""></td>
-           <td class="">5 дней</td>
+           <td class="td-item-action">
+            <button class="del-button">Удалить</button>
+            <button class="del-button">Подтвердить подписку</button>
+           </td>
     </tr>
 
 </tbody>
