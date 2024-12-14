@@ -65,6 +65,7 @@
 			<ul class="admin-navigation-list admin-back">
 				<li class="admin-navigation-item"><a href="/balance" class="admin-navigation-link"><img class="admin-menu-icon" src="img/wallet.png" alt="Баланс">Баланс</a></li>
 				<li class="admin-navigation-item"><a href="/purchases" class="admin-navigation-link"><img class="admin-menu-icon" src="img/cart-min.png" alt="Баланс">Покупки</a></li>
+				<li class="admin-navigation-item"><a href="/presell" class="admin-navigation-link"><img class="admin-menu-icon" src="img/cart-min.png" alt="Баланс">Предоплата</a></li>
 			</ul>
 			<ul class="admin-navigation-list admin-back">
 				<li class="admin-navigation-item"><a href="{{ route('users.index') }}" class="admin-navigation-link"><img class="admin-menu-icon" src="{{ asset('img/analitik.png') }}" alt="Пользователи">Пользователи</a></li>
