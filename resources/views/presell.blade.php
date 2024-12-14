@@ -21,9 +21,6 @@
            <td class="admin-video-btn table-one-column">Пользователь</td>
            <td class="admin-video-btn table-one-column">Продукт</td>
            <td class="admin-video-btn">Продление</td>
-           <td class="admin-video-btn">Период</td>
-           <td class="admin-video-btn">Создан в</td>
-           <td class="admin-video-btn">Истек в</td>
     </tr>
     <tr class="tr-wrapper admin-video-item admin-back">
         <td class="paid-amount">156 &#8381;</td>
@@ -36,18 +33,6 @@
            </td>
            <td class=""></td>
            <td class="">5 дней</td>
-           <td>
-               <div class="admin-video-item-header price-item-wrapper">
-                <p class="price-item-bold">17:36</p>
-                <p>1 января 2024</p>
-            </div>
-        </td>
-        <td>
-               <div class="admin-video-item-header price-item-wrapper">
-                <p class="price-item-bold">17:36</p>
-                <p>6 января 2024</p>
-            </div>
-        </td>
     </tr>
     <tr class="tr-wrapper admin-video-item admin-back">
         <td class="paid-amount">150 &#8381;</td>
@@ -60,18 +45,6 @@
            </td>
            <td class=""></td>
            <td class="">5 дней</td>
-           <td>
-               <div class="admin-video-item-header price-item-wrapper">
-                <p class="price-item-bold">17:36</p>
-                <p>1 января 2024</p>
-            </div>
-        </td>
-        <td>
-               <div class="admin-video-item-header price-item-wrapper">
-                <p class="price-item-bold">17:36</p>
-                <p>6 января 2024</p>
-            </div>
-        </td>
     </tr>
 
 </tbody>
