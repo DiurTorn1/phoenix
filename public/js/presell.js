@@ -24,7 +24,10 @@ $(document).ready(function(){
 
     $(document).on('click', '.del_sell', function() {
         var id = this.id;
-        console.log(id);
+        //console.log(id);
+        $.post('/php/dell_presell.php', { id:id }, function(data)  {
+            console.log(data);
+        });
         //$("#admin_input_id").val(id);
         //window.location.href='/player_stream?player_stream_id='+id;
         //alert("Text: " + this.id);
