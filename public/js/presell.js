@@ -30,7 +30,7 @@ $(document).ready(function(){
                             '<td class="table-one-column disp-fl-sb fl-dir-col">' + item.created_at + '</td>' +
                             '<td class="td-item-action">' +
                                 '<button class="del-button del_sell" id="' + item.id + '">Удалить</button>' +
-                                '<button class="del-button ver_sell" id="' + item.id + '">Отменить подписку</button>' +
+                                '<button class="del-button unver_sell" id="' + item.id + '">Отменить подписку</button>' +
                             '</td>' +
                         '</tr>');  
                 }
@@ -50,6 +50,32 @@ $(document).ready(function(){
         //window.location.href='/player_stream?player_stream_id='+id;
         //alert("Text: " + this.id);
     });
+
+    $(document).on('click', '.unver_sell', function() {
+        var id = this.id;
+        $.post('/php/get_presell_id.php', { id:id }, function(data)  {
+            var output = $.parseJSON(data);
+            //console.log(output);
+            $.post('/php/users_get_reg.php', {email:output[2]}, function(get_reg)  {
+                var get_pars = $.parseJSON(get_reg);
+                //console.log(get_pars[0]);
+                if(get_pars){
+                    $.post('/php/del_user_sell.php', { create_at:output[6]}, function(data) {
+                        //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
+                        //if(data == "OK"){
+                            $.post('/php/upload_presell_status.php', {id:id, status:'load'}, function(data) {
+                                if(data == "OK"){
+                                    console.log("Delete subscribe");
+                                } 
+                            });
+                        //}
+                    });
+                }
+            });
+        });
+    });
+
+
     $(document).on('click', '.ver_sell', function() {
         var id = this.id;
         $.post('/php/get_presell_id.php', { id:id }, function(data)  {
