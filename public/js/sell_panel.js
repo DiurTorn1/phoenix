@@ -110,9 +110,19 @@ $(document).ready(function() {
                     $.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:id_pay, status:status, created_at:localdate}, function(data)  {
                         //console.log(data);
                         if(data == 'OK'){
-                            if(name_product == 'Тестовая на 3 дня'){
-                                window.location.href='https://auth.robokassa.ru/RecurringSubscriptionPage/Subscription/Subscribe?SubscriptionId=9d7a0500-d971-475f-a47a-53ee2aebb080';
-                            }
+                            $.post('/php/sell_reccurent_payment.php', { OutSum: res_price, InvoiceID: id_pay, Description: name_product }, function(data){
+                                if (data.success) {
+                                    // Перенаправляем пользователя на страницу оплаты
+                                    //window.location.href = data.payment_url;
+                                    console.log(data.payment_url);
+                                } else {
+                                    // Выводим сообщение об ошибке
+                                    $('#response').html('Ошибка: ' + data.message);
+                                } 
+                            }, 'json');
+                            //if(name_product == 'Тестовая на 3 дня'){
+                                //window.location.href='https://auth.robokassa.ru/RecurringSubscriptionPage/Subscription/Subscribe?SubscriptionId=9d7a0500-d971-475f-a47a-53ee2aebb080';
+                            //}
                             //$.post('/php/sell_user_payment.php', function(data)  {
                                 //console.log(data);
                                 //var url_pay = data;
