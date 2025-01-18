@@ -113,8 +113,8 @@ $(document).ready(function() {
                             $.post('/php/sell_reccurent_payment.php', { OutSum: res_price, InvoiceID: id_pay, Description: name_product }, function(data){
                                 if (data.success) {
                                     // Перенаправляем пользователя на страницу оплаты
-                                    //window.location.href = data.payment_url;
-                                    console.log(data.payment_url);
+                                    window.location.href = data.payment_url;
+                                    //console.log(data.payment_url);
                                 } else {
                                     // Выводим сообщение об ошибке
                                     $('#response').html('Ошибка: ' + data.message);
