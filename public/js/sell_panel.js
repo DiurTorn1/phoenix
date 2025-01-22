@@ -29,8 +29,8 @@ function getPromocode() {
         });
     }
     if(type_product == 'subscript'){
-        console.log("$('#public_ophert').toggle()");
         $('#public_ophert').show();
+        $('#bay_product').prop('disabled', true);
     }
 }
 
