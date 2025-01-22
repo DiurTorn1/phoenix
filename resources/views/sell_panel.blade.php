@@ -69,6 +69,9 @@
 					<div class="user-input-box block-w100" style="white-space: normal; border: 1px solid #7d5d80;">
 						<a>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA</a>
 					</div>
+					<div class="user-input-box block-w100" >
+						<button type="submit" class="top-menu-btn" id="close_box_ophert" >Я прочитал условия публичной оферты</button>
+					</div>
 				</div>
 			</div>
 		</div>
