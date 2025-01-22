@@ -58,7 +58,7 @@
 		<div class="popup-container">
 			<div class="popup-content">
 				<div class="popup-title-wrap">
-					<button class="popup-close close-btn" title="Закрыть" ><img src="img/close.png" alt="Закрыть" ></button>
+					<button class="popup-close close-btn" title="Закрыть" id="close_box_ophert" ><img src="img/close.png" alt="Закрыть" ></button>
 
 					<div class="popup-title-wrap-row popup-title-none is-active" data-content="user-profile">
 						<h2 class="popup-title">Условия публичной оферты</h2>
@@ -67,7 +67,7 @@
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
 					<div class="user-input-box block-w100" style="white-space: normal; border: 1px solid #7d5d80;">
-						<label>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA</label>
+						<a>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA</a>
 					</div>
 				</div>
 			</div>

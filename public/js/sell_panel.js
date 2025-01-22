@@ -50,6 +50,7 @@ $(document).ready(function() {
         setInterval('getPromocode()',500);
     }
     $('#public_ophert').hide();
+    $('#ophert_box').hide();
     var params = new window.URLSearchParams(window.location.search);
     //user_sell='+user_email+ '&id_product_sell='+id
     var user_sell = params.get('user_sell');
@@ -100,9 +101,14 @@ $(document).ready(function() {
     getIPAddress();
     console.log(type_product);
 
-    //public_ophert_box
+    //public_ophert_box close_box_ophert
+    $("#close_box_ophert").on('click', function() {
+        //alert("lllllllllllll");
+        $('#ophert_box').hide();
+    });
     $("#public_ophert_box").on('click', function() {
-        alert("lllllllllllll");
+        //alert("lllllllllllll");
+        $('#ophert_box').show();
     });
 
     $("#bay_product").on('click', function() {
