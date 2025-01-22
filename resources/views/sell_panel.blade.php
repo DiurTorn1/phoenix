@@ -66,8 +66,8 @@
 				</div>
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
-					<div class="user-input-box " style=" white-space: normal; border: 1px solid black;">
-						AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
+					<div class="user-input-box block-w100" style="white-space: normal; border: 1px solid black;">
+						<a class="fast-text">AAAAAAAAAAAAAAAAAAAAAAAAAAAAAA AAAAAAAAAAAAAAAAAAAAAAAAAA</a>
 					</div>
 				</div>
 			</div>
