@@ -43,6 +43,8 @@
 						<label>Промокод</label>
 						<input type="text" placeholder="Введите промокод" id="promocode_product_sell" class="user-input" title="">
 					</div>
+					<div id="public_ophert">
+					</div>
 					<div class="user-input-box block-w100">
 						<button type="submit" class="top-menu-btn" id="bay_product">Оплатить</button>
 					</div>
