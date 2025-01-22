@@ -89,6 +89,7 @@ $(document).ready(function() {
         });
     }
     getIPAddress();
+    console.log(type_product);
     if(type_product == 'subscript'){
         console.log("$('#public_ophert').toggle()");
         $('#public_ophert').toggle();
