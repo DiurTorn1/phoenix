@@ -39,7 +39,7 @@ $(document).ready(function() {
     if(!key_promocode){
         setInterval('getPromocode()',500);
     }
-    
+    $('#public_ophert').toggle();
     var params = new window.URLSearchParams(window.location.search);
     //user_sell='+user_email+ '&id_product_sell='+id
     var user_sell = params.get('user_sell');
