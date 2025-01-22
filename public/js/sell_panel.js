@@ -39,7 +39,7 @@ $(document).ready(function() {
     if(!key_promocode){
         setInterval('getPromocode()',500);
     }
-    $('#public_ophert').hide();
+    $('#public_ophert').toggle();
     var params = new window.URLSearchParams(window.location.search);
     //user_sell='+user_email+ '&id_product_sell='+id
     var user_sell = params.get('user_sell');
@@ -90,7 +90,8 @@ $(document).ready(function() {
     }
     getIPAddress();
     if(type_product == 'subscript'){
-        $('#public_ophert').show();
+        console.log("$('#public_ophert').toggle()");
+        $('#public_ophert').toggle();
     }
     $("#bay_product").on('click', function() {
         //console.log(src_product);
