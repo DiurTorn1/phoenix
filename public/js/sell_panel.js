@@ -72,9 +72,7 @@ $(document).ready(function() {
         price_product = price_product_loc;
         id_product = id_product_loc;
     });
-    if(type_product == 'subscript'){
-        $('#public_ophert').toggle();
-    }
+
     //console.log(sale);
     var ip_port;
     function getIPAddress() {
@@ -91,7 +89,9 @@ $(document).ready(function() {
         });
     }
     getIPAddress();
-
+    if(type_product == 'subscript'){
+        $('#public_ophert').toggle();
+    }
     $("#bay_product").on('click', function() {
         //console.log(src_product);
         //console.log(name_product);
