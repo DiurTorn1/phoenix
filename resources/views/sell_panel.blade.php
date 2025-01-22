@@ -53,6 +53,8 @@
 				</div>
 			</div>
 		</div>
+	</div>
+	<div class="popup-back-user"> 
 		<div class="popup-container">
 			<div class="popup-content">
 				<div class="popup-title-wrap">
