@@ -30,7 +30,7 @@ function getPromocode() {
     }
     if(type_product == 'subscript'){
         $('#public_ophert').show();
-        $('#bay_product').prop('disabled', true);
+        $('#bay_product').attr('disabled', 'disabled');
     }
 }
 
