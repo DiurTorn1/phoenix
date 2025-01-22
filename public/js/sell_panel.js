@@ -30,7 +30,7 @@ function getPromocode() {
     }
     if(type_product == 'subscript'){
         $('#public_ophert').show();
-        if ($('#bay_product').is(':checked')){
+        if ($('#ophert').is(':checked')){
             console.log('Включен');
         } else {
             console.log('Выключен');
