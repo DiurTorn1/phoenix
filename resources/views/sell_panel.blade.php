@@ -45,7 +45,7 @@
 					</div>
 					<div class="user-input-box block-w100" id="public_ophert">
 						<input type="checkbox" id="ophert" name="ophert" />
-						<label for="ophert">Я даю согласие на регулярные списания, на обработку персональных данных и принимаю условия <a class="user-link" id="public_ophert_box">публичной оферты</a></label>
+						<label>Я даю согласие на регулярные списания, на обработку персональных данных и принимаю условия <a class="user-link" id="public_ophert_box">публичной оферты</a></label>
 					</div>
 					<div class="user-input-box block-w100" >
 						<button type="submit" class="top-menu-btn" id="bay_product" >Оплатить</button>
