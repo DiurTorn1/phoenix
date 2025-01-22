@@ -72,6 +72,9 @@ $(document).ready(function() {
         price_product = price_product_loc;
         id_product = id_product_loc;
     });
+    if(type_product == 'subscript'){
+
+    }
     //console.log(sale);
     var ip_port;
     function getIPAddress() {
