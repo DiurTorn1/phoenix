@@ -73,7 +73,7 @@ $(document).ready(function() {
         id_product = id_product_loc;
     });
     if(type_product == 'subscript'){
-
+        $('#public_ophert').toggle();
     }
     //console.log(sale);
     var ip_port;
