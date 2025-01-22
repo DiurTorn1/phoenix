@@ -53,7 +53,24 @@
 				</div>
 			</div>
 		</div>
+		<div class="popup-container">
+			<div class="popup-content">
+				<div class="popup-title-wrap">
+					<button class="popup-close close-btn" title="Закрыть" ><img src="img/close.png" alt="Закрыть" ></button>
+
+					<!--<div class="popup-title-wrap-row popup-title-none is-active" data-content="user-profile">
+						<h2 class="popup-title">Карточка покупки</h2>
+					</div>-->
+				</div>
+
+				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
+					<div class="popup-content-wrap-row">
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
+	
 	<main class="index-main">
 		
 	</main>
