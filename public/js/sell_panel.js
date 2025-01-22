@@ -1,4 +1,4 @@
-var promocode, sale, key_promocode = 0, price_product, res_price, id_promocode, limit_promocode;
+var promocode, sale, key_promocode = 0, price_product, res_price, id_promocode, limit_promocode, type_product;
 function getPromocode() {
     promocode = $("#promocode_product_sell").val();
     res_price = price_product;
@@ -28,7 +28,10 @@ function getPromocode() {
             
         });
     }
-    
+    if(type_product == 'subscript'){
+        console.log("$('#public_ophert').toggle()");
+        $('#public_ophert').show();
+    }
 }
 
 
@@ -39,12 +42,11 @@ $(document).ready(function() {
     if(!key_promocode){
         setInterval('getPromocode()',500);
     }
-    $('#public_ophert').toggle();
+    $('#public_ophert').hide();
     var params = new window.URLSearchParams(window.location.search);
     //user_sell='+user_email+ '&id_product_sell='+id
     var user_sell = params.get('user_sell');
     var id_product_sell = params.get('id_product_sell');
-    var type_product;
 
     //console.log(user_sell);
     $('#user_sell').val(user_sell);
@@ -90,10 +92,7 @@ $(document).ready(function() {
     }
     getIPAddress();
     console.log(type_product);
-    if(type_product == 'subscript'){
-        console.log("$('#public_ophert').toggle()");
-        $('#public_ophert').toggle();
-    }
+
     $("#bay_product").on('click', function() {
         //console.log(src_product);
         //console.log(name_product);
