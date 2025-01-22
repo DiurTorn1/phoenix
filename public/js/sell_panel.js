@@ -31,11 +31,13 @@ function getPromocode() {
     if(type_product == 'subscript'){
         $('#public_ophert').show();
         if ($('#ophert').is(':checked')){
-            console.log('Включен');
+            //console.log('Включен');
+            $('#bay_product').show();
         } else {
-            console.log('Выключен');
+            //console.log('Выключен');
+            $('#bay_product').hide();
         }
-        $('#bay_product').hide();
+        
     }
 }
 
