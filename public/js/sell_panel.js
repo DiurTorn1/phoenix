@@ -30,6 +30,11 @@ function getPromocode() {
     }
     if(type_product == 'subscript'){
         $('#public_ophert').show();
+        if ($('#bay_product').is(':checked')){
+            console.log('Включен');
+        } else {
+            console.log('Выключен');
+        }
         $('#bay_product').hide();
     }
 }
