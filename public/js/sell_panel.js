@@ -106,6 +106,10 @@ $(document).ready(function() {
         //alert("lllllllllllll");
         $('#ophert_box').hide();
     });
+    $("#read_box_ophert").on('click', function() {
+        //alert("lllllllllllll");
+        $('#ophert_box').hide();
+    });
     $("#public_ophert_box").on('click', function() {
         //alert("lllllllllllll");
         $('#ophert_box').show();
