@@ -100,6 +100,11 @@ $(document).ready(function() {
     getIPAddress();
     console.log(type_product);
 
+    //public_ophert_box
+    $("#public_ophert_box").on('click', function() {
+        alert("lllllllllllll");
+    });
+
     $("#bay_product").on('click', function() {
         //console.log(src_product);
         //console.log(name_product);
