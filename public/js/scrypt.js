@@ -9,7 +9,7 @@ function get_presell_load(){
                 //console.log(item1.id_product);
                 //console.log(item1.mail);
                 var int_id = parseInt(item1.id_product);
-                $.post('/php/sell_get_operacion.php', {id_product: int_id}, function(data2) {
+                /*$.post('/php/sell_get_operacion.php', {id_product: int_id}, function(data2) {
                     //console.log(data2);
                     var xmlDoc = $.parseXML(data2);
                     var $xml = $(xmlDoc);
@@ -46,7 +46,7 @@ function get_presell_load(){
                             //});
                         }
                     });
-                });
+                });*/
                 
             });
         }
