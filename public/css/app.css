@@ -1243,10 +1243,10 @@ td a:focus {
 .popup-container-1 {
     background-color: #180919;
     border-radius: 4px;
-    width: 90%;
+    width: 94%;
     max-width: 80%;
     margin: 0 auto;
-    margin-top: 5%;
+    margin-top: 2%;
 }
 .popup-content {
     position: relative;
