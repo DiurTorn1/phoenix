@@ -405,7 +405,7 @@ $(document).ready(function() {
                 ,vid_sport:vid_sport, gorod: gorod, boss:boss, region:region, opisanie_strima:opisanie_strima, play_link:play_link_card, rtmp_link:rtmp_link_card, post_time:post_time, streamkey_par:streamkey_par,
                 parent_id_par:parent_id_par, stream_id_par:stream_id_par, poster_id_par:poster_id_par }, function(data){
                 var output = $.parseJSON(data);
-                console.log(output);
+                console.log(output);//
                 //console.log("Image:" + main_image);
                 //var parse_img = main_image.split(",");
                 if(image_name){
