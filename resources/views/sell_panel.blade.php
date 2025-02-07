@@ -55,7 +55,7 @@
 		</div>
 	</div>
 	<div class="popup-back-user" id="ophert_box"> 
-		<div class="popup-container">
+		<div class="popup-container-1">
 			<div class="popup-content">
 				<div class="popup-title-wrap">
 					<button class="popup-close close-btn" title="Закрыть" id="close_box_ophert" ><img src="img/close.png" alt="Закрыть" ></button>
