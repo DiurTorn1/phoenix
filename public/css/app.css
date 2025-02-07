@@ -1240,6 +1240,14 @@ td a:focus {
     margin: 0 auto;
     margin-top: 5%;
 }
+.popup-container-1 {
+    background-color: #180919;
+    border-radius: 4px;
+    width: 32rem;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 5%;
+}
 .popup-content {
     position: relative;
     display: flex;
