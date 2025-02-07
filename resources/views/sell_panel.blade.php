@@ -66,7 +66,7 @@
 				</div>
 
 				<div class="popup-content-wrap-item is-active" data-content="user-profile"><!-- Вкладка ПРОФИЛЬ ------- -->
-					<div class="user-input-box block-w100" style="white-space: normal; border: 1px solid #7d5d80;">
+					<div class="user-input-box block-w100" style="white-space: normal; border: 1px solid #7d5d80; text-align: center;">
 						<h1>ПУБЛИЧНАЯ ОФЕРТА</h1><br>
  						<h2>о заключении договора об оказании услуг<h2><br>
 
