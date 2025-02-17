@@ -232,7 +232,7 @@ function get_stream_array(){
                             var output1 = $.parseJSON(data1);
                             $.each(output1,function(i,item1){
                                 //if(item1.id_stream == id_stream_prod){
-                                    //console.log(item1.id_stream);
+                                    console.log(item1.id_stream);
                                     public_product_perm1.push(item1.id_stream);
                                     key_product_perm++;
                                     //key_prod_perm_stream1 = 1;
