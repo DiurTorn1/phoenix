@@ -73,7 +73,7 @@ function paint_element_stream(){
                             }
 
                         }
-                        console.log(key_prod_perm_stream);
+                        console.log(list.id);
                         if(key_prod_perm_stream){
                             //console.log(key_prod_perm_stream);
                             $(div_video).append(
