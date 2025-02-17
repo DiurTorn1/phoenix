@@ -220,16 +220,7 @@ function get_stream_array(){
         count_product = count1;
     });
 
-    if(!key_paint){
-        for(var i = 0; i < count_stream; i++){
-            array_stream1.push(array_stream[i]);           
-        }
-        if(array_stream1[0]){
-            paint_element_stream();
-            key_paint = 1;
-        }
 
-    }
     //for(var i = 0; i < count_stream; i++){
     if(array_stream[0]!=array_stream1[0]){
             //setInterval('paint_element_stream()',100);
@@ -281,6 +272,17 @@ function get_stream_array(){
             }
             paint_element_product();
             key_paint1 = 1;
+        }
+
+        if(!key_paint){
+            for(var i = 0; i < count_stream; i++){
+                array_stream1.push(array_stream[i]);           
+            }
+            if(array_stream1[0]){
+                paint_element_stream();
+                key_paint = 1;
+            }
+    
         }
 
     }
