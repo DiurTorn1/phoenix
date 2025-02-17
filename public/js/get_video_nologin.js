@@ -26,8 +26,8 @@ function paint_element_stream(){
             var started_time = list.stream.started_at;
             
             for(var i = 0; i < public_product_perm.length; i++){
-                console.log("Fuckt ID: " + id_stream_prod);
-                console.log(public_product_perm[i]);
+                //console.log("Fuckt ID: " + id_stream_prod);
+                //console.log(public_product_perm[i]);
                 if(public_product_perm[i] == id_stream_prod){
                     key_prod_perm_stream = 1;
                 }
@@ -73,6 +73,7 @@ function paint_element_stream(){
                             }
 
                         }
+                        console.log(key_prod_perm_stream);
                         if(key_prod_perm_stream){
                             //console.log(key_prod_perm_stream);
                             $(div_video).append(
@@ -232,7 +233,7 @@ function get_stream_array(){
                             var output1 = $.parseJSON(data1);
                             $.each(output1,function(i,item1){
                                 //if(item1.id_stream == id_stream_prod){
-                                    console.log(item1.id_stream);
+                                    //console.log(item1.id_stream);
                                     public_product_perm1.push(item1.id_stream);
                                     key_product_perm++;
                                     //key_prod_perm_stream1 = 1;
