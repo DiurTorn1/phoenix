@@ -26,10 +26,9 @@ function paint_element_stream(){
             var started_time = list.stream.started_at;
             
             for(var i = 0; i < public_product_perm.length; i++){
-
+                console.log(public_product_perm[i]);
+                console.log(id_stream_prod);
                 if(public_product_perm[i] == id_stream_prod){
-                    console.log(public_product_perm[i]);
-                    console.log(id_stream_prod);
                     key_prod_perm_stream = 1;
                 }
             }
