@@ -442,10 +442,10 @@ $(document).ready(function() {
     $('#block_select_stream_list').hide();
     dynamic_checkbox();
     setInterval('dynamic_checkbox()',500);
-    get_stream_array();
-    setInterval('get_stream_array()',500);
     get_product_public();
     setInterval('get_product_public()',500);
+    get_stream_array();
+    setInterval('get_stream_array()',500);
 
         
         $("#delete_stream_checkbox").on('click', function() {

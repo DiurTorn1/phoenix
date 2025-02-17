@@ -299,24 +299,7 @@ function paint_element_product(){
 
 function get_stream_array(){
     
-    var count = 0;
 
-    user_email = $('#name_user_get').text();
-    $.post('/php/get_stream.php', function(data)  {
-        var output = $.parseJSON(data);
-        var pre_arr = new Array();
-        $.each(output.data,function(i,item){
-            pre_arr.push(item.id);
-            count++;
-        });
-        //pre_arr.push(output.data);
-        
-        for(var i = 0; i < pre_arr.length; i++){
-            array_stream.push(pre_arr[i]);
-            
-        }
-        count_stream = count;
-    });
     var count1 = 0;
     $.post('/php/get_product.php', function(data)  {
         var output = $.parseJSON(data);
@@ -363,17 +346,7 @@ function get_stream_array(){
         //console.log(array_product);
         count_sells = count2;
     });
-    if(!key_paint){
-        for(var i = 0; i < count_stream; i++){
-            array_stream1.push(array_stream[i]);           
-        }
-        if(array_stream1[0]){
-            user_email = $('#name_user_get').text();
-            paint_element_stream();
-            key_paint = 1;
-        }
 
-    }
     //for(var i = 0; i < count_stream; i++){
     if(array_stream[0]!=array_stream1[0]){
             //setInterval('paint_element_stream()',100);
@@ -458,6 +431,37 @@ function get_stream_array(){
         //users_sells = [];
         //idch = 0;
         key_paint2 = 0;
+    }
+
+    var count = 0;
+
+    user_email = $('#name_user_get').text();
+    $.post('/php/get_stream.php', function(data)  {
+        var output = $.parseJSON(data);
+        var pre_arr = new Array();
+        $.each(output.data,function(i,item){
+            pre_arr.push(item.id);
+            count++;
+        });
+        //pre_arr.push(output.data);
+        
+        for(var i = 0; i < pre_arr.length; i++){
+            array_stream.push(pre_arr[i]);
+            
+        }
+        count_stream = count;
+    });
+
+    if(!key_paint){
+        for(var i = 0; i < count_stream; i++){
+            array_stream1.push(array_stream[i]);           
+        }
+        if(array_stream1[0]){
+            user_email = $('#name_user_get').text();
+            paint_element_stream();
+            key_paint = 1;
+        }
+
     }
     //}
     //console.log(count_stream);
