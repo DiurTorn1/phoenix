@@ -71,6 +71,7 @@ function paint_element_stream(){
                             }
 
                         }
+                        console.log(key_prod_perm_stream);
                         if(key_prod_perm_stream){
                             //console.log(key_prod_perm_stream);
                             $(div_video).append(
@@ -248,12 +249,11 @@ function get_stream_array(){
                     //console.log(users_sells[i]);
                     $.post('/php/get_product_public.php',{ id:array_product[i] }, function(data)  {
                         var output = $.parseJSON(data);
-                        console.log(output);
+                        //console.log(output);
                         var prm_prod = output ? output[4]:'';
                         //console.log(prm_prod);
                         //public_product_perm.push(prm_prod);
                         $.post('/php/get_product_table.php',{ table:prm_prod }, function(data1)  {
-                            console.log(data1);
                             var public_product_perm1 = new Array();
                             var key_product_perm = 0;
                             var output1 = $.parseJSON(data1);
