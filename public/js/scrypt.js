@@ -4,7 +4,8 @@ function get_presell_load(){
         var dNow = new Date();
         //let localdate = dNow.getFullYear() + ' ' + (dNow.getMonth() + 1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + dNow.getMinutes() + ' 00' + ' ' + 65;
         let localdate = dNow.getFullYear();
-        let concatenatedNumber = localdate.join('');
+        let yyyyy = parseInt(localdate);
+        let concatenatedNumber = yyyyy.join('');
         let year = concatenatedNumber.substring(2, 4);
         console.log(year);
         // 2. Разделяем строку на массив чисел
