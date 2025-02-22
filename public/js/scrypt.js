@@ -23,8 +23,8 @@ function get_presell_load(){
                     //console.log(data2);
                     var xmlDoc = $.parseXML(data2);
                     var $xml = $(xmlDoc);
-                    console.log($xml);
-                    console.log(xmlDoc);
+                    //console.log($xml);
+                    //console.log(xmlDoc);
                     // Выборка элементов и добавление их в список
                     $xml.find('State').each(function() {
                         var $state = $(this);
