@@ -124,19 +124,22 @@ $(document).ready(function() {
         //console.log(localdate);
         var status = 'load';
         //console.log(ip_port + ' ' + user_sell + ' ' + name_product + ' ' + res_price + ' ' + id_product + ' ' + status + ' ' + localdate );
-        
+                //console.log(concatenatedNumber);
         if(type_product == 'subscript'){
             //console.log(type_product);
             $.post('/php/users_get_reg.php', {email:user_sell}, function(get_reg)  {
                 var get_pars = $.parseJSON(get_reg);
                 //console.log(get_pars[0]);
                 if(get_pars){
-                    var id_pay = 1000000000 + parseInt(id_product) + parseInt(get_pars[0]);
+                    var id_pay = parseInt(id_product) + parseInt(get_pars[0]);
+                    let localdate_id = dNow.getFullYear() + ' ' + (dNow.getMonth() + 1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + dNow.getMinutes() + ' 00' + ' ' + id_pay;
+                    let numbersArray = localdate_id.split(' ');
+                    let concatenatedNumber = numbersArray.join('');
                     //console.log(id_pay);
-                    $.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:id_pay, status:status, created_at:localdate}, function(data)  {
+                    $.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:concatenatedNumber, status:status, created_at:localdate}, function(data)  {
                         //console.log(data);
                         if(data == 'OK'){
-                            $.post('/php/sell_reccurent_payment.php', { OutSum: res_price, InvoiceID: id_pay, Description: name_product }, function(data){
+                            $.post('/php/sell_reccurent_payment.php', { OutSum: res_price, InvoiceID: concatenatedNumber, Description: name_product }, function(data){
                                 if(data.success) {
                                     // Перенаправляем пользователя на страницу оплаты
                                     window.location.href = data.payment_url;
