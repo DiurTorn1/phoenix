@@ -1,29 +1,7 @@
 
 function get_presell_load(){
         // 1. Получаем текущую дату и время
-        var dNow = new Date();
-        let lo_year = dNow.getFullYear() + ' ' + 0;
-        let year_s = lo_year.split(' ');
-        let con_year = year_s.join('');
-        let year = con_year.substring(2, 4);
-        let day_g = parseInt(dNow.getDate());
-        let day_p = '';
-        if(day_g < 10){
-            day_p = 0 + '' + dNow.getDate();
-        } else { day_p = dNow.getDate();} 
-        let month_g = parseInt((dNow.getMonth() + 1));
-        let month_p = '';
-        if(month_g < 10){
-            month_p = 0 + '' + (dNow.getMonth() + 1);
-        } else { month_p = (dNow.getMonth() + 1);}
-        let hour_g = parseInt(dNow.getHours());
-        let hour_p = '';
-        if(hour_g < 10){
-            hour_p = 0 + '' + dNow.getHours();
-        } else { hour_p = dNow.getHours();}
-        let localdate_id = year + ' ' + month_p + ' ' + day_p + ' ' + hour_p + ' ' + 65;
-        let numbersArray = localdate_id.split(' ');
-        let concatenatedNumber = numbersArray.join('');
+        //var dNow = new Date();
         //let localdate = dNow.getFullYear() + ' ' + (dNow.getMonth() + 1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + dNow.getMinutes() + ' 00' + ' ' + 65;
         //let localdate = dNow.getFullYear() + ' ' + 0;
         //let yyyyy = localdate.split(' ');
@@ -35,7 +13,7 @@ function get_presell_load(){
 
         /// 3. Объединяем числа в одно длинное число (как строку)
         //let concatenatedNumber = numbersArray.join('');
-        console.log(concatenatedNumber);
+        //console.log(concatenatedNumber);
     $.post('/php/get_presell_status.php', {status:'load' }, function(data) {
         var output1 = $.parseJSON(data);
         if(output1){

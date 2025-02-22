@@ -146,12 +146,7 @@ $(document).ready(function() {
                     if(month_g < 10){
                         month_p = 0 + '' + (dNow.getMonth() + 1);
                     } else { month_p = (dNow.getMonth() + 1);}
-                    let hour_g = parseInt(dNow.getHours());
-                    let hour_p = '';
-                    if(hour_g < 10){
-                        hour_p = 0 + '' + dNow.getHours();
-                    } else { hour_p = dNow.getHours();}
-                    let localdate_id = year + ' ' + month_p + ' ' + day_p + ' ' + hour_p + ' ' + id_pay;
+                    let localdate_id = year + ' ' + month_p + ' ' + day_p + ' ' + id_pay;
                     let numbersArray = localdate_id.split(' ');
                     let concatenatedNumber = numbersArray.join('');
                     //console.log(id_pay);
