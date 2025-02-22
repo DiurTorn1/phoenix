@@ -35,7 +35,7 @@ function get_presell_load(){
                         var code = $state.find('Code').text();
                         //var author = $book.find('author').text();
 
-                        console.log(code);
+                        //console.log(code);
                         /*if(code){
                             $.post('/php/users_get_reg.php', {email:item1.mail}, function(get_reg)  {
                                 var get_pars = $.parseJSON(get_reg);
