@@ -3,7 +3,7 @@ function get_presell_load(){
         // 1. Получаем текущую дату и время
         var dNow = new Date();
         //let localdate = dNow.getFullYear() + ' ' + (dNow.getMonth() + 1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + dNow.getMinutes() + ' 00' + ' ' + 65;
-        let localdate = dNow.getFullYear();
+        let localdate = dNow.getFullYear() + ' ' + 0;
         let yyyyy = localdate.split(' ');
         let concatenatedNumber = yyyyy.join('');
         let year = concatenatedNumber.substring(2, 4);
