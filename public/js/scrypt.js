@@ -4,7 +4,7 @@ function get_presell_load(){
         var dNow = new Date();
         //let localdate = dNow.getFullYear() + ' ' + (dNow.getMonth() + 1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + dNow.getMinutes() + ' 00' + ' ' + 65;
         let localdate = dNow.getFullYear();
-        let yyyyy = parseInt(localdate);
+        let yyyyy = localdate.split(' ');
         let concatenatedNumber = yyyyy.join('');
         let year = concatenatedNumber.substring(2, 4);
         console.log(year);
