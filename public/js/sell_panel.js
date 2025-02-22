@@ -132,7 +132,7 @@ $(document).ready(function() {
                 //console.log(get_pars[0]);
                 if(get_pars){
                     var id_pay = parseInt(id_product) + parseInt(get_pars[0]);
-                    let localdate_id = 25 + ' ' + (dNow.getMonth() + 1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + id_pay;
+                    let localdate_id = dNow.getFullYear() + ' ' + (dNow.getMonth() + 1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + id_pay;
                     let numbersArray = localdate_id.split(' ');
                     let concatenatedNumber = numbersArray.join('');
                     //console.log(id_pay);

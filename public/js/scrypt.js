@@ -1,9 +1,11 @@
 
 function get_presell_load(){
         // 1. Получаем текущую дату и время
-        //var dNow = new Date();
+        var dNow = new Date();
         //let localdate = dNow.getFullYear() + ' ' + (dNow.getMonth() + 1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + dNow.getMinutes() + ' 00' + ' ' + 65;
-
+        let localdate = dNow.getFullYear();
+        console.log(parseInt(localdate));
+        //let year = concatenatedNumber.substring(0, 4);
         // 2. Разделяем строку на массив чисел
         //let numbersArray = localdate.split(' ');
 
