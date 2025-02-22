@@ -1,8 +1,8 @@
 
 function get_presell_load(){
     var dNow = new Date();
-    var localdate= dNow.getFullYear()+ (dNow.getMonth()+1)+ dNow.getDate()+ dNow.getHours()+ dNow.getMinutes() + ':00' + 65;
-    console.log(dNow)
+    var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';//2024-08-28 15:37:32
+    console.log(parseInt(lacaldate));
     $.post('/php/get_presell_status.php', {status:'load' }, function(data) {
         var output1 = $.parseJSON(data);
         if(output1){
