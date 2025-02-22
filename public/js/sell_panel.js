@@ -140,7 +140,7 @@ $(document).ready(function() {
                     let day_p = '';
                     if(day_g < 10){
                         day_p = 0 + '' + dNow.getDate();
-                    } else { day_p = dNow.getDate();}
+                    } else { day_p = dNow.getDate();} 
                     let month_g = parseInt((dNow.getMonth() + 1));
                     let month_p = '';
                     if(month_g < 10){
