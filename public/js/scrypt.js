@@ -1,8 +1,15 @@
 
 function get_presell_load(){
-    var dNow = new Date();
-    let localdate= dNow.getFullYear() + ' ' + (dNow.getMonth()+1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + dNow.getMinutes() + ' 00' + ' ' + 65;//2024-08-28 15:37:32
-    console.log(parseInt(lacaldate.join(' ')));
+        // 1. Получаем текущую дату и время
+        var dNow = new Date();
+        let localdate = dNow.getFullYear() + ' ' + (dNow.getMonth() + 1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + dNow.getMinutes() + ' 00' + ' ' + 65;
+
+        // 2. Разделяем строку на массив чисел
+        let numbersArray = localdate.split(' ');
+
+        // 3. Объединяем числа в одно длинное число (как строку)
+        let concatenatedNumber = numbersArray.join('');
+        console.log(concatenatedNumber);
     $.post('/php/get_presell_status.php', {status:'load' }, function(data) {
         var output1 = $.parseJSON(data);
         if(output1){
