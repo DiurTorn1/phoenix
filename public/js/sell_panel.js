@@ -132,7 +132,26 @@ $(document).ready(function() {
                 //console.log(get_pars[0]);
                 if(get_pars){
                     var id_pay = parseInt(id_product) + parseInt(get_pars[0]);
-                    let localdate_id = dNow.getFullYear() + ' ' + (dNow.getMonth() + 1) + ' ' + dNow.getDate() + ' ' + dNow.getHours() + ' ' + id_pay;
+                    let lo_year = dNow.getFullYear() + ' ' + 0;
+                    let year_s = lo_year.split(' ');
+                    let con_year = year_s.join('');
+                    let year = con_year.substring(2, 4);
+                    let day_g = parseInt(dNow.getDate());
+                    let day_p = '';
+                    if(day_g < 10){
+                        day_p = 0 + '' + dNow.getDate();
+                    } else { day_p = dNow.getDate();}
+                    let month_g = parseInt((dNow.getMonth() + 1));
+                    let month_p = '';
+                    if(month_g < 10){
+                        month_p = 0 + '' + (dNow.getMonth() + 1);
+                    } else { month_p = (dNow.getMonth() + 1);}
+                    let hour_g = parseInt(dNow.getHours());
+                    let hour_p = '';
+                    if(hour_g < 10){
+                        hour_p = 0 + '' + dNow.getHours();
+                    } else { hour_p = dNow.getHours();}
+                    let localdate_id = year + ' ' + month_p + ' ' + day_p + ' ' + hour_p + ' ' + id_pay;
                     let numbersArray = localdate_id.split(' ');
                     let concatenatedNumber = numbersArray.join('');
                     //console.log(id_pay);
