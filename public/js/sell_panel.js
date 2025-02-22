@@ -137,7 +137,7 @@ $(document).ready(function() {
                         //console.log(data);
                         if(data == 'OK'){
                             $.post('/php/sell_reccurent_payment.php', { OutSum: res_price, InvoiceID: id_pay, Description: name_product }, function(data){
-                                if (data.success) {
+                                if(data.success) {
                                     // Перенаправляем пользователя на страницу оплаты
                                     window.location.href = data.payment_url;
                                     //console.log(data.payment_url);
