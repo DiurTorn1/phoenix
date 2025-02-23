@@ -45,14 +45,14 @@ function get_presell_load(){
                                         //console.log('Boooom!!!');
                                         let pars_sub = item1.id_product;
                                         let length_id = pars_sub.toString().length;
-                                        //let id_pars = pars_sub.substring(0, 2);
+                                        let id_pars = pars_sub.substring(0, length_id-5);
                                         let year = pars_sub.substring(length_id-5, length_id-4);
                                         let month = pars_sub.substring(length_id-4, length_id-2);
                                         let day = pars_sub.substring(length_id-2, length_id);
-                                        console.log(2020 + year);
+                                        console.log(202 + year);
                                         console.log(month);
                                         console.log(day);
-                                        //console.log(id_pars - parseInt(get_pars[0]));
+                                        console.log(id_pars - parseInt(get_pars[0]));
                                     } else {
                                         //var id_pay = item1.id_product - 1000000000 - parseInt(get_pars[0]);
                                         //console.log(id_pay+ " : " + item1.mail + " : " + item1.created_at);
