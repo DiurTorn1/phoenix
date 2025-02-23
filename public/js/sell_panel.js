@@ -194,12 +194,29 @@ $(document).ready(function() {
             var get_pars = $.parseJSON(get_reg);
             //console.log(get_pars[0]);
             if(get_pars){
-                var id_pay = 1000000000 + parseInt(id_product) + parseInt(get_pars[0]);
+                var id_pay = parseInt(id_product) + parseInt(get_pars[0]);
+                let lo_year = dNow.getFullYear() + ' ' + 0;
+                let year_s = lo_year.split(' ');
+                let con_year = year_s.join('');
+                let year = con_year.substring(2, 4);
+                let day_g = parseInt(dNow.getDate());
+                let day_p = '';
+                if(day_g < 10){
+                    day_p = 0 + '' + dNow.getDate();
+                } else { day_p = dNow.getDate();} 
+                let month_g = parseInt((dNow.getMonth() + 1));
+                let month_p = '';
+                if(month_g < 10){
+                    month_p = 0 + '' + (dNow.getMonth() + 1);
+                } else { month_p = (dNow.getMonth() + 1);}
+                let localdate_id = year + ' ' + month_p + ' ' + day_p + ' ' + id_pay;
+                let numbersArray = localdate_id.split(' ');
+                let concatenatedNumber = numbersArray.join('');
                 //console.log(id_pay);
-                $.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:id_pay, status:status, created_at:localdate}, function(data)  {
+                $.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:concatenatedNumber, status:status, created_at:localdate}, function(data)  {
                     //console.log(data);
                     if(data == 'OK'){
-                        $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:res_price, id_product:id_pay}, function(data)  {
+                        $.post('/php/sell_user_payment.php', {name_product:name_product, price_product:res_price, id_product:concatenatedNumber}, function(data)  {
                             //console.log(data);
                             var url_pay = data;
                             if(id_promocode){
