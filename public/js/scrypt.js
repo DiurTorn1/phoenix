@@ -49,7 +49,7 @@ function get_presell_load(){
                                         let year = pars_sub.substring(length_id-5, length_id-4);
                                         let month = pars_sub.substring(length_id-4, length_id-2);
                                         let day = pars_sub.substring(length_id-2, length_id);
-                                        console.log(year);
+                                        console.log(2020 + year);
                                         console.log(month);
                                         console.log(day);
                                         //console.log(id_pars - parseInt(get_pars[0]));
