@@ -49,10 +49,10 @@ function get_presell_load(){
                                         let year = pars_sub.substring(length_id-5, length_id-4);
                                         let month = pars_sub.substring(length_id-4, length_id-2);
                                         let day = pars_sub.substring(length_id-2, length_id);
-                                        console.log(202 + year);
-                                        console.log(month);
-                                        console.log(day);
-                                        console.log(id_pars - parseInt(get_pars[0]));
+                                        //console.log(202 + year);
+                                        //console.log(month);
+                                        //console.log(day);
+                                        //console.log(id_pars - parseInt(get_pars[0]));
                                     } else {
                                         //var id_pay = item1.id_product - 1000000000 - parseInt(get_pars[0]);
                                         //console.log(id_pay+ " : " + item1.mail + " : " + item1.created_at);
