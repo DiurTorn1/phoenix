@@ -24,7 +24,7 @@ function get_presell_load(){
                 //console.log(item1.mail);
                 var int_id = parseInt(item1.id_product);
                 $.post('/php/sell_get_operacion.php', {id_product: int_id}, function(data2) {
-                    //console.log(data2);
+                    console.log(data2);
                     var xmlDoc = $.parseXML(data2);
                     var $xml = $(xmlDoc);
                     //console.log($xml);
@@ -43,19 +43,20 @@ function get_presell_load(){
                                 if(get_pars){
                                     if(item1.name_product == 'Тестовая на 3 дня'){
                                         //console.log('Boooom!!!');
+                                    } else {
+                                        //var id_pay = item1.id_product - 1000000000 - parseInt(get_pars[0]);
+                                        //console.log(id_pay+ " : " + item1.mail + " : " + item1.created_at);
+                                        //$.post('/php/sell_user_add.php', {product_global:id_pay, user_global:item1.mail, create_at:item1.created_at}, function(data) {
+                                            //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
+                                            //if(data == "OK"){
+                                                //$.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
+                                                    //if(data == "OK"){
+                                                        //console.log("Success bay");
+                                                    //} 
+                                                //});
+                                            //}
+                                        //});
                                     }
-                                    //var id_pay = item1.id_product - 1000000000 - parseInt(get_pars[0]);
-                                    //console.log(id_pay+ " : " + item1.mail + " : " + item1.created_at);
-                                    //$.post('/php/sell_user_add.php', {product_global:id_pay, user_global:item1.mail, create_at:item1.created_at}, function(data) {
-                                        //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
-                                        //if(data == "OK"){
-                                            //$.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
-                                                //if(data == "OK"){
-                                                    //console.log("Success bay");
-                                                //} 
-                                            //});
-                                        //}
-                                    //});
                                 }
                             });
                             //$.post('/php/sell_user_add.php', {product_global:item1.id_product, user_global:item1.mail, create_at:item1.created_at}, function(data) {
