@@ -44,14 +44,14 @@ function get_presell_load(){
                                     if(item1.name_product == 'Тестовая на 3 дня'){
                                         //console.log('Boooom!!!');
                                         let pars_sub = item1.id_product;
-                                        console.log(pars_sub.toString().length);
+                                        let length_id = pars_sub.toString().length;
                                         //let id_pars = pars_sub.substring(0, 2);
-                                        //let year = pars_sub.substring(2, 3);
-                                        //let day = pars_sub.substring(3, 5);
-                                        //let year = pars_sub.substring(6, 8);
-                                        //console.log(year);
-                                        //console.log(month);
-                                        //console.log(day);
+                                        let year = pars_sub.substring(length_id-5, length_id-4);
+                                        let month = pars_sub.substring(length_id-4, length_id-2);
+                                        let day = pars_sub.substring(length_id-2, length_id);
+                                        console.log(year);
+                                        console.log(month);
+                                        console.log(day);
                                         //console.log(id_pars - parseInt(get_pars[0]));
                                     } else {
                                         //var id_pay = item1.id_product - 1000000000 - parseInt(get_pars[0]);
