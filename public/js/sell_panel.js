@@ -135,7 +135,7 @@ $(document).ready(function() {
                     let lo_year = dNow.getFullYear() + ' ' + 0;
                     let year_s = lo_year.split(' ');
                     let con_year = year_s.join('');
-                    let year = con_year.substring(2, 4);
+                    let year = con_year.substring(3, 4);
                     let day_g = parseInt(dNow.getDate());
                     let day_p = '';
                     if(day_g < 10){
@@ -146,7 +146,7 @@ $(document).ready(function() {
                     if(month_g < 10){
                         month_p = 0 + '' + (dNow.getMonth() + 1);
                     } else { month_p = (dNow.getMonth() + 1);}
-                    let localdate_id = year + ' ' + month_p + ' ' + day_p + ' ' + id_pay;
+                    let localdate_id = id_pay + ' ' + year + ' ' + month_p + ' ' + day_p;
                     let numbersArray = localdate_id.split(' ');
                     let concatenatedNumber = numbersArray.join('');
                     //console.log(id_pay);
@@ -198,7 +198,7 @@ $(document).ready(function() {
                 let lo_year = dNow.getFullYear() + ' ' + 0;
                 let year_s = lo_year.split(' ');
                 let con_year = year_s.join('');
-                let year = con_year.substring(2, 4);
+                let year = con_year.substring(3, 4);
                 let day_g = parseInt(dNow.getDate());
                 let day_p = '';
                 if(day_g < 10){
@@ -209,7 +209,7 @@ $(document).ready(function() {
                 if(month_g < 10){
                     month_p = 0 + '' + (dNow.getMonth() + 1);
                 } else { month_p = (dNow.getMonth() + 1);}
-                let localdate_id = year + ' ' + month_p + ' ' + day_p + ' ' + id_pay;
+                let localdate_id = id_pay + ' ' + year + ' ' + month_p + ' ' + day_p;
                 let numbersArray = localdate_id.split(' ');
                 let concatenatedNumber = numbersArray.join('');
                 //console.log(id_pay);
