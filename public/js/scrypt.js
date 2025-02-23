@@ -42,7 +42,7 @@ function get_presell_load(){
                                 //console.log(get_pars[0]);
                                 if(get_pars){
                                     if(item1.name_product == 'Тестовая на 3 дня'){
-                                        console.log('Boooom!!!');
+                                        //console.log('Boooom!!!');
                                     }
                                     //var id_pay = item1.id_product - 1000000000 - parseInt(get_pars[0]);
                                     //console.log(id_pay+ " : " + item1.mail + " : " + item1.created_at);
