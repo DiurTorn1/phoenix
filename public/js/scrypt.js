@@ -44,7 +44,7 @@ function get_presell_load(){
                                     if(item1.name_product == 'Тестовая на 3 дня'){
                                         //console.log('Boooom!!!');
                                         let pars_sub = item1.id_product;
-                                        console.log(pars_sub);
+                                        console.log(pars_sub.toString().length);
                                         //let id_pars = pars_sub.substring(0, 2);
                                         //let year = pars_sub.substring(2, 3);
                                         //let day = pars_sub.substring(3, 5);
