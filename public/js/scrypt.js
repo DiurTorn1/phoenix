@@ -87,7 +87,12 @@ function get_presell_load(){
                                                                         if(data_ps == "OK"){
                                                                             $.post('/php/python_send.php',{mail:email_get, product:item1.name_product}, function(data_send) {   
                                     
-                                                                                if(data_send == 'Error'){}else{}
+                                                                                if (data_send === 'Error') {
+                                                                                    console.error('Ошибка при отправке данных');
+                                                                                } else {
+                                                                                    console.log('Письмо о покупке подписки отправлено:', data_send);
+                                                                                    console.log("Success bay");
+                                                                                }
                                                                             });
                                                                             //console.log("Success bay");
                                                                         } 
