@@ -85,7 +85,7 @@ function get_presell_load(){
                                                                 if(data_us == "OK"){
                                                                     $.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data_ps) {
                                                                         if(data_ps == "OK"){
-                                                                            $.post('/php/python_send.php',{mail:email_get, product:item1.name_product}, function(data_send) {   
+                                                                            $.post('/php/python_send.php',{mail:item1.mail, product:item1.name_product}, function(data_send) {   
                                     
                                                                                 if (data_send === 'Error') {
                                                                                     console.error('Ошибка при отправке данных');
@@ -242,7 +242,7 @@ $(document).ready(function() {
                             $("#send_mail_reg").toggle();
                         } else {
                             var split_email = email_get.split("@");
-                            console.log(split_email[1]);
+                            //console.log(split_email[1]);
                             if(!split_email[1]){
                                 $("#details_registr").text("Адрес почты должен содержать символ @...");
                             }else {
@@ -251,7 +251,7 @@ $(document).ready(function() {
                                 $("#send_mail").toggle();
                                 $("#details_registr").text("Отправка сообщения на указанную почту...");
                                 var code = generateRandomCode(8);
-                                console.log(code);
+                                //console.log(code);
                                 $.post('/php/python_send.php',{mail:email_get, code:code}, function(data) {   
                                     
                                     if(data == 'Error'){
