@@ -57,31 +57,50 @@ function get_presell_load(){
                                             console.log(get_prod[8]);
                                             $.post('/php/all_subscribe_add.php', {user_email:item1.mail, id_sell:item1.id_product, period:get_prod[8], create_at:item1.created_at}, function(data_sell) {
                                                 //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
-                                                // Пример timestamp из базы данных (в формате 'YYYY-MM-DD HH:mm:ss')
-                                                var dbTimestamp = item1.created_at;//"2023-10-25 14:30:00";
-
-                                                // Преобразуем timestamp в объект Date
-                                                var dateFromDb = new Date(dbTimestamp);
-
-                                                // Прибавляем 5 дней (можно изменить на нужное количество)
-                                                var daysToAdd = parseInt(get_prod[8]);
-                                                dateFromDb.setDate(dateFromDb.getDate() + daysToAdd);
-
-                                                // Форматируем новую дату в нужный формат
-                                                let newDate = dateFromDb.getFullYear() + '-' + 
-                                                    ('0' + (dateFromDb.getMonth() + 1)).slice(-2) + '-' + 
-                                                    ('0' + dateFromDb.getDate()).slice(-2) + ' ' + 
-                                                    ('0' + dateFromDb.getHours()).slice(-2) + ':' + 
-                                                    ('0' + dateFromDb.getMinutes()).slice(-2) + ':00';
-
-                                                    console.log("Исходный timestamp: " + dbTimestamp);
-                                                    console.log("Новая дата после добавления " + daysToAdd + " дней: " + newDate);
                                                 if(data_sell == "OK"){
-                                                    $.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
+                                                    // Пример timestamp из базы данных (в формате 'YYYY-MM-DD HH:mm:ss')
+                                                    var dbTimestamp = item1.created_at;//"2023-10-25 14:30:00";
+
+                                                    // Преобразуем timestamp в объект Date
+                                                    var dateFromDb = new Date(dbTimestamp);
+
+                                                    // Прибавляем 5 дней (можно изменить на нужное количество)
+                                                    var daysToAdd = parseInt(get_prod[8]);
+                                                    dateFromDb.setDate(dateFromDb.getDate() + daysToAdd);
+
+                                                    // Форматируем новую дату в нужный формат
+                                                    let newDate = dateFromDb.getFullYear() + '-' + 
+                                                        ('0' + (dateFromDb.getMonth() + 1)).slice(-2) + '-' + 
+                                                        ('0' + dateFromDb.getDate()).slice(-2) + ' ' + 
+                                                        ('0' + dateFromDb.getHours()).slice(-2) + ':' + 
+                                                        ('0' + dateFromDb.getMinutes()).slice(-2) + ':00';
+
+                                                        //console.log("Исходный timestamp: " + dbTimestamp);
+                                                        //console.log("Новая дата после добавления " + daysToAdd + " дней: " + newDate);
+
+                                                    $.post('/php/subscribe_line_add.php', {id_sell:item1.id_product, id_prod:id_prod, status:'sell', time_end:newDate, create_at:dbTimestamp}, function(data_sl){
+                                                        if(data_sl == "OK"){
+                                                            $.post('/php/sell_user_add.php', {product_global:id_prod, user_global:item1.mail, create_at:dbTimestamp}, function(data_us) {
+                                                                //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
+                                                                if(data_us == "OK"){
+                                                                    $.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data_ps) {
+                                                                        if(data_ps == "OK"){
+                                                                            $.post('/php/python_send.php',{mail:email_get, product:item1.name_product}, function(data_send) {   
+                                    
+                                                                                if(data_send == 'Error'){}else{}
+                                                                            });
+                                                                            //console.log("Success bay");
+                                                                        } 
+                                                                    });
+                                                                }
+                                                            });
+                                                        } 
+                                                    });
+                                                    /*$.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
                                                         if(data == "OK"){
                                                             console.log("Success bay");
                                                         } 
-                                                    });
+                                                    });*/
                                                 }
                                             });
                                         });

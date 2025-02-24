@@ -1,12 +1,13 @@
 <?php
 $data = $_POST['mail'];
 $code = $_POST['code'];
+$product = $_POST['product'];
 $url = 'http://127.0.0.1:5000/process_data';
 $options = array(
     'http' => array(
         'header'  => "Content-type: application/json\r\n",
         'method'  => 'POST',
-        'content' => json_encode(array('mail' => $data, 'code' => $code)),
+        'content' => json_encode(array('mail' => $data, 'code' => $code, 'product' => $product)),
     ),
 );
 
