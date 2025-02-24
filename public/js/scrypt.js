@@ -77,8 +77,27 @@ function get_presell_load(){
 
                                                         //console.log("Исходный timestamp: " + dbTimestamp);
                                                         //console.log("Новая дата после добавления " + daysToAdd + " дней: " + newDate);
+                                                        var pars_date = newDate.split(' ');
+                                                        var par_date2 = pars_date[0].split('-');
+                                                        let lo_year = par_date2[0] + ' ' + 0;
+                                                        let year_s = lo_year.split(' ');
+                                                        let con_year = year_s.join('');
+                                                        let year = con_year.substring(3, 4);
+                                                        let day_g = parseInt(par_date2[2]);
+                                                        let day_p = '';
+                                                        if(day_g < 10){
+                                                            day_p = 0 + '' + par_date2[2];
+                                                        } else { day_p = par_date2[2];} 
+                                                        let month_g = parseInt(par_date2[1]);
+                                                        let month_p = '';
+                                                        if(month_g < 10){
+                                                            month_p = 0 + '' + par_date2[1];
+                                                        } else { month_p = par_date2[1];}
+                                                        let localdate_id = id_pars + ' ' + year + ' ' + month_p + ' ' + day_p;
+                                                        let numbersArray = localdate_id.split(' ');
+                                                        let concatenatedNumber = numbersArray.join('');
 
-                                                    $.post('/php/subscribe_line_add.php', {id_sell:item1.id_product, id_prod:id_prod, status:'sell', time_end:newDate, create_at:dbTimestamp}, function(data_sl){
+                                                    $.post('/php/subscribe_line_add.php', {id_sell:item1.id_product, id_prod:concatenatedNumber, status:'sell', time_end:newDate, create_at:dbTimestamp}, function(data_sl){
                                                         if(data_sl == "OK"){
                                                             $.post('/php/sell_user_add.php', {product_global:id_prod, user_global:item1.mail, create_at:dbTimestamp}, function(data_us) {
                                                                 //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
@@ -150,6 +169,10 @@ function get_presell_load(){
     });
 }
 
+function subscribe_line(){
+    var user_email = $('#name_user_get').text();
+}
+
 $(document).ready(function() {
     var user_email = $('#name_user_get').text();
     //console.log(user_email);
@@ -158,6 +181,8 @@ $(document).ready(function() {
 
     get_presell_load();
     setInterval('get_presell_load()',1000);
+    subscribe_line();
+    subscribe_line('get_presell_load()',5000);
 
     $.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data) {
         var output1 = $.parseJSON(data);
