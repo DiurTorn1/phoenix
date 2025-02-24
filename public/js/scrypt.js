@@ -163,6 +163,14 @@ function get_presell_load(){
 
 function subscribe_line(){
     var user_email = $('#name_user_get').text();
+    //"2023-10-25 14:30:00";var dateFromDb = new Date(dbTimestamp);
+    var dNow = new Date();
+    let howTime = dNow.getFullYear() + '-' + 
+        ('0' + (dNow.getMonth() + 1)).slice(-2) + '-' + 
+        ('0' + dNow.getDate()).slice(-2) + ' ' + 
+        ('0' + dNow.getHours()).slice(-2) + ':' + 
+        ('0' + dNow.getMinutes()).slice(-2) + ':00';
+    console.log(howTime);
 }
 
 $(document).ready(function() {
