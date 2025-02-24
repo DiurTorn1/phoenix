@@ -182,7 +182,7 @@ $(document).ready(function() {
     get_presell_load();
     setInterval('get_presell_load()',1000);
     subscribe_line();
-    subscribe_line('get_presell_load()',5000);
+    subscribe_line('subscribe_line()',5000);
 
     $.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data) {
         var output1 = $.parseJSON(data);
