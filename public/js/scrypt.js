@@ -49,12 +49,12 @@ function get_presell_load(){
                                         let year = pars_sub.substring(length_id-5, length_id-4);
                                         let month = pars_sub.substring(length_id-4, length_id-2);
                                         let day = pars_sub.substring(length_id-2, length_id);
-                                        let period = 3;
                                         //console.log(item1.mail);
                                         let id_prod = id_pars - get_pars[0];
                                         $.post('/php/get_product_id.php', {id:id_prod}, function(data_prod){
-                                            console.log(data_prod);
-                                            $.post('/php/all_subscribe_add.php', {user_email:item1.mail, id_sell:item1.id_product, period:period, create_at:item1.created_at}, function(data_sell) {
+                                            var get_prod = $.parseJSON(data_prod);
+                                            console.log(get_prod[8]);
+                                            $.post('/php/all_subscribe_add.php', {user_email:item1.mail, id_sell:item1.id_product, period:get_prod[8], create_at:item1.created_at}, function(data_sell) {
                                                 //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
                                                 if(data_sell == "OK"){
                                                     $.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
