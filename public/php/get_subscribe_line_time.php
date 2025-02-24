@@ -1,7 +1,7 @@
 <?php
 require "config_bd.php";
 
-$sql = "SELECT `id`, `id_sell`, `id_prod`, `status`, `time_end`, `create_at` FROM `subscribe_line` WHERE time_end='".$_POST['time_end']."'";
+$sql = "SELECT `id`, `id_sell`, `id_prod`, `status`, `time_end`, `create_at` FROM `subscribe_line` WHERE 100000000";
 
 $result = $conn->query($sql);
 $news_events = $result->fetch_all(MYSQLI_ASSOC);
