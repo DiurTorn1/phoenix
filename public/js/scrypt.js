@@ -172,13 +172,13 @@ function subscribe_line(){
         ('0' + dNow.getHours()).slice(-2) + ':' + 
         ('0' + dNow.getMinutes()).slice(-2) + ':00';
     //console.log(howTime);
-    $.post('/php/get_subscribe_line_time.php', {time_end:howTime }, function(data_sl) {
-        var res_data = $.parseJSON(data_sl);
-        if(res_data != null){
-            console.log(res_data);
-        }
+    //$.post('/php/get_subscribe_line_time.php', {time_end:howTime }, function(data_sl) {
+        //var res_data = $.parseJSON(data_sl);
+        //if(res_data != null){
+           // console.log(res_data);
+        //}
         
-    });
+    //});
 }
 
 $(document).ready(function() {
