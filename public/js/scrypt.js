@@ -57,6 +57,25 @@ function get_presell_load(){
                                             console.log(get_prod[8]);
                                             $.post('/php/all_subscribe_add.php', {user_email:item1.mail, id_sell:item1.id_product, period:get_prod[8], create_at:item1.created_at}, function(data_sell) {
                                                 //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
+                                                // Пример timestamp из базы данных (в формате 'YYYY-MM-DD HH:mm:ss')
+                                                var dbTimestamp = item1.created_at;//"2023-10-25 14:30:00";
+
+                                                // Преобразуем timestamp в объект Date
+                                                var dateFromDb = new Date(dbTimestamp);
+
+                                                // Прибавляем 5 дней (можно изменить на нужное количество)
+                                                var daysToAdd = 5;
+                                                dateFromDb.setDate(dateFromDb.getDate() + daysToAdd);
+
+                                                // Форматируем новую дату в нужный формат
+                                                let newDate = dateFromDb.getFullYear() + '-' + 
+                                                    ('0' + (dateFromDb.getMonth() + 1)).slice(-2) + '-' + 
+                                                    ('0' + dateFromDb.getDate()).slice(-2) + ' ' + 
+                                                    ('0' + dateFromDb.getHours()).slice(-2) + ':' + 
+                                                    ('0' + dateFromDb.getMinutes()).slice(-2) + ':00';
+
+                                                    console.log("Исходный timestamp: " + dbTimestamp);
+                                                    console.log("Новая дата после добавления " + daysToAdd + " дней: " + newDate);
                                                 if(data_sell == "OK"){
                                                     $.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
                                                         if(data == "OK"){
