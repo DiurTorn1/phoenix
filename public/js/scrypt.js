@@ -49,23 +49,42 @@ function get_presell_load(){
                                         let year = pars_sub.substring(length_id-5, length_id-4);
                                         let month = pars_sub.substring(length_id-4, length_id-2);
                                         let day = pars_sub.substring(length_id-2, length_id);
-                                        //console.log(202 + year);
-                                        //console.log(month);
-                                        //console.log(day);
-                                        //console.log(id_pars - parseInt(get_pars[0]));
-                                    } else {
-                                        //var id_pay = item1.id_product - 1000000000 - parseInt(get_pars[0]);
-                                        //console.log(id_pay+ " : " + item1.mail + " : " + item1.created_at);
-                                        //$.post('/php/sell_user_add.php', {product_global:id_pay, user_global:item1.mail, create_at:item1.created_at}, function(data) {
+                                        $.post('/php/all_subscribe_add.php', {user_email:item1.mail, id_sell:item1.id_product, period:period, create_at:item1.created_at}, function(data_sell) {
                                             //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
-                                            //if(data == "OK"){
+                                            if(data_sell == "OK"){
+                                                console.log("Success bay");
                                                 //$.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
                                                     //if(data == "OK"){
                                                         //console.log("Success bay");
                                                     //} 
                                                 //});
-                                            //}
+                                            }
+                                        });
+                                        //console.log(202 + year);
+                                        //console.log(month);
+                                        //console.log(day);
+                                        //console.log(id_pars - parseInt(get_pars[0]));
+                                        //$.post('/php/create_table_subscribe_line.php', { name: name_table}, function(data){
+                                            //if(data == "OK"){
+                                                
+                                           // }
                                         //});
+                                    } else {
+                                        //var id_pay = item1.id_product - 1000000000 - parseInt(get_pars[0]);
+                                        let pars_sub = item1.id_product;
+                                        let length_id = pars_sub.toString().length;
+                                        let id_pars = pars_sub.substring(0, length_id-5);
+                                        //console.log(id_pay+ " : " + item1.mail + " : " + item1.created_at);
+                                        $.post('/php/sell_user_add.php', {product_global:id_pars, user_global:item1.mail, create_at:item1.created_at}, function(data) {
+                                            //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
+                                            if(data == "OK"){
+                                                $.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
+                                                    if(data == "OK"){
+                                                        console.log("Success bay");
+                                                    } 
+                                                });
+                                            }
+                                        });
                                     }
                                 }
                             });
