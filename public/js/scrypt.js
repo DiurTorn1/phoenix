@@ -64,7 +64,7 @@ function get_presell_load(){
                                                 var dateFromDb = new Date(dbTimestamp);
 
                                                 // Прибавляем 5 дней (можно изменить на нужное количество)
-                                                var daysToAdd = 5;
+                                                var daysToAdd = 8;
                                                 dateFromDb.setDate(dateFromDb.getDate() + daysToAdd);
 
                                                 // Форматируем новую дату в нужный формат
