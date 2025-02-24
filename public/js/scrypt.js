@@ -49,15 +49,15 @@ function get_presell_load(){
                                         let year = pars_sub.substring(length_id-5, length_id-4);
                                         let month = pars_sub.substring(length_id-4, length_id-2);
                                         let day = pars_sub.substring(length_id-2, length_id);
+                                        let period = 3;
                                         $.post('/php/all_subscribe_add.php', {user_email:item1.mail, id_sell:item1.id_product, period:period, create_at:item1.created_at}, function(data_sell) {
                                             //console.log(item1.id_product+ " : " + item1.mail + " : " + item1.created_at);
                                             if(data_sell == "OK"){
-                                                console.log("Success bay");
-                                                //$.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
-                                                    //if(data == "OK"){
-                                                        //console.log("Success bay");
-                                                    //} 
-                                                //});
+                                                $.post('/php/upload_presell_status.php', {id:item1.id, status:'bay'}, function(data) {
+                                                    if(data == "OK"){
+                                                        console.log("Success bay");
+                                                    } 
+                                                });
                                             }
                                         });
                                         //console.log(202 + year);
