@@ -1,4 +1,31 @@
 
+
+function addDaysToCurrentDate(daysToAdd) {
+    var dNow = new Date(); // Текущая дата и время
+    var currentDay = [dNow.getDate()](dNow.getDate()); // Текущий день
+    var daysInCurrentMonth = new Date(dNow.getFullYear(), [dNow.getMonth()](dNow.getMonth()) + 1, 0).getDate(); // Количество дней в текущем месяце
+
+    // Определяем, сколько дней осталось до конца месяца
+    var remainingDays = daysInCurrentMonth - currentDay;
+
+    if (daysToAdd <= remainingDays) {
+        // Если дней для добавления достаточно, просто увеличиваем текущий день
+        [dNow.setDate(currentDay)](dNow.setDate(currentDay) + daysToAdd);
+    } else {
+        // Если дней недостаточно, переносим на следующий месяц
+        var extraDays = daysToAdd - remainingDays;
+        [dNow.setMonth(dNow.getMonth())](dNow.setMonth(dNow.getMonth()) + 1); // Переходим на следующий месяц
+        [dNow.setDate(extraDays)](dNow.setDate(extraDays)); // Устанавливаем оставшиеся дни
+    }
+
+    let localdate = [dNow.getFullYear()](dNow.getFullYear()) + '-' +
+                   ('0' + (dNow.getMonth() + 1)).slice(-2) + '-' + // Форматируем месяц с ведущим нулём
+                   ('0' + [dNow.getDate().slice(-2)](dNow.getDate()).slice(-2)) + ' ' +         // Форматируем день с ведущим нулём
+                   ('0' + [dNow.getHours().slice(-2)](dNow.getHours()).slice(-2)) + ':  +'
+                   ('0' + [dNow.getMinutes().slice(-2)](dNow.getMinutes()).slice(-2)) + ':00';
+
+    [console.log(localdate)](console.log(localdate)); // Выведет дату и время с учётом добавления дней
+}
 function get_presell_load(){
         // 1. Получаем текущую дату и время
         //var dNow = new Date();
@@ -14,6 +41,7 @@ function get_presell_load(){
         /// 3. Объединяем числа в одно длинное число (как строку)
         //let concatenatedNumber = numbersArray.join('');
         //console.log(concatenatedNumber);
+        addDaysToCurrentDate(5);
     $.post('/php/get_presell_status.php', {status:'load' }, function(data) {
         var output1 = $.parseJSON(data);
         if(output1){
