@@ -198,7 +198,11 @@ function subscribe_line(){
                             let length_id_sell = res_item.id_sell;
                             let res_length = length_id_sell.toString().length;
                             let id_res_get = length_id_sell.substring(0, res_length-5);
-                            console.log(id_res_get);
+                            //console.log(id_res_get);
+                            $.post('/php/users_get_reg.php', {email: res_subs_all[1]}, function(data_reg) {
+                                var output_reg = $.parseJSON(data_reg);
+                                console.log(output_reg);
+                            });
                             /*$.post('/php/python_send.php',{mail:res_subs_all[1], presell:item1.name_product}, function(data_send) {   
                                     
                                 if (data_send === 'Error') {
