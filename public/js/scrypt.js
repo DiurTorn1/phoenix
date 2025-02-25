@@ -178,6 +178,15 @@ function subscribe_line(){
             //console.log(output1);
             $.each(res_data,function(i,res_item){
                 console.log(res_item.time_end);
+
+                var time_end = new Date(res_item.time_end);
+                time_end.setDate(time_end.getDate() - 1);
+                let how_time_end = time_end.getFullYear() + '-' +
+                    ('0' + (time_end.getMonth() + 1)).slice(-2) + '-' +
+                    ('0' + time_end.getDate()).slice(-2) + ' ' + 
+                    ('0' + time_end.getHours()).slice(-2) + ':' +
+                    ('0' + time_end.getMinutes()).slice(-2) + ':00';
+                console.log(how_time_end);
             });
         }
         //if(res_data != null){
