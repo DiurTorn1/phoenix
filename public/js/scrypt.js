@@ -206,20 +206,20 @@ function subscribe_line(){
                                 $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
                                     var res_prod_fin = $.parseJSON(data_prod_fin);
                                     console.log(res_prod_fin[1]);
-                                    //$.post('/php/python_send.php',{mail:res_subs_all[1], presell:res_prod_fin[1]}, function(data_send) {   
+                                    $.post('/php/python_send.php',{mail:res_subs_all[1], presell:res_prod_fin[1]}, function(data_send) {   
                                     
-                                        //if (data_send === 'Error') {
-                                            //console.error('Ошибка при отправке данных');
-                                        //} else {
-                                            //console.log('Письмо об информировании отправлено:', data_send);
+                                        if (data_send === 'Error') {
+                                            console.error('Ошибка при отправке данных');
+                                        } else {
+                                            console.log('Письмо об информировании отправлено:', data_send);
                                             $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, status:'presell'}, function(data_ps) {
                                                 if(data_ps == "OK"){
                                                     console.log("Success bay");
                                                 } 
                                             });
                                             
-                                        //}
-                                    //});
+                                        }
+                                    });
                                 });
                             });
 
