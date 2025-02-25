@@ -197,7 +197,7 @@ function subscribe_line(){
                             //console.log(res_subs_all[1]);
                             let length_id_sell = res_item.id_sell;
                             let res_length = length_id_sell.toString().length;
-                            let id_res_get = pars_sub.substring(0, res_length-5);
+                            let id_res_get = length_id_sell.substring(0, res_length-5);
                             console.log(id_res_get);
                             /*$.post('/php/python_send.php',{mail:res_subs_all[1], presell:item1.name_product}, function(data_send) {   
                                     
