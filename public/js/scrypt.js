@@ -174,6 +174,12 @@ function subscribe_line(){
     //console.log(howTime);
     $.post('/php/get_subscribe_line_time.php', {time_end:howTime }, function(data_sl) {
         var res_data = $.parseJSON(data_sl);
+        if(res_data){
+            //console.log(output1);
+            $.each(res_data,function(i,res_item){
+                console.log(res_item.time_end);
+            });
+        }
         //if(res_data != null){
             //console.log(res_data);
         //}
