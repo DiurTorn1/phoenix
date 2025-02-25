@@ -180,7 +180,7 @@ function subscribe_line(){
                 
 
                 var time_end = new Date(res_item.time_end);
-                time_end.setDate(time_end.getDate() - 1);
+                time_end.setDate(time_end.getDate());
                 let how_time_end = time_end.getFullYear() + '-' +
                     ('0' + (time_end.getMonth() + 1)).slice(-2) + '-' +
                     ('0' + time_end.getDate()).slice(-2) + ' ' + 
@@ -192,6 +192,15 @@ function subscribe_line(){
                     ('0' + time_end.getDate()).slice(-2) == ('0' + dNow.getDate()).slice(-2) && res_item.status == 'sell'){
                         console.log(howTime);
                         console.log(how_time_end);
+                        /*$.post('/php/python_send.php',{mail:item1.mail, presell:item1.name_product}, function(data_send) {   
+                                    
+                            if (data_send === 'Error') {
+                                console.error('Ошибка при отправке данных');
+                            } else {
+                                console.log('Письмо о покупке подписки отправлено:', data_send);
+                                console.log("Success bay");
+                            }
+                        });*/
                     }
             });
         }
