@@ -205,7 +205,7 @@ function subscribe_line(){
                                 let id_prod_fin = parseInt(id_res_get) - parseInt(output_reg[0]);
                                 $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
                                     var res_prod_fin = $.parseJSON(data_prod_fin);
-                                    console.error(res_prod_fin);
+                                    console.log(res_prod_fin[1]);
                                 });
                             });
                             /*$.post('/php/python_send.php',{mail:res_subs_all[1], presell:item1.name_product}, function(data_send) {   
