@@ -201,7 +201,7 @@ function subscribe_line(){
                             //console.log(id_res_get);
                             $.post('/php/users_get_reg.php', {email: res_subs_all[1]}, function(data_reg) {
                                 var output_reg = $.parseJSON(data_reg);
-                                console.log(output_reg);
+                                console.log(parseInt(id_res_get) - parseInt(output_reg[0]));
                             });
                             /*$.post('/php/python_send.php',{mail:res_subs_all[1], presell:item1.name_product}, function(data_send) {   
                                     
