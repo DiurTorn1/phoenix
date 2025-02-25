@@ -194,17 +194,20 @@ function subscribe_line(){
                         //console.log(how_time_end);
                         $.post('/php/get_all_subscribe_id.php', {id_sell:res_item.id_sell }, function(data_all) {
                             var res_subs_all = $.parseJSON(data_all);
-                            console.log(res_subs_all[1]);
-                        });
-                        /*$.post('/php/python_send.php',{mail:item1.mail, presell:item1.name_product}, function(data_send) {   
+                            //console.log(res_subs_all[1]);
+                            let length_id_sell = res_item.id_sell;
+                            let res_length = length_id_sell.toString().length;
+                            console.log(res_length);
+                            /*$.post('/php/python_send.php',{mail:res_subs_all[1], presell:item1.name_product}, function(data_send) {   
                                     
-                            if (data_send === 'Error') {
-                                console.error('Ошибка при отправке данных');
-                            } else {
-                                console.log('Письмо о покупке подписки отправлено:', data_send);
-                                console.log("Success bay");
-                            }
-                        });*/
+                                if (data_send === 'Error') {
+                                    console.error('Ошибка при отправке данных');
+                                } else {
+                                    console.log('Письмо о покупке подписки отправлено:', data_send);
+                                    console.log("Success bay");
+                                }
+                            });*/
+                        });
                     }
             });
         }
