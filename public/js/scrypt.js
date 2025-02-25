@@ -206,17 +206,18 @@ function subscribe_line(){
                                 $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
                                     var res_prod_fin = $.parseJSON(data_prod_fin);
                                     console.log(res_prod_fin[1]);
+                                    /*$.post('/php/python_send.php',{mail:res_subs_all[1], presell:res_prod_fin[1]}, function(data_send) {   
+                                    
+                                        if (data_send === 'Error') {
+                                            console.error('Ошибка при отправке данных');
+                                        } else {
+                                            console.log('Письмо о информировании отправлено:', data_send);
+                                            console.log("Success bay");
+                                        }
+                                    });*/
                                 });
                             });
-                            /*$.post('/php/python_send.php',{mail:res_subs_all[1], presell:item1.name_product}, function(data_send) {   
-                                    
-                                if (data_send === 'Error') {
-                                    console.error('Ошибка при отправке данных');
-                                } else {
-                                    console.log('Письмо о покупке подписки отправлено:', data_send);
-                                    console.log("Success bay");
-                                }
-                            });*/
+
                         });
                     }
             });

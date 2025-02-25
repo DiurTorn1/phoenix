@@ -30,6 +30,7 @@ def process_data():
     mail = request.json.get('mail')
     code = request.json.get('code')
     product = request.json.get('product')  # Новый параметр для продукта
+    presell = request.json.get('presell')
 
     style = """
     body {
@@ -111,6 +112,28 @@ def process_data():
             </html>
             """
             subject = "Покупка подписки в сервисе Феникс"
+        elif presell:
+            # Отправка письма о покупке подписки
+            html_message = f"""
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Подписка скоро закончится</title>
+                    <style>{style}</style>
+                </head>
+                <body>
+                    <div class="container">
+                        <h1>Сообщаем о скором завершении подписки в сервисе Феникс!</h1>
+                        <p>Скоро закончится подписка на продукт: <strong>{presell}</strong>.</p>
+                        <p>Если не продлите подписку вы не сможете наслаждаться всеми преимуществами нашего сервиса.</p>
+                        <p>Подписка будет продлена автоматически, если на счету достаточно средств. Позаботьтесь, пожалуйста, о наличее средств заранее.</p>
+                        <p>Если у вас возникнут вопросы, свяжитесь с нашей поддержкой.</p>
+                    </div>
+                </body>
+            </html>
+            """
+            subject = "Предупреждение о продление подписки."
         else:
             return jsonify({'status': 'error', 'message': 'No code or product provided'})
 
