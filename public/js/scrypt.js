@@ -212,7 +212,7 @@ function subscribe_line(){
                                             //console.error('Ошибка при отправке данных');
                                         //} else {
                                             //console.log('Письмо об информировании отправлено:', data_send);
-                                            $.post('/php/upload_all_subscribe_status.php', {status:length_id_sell, status:'presell'}, function(data_ps) {
+                                            $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, status:'presell'}, function(data_ps) {
                                                 if(data_ps == "OK"){
                                                     console.log("Success bay");
                                                 } 
