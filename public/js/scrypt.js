@@ -194,7 +194,7 @@ function subscribe_line(){
                         //console.log(how_time_end);
                         $.post('/php/get_all_subscribe_id.php', {id_sell:res_item.id_sell }, function(data_all) {
                             var res_subs_all = $.parseJSON(data_all);
-                            console.log(res_subs_all);
+                            console.log(res_subs_all[1]);
                         });
                         /*$.post('/php/python_send.php',{mail:item1.mail, presell:item1.name_product}, function(data_send) {   
                                     
