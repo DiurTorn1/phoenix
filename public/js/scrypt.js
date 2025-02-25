@@ -187,9 +187,9 @@ function subscribe_line(){
                     ('0' + time_end.getHours()).slice(-2) + ':' +
                     ('0' + time_end.getMinutes()).slice(-2) + ':00';
                 
-                if(time_end.getFullYear() == dNow.getFullYear() ||
-                ('0' + (time_end.getMonth() + 1)).slice(-2) == ('0' + (dNow.getMonth() + 1)).slice(-2) ||
-                    ('0' + time_end.getDate()).slice(-2) == ('0' + dNow.getDate()).slice(-2) || res_item.status == 'sell'){
+                if(time_end.getFullYear() == dNow.getFullYear() &&
+                ('0' + (time_end.getMonth() + 1)).slice(-2) == ('0' + (dNow.getMonth() + 1)).slice(-2) &&
+                    ('0' + time_end.getDate()).slice(-2) == ('0' + dNow.getDate()).slice(-2) && res_item.status == 'sell'){
                         console.log(howTime);
                         console.log(how_time_end);
                     }
