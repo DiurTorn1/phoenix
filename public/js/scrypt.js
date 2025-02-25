@@ -190,8 +190,12 @@ function subscribe_line(){
                 if(time_end.getFullYear() == dNow.getFullYear() &&
                 ('0' + (time_end.getMonth() + 1)).slice(-2) == ('0' + (dNow.getMonth() + 1)).slice(-2) &&
                     ('0' + time_end.getDate()).slice(-2) == ('0' + dNow.getDate()).slice(-2) && res_item.status == 'sell'){
-                        console.log(howTime);
-                        console.log(how_time_end);
+                        //console.log(howTime);
+                        //console.log(how_time_end);
+                        $.post('/php/get_all_subscribe_id.php', {id_sell:res_item.id_sell }, function(data_all) {
+                            var res_subs_all = $.parseJSON(data_all);
+                            console.log(res_subs_all);
+                        });
                         /*$.post('/php/python_send.php',{mail:item1.mail, presell:item1.name_product}, function(data_send) {   
                                     
                             if (data_send === 'Error') {
