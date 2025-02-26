@@ -227,12 +227,17 @@ function subscribe_line(){
                     }
 
                 var time_finally = new Date(res_item.time_end);
-                let how_time_finally = time_finally.getFullYear() + '-' +
+                /*let how_time_finally = time_finally.getFullYear() + '-' +
                     ('0' + (time_finally.getMonth() + 1)).slice(-2) + '-' +
                     ('0' + time_finally.getDate()).slice(-2) + ' ' + 
                     ('0' + time_finally.getHours()).slice(-2) + ':' +
                     ('0' + time_finally.getMinutes()).slice(-2) + ':00';
-                console.log(how_time_finally);
+                console.log(how_time_finally);*/
+                if(time_finally.getFullYear() == dNow.getFullYear() &&
+                ('0' + (time_finally.getMonth() + 1)).slice(-2) == ('0' + (dNow.getMonth() + 1)).slice(-2) &&
+                    ('0' + time_finally.getDate()).slice(-2) == ('0' + dNow.getDate()).slice(-2) && res_item.status == 'sell'){
+                    console.log(how_time_finally);
+                }
             });
         }
         //if(res_data != null){
