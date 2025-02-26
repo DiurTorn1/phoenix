@@ -181,11 +181,11 @@ function subscribe_line(){
 
                 var time_end = new Date(res_item.time_end);
                 time_end.setDate(time_end.getDate() - 1);
-                let how_time_end = time_end.getFullYear() + '-' +
+                /*let how_time_end = time_end.getFullYear() + '-' +
                     ('0' + (time_end.getMonth() + 1)).slice(-2) + '-' +
                     ('0' + time_end.getDate()).slice(-2) + ' ' + 
                     ('0' + time_end.getHours()).slice(-2) + ':' +
-                    ('0' + time_end.getMinutes()).slice(-2) + ':00';
+                    ('0' + time_end.getMinutes()).slice(-2) + ':00';*/
                 
                 if(time_end.getFullYear() == dNow.getFullYear() &&
                 ('0' + (time_end.getMonth() + 1)).slice(-2) == ('0' + (dNow.getMonth() + 1)).slice(-2) &&
@@ -225,6 +225,14 @@ function subscribe_line(){
 
                         });
                     }
+
+                var time_finally = new Date(res_item.time_end);
+                let how_time_finally = time_finally.getFullYear() + '-' +
+                    ('0' + (time_finally.getMonth() + 1)).slice(-2) + '-' +
+                    ('0' + time_finally.getDate()).slice(-2) + ' ' + 
+                    ('0' + time_finally.getHours()).slice(-2) + ':' +
+                    ('0' + time_finally.getMinutes()).slice(-2) + ':00';
+                console.log(how_time_finally);
             });
         }
         //if(res_data != null){
