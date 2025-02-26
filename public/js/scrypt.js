@@ -237,6 +237,38 @@ function subscribe_line(){
                 ('0' + (time_finally.getMonth() + 1)).slice(-2) == ('0' + (dNow.getMonth() + 1)).slice(-2) &&
                     ('0' + time_finally.getDate()).slice(-2) == ('0' + dNow.getDate()).slice(-2) && res_item.status == 'sell'){
                     //console.log(time_finally);
+                    $.post('/php/get_all_subscribe_id.php', {id_sell:res_item.id_sell }, function(data_all) {
+                        var res_subs_all = $.parseJSON(data_all);
+                        //console.log(res_subs_all[1]);
+                        let length_id_sell = res_item.id_sell;
+                        let res_length = length_id_sell.toString().length;
+                        let id_res_get = length_id_sell.substring(0, res_length-5);
+                        //console.log(id_res_get);
+                        $.post('/php/users_get_reg.php', {email: res_subs_all[1]}, function(data_reg) {
+                            var output_reg = $.parseJSON(data_reg);
+                            //console.log(parseInt(id_res_get) - parseInt(output_reg[0]));
+                            let id_prod_fin = parseInt(id_res_get) - parseInt(output_reg[0]);
+                            $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
+                                var res_prod_fin = $.parseJSON(data_prod_fin);
+                                //console.log(res_prod_fin[1]);
+                                $.post('/php/python_send.php',{mail:res_subs_all[1], presell:res_prod_fin[1]}, function(data_send) {   
+                                
+                                    if (data_send === 'Error') {
+                                        console.error('Ошибка при отправке данных');
+                                    } else {
+                                        console.log('Письмо об информировании отправлено:', data_send);
+                                        $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, status:'presell'}, function(data_ps) {
+                                            if(data_ps == "OK"){
+                                                console.log("Success bay");
+                                            } 
+                                        });
+                                        
+                                    }
+                                });
+                            });
+                        });
+
+                    });
                 } else if(time_finally.getFullYear() == dNow.getFullYear() &&
                 ('0' + (time_finally.getMonth() + 1)).slice(-2) == ('0' + (dNow.getMonth() + 1)).slice(-2) &&
                     ('0' + time_finally.getDate()).slice(-2) == ('0' + dNow.getDate()).slice(-2) && res_item.status == 'presell'){
