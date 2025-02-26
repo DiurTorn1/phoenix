@@ -165,7 +165,7 @@ function subscribe_line(){
     var user_email = $('#name_user_get').text();
     //"2023-10-25 14:30:00";var dateFromDb = new Date(dbTimestamp);
     var dNow = new Date();
-    dNow.setDate(dNow.getDate() + 1);
+    //dNow.setDate(dNow.getDate() + 1);
     let howTime = dNow.getFullYear() + '-' + 
         ('0' + (dNow.getMonth() + 1)).slice(-2) + '-' + 
         ('0' + dNow.getDate()).slice(-2) + ' ' + 
@@ -180,7 +180,7 @@ function subscribe_line(){
                 
 
                 var time_end = new Date(res_item.time_end);
-                time_end.setDate(time_end.getDate());
+                time_end.setDate(time_end.getDate() - 1);
                 let how_time_end = time_end.getFullYear() + '-' +
                     ('0' + (time_end.getMonth() + 1)).slice(-2) + '-' +
                     ('0' + time_end.getDate()).slice(-2) + ' ' + 
