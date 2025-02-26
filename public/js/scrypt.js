@@ -236,6 +236,10 @@ function subscribe_line(){
                 if(time_finally.getFullYear() == dNow.getFullYear() &&
                 ('0' + (time_finally.getMonth() + 1)).slice(-2) == ('0' + (dNow.getMonth() + 1)).slice(-2) &&
                     ('0' + time_finally.getDate()).slice(-2) == ('0' + dNow.getDate()).slice(-2) && res_item.status == 'sell'){
+                    //console.log(time_finally);
+                } else if(time_finally.getFullYear() == dNow.getFullYear() &&
+                ('0' + (time_finally.getMonth() + 1)).slice(-2) == ('0' + (dNow.getMonth() + 1)).slice(-2) &&
+                    ('0' + time_finally.getDate()).slice(-2) == ('0' + dNow.getDate()).slice(-2) && res_item.status == 'presell'){
                     console.log(time_finally);
                 }
             });
