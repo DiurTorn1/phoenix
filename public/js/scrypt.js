@@ -304,8 +304,8 @@ function subscribe_line(){
                                                 id_new: res_item.id_prod, // Новый номер счета
                                                 name_prod: res_prod_fin[1] // Описание
                                              }, function(data_send) {
-                                                console.log(data_send);
-                                                if (data.success) {
+                                                //console.log(data_send);
+                                                if (data_send.success) {
                                                     // Перенаправляем пользователя на страницу оплаты
                                                     //window.location.href = data.payment_url;
                                                     console.log(data_send.payment_url);
