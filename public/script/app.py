@@ -29,9 +29,10 @@ def send_email(mail, subject, html_message):
 def process_data():
     mail = request.json.get('mail')
     code = request.json.get('code')
-    product = request.json.get('product')  # Новый параметр для продукта
+    product = request.json.get('product')  # Новый параметр для продукта bay_sub
     presell = request.json.get('presell')
     load = request.json.get('load')
+    bay_sub = request.json.get('bay_sub')
 
     style = """
     body {
@@ -140,7 +141,7 @@ def process_data():
             """
             subject = "Предупреждение о продление подписки."
         elif load:
-            # Отправка письма о покупке подписки
+            # Отправка письма о покупке подписки bay_sub
             html_message = f"""
             <html lang="en">
                 <head>
@@ -160,6 +161,27 @@ def process_data():
             </html>
             """
             subject = "Предупреждение о продление подписки."
+        elif bay_sub:
+            # Отправка письма о покупке подписки 
+            html_message = f"""
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Оплата подписки прошла успешно</title>
+                    <style>{style}</style>
+                </head>
+                <body>
+                    <div class="container">
+                        <h1>Продление услуг сервиса Феникс!</h1>
+                        <p>Вы вновь оплатили подписку на продукт: <strong>{bay_sub}</strong>.</p>
+                        <p>Теперь вы можете наслаждаться всеми преимуществами нашего сервиса.</p>
+                        <p>Если у вас возникнут вопросы, свяжитесь с нашей поддержкой.</p>
+                    </div>
+                </body>
+            </html>
+            """
+            subject = "Оплата подписки."
         else:
             return jsonify({'status': 'error', 'message': 'No code or product provided'})
 

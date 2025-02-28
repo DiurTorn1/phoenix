@@ -366,7 +366,50 @@ function subscribe_line(){
                                         let id_prod_fin = parseInt(id_res_get) - parseInt(output_reg[0]);
                                         $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
                                             var res_prod_fin = $.parseJSON(data_prod_fin);
-                                            console.log(res_prod_fin);
+                                            //console.log(res_prod_fin);
+                                            $.post('/php/python_send.php',{mail:res_subs_all[1], bay_sub:res_prod_fin[1]}, function(data_load) {
+                                                if (data_load === 'Error') {
+                                                    console.error('Ошибка при отправке данных');
+                                                } else {
+                                                    var create_at = new Date();
+                                                    let how_create_at = create_at.getFullYear() + '-' + 
+                                                        ('0' + (create_at.getMonth() + 1)).slice(-2) + '-' + 
+                                                        ('0' + create_at.getDate()).slice(-2) + ' ' + 
+                                                        ('0' + create_at.getHours()).slice(-2) + ':' + 
+                                                        ('0' + create_at.getMinutes()).slice(-2) + ':00';
+                                                    var time_end = new Date(how_create_at);
+                                                    time_end.setDate(time_end.getDate() + parseInt(res_prod_fin[8]));
+                                                    let how_time_end = time_end.getFullYear() + '-' + 
+                                                    ('0' + (time_end.getMonth() + 1)).slice(-2) + '-' + 
+                                                    ('0' + time_end.getDate()).slice(-2) + ' ' + 
+                                                    ('0' + time_end.getHours()).slice(-2) + ':' + 
+                                                    ('0' + time_end.getMinutes()).slice(-2) + ':00';
+                                                    var pars_time_end = how_time_end.split(' ');
+                                                    var par_time_end2 = pars_time_end[0].split('-');
+                                                    let lo_year = par_time_end2[0] + ' ' + 0;
+                                                    let year_s = lo_year.split(' ');
+                                                    let con_year = year_s.join('');
+                                                    let year = con_year.substring(3, 4);
+                                                    let day_p= par_time_end2[2];
+                                                    let month_p = par_time_end2[1];
+                                                    let localdate_id = id_res_get + ' ' + year + ' ' + month_p + ' ' + day_p;
+                                                    let numbersArray = localdate_id.split(' ');
+                                                    let concatenatedNumber = numbersArray.join('');
+                                                    //console.log('Письмо c сылкой:', data_send.payment_url);
+                                                    $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, id_prod:concatenatedNumber, status:'sell', create_at:how_create_at, time_end:how_time_end }, function(data_ps) {
+                                                        if(data_ps == "OK"){
+                                                            $.post('/php/sell_user_add.php', {product_global:id_prod_fin, user_global:res_subs_all[1], create_at:how_create_at}, function(data_us) {
+                                                                if(data_us == "OK"){
+                                                                    console.log("Повторный платёж обработан.");
+                                                                }  else {
+                                                                    console.error('Ошибка: ' + data_us);
+                                                                }
+                                                            });
+                                                        } 
+                                                    });
+                                                    
+                                                }
+                                            });
                                         });
                                     });
                                 }
