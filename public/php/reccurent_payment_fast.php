@@ -7,7 +7,8 @@ $previousInvoiceID = $_POST['id_Inv']; // Номер первого счета �
 $secretKey = 'nCWY57iaB1fKog5zr2BK'; // Пароль 1 из Robokassa
 
 // Генерация подписи (без PreviousInvoiceID)
-$signatureValue = md5("$merchantLogin:$outSum:$invoiceID:$secretKey");
+//$signatureValue = md5("$merchantLogin:$outSum:$invoiceID:$secretKey");
+$crc = md5("$merchantLogin:$out_summ:$ininvoiceIDv_id:$secretKey");
 
 echo 'https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=' . $merchantLogin . '&OutSum=' . $out_summ . '&InvoiceID=' . $invoiceID . '&Description=' . $description . 
         '&SignatureValue=' . $crc;// . '&IsTest=' . $IsTest;
