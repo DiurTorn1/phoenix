@@ -356,7 +356,17 @@ function subscribe_line(){
                                 var code = $state.find('Code').text();
                                 //var author = $book.find('author').text();
         
-                                console.log(code);
+                                //console.log(code);
+                                if(code){
+                                    $.post('/php/users_get_reg.php', {email: res_subs_all[1]}, function(data_reg) {
+                                        var output_reg = $.parseJSON(data_reg);
+                                        let id_prod_fin = parseInt(id_res_get) - parseInt(output_reg[0]);
+                                        $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
+                                            var res_prod_fin = $.parseJSON(data_prod_fin);
+                                            console.log(res_prod_fin);
+                                        });
+                                    });
+                                }
                             });
                         });
                     });
