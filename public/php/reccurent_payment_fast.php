@@ -9,8 +9,10 @@ $secretKey = 'nCWY57iaB1fKog5zr2BK'; // Пароль 1 из Robokassa
 // Генерация подписи (без PreviousInvoiceID)
 $signatureValue = md5("$merchantLogin:$outSum:$invoiceID:$secretKey");
 
+echo 'https://auth.robokassa.ru/Merchant/Index.aspx?MerchantLogin=' . $merchantLogin . '&OutSum=' . $out_summ . '&InvoiceID=' . $invoiceID . '&Description=' . $description . 
+        '&SignatureValue=' . $crc;// . '&IsTest=' . $IsTest;
 // Формируем данные для запроса
-$requestData = [
+/*$requestData = [
     'MerchantLogin' => $merchantLogin,
     'OutSum' => $outSum,
     'InvoiceID' => $invoiceID,
@@ -26,5 +28,5 @@ $paymentUrl = "https://auth.robokassa.ru/Merchant/Index.aspx?" . http_build_quer
 echo json_encode([
     'success' => true,
     'payment_url' => $paymentUrl,
-]);
+]);*/
 ?>
