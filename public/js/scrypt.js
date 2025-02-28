@@ -277,7 +277,11 @@ function subscribe_line(){
                         ('0' + (time_finally.getMonth() + 1)).slice(-2) == ('0' + (dNow.getMonth() + 1)).slice(-2) &&
                         ('0' + time_finally.getDate()).slice(-2) == ('0' + dNow.getDate()).slice(-2) && 
                         ('0' + time_finally.getHours()).slice(-2) <= ('0' + dNow.getHours()).slice(-2)){
-                            console.log(time_finally);
+                            //console.log(time_finally);
+                            $.post('/php/get_all_subscribe_id.php', {id_sell:res_item.id_sell }, function(data_all) {
+                                var res_subs_all = $.parseJSON(data_all);
+                                console.log(res_subs_all);
+                            });
                     }
                 }
             });
