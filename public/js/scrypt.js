@@ -395,11 +395,10 @@ function subscribe_line(){
                                                     let localdate_id = id_res_get + ' ' + year + ' ' + month_p + ' ' + day_p;
                                                     let numbersArray = localdate_id.split(' ');
                                                     let concatenatedNumber = numbersArray.join('');
-                                                    //console.log(length_id_sell + ' ' + concatenatedNumber + ' ' + 'sell' + ' ' + how_create_at + ' ' +how_time_end);
+                                                    console.log(length_id_sell + ' ' + concatenatedNumber + ' ' + 'sell' + ' ' + how_create_at + ' ' +how_time_end);
                                                     //console.log('Письмо c сылкой:', data_send.payment_url);
-                                                    $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, id_prod:concatenatedNumber, status:'sell', create_at:how_create_at, time_end:how_time_end }, function(data_ps) {
-                                                        if(data_ps == "OK"){
-                                                            console.log(data_ps);
+                                                    //$.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, id_prod:concatenatedNumber, status:'sell', create_at:how_create_at, time_end:how_time_end }, function(data_ps) {
+                                                        //if(data_ps == "OK"){
                                                             //$.post('/php/sell_user_add.php', {product_global:id_prod_fin, user_global:res_subs_all[1], create_at:how_create_at}, function(data_us) {
                                                                 //if(data_us == "OK"){
                                                                    // console.log("Повторный платёж обработан.");
@@ -407,8 +406,8 @@ function subscribe_line(){
                                                                     //console.error('Ошибка: ' + data_us);
                                                                 //}
                                                            // });
-                                                        } 
-                                                   });
+                                                        //} 
+                                                   //});
                                                     
                                                 //}
                                             //});
