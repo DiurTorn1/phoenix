@@ -296,7 +296,7 @@ function subscribe_line(){
                                             var res_data_presell = $.parseJSON(data_presell);
                                             //console.log(res_data_presell);
                                             //console.log(res_prod_fin[1]);
-                                            let pr_summ = parseInt();
+                                            let pr_summ = parseInt(res_data_presell[4]);
                                             if(pr_summ == 0){ pr_summ = 1;}
 
                                             $.post('/php/reccurent_payment_load.php', { summ:pr_summ, name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {
