@@ -294,7 +294,7 @@ function subscribe_line(){
                                         var res_prod_fin = $.parseJSON(data_prod_fin);
                                         $.post('/php/get_presell_price.php', {id_product:res_item.id_sell}, function(data_presell){
                                             var res_data_presell = $.parseJSON(data_presell);
-                                            //console.log(res_data_presell);
+                                            console.log(res_data_presell);
                                             //console.log(res_prod_fin[1]);
                                             let pr_summ = parseInt();
                                             if(pr_summ == 0){ pr_summ = 1;}
