@@ -342,7 +342,24 @@ function subscribe_line(){
                             });
                     }
                 } else if( res_item.status == 'load' ){
-                    console.log('load');
+                    $.post('/php/get_all_subscribe_id.php', {id_sell:res_item.id_sell }, function(data_all) {
+                        var res_subs_all = $.parseJSON(data_all);
+                        //console.log(res_subs_all);
+                        $.post('/php/sell_get_operacion.php', {id_product: res_item.id_prod}, function(data_oper) {
+                            var xmlDoc = $.parseXML(data_oper);
+                            var $xml = $(xmlDoc);
+                            //console.log($xml);
+                            //console.log(xmlDoc);
+                            // Выборка элементов и добавление их в список
+                            $xml.find('State').each(function() {
+                                var $state = $(this);
+                                var code = $state.find('Code').text();
+                                //var author = $book.find('author').text();
+        
+                                console.log(code);
+                            });
+                        });
+                    });
                 }
             });
         }
