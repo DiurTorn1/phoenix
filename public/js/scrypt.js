@@ -299,8 +299,20 @@ function subscribe_line(){
                                             let pr_summ = parseInt(res_data_presell[4]);
                                             if(pr_summ == 0){ pr_summ = 1;}
 
-                                            $.post('/php/reccurent_payment_fast.php', { summ:pr_summ, name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {
+                                            $.post('/php/reccurent_payment_fast.php', {
+                                                summ: pr_summ, // Сумма платежа
+                                                id_new: res_item.id_prod, // Новый номер счета
+                                                name_prod: res_prod_fin[1] // Описание
+                                             }, function(data_send) {
                                                 console.log(data_send);
+                                                if (data.success) {
+                                                    // Перенаправляем пользователя на страницу оплаты
+                                                    //window.location.href = data.payment_url;
+                                                    console.log(data_send.payment_url);
+                                                } else {
+                                                    // Выводим сообщение об ошибке
+                                                    alert(data.message);
+                                                }
                                                 //if (data_send.success) {
                                                     // Перенаправляем пользователя на страницу оплаты
                                                     //console.log(data_send.payment_url);
