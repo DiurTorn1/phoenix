@@ -293,14 +293,14 @@ function subscribe_line(){
                                     $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
                                         var res_prod_fin = $.parseJSON(data_prod_fin);
                                         console.log(res_prod_fin[1]);
-                                        //$.post('/php/reccurent_payment_load.php',{summ:res_subs_all[11], name_prod:res_prod_fin[1], id_new: }, function(data_send) {   
+                                        $.post('/php/reccurent_payment_load.php',{summ:res_subs_all[11], name_prod:res_prod_fin[1], id_new:id_prod, id_Inv:res_item.id_sell }, function(data_send) {   
                                         
-                                            //if (data_send === 'Error') {
+                                            //if (data_send === 'Ошибка при обработке платежа.') {
                                                 //console.error('Ошибка при отправке данных');
                                             //} else {
                                                 
                                             //}
-                                        //});
+                                        });
                                     });
                                 });
                             });
