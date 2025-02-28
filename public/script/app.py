@@ -31,6 +31,7 @@ def process_data():
     code = request.json.get('code')
     product = request.json.get('product')  # Новый параметр для продукта
     presell = request.json.get('presell')
+    load = request.json.get('load')
 
     style = """
     body {
@@ -128,6 +129,27 @@ def process_data():
                         <p>Скоро закончится подписка на продукт: <strong>{presell}</strong>.</p>
                         <p>Если не продлите подписку вы не сможете наслаждаться всеми преимуществами нашего сервиса.</p>
                         <p>Скоро вам придёт ссылка на повторную оплату. Позаботьтесь, пожалуйста, о наличее средств заранее.</p>
+                        <p>Если у вас возникнут вопросы, свяжитесь с нашей поддержкой.</p>
+                    </div>
+                </body>
+            </html>
+            """
+            subject = "Предупреждение о продление подписки."
+        elif load:
+            # Отправка письма о покупке подписки
+            html_message = f"""
+            <html lang="en">
+                <head>
+                    <meta charset="UTF-8">
+                    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                    <title>Ссылка на оплату</title>
+                    <style>{style}</style>
+                </head>
+                <body>
+                    <div class="container">
+                        <h1Ссылка на оплату услуг сервиса Феникс!</h1>
+                        <p>Если не продлите подписку вы не сможете наслаждаться всеми преимуществами нашего сервиса.</p>
+                        <p>Пройдите по ссылке и совершите оплату услуги для пользования услуг: <strong>{load}</strong>.</p>
                         <p>Если у вас возникнут вопросы, свяжитесь с нашей поддержкой.</p>
                     </div>
                 </body>
