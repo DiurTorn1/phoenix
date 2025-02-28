@@ -55,6 +55,10 @@ def process_data():
         color: #666;
         line-height: 1.6;
     }
+    a {
+        color: #666;
+        line-height: 1.6;
+    }
     .button {
         display: inline-block;
         padding: 10px 20px;
