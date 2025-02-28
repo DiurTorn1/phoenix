@@ -310,7 +310,7 @@ function subscribe_line(){
                                                     //window.location.href = data.payment_url;
                                                     //console.log(data_send.payment_url);
                                                     console.log(res_subs_all[1]);
-                                                    $.post('/php/python_send.php',{mail:res_subs_all[1], load:data_send.payment_url}, function(data_load) {
+                                                    //$.post('/php/python_send.php',{mail:res_subs_all[1], load:data_send.payment_url}, function(data_load) {
                                                         //if (data_load === 'Error') {
                                                             //console.error('Ошибка при отправке данных');
                                                         //} else {
@@ -329,7 +329,7 @@ function subscribe_line(){
                                                             });*/
                                                             
                                                         //}
-                                                    });
+                                                    //});
                                                 } else {
                                                     // Выводим сообщение об ошибке
                                                     alert(data.message);
