@@ -367,10 +367,10 @@ function subscribe_line(){
                                         $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
                                             var res_prod_fin = $.parseJSON(data_prod_fin);
                                             //console.log(res_prod_fin);
-                                            $.post('/php/python_send.php',{mail:res_subs_all[1], bay_sub:res_prod_fin[1]}, function(data_load) {
-                                                if (data_load === 'Error') {
-                                                    console.error('Ошибка при отправке данных');
-                                                } else {
+                                            //$.post('/php/python_send.php',{mail:res_subs_all[1], bay_sub:res_prod_fin[1]}, function(data_load) {
+                                                //if (data_load === 'Error') {
+                                                    //console.error('Ошибка при отправке данных');
+                                                //} else {
                                                     var create_at = new Date();
                                                     let how_create_at = create_at.getFullYear() + '-' + 
                                                         ('0' + (create_at.getMonth() + 1)).slice(-2) + '-' + 
@@ -409,8 +409,8 @@ function subscribe_line(){
                                                         //} 
                                                    //});
                                                     
-                                                }
-                                            });
+                                                //}
+                                            //});
                                         });
                                     });
                                 }
