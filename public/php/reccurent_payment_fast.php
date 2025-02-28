@@ -15,7 +15,6 @@ $requestData = [
     'OutSum' => $outSum,
     'InvoiceID' => $invoiceID,
     'Description' => $description,
-    'Recurring' => 'true',
     'PreviousInvoiceID' => $previousInvoiceID,
     'SignatureValue' => $signatureValue,
 ];
