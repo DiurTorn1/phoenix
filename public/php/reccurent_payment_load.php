@@ -47,8 +47,13 @@ $verboseLog = stream_get_contents($verbose);
 fclose($verbose);
 file_put_contents('curl_log.txt', $verboseLog);
 
-// Обработка ответа
 if ($response) {
+    echo "Ответ от Robokassa: " . htmlspecialchars($response);
+} else {
+    echo "Ответ от Robokassa пустой.";
+}
+// Обработка ответа
+/*if ($response) {
     if (strpos($response, 'Оплата успешно выполнена') !== false) {
         echo "Платеж успешно обработан.";
     } else {
@@ -56,5 +61,5 @@ if ($response) {
     }
 } else {
     echo "Ошибка при отправке запроса.";
-}
+}*/
 ?>
