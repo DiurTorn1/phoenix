@@ -310,10 +310,10 @@ function subscribe_line(){
                                                     //window.location.href = data.payment_url;
                                                     //console.log(data_send.payment_url);
                                                     $.post('/php/python_send.php',{mail:res_subs_all[1], load:data_send.payment_url}, function(data_load) {
-                                                        if (data_load === 'Error') {
-                                                            console.error('Ошибка при отправке данных');
-                                                        } else {
-                                                            console.log('Письмо c сылкой:', data_send.payment_url);
+                                                        //if (data_load === 'Error') {
+                                                            //console.error('Ошибка при отправке данных');
+                                                        //} else {
+                                                            //console.log('Письмо c сылкой:', data_send.payment_url);
                                                             /**
                                                             $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, status:'load'}, function(data_ps) {
                                                                 if(data_ps == "OK"){
@@ -327,7 +327,7 @@ function subscribe_line(){
                                                                 } 
                                                             });*/
                                                             
-                                                        }
+                                                        //}
                                                     });
                                                 } else {
                                                     // Выводим сообщение об ошибке
