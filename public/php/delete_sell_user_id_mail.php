@@ -3,8 +3,8 @@ require "config_bd.php"; // Подключение к базе данных
 
 // Подготовленный запрос
 $sql = "DELETE FROM `sell_users_permission` 
-        WHERE id_product = ? 
-        AND mail = ?";
+        WHERE product_id = ? 
+        AND user_email = ?";
 
 // Подготавливаем запрос
 $stmt = $conn->prepare($sql);
