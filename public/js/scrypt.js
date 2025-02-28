@@ -367,7 +367,7 @@ function subscribe_line(){
                                         $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
                                             var res_prod_fin = $.parseJSON(data_prod_fin);
                                             //console.log(res_prod_fin);
-                                            $.post('/php/python_send.php',{mail:res_subs_all[1], bay_sub:res_prod_fin[1]}, function(data_load) {
+                                            //$.post('/php/python_send.php',{mail:res_subs_all[1], bay_sub:res_prod_fin[1]}, function(data_load) {
                                                 //if (data_load === 'Error') {
                                                     //console.error('Ошибка при отправке данных');
                                                 //} else {
@@ -410,7 +410,7 @@ function subscribe_line(){
                                                    //});
                                                     
                                                 //}
-                                            });
+                                            //});
                                         });
                                     });
                                 }
