@@ -227,7 +227,7 @@ function subscribe_line(){
                     }
 
                 var time_finally = new Date(res_item.time_end);
-                time_finally.setDate(time_finally.getDate() - 1);
+                time_finally.setDate(time_finally.getDate() + 1);
                 /*let how_time_finally = time_finally.getFullYear() + '-' +
                     ('0' + (time_finally.getMonth() + 1)).slice(-2) + '-' +
                     ('0' + time_finally.getDate()).slice(-2) + ' ' + 
