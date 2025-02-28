@@ -9,7 +9,7 @@ $options = array(
     'http' => array(
         'header'  => "Content-type: application/json\r\n",
         'method'  => 'POST',
-        'content' => json_encode(array('mail' => $data, 'code' => $code, 'product' => $product, 'presell' => $presell)),
+        'content' => json_encode(array('mail' => $data, 'code' => $code, 'product' => $product, 'presell' => $presellб, 'load' => $load)),
     ),
 );
 
