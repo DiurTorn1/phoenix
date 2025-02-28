@@ -300,7 +300,7 @@ function subscribe_line(){
                                             if(pr_summ == 0){ pr_summ = 1;}
 
                                             $.post('/php/reccurent_payment_fast.php', { summ:pr_summ, name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {
-                                                //console.log(data_send);
+                                                console.log(data_send);
                                                 if (data_send.success) {
                                                     // Перенаправляем пользователя на страницу оплаты
                                                     console.log(data_send.payment_url);
