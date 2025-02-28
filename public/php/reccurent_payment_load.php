@@ -6,7 +6,7 @@ $description = $_POST['name_prod']; // Описание
 $previousInvoiceID = $_POST['id_new']; // Номер первого счета в серии
 $secretKey = 'nCWY57iaB1fKog5zr2BK'; // Пароль 1 из Robokassa
 
-..echo $outSum . ' ' . $invoiceID . ' ' . $description . ' ' . $previousInvoiceID;
+//echo $outSum . ' ' . $invoiceID . ' ' . $description . ' ' . $previousInvoiceID;
 // Генерация подписи (без PreviousInvoiceID)
 $signatureValue = md5("$merchantLogin:$outSum:$invoiceID:$secretKey");
 
