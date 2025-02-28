@@ -361,7 +361,7 @@ function subscribe_line(){
         
                                 //console.log(code);
                                 if(code){
-                                    $.post('/php/users_get_reg.php', {email: res_subs_all[1]}, function(data_reg) {
+                                    /*$.post('/php/users_get_reg.php', {email: res_subs_all[1]}, function(data_reg) {
                                         var output_reg = $.parseJSON(data_reg);
                                         let id_prod_fin = parseInt(id_res_get) - parseInt(output_reg[0]);
                                         $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
@@ -411,7 +411,7 @@ function subscribe_line(){
                                                 }
                                             });
                                         });
-                                    });
+                                    });*/
                                 }
                             });
                         });
