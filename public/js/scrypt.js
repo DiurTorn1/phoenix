@@ -296,20 +296,32 @@ function subscribe_line(){
                                             var res_data_presell = $.parseJSON(data_presell);
                                             //console.log(res_data_presell);
                                             //console.log(res_prod_fin[1]);
-                                            let pr_summ = parseInt(res_data_presell[4]);
-                                            if(pr_summ == 0){ pr_summ = 1;}
-                                            $.post('/php/reccurent_payment_load.php',{summ:pr_summ, name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {   
-                                                //console.log(data_send);
-                                                if (data_send === 'Ошибка при обработке платежа.') {
-                                                    console.error('Ошибка при обработке платежа.');
-                                                } else {
-                                                    $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, status:'load'}, function(data_ps) {
-                                                        if(data_ps == "OK"){
-                                                            console.log("Повторный платёж обработан.");
-                                                        } 
+
+                                            $.post('/php/reccurent_pyment_load.php', { summ:res_data_presell[4], name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {
+                                                if (data_send) {
+                                                    // Отправляем данные на Robokassa
+                                                    $.post('https://auth.robokassa.ru/Merchant/Recurring', data_send, function(response) {
+                                                        if (response.includes('Оплата успешно выполнена')) {
+                                                            alert('Платеж успешно выполнен.');
+                                                            $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, status:'load'}, function(data_ps) {
+                                                                if(data_ps == "OK"){
+                                                                    $.post('/php/delete_sell_user_id_mail.php', {user_email:res_subs_all[1], product_id:id_prod_fin}, function(data_del) {
+                                                                        if(data_del == "OK"){
+                                                                            console.log("Повторный платёж обработан.");
+                                                                        }  else {
+                                                                            console.error('Ошибка: ' + data_del);
+                                                                        }
+                                                                    });
+                                                                } 
+                                                            });
+                                                        } else {
+                                                            alert('Ошибка при выполнении платежа.');
+                                                        }
                                                     });
+                                                } else {
+                                                    alert('Ошибка при формировании запроса.');
                                                 }
-                                            });
+                                            }, 'json');
                                         });
 
                                     });

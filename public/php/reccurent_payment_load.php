@@ -21,24 +21,7 @@ $requestData = [
     'SignatureValue' => $signatureValue,
 ];
 
-// Отправка запроса (пример с использованием cURL)
-$ch = curl_init('https://auth.robokassa.ru/Merchant/Index.aspx');
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($requestData));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-$response = curl_exec($ch);
-curl_close($ch);
-
-// Обработка ответа
-if ($response) {
-    // Robokassa возвращает HTML-страницу, поэтому парсим её (пример)
-    if (strpos($response, 'Оплата успешно выполнена') !== false) {
-        echo "Платеж успешно обработан. InvoiceID: $invoiceID";
-    } else {
-        echo "Ошибка при обработке платежа.";
-    }
-} else {
-    echo "Ошибка при отправке запроса.";
-}
+// Возвращаем данные в формате JSON
+header('Content-Type: application/json');
+echo json_encode($requestData);
 ?>
