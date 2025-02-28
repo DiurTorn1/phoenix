@@ -367,10 +367,10 @@ function subscribe_line(){
                                         $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
                                             var res_prod_fin = $.parseJSON(data_prod_fin);
                                             //console.log(res_prod_fin);
-                                            //$.post('/php/python_send.php',{mail:res_subs_all[1], bay_sub:res_prod_fin[1]}, function(data_load) {
-                                                //if (data_load === 'Error') {
-                                                    //console.error('Ошибка при отправке данных');
-                                                //} else {
+                                            $.post('/php/python_send.php',{mail:res_subs_all[1], bay_sub:res_prod_fin[1]}, function(data_load) {
+                                                if (data_load === 'Error') {
+                                                    console.error('Ошибка при отправке данных');
+                                                } else {
                                                     var create_at = new Date();
                                                     let how_create_at = create_at.getFullYear() + '-' + 
                                                         ('0' + (create_at.getMonth() + 1)).slice(-2) + '-' + 
@@ -395,22 +395,22 @@ function subscribe_line(){
                                                     let localdate_id = id_res_get + ' ' + year + ' ' + month_p + ' ' + day_p;
                                                     let numbersArray = localdate_id.split(' ');
                                                     let concatenatedNumber = numbersArray.join('');
-                                                    console.log(length_id_sell + ' ' + concatenatedNumber + ' ' + 'sell' + ' ' + how_create_at + ' ' +how_time_end);
+                                                    //console.log(length_id_sell + ' ' + concatenatedNumber + ' ' + 'sell' + ' ' + how_create_at + ' ' +how_time_end);
                                                     //console.log('Письмо c сылкой:', data_send.payment_url);
-                                                    //$.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, id_prod:concatenatedNumber, status:'sell', create_at:how_create_at, time_end:how_time_end }, function(data_ps) {
-                                                        //if(data_ps == "OK"){
-                                                            //$.post('/php/sell_user_add.php', {product_global:id_prod_fin, user_global:res_subs_all[1], create_at:how_create_at}, function(data_us) {
-                                                                //if(data_us == "OK"){
-                                                                   // console.log("Повторный платёж обработан.");
-                                                               // }  else {
-                                                                    //console.error('Ошибка: ' + data_us);
-                                                                //}
-                                                           // });
-                                                        //} 
-                                                   //});
+                                                    $.post('/php/upload_subscribe_line_sell.php', {id_sell:length_id_sell, id_prod:concatenatedNumber, status:'sell', create_at:how_create_at, time_end:how_time_end }, function(data_ps) {
+                                                        if(data_ps == "OK"){
+                                                            $.post('/php/sell_user_add.php', {product_global:id_prod_fin, user_global:res_subs_all[1], create_at:how_create_at}, function(data_us) {
+                                                                if(data_us == "OK"){
+                                                                    console.log("Повторный платёж обработан.");
+                                                                }  else {
+                                                                    console.error('Ошибка: ' + data_us);
+                                                                }
+                                                           });
+                                                        } 
+                                                   });
                                                     
-                                                //}
-                                            //});
+                                                }
+                                            });
                                         });
                                     });
                                 }
