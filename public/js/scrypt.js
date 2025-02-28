@@ -292,9 +292,13 @@ function subscribe_line(){
                                     let id_prod_fin = parseInt(id_res_get) - parseInt(output_reg[0]);
                                     $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
                                         var res_prod_fin = $.parseJSON(data_prod_fin);
+                                        $.post('/php/get_presell_price.php', {id_product:res_item.id_sell}, function(data_presell){
+                                            var res_data_presell = $.parseJSON(data_presell);
+                                            console.log(res_data_presell);
+                                        });
                                         //console.log(res_prod_fin[1]);
-                                        $.post('/php/reccurent_payment_load.php',{summ:res_subs_all[11], name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {   
-                                            console.log(data_send);
+                                        //$.post('/php/reccurent_payment_load.php',{summ:res_subs_all[11], name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {   
+                                            //console.log(data_send);
                                             /*if (data_send === 'Ошибка при обработке платежа.') {
                                                 console.error('Ошибка при обработке платежа.');
                                             } else {
@@ -304,7 +308,7 @@ function subscribe_line(){
                                                     } 
                                                 });
                                             }*/
-                                        });
+                                        //});
                                     });
                                 });
                             });
