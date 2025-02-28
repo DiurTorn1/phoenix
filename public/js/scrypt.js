@@ -341,6 +341,8 @@ function subscribe_line(){
                                 });
                             });
                     }
+                } else if( res_item.status == 'load' ){
+                    console.log('load');
                 }
             });
         }
