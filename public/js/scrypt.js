@@ -344,6 +344,9 @@ function subscribe_line(){
                 } else if( res_item.status == 'load' ){
                     $.post('/php/get_all_subscribe_id.php', {id_sell:res_item.id_sell }, function(data_all) {
                         var res_subs_all = $.parseJSON(data_all);
+                        let length_id_sell = res_item.id_sell;
+                        let res_length = length_id_sell.toString().length;
+                        let id_res_get = length_id_sell.substring(0, res_length-5);
                         //console.log(res_subs_all);
                         $.post('/php/sell_get_operacion.php', {id_product: res_item.id_prod}, function(data_oper) {
                             var xmlDoc = $.parseXML(data_oper);
