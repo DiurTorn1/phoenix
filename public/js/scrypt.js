@@ -299,9 +299,12 @@ function subscribe_line(){
                                             let pr_summ = parseInt(res_data_presell[4]);
                                             if(pr_summ == 0){ pr_summ = 1;}
 
-                                            $.post('/php/reccurent_payment_load.php', { summ:pr_summ, name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {
-                                                console.log(data_send);
-                                                if (data_send == "Платеж успешно обработан.") {
+                                            $.post('/php/reccurent_payment_fast.php', { summ:pr_summ, name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {
+                                                //console.log(data_send);
+                                                if (data_send.success) {
+                                                    // Перенаправляем пользователя на страницу оплаты
+                                                    console.log(data_send.payment_url);
+                                                    /**
                                                     $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, status:'load'}, function(data_ps) {
                                                         if(data_ps == "OK"){
                                                             $.post('/php/delete_sell_user_id_mail.php', {user_email:res_subs_all[1], product_id:id_prod_fin}, function(data_del) {
@@ -313,9 +316,12 @@ function subscribe_line(){
                                                             });
                                                         } 
                                                     });
+                                                     */
                                                 } else {
-                                                    console.error('Ошибка при формировании запроса.');
+                                                    // Выводим сообщение об ошибке
+                                                    alert('Ошибка: ' + data.message);
                                                 }
+
                                             }, 'json');
                                         });
 
