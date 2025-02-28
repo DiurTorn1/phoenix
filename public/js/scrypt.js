@@ -309,13 +309,12 @@ function subscribe_line(){
                                                     // Перенаправляем пользователя на страницу оплаты
                                                     //window.location.href = data.payment_url;
                                                     //console.log(data_send.payment_url);
-                                                    console.log(res_subs_all[1]);
-                                                   // $.post('/php/python_send.php',{mail:res_subs_all[1], load:data_send.payment_url}, function(data_load) {
-                                                        //if (data_load === 'Error') {
-                                                            //console.error('Ошибка при отправке данных');
-                                                        //} else {
+                                                    //console.log(res_subs_all[1]);
+                                                    $.post('/php/python_send.php',{mail:res_subs_all[1], load:data_send.payment_url}, function(data_load) {
+                                                        if (data_load === 'Error') {
+                                                            console.error('Ошибка при отправке данных');
+                                                        } else {
                                                             //console.log('Письмо c сылкой:', data_send.payment_url);
-                                                            /**
                                                             $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, status:'load'}, function(data_ps) {
                                                                 if(data_ps == "OK"){
                                                                     $.post('/php/delete_sell_user_id_mail.php', {user_email:res_subs_all[1], product_id:id_prod_fin}, function(data_del) {
@@ -326,10 +325,10 @@ function subscribe_line(){
                                                                         }
                                                                     });
                                                                 } 
-                                                            });*/
+                                                            });
                                                             
-                                                        //}
-                                                    //});
+                                                        }
+                                                    });
                                                 } else {
                                                     // Выводим сообщение об ошибке
                                                     alert(data.message);
