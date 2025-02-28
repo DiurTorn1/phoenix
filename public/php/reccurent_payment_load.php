@@ -22,7 +22,7 @@ $requestData = [
 ];
 
 // Логирование параметров запроса
-//file_put_contents('request_data.txt', print_r($requestData, true));
+file_put_contents('request_data.txt', print_r($requestData, true));
 
 // Отправка запроса через cURL
 $ch = curl_init('https://auth.robokassa.ru/Merchant/Recurring');
