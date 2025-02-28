@@ -301,14 +301,14 @@ function subscribe_line(){
 
                                             $.post('/php/reccurent_payment_fast.php', { summ:pr_summ, name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {
                                                 console.log(data_send);
-                                                if (data_send.success) {
+                                                //if (data_send.success) {
                                                     // Перенаправляем пользователя на страницу оплаты
                                                     //console.log(data_send.payment_url);
-                                                    $.post('/php/python_send.php',{mail:res_subs_all[1], load:data_send.payment_url}, function(data_load) {
-                                                        if (data_load === 'Error') {
-                                                            console.error('Ошибка при отправке данных');
-                                                        } else {
-                                                            console.log('Письмо c сылкой:', data_send.payment_url);
+                                                    //$.post('/php/python_send.php',{mail:res_subs_all[1], load:data_send.payment_url}, function(data_load) {
+                                                        //if (data_load === 'Error') {
+                                                            //console.error('Ошибка при отправке данных');
+                                                        //} else {
+                                                            //console.log('Письмо c сылкой:', data_send.payment_url);
                                                             /**
                                                             $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, status:'load'}, function(data_ps) {
                                                                 if(data_ps == "OK"){
@@ -322,12 +322,12 @@ function subscribe_line(){
                                                                 } 
                                                             });*/
                                                             
-                                                        }
-                                                    });
-                                                } else {
+                                                        //}
+                                                    //});
+                                                //} else {
                                                     // Выводим сообщение об ошибке
-                                                    alert('Ошибка: ' + data.message);
-                                                }
+                                                    //alert('Ошибка: ' + data.message);
+                                                //}
 
                                             }, 'json');
                                         });
