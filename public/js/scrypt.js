@@ -297,7 +297,7 @@ function subscribe_line(){
                                             //console.log(res_data_presell);
                                             //console.log(res_prod_fin[1]);
 
-                                            $.post('/php/reccurent_pyment_load.php', { summ:res_data_presell[4], name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {
+                                            $.post('/php/reccurent_payment_load.php', { summ:res_data_presell[4], name_prod:res_prod_fin[1], id_new:res_item.id_prod, id_Inv:res_item.id_sell }, function(data_send) {
                                                 if (data_send) {
                                                     // Отправляем данные на Robokassa
                                                     $.post('https://auth.robokassa.ru/Merchant/Recurring', data_send, function(response) {
