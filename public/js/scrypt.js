@@ -165,7 +165,7 @@ function subscribe_line(){
     var user_email = $('#name_user_get').text();
     //"2023-10-25 14:30:00";var dateFromDb = new Date(dbTimestamp);
     var dNow = new Date();
-    //dNow.setDate(dNow.getDate() + 1);
+    dNow.setDate(dNow.getDate() + 1);
     let howTime = dNow.getFullYear() + '-' + 
         ('0' + (dNow.getMonth() + 1)).slice(-2) + '-' + 
         ('0' + dNow.getDate()).slice(-2) + ' ' + 
@@ -180,7 +180,7 @@ function subscribe_line(){
                 
 
                 var time_end = new Date(res_item.time_end);
-                time_end.setDate(time_end.getDate() - 1);
+                //time_end.setDate(time_end.getDate() - 2);
                 /*let how_time_end = time_end.getFullYear() + '-' +
                     ('0' + (time_end.getMonth() + 1)).slice(-2) + '-' +
                     ('0' + time_end.getDate()).slice(-2) + ' ' + 
@@ -227,6 +227,7 @@ function subscribe_line(){
                     }
 
                 var time_finally = new Date(res_item.time_end);
+                time_finally.setDate(time_finally.getDate() - 1);
                 /*let how_time_finally = time_finally.getFullYear() + '-' +
                     ('0' + (time_finally.getMonth() + 1)).slice(-2) + '-' +
                     ('0' + time_finally.getDate()).slice(-2) + ' ' + 
@@ -280,7 +281,28 @@ function subscribe_line(){
                             //console.log(time_finally);
                             $.post('/php/get_all_subscribe_id.php', {id_sell:res_item.id_sell }, function(data_all) {
                                 var res_subs_all = $.parseJSON(data_all);
-                                console.log(res_subs_all);
+                                //console.log(res_subs_all);
+                                let length_id_sell = res_item.id_sell;
+                                let res_length = length_id_sell.toString().length;
+                                let id_res_get = length_id_sell.substring(0, res_length-5);
+                                //console.log(id_res_get);
+                                $.post('/php/users_get_reg.php', {email: res_subs_all[1]}, function(data_reg) {
+                                    var output_reg = $.parseJSON(data_reg);
+                                    //console.log(parseInt(id_res_get) - parseInt(output_reg[0]));
+                                    let id_prod_fin = parseInt(id_res_get) - parseInt(output_reg[0]);
+                                    $.post('/php/get_product_id.php', {id:id_prod_fin}, function(data_prod_fin){
+                                        var res_prod_fin = $.parseJSON(data_prod_fin);
+                                        console.log(res_prod_fin[1]);
+                                        //$.post('/php/reccurent_payment_load.php',{summ:res_subs_all[11], name_prod:res_prod_fin[1], id_new: }, function(data_send) {   
+                                        
+                                            //if (data_send === 'Error') {
+                                                //console.error('Ошибка при отправке данных');
+                                            //} else {
+                                                
+                                            //}
+                                        //});
+                                    });
+                                });
                             });
                     }
                 }
