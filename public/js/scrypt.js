@@ -402,6 +402,7 @@ function subscribe_line(){
                                                             $.post('/php/sell_user_add.php', {product_global:id_prod_fin, user_global:res_subs_all[1], create_at:how_create_at}, function(data_us) {
                                                                 if(data_us == "OK"){
                                                                     console.log("Повторный платёж обработан.");
+                                                                    window.location.href = '/';
                                                                 }  else {
                                                                     console.error('Ошибка: ' + data_us);
                                                                 }
@@ -502,7 +503,7 @@ $(document).ready(function() {
             $.post('/php/users_get_reg.php', { email:email_get }, function(data1) {
                 var output1 = $.parseJSON(data1);
                 if(output1){
-                    $("#details_registr").text("Пользователь с данной почтой зарегестрирован.");
+                    $("#details_registr").text("Пользователь с данной почтой зарегистрирован.");
                     $("#send_mail").toggle();
                     //$("#user-input-registr").toggle();
                     //$("#send_mail_reg").toggle();
