@@ -151,6 +151,10 @@ Route::get('/about', function () {
     return view('about');
 });
 
+Route::get('/commentator', function () {
+    return view('commentator');
+});
+
 Route::get('/product_admin', [ProductController::class, 'index'])->name('products');//function () {
     //return view('product_admin');
 //});
@@ -163,6 +167,10 @@ Route::get('/product_add', [ProductController::class, 'create'])->name('product_
 
 Route::get('/promocode', function () {
     return view('promocode');
+});
+
+Route::get('/card_comment', function () {
+    return view('card_comment');
 });
 
 Route::get('/video_add', function () {

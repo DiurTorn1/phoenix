@@ -1,72 +1,98 @@
 <?php
-// Включение вывода ошибок
-ini_set('display_errors', 1);
-ini_set('display_startup_errors', 1);
-error_reporting(E_ALL);
+header('Content-Type: application/json');
+ini_set('display_errors', 0);
+ini_set('log_errors', 1);
+ini_set('error_log', 'php_errors.log');
 
-$merchantLogin = 'phoenixtv.ru'; // Логин магазина
-$outSum = floatval($_POST['summ']); // Сумма платежа
-$invoiceID = $_POST['id_new']; // Новый номер счета
-$description = trim($_POST['name_prod']); // Описание
-$previousInvoiceID = $_POST['id_Inv']; // Номер первого счета в серии
-$secretKey = 'nCWY57iaB1fKog5zr2BK'; // Пароль 1 из Robokassa
+$response = ['success' => false, 'message' => 'Unknown error'];
 
-// Проверка суммы платежа
-if ($outSum <= 0) {
-    die("Ошибка: сумма платежа должна быть больше 0.");
-}
-
-// Очистка описания
-$description = htmlspecialchars($description, ENT_QUOTES, 'UTF-8');
-
-// Генерация подписи (без PreviousInvoiceID)
-$signatureValue = md5("$merchantLogin:$outSum:$invoiceID:$secretKey");
-
-// Формируем данные для запроса
-$requestData = [
-    'MerchantLogin' => $merchantLogin,
-    'OutSum' => $outSum,
-    'InvoiceID' => $invoiceID,
-    'Description' => $description,
-    'Recurring' => 'true',
-    'PreviousInvoiceID' => $previousInvoiceID,
-    'SignatureValue' => $signatureValue,
-];
-
-// Логирование параметров запроса
-file_put_contents('request_data.txt', print_r($requestData, true));
-
-// Отправка запроса через cURL
-$ch = curl_init('https://auth.robokassa.ru/Merchant/Recurring');
-curl_setopt($ch, CURLOPT_POST, true);
-curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($requestData));
-curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-
-// Логирование cURL
-curl_setopt($ch, CURLOPT_VERBOSE, true);
-$verbose = fopen('php://temp', 'w+');
-curl_setopt($ch, CURLOPT_STDERR, $verbose);
-
-$response = curl_exec($ch);
-curl_close($ch);
-
-// Логирование ответа
-file_put_contents('robokassa_response.html', $response);
-
-// Логирование cURL
-rewind($verbose);
-$verboseLog = stream_get_contents($verbose);
-fclose($verbose);
-file_put_contents('curl_log.txt', $verboseLog);
-
-// Обработка ответа
-if ($response) {
-    if (strpos($response, 'Оплата успешно выполнена') !== false) {
-        echo "Платеж успешно обработан.";
-    } else {
-        echo "Ошибка при обработке платежа. Ответ сервера: " . htmlspecialchars($response);
+try {
+    // Проверка метода и параметров
+    if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+        throw new Exception('Only POST requests allowed');
     }
-} else {
-    echo "Ошибка при отправке запроса.";
+
+    $required = ['summ', 'id_new', 'name_prod', 'id_Inv'];
+    foreach ($required as $field) {
+        if (empty($_POST[$field])) {
+            throw new Exception("Missing required field: $field");
+        }
+    }
+
+    // Параметры магазина
+    $merchantLogin = 'phoenixtv.ru';
+    $outSum = floatval($_POST['summ']);
+    $invoiceID = $_POST['id_new'];
+    $description = trim($_POST['name_prod']);
+    $previousInvoiceID = $_POST['id_Inv'];
+    $secretKey = 'nCWY57iaB1fKog5zr2BK';
+
+    // Валидация
+    if ($outSum <= 0) {
+        throw new Exception("Payment amount must be greater than 0");
+    }
+
+    // Генерация подписи для рекуррентного платежа
+    $signatureValue = md5("$merchantLogin:$outSum:$invoiceID:$secretKey");
+
+    // Параметры запроса (упрощенный набор для рекуррента)
+    $requestData = [
+        'MerchantLogin' => $merchantLogin,
+        'OutSum' => $outSum,
+        'InvoiceID' => $invoiceID,
+        'Description' => $description,
+        'SignatureValue' => $signatureValue,
+        'PreviousInvoiceID' => $previousInvoiceID,
+    ];
+
+    // Удаляем пустые параметры
+    $requestData = array_filter($requestData);
+
+    // Отправка запроса
+    $ch = curl_init();
+    curl_setopt_array($ch, [
+        CURLOPT_URL => 'https://auth.robokassa.ru/Merchant/Recurring',
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => http_build_query($requestData),
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_SSL_VERIFYPEER => false,
+        CURLOPT_SSL_VERIFYHOST => false,
+        CURLOPT_TIMEOUT => 30,
+        CURLOPT_HTTPHEADER => ['Content-Type: application/x-www-form-urlencoded']
+    ]);
+
+    $result = curl_exec($ch);
+    $httpCode = curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    
+    if (curl_errno($ch)) {
+        throw new Exception('CURL error: ' . curl_error($ch));
+    }
+    
+    curl_close($ch);
+
+    // Проверка ответа
+    if (strpos($result, 'ERROR') !== false) {
+        throw new Exception("Robokassa error: $result");
+    }
+
+    // Успешный ответ
+    $response = [
+        'success' => true,
+        'message' => 'Recurrent payment processed',
+        'payment_id' => $invoiceID,
+        'receipt_url' => "https://auth.robokassa.ru/Merchant/Office/Invoice/$invoiceID"
+    ];
+
+} catch (Exception $e) {
+    $response = [
+        'success' => false,
+        'message' => $e->getMessage(),
+        'error_code' => $e->getCode()
+    ];
 }
+
+// Очистка буфера и вывод
+while (ob_get_level()) ob_end_clean();
+echo json_encode($response);
+exit;
 ?>

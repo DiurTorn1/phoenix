@@ -605,7 +605,7 @@ $(document).ready(function() {
                     });
                     if (allEqual) {
                         $("#product_list_add").append(
-                            '<li class="admin-video-item admin-back" id="' + output[0] + '">' +
+                            '<li class="admin-video-item-product admin-back" id="' + output[0] + '">' +
                             '<div class="admin-video-prev">' +
                                 '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
                             '</div>' +
@@ -623,7 +623,7 @@ $(document).ready(function() {
                         '</li>');
                     } else {
                         $("#product_list_add").append(
-                            '<li class="admin-video-item admin-back" id="' + output[0] + '">' +
+                            '<li class="admin-video-item-product admin-back" id="' + output[0] + '">' +
                             '<div class="admin-video-prev">' +
                                 '<img src="' + output[17] + '" alt="" class="" style="heigth: 100%; width: 100%">' +
                             '</div>' +
@@ -636,6 +636,7 @@ $(document).ready(function() {
                                 '</div>' +
                                 '<div class="admin-video-item-info admin-video-item-view">' +
                                     '<h3>Стрим добавлен к продукту</h3>' +
+                                    '<button class="button_prod_dyn_dell" id="' + output[0] + '">Удалить</button>' +
                                 '</div>' +
                             '</div>' +
                         '</li>');
@@ -682,6 +683,31 @@ $(document).ready(function() {
                 var id_stream = $("#admin-vl" + i).parent().parent().attr('id');
                 //console.log(table_name + ' : ' + id_stream + ' : ' + localdate1);
                 $.post('/php/add_table_product.php', {table:table_name, id_stream:id_stream, reg_date:localdate1 }, function(data)  {
+                    if(data=='OK'){
+
+                    }
+                });
+            }
+        }
+        window.location.href='/stream';
+    });
+
+    $(document).on('click', '.button_prod_dyn_dell', function() {
+ 
+        var id = this.id;
+        var table_name = '';
+        for(var k=0;k<table_array_gl.length;k++){
+            var split_tag = table_array_gl[k].split('_');
+            if(id == split_tag[1]){
+                table_name = table_array_gl[k];
+            }
+        }
+        for(var i = 0; i < num_list1; i++){
+            var ch1 = $("#admin-vl" + i).is(':checked');
+            if(ch1){
+                var id_stream = $("#admin-vl" + i).parent().parent().attr('id');
+                //console.log(table_name + ' : ' + id_stream + ' : ' + localdate1);
+                $.post('/php/delete_table_product.php', {table:table_name, id_stream:id_stream }, function(data)  {
                     if(data=='OK'){
 
                     }

@@ -20,6 +20,9 @@
 					<a id="name_user_get" class="name_user_get">{{ Auth::user()->email }}</a>
 				@elseif($v == "operator")
 					<script type="text/javascript" src = "{{ asset('js/get_video.js') }}"></script> 
+				@elseif($v == "comment")
+					<script type="text/javascript" src = "{{ asset('js/get_video_cam.js') }}"></script> 
+					<a id="name_user_get" class="name_user_get">{{ Auth::user()->email }}</a>
 				@endif
             @endforeach
         @endif

@@ -150,43 +150,47 @@ $(document).ready(function() {
                     let numbersArray = localdate_id.split(' ');
                     let concatenatedNumber = numbersArray.join('');
                     //console.log(id_pay);
-                    $.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:concatenatedNumber, status:status, created_at:localdate}, function(data)  {
-                        //console.log(data);
-                        if(data == 'OK'){
-                            $.post('/php/sell_reccurent_payment.php', { OutSum: res_price, InvoiceID: concatenatedNumber, Description: name_product }, function(data){
-                                if(data.success) {
-                                    // Перенаправляем пользователя на страницу оплаты
-                                    window.location.href = data.payment_url;
-                                    //console.log(data.payment_url);
-                                } else {
-                                    // Выводим сообщение об ошибке
-                                    $('#response').html('Ошибка: ' + data.message);
-                                } 
-                            }, 'json');
-                            //if(name_product == 'Тестовая на 3 дня'){
-                                //window.location.href='https://auth.robokassa.ru/RecurringSubscriptionPage/Subscription/Subscribe?SubscriptionId=9d7a0500-d971-475f-a47a-53ee2aebb080';
-                            //}
-                            //$.post('/php/sell_user_payment.php', function(data)  {
-                                //console.log(data);
-                                //var url_pay = data;
-                                //if(id_promocode){
-                                    //var lim_put = limit_promocode - 1;
-                                    //$.post('/php/upload_promocode_limit.php', {id:id_promocode, limit:lim_put}, function(data)  {
-                                        //if(data == 'OK'){
-                                            //window.location.href=url_pay;
-                                            //window.location.href="/";
-                                        //}
-                                    //});
-                               // } else {
-                                    //window.location.href=url_pay;
-                                    //window.location.href="/";
-                                //}
+                    if(name_product == 'Тестовая на 3 дня'){
+                        //window.location.href='https://auth.robokassa.ru/RecurringSubscriptionPage/Subscription/Subscribe?SubscriptionId=9d7a0500-d971-475f-a47a-53ee2aebb080';
+                        $.post('/php/presell_payment.php', {ip_port:ip_port, mail:user_sell, name_product:name_product, price:res_price, id_product:concatenatedNumber, status:status, created_at:localdate}, function(data)  {
+                            //console.log(data);
+                            if(data == 'OK'){
+                                $.post('/php/sell_reccurent_payment.php', { OutSum: res_price, InvoiceID: concatenatedNumber, Description: name_product }, function(data){
+                                    if(data.success) {
+                                        // Перенаправляем пользователя на страницу оплаты
+                                        window.location.href = data.payment_url;
+                                        //console.log(data.payment_url);
+                                    } else {
+                                        // Выводим сообщение об ошибке
+                                        $('#response').html('Ошибка: ' + data.message);
+                                    } 
+                                }, 'json');
     
-                            //});
-                        }
-                       // window.location.href=data;
-                       // window.location.href="/"; ip_port mail name_product price id_product created_at status
-                    });
+                                //$.post('/php/sell_user_payment.php', function(data)  {
+                                    //console.log(data);
+                                    //var url_pay = data;
+                                    //if(id_promocode){
+                                        //var lim_put = limit_promocode - 1;
+                                        //$.post('/php/upload_promocode_limit.php', {id:id_promocode, limit:lim_put}, function(data)  {
+                                            //if(data == 'OK'){
+                                                //window.location.href=url_pay;
+                                                //window.location.href="/";
+                                            //}
+                                        //});
+                                   // } else {
+                                        //window.location.href=url_pay;
+                                        //window.location.href="/";
+                                    //}
+        
+                                //});
+                            }
+                           // window.location.href=data;
+                           // window.location.href="/"; ip_port mail name_product price id_product created_at status
+                        });
+                    } else {
+                        alert("Подписка не утверждена администрацией.");
+                    }
+
                 }
             });
         } else if(type_product == 'ticket'){

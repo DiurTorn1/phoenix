@@ -9,7 +9,7 @@ var user_global = "";
 var user_email = '';
 
 
-function get_stream_array(){
+/*function get_stream_array(){
 
     user_email = $('#name_user_get').text();
     var count1 = 0;
@@ -91,7 +91,7 @@ function get_stream_array(){
                                 //}
                                 //console.log(id_stream_prod);
                             });
-                            //console.log(key_prod_perm_stream);
+                            console.log(key_product_perm);
                             for(var i = 0; i < key_product_perm; i++){
                                 //console.log(public_product_perm1[i]);
                                 public_product_perm2.push(public_product_perm1[i]);
@@ -138,15 +138,67 @@ function get_stream_array(){
     //console.log(count_stream);
     //console.log(array_stream);
     //var list = json_product.data;
+}*/
+async function get_stream_array() {
+    user_email = $('#name_user_get').text();
+    
+    // Очищаем массивы перед заполнением
+    array_product = [];
+    users_sells = [];
+    public_product_perm2 = [];
+
+    // Загружаем данные последовательно
+    try {
+        // 1. Загружаем продукты
+        const products = await $.post('/php/get_product.php');
+        const output = $.parseJSON(products);
+        array_product = output.map(item => item.id);
+        count_product = array_product.length;
+
+        // 2. Загружаем продажи пользователя
+        const sales = await $.post('/php/get_sell_user.php', {user_email});
+        const salesOutput = $.parseJSON(sales);
+        users_sells = salesOutput.filter(item => item.user_email === user_email)
+                                .map(item => item.product_id);
+        count_sells = users_sells.length;
+
+        // 3. Загружаем данные для public_product_perm2
+        for (const productId of array_product) {
+            const productData = await $.post('/php/get_product_public.php', {id: productId});
+            const productOutput = $.parseJSON(productData);
+            const prm_prod = productOutput ? productOutput[4] : '';
+
+            const tableData = await $.post('/php/get_product_table.php', {table: prm_prod});
+            const tableOutput = $.parseJSON(tableData);
+
+            tableOutput.forEach(item1 => {
+                public_product_perm2.push({
+                    table: prm_prod,
+                    id_stream: item1.id_stream
+                });
+            });
+        }
+
+        //console.log("Final length:", public_product_perm2.length); // Теперь корректное значение
+    } catch (error) {
+        console.error("Error:", error);
+    }
 }
 
 
-$(document).ready(function() {
-    get_stream_array();
-    setInterval('get_stream_array()',500);
+$(document).ready( async function() {
+    //get_stream_array();
+    //setInterval('get_stream_array()',500);public_product_perm2.length
+    await get_stream_array(); // Первая загрузка
+    
+    // Обновление данных каждые 5 секунд (если необходимо)
+    setInterval(async () => {
+        await get_stream_array();
+    }, 5000);
+    //console.log(public_product_perm2.length);
     var params = new window.URLSearchParams(window.location.search);
     var array_sells_product_btn = new Array();
-
+    var length_perm = 0;
     $.post('/php/get_stream.php', function(data)  {
         var output = $.parseJSON(data);
         var list = output.data;
@@ -192,8 +244,12 @@ $(document).ready(function() {
                     }else{
                         //console.log(user_email);
                         
+                        
                         for(var i = 0; i < public_product_perm2.length; i++){
+                            //console.log(public_product_perm2[i]);
                             var get_var = public_product_perm2[i];
+                            //console.log(get_var);
+                            //console.log(item.id);
                             if(get_var.id_stream == item.id){
                                 key_player1 = 1;
                                 for(var k=0; k<users_sells1.length; k++){
@@ -216,6 +272,8 @@ $(document).ready(function() {
                             }
                         }
                     }
+                    //console.log(key_player1);
+                    //console.log(key_player);
                     if(key_player1 == 0 && key_player == 0){
                         $("#player_stream_get").append(
                             '<div class="index-live-item-video-1">' +

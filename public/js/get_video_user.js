@@ -141,6 +141,8 @@ function paint_element_stream(){
                                 //console.log(get_var.id_stream);
                             }
                         }
+                        //console.log(key_player1);
+                        //console.log(key_player);
                         if(key_player1 == 0 && key_player == 0){
                             $(div_video).append(
                                 '<div class="slide bay index-live-item" id="' + list.id + '">'+

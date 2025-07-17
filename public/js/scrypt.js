@@ -195,6 +195,7 @@ function subscribe_line(){
                         $.post('/php/get_all_subscribe_id.php', {id_sell:res_item.id_sell }, function(data_all) {
                             var res_subs_all = $.parseJSON(data_all);
                             //console.log(res_subs_all[1]);
+                            
                             let length_id_sell = res_item.id_sell;
                             let res_length = length_id_sell.toString().length;
                             let id_res_get = length_id_sell.substring(0, res_length-5);
@@ -299,42 +300,65 @@ function subscribe_line(){
                                             let pr_summ = parseInt(res_data_presell[4]);
                                             if(pr_summ == 0){ pr_summ = 1;}
 
-                                            $.post('/php/reccurent_payment_fast.php', {
-                                                summ: pr_summ, // Сумма платежа
-                                                id_new: res_item.id_prod, // Новый номер счета
-                                                name_prod: res_prod_fin[1] // Описание
-                                             }, function(data_send) {
-                                                //console.log(data_send);
-                                                if (data_send.success) {
-                                                    // Перенаправляем пользователя на страницу оплаты
-                                                    //window.location.href = data.payment_url;
-                                                    //console.log(data_send.payment_url);
-                                                    //console.log(res_subs_all[1]);
-                                                    $.post('/php/python_send.php',{mail:res_subs_all[1], load:data_send.payment_url}, function(data_load) {
-                                                        if (data_load === 'Error') {
-                                                            console.error('Ошибка при отправке данных');
-                                                        } else {
-                                                            //console.log('Письмо c сылкой:', data_send.payment_url);
-                                                            $.post('/php/upload_all_subscribe_status.php', {id_sell:length_id_sell, status:'load'}, function(data_ps) {
-                                                                if(data_ps == "OK"){
-                                                                    $.post('/php/delete_sell_user_id_mail.php', {user_email:res_subs_all[1], product_id:id_prod_fin}, function(data_del) {
-                                                                        if(data_del == "OK"){
-                                                                            console.log("Повторный платёж обработан.");
-                                                                        }  else {
-                                                                            console.error('Ошибка: ' + data_del);
-                                                                        }
-                                                                    });
-                                                                } 
-                                                            });
-                                                            
-                                                        }
-                                                    });
-                                                } else {
-                                                    // Выводим сообщение об ошибке
-                                                    alert(data.message);
-                                                }
+                                            $.ajax({
+                                                url: '/php/reccurent_payment_load.php',
+                                                type: 'POST',
+                                                dataType: 'json',
+                                                data: {
+                                                    summ: pr_summ,
+                                                    id_new: res_item.id_prod,
+                                                    name_prod: res_prod_fin[1],
+                                                    id_Inv: res_item.id_sell
+                                                },
+                                                success: function(response) {
+                                                    console.log('Response:', response);
+                                                    
+                                                    if (response.success) {
+                                                        // Платеж успешно обработан
+                                                        console.log('Платеж успешно проведен! ID: ' + response.payment_id);
+                                                        // Дальнейшая обработка успешного платежа payment_url
+                                                        $.post('/php/python_send.php', {
+                                                            mail: res_subs_all[1], 
+                                                            load: 'https://tehnodir.ru/'
+                                                        }, function(data_load) {
+                                                            if (data_load === 'Error') {
+                                                                console.error('Ошибка при отправке данных');
+                                                            } else {
 
-                                            }, 'json');
+                                                            }
+                                                        });
+
+                                                        $.post('/php/upload_all_subscribe_status.php', {
+                                                            id_sell: length_id_sell, 
+                                                            status: 'load'
+                                                        }, function(data_ps) {
+                                                            if(data_ps == "OK") {
+                                                                $.post('/php/delete_sell_user_id_mail.php', {
+                                                                    user_email: res_subs_all[1],
+                                                                    product_id: id_prod_fin
+                                                                }, function(data_del) {
+                                                                    if(data_del == "OK") {
+                                                                        console.log("Повторный платёж обработан.");
+                                                                        //alert("Платеж успешно обработан!");
+                                                                    } else {
+                                                                        console.error('Ошибка удаления: ' + data_del);
+                                                                    }
+                                                                });
+                                                            } else {
+                                                                console.error('Ошибка обновления статуса: ' + data_ps);
+                                                            }
+                                                        });
+                                                    } else {
+                                                        // Ошибка при обработке платежа
+                                                        //alert('Ошибка: ' + response.message);
+                                                        console.error('Payment error:', response);
+                                                    }
+                                                },
+                                                error: function(xhr, status, error) {
+                                                    console.error('AJAX Error:', status, error);
+                                                    //alert('Ошибка соединения с сервером платежей');
+                                                }
+                                            });
                                         });
 
                                     });
@@ -344,6 +368,7 @@ function subscribe_line(){
                 } else if( res_item.status == 'load' ){
                     $.post('/php/get_all_subscribe_id.php', {id_sell:res_item.id_sell }, function(data_all) {
                         var res_subs_all = $.parseJSON(data_all);
+                        
                         let length_id_sell = res_item.id_sell;
                         let res_length = length_id_sell.toString().length;
                         let id_res_get = length_id_sell.substring(0, res_length-5);
@@ -426,6 +451,290 @@ function subscribe_line(){
         //}
         
     });
+}
+
+function read_status(){
+    if($("#email_get_pars").text() == ''){
+        //console.log('emty');
+        /*$.ajax({
+            url: '/php/get_online.php',
+            method: 'POST',
+            data: { status:'online' },
+            dataType: 'json',
+            success: function(data_stat) {
+                if(data_stat.length == 0){
+                    //console.log('Status online');
+                } else {
+                    //console.log(data_stat);
+                    $.each(data_stat,function(i,item_stat){
+                        //if(item_stat.name == $("#email_get_pars").text()){
+                            //console.log(item_stat.name);
+                            $.ajax({
+                                url: '/php/upload_status_online.php',
+                                method: 'POST',
+                                data: { status:'offline', name:item_stat.name },
+                                dataType: 'text',
+                                success: function(data_upload) {
+                                    console.log(data_upload);
+                                },
+                                error: function(jqXHR, textStatus, errorThrown) {
+                                    if (jqXHR.status === 500) {
+                                        
+                                        console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                                        
+                                    } else {
+                                        console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                                    }
+                                }
+                            });
+                        //} else {
+                            //console.log('Status online'); 
+                        //}
+                    });
+                }
+                
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 500) {
+                    
+                    console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                    
+                } else {
+                    console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                }
+            }
+        });*/
+    } else {
+        $.ajax({
+            url: '/php/users_get_reg.php',
+            method: 'POST',
+            data: { email:$("#email_get_pars").text() },
+            dataType: 'json',
+            success: function(data_com) {
+                var com_id = data_com ? data_com[0] : '';
+            //console.log(com_id);
+            $.ajax({
+                url: '/php/get_rol_model.php',
+                method: 'POST',
+                data: { model_id:com_id },
+                dataType: 'json',
+                success: function(output_user) {
+                    if(output_user[0].role_id == 4){
+                        //console.log('Commentator');
+                        $.ajax({
+                            url: '/php/get_status_online.php',
+                            method: 'POST',
+                            data: { name:$("#email_get_pars").text() },
+                            dataType: 'json',
+                            success: function(data_status) {
+                                //
+                                if(data_status.length == 0){
+                                    //console.log("Put BD");
+                                    var dNow = new Date();
+                                    var localdate= dNow.getFullYear() + '-' + (dNow.getMonth()+1) + '-' + dNow.getDate() + ' ' + dNow.getHours() + ':' + dNow.getMinutes() + ':00';
+                                    $.ajax({
+                                        url: '/php/add_status_online.php',
+                                        method: 'POST',
+                                        data: { name:$("#email_get_pars").text(), status:'online', updated_at:localdate, create_at:localdate },
+                                        dataType: 'text',
+                                        success: function(data_add) {
+                                            console.log(data_add);
+                                        },
+                                        error: function(jqXHR, textStatus, errorThrown) {
+                                            if (jqXHR.status === 500) {
+                                                
+                                                console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                                                
+                                            } else {
+                                                console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                                            }
+                                        }
+                                    });
+                                } else {
+                                    $.ajax({
+                                        url: '/php/get_online.php',
+                                        method: 'POST',
+                                        data: { status:'offline' },
+                                        dataType: 'json',
+                                        success: function(data_stat) {
+                                            if(data_stat.length == 0){
+                                                //console.log('Status online');
+                                            } else {
+                                                //console.log(data_stat);
+                                                $.each(data_stat,function(i,item_stat){
+                                                    if(item_stat.name == $("#email_get_pars").text()){
+                                                        //console.log(item_stat.name);
+                                                        $.ajax({
+                                                            url: '/php/upload_status_online.php',
+                                                            method: 'POST',
+                                                            data: { status:'online', name:$("#email_get_pars").text() },
+                                                            dataType: 'text',
+                                                            success: function(data_upload) {
+                                                                console.log(data_upload);
+                                                            },
+                                                            error: function(jqXHR, textStatus, errorThrown) {
+                                                                if (jqXHR.status === 500) {
+                                                                    
+                                                                    console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                                                                    
+                                                                } else {
+                                                                    console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                                                                }
+                                                            }
+                                                        });
+                                                    } else {
+                                                        //console.log('Status online'); 
+                                                    }
+                                                });
+                                            }
+                                            
+                                        },
+                                        error: function(jqXHR, textStatus, errorThrown) {
+                                            if (jqXHR.status === 500) {
+                                                
+                                                console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                                                
+                                            } else {
+                                                console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                                            }
+                                        }
+                                    });
+                                }
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                if (jqXHR.status === 500) {
+                                    
+                                    console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                                    
+                                } else {
+                                    console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                                }
+                            }
+                        });
+                    } else {
+                        //console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                        /*$.ajax({
+                            url: '/php/get_online.php',
+                            method: 'POST',
+                            data: { status:'online' },
+                            dataType: 'json',
+                            success: function(data_stat) {
+                                if(data_stat.length == 0){
+                                    //console.log('Status online');
+                                } else {
+                                    //console.log(data_stat);
+                                    $.each(data_stat,function(i,item_stat){
+                                        //if(item_stat.name == $("#email_get_pars").text()){
+                                            //console.log(item_stat.name);
+                                            $.ajax({
+                                                url: '/php/upload_status_online.php',
+                                                method: 'POST',
+                                                data: { status:'offline', name:item_stat.name },
+                                                dataType: 'text',
+                                                success: function(data_upload) {
+                                                    console.log(data_upload);
+                                                },
+                                                error: function(jqXHR, textStatus, errorThrown) {
+                                                    if (jqXHR.status === 500) {
+                                                        
+                                                        console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                                                        
+                                                    } else {
+                                                        console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                                                    }
+                                                }
+                                            });
+                                        //} else {
+                                            //console.log('Status online'); 
+                                        //}
+                                    });
+                                }
+                                
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                if (jqXHR.status === 500) {
+                                    
+                                    console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                                    
+                                } else {
+                                    console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                                }
+                            }
+                        });*/
+                    }
+    
+                },
+                error: function(jqXHR, textStatus, errorThrown) {
+                    if (jqXHR.status === 500) {
+                        
+                        //console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                        $.ajax({
+                            url: '/php/get_online.php',
+                            method: 'POST',
+                            data: { status:'online' },
+                            dataType: 'json',
+                            success: function(data_stat) {
+                                if(data_stat.length == 0){
+                                    //console.log('Status online');
+                                } else {
+                                    //console.log(data_stat);
+                                    $.each(data_stat,function(i,item_stat){
+                                        //if(item_stat.name == $("#email_get_pars").text()){
+                                            //console.log(item_stat.name);
+                                            $.ajax({
+                                                url: '/php/upload_status_online.php',
+                                                method: 'POST',
+                                                data: { status:'offline', name:item_stat.name },
+                                                dataType: 'text',
+                                                success: function(data_upload) {
+                                                    console.log(data_upload);
+                                                },
+                                                error: function(jqXHR, textStatus, errorThrown) {
+                                                    if (jqXHR.status === 500) {
+                                                        
+                                                        console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                                                        
+                                                    } else {
+                                                        console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                                                    }
+                                                }
+                                            });
+                                        //} else {
+                                            //console.log('Status online'); 
+                                        //}
+                                    });
+                                }
+                                
+                            },
+                            error: function(jqXHR, textStatus, errorThrown) {
+                                if (jqXHR.status === 500) {
+                                    
+                                    console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                                    
+                                } else {
+                                    console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                                }
+                            }
+                        });
+                        
+                    } else {
+                        console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                    }
+                }
+            });
+            },
+            error: function(jqXHR, textStatus, errorThrown) {
+                if (jqXHR.status === 500) {
+                    
+                    console.log('Внутренняя ошибка сервера. Пожалуйста, попробуйте позже.');
+                    
+                } else {
+                    console.log('Произошла ошибка: ' + textStatus + ', ' + errorThrown);
+                }
+            }
+        });
+    }
+
 }
 
 $(document).ready(function() {
@@ -646,6 +955,21 @@ $(document).ready(function() {
         $('#popup-back').toggle();
         $('#popup-back-login').toggle();
     });
+
+    read_status();
+    setInterval('read_status()',10000);
+    //$.post('/php/users_get_reg.php', {email:$("#email_get_pars").text() }, function(data_com) {
+        //var output_com = $.parseJSON(data_com);
+        //console.log(output1);
+        
+        //$.post('/php/get_rol_model.php', {model_id:com_id}, function(data_rol)  {
+            //var output_user = $.parseJSON(data_rol);
+            //console.log(output_user[0].role_id);
+            //if(output_user[0].role_id == 4){
+                //console.log('Commentator');
+            //}
+        //});
+    //});
 });
 var params = new window.URLSearchParams(window.location.search);
 var OutSum = params.get('OutSum');
